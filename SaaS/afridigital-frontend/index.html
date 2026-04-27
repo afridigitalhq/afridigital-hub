@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="src/index.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AfriDigital Innovations Hub</title>
+
+  <!-- Tailwind CDN (for Acode preview fallback) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- HERO -->
+<div id="hero"></div>
+
+<!-- AUTH -->
+<div id="auth"></div>
+
+<!-- SERVICES -->
+<div id="services"></div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<script>
+async function loadPartial(id, file) {
+  const res = await fetch(file);
+  const html = await res.text();
+  document.getElementById(id).innerHTML = html;
+}
+
+loadPartial("hero", "src/partials/hero.html");
+loadPartial("auth", "src/partials/auth-buttons.html");
+loadPartial("services", "src/partials/services.html");
+loadPartial("footer", "src/partials/footer.html");
+</script>
+
+</body>
+</html>

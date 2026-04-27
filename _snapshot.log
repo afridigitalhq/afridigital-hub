@@ -1,0 +1,19 @@
+📌 AFRIDIGITAL SNAPSHOT
+Wed Apr 22 14:25:38 WAT 2026
+.
+├── DevOps
+│   ├── engine
+│   └── logs
+├── SaaS
+│   ├── afridigital-backend
+│   └── afridigital-frontend
+├── _snapshot.log
+├── auth
+├── landing
+├── state-server.js
+└── ui
+    ├── index.html
+    ├── modules
+    └── partials
+
+12 directories, 3 files
