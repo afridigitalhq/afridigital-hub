@@ -2,7 +2,7 @@
   "name": "afridigital-frontend",
   "version": "1.0.0",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && node truth-lock.cjs",
     "dev": "vite",
     "preview": "vite preview",
     "postbuild": "node enforce-ui.cjs",
