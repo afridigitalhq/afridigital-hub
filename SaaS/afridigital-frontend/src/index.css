@@ -1,28 +1,37 @@
 html {
-html { zoom: 1.12; }
-  font-size: 20px;
+  font-size: 18px;
 }
 
 body {
-body { font-size: 1.15rem; }
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #0f172a;
+  background: #ffffff;
 }
 
-/* force premium spacing feel */
+/* ===== SAAS DENSITY SYSTEM ===== */
+
+h1 { font-size: 3.5rem; font-weight: 800; }
+h2 { font-size: 2.4rem; font-weight: 700; }
+h3 { font-size: 1.5rem; font-weight: 700; }
+
+p { font-size: 1.15rem; }
+
+/* global spacing breathing room */
 section {
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.5rem; }
+/* card system upgrade */
+.border {
+  border-radius: 1rem;
+}
 
-p { font-size: 1.1rem; }
-
-/* make containers breathe */
-.max-w-4xl, .max-w-3xl {
-  max-width: 72rem !important;
+/* center content consistency */
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
