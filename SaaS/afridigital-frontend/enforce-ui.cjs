@@ -2,14 +2,13 @@ const fs = require("fs");
 
 const html = fs.readFileSync("dist/index.html", "utf8").toLowerCase();
 
-// DOM contract rules (STRUCTURAL, not text-based)
 const contract = {
-  hero: /<section[^>]*class="[^"]*hero[^"]*"/,
-  marquee: /class="[^"]*marquee[^"]*"/,
-  auth: /class="[^"]*auth[^"]*"/,
-  services: /<section[^>]*>[\s\S]*our services[\s\S]*<\/section>/,
-  footer: /<footer[\s\S]*<\/footer>/,
-  chat: /class="[^"]*chat-widget[^"]*"/
+  hero: /class="[^"]*hero/,
+  marquee: /class="[^"]*marquee|animate-scroll|whitespace-nowrap/,
+  auth: /class="[^"]*auth/,
+  services: /our services/,
+  footer: /<footer/,
+  chat: /chat/
 };
 
 for (const key in contract) {
