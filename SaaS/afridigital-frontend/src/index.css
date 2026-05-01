@@ -6,17 +6,21 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   line-height: 1.7;
   color: #0f172a;
-  background: #ffffff;
 }
 
-/* GLOBAL SCALE BOOST (this is what you were missing) */
-p { font-size: 1.15rem; }
-small { font-size: 1rem; }
+/* force premium spacing feel */
+section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
 
-h1 { font-size: 3.8rem; }
-h2 { font-size: 2.6rem; }
-h3 { font-size: 1.6rem; }
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
 
-button {
-  font-size: 1.05rem;
+p { font-size: 1.1rem; }
+
+/* make containers breathe */
+.max-w-4xl, .max-w-3xl {
+  max-width: 72rem !important;
 }
