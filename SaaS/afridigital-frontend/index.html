@@ -7,10 +7,24 @@
 </head>
 <body>
 
-<!-- HERO -->
-<!-- MARQUEE -->
-<!-- SERVICES -->
-<!-- FOOTER -->
+<div id="hero"></div>
+<div id="marquee"></div>
+<div id="auth"></div>
+<div id="services"></div>
+<div id="footer"></div>
+
+<script>
+async function load(id, file) {
+  const res = await fetch(file);
+  document.getElementById(id).innerHTML = await res.text();
+}
+
+load("hero", "/src/partials/hero.html");
+load("marquee", "/src/partials/marquee.html");
+load("auth", "/src/partials/auth.html");
+load("services", "/src/partials/services.html");
+load("footer", "/src/partials/footer.html");
+</script>
 
 </body>
 </html>

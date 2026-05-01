@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "dependencies": {
     "tailwindcss": "^4.2.2",
