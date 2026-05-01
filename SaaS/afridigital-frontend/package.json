@@ -4,7 +4,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "node enforce-ui.cjs",
+    "validate": "node enforce-ui.cjs"
   },
   "dependencies": {
     "tailwindcss": "^4.2.2",
