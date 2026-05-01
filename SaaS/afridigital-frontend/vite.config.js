@@ -10,6 +10,7 @@ function partialsPlugin() {
       const auth = fs.readFileSync('./src/partials/auth.html', 'utf-8')
       const services = fs.readFileSync('./src/partials/services.html', 'utf-8')
       const footer = fs.readFileSync('./src/partials/footer.html', 'utf-8')
+      const chat = fs.readFileSync('./src/partials/chat.html', 'utf-8')
 
       return html
         .replace('<!-- HERO -->', hero)
@@ -17,6 +18,7 @@ function partialsPlugin() {
         .replace('<!-- AUTH -->', auth)
         .replace('<!-- SERVICES -->', services)
         .replace('<!-- FOOTER -->', footer)
+        .replace('<!-- CHAT -->', chat)
     }
   }
 }
