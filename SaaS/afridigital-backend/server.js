@@ -20,7 +20,7 @@ app.get("*", (req, res) => {
 process.on("uncaughtException", (err) => console.error("🔥 UNCAUGHT:", err));
 process.on("unhandledRejection", (err) => console.error("🔥 UNHANDLED:", err));
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => console.log("🚀 Server running on port:", PORT));
   console.log("🚀 Render UI stable mode on port:", PORT);
 });
 
