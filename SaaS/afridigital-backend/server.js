@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const path = require("path");
 
@@ -23,3 +24,10 @@ process.on("unhandledRejection", (err) => console.error("🔥 UNHANDLED:", err))
 app.listen(PORT, () => {
   console.log("🚀 Render UI stable mode on port:", PORT);
 });
+
+app.use(express.static(path.join(__dirname,"public")));
+
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname,"public","index.html"));
+});
+
