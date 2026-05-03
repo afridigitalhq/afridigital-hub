@@ -1,50 +1,18 @@
 #!/bin/bash
 
-echo "🚀 AFRIDIGITAL DEPLOY ENGINE v1 STARTED"
+echo "🚀 UNIFIED BUILD START"
 
-# =========================
-# 🔒 RUN GUARD
-# =========================
-./render-guard.sh
-if [ $? -ne 0 ]; then
-  echo "⛔ DEPLOY STOPPED: Truth Lock failed"
-  exit 1
-fi
+# backend build
+cd SaaS/afridigital-backend || exit 1
+npm install
 
-# =========================
-# 📦 BUILD FRONTEND
-# =========================
-cd SaaS/afridigital-frontend
+# frontend build
+cd ../afridigital-frontend || exit 1
 npm install
 npm run build
 
-if [ $? -ne 0 ]; then
-  echo "⛔ DEPLOY STOPPED: Build failed"
-  exit 1
-fi
+# copy frontend into backend (single service mode)
+rm -rf ../afridigital-backend/public/*
+cp -r dist/* ../afridigital-backend/public/
 
-cd ~/AfriDigitalHub
-
-# =========================
-# 📁 SYNC BUILD OUTPUT
-# =========================
-cp -r SaaS/afridigital-frontend/dist/* SaaS/afridigital-backend/public/
-
-# =========================
-# 🧾 GIT OPERATIONS
-# =========================
-git add .
-
-if git diff --cached --quiet; then
-  echo "ℹ️ No changes to commit"
-else
-  git commit -m "deploy: afrideploy auto sync (frontend → backend)"
-fi
-
-git push origin master
-
-# =========================
-# 🔒 FINAL STATUS
-# =========================
-echo "✅ AFRIDIGITAL DEPLOY COMPLETE"
-echo "🌐 Live Target: https://afridigital-hub.onrender.com"
+echo "✅ SINGLE SERVICE READY"
