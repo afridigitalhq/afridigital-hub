@@ -1,34 +1,40 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-app.use(express.json());
-
-// health check
+// API health
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-// static frontend (Render-safe)
-const publicPath = path.join(__dirname, "public");
+// absolute-safe public path (Render-proof)
+const publicPath = path.resolve(__dirname, "public");
+
+// safety check (prevents silent crash)
+if (!fs.existsSync(publicPath)) {
+  console.error("❌ PUBLIC FOLDER MISSING:", publicPath);
+}
+
+// static frontend
 app.use(express.static(publicPath));
 
-// SPA fallback
+// SPA fallback (safe guard)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
+  const indexPath = path.join(publicPath, "index.html");
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(500).send("Frontend not built: index.html missing");
+  }
 });
 
-// hard crash visibility
-process.on("uncaughtException", (err) => {
-  console.error("🔥 UNCAUGHT:", err);
-});
-
-process.on("unhandledRejection", (err) => {
-  console.error("🔥 UNHANDLED:", err);
-});
+// crash visibility (Render debugging)
+process.on("uncaughtException", (err) => console.error("🔥 UNCAUGHT:", err));
+process.on("unhandledRejection", (err) => console.error("🔥 UNHANDLED:", err));
 
 app.listen(PORT, () => {
-  console.log("🚀 Server running on port", PORT);
+  console.log("🚀 Render stable server running on", PORT);
 });
