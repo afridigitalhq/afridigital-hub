@@ -1,19 +1,25 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 app.use(express.json());
 
-// API ONLY LAYER
+// API
 app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", service: "afridigital-api" });
+  res.json({ status: "ok" });
 });
 
-app.get("/api/wallet", (req, res) => {
-  res.json({ balance: 100 });
+// SERVE FRONTEND (FIX FOR NOT FOUND ERROR)
+const distPath = path.join(__dirname, "../afridigital-frontend/dist");
+
+app.use(express.static(distPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
 });
 
 app.listen(PORT, () => {
-  console.log("🚀 API running on port", PORT);
+  console.log("🚀 Fullstack running on port", PORT);
 });
