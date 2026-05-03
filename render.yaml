@@ -3,8 +3,10 @@ services:
     name: afridigital-backend
     env: node
 
-    rootDir: SaaS/afridigital-backend
+    buildCommand: |
+      set -e
+      npm install --prefix SaaS/afridigital-frontend
+      npm run build --prefix SaaS/afridigital-frontend
+      npm install --prefix SaaS/afridigital-backend
 
-    buildCommand: npm install
-
-    startCommand: node server.js
+    startCommand: node SaaS/afridigital-backend/server.js
