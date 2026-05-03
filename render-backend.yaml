@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: afridigital-backend
-    env: node
-    rootDir: SaaS/afridigital-backend
-    buildCommand: npm install
-    startCommand: node server.js
