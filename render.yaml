@@ -5,8 +5,6 @@ services:
 
     rootDir: SaaS/afridigital-backend
 
-    buildCommand: |
-      npm install
-      npm run build --prefix ../afridigital-frontend
+    buildCommand: npm install
 
     startCommand: node server.js
