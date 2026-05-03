@@ -1,21 +1,22 @@
-import express from 'express';
-import path from 'path';
+const express = require("express");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// APIs
 app.use(express.json());
+app.get("/api/health", (req, res) => res.json({ status: "ok" }));
 
-// API placeholder routes
-app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
-app.get('/api/wallet', (req, res) => res.json({ balance: 100 }));
+// ZERO-COPY STATIC SERVE (DIRECT FROM FRONTEND BUILD)
+const frontendDist = path.join(__dirname, "../afridigital-frontend/dist");
 
-// Serve frontend static files
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(frontendDist));
 
-// SPA fallback
-app.get(/.*/, (req, res) => res.sendFile(path.join(process.cwd(), 'public', 'index.html')));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(frontendDist, "index.html"));
+});
 
-// Start server
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT} (MongoDB skipped, Render URL active)`));
+app.listen(PORT, () => {
+  console.log(`🚀 Render server running on port ${PORT}`);
+});

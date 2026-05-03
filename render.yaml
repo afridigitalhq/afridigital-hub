@@ -4,7 +4,6 @@ services:
     env: node
 
     buildCommand: |
-      set -e
       npm install --prefix SaaS/afridigital-frontend
       npm run build --prefix SaaS/afridigital-frontend
       npm install --prefix SaaS/afridigital-backend
