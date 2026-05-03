@@ -9,11 +9,14 @@
     "validate": "node enforce-ui.cjs"
   },
   "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.4",
+    "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.13"
   },
