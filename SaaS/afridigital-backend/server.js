@@ -1,67 +1,28 @@
 const express = require("express");
 const path = require("path");
-const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 10000;
 
+// absolute-safe path (Render-proof)
+const publicPath = path.resolve(__dirname, "public");
+
 app.use(express.json());
+app.use(express.static(publicPath));
 
-// =====================
-// API
-// =====================
 app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", service: "afridigital-backend" });
+  res.json({ status: "ok" });
 });
 
-// =====================
-// RENDER-SAFE FRONTEND PATH RESOLUTION
-// =====================
-const frontendDist = path.join(__dirname, "../afridigital-frontend/dist");
-
-// HARD GUARANTEE CHECK
-if (!fs.existsSync(frontendDist)) {
-  console.error("❌ FRONTEND DIST NOT FOUND. BUILD FAILED OR MISCONFIGURED.");
-}
-
-// =====================
-// STATIC SERVE (NO COPYING, NO PUBLIC FOLDER)
-// =====================
-app.use(express.static(frontendDist));
-
-// SPA FALLBACK
+// SPA fallback
 app.get("*", (req, res) => {
-  const indexFile = path.join(frontendDist, "index.html");
-
-  if (fs.existsSync(indexFile)) {
-    return res.sendFile(indexFile);
-  }
-
-  return res.status(500).send("Frontend not built on Render");
+  res.sendFile(path.join(publicPath, "index.html"));
 });
 
-// =====================
-// DEBUG SAFETY
-// =====================
-process.on("uncaughtException", (err) => {
-  console.error("🔥 UNCAUGHT:", err);
-});
+// crash logs
+process.on("uncaughtException", (err) => console.error("🔥 UNCAUGHT:", err));
+process.on("unhandledRejection", (err) => console.error("🔥 UNHANDLED:", err));
 
-process.on("unhandledRejection", (err) => {
-  console.error("🔥 UNHANDLED:", err);
-});
-
-// =====================
 app.listen(PORT, () => {
-  console.log("🚀 AfriDigitalHub running on Render port:", PORT);
+  console.log("🚀 Render UI stable mode on port:", PORT);
 });
-
-// DEBUG: confirm actual file being served
-const fs = require("fs");
-
-app.get("/__debug_ui", (req, res) => {
-  const file = path.join(__dirname, "public/index.html");
-  const content = fs.readFileSync(file, "utf-8");
-  res.send(content);
-});
-
