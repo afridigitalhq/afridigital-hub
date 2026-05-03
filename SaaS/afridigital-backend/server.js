@@ -8,50 +8,40 @@ const PORT = process.env.PORT || 10000;
 app.use(express.json());
 
 // =====================
-// API ROUTES
+// API
 // =====================
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", service: "afridigital-backend" });
 });
 
 // =====================
-// AUTO-RECOVERY FRONTEND LOADER
+// RENDER-SAFE FRONTEND PATH RESOLUTION
 // =====================
-const distPath = path.join(__dirname, "../afridigital-frontend/dist");
-const publicPath = path.join(__dirname, "public");
+const frontendDist = path.join(__dirname, "../afridigital-frontend/dist");
 
-// Ensure fallback public folder exists
-if (!fs.existsSync(publicPath)) {
-  fs.mkdirSync(publicPath, { recursive: true });
-}
-
-// Auto-sync dist → public ON START (NO MANUAL COPY EVER AGAIN)
-try {
-  if (fs.existsSync(distPath)) {
-    fs.cpSync(distPath, publicPath, { recursive: true });
-  }
-} catch (e) {
-  console.error("⚠️ Frontend sync warning:", e.message);
+// HARD GUARANTEE CHECK
+if (!fs.existsSync(frontendDist)) {
+  console.error("❌ FRONTEND DIST NOT FOUND. BUILD FAILED OR MISCONFIGURED.");
 }
 
 // =====================
-// STATIC SERVE (SINGLE DOMAIN)
+// STATIC SERVE (NO COPYING, NO PUBLIC FOLDER)
 // =====================
-app.use(express.static(publicPath));
+app.use(express.static(frontendDist));
 
-// SPA fallback
+// SPA FALLBACK
 app.get("*", (req, res) => {
-  const indexPath = path.join(publicPath, "index.html");
+  const indexFile = path.join(frontendDist, "index.html");
 
-  if (fs.existsSync(indexPath)) {
-    return res.sendFile(indexPath);
+  if (fs.existsSync(indexFile)) {
+    return res.sendFile(indexFile);
   }
 
-  return res.status(500).send("Frontend missing: build not found");
+  return res.status(500).send("Frontend not built on Render");
 });
 
 // =====================
-// DEBUG SAFETY LAYER
+// DEBUG SAFETY
 // =====================
 process.on("uncaughtException", (err) => {
   console.error("🔥 UNCAUGHT:", err);
@@ -63,5 +53,5 @@ process.on("unhandledRejection", (err) => {
 
 // =====================
 app.listen(PORT, () => {
-  console.log("🚀 AfriDigital FULLSTACK LIVE on port:", PORT);
+  console.log("🚀 AfriDigitalHub running on Render port:", PORT);
 });
