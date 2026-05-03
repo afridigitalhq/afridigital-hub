@@ -11,15 +11,16 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-// SERVE FRONTEND (FIX FOR NOT FOUND ERROR)
-const distPath = path.join(__dirname, "../afridigital-frontend/dist");
+// ✅ USE BACKEND PUBLIC (NO MORE CROSS-FOLDER DEPENDENCY)
+const publicPath = path.join(__dirname, "public");
 
-app.use(express.static(distPath));
+app.use(express.static(publicPath));
 
+// SPA fallback
 app.get("*", (req, res) => {
-  res.sendFile(path.join(distPath, "index.html"));
+  res.sendFile(path.join(publicPath, "index.html"));
 });
 
 app.listen(PORT, () => {
-  console.log("🚀 Fullstack running on port", PORT);
+  console.log("🚀 Fullstack stable mode running on port", PORT);
 });
