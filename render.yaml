@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: afridigital-backend
+    env: node
+    buildCommand: cd SaaS/afridigital-frontend && npm install && npm run build && cd ../afridigital-backend && npm install
+    startCommand: cd SaaS/afridigital-backend && node server.js
