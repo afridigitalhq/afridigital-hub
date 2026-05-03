@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: afridigital-frontend
+    rootDir: SaaS/afridigital-frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
