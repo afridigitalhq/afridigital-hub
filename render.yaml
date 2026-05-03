@@ -3,6 +3,8 @@ services:
     name: afridigital-backend
     env: node
 
+    rootDir: .
+
     buildCommand: bash -c "set -e;
       cd SaaS/afridigital-frontend &&
       npm install &&
