@@ -6,14 +6,13 @@ const PORT = process.env.PORT || 10000;
 
 app.use(express.json());
 
-// API
+// health check
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-// ✅ USE BACKEND PUBLIC (NO MORE CROSS-FOLDER DEPENDENCY)
+// static frontend (Render-safe)
 const publicPath = path.join(__dirname, "public");
-
 app.use(express.static(publicPath));
 
 // SPA fallback
@@ -21,6 +20,15 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
+// hard crash visibility
+process.on("uncaughtException", (err) => {
+  console.error("🔥 UNCAUGHT:", err);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.error("🔥 UNHANDLED:", err);
+});
+
 app.listen(PORT, () => {
-  console.log("🚀 Fullstack stable mode running on port", PORT);
+  console.log("🚀 Server running on port", PORT);
 });
