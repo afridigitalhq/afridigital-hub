@@ -6,9 +6,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 /* UI */
-app.use("/", express.static(path.join(__dirname, "../ui")));
-app.use("/modules", express.static(path.join(__dirname, "../ui/modules")));
-app.use("/partials", express.static(path.join(__dirname, "../ui/partials")));
+app.use("/", express.static(path.join(__dirname, "../SaaS/afridigital-frontend")));
+app.use("/modules", express.static(path.join(__dirname, "../SaaS/afridigital-frontend/src/partials")));
+app.use("/partials", express.static(path.join(__dirname, "../SaaS/afridigital-frontend/partials")));
 
 /* STATE */
 app.get("/afrid/state", (req, res) => {

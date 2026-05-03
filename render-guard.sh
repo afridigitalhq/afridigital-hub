@@ -15,7 +15,7 @@ if [ ! -f "SaaS/afridigital-frontend/index.html" ]; then
 fi
 
 # 3. Ensure UI system exists
-if [ ! -d "ui/modules" ]; then
+if [ ! -d "SaaS/afridigital-frontend/src/partials" ]; then
   echo "❌ UI modules missing — BLOCK DEPLOY"
   exit 1
 fi
