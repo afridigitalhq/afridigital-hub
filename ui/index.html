@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AfriDigital Hub</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+    }
+
+    section {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    #chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #111827;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="header"></section>
+  <section id="marquee"></section>
+  <section id="auth"></section>
+  <section id="services"></section>
+  <section id="footer"></section>
+
+  <div id="chat-widget">💬</div>
+
+  <script type="module" src="./partials/shared/router.js"></script>
+
+</body>
+</html>
