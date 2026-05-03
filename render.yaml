@@ -1,15 +1,7 @@
 services:
-  # ===================== BACKEND API =====================
   - type: web
-    name: afridigital-backend
+    name: afridigital-hub
     env: node
-    rootDir: SaaS/afridigital-backend
-    buildCommand: npm install
+    rootDir: .
+    buildCommand: cd SaaS/afridigital-backend && npm install && cd ../afridigital-frontend && npm install && npm run build && cd ../afridigital-backend
     startCommand: node server.js
-
-  # ===================== FRONTEND STATIC =====================
-  - type: static
-    name: afridigital-frontend
-    rootDir: SaaS/afridigital-frontend
-    buildCommand: npm install && npm run build
-    publishDir: dist
