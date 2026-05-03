@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 10000;
 const publicPath = path.resolve(__dirname, "public");
 
 app.use(express.json());
-app.use(express.static(publicPath));
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
@@ -16,7 +15,6 @@ app.get("/api/health", (req, res) => {
 
 // SPA fallback
 app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
 });
 
 // crash logs
