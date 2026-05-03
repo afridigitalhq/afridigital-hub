@@ -55,3 +55,13 @@ process.on("unhandledRejection", (err) => {
 app.listen(PORT, () => {
   console.log("🚀 AfriDigitalHub running on Render port:", PORT);
 });
+
+// DEBUG: confirm actual file being served
+const fs = require("fs");
+
+app.get("/__debug_ui", (req, res) => {
+  const file = path.join(__dirname, "public/index.html");
+  const content = fs.readFileSync(file, "utf-8");
+  res.send(content);
+});
+
