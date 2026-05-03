@@ -1,3 +1,4 @@
+import './src/styles/design-system.css'
 const app = document.getElementById("app");
 const sections = ["hero","marquee","auth","services","footer","chat-widget"];
 
