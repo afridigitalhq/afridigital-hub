@@ -5,7 +5,6 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 // absolute-safe path (Render-proof)
-const publicPath = path.resolve(__dirname, "public");
 
 app.use(express.json());
 
