@@ -1,3 +1,5 @@
+const startWorker = require("./core/delivery/worker");
+startWorker();
 
 const express = require('express');
 const router = express.Router();
