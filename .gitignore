@@ -12,3 +12,9 @@ node_modules
 node_modules/
 logs/
 backups/
+
+.backup_contract_v1/
+*.backup.js
+*.BROKEN_BACKUP.js
+*.backtrace
+*.corrupt.backup
