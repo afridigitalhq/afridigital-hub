@@ -1,4 +1,5 @@
-const sendWhatsApp=require('../../../whatsapp.unified');
+const whatsapp = null;
+const sendWhatsApp=null;
 const traceId=require('../utils/traceId');
 
 const memory=new Map();
