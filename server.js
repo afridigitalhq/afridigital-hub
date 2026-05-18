@@ -1,27 +1,27 @@
-if (require.main !== module) return;
-process.on("uncaughtException", e => console.error("CRASH:", e));
-const { log } = require("./services/whatsapp-gateway/core/utils/logger");
-console.log('🚀 SERVER STARTED')
-const startWorker = require("./services/whatsapp-gateway/core/delivery/worker"); startWorker();
-console.log('🔥 SERVER IS ALIVE ON PORT 3000');
-process.on("uncaughtException",e=>console.error("🔥",e));process.on("unhandledRejection",e=>console.error("🔥",e));
-const express=require('express');
-const app=express();
+const express = require('express');
+const app = express();
+
+const whatsappGateway = require('./services/whatsapp-gateway/server');
 
 app.use(express.json());
 
-app.get('/health',(req,res)=>res.json({ok:true}));
-
-// WHATSAPP GATEWAY
-const whatsappGateway=require('./services/whatsapp-gateway/server');
-app.use('/',whatsappGateway);
-
-// TOOLS FIX (GLOBAL MOUNT INSIDE GATEWAY)
-const envCheck=require('./services/whatsapp-gateway/tools/envCheck');
-app.use('/whatsapp/tools',envCheck);
-
-module.exports=app;
-if (require.main === module) app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
-  console.log("🔥 SERVER RUNNING");
-  console.log("🚀 AFRIAI RUNNING ON PORT", process.env.PORT);
+app.get('/health', (req, res) => {
+app.get('/debug/env', (req,res)=>res.json({
+hasToken: !!process.env.WA_TOKEN,
+hasPhoneId: !!process.env.WA_PHONE_NUMBER_ID,
+nodeEnv: process.env.NODE_ENV,
+port: process.env.PORT,
+keys: Object.keys(process.env).filter(k=>k.includes('WA')||k.includes('TOKEN')||k.includes('PHONE'))
+}));
+  res.json({ ok: true });
 });
+
+app.use('/whatsapp', whatsappGateway);
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log("🚀 AFRIAI SERVER RUNNING ON PORT", PORT);
+});
+
+module.exports = app;
