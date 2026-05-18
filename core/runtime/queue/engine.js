@@ -1,5 +1,4 @@
 const { handleIncomingMessage } = require('../../../modules/ai/handleIncomingMessage');
-const sendWhatsApp = require('../../../services/whatsapp.unified');
 
 const queue = [];
 let processing = false;

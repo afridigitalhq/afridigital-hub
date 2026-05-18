@@ -6,5 +6,4 @@ function log(type, msg, meta = {}) {
     meta
   }));
 }
-
 module.exports = { log };

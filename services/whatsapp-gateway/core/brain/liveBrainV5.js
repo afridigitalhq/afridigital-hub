@@ -1,4 +1,3 @@
-const sendWhatsApp=require('../../../whatsapp.unified');
 const traceId=require('../utils/traceId');
 
 const sessions=new Map();

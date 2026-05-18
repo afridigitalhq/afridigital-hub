@@ -1,6 +1,5 @@
 const afriAi = require('../core/afriAiResponder');
 const runTool = require('../core/toolRunner');
-const sendWhatsApp = require('../../whatsapp.unified');
 
 module.exports = async function agent(userId, text){
 

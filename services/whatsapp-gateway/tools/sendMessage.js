@@ -1,4 +1,3 @@
-const sendWhatsApp = require('../../whatsapp.unified');
 
 module.exports = async function send_message(args){
   const {to, message} = args;

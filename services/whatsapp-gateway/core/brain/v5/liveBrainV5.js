@@ -1,4 +1,4 @@
-async function liveBrainV5(req) {
+async function async function liveBrainV5(req) {
   const { sendWhatsApp } = require('../../delivery/deliveryEngine');
 
   const body = req.body;

@@ -2,7 +2,6 @@ const { assertApiVersion } = require("../runtime/safety/api.guard");
 const { generateAIReply } = require('../../core/ai/v8.7.ai.bridge');
 const dispatcher=require('../modules/dispatcher');
 const brain=require('../modules/brain');
-const sendWhatsApp = require("../services/whatsapp.unified");
 const { handleIncomingMessage } = require("../modules/chat");
 
 exports.verify = (req, res) => {

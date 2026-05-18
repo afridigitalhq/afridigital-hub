@@ -1,5 +1,4 @@
 const express=require('express');
-const sendWhatsApp=require('../../../whatsapp.unified');
 const traceId=require('../utils/traceId');
 
 module.exports=async(req,res)=>{
