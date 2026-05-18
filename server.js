@@ -1,3 +1,4 @@
+if (require.main !== module) return;
 process.on("uncaughtException", e => console.error("CRASH:", e));
 const { log } = require("./services/whatsapp-gateway/core/utils/logger");
 console.log('🚀 SERVER STARTED')
@@ -20,7 +21,7 @@ const envCheck=require('./services/whatsapp-gateway/tools/envCheck');
 app.use('/whatsapp/tools',envCheck);
 
 module.exports=app;
-app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
+if (require.main === module) app.listen(process.env.PORT || 3000, "0.0.0.0", () => {
   console.log("🔥 SERVER RUNNING");
   console.log("🚀 AFRIAI RUNNING ON PORT", process.env.PORT);
 });

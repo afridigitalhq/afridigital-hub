@@ -1,3 +1,4 @@
+// CONTRACT_V2_ACTIVE
 const { addToQueue } = require("../delivery/queue");
 const v4 = require('./v4/liveBrainV4');
 const v5 = require('./v5/liveBrainV5');

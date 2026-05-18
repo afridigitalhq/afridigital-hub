@@ -22,7 +22,7 @@ module.exports=async(req,res)=>{
 
     const reply='AfriAI received: '+text;
 
-    const result=await sendWhatsApp(from,reply);
+    await sendWhatsAppMessage(from, reply);
 
     console.log('📤 DELIVERY RESULT',{id,result});
 

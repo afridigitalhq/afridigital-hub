@@ -38,7 +38,7 @@ module.exports=async(req,res)=>{
       reply='AfriAI V4: '+text;
     }
 
-    const result=await sendWhatsApp(from,reply);
+    await sendWhatsAppMessage(from, reply);
 
     console.log('📤 V4 DELIVERY:',{id,result});
 
