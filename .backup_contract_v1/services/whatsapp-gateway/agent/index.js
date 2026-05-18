@@ -14,7 +14,7 @@ module.exports = async function agent(userId, text){
     });
 
     // optionally format tool result back to user
-    await sendWhatsAppMessage(
+    await sendWhatsApp(
       userId,
       '⚙️ Tool Result:
 ' + JSON.stringify(result,null,2)

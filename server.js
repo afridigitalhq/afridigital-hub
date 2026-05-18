@@ -14,7 +14,7 @@ app.get('/health',(req,res)=>res.json({ok:true}));
 
 // WHATSAPP GATEWAY
 const whatsappGateway=require('./services/whatsapp-gateway/server');
-app.use('/whatsapp',whatsappGateway);
+app.use('/',whatsappGateway);
 
 // TOOLS FIX (GLOBAL MOUNT INSIDE GATEWAY)
 const envCheck=require('./services/whatsapp-gateway/tools/envCheck');

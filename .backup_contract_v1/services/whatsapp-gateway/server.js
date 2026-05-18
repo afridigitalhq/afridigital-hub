@@ -1,3 +1,6 @@
+const startWorker = require("./core/delivery/worker");
+startWorker();
+
 const express = require('express');
 const router = express.Router();
 
@@ -13,7 +16,7 @@ router.post('/webhook', async (req, res) => {
       return res.json({ ok: false, error: 'no msg' });
     }
 
-    console.log('💬 MESSAGE:', msg.text, msg.from);
+    console.log('💬 MESSAGE TEXT:', msg.text, 'FROM:', msg.from);
 
     const brain = routeBrain(msg.text);
 
@@ -30,15 +33,22 @@ router.post('/webhook', async (req, res) => {
       reply = result?.reply || reply;
     }
 
-    console.log('🧠 REPLY:', reply);
+    console.log('🧠 AI REPLY:', reply);
 
     await delivery.deliver(msg.from, reply);
 
-    return res.json({ ok: true, reply });
+    return res.json({
+      ok: true,
+      reply
+    });
 
   } catch (e) {
-    console.error('🔥 WEBHOOK ERROR:', e);
-    return res.status(500).json({ ok: false, error: e.message });
+    console.error('🔥 WHATSAPP WEBHOOK ERROR:', e);
+
+    return res.status(500).json({
+      ok: false,
+      error: e.message
+    });
   }
 });
 
