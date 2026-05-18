@@ -1,3 +1,5 @@
+process.on("uncaughtException", e => console.error("CRASH:", e));
+const { log } = require("./services/whatsapp-gateway/core/utils/logger");
 console.log('🚀 SERVER STARTED')
 const startWorker = require("./services/whatsapp-gateway/core/delivery/worker"); startWorker();
 console.log('🔥 SERVER IS ALIVE ON PORT 3000');
