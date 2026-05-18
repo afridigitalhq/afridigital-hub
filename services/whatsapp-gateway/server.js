@@ -3,7 +3,7 @@ const router = express.Router();
 
 const normalizeMsg = require('./core/utils/normalizeMsg');
 const routeBrain = require('./core/brain/router');
-const delivery = require('./core/delivery/deliveryEngine');
+const streamReply = require('./core/live/streamAI');
 
 router.post('/webhook', async (req, res) => {
   try {
@@ -17,24 +17,15 @@ router.post('/webhook', async (req, res) => {
 
     const brain = routeBrain(msg.text);
 
-    let reply = 'AFRIAI ACTIVE';
+    let result = "AFRIAI ACTIVE";
 
     if (brain && brain.processMessage) {
-      const result = await brain.processMessage({
-        body: {
-          message: msg.text,
-          from: msg.from
-        }
-      });
-
-      reply = result?.reply || reply;
+      result = await streamReply(msg.from, brain.processMessage, msg);
     }
 
-    console.log('🧠 REPLY:', reply);
+    console.log('🧠 FINAL:', result);
 
-    await delivery.deliver(msg.from, reply);
-
-    return res.json({ ok: true, reply });
+    return res.json({ ok: true, reply: result });
 
   } catch (e) {
     console.error('🔥 WEBHOOK ERROR:', e);

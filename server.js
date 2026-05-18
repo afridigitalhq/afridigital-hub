@@ -1,5 +1,7 @@
-const express = require('express');
-const app = express();
+require("dotenv").config();
+const express = require("express");
+const app = express(); app.use(express.json());
+
 
 const whatsappGateway = require('./services/whatsapp-gateway/server');
 
@@ -20,8 +22,106 @@ app.use('/whatsapp', whatsappGateway);
 
 const PORT = process.env.PORT || 3000;
 
+
+
+app.post("/webhook", async (req, res) => {
+  try {
+    const { from, text } = req.body || {};
+    console.log("📩 WEBHOOK HIT:", req.body);
+
+    const afriAiLoop = require("./core/realtime/afriai-loop");
+    await afriAiLoop(text, from);
+
+    return res.json({ ok: true });
+  } catch (e) {
+    console.error("WEBHOOK ERROR:", e);
+    return res.status(500).json({ ok: false });
+  }
+});
+
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log("🚀 AFRIAI SERVER RUNNING ON PORT", PORT);
 });
 
 module.exports = app;
+
+
+// === AFRIAI WEBHOOK (FORCED FIX) ===
+app.get('/webhook',(req,res)=>{
+  const mode=req.query['hub.mode'];
+  const token=req.query['hub.verify_token'];
+  const challenge=req.query['hub.challenge'];
+
+  if(mode==='subscribe' && token===process.env.WHATSAPP_VERIFY_TOKEN){
+    return res.status(200).send(challenge);
+  }
+
+  return res.sendStatus(403);
+});
+
+app.post('/webhook',async(req,res)=>{
+  try{
+    const msg=req.body.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
+    if(!msg) return res.sendStatus(200);
+
+    const from=msg.from;
+    const text=msg.text?.body;
+
+    console.log('IN:',from,text);
+
+    const afriAiLoop=require('./core/realtime/afriai-loop');
+    await afriAiLoop(text,from);
+
+    res.sendStatus(200);
+  }catch(e){
+    console.error('WEBHOOK ERROR',e);
+    res.sendStatus(200);
+  }
+});
+
+
+// ===== AFRI V10.7 BRAIN CORE =====
+const seenMessages = new Map();
+
+function isDuplicate(id){
+  if(!id) return false;
+  if(seenMessages.has(id)) return true;
+  seenMessages.set(id, Date.now());
+  setTimeout(()=>seenMessages.delete(id), 5*60*1000);
+  return false;
+}
+
+app.post('/webhook', async (req, res) => {
+  try {
+    const msg = req.body.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
+    if(!msg) return res.sendStatus(200);
+
+    const id = msg.id || msg.timestamp;
+    if(isDuplicate(id)) return res.sendStatus(200);
+
+    const from = msg.from;
+    const text = msg.text?.body;
+
+    console.log('📩 IN:', from, text);
+
+    // IMPORTANT: instant ACK
+    res.sendStatus(200);
+
+    // async AI processing (non-blocking)
+    setImmediate(async () => {
+      try {
+        const afriAiLoop = require('./core/realtime/afriai-loop');
+        await afriAiLoop(text, from);
+      } catch(e){
+        console.error('ASYNC AI ERROR:', e);
+      }
+    });
+
+  } catch(e){
+    console.error('WEBHOOK ERROR:', e);
+    res.sendStatus(200);
+  }
+});
+
+console.log('🚀 V10.7 BRAIN ACTIVE');

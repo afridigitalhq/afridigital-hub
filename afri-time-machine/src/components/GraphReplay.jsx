@@ -10,7 +10,7 @@ export default function GraphReplay() {
 
   const load = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/traces");
+      const res = await fetch("https://afridigital-fmdash.onrender.com/api/traces");
       const data = await res.json();
       setTraces(data.traces || []);
     } catch (e) {}

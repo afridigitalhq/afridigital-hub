@@ -1,44 +1,31 @@
-const fs = require('fs');
+const fs = require("fs");
 
-let c = fs.readFileSync('server.js', 'utf8');
+const path = "./server.js";
+let code = fs.readFileSync(path, "utf8");
 
-/**
- * Remove old webhook definition safely
- */
-c = c.replace(/app\.post\(['"]\/webhook['"][\s\S]*?\n\}/g, '');
+// remove any existing webhook (avoid duplicates)
+code = code.replace(/app\.post\(["']\/webhook["'][\s\S]*?\n\}\);/g, "");
 
-/**
- * Inject safe webhook BEFORE listen
- */
-const safeWebhook = `
-app.post('/webhook', async (req, res) => {
+// inject clean webhook BEFORE listen
+const webhook = `
+app.post("/webhook", async (req, res) => {
   try {
-    res.sendStatus(200);
+    const { from, text } = req.body || {};
+    console.log("📩 WEBHOOK HIT:", req.body);
 
-    setImmediate(async () => {
-      try {
-        const { webhook } = require('./core/webhooks/whatsapp.webhook');
-        await webhook(req.body);
-      } catch (err) {
-        console.error('ASYNC WEBHOOK ERROR:', err);
-      }
-    });
+    const afriAiLoop = require("./core/realtime/afriai-loop");
+    await afriAiLoop(text, from);
 
-  } catch (err) {
-    console.error('WEBHOOK ENTRY ERROR:', err);
-    res.sendStatus(200);
+    return res.json({ ok: true });
+  } catch (e) {
+    console.error("WEBHOOK ERROR:", e);
+    return res.status(500).json({ ok: false });
   }
 });
 `;
 
-/**
- * Insert before listen block
- */
-c = c.replace(
-  /const PORT = process\.env\.PORT \|\| 10000;/,
-  safeWebhook + '\n\nconst PORT = process.env.PORT || 10000;'
-);
+code = code.replace(/app\.listen/, webhook + "\n\napp.listen");
 
-fs.writeFileSync('server.js', c);
+fs.writeFileSync(path, code);
 
-console.log('🧠 V8.8 WEBHOOK PATCH COMPLETE');
+console.log("✅ webhook fixed cleanly");

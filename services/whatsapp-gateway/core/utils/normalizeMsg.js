@@ -1,13 +1,26 @@
 function normalizeMsg(body) {
-  const msg = body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
 
-  if (!msg) return null;
+  const waMsg = body?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
 
-  return {
-    from: msg.from || null,
-    text: msg.text?.body || "",
-    raw: msg
-  };
+  if (waMsg) {
+    return {
+      from: waMsg.from || null,
+      text: waMsg.text?.body || "",
+      type: waMsg.type || "text",
+      raw: waMsg
+    };
+  }
+
+  if (body?.from && body?.text) {
+    return {
+      from: body.from,
+      text: body.text,
+      type: "test",
+      raw: body
+    };
+  }
+
+  return null;
 }
 
 module.exports = normalizeMsg;
