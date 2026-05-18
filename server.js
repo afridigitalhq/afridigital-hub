@@ -1,4 +1,5 @@
 console.log('🚀 SERVER STARTED')
+const startWorker = require("./services/whatsapp-gateway/core/delivery/worker"); startWorker();
 console.log('🔥 SERVER IS ALIVE ON PORT 3000');
 process.on("uncaughtException",e=>console.error("🔥",e));process.on("unhandledRejection",e=>console.error("🔥",e));
 const express=require('express');
