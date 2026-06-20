@@ -1,5 +1,5 @@
-// DAG_ONLY_RUNTIME_ENFORCED
 // AFRIKERNEL_DAG_AUTHORITY_LOCKED (SINGLE SOURCE OF TRUTH)
+// TIME_TRAVEL_KERNEL_CONTROLLED
 // EVENT_SOURCED_KERNEL_ONLY
 // AFRIKERNEL_RUNTIME_V1 (EVENT LOG → DAG → RENDER ONLY)
 // AFRIKERNEL_V1_ACTIVE
@@ -18,14 +18,31 @@
 // AFRIDIGITAL_EVENT_SOURCED_DAG_KERNEL_ACTIVE
 // AFRIDIGITAL_CONTROL_PLANE_V2_ACTIVE
 // AFRIDIGITAL_DAG_CONTROL_PLANE_ACTIVE
-// AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
-// AFRIDIGITAL_VISUAL_DAG_LAYER_ACTIVE
-// AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
-// AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
-// DAG_GRAPH_LAYER_ACTIVE
-import "./core/bus/bootstrap";
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, { useState } from "react";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-);
+export default function ReplaySlider({ runtime }) {
+  const [t, setT] = useState(Date.now());
+
+  const data = runtime?.replaySnapshot(t) || [];
+
+  return (
+    <div style={{ padding: 10 }}>
+      <h3>⏱ Replay Slider</h3>
+
+      <input
+        type="range"
+        min={Date.now() - 60000}
+        max={Date.now()}
+        value={t}
+        onChange={(e) => setT(Number(e.target.value))}
+        style={{ width: "100%" }}
+      />
+
+      <div>
+        {data.map((e, i) => (
+          <div key={i}>{e.type || "event"} @ {new Date(e.ts).toLocaleTimeString()}</div>
+        ))}
+      </div>
+    </div>
+  );
+}

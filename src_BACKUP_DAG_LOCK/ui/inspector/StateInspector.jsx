@@ -1,5 +1,5 @@
-// DAG_ONLY_RUNTIME_ENFORCED
-// AFRIKERNEL_DAG_AUTHORITY_LOCKED (SINGLE SOURCE OF TRUTH)
+// TIME_TRAVEL_KERNEL_CONTROLLED
+// DETERMINISTIC_RENDERER_V2_ACTIVE
 // EVENT_SOURCED_KERNEL_ONLY
 // AFRIKERNEL_RUNTIME_V1 (EVENT LOG → DAG → RENDER ONLY)
 // AFRIKERNEL_V1_ACTIVE
@@ -18,14 +18,20 @@
 // AFRIDIGITAL_EVENT_SOURCED_DAG_KERNEL_ACTIVE
 // AFRIDIGITAL_CONTROL_PLANE_V2_ACTIVE
 // AFRIDIGITAL_DAG_CONTROL_PLANE_ACTIVE
-// AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
-// AFRIDIGITAL_VISUAL_DAG_LAYER_ACTIVE
-// AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
-// AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
-// DAG_GRAPH_LAYER_ACTIVE
-import "./core/bus/bootstrap";
 import React from "react";
-import ReactDOM from "react-dom/client";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-);
+export default function StateInspector({ runtime }) {
+  const graph = runtime?.graph?.() || { nodes: [], edges: [] };
+
+  const snapshot = {
+    nodeCount: graph.nodes.length,
+    edgeCount: graph.edges.length
+  };
+
+  return (
+    <div style={{ padding: 10, fontFamily: "monospace" }}>
+      <h3>🧪 Debug Inspector</h3>
+      <pre>{JSON.stringify(snapshot, null, 2)}</pre>
+    </div>
+  );
+}

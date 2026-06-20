@@ -1,4 +1,3 @@
-// AFRIKERNEL_DAG_AUTHORITY_LOCKED (SINGLE SOURCE OF TRUTH)
 // EVENT_SOURCED_KERNEL_ONLY
 // AFRIKERNEL_RUNTIME_V1 (EVENT LOG → DAG → RENDER ONLY)
 // AFRIKERNEL_V1_ACTIVE
@@ -24,7 +23,6 @@
 // DAG_GRAPH_LAYER_ACTIVE
 import { useEffect, useState } from "react";
 
-  const [logs, setLogs] = useState([]);
 
   useEffect(() => {
     let ws; 
@@ -41,10 +39,13 @@ let alive=true;
 }; 
 return()=>{alive=false;ws?.close();};
 
-      try {
-        const data = JSON.parse(msg.data);
-        setLogs((prev) => [data, ...prev].slice(0, 50));
-      } catch (e) {}
+      const data = JSON.parse(msg.data);
+
+      if (data.type === "NEURAL_PULSE") {
+          const filtered = prev.filter(n => n.id !== data.node.id);
+          return [data.node, ...filtered];
+        });
+      }
     };
 
     return () => ws.close();
@@ -52,21 +53,26 @@ return()=>{alive=false;ws?.close();};
 
   return (
     <div style={{
-      background: "#0a0a0a",
+      background: "#050505",
       color: "#00ffcc",
       height: "100vh",
-      padding: "20px",
-      fontFamily: "monospace"
+      fontFamily: "monospace",
+      padding: "20px"
     }}>
-      <h1>🟣 AFRIDIGITAL CONTROL TOWER</h1>
+      <h1>🧠 AFRIDIGITAL NEURAL GRID</h1>
 
-      <div>
-        {logs.map((l, i) => (
-          <div key={i}>
-            [{l.type}] {l.msg}
-          </div>
-        ))}
-      </div>
+      {nodes.map(n => (
+        <div key={n.id} style={{
+          margin: "10px 0",
+          padding: "10px",
+          border: "1px solid #00ffcc",
+          opacity: n.health
+        }}>
+          🟣 {n.id}
+          <br/>
+          Health: {n.health.toFixed(2)}
+        </div>
+      ))}
     </div>
   );
 }

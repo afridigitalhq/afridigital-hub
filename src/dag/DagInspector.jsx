@@ -23,50 +23,23 @@
 // AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
 // DAG_GRAPH_LAYER_ACTIVE
 import { useEffect, useState } from "react";
+import { DagStore } from "./DAGRuntime";
 
-  const [logs, setLogs] = useState([]);
+export default function DagInspector() {
+  const [events, setEvents] = useState(DagStore.events);
 
   useEffect(() => {
-    let ws; 
-    let alive = true; 
-    ws.onerror = () => {}; 
-  }; 
-  return () => { alive = false; ws?.close(); };
-let alive=true; 
-    let ws; 
-    let alive = true; 
-    ws.onerror = () => {}; 
-  }; 
-  return () => { alive = false; ws?.close(); };
-}; 
-return()=>{alive=false;ws?.close();};
-
-      try {
-        const data = JSON.parse(msg.data);
-        setLogs((prev) => [data, ...prev].slice(0, 50));
-      } catch (e) {}
+    const handler = (e) => {
+      setEvents([...DagStore.events]);
     };
-
-    return () => ws.close();
+    window.addEventListener("DAG_EVENT", handler);
+    return () => window.removeEventListener("DAG_EVENT", handler);
   }, []);
 
   return (
-    <div style={{
-      background: "#0a0a0a",
-      color: "#00ffcc",
-      height: "100vh",
-      padding: "20px",
-      fontFamily: "monospace"
-    }}>
-      <h1>🟣 AFRIDIGITAL CONTROL TOWER</h1>
-
-      <div>
-        {logs.map((l, i) => (
-          <div key={i}>
-            [{l.type}] {l.msg}
-          </div>
-        ))}
-      </div>
+    <div style={{ padding: 10, color: "#0f0", fontFamily: "monospace" }}>
+      <h3>DAG LIVE INSPECTOR</h3>
+      <pre>{JSON.stringify(events.slice(-20), null, 2)}</pre>
     </div>
   );
 }
