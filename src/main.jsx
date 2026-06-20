@@ -3,5 +3,5 @@ import ReactDOM from "react-dom/client";
 import NeuralBrain from "./brain/NeuralBrain";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <NeuralBrain />
+  <><ControlTower /><NeuralBrain /></>
 );
