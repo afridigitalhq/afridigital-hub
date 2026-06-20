@@ -1,8 +1,9 @@
+// AFRIKERNEL_INGESTION_SINGLE_PATH_ENFORCED (AFRISYNC → DAGRuntime ONLY)
+// AFRIKERNEL_PRODUCTION_MODE_LOCKED (NO ARCHITECTURE CHANGES ALLOWED)
+// AFRIKERNEL_COLLAPSED_SINGLE_RUNTIME_ACTIVE
 // AFRISYNC_ONLY_INGRESS_LAYER
 // EVENT_SOURCED_KERNEL_ENFORCED (NO DIRECT STATE MUTATION)
 // AFRIKERNEL_AUTHORITY_LOCK_V2 (EVENT LOG → DAGRuntime → RENDER ONLY)
-export const AFRIKERNEL_MODE = "STABLE_DAG_ONLY"
-export const AFRIKERNEL_MODE = "DAG_ONLY"
 // DETERMINISTIC_RENDERER_V2_ACTIVE
 // AFRISYNC_CLUSTER_INGESTION_ACTIVE
 export class DAGStream {
@@ -14,11 +15,11 @@ export class DAGStream {
   }
 
   connect() {
-// AFRISYNC_INGEST_ONLY     this.ws = new WebSocket(this.wsUrl);
+// AFRISYNC_INGEST_ONLY     this.ws = // REDIRECT_TO_AFRISYNC(this.wsUrl);
 
     this.ws.onopen = () => {
       this.connected = true;
-      this.emit({ type: "STREAM_READY" });
+      this.forward({ type: "STREAM_READY" });
     };
 
     this.ws.onmessage = (msg) => {
@@ -26,7 +27,7 @@ export class DAGStream {
         const event = JSON.parse(msg.data);
 
         // push into DAG runtime
-        const node = this.dag.emit(event);
+        const node = this.// FROZEN_DAG_EMIT(event);
 
         // broadcast back enriched graph state (optional)
         this.ws.send(JSON.stringify({

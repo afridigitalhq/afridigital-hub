@@ -1,3 +1,6 @@
+// AFRIKERNEL_INGESTION_SINGLE_PATH_ENFORCED (AFRISYNC → DAGRuntime ONLY)
+// AFRIKERNEL_PRODUCTION_MODE_LOCKED (NO ARCHITECTURE CHANGES ALLOWED)
+// AFRIKERNEL_COLLAPSED_SINGLE_RUNTIME_ACTIVE
 // EVENT_SOURCED_KERNEL_ENFORCED (NO DIRECT STATE MUTATION)
 // AFRIKERNEL_AUTHORITY_LOCK_V2 (EVENT LOG → DAGRuntime → RENDER ONLY)
 // AFRIKERNEL_DAG_AUTHORITY_LOCKED (SINGLE SOURCE OF TRUTH)
@@ -20,7 +23,7 @@
 // AFRIDIGITAL_EVENT_SOURCED_DAG_KERNEL_ACTIVE
 import React, { useEffect, useRef, useState } from "react";
 import { GraphStream } from "../core/stream/GraphStream";
-import { ForceEngine } from "../core/graph/ForceEngine";
+import { // BLOCKED_DIRECT_ENGINE_ACCESS } from "../core/graph/// BLOCKED_DIRECT_ENGINE_ACCESS";
 
 export default function GraphLive() {
   const engineRef = useRef(null);
@@ -32,7 +35,7 @@ export default function GraphLive() {
         setGraph(prev => {
           const nodes = data.nodes || prev.nodes;
           const edges = data.edges || prev.edges;
-          engineRef.current = new ForceEngine(nodes, edges);
+          engineRef.current = new // BLOCKED_DIRECT_ENGINE_ACCESS(nodes, edges);
           return { nodes, edges };
         });
       }

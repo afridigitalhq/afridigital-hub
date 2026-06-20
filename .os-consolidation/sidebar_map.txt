@@ -1,0 +1,10 @@
+src/admin/dag/DAGSidebarEngine.jsx:4:export default function DAGSidebarEngine({ onNavigate }) {
+src/admin/AdminShell.jsx:2:import DAGSidebarEngine from "../../ui/control-center/dag/DAGSidebarEngine";
+src/admin/AdminShell.jsx:14:      <DAGSidebarEngine onNavigate={handleNavigate} />
+src/os/sidebar/SidebarEngine.jsx:3:export default function SidebarEngine({ registry, onSelect }) {
+src/os/sidebar/OSShellSidebar.js:3:export default function OSShellSidebar({ registry, active, onSelect }) {
+src/os/sidebar/DAGSidebarEngine.jsx:4:export default function DAGSidebarEngine({ onNavigate }) {
+src/os/sidebar/index.js:1:export { default as OSShellSidebar } from "./OSShellSidebar";
+src/os/integration/OSSidebarBridge.jsx:3:export default function OSSidebarBridge({ os }) {
+src/os/runtime/OSRuntimeBootstrap.jsx:3:import OSShellSidebar from "../sidebar/OSShellSidebar";
+src/os/runtime/OSRuntimeBootstrap.jsx:39:      <OSShellSidebar

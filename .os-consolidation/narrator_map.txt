@@ -1,0 +1,3 @@
+src/os/narrator/AINarratorEngine.js:1:export class AINarratorEngine {
+src/os/narrator/SystemAuditVoiceController.js:1:export class SystemAuditVoiceController {
+src/os/voice/VoiceBridge.js:1:export class VoiceBridge {

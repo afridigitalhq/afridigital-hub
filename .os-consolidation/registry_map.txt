@@ -1,0 +1,22 @@
+src/admin/dag/DashboardRegistry.js:1:export const DashboardRegistry = [
+src/admin/dag/DAGSidebarEngine.jsx:2:import { DashboardRegistry } from "./DashboardRegistry";
+src/admin/dag/DAGSidebarEngine.jsx:9:    DashboardRegistry.forEach((node) => {
+src/admin/dag/NodeResolver.js:1:import { DashboardRegistry } from "./DashboardRegistry";
+src/admin/dag/NodeResolver.js:4:  return DashboardRegistry.find((n) => n.route === route);
+src/admin/dag/NodeResolver.js:8:  return DashboardRegistry.find((n) => n.id === id);
+src/dag-ui/registry/DashboardRegistry.js:1:export const DashboardRegistry = [
+src/dag-ui/graph/CinematicDAGGraph.jsx:4:import { DashboardRegistry } from "../../os/registry/DashboardRegistry";
+src/dag-ui/graph/CinematicDAGGraph.jsx:12:    const layoutNodes = DashboardRegistry.map((d, i) => ({
+src/dag-ui/graph/CinematicDAGGraph.jsx:28:    const layoutEdges = DashboardRegistry.slice(1).map((d, i) => ({
+src/dag-ui/graph/CinematicDAGGraph.jsx:30:      source: DashboardRegistry[i % DashboardRegistry.length].id,
+src/dag-ui/graph/PhysicsDAGGraph.jsx:2:import { DashboardRegistry } from "../../os/registry/DashboardRegistry";
+src/dag-ui/graph/PhysicsDAGGraph.jsx:11:    const n = DashboardRegistry.map((d, i) => ({
+src/dag-ui/graph/PhysicsDAGGraph.jsx:19:    const links = DashboardRegistry.slice(1).map((d, i) => ({
+src/dag-ui/graph/PhysicsDAGGraph.jsx:20:      source: DashboardRegistry[i % DashboardRegistry.length].id,
+src/dag-ui/graph/UnifiedCinematicDAGGraph.jsx:5:import { DashboardRegistry } from "../../os/registry/DashboardRegistry";
+src/dag-ui/graph/UnifiedCinematicDAGGraph.jsx:16:    return DashboardRegistry.map((d, i) => {
+src/os/sidebar/DAGSidebarEngine.jsx:2:import { DashboardRegistry } from "../../os/registry/DashboardRegistry";
+src/os/sidebar/DAGSidebarEngine.jsx:9:    DashboardRegistry.forEach(n => {
+src/os/registry/DashboardRegistry.js:1:export class DashboardRegistry {
+src/os/registry/UnifiedPluginRegistry.js:1:export const DashboardRegistry = [
+src/os/registry/index.js:1:export { UnifiedPluginRegistry } from "./UnifiedPluginRegistry";

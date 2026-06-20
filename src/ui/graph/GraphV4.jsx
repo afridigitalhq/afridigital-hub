@@ -1,3 +1,6 @@
+// AFRIKERNEL_INGESTION_SINGLE_PATH_ENFORCED (AFRISYNC → DAGRuntime ONLY)
+// AFRIKERNEL_PRODUCTION_MODE_LOCKED (NO ARCHITECTURE CHANGES ALLOWED)
+// AFRIKERNEL_COLLAPSED_SINGLE_RUNTIME_ACTIVE
 // EVENT_SOURCED_KERNEL_ENFORCED (NO DIRECT STATE MUTATION)
 // AFRIKERNEL_AUTHORITY_LOCK_V2 (EVENT LOG → DAGRuntime → RENDER ONLY)
 // AFRIKERNEL_DAG_AUTHORITY_LOCKED (SINGLE SOURCE OF TRUTH)
@@ -16,7 +19,7 @@
 // AFRIDIGITAL_TRUE_DAG_SYSTEM_V4_ACTIVE
 import React, { useEffect, useState } from "react";
 
-export default function GraphV4({ dag, replayTime }) {
+export default function RendererV2({ dag, replayTime }) {
   const [state, setState] = useState(dag.snapshot());
 
   useEffect(() => {

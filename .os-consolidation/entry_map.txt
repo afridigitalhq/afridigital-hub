@@ -1,0 +1,8 @@
+src/main.jsx:35:ReactDOM.createRoot(document.getElementById("root")).render(
+src/soc/ui/SOCCommandCenter.jsx:2:import ControlCenterShell from "../../orchestrator/ui/ControlCenterShell";
+src/soc/ui/SOCCommandCenter.jsx:20:      <ControlCenterShell dagData={dagData} />
+src/os/kernel/ui/ControlCenterShell.jsx:5:export default function ControlCenterShell({ dagData }) {
+src/os/runtime/OSRuntimeBootstrap.jsx:5:export default function OSRuntimeBootstrap({ brain, dag, registry, sidebar }) {
+src/os/runtime/index.js:1:export { default as OSRuntimeBootstrap } from "./OSRuntimeBootstrap";
+src/os/runtime/BOOT_CONTRACT.md:4:OSRuntimeBootstrap.jsx
+src/os/runtime/BOOT_CONTRACT.md:10:- Only OSRuntimeBootstrap can initialize system
