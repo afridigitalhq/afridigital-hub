@@ -1,31 +1,15 @@
 {
   "name": "afridigital-hub",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview --host 0.0.0.0 --port 4173"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/afridigitalhq/afridigital-hub.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/afridigitalhq/afridigital-hub/issues"
-  },
-  "homepage": "https://github.com/afridigitalhq/afridigital-hub#readme",
-  "dependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "vite": "^8.0.16"
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^5.0.0"
   }
 }
