@@ -8,7 +8,6 @@ export function verifySocAccess(tokenPayload, route) {
   const socRoutes = [
     "/war-room",
     "/soc-os",
-    "/control-plane",
     "/admin/soc"
   ];
 

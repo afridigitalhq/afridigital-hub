@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
  * Read-only real-time dashboard shell
  */
 
-export default function ControlPlaneCockpit({ socket }) {
   const [state, setState] = useState(null);
 
   useEffect(() => {

@@ -4,7 +4,6 @@ export function isSOCEnabled(user, route) {
   const SOC_ROUTES = [
     "/war-room",
     "/soc",
-    "/control-plane",
     "/admin"
   ];
 

@@ -1,4 +1,3 @@
-export class SOCControlPlane {
 
   constructor() {
     this.frozen = false;

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import PublicAppRouter from "./public/PublicAppRouter";
-import SOCAppRouter from "./soc-entry/SOCAppRouter";
 import { isSOCUser } from "./auth/socRoles";
 
 export default function App() {

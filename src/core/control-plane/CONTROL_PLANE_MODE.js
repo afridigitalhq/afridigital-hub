@@ -1,0 +1,1 @@
+export const CONTROL_PLANE_MODE = "LIVE_DAG_COCKPIT"

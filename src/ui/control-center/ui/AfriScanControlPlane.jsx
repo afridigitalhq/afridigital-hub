@@ -3,7 +3,6 @@ import DAGCanvas from "../../ui/control-center/dag/DAGCanvas";
 import RiskSidebar from "../panels/RiskSidebar";
 import TopStatusBar from "../panels/TopStatusBar";
 
-export default function AfriScanControlPlane({
   dag,
   prediction,
   cascade,

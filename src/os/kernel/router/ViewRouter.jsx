@@ -1,6 +1,5 @@
 import React from "react";
 
-import AfriScanControlPlane from "../../../ui/control-center/ui/AfriScanControlPlane";
 
 export default function ViewRouter({ activeDashboard, dagData }) {
 
@@ -9,7 +8,6 @@ export default function ViewRouter({ activeDashboard, dagData }) {
     case "afriscan":
     case "warroom":
       return <WarRoomShell dagData={dagData} />;
-      return <AfriScanControlPlane dag={dagData} />;
 
     case "afribank":
       return <div>🏦 AfriBank Module (placeholder)</div>;

@@ -5,11 +5,9 @@ import React, { useEffect, useState } from "react";
  * Read-only real-time kernel visualization shell
  */
 
-export default function ControlPlaneCockpit() {
   const [state, setState] = useState(null);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080/control-plane");
 
     ws.onmessage = (msg) => {
       try {

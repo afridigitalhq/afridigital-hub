@@ -29,17 +29,14 @@ export class SOCUnifiedRuntime {
 
 }
 
-import { SOCControlPlane } from "../control-plane/SOCControlPlane";
 import { SOCControlHUDKernel } from "../control-hud/SOCControlHUDKernel";
 
-const controlPlane = new SOCControlPlane();
 const controlHUD = new SOCControlHUDKernel(controlPlane);
 
 export function getSOCControlHUD() {
   return controlHUD;
 }
 
-export function getSOCControlPlane() {
   return controlPlane;
 }
 import { connectHUDTelemetry } from '../hud/telemetry/connectHUDTelemetry';
@@ -50,7 +47,6 @@ import { connectOSStartupOrchestrator } from './connectOSStartupOrchestrator';
 connectOSStartupOrchestrator(this);
 import { connectWin11OSSelfObservationLoop } from './connectWin11OSSelfObservationLoop';
 connectWin11OSSelfObservationLoop(this);
-import { connectSOCCockpitDashboard } from '../control-plane/connectSOCCockpitDashboard';
 connectSOCCockpitDashboard(this);
 import { connectSOCWarroom3DVisualization } from '../warroom/connectSOCWarroom3DVisualization';
 connectSOCWarroom3DVisualization(this);
