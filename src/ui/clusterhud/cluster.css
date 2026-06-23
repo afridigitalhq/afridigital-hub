@@ -1,0 +1,15 @@
+.cluster-hud {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: #00ffee;
+  font-family: monospace;
+  background: rgba(0,0,0,0.4);
+  padding: 12px;
+  border: 1px solid #00ffee;
+  box-shadow: 0 0 20px #00ffee;
+}
+
+body {
+  background: radial-gradient(circle, #000010, #000);
+}

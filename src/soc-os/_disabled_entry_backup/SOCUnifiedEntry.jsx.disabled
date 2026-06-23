@@ -1,0 +1,13 @@
+import React, { useState } from "react";
+import SOCBootLoader from "../boot/SOCBootLoader";
+import SOCDESKTOPShell from "../shell/SOCDesktopShell";
+
+export default function SOCUnifiedEntry() {
+  const [booted, setBooted] = useState(false);
+
+  if (!booted) {
+    return <SOCBootLoader onFinish={() => setBooted(true)} />;
+  }
+
+  return <SOCDESKTOPShell />;
+}

@@ -1,0 +1,14 @@
+{
+  "status": "FROZEN",
+  "reason": "pre-render deployment lock",
+  "entry": "src/soc-os/entry/index.js",
+  "boot": "BootPipelineOrchestrator",
+  "ui": "SOCDesktopShell",
+  "rules": [
+    "no duplicate entry modification",
+    "no shell duplication",
+    "no runtime reordering",
+    "no UI compositor overwrite without unlock"
+  ],
+  "unlock": "manual override required"
+}

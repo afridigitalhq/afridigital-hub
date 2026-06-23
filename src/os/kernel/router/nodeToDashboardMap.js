@@ -1,5 +1,5 @@
 export function resolveDashboardFromNode(node) {
-  if (!node) return "afriscan";
+  if (!node) return "warroom";
 
   const type = node.type || node.data?.type;
 
@@ -17,6 +17,6 @@ export function resolveDashboardFromNode(node) {
       return "whatsapp";
 
     default:
-      return "afriscan";
+      return "warroom";
   }
 }

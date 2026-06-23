@@ -13,3 +13,7 @@ export const UnifiedPluginRegistry = [
 
   { id: "control", label: "Control Tower", icon: "🎛", cluster: "core", route: "/admin/control" }
 ];
+
+
+
+

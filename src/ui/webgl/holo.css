@@ -1,0 +1,16 @@
+.holo-dag {
+  background: radial-gradient(circle, #000010, #000);
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+.react-flow__node {
+  box-shadow: 0 0 20px #00fff0, 0 0 60px #0088ff;
+  backdrop-filter: blur(6px);
+  transform-style: preserve-3d;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+}

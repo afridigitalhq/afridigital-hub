@@ -1,0 +1,15 @@
+.cyber-dag {
+  background: radial-gradient(circle, #02020a, #000);
+  filter: contrast(1.2) saturate(1.5);
+}
+
+.react-flow__node {
+  box-shadow: 0 0 15px #00ffee, 0 0 40px #00ffee;
+  border: 1px solid rgba(0,255,255,0.3);
+}
+
+.react-flow__edge-path {
+  stroke: #00ffee;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 8px #00ffee);
+}

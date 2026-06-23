@@ -1,0 +1,36 @@
+.alt-tab-3d {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.alt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  gap: 16px;
+}
+
+.alt-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px;
+  transform: perspective(600px) rotateX(6deg);
+  transition: 0.2s ease;
+}
+
+.alt-card.active {
+  transform: scale(1.05) perspective(600px) rotateX(0deg);
+  box-shadow: 0 0 20px rgba(0,150,255,0.5);
+}
+
+.alt-preview {
+  height: 80px;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 8px;
+  border-radius: 6px;
+}

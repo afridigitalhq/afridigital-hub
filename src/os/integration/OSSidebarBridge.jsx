@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function OSSidebarBridge({ os }) {
+export default function OSShellSidebar({ os }) {
   const [dashboards, setDashboards] = useState([]);
   const [active, setActive] = useState(null);
 

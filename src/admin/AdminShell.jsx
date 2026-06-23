@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import OSShellSidebar from "../../ui/control-center/dag/OSShellSidebar";
 
-export default function AdminShell({ children }) {
+export default function OSRuntimeBootstrap({ children }) {
   const [route, setRoute] = useState("/admin/dag");
 
   const handleNavigate = (path) => {
-    setRoute(path);
+    window.__UI_ROUTE_ONLY__path);
     window.history.pushState({}, "", path);
   };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import ControlCenterShell from "../../orchestrator/ui/ControlCenterShell";
+import OSRuntimeBootstrap from "../../orchestrator/ui/OSRuntimeBootstrap";
 import GlobalHeatMap from "../../orchestrator/heat/GlobalHeatMap";
 import IncidentNarratorPanel from "../../orchestrator/ai/IncidentNarratorPanel";
 
@@ -17,7 +17,7 @@ export default function SOCCommandCenter({
     }}>
 
       {/* MAIN CONTROL CENTER */}
-      <ControlCenterShell dagData={dagData} />
+      <OSRuntimeBootstrap dagData={dagData} />
 
       {/* GLOBAL OVERLAY LAYERS */}
       <GlobalHeatMap zones={heatZones} />

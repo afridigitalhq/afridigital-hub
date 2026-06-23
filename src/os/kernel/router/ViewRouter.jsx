@@ -7,6 +7,8 @@ export default function ViewRouter({ activeDashboard, dagData }) {
   switch (activeDashboard) {
 
     case "afriscan":
+    case "warroom":
+      return <WarRoomShell dagData={dagData} />;
       return <AfriScanControlPlane dag={dagData} />;
 
     case "afribank":

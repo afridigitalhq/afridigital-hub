@@ -1,0 +1,5 @@
+AfriAi → OSOrchestrator
+SOC → WarRoomRuntime
+ControlCenter → UI Shell Layer
+Narrator → AINarratorEngine
+DAG → DAGRuntime

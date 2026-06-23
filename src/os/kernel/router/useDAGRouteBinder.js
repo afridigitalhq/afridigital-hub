@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
  * Maps DAG runtime signals → dashboard switching
  */
 export function useDAGRouteBinder(dagRuntimeEvents) {
-  const [route, setRoute] = useState("afriscan");
+  const [route, setRoute] = useState("war-room");
 
   useEffect(() => {
     if (!dagRuntimeEvents) return;
@@ -16,7 +16,7 @@ export function useDAGRouteBinder(dagRuntimeEvents) {
     switch (latest.type) {
 
       case "FINANCIAL_STRESS":
-        setRoute("afribank");
+        setRoute("warroom");
         break;
 
       case "SECURITY_BREACH":
@@ -32,7 +32,7 @@ export function useDAGRouteBinder(dagRuntimeEvents) {
         break;
 
       default:
-        setRoute("afriscan");
+        setRoute("warroom");
     }
 
   }, [dagRuntimeEvents]);

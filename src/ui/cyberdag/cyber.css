@@ -1,0 +1,20 @@
+.cyber-dag {
+  background: radial-gradient(circle, #050510, #000);
+  height: 100vh;
+}
+
+.react-flow__node {
+  filter: drop-shadow(0 0 10px #00ffcc);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { filter: drop-shadow(0 0 4px #00ffcc); }
+  50% { filter: drop-shadow(0 0 18px #00ffee); }
+  100% { filter: drop-shadow(0 0 4px #00ffcc); }
+}
+
+.react-flow__edge-path {
+  stroke: #00ffee;
+  stroke-width: 2;
+}

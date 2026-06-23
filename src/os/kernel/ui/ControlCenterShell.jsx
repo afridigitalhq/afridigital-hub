@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DynamicSidebar from "../ui/DynamicSidebar";
 import ViewRouter from "../router/ViewRouter";
 
-export default function ControlCenterShell({ dagData }) {
+export default function OSRuntimeBootstrap({ dagData }) {
   const [active, setActive] = useState("afriscan");
 
   return (

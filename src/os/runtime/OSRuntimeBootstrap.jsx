@@ -1,3 +1,4 @@
+// OS GOVERNOR LAYER ENABLED (NON-DESTRUCTIVE HOOK)
 import React, { useEffect, useState } from "react";
 import { bootOS } from "../brain/OSBootLoader";
 import OSShellSidebar from "../sidebar/OSShellSidebar";

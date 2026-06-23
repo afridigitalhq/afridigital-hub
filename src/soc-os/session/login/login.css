@@ -1,0 +1,31 @@
+.soc-login-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle, #0a0f1a, #000);
+  color: white;
+  font-family: system-ui;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-panel {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  min-width: 260px;
+}
+
+.user-card {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.user-card:hover {
+  background: rgba(0,255,200,0.12);
+}

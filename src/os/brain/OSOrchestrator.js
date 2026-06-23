@@ -1,3 +1,4 @@
+// OS_AUTHORITY_ROUTED_THROUGH_ORCHESTRATOR
 export class OSOrchestrator {
   constructor() {
     this.registry = new Map();     // all dashboards

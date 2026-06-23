@@ -1,0 +1,3 @@
+entry_lock=true
+canonical_entry=src/soc-os/entry/index.js
+mode=DEPLOY_FROZEN

@@ -14,3 +14,13 @@ export function resolveHomeDashboard() {
 export function getDashboardById(id) {
   return dashboardRegistry.find(d => d.id === id);
 }
+
+import GovernanceDashboard from "../../governance/dashboard/GovernanceDashboard";
+
+export function bindGovernanceRoute() {
+  return {
+    id: "governance",
+    route: "/admin/governance",
+    component: GovernanceDashboard
+  };
+}
