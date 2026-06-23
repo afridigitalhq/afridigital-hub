@@ -1,0 +1,50 @@
+import express from "express";
+import http from "http";
+import { Server } from "socket.io";
+import cors from "cors";
+
+import { resolveIntent } from "../afriAI/intentResolver.js";
+import { eventEngine } from "../runtime/eventEngine.js";
+import { mapEventToSimulation } from "../runtime/simulationMapper.js";
+import { attachWebSocket } from "../realtime/ws.server.js";
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: { origin: "*" }
+});
+
+attachWebSocket(io);
+
+// 🧠 AfriAI Command Endpoint
+app.post("/api/afriai/command", (req, res) => {
+  const input = req.body.input;
+
+  const intent = resolveIntent(input);
+
+  const event = {
+    ...intent,
+    type: intent.intent,
+    simulation: mapEventToSimulation(intent),
+    timestamp: Date.now()
+  };
+
+  eventEngine.emit(event);
+
+  res.json({
+    success: true,
+    event
+  });
+});
+
+// ❤️ Health Check
+app.get("/health", (_, res) => {
+  res.json({ status: "AFRIAI_RUNTIME_ACTIVE" });
+});
+
+server.listen(4000, () => {
+  console.log("🧠 AfriAI Runtime running on port 4000");
+});
