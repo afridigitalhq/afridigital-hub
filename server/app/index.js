@@ -9,12 +9,20 @@ import { mapEventToSimulation } from "../runtime/simulationMapper.js";
 import { attachWebSocket } from "../realtime/ws.server.js";
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST"]
+}));
+
 app.use(express.json());
 
 const server = http.createServer(app);
+
 const io = new Server(server, {
-  cors: { origin: "*" }
+  cors: {
+    origin: "*"
+  }
 });
 
 attachWebSocket(io);
@@ -40,11 +48,17 @@ app.post("/api/afriai/command", (req, res) => {
   });
 });
 
-// ❤️ Health Check
+// ❤️ Health Check (Render-safe)
 app.get("/health", (_, res) => {
-  res.json({ status: "AFRIAI_RUNTIME_ACTIVE" });
+  res.status(200).json({
+    status: "AFRIAI_RUNTIME_ACTIVE",
+    uptime: process.uptime()
+  });
 });
 
-server.listen(4000, () => {
-  console.log("🧠 AfriAI Runtime running on port 4000");
+// 🚀 CRITICAL FIX: Render PORT SUPPORT
+const PORT = process.env.PORT || 4000;
+
+server.listen(PORT, () => {
+  console.log(`🧠 AfriAI Runtime running on port ${PORT}`);
 });
