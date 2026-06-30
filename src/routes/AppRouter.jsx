@@ -38,7 +38,18 @@ export default function AppRouter() {
               </AdminGuard>
             }
           />
-        </Routes>
+        
+        <Route path="/admin/control-room" element={<ControlRoomApp />} />
+      
+        <Route path="/admin/soc" element={<SOCSystem />} />
+      
+        <Route path="/admin/war-room" element={<WarRoom />} />
+      
+        <Route path="/admin/runtime" element={<RuntimeDashboard />} />
+      
+        <Route path="*" element={<LandingPage />} />
+      </Routes>
+    
       </Layout>
     </BrowserRouter>
   );
