@@ -1,4 +1,4 @@
-import { dashboardRegistry } from "../../os/registry/dashboardRegistry";
+import { dashboardRegistry } from "../../kernel/registry/dashboardRegistry";
 
 export function resolveHomeDashboard() {
   // HOME RULE:

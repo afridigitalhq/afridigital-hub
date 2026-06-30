@@ -1,4 +1,4 @@
-import { dashboardRegistry } from "../../registry/dashboardRegistry";
+import { dashboardRegistry } from "../kernel/registry/dashboardRegistry";
 
 export function registerGovernanceDashboard() {
   dashboardRegistry.push({

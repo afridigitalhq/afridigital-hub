@@ -1,0 +1,12 @@
+{
+  "id": "control-plane",
+  "type": "dashboard",
+  "route": "/admin/control",
+  "sidebar": {
+    "label": "Control Plane",
+    "icon": "🎛"
+  },
+  "permissions": ["admin"],
+  "entry": "./ControlPlane.jsx",
+  "hooks": ["AFRIAI_COMMAND"]
+}
