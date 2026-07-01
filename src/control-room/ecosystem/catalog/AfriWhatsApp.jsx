@@ -1,1 +1,1 @@
-export default function AfriWhatsApp(){ return null; }
+export default function AfriWhatsApp(){ return (; }
