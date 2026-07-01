@@ -1,3 +1,5 @@
+import { dispatchBrainEvent } from "../brain/BrainKernelRegistry.js";
+import { getBrainKernel } from "../brain/BrainKernelRegistry.js";
 import { loadRuntimeModules } from "./modules/loadRuntimeModules.js";
 import { afriRuntimeRegistry } from "../core/runtime/AfriRuntimeRegistry.js";
 
@@ -29,4 +31,12 @@ export async function startAfriRuntime(extraModules = {}, options = {}) {
   return runtimeState;
 }
 
+const brain = getBrainKernel();
+
 export default startAfriRuntime;
+
+
+dispatchBrainEvent("runtime.boot",{
+  source:"src/runtime/startAfriRuntime.js",
+  status:"online"
+});

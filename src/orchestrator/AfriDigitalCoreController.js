@@ -1,3 +1,4 @@
+import { dispatchBrainEvent } from "../brain/BrainKernelRegistry.js";
 // 🧠 AFRIDIGITAL CORE CONTROLLER (MASTER ORCHESTRATOR)
 
 import { pushSOCEvent } from "../soc/pipeline/socPipeline";
@@ -21,3 +22,9 @@ export function AfriDigitalCoreController(event) {
     recommendation: "monitor"
   };
 }
+
+
+dispatchBrainEvent("orchestrator.online",{
+  source:"src/orchestrator/AfriDigitalCoreController.js",
+  status:"online"
+});

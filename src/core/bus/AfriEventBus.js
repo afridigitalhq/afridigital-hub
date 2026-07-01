@@ -1,3 +1,4 @@
+import { dispatchBrainEvent } from "../../brain/BrainKernelRegistry.js";
 // AFRISYNC_CLUSTER_INGESTION_ACTIVE
 class AfriKernelEventBus {
   constructor() {
@@ -68,3 +69,9 @@ class AfriKernelEventBus {
 
 export const AfriBus = new AfriKernelEventBus();
 AfriBus.connect();
+
+
+dispatchBrainEvent("eventbus.online",{
+  source:"src/core/bus/AfriEventBus.js",
+  status:"online"
+});

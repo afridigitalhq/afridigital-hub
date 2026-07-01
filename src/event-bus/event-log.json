@@ -1,0 +1,22 @@
+[
+  {
+    "event": "AFRIAI_INIT",
+    "data": "system boot sequence started",
+    "ts": 1782850221
+  },
+  {
+    "event": "CONTROL_ROOM_SYNC",
+    "data": "modules linked",
+    "ts": 1782850221
+  },
+  {
+    "event": "BOOTSTRAP_OK",
+    "data": "runtime stable",
+    "ts": 1782850221
+  },
+  {
+    "event": "RENDER_LINK",
+    "data": "deployment channel active",
+    "ts": 1782850221
+  }
+]
