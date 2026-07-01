@@ -1,16 +1,17 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import PublicAppRouter from "./public/PublicAppRouter";
-import { isSOCUser } from "./auth/socRoles";
 
 export default function App() {
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
-
-  const isSOC = isSOCUser(user);
-
   return (
-    <BrowserRouter>
-      {isSOC ? <SOCAppRouter /> : <PublicAppRouter />}
-    </BrowserRouter>
+    <div style={{
+      background:"#000",
+      color:"#00ff88",
+      height:"100vh",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+      fontSize:"20px"
+    }}>
+      AFRIDIGITAL SAFE MODE ✔ FRONTEND IS ALIVE
+    </div>
   );
 }
