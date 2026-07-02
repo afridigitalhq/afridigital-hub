@@ -1,54 +1,64 @@
-
-import React, { useEffect, useState } from "react";
-import { liveEngine } from "../../core/live/liveEngine";
-
-/**
- * AfriVisionWindow — Mock CCTV Intelligence Feed
- */
+import React, { useEffect, useRef, useState } from "react";
+import AfriVisionDashboardRuntime from "./afrivision/runtime/AfriVisionDashboardRuntime";
 
 export default function AfriVisionWindow() {
-  const [feed, setFeed] = useState(null);
+  const runtimeRef = useRef(null);
+  const [frame, setFrame] = useState(0);
+  const [status, setStatus] = useState("stopped");
+  const [pulse, setPulse] = useState(false);
 
   useEffect(() => {
-    liveEngine.subscribe("vision", (data) => {
-      setFeed(data);
+    const runtime = new AfriVisionDashboardRuntime();
+    runtimeRef.current = runtime;
+
+    runtime.on("runtime:start", () => setStatus("running"));
+    runtime.on("runtime:stop", () => setStatus("stopped"));
+
+    runtime.on("frame", (data) => {
+      setFrame(data.frame);
+
+      // visual pulse trigger
+      setPulse(true);
+      setTimeout(() => setPulse(false), 120);
     });
+
+    runtime.start();
+
+    return () => runtime.stop();
   }, []);
 
   return (
-    <div className="w-full max-w-md bg-black/60 border border-blue-500 rounded-xl p-4 text-white">
+    <div style={{
+      padding: 20,
+      borderRadius: 14,
+      background: "#070b12",
+      color: "#d6dde6",
+      fontFamily: "monospace",
+      border: "1px solid #1b2a3a"
+    }}>
 
-      <div className="flex justify-between items-center mb-3">
-        <h3 className="text-sm font-bold">AfriVision Live Feed</h3>
-        <span className="text-xs text-green-400">
-          {feed ? "LIVE" : "STANDBY"}
-        </span>
+      <div style={{ fontSize: 18, marginBottom: 10 }}>
+        ⚡ AfriVision Live Core
       </div>
 
-      {/* Fake camera viewport */}
-      <div className="h-40 bg-[#0B1220] rounded-lg flex items-center justify-center relative overflow-hidden">
+      <div>Status: {status}</div>
+      <div>Frame: {frame}</div>
 
-        <div className="absolute inset-0 opacity-20 bg-gradient-to-b from-blue-500 to-transparent animate-pulse" />
+      <div style={{
+        marginTop: 20,
+        height: 20,
+        width: "100%",
+        borderRadius: 8,
+        background: pulse ? "#2bd4ff" : "#111a24",
+        transition: "all 0.12s ease"
+      }} />
 
-        {!feed && (
-          <span className="text-xs text-gray-400">Waiting for signal...</span>
-        )}
-
-        {feed && (
-          <div className="text-center">
-            <div className="text-xs text-green-300">
-              Motion: {feed.motion ? "DETECTED" : "NONE"}
-            </div>
-            <div className="text-[10px] text-gray-400 mt-1">
-              Timestamp: {new Date(feed.timestamp).toLocaleTimeString()}
-            </div>
-          </div>
-        )}
-
-      </div>
-
-      <div className="mt-2 text-[10px] text-gray-400">
-        Feed: MOCK_STREAM • Channel: vision.core.live
+      <div style={{
+        marginTop: 15,
+        fontSize: 12,
+        opacity: 0.75
+      }}>
+        Live runtime heartbeat visualized as pulse stream.
       </div>
 
     </div>
