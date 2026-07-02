@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/kernel/snapshot";
+const API = "API.base/api/kernel/snapshot";
 
 export function useKernelSnapshot() {
   const [kernel, setKernel] = useState(null);

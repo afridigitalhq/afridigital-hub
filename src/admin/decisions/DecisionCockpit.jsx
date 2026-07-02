@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/kernel/decisions";
+const API = "API.base/api/kernel/decisions";
 
 export default function DecisionCockpit() {
   const [decisions, setDecisions] = useState([]);

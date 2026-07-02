@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/ci/live";
+const API = "API.base/api/ci/live";
 
 export function useLiveCI() {
   const [graph, setGraph] = useState({ nodes: [], edges: [] });

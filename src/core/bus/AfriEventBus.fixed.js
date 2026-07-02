@@ -1,3 +1,4 @@
+import WS from "../config/ws"
 // AFRIKERNEL_EVENTBUS_CONTROLLED_BY_DAGRUNTIME
 // AFRIKERNEL_EVENTBUS_CONTROLLED_BY_DAGRUNTIME
 // AFRIKERNEL_INGESTION_SINGLE_PATH_ENFORCED (AFRISYNC → DAGRuntime ONLY)
@@ -18,7 +19,7 @@ class AfriKernelEventBus {
   }
 
   connect() {
-// AFRISYNC_INGEST_ONLY     this.ws = // REDIRECT_TO_AFRISYNC("wss://afridigital-api.onrender.com");
+// AFRISYNC_INGEST_ONLY     this.ws = // REDIRECT_TO_AFRISYNC(WS.base);
 
     this.ws.onopen = () => {
       this.retry = 0;

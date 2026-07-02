@@ -1,3 +1,4 @@
+import WS from "../config/ws"
 // AFRIKERNEL_INGESTION_SINGLE_PATH_ENFORCED (AFRISYNC → DAGRuntime ONLY)
 // AFRIKERNEL_PRODUCTION_MODE_LOCKED (NO ARCHITECTURE CHANGES ALLOWED)
 // AFRIKERNEL_COLLAPSED_SINGLE_RUNTIME_ACTIVE
@@ -15,7 +16,7 @@ export class AfriKernelIngest {
     this.alive = true;
   }
 
-  connect(url = "wss://afridigital-api.onrender.com") {
+  connect(url = WS.base) {
 // AFRISYNC_INGEST_ONLY     this.ws = // REDIRECT_TO_AFRISYNC(url);
 
     this.ws.onmessage = (msg) => {

@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_URL || "https://afridigital-api.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL || "API.base";
 const WS_URL = API_URL.replace("https://", "wss://").replace("http://", "ws://");
 
 export function createLiveDagSocket() {

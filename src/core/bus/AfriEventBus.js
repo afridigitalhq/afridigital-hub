@@ -1,3 +1,4 @@
+import WS from "../config/ws"
 import { dispatchBrainEvent } from "../../brain/BrainKernelRegistry.js";
 // AFRISYNC_CLUSTER_INGESTION_ACTIVE
 class AfriKernelEventBus {
@@ -11,7 +12,7 @@ class AfriKernelEventBus {
   }
 
   connect() {
-// AFRISYNC_INGEST_ONLY     this.ws = new WebSocket("wss://afridigital-api.onrender.com");
+// AFRISYNC_INGEST_ONLY     this.ws = new WebSocket(WS.base);
 
     this.ws.onopen = () => {
       this.retry = 0;

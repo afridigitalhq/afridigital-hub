@@ -1,5 +1,5 @@
 export const AfriTransport = {
-  baseURL: "https://afridigital-api.onrender.com",
+  baseURL: "API.base",
 
   async request(path, body) {
     const res = await fetch(`${this.baseURL}${path}`, {

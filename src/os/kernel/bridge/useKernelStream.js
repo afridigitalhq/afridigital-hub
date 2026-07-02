@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/kernel/ingress";
+const API = "API.base/api/kernel/ingress";
 
 export function useKernelStream() {
   const [events, setEvents] = useState([]);

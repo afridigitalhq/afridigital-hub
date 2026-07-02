@@ -1,4 +1,4 @@
-const API_BASE="https://afridigital-api.onrender.com";
+const API_BASE="API.base";
 export async function sendCommand(payload){
   return fetch(API_BASE+"/api/afriai/command",{
     method:"POST",

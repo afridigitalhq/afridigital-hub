@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/ci/state";
+const API = "API.base/api/ci/state";
 
 export function useGovernanceTelemetry() {
   const [data, setData] = useState({});

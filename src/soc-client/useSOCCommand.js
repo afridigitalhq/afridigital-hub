@@ -1,4 +1,4 @@
-import { SOCCommandOrchestrator } from "../../afridigital-api/core/security/socCommandOrchestrator";
+import { socCommandClient } from "@/clients/socClient";
 
 const orchestrator = new SOCCommandOrchestrator();
 

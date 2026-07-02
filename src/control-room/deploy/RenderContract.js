@@ -1,5 +1,5 @@
 const RenderContract = {
-  baseUrl: "https://afridigital-fmdash.onrender.com",
+  baseUrl: "https://afridigital-hub.onrender.com",
 
   endpoints: {
     health: "/health",

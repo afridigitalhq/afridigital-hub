@@ -1,3 +1,4 @@
+import WS from "../config/ws"
 // AFRIKERNEL_INGESTION_SINGLE_PATH_ENFORCED (AFRISYNC → DAGRuntime ONLY)
 // AFRIKERNEL_PRODUCTION_MODE_LOCKED (NO ARCHITECTURE CHANGES ALLOWED)
 // AFRIKERNEL_COLLAPSED_SINGLE_RUNTIME_ACTIVE
@@ -30,7 +31,7 @@ export default function GraphLive() {
 
   useEffect(() => {
     const stream = new GraphStream(
-      "wss://afridigital-api.onrender.com",
+      WS.base,
       (data) => {
         setGraph(prev => {
           const nodes = data.nodes || prev.nodes;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/ci/deploy-requests";
+const API = "API.base/api/ci/deploy-requests";
 
 export function useDeployRequests() {
   const [requests, setRequests] = useState([]);

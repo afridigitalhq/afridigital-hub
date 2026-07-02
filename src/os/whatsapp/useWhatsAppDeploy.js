@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/whatsapp/deploy";
+const API = "API.base/api/whatsapp/deploy";
 
 export function useWhatsAppDeploy() {
   const [result, setResult] = useState(null);

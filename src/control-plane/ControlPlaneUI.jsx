@@ -1,3 +1,4 @@
+import WS from "../config/ws"
 import PhysicsDAG from "./dag/PhysicsDAG";
 import React, { useEffect, useState } from "react";
 
@@ -6,7 +7,7 @@ export default function ControlPlaneUI() {
   const [status, setStatus] = useState("LIVE");
 
   useEffect(() => {
-    const ws = new WebSocket("wss://afridigital-api.onrender.com");
+    const ws = new WebSocket(WS.base);
 
     ws.onmessage = (msg) => {
       try {

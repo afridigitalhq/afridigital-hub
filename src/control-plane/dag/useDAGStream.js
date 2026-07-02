@@ -1,10 +1,11 @@
+import WS from "../config/ws"
 import { useEffect, useState } from "react";
 
 export default function useDAGStream() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const ws = new WebSocket("wss://afridigital-api.onrender.com");
+    const ws = new WebSocket(WS.base);
 
     ws.onmessage = (msg) => {
       const data = JSON.parse(msg.data);

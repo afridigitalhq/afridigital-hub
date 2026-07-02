@@ -1,7 +1,8 @@
+import WS from "../config/ws"
 import { useEffect, useState } from "react";
 
-const WS = "wss://afridigital-api.onrender.com/ws/flags";
-const API = "https://afridigital-api.onrender.com/api/flags";
+const WS = "WS.base/ws/flags";
+const API = "API.base/api/flags";
 
 export function useLiveFeatureFlags() {
   const [flags, setFlags] = useState({});

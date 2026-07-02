@@ -15,7 +15,7 @@
   }
 };
 
-const BASE = "https://afridigital-api.onrender.com";
+const BASE = "API.base";
 
 export async function fetchHealth() {
   const res = await fetch(`${BASE}/health`);

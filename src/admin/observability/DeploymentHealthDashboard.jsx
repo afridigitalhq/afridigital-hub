@@ -5,7 +5,7 @@ export default function DeploymentHealthDashboard() {
   const [frontend, setFrontend] = useState("checking");
 
   useEffect(() => {
-    fetch("https://afridigital-api.onrender.com")
+    fetch("API.base")
       .then(() => setBackend("🟢 Backend Online"))
       .catch(() => setBackend("🔴 Backend Offline"));
 

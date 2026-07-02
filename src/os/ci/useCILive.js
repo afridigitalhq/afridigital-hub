@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api/ci/evaluate";
+const API = "API.base/api/ci/evaluate";
 
 export function useCILive() {
   const [ci, setCI] = useState({});

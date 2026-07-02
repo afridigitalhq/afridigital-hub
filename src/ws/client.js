@@ -1,5 +1,6 @@
+import WS from "../config/ws"
 import { _validateAfriAIResponse, _safeParseAfriAI } from "../core/afriai/bootstrap.js";
-export const WS_URL = "wss://afridigital-api.onrender.com";
+export const WS_URL = WS.base;
 
 export class WSClient {
   constructor() {

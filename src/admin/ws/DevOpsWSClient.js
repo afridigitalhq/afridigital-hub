@@ -1,3 +1,4 @@
+import WS from "../config/ws"
 class DevOpsWSClient {
   constructor() {
     this.ws = null;
@@ -6,7 +7,7 @@ class DevOpsWSClient {
 
   connect() {
     try {
-      this.ws = new WebSocket("wss://afridigital-api.onrender.com");
+      this.ws = new WebSocket(WS.base);
 
       this.ws.onmessage = (event) => {
         const data = JSON.parse(event.data);

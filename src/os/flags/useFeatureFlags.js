@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://afridigital-api.onrender.com/api";
+const API = "API.base/api";
 
 export function useFeatureFlags() {
   const [flags, setFlags] = useState({});
