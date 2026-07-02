@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "core": {
+    "name": "AfriAI",
+    "role": "Universal Intelligence Layer"
+  },
+  "modules": [
+    {
+      "id": "afrivision",
+      "name": "AfriVision",
+      "category": "Security & Live Monitoring",
+      "adapter": "providers/afrivision"
+    },
+    {
+      "id": "afrimetaworld",
+      "name": "AfriMetaWorld",
+      "category": "Simulation Worlds",
+      "adapter": "providers/afrimetaworld"
+    },
+    {
+      "id": "africommerce",
+      "name": "AfriCommerce",
+      "category": "Marketplace & Trade",
+      "adapter": "providers/africommerce"
+    },
+    {
+      "id": "afriboost",
+      "name": "AfriBoost",
+      "category": "Promotion & Engagement",
+      "adapter": "providers/afriboost"
+    },
+    {
+      "id": "africomm",
+      "name": "AfriComm",
+      "category": "Communication",
+      "adapter": "providers/africomm"
+    },
+    {
+      "id": "afrisports",
+      "name": "AfriSports",
+      "category": "Sports Intelligence",
+      "adapter": "providers/afrisports"
+    }
+  ]
+}
