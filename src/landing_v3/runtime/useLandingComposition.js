@@ -1,11 +1,15 @@
-import useMergedLandingSections from "../composition/merge/mergeLandingSections";
-
 export default function useLandingComposition() {
-  const { sections, loading } = useMergedLandingSections();
-
   return {
-    sections,
-    loading,
-    isReady: !loading
+    loading: false,
+    isReady: true,
+    sections: [
+      { id: "HeroSection" },
+      { id: "EnterpriseOverview" },
+      { id: "AfriVisionShowcase" },
+      { id: "AfriSportsShowcase" },
+      { id: "AfriMetaWorldShowcase" },
+      { id: "CommandDockCTA" },
+      { id: "Footer" }
+    ]
   };
 }
