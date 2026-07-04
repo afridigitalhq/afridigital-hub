@@ -1,4 +1,10 @@
-import useAfriVisionStream from '../useAfriVisionStream';
+
+const MODULES = {
+  vision: 'MODULES.vision',
+  monitor: 'MODULES.monitor'
+};
+
+import useMODULES.monitorStream from '../useMODULES.monitorStream';
 
 /**
  * Stream Registry = control room source map
@@ -6,5 +12,5 @@ import useAfriVisionStream from '../useAfriVisionStream';
  */
 
 export const StreamRegistry = {
-  afrivision: useAfriVisionStream
+  afrimonitor: useMODULES.monitorStream
 };

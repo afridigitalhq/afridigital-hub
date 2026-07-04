@@ -1,8 +1,8 @@
 import React from "react";
-import { useReplayEngine } from "./useReplayEngine";
+import { useSOCReplay } from "./useSOCReplay";
 
 export default function AttackReplayPanel({ stream }) {
-  const { state, rewind, forward } = useReplayEngine(stream);
+  const { state, rewind, forward } = useSOCReplay(stream);
 
   return (
     <div className="glass-panel">

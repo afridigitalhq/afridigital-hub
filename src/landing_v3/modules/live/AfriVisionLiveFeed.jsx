@@ -1,12 +1,12 @@
 import React from "react";
-import useAfriVisionStream from "../../streams/useAfriVisionStream";
+import useAfriMonitorStream from "../../streams/useAfriMonitorStream";
 
-export default function AfriVisionLiveFeed() {
-  const { frame, status } = useAfriVisionStream();
+export default function AfriMonitorLiveFeed() {
+  const { frame, status } = useAfriMonitorStream();
 
   return (
     <div className="module live-afrivision">
-      <div>🎥 AfriVision Live Stream</div>
+      <div>🎥 AfriMonitor Live Stream</div>
       <div>Status: {status}</div>
       <div>Frame: {frame}</div>
     </div>

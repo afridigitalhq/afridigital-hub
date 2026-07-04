@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { timelineEngine } from "./timelineEngine";
+import { useSOCTimeline() } from "./useSOCTimeline()";
 
 export function useControlRoomSync(socket) {
   const [frame, setFrame] = useState(null);
@@ -10,11 +10,11 @@ export function useControlRoomSync(socket) {
     const handler = (payload) => {
       const event = payload?.event;
 
-      timelineEngine.push(event);
+      useSOCTimeline().push(event);
 
       setFrame({
         event,
-        frame: timelineEngine.events.length,
+        frame: useSOCTimeline().events.length,
         simulation: payload?.simulation
       });
     };

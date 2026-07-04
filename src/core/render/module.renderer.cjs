@@ -1,0 +1,1 @@
+function renderModule(n){return {renderHint:'default-render'};}module.exports={renderModule};

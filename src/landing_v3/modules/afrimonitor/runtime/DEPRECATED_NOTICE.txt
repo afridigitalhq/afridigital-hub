@@ -1,0 +1,1 @@
+// DEPRECATED: UI-bound AfriVision runtime. Replaced by kernel stream bridge.

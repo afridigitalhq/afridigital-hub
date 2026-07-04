@@ -1,10 +1,10 @@
 
 import React from "react";
 import { useLiveBindings } from "./useLiveBindings";
-import AfriVisionWindow from "../modules/AfriVisionWindow";
+import AfriMonitorWindow from "../modules/AfriMonitorWindow";
 
 const modules = [
-  { key: "vision", name: "AfriVision", color: "bg-blue-700" },
+  { key: "vision", name: "AfriMonitor", color: "bg-blue-700" },
   { key: "sports", name: "AfriSports", color: "bg-green-700" },
   { key: "meta", name: "AfriMetaWorld", color: "bg-purple-700" }
 ];
@@ -24,8 +24,8 @@ export default function EnhancedEcosystemGrid() {
 
           {/* AFRIVISION — FULL WINDOW EMBED */}
           <div className={`${modules[0].color} p-4 rounded-2xl`}>
-            <h3 className="text-lg font-semibold mb-3">AfriVision</h3>
-            <AfriVisionWindow />
+            <h3 className="text-lg font-semibold mb-3">AfriMonitor</h3>
+            <AfriMonitorWindow />
           </div>
 
           {/* AFRISPORTS */}

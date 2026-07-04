@@ -28,4 +28,4 @@ class TimelineEngine {
   }
 }
 
-export const timelineEngine = new TimelineEngine();
+export const useSOCTimeline() = new TimelineEngine();
