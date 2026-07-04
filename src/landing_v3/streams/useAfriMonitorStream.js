@@ -1,37 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect,useState } from "react";
+import { AFRI_WS } from "../../../core/ws/AfriMonitorSocket";
+import CameraFeedStore from "../modules/afrimonitor/store/CameraFeedStore";
 
-const WS_URL = "wss://afridigital-api.onrender.com/ws/afrivision";
-
-export default function useAfriMonitorStream() {
-  const [frame, setFrame] = useState(0);
-  const [status, setStatus] = useState("connecting");
-
-  useEffect(() => {
-    const socket = new WebSocket(WS_URL);
-
-    socket.onopen = () => {
-      setStatus("live");
-    };
-
-    socket.onmessage = (event) => {
-      try {
-        const data = JSON.parse(event.data);
-        if (data.type === "frame") {
-          setFrame(data.frame);
-        }
-      } catch (e) {}
-    };
-
-    socket.onclose = () => {
-      setStatus("disconnected");
-    };
-
-    socket.onerror = () => {
-      setStatus("error");
-    };
-
-    return () => socket.close();
-  }, []);
-
-  return { frame, status };
+export default function useAfriMonitorStream(){
+const [status,setStatus]=useState("connecting");
+useEffect(()=>{
+const socket=new WebSocket(AFRI_WS);
+socket.onopen=()=>setStatus("live");
+socket.onmessage=(event)=>{try{const data=JSON.parse(event.data);if(data.type==="camera-frame"){CameraFeedStore.updateFeed({id:data.cameraId,zone:data.zone,...data.frame});}}catch{}};
+socket.onclose=()=>setStatus("disconnected");
+socket.onerror=()=>setStatus("error");
+return()=>socket.close();
+},[]);
+return{status};
 }

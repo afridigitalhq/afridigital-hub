@@ -5,7 +5,6 @@ export const AFRI_RUNTIME_MODULES = [
   "devops",
   "commanddock",
   "dashboard",
-  "afrivision",
   "afrimetaworld",
   "africommerce",
   "afriboost",

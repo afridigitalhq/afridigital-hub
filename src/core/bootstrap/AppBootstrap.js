@@ -1,5 +1,3 @@
-import { startAfriVisionStream } from "../afrivision/bootstrap/startAfriVisionStream";
-
 class AppBootstrap {
   constructor() {
     this.started = false;
@@ -7,12 +5,7 @@ class AppBootstrap {
 
   start() {
     if (this.started) return;
-
     this.started = true;
-
-    // Register ecosystem modules
-    startAfriVisionStream();
-
     console.log("🟢 AfriDigital App Bootstrap Complete");
   }
 }
@@ -20,4 +13,3 @@ class AppBootstrap {
 const appBootstrap = new AppBootstrap();
 
 export default appBootstrap;
-

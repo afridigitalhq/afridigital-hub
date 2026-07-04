@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const WS_URL = "wss://afridigital-api.onrender.com/ws/afrivision";
+const WS_URL = "import { AFRI_WS } from "@/core/ws/AfriMonitorSocket"";
 
 export default function useAfriMonitorStream() {
   const [frame, setFrame] = useState(0);

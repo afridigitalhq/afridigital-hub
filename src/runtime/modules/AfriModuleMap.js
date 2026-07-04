@@ -3,7 +3,6 @@ export const AFRI_MODULE_MAP = {
   devops: () => import("../../features/devops/index.js"),
   commanddock: () => import("../../features/commanddock/index.js"),
   dashboard: () => import("../../features/dashboard/index.js"),
-  afrivision: () => import("../../features/afrivision/index.js"),
   afrimetaworld: () => import("../../features/afrimetaworld/index.js"),
   africommerce: () => import("../../features/africommerce/index.js"),
   afriboost: () => import("../../features/afriboost/index.js"),

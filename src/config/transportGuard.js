@@ -5,8 +5,8 @@ function assertWSBase() {
 
   if (!base) throw new Error("WS.base missing");
 
-  if (!base.startsWith("ws://") && !base.startsWith("wss://")) {
-    throw new Error("INVALID WS.base — must be ws:// or wss://");
+  if (!base.startsWith("AFRI_WS_GATEWAY") && !base.startsWith("wss://")) {
+    throw new Error("INVALID WS.base — must be AFRI_WS_GATEWAY or wss://");
   }
 
   return true;

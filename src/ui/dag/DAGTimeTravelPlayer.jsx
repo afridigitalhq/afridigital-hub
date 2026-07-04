@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
  * - visualizes state per frame
  */
 
-export default function DAGTimeTravelPlayer({ runtime }) {
+export default function DAGAFRI_STATE_PROXYPlayer({ runtime }) {
 
   const [frames, setFrames] = useState([]);
   const [index, setIndex] = useState(0);
@@ -18,7 +18,7 @@ export default function DAGTimeTravelPlayer({ runtime }) {
   useEffect(() => {
     if (!runtime?.buildFrames) return;
 
-    const f = runtime.buildFrames();
+    const f = AFRI_FRAME_PROXY();
     setFrames(f || []);
     setIndex(0);
   }, [runtime]);

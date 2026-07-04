@@ -21,7 +21,7 @@ export default function DAGLiveViewer({ runtime }) {
     if (!runtime) return;
 
     function sync() {
-      const data = runtime.inspectDAG ? runtime.inspectDAG() : null;
+      const data = AFRI_INSPECT_PROXYDAG ? AFRI_INSPECT_PROXYDAG() : null;
       const timeline = runtime.getTimeline ? runtime.getTimeline() : [];
 
       if (data?.snapshot) setEvents(data.snapshot);
@@ -37,7 +37,7 @@ export default function DAGLiveViewer({ runtime }) {
   // ⏪ rollback view
   function rollbackTo(i) {
     if (!runtime?.rollback) return;
-    const state = runtime.rollback(i);
+    const state = AFRI_ROLLBACK_PROXY(i);
     console.log("rollback state:", state);
   }
 

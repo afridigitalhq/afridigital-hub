@@ -5,7 +5,7 @@ import React, { useState } from "react";
  * Windows 11 Task Manager style incident playback system
  */
 
-export default function SOCTimelineReplayEngine({
+export default function SOCTimeline// BLOCKED_ENGINE:AFRI_ENGINE_PROXY({
   incidents = [],
   onSelectEvent
 }) {

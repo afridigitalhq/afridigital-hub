@@ -6,7 +6,7 @@
 // EVENT_SOURCED_KERNEL_ENFORCED (NO DIRECT STATE MUTATION)
 // AFRIKERNEL_AUTHORITY_LOCK_V2 (EVENT LOG → DAGRuntime → RENDER ONLY)
 // TIME_TRAVEL_KERNEL_CONTROLLED
-export class TimeTravelController {
+export class AFRI_STATE_PROXYController {
   constructor(kernel) {
     this.kernel = kernel;
     this.index = 0;

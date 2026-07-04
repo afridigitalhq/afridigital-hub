@@ -24,7 +24,7 @@
 // AFRIDIGITAL_EVENT_SOURCED_DAG_KERNEL_ACTIVE
 import { useState, useEffect } from "react";
 
-export default function TimeTravelUI({ debuggerEngine, onChange }) {
+export default function AFRI_STATE_PROXYUI({ debuggerEngine, onChange }) {
   const [index, setIndex] = useState(0);
 
   const snapshots = debuggerEngine.snapshots;

@@ -1,4 +1,4 @@
-const AfriVisionEngineRaw = require('../afrivision/AfriVisionHybridEngine');
+const AfriVisionEngineRaw = require('../_legacy__legacy_AFRI_MODULE/AfriVisionHybridEngine');
 const { getSystem, getModule } = require('./afri.registry.cjs');
 
 const AfriVisionEngine =

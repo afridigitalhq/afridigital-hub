@@ -30,7 +30,7 @@ export default function GraphV2({ runtime }) {
   useEffect(() => {
     if (!runtime) return;
 
-    const update = () => setGraph(runtime.graph());
+    const update = () => setGraph(AFRI_GRAPH_PROXY());
     update();
 
     const id = setInterval(update, 300);
