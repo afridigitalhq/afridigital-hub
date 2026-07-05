@@ -24,7 +24,6 @@ const EcosystemRegistry = {
   { id:"SOC", name:"SOC" },
   { id:"AfriAI", name:"AfriAI" },
   { id:"AfriBank", name:"AfriBank" },
-  { id:"AfriWhatsApp", name:"AfriWhatsApp" },
   { id:"AfriComm", name:"AfriComm" },
   { id:"AfriVision", name:"AfriVision" },
   { id:"DeviceTracking", name:"Device Tracking" },

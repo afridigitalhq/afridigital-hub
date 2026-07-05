@@ -14,8 +14,6 @@ export default function AfriDigitalShell({ children }) {
       {/* GLOBAL MONETIZATION LAYER */}
       <AfriBoostSidebar />
 
-      {/* PLACEHOLDER: AfriWhatsApp CTA (future injection point) */}
-      <div id="afri-whatsapp-cta" />
     </div>
   );
 }

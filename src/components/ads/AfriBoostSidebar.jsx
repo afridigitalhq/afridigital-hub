@@ -6,7 +6,6 @@ export default function AfriBoostSidebar() {
   const adsByMode = {
     general: [
       { title: "🚀 Welcome to AfriDigital", desc: "Explore the ecosystem" },
-      { title: "💚 AfriWhatsApp", desc: "Connect everything instantly" }
     ],
     sports: [
       { title: "⚽ AfriSports Live", desc: "Watch trending matches" },

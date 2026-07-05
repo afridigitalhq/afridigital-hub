@@ -4,7 +4,6 @@ const ModuleBridge = {
     "SOC",
     "AfriAI",
     "AfriBank",
-    "AfriWhatsApp",
     "AfriComm",
     "AfriVision",
     "DeviceTracking",

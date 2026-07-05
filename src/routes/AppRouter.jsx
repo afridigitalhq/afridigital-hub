@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children, role }) => {
 
 export default function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="">
       <Routes>
 
         {/* 🌍 LANDING */}
