@@ -1,11 +1,11 @@
 const REGISTRY = {
   engine: "AfriVision",
-  ui: "AfriMonitor",
+  ui: "AfriCCTV",
 
   modules: {
     vision: {
       engine: "AfriVision",
-      ui: "AfriMonitor",
+      ui: "AfriCCTV",
       type: "interaction-core",
       role: "ranking + scoring + behavioral stream processor"
     }

@@ -1,0 +1,10 @@
+{
+  "name":"AfriDigital Platform",
+  "flow":["Landing Page","Authentication","User App OS","Admin OS"],
+  "landing":"src/pages/landing/LandingPage.jsx",
+  "auth":"src/pages/auth",
+  "user":"src/pages/user",
+  "admin":"src/pages/admin",
+  "mode":"development",
+  "authRequired":false
+}

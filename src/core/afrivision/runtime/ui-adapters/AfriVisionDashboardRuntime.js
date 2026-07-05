@@ -4,7 +4,7 @@
  * Handles lifecycle, frame loop, module registry, and event dispatch.
  */
 
-export class AfriMonitorDashboardRuntime {
+export class AfriCCTVDashboardRuntime {
   constructor() {
     this.modules = new Map();
     this.listeners = new Map();
@@ -73,4 +73,4 @@ export class AfriMonitorDashboardRuntime {
   }
 }
 
-export default AfriMonitorDashboardRuntime;
+export default AfriCCTVDashboardRuntime;

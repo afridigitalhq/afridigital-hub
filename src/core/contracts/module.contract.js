@@ -1,7 +1,7 @@
 export const ModuleContract = {
   vision: {
     engine: "AfriVision",
-    ui: "AfriMonitor",
+    ui: "AfriCCTV",
     stream: true
   }
 };

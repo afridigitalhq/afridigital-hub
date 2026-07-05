@@ -1,11 +1,11 @@
 export const BRAND = {
   engineName: "AfriVision",
-  productName: "AfriMonitor",
-  uiName: "AfriMonitor",
+  productName: "AfriCCTV",
+  uiName: "AfriCCTV",
 
   featureFlags: {
     afriVision: true,
-    afriMonitor: true,
+    afriCCTV: true,
     devMode: false
   }
 };

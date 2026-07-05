@@ -6,11 +6,11 @@ const lock = fs.readFileSync('src/core/architecture.lock', 'utf8');
 // Core kernel state
 const KERNEL = {
   engine: 'AfriVision',
-  ui: 'AfriMonitor',
+  ui: 'AfriCCTV',
   modules: {
     vision: {
       engine: 'AfriVision',
-      ui: 'AfriMonitor'
+      ui: 'AfriCCTV'
     }
   }
 };
