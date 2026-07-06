@@ -52,7 +52,7 @@ export class IncidentCommander {
 
     if (severity > 5) {
       return [
-        "Increase monitoring frequency",
+        "Increase AfriVision health telemetry",
         "Reduce load on affected subsystem",
         "Activate predictive watch mode"
       ];

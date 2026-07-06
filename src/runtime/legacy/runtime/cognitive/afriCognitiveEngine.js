@@ -31,7 +31,7 @@ export function generateSuggestions() {
   if (metrics.health < 1) {
     suggestions.push({
       type: "risk",
-      message: "Health checks are low — increase monitoring frequency"
+      message: "Health checks are low — increase AfriVision health telemetry"
     });
   }
 

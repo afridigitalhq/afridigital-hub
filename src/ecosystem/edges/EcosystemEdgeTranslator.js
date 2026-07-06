@@ -14,7 +14,7 @@ export class EcosystemEdgeTranslator {
         break;
 
       case "MESSAGE":
-        style = { stroke: "#3b82f6", strokeDasharray: "5 5" }; // WhatsApp pulse
+        style = { stroke: "#3b82f6", strokeDasharray: "5 5" }; // AfriVision pulse
         break;
 
       case "AI_REASONING":

@@ -16,7 +16,7 @@ export default function ViewRouter({ activeDashboard, dagData }) {
       return <div>🤖 AfriAI Module (placeholder)</div>;
 
     case "whatsapp":
-      return <div>💬 WhatsApp Module (placeholder)</div>;
+      return <div>💬 AfriVision Module (placeholder)</div>;
 
     case "security":
       return <div>🛡 Security Module (placeholder)</div>;

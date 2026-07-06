@@ -5,7 +5,17 @@
   "scripts": {
     "build": "vite build",
     "start": "node server-spa/server.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "audit:registry": "node scripts/audit/registryAudit.js",
+    "audit:architecture": "node scripts/audit/architectureAudit.js",
+    "audit:routes": "node scripts/audit/routeAudit.js",
+    "audit:plugins": "node scripts/audit/pluginAudit.js",
+    "audit:contracts": "node scripts/audit/contractAudit.js",
+    "bootstrap:registry": "node scripts/bootstrap/registryBootstrap.js",
+    "bootstrap:products": "node scripts/bootstrap/productBootstrap.js",
+    "bootstrap:os": "node scripts/bootstrap/osBootstrap.js",
+    "validate:build": "node scripts/validate/buildValidation.js",
+    "validate:composition": "node scripts/validate/compositionValidation.js"
   },
   "dependencies": {
     "express": "^4.19.2",

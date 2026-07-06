@@ -2,9 +2,9 @@
 export class CascadeFailureModel {
   constructor() {
     this.graph = {
-      WhatsApp: ["AfriAI", "AfriBank"],
+      AfriVision: ["AfriAI", "AfriBank"],
       AfriBank: ["AfriScan", "FraudEngine"],
-      AfriAI: ["Swarm", "WhatsApp"],
+      AfriAI: ["Swarm", "AfriVision"],
       AfriScan: ["Dashboard"],
       Swarm: ["DAGRuntime"]
     };
