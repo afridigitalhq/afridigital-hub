@@ -1,0 +1,31 @@
+
+> afridigital-hub@1.0.0 prebuild
+> grep -R 'wa.me\|whatsapp://' src && exit 1 || true
+
+
+> afridigital-hub@1.0.0 build
+> npm run prebuild && vite build
+
+
+> afridigital-hub@1.0.0 prebuild
+> grep -R 'wa.me\|whatsapp://' src && exit 1 || true
+
+vite v8.1.0 building client environment for production...
+[2Ktransforming...✓ 95 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                            0.47 kB │ gzip:  0.32 kB
+dist/assets/index-CMZm3nfG.css             7.54 kB │ gzip:  2.13 kB
+dist/assets/africomm-BvYRW9VU.js           0.06 kB │ gzip:  0.08 kB
+dist/assets/afriboost-CNPygam-.js          0.06 kB │ gzip:  0.08 kB
+dist/assets/afrisports-B_6YJpNd.js         0.06 kB │ gzip:  0.08 kB
+dist/assets/africommerce-IL_8hXGU.js       0.07 kB │ gzip:  0.08 kB
+dist/assets/afrimetaworld-DOpQbK96.js      0.07 kB │ gzip:  0.08 kB
+dist/assets/AfriScanWrapper-O6LW5IeL.js    0.27 kB │ gzip:  0.22 kB
+dist/assets/SOCDashboard-D0R90cZm.js       0.65 kB │ gzip:  0.37 kB
+dist/assets/AfriBankView-C9R7dUOX.js       0.76 kB │ gzip:  0.49 kB
+dist/assets/AfriAIDashboard-B0sucQo5.js    2.04 kB │ gzip:  0.79 kB
+dist/assets/AfriCCTVView-B68Mb2cD.js      10.93 kB │ gzip:  3.88 kB
+dist/assets/index-D4qEocoQ.js            250.65 kB │ gzip: 80.26 kB
+
+✓ built in 1.26s
