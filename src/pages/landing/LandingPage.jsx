@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import HeroHighlights from "./hero/HeroHighlights";
+import AfriWhatsappCTA from "../../shared/components/cta/AfriWhatsappCTA";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -47,10 +48,23 @@ export default function LandingPage() {
       </div>
 
       {/* AfriAI ENTRY */}
-      <div style={{ padding:10, border:"1px solid #333", marginBottom:20 }}>
+      <div style={{
+        padding:20,
+        border:"1px solid #00ffcc",
+        borderRadius:16,
+        marginBottom:20,
+        background:"rgba(0,255,204,0.05)"
+      }}>
         <h3>🧠 AfriAI Command Dock</h3>
-        <p>Ask, build, navigate, or execute across ecosystem</p>
+        <p>Ask, build, navigate, or execute across the AfriDigital ecosystem</p>
       </div>
+
+      {/* Official AfriWhatsapp Gateway */}
+      <AfriWhatsappCTA
+        label="💚 Open AfriWhatsapp"
+        context="landing"
+        module="ecosystem"
+      />
 
       {/* PRODUCTS */}
       <h2>💰 Core Products</h2>
