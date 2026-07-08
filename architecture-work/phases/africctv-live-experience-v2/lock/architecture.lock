@@ -1,0 +1,24 @@
+AFRICCTV LIVE EXPERIENCE V2 LOCK
+
+PHASE=africctv-live-experience-v2
+
+FEATURES:
+- Premium live CCTV showcase
+- Multi-camera live mock wall
+- AI detection activity panel
+- Camera health indicators
+- Real-time event feed preview
+- Responsive production landing UI
+- Explore AfriCCTV CTA
+
+BOUNDARY:
+- Landing showcase only
+- No authenticated cameras
+- No live customer streams
+- No frontend surveillance logic
+- Backend owns camera data, analytics and events
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
