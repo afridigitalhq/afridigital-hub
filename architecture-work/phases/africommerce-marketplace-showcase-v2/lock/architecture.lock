@@ -1,0 +1,26 @@
+AFRICOMMERCE MARKETPLACE SHOWCASE V2 LOCK
+
+PHASE=africommerce-marketplace-showcase-v2
+
+FEATURES:
+- AI-powered marketplace showcase
+- Official AfriDigital Store preview
+- Merchant storefront previews
+- Trending products
+- AI shopping prompt
+- Internal ecosystem promotions
+- External sponsored placements
+- Responsive landing experience
+
+BOUNDARY:
+- Landing UI only
+- Public marketplace preview
+- No checkout
+- No cart
+- No merchant dashboard
+- Backend owns catalog, search, ads, analytics and recommendations
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
