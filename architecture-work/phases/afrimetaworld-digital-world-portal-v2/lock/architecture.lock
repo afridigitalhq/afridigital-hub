@@ -1,0 +1,25 @@
+AFRIMETAWORLD DIGITAL WORLD PORTAL V2 LOCK
+
+PHASE=afrimetaworld-digital-world-portal-v2
+
+FEATURES:
+- Interactive digital world preview
+- Build • Learn • Earn showcase
+- Creator economy preview
+- Virtual businesses
+- Community spaces
+- Digital events
+- AfriAI exploration prompt
+- Responsive landing experience
+
+BOUNDARY:
+- Landing UI only
+- Public preview
+- No authenticated creator dashboard
+- No business logic in frontend
+- Backend owns world data, creator economy and experiences
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
