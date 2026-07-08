@@ -1,0 +1,22 @@
+AFRIAI DOCK PUBLIC UI BUILD V1 LOCK
+
+PHASE=afriai-dock-public-ui-build-v1
+
+FEATURES:
+- Public AfriAI gateway interface
+- Premium glass AI surface
+- Prompt interaction layer
+- Microphone visual state
+- Expandable public intelligence cards
+
+BOUNDARY:
+- Landing page only
+- No authenticated user data
+- No admin controls
+- No private notifications
+- UI composition only
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
