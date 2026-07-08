@@ -2,127 +2,46 @@ export default function AfriCCTVPreview({ onExplore }) {
   return (
     <section className="glass-card product-showcase cctv-showcase">
 
-      <div className="showcase-header">
-        <h3>🎥 AfriCCTV AI Monitoring</h3>
-      </div>
+      <h3>🎥 AfriCCTV AI Monitoring</h3>
 
       <p className="showcase-description">
-        Intelligent security monitoring powered by connected AI vision.
+        Monitor your home, business or organization in real time.
       </p>
 
-
-      <div className="cctv-console">
+      <div className="cctv-preview-layout">
 
         <div className="desktop-monitor">
-
-          <div className="device-header">
-            🖥️ Desktop CCTV Console
+          <div className="monitor-top">
+            <span className="live-pill">🔴 LIVE</span>
+            <span>CAM-01</span>
+            <span>08 Jul 2026 • 15:42</span>
           </div>
 
-          <div className="camera-feed">
+          <div className="camera-feed-placeholder"><img src="/mock/office-feed.png" alt="Office CCTV Live Feed" /></div>
 
-            <div className="camera-overlay">
-              <span className="live-badge">
-                🔴 LIVE
-              </span>
-
-              <span>
-                ● Heartbeat Connected
-              </span>
-
-              <span>
-                CAM-01 • Compound View
-              </span>
-
-              <span>
-                08 Jul 2026 • 14:30:22
-              </span>
-            </div>
-
-
-            <div className="compound-scene">
-
-              <div className="compound-building">
-                🏢
-              </div>
-
-              <div className="compound-gate">
-                🚪
-              </div>
-
-              <div className="compound-yard">
-                🚗
-              </div>
-
-              <div className="ai-scan">
-                🧠 AI Vision Scan
-              </div>
-
-            </div>
-
+          <div className="monitor-bottom">
+            <span>REC ● 1080P</span>
+            <span>Connected</span>
           </div>
-
         </div>
 
+        <div className="mobile-monitor">
+          <div className="mobile-live">🔴 LIVE</div>
 
+          <div className="mobile-feed-placeholder"><img src="/mock/compound-feed.jpg" alt="Compound CCTV Live Feed" /></div>
 
-        <div className="mobile-device">
-
-          <div className="device-header">
-            📱 Mobile CCTV
-          </div>
-
-          <div className="mobile-camera-feed">
-
-            <span className="live-badge">
-              🔴 LIVE
-            </span>
-
-            <br />
-
-            🏠
-
-            <br />
-
-            CAM-01
-
-            <br />
-
-            AI Monitoring
-
-          </div>
-
+          <small>CAM-01</small>
         </div>
-
 
       </div>
 
-
-
-      <div className="ai-status-panel">
-
-        🧠 AfriAI Vision Engine
-
-        <br />
-
-        ✓ Object Detection
-
-        <br />
-
-        ✓ Motion Intelligence
-
-        <br />
-
-        ✓ Smart Security Alerts
-
-      </div>
-
-
+      <p className="showcase-summary">
+        View live cameras from desktop and mobile.
+      </p>
 
       <button onClick={onExplore}>
         Explore AfriCCTV
       </button>
-
 
     </section>
   );

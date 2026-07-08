@@ -421,3 +421,170 @@ button:hover {
 }
 
 
+
+/* ===== AfriCCTV Landing Preview ===== */
+
+.cctv-preview-layout{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  margin:24px 0;
+  flex-wrap:wrap;
+}
+
+.desktop-monitor{
+  flex:1;
+  min-width:320px;
+  background:#111827;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.monitor-top,
+.monitor-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 14px;
+  font-size:12px;
+  background:rgba(255,255,255,.05);
+}
+
+.live-pill{
+  color:#ff4d4f;
+  font-weight:700;
+  animation:pulseLive 1.2s infinite;
+}
+
+.camera-feed-placeholder{
+  height:240px;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+    url("/mock/office-feed.png") center/cover no-repeat;
+}
+
+.mobile-monitor{
+  width:150px;
+  background:#111827;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;
+  padding:10px;
+  text-align:center;
+}
+
+.mobile-live{
+  color:#ff4d4f;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:10px;
+  animation:pulseLive 1.2s infinite;
+}
+
+.mobile-feed-placeholder{
+  height:210px;
+  border-radius:14px;
+  background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+    url("/mock/compound-feed.jpg") center/cover no-repeat;
+  margin-bottom:10px;
+}
+
+@keyframes pulseLive{
+  0%,100%{opacity:1;}
+  50%{opacity:.4;}
+}
+
+@media(max-width:768px){
+  .desktop-monitor,
+  .mobile-monitor{
+    width:100%;
+  }
+}
+
+
+/* ===== AfriCCTV Landing Polish ===== */
+
+.cctv-showcase{
+  background:linear-gradient(180deg,#172554,#0f172a);
+}
+
+.cctv-preview-layout{
+  display:flex;
+  gap:22px;
+  align-items:flex-end;
+  justify-content:center;
+  margin:24px 0;
+  flex-wrap:wrap;
+}
+
+.desktop-monitor{
+  position:relative;
+  flex:1;
+  min-width:340px;
+  border-radius:18px;
+  border:6px solid #2b3444;
+  box-shadow:0 20px 45px rgba(0,0,0,.45),0 0 25px rgba(24,119,242,.18);
+  overflow:hidden;
+}
+
+.camera-feed-placeholder{
+  position:relative;
+  height:260px;
+  background:url("/mock/office-feed.png") center/cover no-repeat;
+}
+
+.camera-feed-placeholder::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.05) 0 2px,transparent 2px 5px);
+  opacity:.18;
+  pointer-events:none;
+}
+
+.mobile-monitor{
+  width:165px;
+  border-radius:30px;
+  border:8px solid #1f2937;
+  box-shadow:0 15px 35px rgba(0,0,0,.45),0 0 20px rgba(24,119,242,.18);
+  overflow:hidden;
+}
+
+.mobile-feed-placeholder{
+  height:250px;
+  background:url("/mock/compound-feed.jpg") center/cover no-repeat;
+}
+
+.monitor-top,
+.monitor-bottom{
+  background:rgba(8,15,28,.82);
+  backdrop-filter:blur(8px);
+}
+
+.live-pill,
+.mobile-live{
+  animation:pulseLive 1s infinite;
+}
+
+@media(max-width:768px){
+  .desktop-monitor{
+    min-width:100%;
+  }
+
+  .mobile-monitor{
+    width:180px;
+  }
+}
+
+
+
+.camera-feed-placeholder img,
+.mobile-feed-placeholder img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
