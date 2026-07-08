@@ -1,0 +1,29 @@
+src/pages/landing/LandingPage.jsx:3:import EcosystemMarquee from "./marquee/EcosystemMarquee";
+src/pages/landing/LandingPage.jsx:7:import AfriAIDock from "./intelligence/AfriAIDock";
+src/pages/landing/LandingPage.jsx:9:import LandingFooter from "./footer/LandingFooter";
+src/pages/landing/LandingPage.jsx:26:      {/* ECOSYSTEM MARQUEE */}
+src/pages/landing/LandingPage.jsx:27:      <EcosystemMarquee />
+src/pages/landing/LandingPage.jsx:33:      {/* AfriAI Intelligence */}
+src/pages/landing/LandingPage.jsx:34:      <AfriAIDock />
+src/pages/landing/LandingPage.jsx:39:      {/* FOOTER */}
+src/pages/landing/LandingPage.jsx:40:      <LandingFooter />
+src/pages/landing/footer/LandingFooter.jsx:1:export default function LandingFooter() {
+src/pages/landing/footer/LandingFooter.jsx:3:    <footer className="glass-card landing-footer">
+src/pages/landing/footer/LandingFooter.jsx:11:      <div className="footer-links">
+src/pages/landing/footer/LandingFooter.jsx:12:        <span>🧠 AfriAI</span>
+src/pages/landing/footer/LandingFooter.jsx:20:    </footer>
+src/pages/landing/intelligence/AfriAIDock.jsx:1:export default function AfriAIDock() {
+src/pages/landing/intelligence/AfriAIDock.jsx:4:      <h3>🧠 AfriAI Intelligence</h3>
+src/pages/landing/services/PlatformServices.jsx:5:    { id:"AfriAI", icon:"🧠" },
+src/pages/landing/marquee/EcosystemMarquee.jsx:1:export default function EcosystemMarquee() {
+src/pages/landing/marquee/EcosystemMarquee.jsx:14:    <section className="ecosystem-marquee">
+src/core/registry/AfriSystemContracts.js:5:    AfriAI: "command-core"
+src/core/afriai/AfriAIContext.js:3:export const AfriAIContext = {
+src/core/afriai/useAfriAIRouter.js:2:import { AfriAIContext } from "./AfriAIContext";
+src/core/afriai/useAfriAIRouter.js:8:export default function useAfriAIRouter() {
+src/core/afriai/useAfriAIRouter.js:28:      AfriAIContext.setMode(mode);
+src/core/afriai/AfriAICommandBridge.js:4:bus.on("AFRIAI_COMMAND", ({ data }) => {
+src/core/afriai/AfriAICommandBridge.js:6:  bus.emit("AFRIAI_RESPONSE", { result });
+src/core/shell/AfriDigitalShell.jsx:2:import useAfriAIRouter from "../afriai/useAfriAIRouter";
+src/core/shell/AfriDigitalShell.jsx:7:  useAfriAIRouter();
+src/core/bootstrap/AppBootstrap.js:1:import "../afriai/AfriAICommandBridge";

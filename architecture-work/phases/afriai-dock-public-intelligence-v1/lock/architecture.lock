@@ -1,0 +1,21 @@
+AFRIAI DOCK PUBLIC INTELLIGENCE V1 LOCK
+
+PHASE=afriai-dock-public-intelligence-v1
+
+FEATURES:
+- Public AfriAI gateway
+- Premium prompt interaction
+- Microphone visual interface
+- Expandable public intelligence cards
+
+BOUNDARY:
+- Landing experience only
+- No authenticated user context
+- No private notifications
+- No admin controls
+- No AI engine ownership in UI
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
