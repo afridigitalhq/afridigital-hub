@@ -5,9 +5,7 @@ import TierOneProducts from "./products/TierOneProducts";
 import TierTwoProducts from "./products/TierTwoProducts";
 import AfriAIDock from "./intelligence/AfriAIDock";
 import AfriWhatsappGateway from "./whatsapp/AfriWhatsappGateway";
-import EcosystemDiscovery from "./discovery/EcosystemDiscovery";
 import LandingFooter from "./footer/LandingFooter";
-import PlatformServices from "./services/PlatformServices";
 import "./landing.css";
 
 export default function LandingPage() {
@@ -24,21 +22,15 @@ export default function LandingPage() {
       {/* HERO */}
       <LandingHero navigate={navigate} />
 
+      {/* PRODUCTS */}
+      <TierOneProducts navigate={navigate} />
+      <TierTwoProducts navigate={navigate} />
+
       {/* AfriAI Intelligence */}
       <AfriAIDock />
 
       {/* AfriDigital WhatsApp Gateway */}
       <AfriWhatsappGateway />
-
-      {/* PRODUCTS */}
-      <TierOneProducts navigate={navigate} />
-      <TierTwoProducts navigate={navigate} />
-
-      {/* PLATFORM SERVICES */}
-      <PlatformServices />
-
-      {/* ECOSYSTEM DISCOVERY */}
-      <EcosystemDiscovery />
 
       {/* FOOTER */}
       <LandingFooter />

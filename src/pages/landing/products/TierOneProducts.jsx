@@ -1,46 +1,36 @@
-import ProductCard from "./ProductCard";
+import AfriCommercePreview from "./showcase/AfriCommercePreview";
+import AfriCCTVPreview from "./showcase/AfriCCTVPreview";
+import AfriSportsPreview from "./showcase/AfriSportsPreview";
+import AfriMetaWorldPreview from "./showcase/AfriMetaWorldPreview";
 
-export default function TierOneProducts({navigate}) {
-  const products = [
-    {
-      id:"AfriCommerce",
-      icon:"💰",
-      desc:"Digital commerce ecosystem",
-      route:"/user/modules/AfriCommerce"
-    },
-    {
-      id:"AfriCCTV",
-      icon:"🎥",
-      desc:"Smart security monitoring ecosystem",
-      route:"/user/modules/AfriCCTV"
-    },
-    {
-      id:"AfriSports",
-      icon:"⚽",
-      desc:"Sports experience ecosystem",
-      route:"/user/modules/AfriSports"
-    },
-    {
-      id:"AfriMetaWorld",
-      icon:"🎮",
-      desc:"Virtual world platform",
-      route:"/user/modules/AfriMetaWorld"
-    }
-  ];
-
+export default function TierOneProducts({ navigate }) {
   return (
-    <>
-      <h2 className="section-title">🌟 Tier 1 Products</h2>
+    <section>
 
-      <div className="product-grid">
-        {products.map(product => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            navigate={navigate}
-          />
-        ))}
+      <h2 className="section-title">
+        🌟 Tier 1 Products
+      </h2>
+
+      <div className="product-showcase-grid">
+
+        <AfriCommercePreview
+          onExplore={() => navigate("/user/modules/AfriCommerce")}
+        />
+
+        <AfriCCTVPreview
+          onExplore={() => navigate("/user/modules/AfriCCTV")}
+        />
+
+        <AfriSportsPreview
+          onExplore={() => navigate("/user/modules/AfriSports")}
+        />
+
+        <AfriMetaWorldPreview
+          onExplore={() => navigate("/user/modules/AfriMetaWorld")}
+        />
+
       </div>
-    </>
+
+    </section>
   );
 }
