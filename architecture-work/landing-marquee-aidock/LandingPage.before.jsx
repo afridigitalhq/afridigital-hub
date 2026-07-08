@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import LandingHero from "./hero/LandingHero";
-import HeroHighlights from "./hero/HeroHighlights";
 import LandingNavigation from "./navigation/LandingNavigation";
 import TierOneProducts from "./products/TierOneProducts";
 import TierTwoProducts from "./products/TierTwoProducts";
@@ -22,9 +21,6 @@ export default function LandingPage() {
 
       {/* HERO */}
       <LandingHero navigate={navigate} />
-
-      {/* ECOSYSTEM MARQUEE */}
-      <HeroHighlights />
 
       {/* PRODUCTS */}
       <TierOneProducts navigate={navigate} />

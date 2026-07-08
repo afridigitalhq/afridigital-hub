@@ -1,3 +1,5 @@
+import HeroHighlights from "./HeroHighlights";
+
 export default function LandingHero({ navigate }) {
   return (
     <section className="hero-panel">
@@ -15,6 +17,7 @@ export default function LandingHero({ navigate }) {
         commerce, intelligence, communication and smart services.
       </p>
 
+      <HeroHighlights />
 
       <div className="hero-actions">
 
