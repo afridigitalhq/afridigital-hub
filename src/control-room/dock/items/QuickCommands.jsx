@@ -6,7 +6,7 @@ const COMMANDS={
   ControlRoom:["System Health","Security Scan","Runtime Status","Deploy"],
   AfriSports:["Today's Fixtures","Predictions","Live Matches"],
   AfriCommerce:["Orders","Products","Customers"],
-  AfriVision:["Live Cameras","Alerts","Playback"]
+  AfriCCTV:["Live Cameras","Alerts","Playback"]
 };
 
 export default function QuickCommands(){

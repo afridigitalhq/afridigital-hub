@@ -22,7 +22,7 @@ export default function GlobalNav() {
       <Link to="/" style={btn("/", "Landing")}>🌍 Landing</Link>
       <Link to="/auth" style={btn("/auth", "Auth")}>🔐 Auth</Link>
       <Link to="/app" style={btn("/app", "App")}>🏠 App</Link>
-      <Link to="/adminhomepage" style={btn("/adminhomepage", "Admin")}>🛡️ Admin</Link>
+      <Link to="/admin" style={btn("/admin", "Admin")}>🛡️ Admin</Link>
     </div>
   );
 }

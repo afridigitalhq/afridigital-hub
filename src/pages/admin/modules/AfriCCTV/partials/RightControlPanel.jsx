@@ -1,13 +1,7 @@
 import React from "react";
 
-const cameras = [
-  "AfriDigital Compound",
-  "Large City View Cam",
-  "Living CCTV Live Cam",
-  "Sites Live Monitoring"
-];
 
-export default function RightControlPanel() {
+export default function RightControlPanel({cameras=[]}) {
   return (
     <aside style={{ padding: "16px", borderLeft: "1px solid #2b2b2b" }}>
       <h3>🎮 PTZ Control</h3>

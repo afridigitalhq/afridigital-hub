@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import HeroHighlights from "./hero/HeroHighlights";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -33,6 +34,8 @@ export default function LandingPage() {
       <div style={{ marginBottom:30 }}>
         <h1>🌍 AfriDigital Ecosystem</h1>
         <p>Unified AI-powered digital infrastructure</p>
+
+        <HeroHighlights />
 
         <button onClick={() => navigate("/user")}>
           Enter User OS

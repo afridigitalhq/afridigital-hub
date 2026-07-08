@@ -16,7 +16,7 @@ export default function AfriBoostSidebar() {
       { title: "💰 Boost Your Listings", desc: "Get more buyers fast" }
     ],
     vision: [
-      { title: "🎥 AfriVision Security", desc: "Monitor your environment" },
+      { title: "🎥 AfriCCTV Security", desc: "Monitor your environment" },
       { title: "🛡 Smart Alerts Active", desc: "AI detection system mock" }
     ],
     work: [

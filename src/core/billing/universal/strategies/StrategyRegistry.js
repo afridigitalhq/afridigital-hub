@@ -1,22 +1,20 @@
-import CCTVStrategy from "./CCTVStrategy.js";
-import APIUsageStrategy from "./APIUsageStrategy.js";
-import AfriCommerceStrategy from "./AfriCommerceStrategy.js";
-import AfriWorkStrategy from "./AfriWorkStrategy.js";
-import AfriSportsStrategy from "./AfriSportsStrategy.js";
+import CCTVStrategy from "./strategies/CCTVStrategy";
+import APIUsageStrategy from "./strategies/APIUsageStrategy";
+import AfriCommerceStrategy from "./strategies/AfriCommerceStrategy";
+import AfriSportsStrategy from "./strategies/AfriSportsStrategy";
+import AfriWorkStrategy from "./strategies/AfriWorkStrategy";
+
+const registry = {
+  CCTV: new CCTVStrategy(),
+  API: new APIUsageStrategy(),
+  COMMERCE: new AfriCommerceStrategy(),
+  SPORTS: new AfriSportsStrategy(),
+  WORK: new AfriWorkStrategy()
+};
 
 export default class StrategyRegistry {
-
-  static map = {
-    CCTV: CCTVStrategy,
-    API: APIUsageStrategy,
-    COMMERCE: AfriCommerceStrategy,
-    WORK: AfriWorkStrategy,
-    SPORTS: AfriSportsStrategy
-  };
-
   static resolve(type) {
-    const Strategy = this.map[type];
-    if (!Strategy) return null;
-    return new Strategy();
+    if (!type) return null;
+    return registry[type.toUpperCase()] || null;
   }
 }

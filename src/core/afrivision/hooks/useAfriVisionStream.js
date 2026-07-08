@@ -8,7 +8,7 @@ import AfriVisionRuntime from "../runtime/AfriVisionRuntime";
  * - Outputs grid layout
  */
 
-export default function useAfriCCTVStream(eventSource) {
+export default function useAfriVisionStream(eventSource) {
   const runtimeRef = useRef(null);
   const bufferRef = useRef([]);
   const [layout, setLayout] = useState([]);

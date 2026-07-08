@@ -1,3 +1,4 @@
+// CONTROLLED BY BillingOrchestrator v1 (DO NOT BYPASS)
 import StrategyRegistry from "../strategies/StrategyRegistry.js";
 import UniversalBillingPolicyEngine from "../UniversalBillingPolicyEngine.js";
 import Gatekeeper from "../UniversalBillingGatekeeper.js";
@@ -17,14 +18,15 @@ export default class BillingExecutionPipeline {
     }
 
     // 2. Policy evaluation
-    const policy = PolicyEngine.evaluate(event);
+    const policy = UniversalBillingPolicyEngine.evaluate(event);
     if (!policy) return { status: "blocked", reason: "no_policy" };
 
     // 3. Strategy resolution (single source of truth)
-    const strategy = StrategyRegistry.resolve(policy.type);
+    const strategy = StrategyRegistry.resolve(policy.strategy);
     if (!strategy) return { status: "blocked", reason: "no_strategy" };
 
     // 4. Execute billing logic
-    return strategy.process(event, policy);
+    const result = strategy.process(event, policy);
+    return { result, event }; // forwarded to orchestrator
   }
 }

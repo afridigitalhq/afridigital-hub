@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "npm run prebuild && vite build",
     "start": "node server-spa/server.js",
     "preview": "vite preview",
     "audit:registry": "node scripts/audit/registryAudit.js",
@@ -15,16 +15,19 @@
     "bootstrap:products": "node scripts/bootstrap/productBootstrap.js",
     "bootstrap:os": "node scripts/bootstrap/osBootstrap.js",
     "validate:build": "node scripts/validate/buildValidation.js",
-    "validate:composition": "node scripts/validate/compositionValidation.js"
+    "validate:composition": "node scripts/validate/compositionValidation.js",
+    "prebuild": "grep -R 'wa.me\\|whatsapp://' src && exit 1 || true"
   },
   "dependencies": {
     "express": "^4.19.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-icons": "^5.7.0",
     "react-router-dom": "^7.18.1",
     "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
+    "eslint": "^10.6.0",
     "vite": "^8.1.0"
   }
 }

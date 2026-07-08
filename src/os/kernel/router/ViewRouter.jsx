@@ -1,27 +1,18 @@
 import React from "react";
+import { resolveAdminPlugin } from "../../../plugins/admin/adminPluginRegistry";
 
+export default function ViewRouter({ activeDashboard }) {
+  const plugin = resolveAdminPlugin(activeDashboard);
 
-export default function ViewRouter({ activeDashboard, dagData }) {
-
-  switch (activeDashboard) {
-
-    case "afriscan":
-    case "warroom":
-      return <WarRoomShell dagData={dagData} />;
-
-    case "afribank":
-      return <div>🏦 AfriBank Module (placeholder)</div>;
-
-    case "afriai":
-      return <div>🤖 AfriAI Module (placeholder)</div>;
-
-    case "whatsapp":
-      return <div>💬 AfriVision Module (placeholder)</div>;
-
-    case "security":
-      return <div>🛡 Security Module (placeholder)</div>;
-
-    default:
-      return <div>🧠 Unknown Module</div>;
+  if (!plugin) {
+    return <div>🧠 Workspace not found.</div>;
   }
+
+  const Component = plugin.component;
+
+  return (
+    <React.Suspense fallback={<div>Loading workspace...</div>}>
+      <Component />
+    </React.Suspense>
+  );
 }

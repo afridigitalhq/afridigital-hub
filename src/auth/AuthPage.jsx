@@ -7,7 +7,7 @@ export default function AuthPage() {
       <h1>🔐 Authentication</h1>
       <p>Temporary development access.</p>
       <p><Link to="/app">Enter App</Link></p>
-      <p><Link to="/adminhomepage">Admin Home</Link></p>
+      <p><Link to="/admin">Admin Home</Link></p>
     </div>
   );
 }
