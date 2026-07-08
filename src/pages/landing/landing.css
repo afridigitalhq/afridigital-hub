@@ -352,3 +352,72 @@ button:hover {
 
 }
 
+
+/* ================================
+   AFRIDIGITAL DARK BLUE THEME
+================================ */
+
+.landing-shell {
+  min-height:100vh;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(24,119,242,.25),
+      transparent 40%
+    ),
+    #050B18;
+  color:#F5F7FB;
+}
+
+
+.glass-card,
+.product-showcase,
+.service-card {
+  background:
+    rgba(24,119,242,.10);
+
+  border:
+    1px solid rgba(24,119,242,.25);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+  backdrop-filter:
+    blur(18px);
+}
+
+
+.section-title {
+  color:#FFFFFF;
+}
+
+
+.product-showcase button,
+.product-card button {
+  background:#1877F2;
+  color:white;
+  border:none;
+}
+
+
+.product-showcase button:hover {
+  background:#0B5ED7;
+}
+
+
+.showcase-header span,
+.live-badge {
+  color:#25D366;
+}
+
+
+.hero-panel {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(24,119,242,.25),
+      rgba(5,11,24,.8)
+    );
+}
+
+
