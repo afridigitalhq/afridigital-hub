@@ -1,0 +1,22 @@
+AFRIAI DOCK EXPANDABLE CARDS V1 LOCK
+
+PHASE=afriai-dock-expandable-cards-v1
+
+FEATURES:
+- Expandable intelligence surface
+- Internal ecosystem cards
+- External sponsored card surface
+- Notification card surface
+- Revenue-ready presentation contracts
+
+BOUNDARY:
+- AfriAI renders intelligence surfaces
+- Admin controls approved placements
+- Backend owns campaigns, billing and analytics
+- No business logic in frontend
+- No ad engine inside AfriAI UI
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
