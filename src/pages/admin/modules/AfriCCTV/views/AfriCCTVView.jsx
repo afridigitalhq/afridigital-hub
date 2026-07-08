@@ -7,19 +7,24 @@ import CameraGrid from "../partials/CameraGrid";
 import RightControlPanel from "../partials/RightControlPanel";
 import CameraFilmstrip from "../partials/CameraFilmstrip";
 import AfriAIDock from "../partials/AfriAIDock";
+import EvidenceTimelinePanel from "../partials/EvidenceTimelinePanel";
+import PlaybackPanel from "../partials/PlaybackPanel";
 
 export default function AfriCCTVView(){
   const stream = useAfriCCTVStream(new AfriCCTVSocket());
+  const latest = stream.at(-1) || {};
 return(
 <div style={{display:"flex",minHeight:"100vh"}}>
 <LeftSidebar/>
 <div style={{flex:1,display:"flex",flexDirection:"column"}}>
-<TopStatusBar/>
+<TopStatusBar streamSession={latest}/>
 <div style={{display:"flex",flex:1}}>
 <div style={{flex:1,padding:"20px"}}>
 <CameraGrid cameras={stream.flatMap(item => item.cameras || [])}/>
 <CameraFilmstrip cameras={stream.flatMap(item => item.wall?.cameras || [])}/>
 <AfriAIDock observations={stream.flatMap(item => item.aiObservation?.observations || [])}/>
+<EvidenceTimelinePanel evidence={stream.flatMap(item => item.evidence ? [item.evidence] : [])}/>
+<PlaybackPanel playback={stream.flatMap(item => item.playback ? [item.playback] : [])}/>
 </div>
 <RightControlPanel cameras={stream.flatMap(item => item.cameras || [])}/>
 </div>

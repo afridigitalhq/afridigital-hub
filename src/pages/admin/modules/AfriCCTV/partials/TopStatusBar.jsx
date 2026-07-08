@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
-export default function TopStatusBar(){
+export default function TopStatusBar({streamSession={}}){
 const [time,setTime]=useState(new Date());
 
 useEffect(()=>{
@@ -13,7 +13,7 @@ return(
 <header style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 24px",background:"#111827",color:"#fff",borderBottom:"1px solid #2b3137"}}>
 <div style={{display:"flex",alignItems:"center",gap:"18px"}}>
 <span style={{padding:"4px 10px",borderRadius:"999px",background:"#7f1d1d",color:"#fff",fontWeight:700}}>🔴 LIVE</span>
-<span style={{color:"#22c55e",fontWeight:600}}>LIVE MONITORING</span>
+<span style={{color:"#22c55e",fontWeight:600}}>LIVE MONITORING</span><span>🟢 {streamSession.heartbeat || "OFFLINE"}</span><span>🆔 {streamSession.frameId || "--"}</span><span>📹 CAM {streamSession.active || "-"}</span>
 <span>{time.toLocaleDateString()}</span>
 <strong>{time.toLocaleTimeString()}</strong>
 </div>
