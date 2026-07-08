@@ -1,0 +1,71 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+PHASE=$2
+
+ROOT=$(pwd)
+
+echo "🚀 AFRIDIGITAL PHASE BOOTSTRAP"
+echo "================================"
+echo "PHASE: $PHASE"
+echo
+
+if [ -z "$PHASE" ]; then
+  echo "❌ Missing phase name"
+  exit 1
+fi
+
+DIR="architecture-work/phases/$PHASE"
+
+mkdir -p "$DIR"/{audit,ownership,validation,lock}
+
+echo "🔍 AUDIT STARTED" | tee "$DIR/audit/status.lock"
+
+grep -Rni "AfriAI\|Dock\|Footer\|Marquee" src/pages/landing src/core  \
+--include="*.jsx" --include="*.js" \
+> "$DIR/audit/component-map.txt" 2>/dev/null || true
+
+echo "🟢 OWNERSHIP MAP GENERATED" | tee "$DIR/ownership/status.lock"
+
+npm run validate:composition > "$DIR/validation/composition.log" 2>&1
+
+if [ $? -eq 0 ]; then
+ echo "✅ Composition validation PASS"
+else
+ echo "❌ Composition validation FAILED"
+ exit 1
+fi
+
+npm run build > "$DIR/validation/build.log" 2>&1
+
+if [ $? -eq 0 ]; then
+ echo "✅ Build PASS"
+else
+ echo "❌ Build FAILED"
+ exit 1
+fi
+
+cat > "$DIR/lock/architecture.lock" <<LOCK
+AFRIDIGITAL PHASE LOCK
+
+PHASE=$PHASE
+
+RULES:
+- Single responsibility modules
+- Frontend renders UI only
+- Backend owns business logic
+- No duplicate ownership
+- No global UI injection
+- Validation completed
+LOCK
+
+echo "🔒 ARCHITECTURE LOCK CREATED"
+
+echo
+echo "📊 ARCHITECTURE SCORE"
+echo "====================="
+echo "Composition: PASS"
+echo "Build: PASS"
+echo "Ownership: RECORDED"
+
+echo
+echo "🌿 READY FOR GIT CHECKPOINT"

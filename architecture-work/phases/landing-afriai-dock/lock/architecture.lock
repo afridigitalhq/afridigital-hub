@@ -1,0 +1,11 @@
+AFRIDIGITAL PHASE LOCK
+
+PHASE=landing-afriai-dock
+
+RULES:
+- Single responsibility modules
+- Frontend renders UI only
+- Backend owns business logic
+- No duplicate ownership
+- No global UI injection
+- Validation completed
