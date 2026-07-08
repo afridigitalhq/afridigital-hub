@@ -1,0 +1,17 @@
+AFRIAI DOCK UI V2 LOCK
+
+OWNER=Landing AfriAIDock
+MODE=Docked Expandable Intelligence UI
+
+RULES:
+- UI presentation only
+- No AI engine ownership
+- No backend business logic
+- No global shell injection
+- Voice UI reserved for integration layer
+- Expandable cards owned by dock UI
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
