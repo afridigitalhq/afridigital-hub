@@ -1,0 +1,24 @@
+AFRICOMMERCE PRODUCTION SHOWCASE V1 LOCK
+
+PHASE=africommerce-production-showcase-v1
+
+FEATURES:
+- AI-powered marketplace showcase
+- Featured products carousel
+- Trending categories
+- Verified merchant highlights
+- Sponsored products (clearly labelled)
+- AI product discovery entry point
+- Responsive production landing UI
+
+BOUNDARY:
+- Landing showcase only
+- No checkout flow
+- No seller dashboard
+- No business logic in frontend
+- Backend owns products, pricing, inventory, ads and recommendations
+
+Validation completed
+Composition PASS
+Build PASS
+Ownership recorded
