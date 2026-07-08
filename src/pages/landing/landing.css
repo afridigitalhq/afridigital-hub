@@ -588,3 +588,53 @@ button:hover {
   display:block;
   object-fit:cover;
 }
+
+/* ================================
+   ECOSYSTEM MARQUEE
+================================ */
+
+.landing-shell {
+  overflow-x: hidden;
+}
+
+.ecosystem-marquee {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  contain: layout paint;
+  margin: 30px 0;
+  border-radius: 18px;
+  border: 1px solid rgba(0,255,204,0.2);
+  background: rgba(255,255,255,0.05);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  padding: 16px 0;
+  color: #67e8f9;
+  font-weight: 600;
+  will-change: transform;
+  animation: ticker 28s linear infinite;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ticker-dot {
+  margin: 0 16px;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
