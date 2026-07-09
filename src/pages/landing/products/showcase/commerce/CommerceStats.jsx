@@ -1,0 +1,1 @@
+export default function CommerceStats(){return(<div className="commerce-stats"><div className="stat-card"><strong>12.4K</strong><small>Products</small></div><div className="stat-card"><strong>2.8K</strong><small>Sellers</small></div><div className="stat-card"><strong>98.7%</strong><small>Uptime</small></div></div>);}

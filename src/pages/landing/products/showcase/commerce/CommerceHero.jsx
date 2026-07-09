@@ -1,0 +1,1 @@
+export default function CommerceHero(){return(<div className="commerce-hero"><div><h3>🛒 AfriCommerce</h3><p>AI-powered digital marketplace</p></div><span className="status-pill">🟢 LIVE</span></div>);}
