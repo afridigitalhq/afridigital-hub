@@ -1,21 +1,16 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import useAfriAIRouter from "../afriai/useAfriAIRouter";
 import AfriBoostSidebar from "../../components/ads/AfriBoostSidebar";
 
 export default function AfriDigitalShell({ children }) {
+
   useAfriAIRouter();
-
-  const { pathname } = useLocation();
-
-  const showSidebar =
-    pathname.startsWith("/user") ||
-    pathname.startsWith("/admin");
 
   return (
     <div>
       {children}
-      {showSidebar && <AfriBoostSidebar />}
+
+      <AfriBoostSidebar />
     </div>
   );
 }

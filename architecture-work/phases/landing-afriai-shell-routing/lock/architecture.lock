@@ -1,0 +1,3 @@
+LANDING_AFRIAI_SHELL_ROUTING
+RULE=Hide AfriBoostSidebar on Landing only
+KEEP=User OS, Admin OS
