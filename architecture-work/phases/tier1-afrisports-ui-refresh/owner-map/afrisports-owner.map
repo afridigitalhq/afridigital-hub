@@ -1,0 +1,34 @@
+src/core/registry/AfriSystemContracts.js:14:    tier1: ["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld"],
+src/core/live/liveEngine.L20.backup.js:39:    // AfriSports mock ticker
+src/core/billing/universal/strategies/AfriSportsStrategy.js:1:export default class AfriSportsStrategy {
+src/core/billing/universal/strategies/StrategyRegistry.js:4:import AfriSportsStrategy from "./strategies/AfriSportsStrategy";
+src/core/billing/universal/strategies/StrategyRegistry.js:11:  SPORTS: new AfriSportsStrategy(),
+src/pages/landing/hero/HeroHighlights.jsx:6:    "⚽ AfriSports Match Center Ready",
+src/pages/landing/footer/partials/FooterEcosystemMap.jsx:1:export default function FooterEcosystemMap(){return(<section><h4>🚀 Products</h4><div>🧠 AfriAI<br/>🎥 AfriCCTV<br/>💰 AfriCommerce<br/>⚽ AfriSports<br/>🎮 AfriMetaWorld<br/>💚 AfriWhatsapp<br/>📡 AfriComm<br/>🚀 AfriBoost</div></section>);}
+src/pages/landing/products/TierOneProducts.jsx:3:import AfriSportsPreview from "./showcase/AfriSportsPreview";
+src/pages/landing/products/TierOneProducts.jsx:24:        <AfriSportsPreview
+src/pages/landing/products/TierOneProducts.jsx:25:          onExplore={() => navigate("/user/modules/AfriSports")}
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:1:import SportsHero from "./sports/SportsHero";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:2:import SportsScoreboard from "./sports/SportsScoreboard";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:3:import SportsFixtures from "./sports/SportsFixtures";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:4:import SportsCTA from "./sports/SportsCTA";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:6:export default function AfriSportsPreview({ onExplore }) {
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:9:      <SportsHero />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:10:      <SportsScoreboard />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:11:      <SportsFixtures />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:12:      <SportsCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsScoreboard.jsx:1:export default function SportsScoreboard(){return(<div className="sports-scoreboard"><div className="score-card"><strong>Lions FC</strong><span>2</span></div><div className="score-card"><strong>Eagles FC</strong><span>1</span></div><small>76' • Second Half</small></div>);}
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:1:export default function SportsFixtures(){return(<div className="sports-fixtures"><div>📅 Panthers vs Warriors • 18:00</div><div>📅 United vs Rangers • 20:00</div><div>🏆 Weekend League Fixtures Ready</div></div>);}
+src/pages/landing/products/showcase/sports/SportsCTA.jsx:1:export default function SportsCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriSports →</button>);}
+src/pages/landing/marquee/EcosystemMarquee.jsx:4:    "⚽ AfriSports Match Center Ready",
+src/pages/user/modules/AfriSports/index.jsx:3:export default function AfriSports() {
+src/pages/user/modules/AfriSports/index.jsx:6:      ⚽ <h3>AfriSports Module</h3>
+src/control-room/dock/items/QuickCommands.jsx:7:  AfriSports:["Today's Fixtures","Predictions","Live Matches"],
+src/control-room/ecosystem/catalog/AfriSports.jsx:1:export default function AfriSports(){ return null; }
+src/control-room/integrations/ModuleBridge.jsx:13:    "AfriSports"
+src/plugins/user/userPluginRegistry.js:9:const AfriSports = lazy(() => import("../../features/afrisports"));
+src/plugins/user/userPluginRegistry.js:21:    name: "AfriSports",
+src/plugins/user/userPluginRegistry.js:22:    component: AfriSports,
+src/components/ads/AfriBoostSidebar.jsx:11:      { title: "⚽ AfriSports Live", desc: "Watch trending matches" },
+src/userhome/UserAppOSShell.json:4:  "products":["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld","AfriBoost","AfriTracker","AfriTicking","AfriLove","AfriEducation","AfriLogistics","AfriWork"],

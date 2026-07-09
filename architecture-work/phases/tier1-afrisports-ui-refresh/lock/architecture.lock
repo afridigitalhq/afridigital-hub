@@ -1,0 +1,4 @@
+PHASE=tier1-afrisports-ui-refresh
+STATUS=OWNER_MAP_COMPLETE
+LAYOUT=Hero,MatchSlate,AIAnalysis,Stats,CTA
+STYLE=Glass Ecosystem

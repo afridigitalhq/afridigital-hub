@@ -1,16 +1,14 @@
 import SportsHero from "./sports/SportsHero";
-import SportsFixtures from "./sports/SportsFixtures";
-import SportsAnalysis from "./sports/SportsAnalysis";
 import SportsScoreboard from "./sports/SportsScoreboard";
+import SportsFixtures from "./sports/SportsFixtures";
 import SportsCTA from "./sports/SportsCTA";
 
 export default function AfriSportsPreview({ onExplore }) {
   return (
-    <section className="glass-card product-showcase">
+    <section className="glass-card product-showcase sports-showcase premium-showcase">
       <SportsHero />
-      <SportsFixtures />
-      <SportsAnalysis />
       <SportsScoreboard />
+      <SportsFixtures />
       <SportsCTA onExplore={onExplore} />
     </section>
   );
