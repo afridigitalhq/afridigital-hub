@@ -1,0 +1,9 @@
+src/core/registry/AfriSystemContracts.js:16:      earning: ["AfriWork","AfriLogistics","AfriBoost","AfriEducation","AfriTracker","AfriTicking"],
+src/core/billing/universal/strategies/AfriWorkStrategy.js:1:export default class AfriWorkStrategy {
+src/core/billing/universal/strategies/StrategyRegistry.js:5:import AfriWorkStrategy from "./strategies/AfriWorkStrategy";
+src/core/billing/universal/strategies/StrategyRegistry.js:12:  WORK: new AfriWorkStrategy()
+src/pages/landing/products/TierTwoProducts.jsx:7:      id:"AfriWork",
+src/pages/landing/products/TierTwoProducts.jsx:10:      route:"/user/modules/AfriWork"
+src/pages/user/modules/AfriWork/index.jsx:1:export default function AfriWork(){return null;}
+src/components/ads/AfriBoostSidebar.jsx:23:      { title: "💼 AfriWork Hub", desc: "Find remote jobs instantly" },
+src/userhome/UserAppOSShell.json:4:  "products":["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld","AfriBoost","AfriTracker","AfriTicking","AfriLove","AfriEducation","AfriLogistics","AfriWork"],
