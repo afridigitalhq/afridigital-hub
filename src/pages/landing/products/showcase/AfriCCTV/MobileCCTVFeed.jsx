@@ -1,14 +1,14 @@
 import CameraFeed from "./CameraFeed";
 
-export default function MobileCCTVFeed() {
+export default function MobileCCTVFeed({ runtime }) {
   return (
     <div className="mobile-cctv-feed">
 
       <CameraFeed
-        id="MOBILE-CAM-01"
-        name="Mobile CCTV Feed"
+        id={runtime?.cameras?.[0]?.id || "MOBILE-CAM-01"}
+        name={runtime?.cameras?.[0]?.name || "Mobile CCTV Feed"}
         image="/mock/compound-feed.jpg"
-        status="ONLINE"
+        status={runtime?.cameras?.[0]?.status || "ONLINE"}
         recording={true}
       />
 

@@ -5,7 +5,7 @@ import CCTVHeader from "./partials/CCTVHeader";
 import CCTVOperations from "./partials/CCTVOperations";
 import CCTVFooter from "./partials/CCTVFooter";
 
-export default function DesktopCCTVWall() {
+export default function DesktopCCTVWall({ runtime }) {
   const cameras = runtime?.cameras?.length
     ? runtime.cameras
     : [
@@ -25,14 +25,14 @@ export default function DesktopCCTVWall() {
         <div className="desktop-cctv-main">
 
           <div className="desktop-cctv-grid">
-            {AfriCCTVLandingFeeds.slice(0,4).map(feed=>(
+            {cameras.slice(0,4).map(feed=>(
               <CameraFeed
                 key={feed.id}
-                id={feed.id}
-                name={feed.name}
-                image={feed.image}
-                status={feed.status}
-                recording={feed.recording}
+                id={`CAM-0${feed.id}`}
+                name={feed.name || `Camera ${feed.id}`}
+                image={feed.image || "/mock/compound-feed.jpg"}
+                status={feed.status || "ONLINE"}
+                recording={feed.recording || false}
               />
             ))}
           </div>
