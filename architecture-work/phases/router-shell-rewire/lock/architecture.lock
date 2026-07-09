@@ -1,0 +1,4 @@
+ROUTER_SHELL_REWIRE
+RULE=BrowserRouter wraps AfriDigitalShell
+KEEP=Landing Premium Dock
+KEEP=Hide AfriBoost on Landing

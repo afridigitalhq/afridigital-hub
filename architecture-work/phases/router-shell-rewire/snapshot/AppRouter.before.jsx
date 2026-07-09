@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Landing from "../pages/landing/LandingPage";
 import Login from "../pages/auth/Login";
@@ -22,7 +22,8 @@ const ProtectedRoute = ({ children, role }) => {
 
 export default function AppRouter() {
   return (
-    <Routes>
+    <BrowserRouter basename="">
+      <Routes>
 
         {/* 🌍 LANDING */}
         <Route path="/" element={<Landing />} />
@@ -52,5 +53,6 @@ export default function AppRouter() {
         />
 
       </Routes>
+    </BrowserRouter>
   );
 }
