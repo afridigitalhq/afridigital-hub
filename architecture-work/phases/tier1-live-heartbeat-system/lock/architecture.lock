@@ -1,0 +1,4 @@
+PHASE=tier1-live-heartbeat-system
+STATUS=BOOTSTRAPPED
+RULE=Shared heartbeat animation for all operational status indicators
+TARGET=LandingHero,AfriAIStatusBar,AfriCCTV,Commerce,Sports,Boost,Work

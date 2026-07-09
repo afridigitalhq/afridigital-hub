@@ -783,7 +783,3 @@ cursor:pointer;
   }
 }
 
-
-/* ===== AFRIDIGITAL LIVE HEARTBEAT ===== */
-.status-pill,.live-pill,.mobile-live,.online{display:inline-flex;align-items:center;gap:.35rem;animation:afriHeartbeat 1.4s ease-in-out infinite;transform-origin:center;will-change:transform;}
-@keyframes afriHeartbeat{0%{transform:scale(1);}14%{transform:scale(1.08);}28%{transform:scale(1);}42%{transform:scale(1.08);}70%{transform:scale(1);}100%{transform:scale(1);}}
