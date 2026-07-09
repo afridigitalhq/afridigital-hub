@@ -1,22 +1,19 @@
-export default function LandingFooter() {
+import FooterBrand from "./partials/FooterBrand";
+import FooterEcosystemMap from "./partials/FooterEcosystemMap";
+import FooterQuickLinks from "./partials/FooterQuickLinks";
+import FooterContact from "./partials/FooterContact";
+import FooterNewsletter from "./partials/FooterNewsletter";
+import FooterLegal from "./partials/FooterLegal";
+
+export default function LandingFooter(){
   return (
     <footer className="glass-card landing-footer">
-      <h3>🌍 AfriDigital Ecosystem</h3>
-
-      <p>
-        Unified AI-powered digital infrastructure connecting
-        commerce, intelligence, communication and smart services.
-      </p>
-
-      <div className="footer-links">
-        <span>🧠 AfriAI</span>
-        <span>💚 AfriDigital via WhatsApp</span>
-        <span>🔐 Secure Platform</span>
-      </div>
-
-      <small>
-        © {new Date().getFullYear()} AfriDigital. All systems connected.
-      </small>
+      <FooterBrand />
+      <FooterEcosystemMap />
+      <FooterQuickLinks />
+      <FooterContact />
+      <FooterNewsletter />
+      <FooterLegal />
     </footer>
   );
 }
