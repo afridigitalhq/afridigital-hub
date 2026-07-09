@@ -1,21 +1,15 @@
-export default function AfriSportsPreview({onExplore}) {
+import SportsHero from "./sports/SportsHero";
+import SportsScoreboard from "./sports/SportsScoreboard";
+import SportsFixtures from "./sports/SportsFixtures";
+import SportsCTA from "./sports/SportsCTA";
+
+export default function AfriSportsPreview({ onExplore }) {
   return (
-    <section className="glass-card product-showcase">
-      <h3>⚽ AfriSports Match Center</h3>
-
-      <p>Live sports ecosystem experience</p>
-
-      <div className="sports-preview">
-        🟢 LIVE MATCH
-        <br />
-        Team A 2 - 1 Team B
-        <br />
-        📊 Match Statistics
-      </div>
-
-      <button onClick={onExplore}>
-        Explore AfriSports
-      </button>
+    <section className="glass-card product-showcase sports-showcase premium-showcase">
+      <SportsHero />
+      <SportsScoreboard />
+      <SportsFixtures />
+      <SportsCTA onExplore={onExplore} />
     </section>
   );
 }

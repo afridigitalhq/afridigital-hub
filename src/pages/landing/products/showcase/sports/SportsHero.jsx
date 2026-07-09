@@ -1,0 +1,1 @@
+export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}

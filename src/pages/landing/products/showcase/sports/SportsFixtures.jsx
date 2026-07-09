@@ -1,0 +1,1 @@
+export default function SportsFixtures(){return(<div className="sports-fixtures"><div>📅 Panthers vs Warriors • 18:00</div><div>📅 United vs Rangers • 20:00</div><div>🏆 Weekend League Fixtures Ready</div></div>);}
