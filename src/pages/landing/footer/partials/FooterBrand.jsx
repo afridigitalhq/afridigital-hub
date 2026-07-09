@@ -1,1 +1,1 @@
-export default function FooterBrand(){return(<section><h3>🌍 AfriDigital Ecosystem</h3><p>AI-powered digital infrastructure connecting Africa through intelligent products and services.</p></section>);}
+export default function FooterBrand(){return(<section><h3>🌍 AfriDigital</h3><p>Building Africa's intelligent digital ecosystem powered by AI, security, commerce and connected services.</p></section>);}

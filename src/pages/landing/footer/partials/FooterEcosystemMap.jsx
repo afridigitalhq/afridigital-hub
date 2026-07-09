@@ -1,1 +1,1 @@
-export default function FooterEcosystemMap(){return(<section><h4>🗺️ Ecosystem</h4><div>🎥 AfriCCTV • 💰 AfriCommerce • ⚽ AfriSports • 🎮 AfriMetaWorld • 💬 AfriComm • 💚 AfriWhatsapp • 🚀 AfriBoost • 🧠 AfriAI</div></section>);}
+export default function FooterEcosystemMap(){return(<section><h4>🚀 Products</h4><div>🧠 AfriAI<br/>🎥 AfriCCTV<br/>💰 AfriCommerce<br/>⚽ AfriSports<br/>🎮 AfriMetaWorld<br/>💚 AfriWhatsapp<br/>📡 AfriComm<br/>🚀 AfriBoost</div></section>);}
