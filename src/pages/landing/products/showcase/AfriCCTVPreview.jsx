@@ -1,42 +1,31 @@
+import DesktopCCTVWall from "./AfriCCTV/DesktopCCTVWall";
+import MobileCCTVFeed from "./AfriCCTV/MobileCCTVFeed";
+import CCTVStatusPanel from "./AfriCCTV/CCTVStatusPanel";
+
 export default function AfriCCTVPreview({ onExplore }) {
   return (
     <section className="glass-card product-showcase cctv-showcase">
 
-      <h3>🎥 AfriCCTV AI Monitoring</h3>
+      <h3>
+        🎥 AfriCCTV AI Monitoring
+      </h3>
 
       <p className="showcase-description">
         Monitor your home, business or organization in real time.
       </p>
 
-      <div className="cctv-preview-layout">
+      <div className="cctv-desktop-experience">
 
-        <div className="desktop-monitor">
-          <div className="monitor-top">
-            <span className="live-pill">🔴 LIVE</span>
-            <span>CAM-01</span>
-            <span>08 Jul 2026 • 15:42</span>
-          </div>
+        <DesktopCCTVWall />
 
-          <div className="camera-feed-placeholder"><img src="/mock/office-feed.png" alt="Office CCTV Live Feed" /></div>
-
-          <div className="monitor-bottom">
-            <span>REC ● 1080P</span>
-            <span>Connected</span>
-          </div>
-        </div>
-
-        <div className="mobile-monitor">
-          <div className="mobile-live">🔴 LIVE</div>
-
-          <div className="mobile-feed-placeholder"><img src="/mock/compound-feed.jpg" alt="Compound CCTV Live Feed" /></div>
-
-          <small>CAM-01</small>
-        </div>
+        <CCTVStatusPanel />
 
       </div>
 
+      <MobileCCTVFeed />
+
       <p className="showcase-summary">
-        View live cameras from desktop and mobile.
+        Intelligent camera monitoring across desktop and mobile experiences.
       </p>
 
       <button onClick={onExplore}>
