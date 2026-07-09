@@ -1,8 +1,13 @@
 import ProductCard from "./ProductCard";
-import AfriBoostPreview from "./showcase/AfriBoostPreview";
 
 export default function TierTwoProducts({navigate}) {
   const products = [
+    {
+      id:"AfriBoost",
+      icon:"🚀",
+      desc:"Growth and marketing engine",
+      route:"/user/modules/AfriBoost"
+    },
     {
       id:"AfriWork",
       icon:"💼",
@@ -44,10 +49,6 @@ export default function TierTwoProducts({navigate}) {
   return (
     <>
       <h2 className="section-title">🚀 Tier 2 Products</h2>
-
-      <AfriBoostPreview
-        onExplore={() => navigate("/user/modules/AfriBoost")}
-      />
 
       <div className="product-grid">
         {products.map(product => (

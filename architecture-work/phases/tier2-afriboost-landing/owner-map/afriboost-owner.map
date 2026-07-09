@@ -1,0 +1,10 @@
+src/pages/landing/hero/HeroHighlights.jsx:11:    "🚀 AfriBoost Campaigns Ready",
+src/pages/landing/footer/partials/FooterEcosystemMap.jsx:1:export default function FooterEcosystemMap(){return(<section><h4>🚀 Products</h4><div>🧠 AfriAI<br/>🎥 AfriCCTV<br/>💰 AfriCommerce<br/>⚽ AfriSports<br/>🎮 AfriMetaWorld<br/>💚 AfriWhatsapp<br/>📡 AfriComm<br/>🚀 AfriBoost</div></section>);}
+src/pages/landing/products/TierTwoProducts.jsx:6:      id:"AfriBoost",
+src/pages/landing/products/TierTwoProducts.jsx:9:      route:"/user/modules/AfriBoost"
+src/pages/landing/marquee/EcosystemMarquee.jsx:9:    "🚀 AfriBoost Campaigns Ready",
+src/pages/user/modules/AfriBoost/index.jsx:3:export default function AfriBoost() {
+src/pages/user/modules/AfriBoost/index.jsx:6:      🚀 <h3>AfriBoost Module</h3>
+src/control-room/ecosystem/catalog/AfriBoost.jsx:1:export default function AfriBoost(){ return null; }
+src/control-room/integrations/ModuleBridge.jsx:10:    "AfriBoost",
+src/components/ads/AfriBoostSidebar.jsx:4:export default function AfriBoostSidebar() {

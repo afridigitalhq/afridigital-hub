@@ -1,0 +1,8 @@
+PHASE=tier2-afriboost-landing
+STATUS=VALIDATED
+BUILD=npm run build PASS
+COMPOSITION=READY
+ARCHITECTURE=AUDITED
+PRODUCT=AfriBoost Premium Showcase
+LAYOUT=Hero,Preview,Features,CTA
+NEXT=tier2-next-product
