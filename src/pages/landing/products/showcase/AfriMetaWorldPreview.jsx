@@ -1,21 +1,15 @@
-export default function AfriMetaWorldPreview({onExplore}) {
+import MetaWorldHero from "./metaworld/MetaWorldHero";
+import MetaWorldPreview from "./metaworld/MetaWorldPreview";
+import MetaWorldExperiences from "./metaworld/MetaWorldExperiences";
+import MetaWorldCTA from "./metaworld/MetaWorldCTA";
+
+export default function AfriMetaWorldPreview({ onExplore }) {
   return (
     <section className="glass-card product-showcase">
-      <h3>🎮 AfriMetaWorld</h3>
-
-      <p>Virtual world platform</p>
-
-      <div className="metaworld-preview">
-        🌍 Digital Universe Connected
-        <br />
-        🧑‍🚀 Virtual Experiences
-        <br />
-        🚀 Interactive Spaces
-      </div>
-
-      <button onClick={onExplore}>
-        Enter AfriMetaWorld
-      </button>
+      <MetaWorldHero />
+      <MetaWorldPreview />
+      <MetaWorldExperiences />
+      <MetaWorldCTA onExplore={onExplore} />
     </section>
   );
 }

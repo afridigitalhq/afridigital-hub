@@ -1,0 +1,9 @@
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx:1:export default function AfriMetaWorldPreview({onExplore}) {
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx:4:      <h3>🎮 AfriMetaWorld</h3>
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx:17:        Enter AfriMetaWorld
+src/pages/landing/products/showcase/metaworld/MetaWorldHero.jsx:1:export default function MetaWorldHero(){
+src/pages/landing/products/showcase/metaworld/MetaWorldHero.jsx:4:      <h3>🎮 AfriMetaWorld</h3>
+src/pages/landing/products/showcase/metaworld/MetaWorldPreview.jsx:1:export default function MetaWorldPreview(){
+src/pages/landing/products/showcase/metaworld/MetaWorldExperiences.jsx:1:export default function MetaWorldExperiences(){
+src/pages/landing/products/showcase/metaworld/MetaWorldCTA.jsx:1:export default function MetaWorldCTA({onExplore}){
+src/pages/landing/products/showcase/metaworld/MetaWorldCTA.jsx:4:      Enter AfriMetaWorld

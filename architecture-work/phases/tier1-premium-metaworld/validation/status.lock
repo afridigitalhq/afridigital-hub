@@ -1,0 +1,5 @@
+PHASE=tier1-premium-metaworld
+STATUS=VALIDATED
+BUILD=npm run build PASS
+ARCHITECTURE=Hero,WorldPreview,Experiences,CTA
+RULE=One File One Responsibility
