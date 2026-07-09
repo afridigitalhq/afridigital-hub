@@ -1,3 +1,5 @@
+import useAfriCCTVTimestamp from "../../../../../core/africctv/runtime/hooks/useAfriCCTVTimestamp";
+
 export default function CameraFeed({
   id,
   name,
@@ -5,7 +7,7 @@ export default function CameraFeed({
   status = "READY",
   recording = false
 }) {
-  const timestamp = new Date().toLocaleString();
+  const timestamp = useAfriCCTVTimestamp();
 
   return (
     <div className="cctv-camera-feed">
@@ -36,7 +38,13 @@ export default function CameraFeed({
 
         </div>
 
-        <div className="cctv-record-layer">
+        <div
+          className={
+            recording
+              ? "cctv-record-layer cctv-recording-active"
+              : "cctv-record-layer cctv-recording-idle"
+          }
+        >
 
           <span>
             {recording ? "🔴 REC ACTIVE" : "○ STANDBY"}

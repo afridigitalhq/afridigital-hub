@@ -454,7 +454,6 @@ button:hover {
 .live-pill{
   color:#ff4d4f;
   font-weight:700;
-  animation:pulseLive 1.2s infinite;
 }
 
 .camera-feed-placeholder{
@@ -480,7 +479,6 @@ button:hover {
   font-size:12px;
   font-weight:700;
   margin-bottom:10px;
-  animation:pulseLive 1.2s infinite;
 }
 
 .mobile-feed-placeholder{
@@ -492,10 +490,7 @@ button:hover {
   margin-bottom:10px;
 }
 
-@keyframes pulseLive{
-  0%,100%{opacity:1;}
-  50%{opacity:.4;}
-}
+
 
 @media(max-width:768px){
   .desktop-monitor,
@@ -564,10 +559,6 @@ button:hover {
   backdrop-filter:blur(8px);
 }
 
-.live-pill,
-.mobile-live{
-  animation:pulseLive 1s infinite;
-}
 
 @media(max-width:768px){
   .desktop-monitor{
@@ -785,5 +776,9 @@ cursor:pointer;
 
 
 /* ===== AFRIDIGITAL LIVE HEARTBEAT ===== */
-.status-pill,.live-pill,.mobile-live,.online{display:inline-flex;align-items:center;gap:.35rem;animation:afriHeartbeat 1.4s ease-in-out infinite;transform-origin:center;will-change:transform;}
+.status-pill,.online{display:inline-flex;align-items:center;gap:.35rem;animation:afriHeartbeat 1.4s ease-in-out infinite;transform-origin:center;will-change:transform;}
+
+.cctv-recording-active{display:inline-flex;align-items:center;gap:.35rem;animation:afriHeartbeat 1.4s ease-in-out infinite;transform-origin:center;will-change:transform;}
+
+.cctv-recording-idle{display:inline-flex;align-items:center;gap:.35rem;animation:none;}
 @keyframes afriHeartbeat{0%{transform:scale(1);}14%{transform:scale(1.08);}28%{transform:scale(1);}42%{transform:scale(1.08);}70%{transform:scale(1);}100%{transform:scale(1);}}
