@@ -1,0 +1,5 @@
+src/core/registry/AfriSystemContracts.js:16:      earning: ["AfriWork","AfriLogistics","AfriBoost","AfriEducation","AfriTracker","AfriTicking"],
+src/pages/landing/products/TierTwoProducts.jsx:13:      id:"AfriTracker",
+src/pages/landing/products/TierTwoProducts.jsx:16:      route:"/user/modules/AfriTracker"
+src/pages/user/modules/AfriTracker/index.jsx:1:export default function AfriTracker(){return null;}
+src/userhome/UserAppOSShell.json:4:  "products":["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld","AfriBoost","AfriTracker","AfriTicking","AfriLove","AfriEducation","AfriLogistics","AfriWork"],
