@@ -1,0 +1,8 @@
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css
+src/pages/landing/products/showcase/AfriCCTV/data/LandingDashboard.js
+src/core/africctv/live/AfriCCTVLiveClient.js
+src/core/africctv/live/AfriCCTVLiveClient.validate.js

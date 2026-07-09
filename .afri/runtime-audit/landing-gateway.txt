@@ -1,0 +1,9 @@
+Landing Gateway
+================
+✔ Single backend entry point
+✔ WebSocket ready
+✔ Server time ready
+✔ Visitor geolocation ready
+✔ Runtime health ready
+✔ AI events ready
+✔ Camera summary ready

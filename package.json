@@ -16,7 +16,8 @@
     "bootstrap:os": "node scripts/bootstrap/osBootstrap.js",
     "validate:build": "node scripts/validate/buildValidation.js",
     "validate:composition": "node scripts/validate/compositionValidation.js",
-    "prebuild": "grep -R 'wa.me\\|whatsapp://' src && exit 1 || true"
+    "prebuild": "grep -R 'wa.me\\|whatsapp://' src && exit 1 || true",
+    "dev": "vite"
   },
   "dependencies": {
     "express": "^4.19.2",

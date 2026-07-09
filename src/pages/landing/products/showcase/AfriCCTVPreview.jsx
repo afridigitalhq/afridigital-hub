@@ -1,3 +1,4 @@
+import "./AfriCCTV/afri-cctv.css";
 import DesktopCCTVWall from "./AfriCCTV/DesktopCCTVWall";
 import MobileCCTVFeed from "./AfriCCTV/MobileCCTVFeed";
 import CCTVStatusPanel from "./AfriCCTV/CCTVStatusPanel";

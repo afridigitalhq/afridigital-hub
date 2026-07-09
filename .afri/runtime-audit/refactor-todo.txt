@@ -1,0 +1,7 @@
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:7:  status="ONLINE",
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:36:          <div style={{textAlign:"right"}}>
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:1:import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:38:                  status="ONLINE"
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:1:import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:17:              {feed.status === "ONLINE" ? "🔴" : "○"} {feed.id}
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx:11:        status="ONLINE"

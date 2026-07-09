@@ -1,0 +1,8 @@
+Phase: Landing Presentation Refactor
+
+1. Replace inline styles with CSS classes
+2. Replace hardcoded status rendering with StatusDot/StatusChip/LiveIndicator/RecordingIndicator
+3. Use canonical LandingPreviewFeeds import
+4. Keep CameraFeed presentation-only
+5. Runtime owns timestamp/status/recording state
+6. ProviderRegistry remains boundary

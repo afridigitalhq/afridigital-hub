@@ -1,0 +1,6 @@
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:33:            <div>{recording ? "🔴 REC" : "⚫ IDLE"}</div>
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:36:          <div style={{textAlign:"right"}}>
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:38:            <div className="cctv-live-indicator">🟢 LIVE FEED</div>
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:1:import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:1:import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:17:              {feed.status === "ONLINE" ? "🔴" : "○"} {feed.id}

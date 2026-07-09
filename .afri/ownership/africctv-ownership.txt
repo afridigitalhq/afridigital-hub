@@ -1,0 +1,92 @@
+========== AFRICTTV OWNERSHIP MAP ==========
+
+[1] COMPONENT TREE
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx
+
+[2] IMPORT GRAPH
+src/pages/landing/hero/HeroHighlights.jsx:5:    "🎥 AfriCCTV Monitoring Online",
+src/pages/landing/footer/partials/FooterEcosystemMap.jsx:1:export default function FooterEcosystemMap(){return(<section><h4>🚀 Products</h4><div>🧠 AfriAI<br/>🎥 AfriCCTV<br/>💰 AfriCommerce<br/>⚽ AfriSports<br/>🎮 AfriMetaWorld<br/>💚 AfriWhatsapp<br/>📡 AfriComm<br/>🚀 AfriBoost</div></section>);}
+src/pages/landing/landing.css:425:/* ===== AfriCCTV Landing Preview ===== */
+src/pages/landing/landing.css:503:/* ===== AfriCCTV Landing Polish ===== */
+src/pages/landing/products/TierOneProducts.jsx:2:import AfriCCTVPreview from "./showcase/AfriCCTVPreview";
+src/pages/landing/products/TierOneProducts.jsx:20:        <AfriCCTVPreview
+src/pages/landing/products/TierOneProducts.jsx:21:          onExplore={() => navigate("/user/modules/AfriCCTV")}
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:1:import DesktopCCTVWall from "./AfriCCTV/DesktopCCTVWall";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:2:import MobileCCTVFeed from "./AfriCCTV/MobileCCTVFeed";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:3:import CCTVStatusPanel from "./AfriCCTV/CCTVStatusPanel";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:5:export default function AfriCCTVPreview({ onExplore }) {
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:10:        🎥 AfriCCTV AI Monitoring
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:19:        <DesktopCCTVWall />
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:21:        <CCTVStatusPanel />
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:25:      <MobileCCTVFeed />
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:32:        Explore AfriCCTV
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:1:import useAfriCCTVTimestamp from "../../../../../core/africctv/runtime/hooks/useAfriCCTVTimestamp";
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:3:export default function CameraFeed({
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:10:  const timestamp = useAfriCCTVTimestamp();
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:1:import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:2:import CameraFeed from "./CameraFeed";
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:4:export default function DesktopCCTVWall() {
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:8:      {AfriCCTVLandingFeeds.map((feed) => (
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx:9:        <CameraFeed
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:1:import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:3:export default function CCTVStatusPanel() {
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:13:        {AfriCCTVLandingFeeds.map((feed) => (
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx:1:import CameraFeed from "./CameraFeed";
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx:3:export default function MobileCCTVFeed() {
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx:7:      <CameraFeed
+src/pages/landing/marquee/EcosystemMarquee.jsx:3:    "🎥 AfriCCTV Monitoring Online",
+src/pages/user/modules/AfriCCTV/index.jsx:1:export default function AfriCCTV(){return null;}
+src/pages/admin/modules/AfriCCTV/index.jsx:2:import AfriCCTVView from "./views/AfriCCTVView";
+src/pages/admin/modules/AfriCCTV/index.jsx:4:export default function AfriCCTV(){
+src/pages/admin/modules/AfriCCTV/index.jsx:5:  return <AfriCCTVView />;
+src/pages/admin/modules/AfriCCTV/partials/LeftSidebar.jsx:19:<h2>🎥 AfriCCTV</h2>
+src/pages/admin/modules/AfriCCTV/partials/AfriCCTVHeader.jsx:2:export default function AfriCCTVHeader(){return <header><h1>🛡️ AfriCCTV Product Control</h1></header>;}
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:1:import AfriCCTVSocket from "../../../../../core/ws/AfriCCTVSocket.js";
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:2:import useAfriCCTVStream from "../../../../../core/africctv/hooks/useAfriCCTVStream";
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:13:export default function AfriCCTVView(){
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:14:  const stream = useAfriCCTVStream(new AfriCCTVSocket());
+
+[3] CSS OWNERSHIP
+427:.cctv-preview-layout{
+435:.desktop-monitor{
+444:.monitor-top,
+445:.monitor-bottom{
+454:.live-pill{
+459:.camera-feed-placeholder{
+468:.mobile-monitor{
+477:.mobile-live{
+496:  .desktop-monitor,
+497:  .mobile-monitor{
+509:.cctv-preview-layout{
+518:.desktop-monitor{
+528:.camera-feed-placeholder{
+534:.camera-feed-placeholder::before{
+543:.mobile-monitor{
+556:.monitor-top,
+557:.monitor-bottom{
+564:  .desktop-monitor{
+568:  .mobile-monitor{
+575:.camera-feed-placeholder img,
+
+[4] ORPHAN CSS CHECK
+desktop-monitor              : LEGACY CSS
+mobile-monitor               : LEGACY CSS
+camera-feed-placeholder      : LEGACY CSS
+cctv-preview-layout          : LEGACY CSS
+monitor-top                  : LEGACY CSS
+monitor-bottom               : LEGACY CSS
+live-pill                    : LEGACY CSS
+mobile-live                  : LEGACY CSS
+cctv-camera-feed             : ACTIVE JSX
+cctv-feed-frame              : ACTIVE JSX
+cctv-overlay                 : ACTIVE JSX
+cctv-record-layer            : ACTIVE JSX
+desktop-cctv-wall            : ACTIVE JSX
+mobile-cctv-feed             : ACTIVE JSX
+cctv-status-panel            : ACTIVE JSX
+cctv-status-list             : ACTIVE JSX
+cctv-status-item             : ACTIVE JSX
+cctv-ai-preview              : ACTIVE JSX
