@@ -32,7 +32,7 @@ export default function DesktopCCTVWall({ runtime }) {
                 name={feed.name || `Camera ${feed.id}`}
                 image={feed.image || "/mock/compound-feed.jpg"}
                 status={feed.status || "ONLINE"}
-                recording={feed.recording || false}
+                cameraState={feed}
               />
             ))}
           </div>
@@ -45,7 +45,7 @@ export default function DesktopCCTVWall({ runtime }) {
                   name={cam}
                   image="/mock/compound-feed.jpg"
                   status="ONLINE"
-                  recording={true}
+                  cameraState={{recording:{state:"IDLE"}}}
                 />
               </div>
             ))}

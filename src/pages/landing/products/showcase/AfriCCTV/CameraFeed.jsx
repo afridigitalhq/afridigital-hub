@@ -5,9 +5,16 @@ export default function CameraFeed({
   name,
   image,
   status="ONLINE",
-  recording=true
+  cameraState={}
 }) {
-  const timestamp = useAfriCCTVTimestamp().replace("T"," ").replace("Z"," WAT").slice(11);
+
+  const timestamp = useAfriCCTVTimestamp()
+    .replace("T"," ")
+    .replace("Z"," WAT")
+    .slice(11);
+
+  const recording =
+    cameraState?.recording?.state === "ACTIVE";
 
   return (
     <div className="cctv-camera-feed">
@@ -29,21 +36,49 @@ export default function CameraFeed({
         <div className="cctv-overlay">
 
           <div>
-            <div className="cctv-camera-id">{id}</div>
-            <div>{recording ? "🔴 REC" : "⚫ IDLE"}</div>
+            <div className="cctv-camera-id">
+              {id}
+            </div>
+
+            {recording && (
+              <div>
+                🔴 REC
+              </div>
+            )}
+
           </div>
 
           <div style={{textAlign:"right"}}>
-            <div className="cctv-timestamp">{timestamp}</div>
-            <div className="cctv-live-indicator">🟢 LIVE FEED</div>
+
+            <div className="cctv-timestamp">
+              {timestamp}
+            </div>
+
+            <div className="cctv-live-indicator">
+              🟢 LIVE FEED
+            </div>
+
           </div>
 
         </div>
 
-        <div className={recording ? "cctv-record-layer cctv-recording-active" : "cctv-record-layer cctv-recording-idle"}>
+
+        <div
+          className={
+            recording
+            ? "cctv-record-layer cctv-recording-active"
+            : "cctv-record-layer cctv-recording-idle"
+          }
+        >
+
           <span>{status}</span>
-          <span>AfriCCTV Secure Vision</span>
+
+          <span>
+            AfriCCTV Secure Vision
+          </span>
+
         </div>
+
 
       </div>
 

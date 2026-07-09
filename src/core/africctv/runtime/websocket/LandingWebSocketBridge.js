@@ -1,4 +1,4 @@
-import { afriCCTVLiveClient } from "../../../live/AfriCCTVLiveClient.js";
+import { afriCCTVLiveClient } from "../../live/AfriCCTVLiveClient.js";
 
 export default class LandingWebSocketBridge {
 
@@ -7,11 +7,15 @@ export default class LandingWebSocketBridge {
   }
 
   connect(){
+
+    afriCCTVLiveClient.connect();
+
     afriCCTVLiveClient.subscribe((event)=>{
+
       this.listeners.forEach(cb=>cb(event));
+
     });
 
-    return afriCCTVLiveClient.connect();
   }
 
   subscribe(callback){
@@ -20,7 +24,6 @@ export default class LandingWebSocketBridge {
 
   disconnect(){
     this.listeners.clear();
-    afriCCTVLiveClient.disconnect();
   }
 
 }

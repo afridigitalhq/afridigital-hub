@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LandingWebSocketBridge } from "../../../../core/africctv/runtime";
+import LandingWebSocketBridge from "../../../../../core/africctv/runtime/websocket/LandingWebSocketBridge.js";
 
 const bridge = new LandingWebSocketBridge();
 

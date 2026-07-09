@@ -9,7 +9,7 @@ export default function MobileCCTVFeed({ runtime }) {
         name={runtime?.cameras?.[0]?.name || "Mobile CCTV Feed"}
         image="/mock/compound-feed.jpg"
         status={runtime?.cameras?.[0]?.status || "ONLINE"}
-        recording={true}
+        cameraState={runtime?.cameras?.[0] || {}}
       />
 
     </div>
