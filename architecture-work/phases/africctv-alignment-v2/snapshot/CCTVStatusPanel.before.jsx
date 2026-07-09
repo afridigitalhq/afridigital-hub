@@ -14,7 +14,7 @@ export default function CCTVStatusPanel() {
           <div key={feed.id} className="cctv-status-item">
 
             <span>
-              {feed.status === "ONLINE" ? "🔴" : "○"} {feed.id}
+              {feed.recording ? "🔴" : "○"} {feed.id}
             </span>
 
             <span>

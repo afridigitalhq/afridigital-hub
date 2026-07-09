@@ -26,11 +26,11 @@ export default function CameraFeed({
 
         <div className="cctv-overlay">
 
-          <span className="cctv-camera-id">
+          <span>
             {id}
           </span>
 
-          <span className="cctv-timestamp">
+          <span>
             {timestamp}
           </span>
 
@@ -39,7 +39,7 @@ export default function CameraFeed({
         <div className="cctv-record-layer">
 
           <span>
-            {recording ? "🔴 REC ACTIVE" : "○ STANDBY"}
+            {recording ? "🔴 REC" : "○ READY"}
           </span>
 
           <span>
