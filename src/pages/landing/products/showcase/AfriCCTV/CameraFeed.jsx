@@ -16,6 +16,9 @@ export default function CameraFeed({
   const recording =
     cameraState?.recording?.state === "ACTIVE";
 
+  const evidence =
+    cameraState?.evidence || {};
+
   return (
     <div className="cctv-camera-feed">
 
@@ -57,6 +60,18 @@ export default function CameraFeed({
             <div className="cctv-live-indicator">
               🟢 LIVE FEED
             </div>
+
+            {evidence.motionDetected && (
+              <div>
+                🧠 Motion {evidence.confidence}%
+              </div>
+            )}
+
+            {evidence.status === "SAVED" && (
+              <div>
+                📁 Evidence Saved
+              </div>
+            )}
 
           </div>
 

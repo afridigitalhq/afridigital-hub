@@ -1,6 +1,7 @@
-import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
+export default function CCTVStatusPanel({runtime}) {
 
-export default function CCTVStatusPanel() {
+  const cameras = runtime?.cameras || [];
+
   return (
     <aside className="cctv-status-panel">
 
@@ -10,7 +11,7 @@ export default function CCTVStatusPanel() {
 
       <div className="cctv-status-list">
 
-        {AfriCCTVLandingFeeds.map((feed) => (
+        {cameras.map((feed) => (
           <div key={feed.id} className="cctv-status-item">
 
             <span>

@@ -1,4 +1,3 @@
-import { AfriCCTVLandingFeeds } from "../../../../../core/demo/LandingPreviewFeeds";
 import CameraFeed from "./CameraFeed";
 import CCTVStatusPanel from "./CCTVStatusPanel";
 import CCTVHeader from "./partials/CCTVHeader";
@@ -45,7 +44,7 @@ export default function DesktopCCTVWall({ runtime }) {
                   name={cam}
                   image="/mock/compound-feed.jpg"
                   status="ONLINE"
-                  cameraState={{recording:{state:"IDLE"}}}
+                  cameraState={feed}
                 />
               </div>
             ))}
@@ -59,7 +58,7 @@ export default function DesktopCCTVWall({ runtime }) {
         </div>
 
         <aside className="desktop-cctv-sidebar">
-          <CCTVStatusPanel />
+          <CCTVStatusPanel runtime={runtime} />
           <CCTVOperations />
         </aside>
 

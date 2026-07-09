@@ -1,17 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect,useState } from "react";
+import { formatCCTVTime } from "../TimestampRuntime.js";
 
-export default function useAfriCCTVTimestamp() {
-  const [timestamp, setTimestamp] = useState(
-    () => new Date().toISOString()
+export default function useAfriCCTVTimestamp(){
+
+  const [timestamp,setTimestamp]=useState(
+    formatCCTVTime()
   );
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimestamp(new Date().toISOString());
-    }, 1000);
+  useEffect(()=>{
 
-    return () => clearInterval(timer);
-  }, []);
+    const timer=setInterval(()=>{
+
+      setTimestamp(
+        formatCCTVTime()
+      );
+
+    },1000);
+
+    return ()=>clearInterval(timer);
+
+  },[]);
 
   return timestamp;
+
 }
