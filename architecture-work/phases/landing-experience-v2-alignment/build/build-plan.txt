@@ -1,0 +1,8 @@
+BUILD TARGETS
+
+1. AfriCommercePreview.jsx
+2. AfriCCTVPreview.jsx
+3. AfriSportsPreview.jsx
+4. AfriMetaWorldPreview.jsx
+5. TierTwoProducts.jsx
+6. landing.css

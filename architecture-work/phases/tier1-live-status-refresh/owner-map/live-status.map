@@ -1,0 +1,16 @@
+src/pages/landing/hero/LandingHero.jsx:6:        🟢 AfriDigital Ecosystem Online
+src/pages/landing/intelligence/AfriAIStatusBar.jsx:1:export default function AfriAIStatusBar(){return <div className="afriai-status"><span>🧠 AfriAI</span><span className="online">● ONLINE</span></div>;}
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:15:            <span className="live-pill">🔴 LIVE</span>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:29:          <div className="mobile-live">🔴 LIVE</div>
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:1:export default function CommerceHero(){return(<div className="commerce-hero"><div><h3>🛒 AfriCommerce</h3><p>AI-powered digital marketplace</p></div><span className="status-pill">🟢 LIVE</span></div>);}
+src/pages/landing/products/showcase/commerce/CommerceActivity.jsx:1:export default function CommerceActivity(){return(<div className="commerce-activity"><div>🟢 New seller joined</div><div>📦 Inventory synchronized</div><div>💳 Secure payment verified</div></div>);}
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:6:      <span className="status-pill">🟢 GROWTH ENGINE READY</span>
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:6:      <span className="status-pill">🟢 WORK ENGINE READY</span>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:15:            <span className="live-pill">🔴 LIVE</span>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:29:          <div className="mobile-live">🔴 LIVE</div>
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:1:export default function CommerceHero(){return(<div className="commerce-hero"><div><h3>🛒 AfriCommerce</h3><p>AI-powered digital marketplace</p></div><span className="status-pill">🟢 LIVE</span></div>);}
+src/pages/landing/products/showcase/commerce/CommerceActivity.jsx:1:export default function CommerceActivity(){return(<div className="commerce-activity"><div>🟢 New seller joined</div><div>📦 Inventory synchronized</div><div>💳 Secure payment verified</div></div>);}
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:6:      <span className="status-pill">🟢 GROWTH ENGINE READY</span>
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:6:      <span className="status-pill">🟢 WORK ENGINE READY</span>

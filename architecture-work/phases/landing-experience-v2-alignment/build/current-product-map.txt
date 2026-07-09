@@ -1,0 +1,7 @@
+src/pages/landing/products/ProductCard.jsx
+src/pages/landing/products/TierOneProducts.jsx
+src/pages/landing/products/TierTwoProducts.jsx
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx
+src/pages/landing/products/showcase/AfriCommercePreview.jsx
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx
+src/pages/landing/products/showcase/AfriSportsPreview.jsx

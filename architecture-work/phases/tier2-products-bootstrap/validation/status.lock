@@ -1,0 +1,4 @@
+PHASE=tier2-products-bootstrap
+STATUS=AUDIT_COMPLETE
+PRODUCTS=AfriBoost,AfriWork,AfriTracker,AfriTicking,AfriLogistics,AfriEducation,AfriLove
+NEXT=AfriBoost

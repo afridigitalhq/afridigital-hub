@@ -1,0 +1,5 @@
+PHASE=tier1-live-data-preview-foundation
+STATUS=BOOTSTRAPPED
+RULE=Presentation Components Consume Shared Hooks Only
+DATA=Mock Today -> Backend Tomorrow
+TARGET=Landing Preview Ecosystem

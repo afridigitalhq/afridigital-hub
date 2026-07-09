@@ -1,0 +1,46 @@
+src/pages/landing/LandingPage.jsx:3:import EcosystemMarquee from "./marquee/EcosystemMarquee";
+src/pages/landing/LandingPage.jsx:27:      <EcosystemMarquee />
+src/pages/landing/discovery/EcosystemDiscovery.jsx:5:    "🛒 Marketplace",
+src/pages/landing/intelligence/AfriAIStatusBar.jsx:1:export default function AfriAIStatusBar(){return <div className="afriai-status"><span>🧠 AfriAI</span><span className="online">● ONLINE</span></div>;}
+src/pages/landing/landing.css:500:@media(max-width:768px){
+src/pages/landing/landing.css:572:@media(max-width:768px){
+src/pages/landing/landing.css:724:@media (max-width:768px){
+src/pages/landing/landing.css:779:@media(max-width:768px){
+src/pages/landing/landing.css:787:/* ===== AFRIDIGITAL LIVE HEARTBEAT ===== */
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:15:            <span className="live-pill">🔴 LIVE</span>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:17:            <span>08 Jul 2026 • 15:42</span>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:29:          <div className="mobile-live">🔴 LIVE</div>
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:1:export default function CommerceHero(){return(<div className="commerce-hero"><div><h3>🛒 AfriCommerce</h3><p>AI-powered digital marketplace</p></div><span className="status-pill">🟢 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsScoreboard.jsx:1:export default function SportsScoreboard(){return(<div className="sports-scoreboard"><div className="score-card"><strong>Lions FC</strong><span>2</span></div><div className="score-card"><strong>Eagles FC</strong><span>1</span></div><small>76' • Second Half</small></div>);}
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:4:      <h4>🌍 Today's Match Slate</h4>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:5:      <div>🇫🇷 France <span style={{float:"right"}}>9:00 PM</span> 🇲🇦 Morocco</div>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:7:      <div>🇪🇸 Spain <span style={{float:"right"}}>Tomorrow</span> 🇧🇪 Belgium</div>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:9:      <div>🇳🇴 Norway <span style={{float:"right"}}>Jul 11</span> 🏴 England</div>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:11:      <div>🇦🇷 Argentina <span style={{float:"right"}}>Jul 12</span> 🇨🇭 Switzerland</div>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:5:      <div>🇫🇷 France vs 🇲🇦 Morocco</div>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:7:      <p>🇫🇷 France: 68%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:8:      <p>🇲🇦 Morocco: 32%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:9:      <p>⚽ Expected Goals: 2.1 • 0.9</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:10:      <p>🔥 AI Insight: France is expected to dominate possession and create more scoring chances.</p>
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:6:      <span className="status-pill">🟢 GROWTH ENGINE READY</span>
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:6:      <span className="status-pill">🟢 WORK ENGINE READY</span>
+src/pages/landing/marquee/EcosystemMarquee.jsx:1:export default function EcosystemMarquee() {
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:15:            <span className="live-pill">🔴 LIVE</span>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:17:            <span>08 Jul 2026 • 15:42</span>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:29:          <div className="mobile-live">🔴 LIVE</div>
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:1:export default function CommerceHero(){return(<div className="commerce-hero"><div><h3>🛒 AfriCommerce</h3><p>AI-powered digital marketplace</p></div><span className="status-pill">🟢 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsScoreboard.jsx:1:export default function SportsScoreboard(){return(<div className="sports-scoreboard"><div className="score-card"><strong>Lions FC</strong><span>2</span></div><div className="score-card"><strong>Eagles FC</strong><span>1</span></div><small>76' • Second Half</small></div>);}
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:4:      <h4>🌍 Today's Match Slate</h4>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:5:      <div>🇫🇷 France <span style={{float:"right"}}>9:00 PM</span> 🇲🇦 Morocco</div>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:7:      <div>🇪🇸 Spain <span style={{float:"right"}}>Tomorrow</span> 🇧🇪 Belgium</div>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:9:      <div>🇳🇴 Norway <span style={{float:"right"}}>Jul 11</span> 🏴 England</div>
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:11:      <div>🇦🇷 Argentina <span style={{float:"right"}}>Jul 12</span> 🇨🇭 Switzerland</div>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:5:      <div>🇫🇷 France vs 🇲🇦 Morocco</div>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:7:      <p>🇫🇷 France: 68%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:8:      <p>🇲🇦 Morocco: 32%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:9:      <p>⚽ Expected Goals: 2.1 • 0.9</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:10:      <p>🔥 AI Insight: France is expected to dominate possession and create more scoring chances.</p>
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:6:      <span className="status-pill">🟢 GROWTH ENGINE READY</span>
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:6:      <span className="status-pill">🟢 WORK ENGINE READY</span>

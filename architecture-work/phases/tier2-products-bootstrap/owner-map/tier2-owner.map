@@ -1,0 +1,40 @@
+src/core/registry/AfriSystemContracts.js:16:      earning: ["AfriWork","AfriLogistics","AfriBoost","AfriEducation","AfriTracker","AfriTicking"],
+src/core/registry/AfriSystemContracts.js:17:      social: ["AfriLove"]
+src/core/shell/AfriDigitalShell.jsx:4:import AfriBoostSidebar from "../../components/ads/AfriBoostSidebar";
+src/core/shell/AfriDigitalShell.jsx:18:      {showSidebar && <AfriBoostSidebar />}
+src/core/billing/universal/strategies/AfriWorkStrategy.js:1:export default class AfriWorkStrategy {
+src/core/billing/universal/strategies/StrategyRegistry.js:5:import AfriWorkStrategy from "./strategies/AfriWorkStrategy";
+src/core/billing/universal/strategies/StrategyRegistry.js:12:  WORK: new AfriWorkStrategy()
+src/pages/landing/hero/HeroHighlights.jsx:11:    "🚀 AfriBoost Campaigns Ready",
+src/pages/landing/footer/partials/FooterEcosystemMap.jsx:1:export default function FooterEcosystemMap(){return(<section><h4>🚀 Products</h4><div>🧠 AfriAI<br/>🎥 AfriCCTV<br/>💰 AfriCommerce<br/>⚽ AfriSports<br/>🎮 AfriMetaWorld<br/>💚 AfriWhatsapp<br/>📡 AfriComm<br/>🚀 AfriBoost</div></section>);}
+src/pages/landing/products/TierTwoProducts.jsx:6:      id:"AfriBoost",
+src/pages/landing/products/TierTwoProducts.jsx:9:      route:"/user/modules/AfriBoost"
+src/pages/landing/products/TierTwoProducts.jsx:12:      id:"AfriWork",
+src/pages/landing/products/TierTwoProducts.jsx:15:      route:"/user/modules/AfriWork"
+src/pages/landing/products/TierTwoProducts.jsx:18:      id:"AfriTracker",
+src/pages/landing/products/TierTwoProducts.jsx:21:      route:"/user/modules/AfriTracker"
+src/pages/landing/products/TierTwoProducts.jsx:24:      id:"AfriTicking",
+src/pages/landing/products/TierTwoProducts.jsx:27:      route:"/user/modules/AfriTicking"
+src/pages/landing/products/TierTwoProducts.jsx:30:      id:"AfriLogistics",
+src/pages/landing/products/TierTwoProducts.jsx:33:      route:"/user/modules/AfriLogistics"
+src/pages/landing/products/TierTwoProducts.jsx:36:      id:"AfriEducation",
+src/pages/landing/products/TierTwoProducts.jsx:39:      route:"/user/modules/AfriEducation"
+src/pages/landing/products/TierTwoProducts.jsx:42:      id:"AfriLove",
+src/pages/landing/products/TierTwoProducts.jsx:45:      route:"/user/modules/AfriLove"
+src/pages/landing/marquee/EcosystemMarquee.jsx:9:    "🚀 AfriBoost Campaigns Ready",
+src/pages/user/modules/AfriBoost/index.jsx:3:export default function AfriBoost() {
+src/pages/user/modules/AfriBoost/index.jsx:6:      🚀 <h3>AfriBoost Module</h3>
+src/pages/user/modules/AfriTracker/index.jsx:1:export default function AfriTracker(){return null;}
+src/pages/user/modules/AfriTicking/index.jsx:1:export default function AfriTicking(){return null;}
+src/pages/user/modules/AfriLove/index.jsx:1:export default function AfriLove(){return null;}
+src/pages/user/modules/AfriEducation/index.jsx:1:export default function AfriEducation(){return null;}
+src/pages/user/modules/AfriLogistics/index.jsx:1:export default function AfriLogistics(){return null;}
+src/pages/user/modules/AfriWork/index.jsx:1:export default function AfriWork(){return null;}
+src/control-room/ecosystem/catalog/AfriBoost.jsx:1:export default function AfriBoost(){ return null; }
+src/control-room/integrations/ModuleBridge.jsx:10:    "AfriBoost",
+src/plugins/user/userPluginRegistry.js:13:const AfriBoost = lazy(() => import("../../features/afriboost"));
+src/plugins/user/userPluginRegistry.js:57:    name: "AfriBoost",
+src/plugins/user/userPluginRegistry.js:58:    component: AfriBoost,
+src/components/ads/AfriBoostSidebar.jsx:4:export default function AfriBoostSidebar() {
+src/components/ads/AfriBoostSidebar.jsx:23:      { title: "💼 AfriWork Hub", desc: "Find remote jobs instantly" },
+src/userhome/UserAppOSShell.json:4:  "products":["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld","AfriBoost","AfriTracker","AfriTicking","AfriLove","AfriEducation","AfriLogistics","AfriWork"],

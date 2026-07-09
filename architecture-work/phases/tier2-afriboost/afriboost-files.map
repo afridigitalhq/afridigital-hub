@@ -1,0 +1,5 @@
+src/ecosystem/legacy/modules/afriboost
+src/pages/user/modules/AfriBoost
+src/control-room/ecosystem/catalog/AfriBoost.jsx
+src/features/afriboost
+src/components/ads/AfriBoostSidebar.jsx

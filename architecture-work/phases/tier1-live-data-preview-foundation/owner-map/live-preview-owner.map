@@ -1,0 +1,40 @@
+src/pages/landing/products/TierOneProducts.jsx:1:import AfriCommercePreview from "./showcase/AfriCommercePreview";
+src/pages/landing/products/TierOneProducts.jsx:2:import AfriCCTVPreview from "./showcase/AfriCCTVPreview";
+src/pages/landing/products/TierOneProducts.jsx:3:import AfriSportsPreview from "./showcase/AfriSportsPreview";
+src/pages/landing/products/TierOneProducts.jsx:16:        <AfriCommercePreview
+src/pages/landing/products/TierOneProducts.jsx:20:        <AfriCCTVPreview
+src/pages/landing/products/TierOneProducts.jsx:24:        <AfriSportsPreview
+src/pages/landing/products/TierTwoProducts.jsx:2:import AfriBoostPreview from "./showcase/AfriBoostPreview";
+src/pages/landing/products/TierTwoProducts.jsx:48:      <AfriBoostPreview
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:1:import CommerceHero from "./commerce/CommerceHero";
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:3:import CommerceActivity from "./commerce/CommerceActivity";
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:6:export default function AfriCommercePreview({ onExplore }) {
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:9:      <CommerceHero />
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:11:      <CommerceActivity />
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:1:export default function AfriCCTVPreview({ onExplore }) {
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:1:import SportsHero from "./sports/SportsHero";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:2:import SportsFixtures from "./sports/SportsFixtures";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:3:import SportsAnalysis from "./sports/SportsAnalysis";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:4:import SportsScoreboard from "./sports/SportsScoreboard";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:7:export default function AfriSportsPreview({ onExplore }) {
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:10:      <SportsHero />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:11:      <SportsFixtures />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:12:      <SportsAnalysis />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:13:      <SportsScoreboard />
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:1:export default function CommerceHero(){return(<div className="commerce-hero"><div><h3>🛒 AfriCommerce</h3><p>AI-powered digital marketplace</p></div><span className="status-pill">🟢 LIVE</span></div>);}
+src/pages/landing/products/showcase/commerce/CommerceActivity.jsx:1:export default function CommerceActivity(){return(<div className="commerce-activity"><div>🟢 New seller joined</div><div>📦 Inventory synchronized</div><div>💳 Secure payment verified</div></div>);}
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsScoreboard.jsx:1:export default function SportsScoreboard(){return(<div className="sports-scoreboard"><div className="score-card"><strong>Lions FC</strong><span>2</span></div><div className="score-card"><strong>Eagles FC</strong><span>1</span></div><small>76' • Second Half</small></div>);}
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:1:export default function SportsFixtures(){
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:1:export default function SportsAnalysis(){
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:1:export default function BoostHero(){
+src/pages/landing/products/showcase/AfriBoostPreview.jsx:1:import BoostHero from "./afriboost/BoostHero";
+src/pages/landing/products/showcase/AfriBoostPreview.jsx:6:export default function AfriBoostPreview({ onExplore }) {
+src/pages/landing/products/showcase/AfriBoostPreview.jsx:9:      <BoostHero />
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:1:export default function WorkHero(){
+src/pages/landing/products/showcase/AfriWorkPreview.jsx:1:import WorkHero from "./afriwork/WorkHero";
+src/pages/landing/products/showcase/AfriWorkPreview.jsx:6:export default function AfriWorkPreview({onExplore}){
+src/pages/landing/products/showcase/AfriWorkPreview.jsx:9:      <WorkHero />
+src/pages/landing/products/showcase/AfriTrackerPreview.jsx:1:import TrackerHero from "./afritracker/TrackerHero";
+src/pages/landing/products/showcase/AfriTrackerPreview.jsx:7:export default function AfriTrackerPreview({ onExplore }) {
+src/pages/landing/products/showcase/AfriTrackerPreview.jsx:10:      <TrackerHero />

@@ -1,0 +1,88 @@
+src/core/bus/AfriEventBus.js:15:// AFRISYNC_INGEST_ONLY     this.ws = new WebSocket(WS.base);
+src/core/africctv/live/AfriCCTVLiveClient.js:7:    this.socket=null;
+src/core/africctv/live/AfriCCTVLiveClient.js:40:"wss://afridigital-api.onrender.com/ws/africctv"
+src/core/africctv/runtime/AdminCCTVConnection.js:5:  "wss://afridigital-api.onrender.com/ws/africctv";
+src/core/ws/AfriCCTVSocket.js:1:export const AFRI_WS = "wss://afridigital-api.onrender.com/ws/africctv";
+src/core/ws/AfriCCTVSocket.js:6:    this.ws = new WebSocket(AFRI_WS);
+src/core/cluster/ws/ClusterBus.js:3:    this.ws = new WebSocket(url);
+src/core/transport/AfriTransport.js:7:    const res = await fetch(`${API.base}${path}`, {
+src/core/transport/AfriTransport.js:15:    const ws = new WebSocket(`${WS.base}${path}`);
+src/dag/AfriSync.js:16:  attach(socket) {
+src/dag/AfriSync.js:17:    this.peers.push(socket);
+src/ui/dag/DAGFlowViewer.jsx:9: * - optional websocket streaming hook
+src/ui/dag/DAGFlowViewer.jsx:46:  // 📡 live sync (polling first, websocket-ready later)
+src/admin/decisions/DecisionCockpit.jsx:3:const API = "API.base/api/kernel/decisions";
+src/admin/decisions/DecisionCockpit.jsx:10:      fetch(API).then(r => r.json()).then(setDecisions);
+src/admin/observability/DeploymentHealthDashboard.jsx:8:    fetch("API.base")
+src/admin/observability/DeploymentHealthDashboard.jsx:12:    fetch("https://afridigital-hub.onrender.com")
+src/admin/rollback/DeployRollbackEngine.js:3:  return fetch("/api/rollback", {
+src/admin/ws/DevOpsWSClient.js:10:      this.ws = new WebSocket(WS.base);
+src/control-plane/ControlPlaneUI.jsx:10:    const ws = new WebSocket(WS.base);
+src/control-plane/dag/useDAGStream.js:8:    const ws = new WebSocket(WS.base);
+src/control-plane/topology/ServiceTopologyMap.jsx:9:    websocket: { cpu: 0, latency: 0 },
+src/control-plane/topology/ServiceTopologyMap.jsx:27:      websocket: {
+src/control-plane/mesh/ServiceMeshTracer.jsx:18:        "backend → websocket",
+src/control-plane/mesh/ServiceMeshTracer.jsx:19:        "websocket → client"
+src/ecosystem/navigation/EventSourceResolver.js:1:export class EventSourceResolver {
+src/os/ci/dashboard/useDeployRequests.js:3:const API = "API.base/api/ci/deploy-requests";
+src/os/ci/dashboard/useDeployRequests.js:10:      fetch(API).then(r => r.json()).then(setRequests);
+src/os/ci/useCIGate.js:3:const API = "API.base/api/ci/evaluate";
+src/os/ci/useCIGate.js:10:      fetch(API).then(r => r.json()).then(setGate);
+src/os/ci/useCILive.js:3:const API = "API.base/api/ci/evaluate";
+src/os/ci/useCILive.js:10:      fetch(API).then(r => r.json()).then(setCI);
+src/os/ci/useCIState.js:3:const API = "API.base/api/ci/state";
+src/os/ci/useCIState.js:10:      fetch(API).then(r => r.json()).then(setState);
+src/os/ci/useLiveCI.js:3:const API = "API.base/api/ci/live";
+src/os/ci/useLiveCI.js:9:    const load = () => fetch(API).then(r => r.json()).then(setGraph);
+src/os/cockpit/ControlPlaneCockpit.jsx:12:    if (!socket) return;
+src/os/cockpit/ControlPlaneCockpit.jsx:14:    socket.onmessage = (msg) => {
+src/os/cockpit/ControlPlaneCockpit.jsx:18:  }, [socket]);
+src/os/dashboard/useFeatureFlags.js:7:    const res = await fetch("API.base/api/flags");
+src/os/dashboard/useFeatureFlags.js:13:    await fetch("API.base/api/flags", {
+src/os/flags/useFeatureFlags.js:9:    const res = await fetch(`${API}/flags`);
+src/os/flags/useFeatureFlags.js:15:    await fetch(`${API}/flags/set`, {
+src/os/flags/useLiveFeatureFlags.js:5:const API = "API.base/api/flags";
+src/os/flags/useLiveFeatureFlags.js:11:    fetch(API).then(r => r.json()).then(setFlags);
+src/os/flags/useLiveFeatureFlags.js:13:    const socket = new WebSocket(WS);
+src/os/flags/useLiveFeatureFlags.js:15:    socket.onmessage = (event) => {
+src/os/flags/useLiveFeatureFlags.js:22:    return () => socket.close();
+src/os/governance/telemetry/useGovernanceTelemetry.js:3:const API = "API.base/api/ci/state";
+src/os/governance/telemetry/useGovernanceTelemetry.js:10:      fetch(API).then(r => r.json()).then(setData);
+src/os/kernel-contract/useKernelSnapshot.js:3:const API = "API.base/api/kernel/snapshot";
+src/os/kernel-contract/useKernelSnapshot.js:10:      fetch(API).then(r => r.json()).then(setKernel);
+src/os/kernel/bridge/useKernelStream.js:3:const API = "API.base/api/kernel/ingress";
+src/os/kernel/bridge/useKernelStream.js:9:    const res = await fetch(API, {
+src/os/registry/UnifiedPluginRegistry.backup.js:5:  { id: "ws", label: "WebSocket Monitor", icon: "📡", cluster: "core", route: "/admin/ws" },
+src/os/registry/UnifiedPluginRegistry.js:5:  { id: "ws", label: "WebSocket Monitor", icon: "📡", cluster: "core", route: "/admin/ws" },
+src/config/api.js:6:  kernel: `${API_BASE}/api/kernel`,
+src/config/api.js:7:  ci: `${API_BASE}/api/ci`,
+src/config/api.js:8:  flags: `${API_BASE}/api/flags`,
+src/config/api.js:9:  ui: `${API_BASE}/api/ui`,
+src/config/api.js:10:  whatsapp: `${API_BASE}/api/whatsapp`,
+src/config/api.js:11:  auth: `${API_BASE}/api/auth`
+src/config/transportGuard.js:18:  return new WebSocket(`${base}${path}`);
+src/config/domains.js:2:  API: "https://afridigital-api.onrender.com",
+src/config/domains.js:3:  WS: "wss://afridigital-api.onrender.com",
+src/config/domains.js:4:  FRONTEND: "https://afridigital-hub.onrender.com"
+src/hooks/useFeatureFlags.js:3:const API_URL = "https://afridigital-api.onrender.com/api/feature-flags/landing";
+src/hooks/useFeatureFlags.js:12:    async function fetchFlags() {
+src/hooks/useFeatureFlags.js:14:        const res = await fetch(API_URL);
+src/hooks/useFeatureFlags.js:21:        console.error("Feature flags fetch failed:", err);
+src/hooks/useFeatureFlags.js:27:    fetchFlags();
+src/runtime/integration/runtimeWebSocketIntegration.js:1:/* AfriAI WebSocket Runtime Integration */
+src/runtime/integration/runtimeWebSocketIntegration.js:5:export function attachRuntimeToWebSocket(socket) {
+src/runtime/integration/runtimeWebSocketIntegration.js:6:  if (!socket) return;
+src/runtime/integration/runtimeWebSocketIntegration.js:8:  socket.onmessage = ({ data }) => {
+src/runtime/raf/useFrameStabilizer.js:8:export function useFrameStabilizer(socket) {
+src/runtime/raf/useFrameStabilizer.js:14:    if (!socket) return;
+src/runtime/raf/useFrameStabilizer.js:16:    socket.onmessage = (msg) => {
+src/runtime/raf/useFrameStabilizer.js:31:  }, [socket]);
+src/runtime/legacy/core/runtime/index.js:9:export * from "./AfriRuntimeWebSocket.js";
+src/ws/client.js:12:    this.ws = new WebSocket(this.ws ? this.ws.url : WS_URL);
+src/control-room/deploy/RenderContract.js:2:  baseUrl: "https://afridigital-hub.onrender.com",
+src/control-room/deploy/RenderContract.js:12:      const res = await fetch(this.baseUrl + this.endpoints.health);
+src/control-room/realtime/WebSocketBridge.jsx:1:export default function WebSocketBridge(){ return null; }
+src/control-room/soc/widgets/WebSocketMonitor.jsx:1:export default function WebSocketMonitor(){ return null; }
+src/clients/socClient.js:5:    const res = await fetch(`${API.base}/soc/command`, {
+src/clients/socClient.js:14:    const res = await fetch(`${API.base}/soc/query/${id}`);
+src/clients/socClient.js:19:    const ws = new WebSocket(`${WS.base}/soc/stream`);
