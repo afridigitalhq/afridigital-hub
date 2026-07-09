@@ -1,0 +1,3 @@
+LANDING_AFRIAI_CHAT_COMPOSER
+RULE=Compose Premium Landing Dock
+COMPONENTS=StatusBar,Conversation,ChatInput,MicButton,QuickActions
