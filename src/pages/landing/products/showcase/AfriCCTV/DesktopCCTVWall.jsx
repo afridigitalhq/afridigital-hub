@@ -6,6 +6,15 @@ import CCTVOperations from "./partials/CCTVOperations";
 import CCTVFooter from "./partials/CCTVFooter";
 
 export default function DesktopCCTVWall() {
+  const cameras = runtime?.cameras?.length
+    ? runtime.cameras
+    : [
+        {id:1,name:"Camera 1",status:"OFFLINE"},
+        {id:2,name:"Camera 2",status:"OFFLINE"},
+        {id:3,name:"Camera 3",status:"OFFLINE"},
+        {id:4,name:"Camera 4",status:"OFFLINE"}
+      ];
+
   return (
     <section className="desktop-cctv-shell">
 
