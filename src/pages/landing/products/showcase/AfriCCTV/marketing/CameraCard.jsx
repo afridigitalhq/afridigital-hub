@@ -1,13 +1,14 @@
-export default function CameraCard({id}){
-  return (
-    <article className="africctv-camera-card">
-      <div className="camera-image">
-        <span className="camera-rec">● REC</span>
-        <span className="camera-live">LIVE</span>
+import CameraOverlay from "./CameraOverlay";
+
+export default function CameraCard({id,title,brand,showOverlay}){
+  return(
+    <article className="enterprise-camera-card">
+      <div className="enterprise-camera-image">
+        {showOverlay && <CameraOverlay brand={brand} id={id}/>}
       </div>
-      <div className="camera-meta">
-        <strong>{id}</strong>
-        <small>AI Security Monitoring</small>
+      <div className="enterprise-camera-footer">
+        <span>{title}</span>
+        <span className="camera-live-dot">● Live Feed</span>
       </div>
     </article>
   );
