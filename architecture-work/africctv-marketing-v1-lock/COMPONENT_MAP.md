@@ -1,5 +1,22 @@
-# Component Map
+# AfriCCTV Marketing V2 Ownership
 
-Landing -> Hero -> MarketingWall -> MarketingFooter -> CTA
-User App -> Live Workspace
-Admin App -> Operations Console
+Landing
+├── AfriCCTVHero
+├── EnterpriseMonitor
+├── EnterpriseSidebar
+├── CameraStrip
+├── SecurityBadges
+└── EnterpriseCTA
+
+User App
+├── Live Cameras
+├── Playback
+├── Timeline
+├── Motion Detection
+└── Recording
+
+Admin App
+├── Fleet Monitoring
+├── Device Management
+├── AI Analytics
+└── SOC Operations
