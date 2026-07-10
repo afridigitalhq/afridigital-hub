@@ -11,3 +11,5 @@ export default function EnterpriseMonitor(){
     </section>
   );
 }
+
+import "./styles/africctv-enterprise.css";
