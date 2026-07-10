@@ -7,7 +7,7 @@ export default function AfriCCTVPreview({ onExplore }) {
 
   const runtime = useAfriCCTVLive();
   return (
-    <section className="africctv-module">
+    <section className="glass-card product-showcase cctv-showcase">
 
       <h3>
         🎥 AfriCCTV AI Monitoring

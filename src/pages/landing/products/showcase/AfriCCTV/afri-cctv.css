@@ -436,3 +436,12 @@
   background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);
   text-shadow:0 2px 8px rgba(0,0,0,.8);
 }
+
+/* ===== AFRICCTV MODULE BOUNDARY ===== */
+.africctv-module{
+  padding:24px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#172554,#0f172a);
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+}
