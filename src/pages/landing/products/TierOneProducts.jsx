@@ -1,4 +1,5 @@
 import AfriCommercePreview from "./showcase/AfriCommercePreview";
+import AfriCCTVPreview from "./showcase/AfriCCTVPreview";
 import AfriSportsPreview from "./showcase/AfriSportsPreview";
 import AfriMetaWorldPreview from "./showcase/AfriMetaWorldPreview";
 
@@ -16,6 +17,9 @@ export default function TierOneProducts({ navigate }) {
           onExplore={() => navigate("/user/modules/AfriCommerce")}
         />
 
+        <AfriCCTVPreview
+          onExplore={() => navigate("/user/modules/AfriCCTV")}
+        />
 
         <AfriSportsPreview
           onExplore={() => navigate("/user/modules/AfriSports")}
