@@ -16,8 +16,10 @@ export default function DesktopCCTVWall({ runtime }) {
 
   return (
     <section className="desktop-cctv-shell">
+      <CCTVHeader />
+
       <div style={{padding:"30px",background:"#08111b",color:"#fff"}}>
-        AFRICCTV DESKTOP V4 SHELL TEST
+        V4 HEADER RESTORE TEST
       </div>
     </section>
   );
