@@ -19,7 +19,7 @@ export default function AfriCCTVPreview({ onExplore }) {
 
       <div className="cctv-desktop-experience">
 
-        <div className="africctv-module-test">AfriCCTV V4 Isolation Test</div>
+        <DesktopCCTVWall runtime={runtime} />
 
 
       </div>
