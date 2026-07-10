@@ -1,4 +1,3 @@
-import LandingNavigation from "../landing/navigation/LandingNavigation";
 import AuthFooter from "./components/AuthFooter";
 import useAuthMode from "./hooks/useAuthMode";
 import useAuthActions from "./hooks/useAuthActions";
@@ -17,7 +16,6 @@ export default function AuthPage(){
 
   return (
     <div className="auth-shell">
-      <LandingNavigation />
 
       <main className="auth-layout">
         <AuthHero />
