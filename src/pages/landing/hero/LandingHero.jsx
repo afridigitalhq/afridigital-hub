@@ -3,35 +3,40 @@ export default function LandingHero({ navigate }) {
     <section className="hero-panel">
 
       <div className="hero-badge">
-        🟢 AfriDigital Ecosystem Online
+        <span className="hero-status-dot"></span><span>AfriDigital Platform Online</span>
       </div>
 
-      <h1>
-        🌍 AfriDigital Ecosystem
-      </h1>
+      <div className="hero-brand"><div className="hero-brand-mark">🛡️</div><h1>AfriDigital</h1></div>
 
       <p className="hero-subtitle">
-        Unified AI-powered digital infrastructure connecting
-        commerce, intelligence, communication and smart services.
+        Build. Connect. Secure.
+<br />
+        The intelligent digital infrastructure platform powering Africa’s next generation.
       </p>
-
 
       <div className="hero-actions">
 
         <button
           className="cta-primary"
-          onClick={() => navigate("/user")}
+          onClick={() => navigate("/auth")}
         >
-          🚀 Enter User OS
+          🔐 Login
         </button>
 
         <button
           className="cta-secondary"
-          onClick={() => navigate("/admin")}
+          onClick={() => navigate("/auth?mode=signup")}
         >
-          🛠️ Admin Control
+          🚀 Sign Up
         </button>
 
+      </div>
+
+      <div className="hero-trust-bar">
+        <span>🛡️ Enterprise Security</span>
+        <span>⚡ AI Powered</span>
+        <span>☁️ Cloud Ready</span>
+        <span>🌍 Africa Focused</span>
       </div>
 
     </section>

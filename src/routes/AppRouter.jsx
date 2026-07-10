@@ -1,8 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Landing from "../pages/landing/LandingPage";
-import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
+import AuthPage from "../pages/auth/AuthPage";
 import UserHome from "../pages/user/UserHome";
 import AdminHome from "../pages/admin/AdminHome";
 
@@ -14,7 +13,7 @@ const getUserRole = () => {
 const ProtectedRoute = ({ children, role }) => {
   const userRole = getUserRole();
 
-  if (!userRole) return <Navigate to="/login" />;
+  if (!userRole) return <Navigate to="/auth" />;
   if (role && userRole !== role) return <Navigate to="/user" />;
 
   return children;
@@ -28,8 +27,9 @@ export default function AppRouter() {
         <Route path="/" element={<Landing />} />
 
         {/* 🔐 AUTH */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/login" element={<Navigate to="/auth" replace />} />
+        <Route path="/register" element={<Navigate to="/auth?mode=signup" replace />} />
 
         {/* 🧑‍💻 USER SHELL */}
         <Route
