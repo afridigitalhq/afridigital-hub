@@ -3,3 +3,6 @@ dist/
 dist/
 node_modules
 src/soc-os/_disabled_entry_backup/
+
+.afri/
+vite.log
