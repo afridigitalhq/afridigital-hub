@@ -27,14 +27,14 @@ export default function LandingPage() {
       <EcosystemMarquee />
 
       {/* PRODUCTS */}
-      <TierOneProducts navigate={navigate} />
-      <TierTwoProducts navigate={navigate} />
+      {/* TierOneProducts isolated */}
+      {/* TierTwoProducts isolated */}
 
       {/* AfriAI Intelligence */}
-      <AfriAIDock />
+      {/* AfriAIDock isolated */}
 
       {/* AfriDigital WhatsApp Gateway */}
-      <AfriWhatsappGateway />
+      {/* AfriWhatsappGateway isolated */}
 
       {/* FOOTER */}
       <LandingFooter />

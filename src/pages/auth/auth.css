@@ -101,3 +101,40 @@
     width:100%;
   }
 }
+
+.auth-hero{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:48px;
+  min-height:420px;
+}
+
+.auth-brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:30px 0 20px;
+}
+
+.auth-brand-mark{
+  font-size:3rem;
+}
+
+.auth-subtitle{
+  line-height:1.8;
+  max-width:520px;
+}
+
+.auth-hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+.auth-status-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+

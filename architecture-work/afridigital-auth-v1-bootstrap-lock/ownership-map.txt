@@ -1,0 +1,12 @@
+src/pages/auth/AuthPage.jsx
+src/pages/auth/auth.css
+src/pages/auth/components/AuthHero.jsx
+src/pages/auth/components/GoogleAuthButton.jsx
+src/pages/auth/components/AuthDivider.jsx
+src/pages/auth/components/LoginForm.jsx
+src/pages/auth/components/SignupForm.jsx
+src/pages/auth/components/ForgotPasswordLink.jsx
+src/pages/auth/components/DevelopmentLinks.jsx
+src/pages/auth/components/AuthFooter.jsx
+src/pages/auth/hooks/useAuthMode.js
+src/pages/auth/data/authConfig.js

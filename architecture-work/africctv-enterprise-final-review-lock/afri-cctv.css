@@ -1,0 +1,438 @@
+/* ========= AFRICTTV SINGLE SOURCE OF TRUTH ========= */
+
+@keyframes cctvLivePulse{
+  0%,100%{opacity:1}
+  50%{opacity:.35}
+}
+
+.desktop-cctv-wall{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  gap:24px;
+  align-items:start;
+}
+
+.desktop-cctv-main{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.desktop-cctv-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.cctv-camera-feed{
+  background:#07111d;
+  border:1px solid rgba(0,255,140,.12);
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.cctv-feed-frame{
+  position:relative;
+  aspect-ratio:16/9;
+  background:#000;
+}
+
+.cctv-feed-image,
+.cctv-feed-placeholder{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.cctv-feed-placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  background:#101820;
+}
+
+.cctv-overlay{
+  position:absolute;
+  inset:0 auto auto 0;
+  left:0;
+  right:0;
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  background:linear-gradient(rgba(0,0,0,.85),transparent);
+  color:#fff;
+}
+
+.cctv-camera-id{
+  font-weight:700;
+}
+
+.cctv-timestamp{
+  font-family:monospace;
+}
+
+.cctv-live-indicator{
+  color:#00ff7f;
+  animation:cctvLivePulse 1.2s infinite;
+}
+
+.cctv-record-layer{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  justify-content:space-between;
+  padding:10px 12px;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+  color:#fff;
+}
+
+.desktop-cctv-thumbnails{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+}
+
+.desktop-cctv-thumbnails .cctv-camera-feed{
+  border-radius:8px;
+}
+
+.desktop-cctv-thumbnails .cctv-feed-frame{
+  aspect-ratio:1.5;
+}
+
+.desktop-cctv-thumbnails .cctv-overlay,
+.desktop-cctv-thumbnails .cctv-record-layer{
+  font-size:.55rem;
+  padding:4px 6px;
+}
+
+.desktop-cctv-sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.cctv-status-panel{
+  background:#0f172a;
+  border-radius:16px;
+  padding:18px;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+@media(max-width:1100px){
+  .desktop-cctv-wall{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:768px){
+  .desktop-cctv-grid{
+    grid-template-columns:1fr;
+  }
+
+  .desktop-cctv-thumbnails{
+    display:none;
+  }
+
+  .desktop-cctv-sidebar{
+    display:none;
+  }
+}
+
+/* ===== Enterprise Landing Layout ===== */
+
+.desktop-cctv-shell{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.cctv-header{
+  display:grid;
+  grid-template-columns:2fr 2fr 1.5fr 2fr 1.5fr;
+  gap:16px;
+  padding:18px 22px;
+  background:#08111b;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  align-items:center;
+}
+
+.cctv-header>div{
+  display:flex;
+  flex-direction:column;
+}
+
+.cctv-header strong{
+  color:#fff;
+  font-size:1rem;
+}
+
+.cctv-header small{
+  color:#8ea3b5;
+  margin-top:4px;
+}
+
+.cctv-live-pill{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  border-radius:14px;
+  background:#0d1f18;
+  color:#4cff87;
+  font-weight:700;
+  border:1px solid rgba(76,255,135,.25);
+}
+
+.desktop-cctv-sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.cctv-status-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:16px;
+  background:#0d1523;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.cctv-status-card h4{
+  margin:0;
+  font-size:.85rem;
+  color:#d8e3ef;
+}
+
+.cctv-status-card strong{
+  font-size:1.5rem;
+  color:#4cff87;
+}
+
+.cctv-status-card small{
+  color:#8ea3b5;
+}
+
+.cctv-system-footer{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  padding:14px 18px;
+  background:#08111b;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.06);
+  color:#cfd9e2;
+  font-size:.82rem;
+}
+
+.cctv-more-cameras{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:700;
+  color:#9d7bff;
+}
+
+@media(max-width:1100px){
+
+  .cctv-header{
+    grid-template-columns:1fr;
+  }
+
+  .cctv-system-footer{
+    flex-direction:column;
+  }
+
+}
+
+/* ===== Camera Card Polish ===== */
+
+.cctv-camera-feed{
+  position:relative;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.03);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.cctv-camera-feed:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.55),
+    0 0 18px rgba(0,255,140,.12);
+}
+
+.cctv-feed-image{
+  filter:saturate(.95) contrast(1.05) brightness(.96);
+}
+
+.cctv-overlay,
+.cctv-record-layer{
+  backdrop-filter:blur(6px);
+}
+
+.cctv-camera-id{
+  letter-spacing:.08em;
+  font-size:.9rem;
+}
+
+.cctv-timestamp{
+  font-size:.82rem;
+}
+
+.cctv-record-layer span:last-child{
+  color:#71d7ff;
+  font-weight:600;
+}
+
+.cctv-thumbnail-feed{
+  overflow:hidden;
+  background:#08111b;
+  padding:0;
+}
+
+.cctv-thumbnail-feed .cctv-camera-feed{
+  border:none;
+  border-radius:8px;
+}
+
+.cctv-thumbnail-feed .cctv-feed-frame{
+  aspect-ratio:16/9;
+}
+
+
+.cctv-record-indicator,.cctv-live-indicator{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(0,0,0,.72);
+  color:#fff;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  backdrop-filter:blur(6px);
+}
+
+.cctv-record-indicator{
+  border:1px solid rgba(255,0,0,.45);
+}
+
+.cctv-live-indicator{
+  border:1px solid rgba(0,255,127,.45);
+}
+
+.cctv-header{
+  background:linear-gradient(135deg,rgba(8,17,27,.96),rgba(13,31,45,.92));
+  border:1px solid rgba(113,215,255,.18);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  backdrop-filter:blur(12px);
+}
+
+.cctv-header strong{
+  color:#ffffff;
+  font-size:1.05rem;
+  letter-spacing:.04em;
+}
+
+.cctv-header small{
+  color:#9fb4c7;
+  font-size:.78rem;
+}
+
+.cctv-live-pill{
+  background:linear-gradient(135deg,rgba(0,255,127,.12),rgba(0,0,0,.45));
+  color:#ffffff;
+  border:1px solid rgba(76,255,135,.45);
+  box-shadow:0 0 22px rgba(76,255,135,.18);
+}
+
+.cctv-camera-feed{
+  position:relative;
+  background:linear-gradient(145deg,#07111d,#101d2b);
+  border:1px solid rgba(113,215,255,.16);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(0,0,0,.45);
+}
+
+.cctv-feed-frame{
+  border-radius:14px;
+  overflow:hidden;
+  background:#02070d;
+}
+
+.desktop-cctv-grid{
+  gap:16px;
+}
+
+.desktop-cctv-main{
+  background:rgba(4,10,18,.45);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:20px;
+  padding:16px;
+  backdrop-filter:blur(10px);
+}
+
+.cctv-overlay{
+  padding:14px;
+  background:linear-gradient(180deg,rgba(0,0,0,.82),rgba(0,0,0,.12),transparent);
+  text-shadow:0 2px 8px rgba(0,0,0,.8);
+}
+
+.cctv-camera-id{
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.cctv-timestamp{
+  display:inline-flex;
+  padding:3px 8px;
+  border-radius:6px;
+  background:rgba(0,0,0,.55);
+  font-family:monospace;
+  font-size:.78rem;
+}
+
+.cctv-record-layer{
+  padding:12px 14px;
+  background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);
+  text-shadow:0 2px 8px rgba(0,0,0,.8);
+}
+
+.cctv-overlay{
+  padding:14px;
+  background:linear-gradient(180deg,rgba(0,0,0,.82),rgba(0,0,0,.12),transparent);
+  text-shadow:0 2px 8px rgba(0,0,0,.8);
+}
+
+.cctv-camera-id{
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.cctv-timestamp{
+  display:inline-flex;
+  padding:3px 8px;
+  border-radius:6px;
+  background:rgba(0,0,0,.55);
+  font-family:monospace;
+  font-size:.78rem;
+}
+
+.cctv-record-layer{
+  padding:12px 14px;
+  background:linear-gradient(0deg,rgba(0,0,0,.9),transparent);
+  text-shadow:0 2px 8px rgba(0,0,0,.8);
+}

@@ -1,0 +1,11 @@
+src/auth/AuthPage.jsx
+src/brain/registerCoreServices.js
+src/control-room/security/AuthGuard.jsx
+src/core/authority/module.authority.cjs
+src/core/kernel/_KERNEL_AUTHORITY.js
+src/os/governance/sidebar/registerGovernanceRoute.js
+src/os/kernel/authority/KernelAuthority.js
+src/pages/auth/Login.jsx
+src/pages/auth/Register.jsx
+src/runtime/legacy/runtime/modules/registerCoreRuntimeModules.js
+src/runtime/modules/registerCoreRuntimeModules.js

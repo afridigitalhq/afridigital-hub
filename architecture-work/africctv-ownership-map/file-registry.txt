@@ -1,0 +1,15 @@
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/DesktopCCTVWall.jsx
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css
+src/pages/landing/products/showcase/AfriCCTV/components/LiveIndicator.jsx
+src/pages/landing/products/showcase/AfriCCTV/components/RecordingIndicator.jsx
+src/pages/landing/products/showcase/AfriCCTV/components/StatusChip.jsx
+src/pages/landing/products/showcase/AfriCCTV/components/StatusDot.jsx
+src/pages/landing/products/showcase/AfriCCTV/components/index.js
+src/pages/landing/products/showcase/AfriCCTV/data/LandingDashboard.js
+src/pages/landing/products/showcase/AfriCCTV/partials/CCTVFooter.jsx
+src/pages/landing/products/showcase/AfriCCTV/partials/CCTVHeader.jsx
+src/pages/landing/products/showcase/AfriCCTV/partials/CCTVOperations.jsx
+src/pages/landing/products/showcase/AfriCCTV/useAfriCCTVLive.js

@@ -1,0 +1,12 @@
+AuthPage.jsx
+auth.css
+components/AuthHero.jsx
+components/GoogleAuthButton.jsx
+components/AuthDivider.jsx
+components/LoginForm.jsx
+components/SignupForm.jsx
+components/ForgotPasswordLink.jsx
+components/DevelopmentLinks.jsx
+components/AuthFooter.jsx
+hooks/useAuthMode.js
+data/authConfig.js

@@ -1,0 +1,31 @@
+AFRICCTV LANDING V3
+
+FINAL LAYOUT
+----------------------------------------
+[ Header ]
+
+[ Mobile Preview ] [ Desktop 2x2 Preview ]
+
+[ Compact AI Status Strip ]
+
+[ Product Summary ]
+
+[ Explore AfriCCTV ]
+
+REMOVE
+- Thumbnail ribbon
+- Operations panel
+- Desktop footer telemetry
+- Duplicate status panel
+
+KEEP FOR USER/ADMIN ONLY
+- Multi-camera ribbon
+- SOC operations
+- Evidence management
+- Storage dashboards
+- Full monitoring workspace
+
+ARCHITECTURE LOCK
+Landing = Showcase
+User = Workspace
+Admin = SOC Console
