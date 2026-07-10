@@ -246,6 +246,103 @@ button:hover {
 
 
 /* ================================
+   AFRICCTV PREMIUM SHOWCASE
+================================ */
+
+.cctv-showcase {
+  overflow: hidden;
+}
+
+.cctv-showcase .showcase-header p {
+  margin-top: 8px;
+  opacity: .75;
+}
+
+.status-online {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0,255,120,.12);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.cctv-layout {
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:20px;
+  margin-top:25px;
+}
+
+.cctv-desktop,
+.cctv-mobile {
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+}
+
+.cctv-desktop h4,
+.cctv-mobile h4 {
+  margin-bottom:15px;
+}
+
+
+.camera-card {
+  min-height:110px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.02)
+    );
+  border:1px solid rgba(255,255,255,.08);
+}
+
+
+.camera-card span {
+  font-size:14px;
+}
+
+
+.camera-card small {
+  opacity:.7;
+}
+
+
+.mobile-device {
+  height:260px;
+  width:140px;
+  margin:auto;
+  border-radius:25px;
+  padding:18px 12px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.15);
+}
+
+
+.mobile-device span {
+  font-size:13px;
+}
+
+
+.showcase-description {
+  margin-top:22px;
+  line-height:1.7;
+  opacity:.85;
+}
+
+
+@media(max-width:800px){
+
+  .cctv-layout {
     grid-template-columns:1fr;
   }
 
@@ -325,6 +422,11 @@ button:hover {
 
 
 
+/* ===== AfriCCTV Landing Polish ===== */
+
+.cctv-showcase{
+  background:linear-gradient(180deg,#172554,#0f172a);
+}
 
 
 
@@ -552,6 +654,9 @@ cursor:pointer;
 /* ===== AFRIDIGITAL LIVE HEARTBEAT ===== */
 .status-pill,.online{display:inline-flex;align-items:center;gap:.35rem;animation:afriHeartbeat 1.4s ease-in-out infinite;transform-origin:center;will-change:transform;}
 
+.cctv-recording-active{display:inline-flex;align-items:center;gap:.35rem;animation:afriHeartbeat 1.4s ease-in-out infinite;transform-origin:center;will-change:transform;}
+
+.cctv-recording-idle{display:inline-flex;align-items:center;gap:.35rem;animation:none;}
 @keyframes afriHeartbeat{0%{transform:scale(1);}14%{transform:scale(1.08);}28%{transform:scale(1);}42%{transform:scale(1.08);}70%{transform:scale(1);}100%{transform:scale(1);}}
 
 .hero-panel{
