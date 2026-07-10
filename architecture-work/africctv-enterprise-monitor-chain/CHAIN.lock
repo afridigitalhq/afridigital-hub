@@ -1,0 +1,36 @@
+AFRICCTV_ENTERPRISE_SHOWCASE=ACTIVE
+
+MODULES:
+EnterpriseHeader
+AfriCCTV Branding
+Live Clock Presentation
+Deployment Health Indicator
+
+CameraFeed
+Reusable Camera Frame
+CAM-01 CAM-02 CAM-03 CAM-04
+AI Scan Overlay Visuals
+
+CameraWall
+Desktop 2x2 Monitoring Wall
+Mobile Single Feed Behavior
+
+SOCWidgets
+Threat Level
+Recording Status
+Storage Health
+AI Engine
+
+EnterpriseMonitor
+Composition Only
+Import Partials Only
+
+RULES:
+NO BUSINESS LOGIC
+NO API CALLS
+NO ENGINE IMPORTS
+NO CAMERA STATE
+NO RUNTIME MUTATION
+
+PIPELINE:
+BOOTSTRAP > POPULATE > VALIDATE > SNAPSHOT > LOCK > COMMIT
