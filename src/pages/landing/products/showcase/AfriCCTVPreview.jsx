@@ -19,12 +19,12 @@ export default function AfriCCTVPreview({ onExplore }) {
 
       <div className="cctv-desktop-experience">
 
-        <DesktopCCTVWall runtime={runtime} />
+        <div className="africctv-module-test">AfriCCTV V4 Isolation Test</div>
 
 
       </div>
 
-      <MobileCCTVFeed runtime={runtime} />
+      
 
       <p className="showcase-summary">
         Intelligent camera monitoring across desktop and mobile experiences.
