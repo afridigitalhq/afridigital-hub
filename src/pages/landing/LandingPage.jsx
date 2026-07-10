@@ -27,12 +27,13 @@ export default function LandingPage() {
       {/* ECOSYSTEM MARQUEE */}
       <EcosystemMarquee />
 
+      {/* LANDING AUTH CTA */}
+      <LandingAuthCTA navigate={navigate} />
+
       {/* TIER 1 PRODUCTS */}
       <TierOneProducts navigate={navigate} />
 
       {/* TIER 2 PRODUCTS */}
-      <LandingAuthCTA navigate={navigate} />
-
       <TierTwoProducts navigate={navigate} />
 
       {/* AfriAI Intelligence */}

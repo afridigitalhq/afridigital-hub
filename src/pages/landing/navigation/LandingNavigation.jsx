@@ -3,11 +3,31 @@ import { Link } from "react-router-dom";
 export default function LandingNavigation() {
   return (
     <nav className="glass-card landing-navigation">
-      <Link className="nav-brand" to="/">AfriDigital</Link>
+
+      <Link className="nav-brand" to="/">
+        🛡️ AfriDigital
+      </Link>
+
       <div className="nav-actions">
-        <Link className="nav-login" to="/auth">🔐 Login</Link>
-        <Link className="nav-signup" to="/auth?mode=signup">🚀 Sign Up</Link>
+
+        <a href="#ecosystem">
+          🌍 Ecosystem
+        </a>
+
+        <a href="#products">
+          🚀 Products
+        </a>
+
+        <a href="#afriai">
+          🧠 AfriAI
+        </a>
+
+        <button className="mobile-menu">
+          ☰
+        </button>
+
       </div>
+
     </nav>
   );
 }
