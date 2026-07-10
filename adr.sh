@@ -127,7 +127,6 @@ if [ -z "$NAME" ] || [ -z "$TYPE" ]; then
     return 1
 fi
 
-node -e "
 const fs=require('fs');
 const file=process.env.HOME+'/adr-system/core/registry.json';
 const reg=JSON.parse(fs.readFileSync(file,'utf8'));
