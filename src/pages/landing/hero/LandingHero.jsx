@@ -14,23 +14,7 @@ export default function LandingHero({ navigate }) {
         The intelligent digital infrastructure platform powering Africa’s next generation.
       </p>
 
-      <div className="hero-actions">
 
-        <button
-          className="cta-primary"
-          onClick={() => navigate("/auth")}
-        >
-          🔐 Login
-        </button>
-
-        <button
-          className="cta-secondary"
-          onClick={() => navigate("/auth?mode=signup")}
-        >
-          🚀 Sign Up
-        </button>
-
-      </div>
 
       <div className="hero-trust-bar">
         <span>🛡️ Enterprise Security</span>

@@ -1,4 +1,5 @@
 import useAfriCCTVTimestamp from "../../../../../core/africctv/runtime/hooks/useAfriCCTVTimestamp";
+import {LiveIndicator, RecordingIndicator} from "./components";
 
 export default function CameraFeed({
   id,
@@ -44,9 +45,7 @@ export default function CameraFeed({
             </div>
 
             {recording && (
-              <div>
-                🔴 REC
-              </div>
+              <RecordingIndicator />
             )}
 
           </div>
@@ -57,9 +56,7 @@ export default function CameraFeed({
               {timestamp}
             </div>
 
-            <div className="cctv-live-indicator">
-              🟢 LIVE FEED
-            </div>
+            <LiveIndicator />
 
             {evidence.motionDetected && (
               <div>

@@ -7,7 +7,6 @@ import TierTwoProducts from "./products/TierTwoProducts";
 import AfriAIDock from "./intelligence/AfriAIDock";
 import AfriWhatsappGateway from "./whatsapp/AfriWhatsappGateway";
 import LandingFooter from "./footer/LandingFooter";
-import LandingAuthCTA from "./auth/LandingAuthCTA";
 import "./landing.css";
 
 export default function LandingPage() {
@@ -31,8 +30,6 @@ export default function LandingPage() {
       <TierOneProducts navigate={navigate} />
 
       {/* TIER 2 PRODUCTS */}
-      <LandingAuthCTA navigate={navigate} />
-
       <TierTwoProducts navigate={navigate} />
 
       {/* AfriAI Intelligence */}

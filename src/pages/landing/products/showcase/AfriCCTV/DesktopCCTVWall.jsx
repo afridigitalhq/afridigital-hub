@@ -8,10 +8,10 @@ export default function DesktopCCTVWall({ runtime }) {
   const cameras = runtime?.cameras?.length
     ? runtime.cameras
     : [
-        {id:1,name:"Camera 1",status:"OFFLINE"},
-        {id:2,name:"Camera 2",status:"OFFLINE"},
-        {id:3,name:"Camera 3",status:"OFFLINE"},
-        {id:4,name:"Camera 4",status:"OFFLINE"}
+        {id:1,name:"Main Gate Security",status:"ONLINE"},
+        {id:2,name:"Parking & Perimeter",status:"ONLINE"},
+        {id:3,name:"Facility Entrance",status:"ONLINE"},
+        {id:4,name:"Operations Zone",status:"ONLINE"}
       ];
 
   return (
@@ -31,7 +31,7 @@ export default function DesktopCCTVWall({ runtime }) {
                 name={feed.name || `Camera ${feed.id}`}
                 image={feed.image || "/mock/compound-feed.jpg"}
                 status={feed.status || "ONLINE"}
-                cameraState={feed}
+                cameraState={{recording:{state:"IDLE"},evidence:{motionDetected:false,confidence:0,status:"NONE"}}}
               />
             ))}
           </div>
@@ -44,7 +44,7 @@ export default function DesktopCCTVWall({ runtime }) {
                   name={cam}
                   image="/mock/compound-feed.jpg"
                   status="ONLINE"
-                  cameraState={feed}
+                  cameraState={{recording:{state:"IDLE"},evidence:{motionDetected:false,confidence:0,status:"NONE"}}}
                 />
               </div>
             ))}
