@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import LandingHero from "./hero/LandingHero";
 import EcosystemMarquee from "./marquee/EcosystemMarquee";
-import LandingNavigation from "./navigation/LandingNavigation";
+import LandingSidebarTrigger from "./navigation/LandingSidebarTrigger";
 import TierOneProducts from "./products/TierOneProducts";
 import TierTwoProducts from "./products/TierTwoProducts";
 import AfriAIDock from "./intelligence/AfriAIDock";
@@ -18,8 +18,8 @@ export default function LandingPage() {
   return (
     <div className="landing-shell">
 
-      {/* NAVIGATION */}
-      <LandingNavigation />
+      {/* FLOATING SIDEBAR */}
+      <LandingSidebarTrigger />
 
       {/* HERO */}
       <LandingHero navigate={navigate} />
