@@ -1,0 +1,25 @@
+AFRICCTV SOURCE BUILD
+
+IMPLEMENTATION ORDER:
+1 EnterpriseHeader.jsx
+2 CameraFeed.jsx
+3 CameraWall.jsx
+4 SOCWidgets.jsx
+5 africctv-enterprise.css
+
+CANONICAL TARGET:
+src/pages/landing/products/showcase/AfriCCTV/partials
+
+OBJECTIVE:
+Populate canonical partials with enterprise cinematic UI
+No placeholder content
+No architecture changes
+No business logic
+Landing showcase only
+
+NEXT ACTION:
+WRITE SOURCE FILES
+BUILD
+VALIDATE
+PREVIEW
+COMMIT
