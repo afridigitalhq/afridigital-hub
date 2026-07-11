@@ -1,0 +1,5 @@
+TEMPLATE=EnterpriseHeader.jsx
+STATUS=READY
+TARGET=src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx
+ROLE=Enterprise CCTV Header
+FEATURES=Shield Branding,Live Clock,Deployment Health,System Status Chips
