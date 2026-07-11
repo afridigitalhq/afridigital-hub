@@ -1,6 +1,6 @@
 import "./AfriCCTV/marketing/marketing.css";
 import AfriCCTVHero from "./AfriCCTV/marketing/AfriCCTVHero";
-import EnterpriseMonitor from "./AfriCCTV/EnterpriseMonitor";
+import EnterpriseMonitor from "./AfriCCTV/marketing/EnterpriseMonitor";
 import EnterpriseSidebar from "./AfriCCTV/marketing/EnterpriseSidebar";
 import CameraStrip from "./AfriCCTV/marketing/CameraStrip";
 import EnterpriseCTA from "./AfriCCTV/marketing/EnterpriseCTA";
