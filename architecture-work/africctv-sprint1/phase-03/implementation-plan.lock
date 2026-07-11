@@ -1,0 +1,31 @@
+⚛️ AfriNucChain
+PHASE 03 — VISUAL IMPLEMENTATION
+
+TARGET FILES
+- src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx
+- src/pages/landing/products/showcase/AfriCCTV/partials/CameraFeed.jsx
+- src/pages/landing/products/showcase/AfriCCTV/partials/CameraWall.jsx
+- src/pages/landing/products/showcase/AfriCCTV/partials/SOCWidgets.jsx
+- src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx
+- src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css
+
+IMPLEMENTATION ORDER
+[1] EnterpriseHeader
+[2] CameraFeed
+[3] CameraWall
+[4] SOCWidgets
+[5] EnterpriseSidebar
+[6] CSS Polish
+
+VALIDATION
+- npm run build
+- git diff
+- git status
+
+RULES
+- Modify existing files only
+- No new landing components
+- No duplicate monitors
+- No duplicate camera implementations
+- EnterpriseMonitor.jsx remains the only composition root
+- Preserve responsive desktop/mobile layout
