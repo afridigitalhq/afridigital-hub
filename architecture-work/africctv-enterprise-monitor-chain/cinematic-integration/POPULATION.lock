@@ -1,0 +1,21 @@
+AFRICCTV SOURCE POPULATION
+
+STATUS:
+IMPLEMENTING CANONICAL PARTIALS
+
+FILES:
+EnterpriseHeader.jsx
+CameraFeed.jsx
+CameraWall.jsx
+SOCWidgets.jsx
+africctv-enterprise.css
+
+GOAL:
+Replace Placeholder UI With Enterprise CCTV Experience
+Render 2x2 Desktop Camera Wall
+Render Single Mobile Camera
+Professional CCTV HUD
+Enterprise Branding
+Hero Separation
+
+READY FOR SOURCE EDITS
