@@ -1,0 +1,22 @@
+AFRICCTV JSX IMPLEMENTATION
+
+STATUS=ACTIVE
+MODE=CANONICAL
+TARGETS:
+EnterpriseHeader.jsx
+CameraFeed.jsx
+CameraWall.jsx
+SOCWidgets.jsx
+africctv-enterprise.css
+
+RULES:
+Single EnterpriseMonitor
+Single CameraWall
+Desktop 2x2 Cameras
+Mobile Single Camera
+Professional CCTV HUD
+Enterprise Shield Branding
+Glass SOC Widgets
+Landing Showcase Only
+
+NEXT=IMPLEMENT_SOURCE
