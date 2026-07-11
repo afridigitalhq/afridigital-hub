@@ -1,0 +1,23 @@
+AFRICCTV PARTIAL IMPLEMENTATION START
+
+TARGET FILES:
+src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx
+src/pages/landing/products/showcase/AfriCCTV/partials/CameraFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/partials/CameraWall.jsx
+src/pages/landing/products/showcase/AfriCCTV/partials/SOCWidgets.jsx
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css
+
+OBJECTIVES:
+Professional Enterprise Header
+2x2 Desktop Camera Wall
+Single Mobile Camera
+Camera HUD
+Live Clock
+Camera Timestamps
+Location Labels
+AI Scan Overlay
+Glass SOC Widgets
+Hero/Monitor Separation
+
+STATUS:
+READY FOR SOURCE IMPLEMENTATION
