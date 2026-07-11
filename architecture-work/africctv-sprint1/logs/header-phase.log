@@ -1,0 +1,26 @@
+⚛️ AfriNucChain
+
+PHASE: EnterpriseHeader Upgrade
+
+SOURCE OF TRUTH
+- src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx
+- src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css
+
+IMPLEMENTATION TARGET
+✓ Professional enterprise SOC header
+✓ AfriCCTV branding with subtitle
+✓ LIVE status badge
+✓ Deployment Health badge
+✓ AES-256 Security badge
+✓ Africa Region badge
+✓ Live Clock placeholder
+✓ Responsive glass layout
+
+RULES
+✓ Modify existing files only
+✓ No new header components
+✓ No duplicate implementations
+✓ Keep EnterpriseMonitor.jsx unchanged
+
+NEXT ACTION
+Replace EnterpriseHeader.jsx with the new enterprise layout, then extend africctv-enterprise.css to style it.

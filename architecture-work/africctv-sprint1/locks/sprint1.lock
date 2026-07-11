@@ -1,0 +1,33 @@
+⚛️ AFRINUCCHAIN — AFRICCTV SPRINT 1
+
+SINGLE SOURCE OF TRUTH
+- EnterpriseMonitor.jsx
+
+FILES TO MODIFY ONLY
+- partials/EnterpriseHeader.jsx
+- partials/CameraFeed.jsx
+- partials/CameraWall.jsx
+- partials/SOCWidgets.jsx
+- marketing/EnterpriseSidebar.jsx
+- styles/africctv-enterprise.css
+
+IMPLEMENTATION
+[ ] Enterprise SOC Header
+[ ] Realistic Camera Feed
+[ ] Professional 2x2 Camera Wall
+[ ] Enterprise SOC Widgets
+[ ] Enterprise Sidebar
+[ ] Enterprise CSS Polish
+[ ] Responsive Desktop/Mobile
+[ ] Build Validation
+[ ] Git Commit
+[ ] Git Push
+[ ] Render Verification
+
+RULES
+- MODIFY EXISTING FILES ONLY
+- NO NEW COMPONENTS
+- NO DUPLICATE MONITORS
+- NO DUPLICATE CAMERA IMPLEMENTATIONS
+- NO PARALLEL UI
+- EnterpriseMonitor.jsx REMAINS THE ONLY COMPOSITION ROOT

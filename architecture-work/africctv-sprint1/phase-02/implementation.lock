@@ -1,0 +1,27 @@
+⚛️ AfriNucChain
+PHASE 02 — LANDING UI IMPLEMENTATION
+
+LOCKED FILES
+- src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx
+- src/pages/landing/products/showcase/AfriCCTV/partials/CameraFeed.jsx
+- src/pages/landing/products/showcase/AfriCCTV/partials/CameraWall.jsx
+- src/pages/landing/products/showcase/AfriCCTV/partials/SOCWidgets.jsx
+- src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx
+- src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css
+
+IMPLEMENTATION GOALS
+[ ] Enterprise SOC Header
+[ ] Four realistic CCTV monitors
+[ ] AI scan overlays
+[ ] Professional 2×2 monitor wall
+[ ] Glass SOC widgets
+[ ] Enterprise sidebar polish
+[ ] Responsive desktop/mobile
+
+ARCHITECTURE RULES
+- Modify existing files only
+- EnterpriseMonitor.jsx remains the only composition root
+- No duplicate monitors
+- No duplicate camera implementations
+- No new landing components
+- CSS polish only in africctv-enterprise.css

@@ -1,0 +1,7 @@
+
+⚛️ AfriNucChain Sprint 1 LOCKED
+
+NEXT ACTION
+Implement the locked changes ONLY in the listed files.
+Then run:
+npm run build && git diff && git status
