@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import LandingHero from "./hero/LandingHero";
 import EcosystemMarquee from "./marquee/EcosystemMarquee";
-import LandingNavigation from "./navigation/LandingNavigation";
 import TierOneProducts from "./products/TierOneProducts";
 import TierTwoProducts from "./products/TierTwoProducts";
 import AfriAIDock from "./intelligence/AfriAIDock";
 import AfriWhatsappGateway from "./whatsapp/AfriWhatsappGateway";
 import LandingFooter from "./footer/LandingFooter";
+import LandingAuthCTA from "./auth/LandingAuthCTA";
 import "./landing.css";
 
 export default function LandingPage() {
@@ -17,8 +17,6 @@ export default function LandingPage() {
   return (
     <div className="landing-shell">
 
-      {/* NAVIGATION */}
-      <LandingNavigation />
 
       {/* HERO */}
       <LandingHero navigate={navigate} />
@@ -26,15 +24,20 @@ export default function LandingPage() {
       {/* ECOSYSTEM MARQUEE */}
       <EcosystemMarquee />
 
-      {/* PRODUCTS */}
-      {/* TierOneProducts isolated */}
-      {/* TierTwoProducts isolated */}
+      {/* LANDING AUTH CTA */}
+      <LandingAuthCTA navigate={navigate} />
+
+      {/* TIER 1 PRODUCTS */}
+      <TierOneProducts navigate={navigate} />
+
+      {/* TIER 2 PRODUCTS */}
+      <TierTwoProducts navigate={navigate} />
 
       {/* AfriAI Intelligence */}
-      {/* AfriAIDock isolated */}
+      <AfriAIDock />
 
       {/* AfriDigital WhatsApp Gateway */}
-      {/* AfriWhatsappGateway isolated */}
+      <AfriWhatsappGateway />
 
       {/* FOOTER */}
       <LandingFooter />

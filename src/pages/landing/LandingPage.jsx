@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import LandingHero from "./hero/LandingHero";
 import EcosystemMarquee from "./marquee/EcosystemMarquee";
-import TierOneProducts from "./products/TierOneProducts";
-import TierTwoProducts from "./products/TierTwoProducts";
 import AfriAIDock from "./intelligence/AfriAIDock";
 import AfriWhatsappGateway from "./whatsapp/AfriWhatsappGateway";
 import LandingFooter from "./footer/LandingFooter";
+import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
 import LandingAuthCTA from "./auth/LandingAuthCTA";
 import "./landing.css";
 
@@ -28,10 +27,10 @@ export default function LandingPage() {
       <LandingAuthCTA navigate={navigate} />
 
       {/* TIER 1 PRODUCTS */}
-      <TierOneProducts navigate={navigate} />
+      <LandingEcosystemBridge />
 
       {/* TIER 2 PRODUCTS */}
-      <TierTwoProducts navigate={navigate} />
+      
 
       {/* AfriAI Intelligence */}
       <AfriAIDock />
