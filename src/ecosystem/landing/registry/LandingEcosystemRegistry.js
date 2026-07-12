@@ -1,9 +1,9 @@
-import LandingProductCatalog from "../catalog/LandingExperienceCatalog";
+import LandingShowroomRegistry from "./LandingShowroomRegistry";
 import LandingServiceCatalog from "../catalog/LandingServiceCatalog";
 
 const LandingEcosystemRegistry = Object.freeze({
 
-  products: LandingProductCatalog,
+  products: LandingShowroomRegistry,
 
   services: LandingServiceCatalog,
 

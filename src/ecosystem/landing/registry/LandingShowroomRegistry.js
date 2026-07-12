@@ -1,4 +1,4 @@
-const LandingProductCatalog = Object.freeze({
+const LandingShowroomRegistry = Object.freeze({
 
   tier1: [
 
@@ -91,4 +91,4 @@ const LandingProductCatalog = Object.freeze({
 
 });
 
-export default LandingProductCatalog;
+export default LandingShowroomRegistry;
