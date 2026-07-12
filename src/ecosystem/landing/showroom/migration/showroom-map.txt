@@ -1,0 +1,14 @@
+Tier1
+- AfriCommercePreview
+- AfriCCTVPreview
+- AfriTrackerPreview
+
+Tier2
+- AfriWorkPreview
+- AfriBoostPreview
+- AfriLogistics
+- AfriTicking
+- AfriSportsPreview
+- AfriMetaWorldPreview
+- AfriEducation
+- AfriLove
