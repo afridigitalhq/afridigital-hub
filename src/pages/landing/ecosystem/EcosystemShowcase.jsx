@@ -2,8 +2,6 @@ import useLandingProducts from "../../../ecosystem/landing/hooks/useLandingProdu
 import useLandingServices from "../../../ecosystem/landing/hooks/useLandingServices";
 
 import ProductTierSection from "../../../ecosystem/landing/components/ProductTierSection";
-import ServiceLayerSection from "../../../ecosystem/landing/components/ServiceLayerSection";
-import FutureProductSection from "../../../ecosystem/landing/components/FutureProductSection";
 
 export default function EcosystemShowcase(){
 
@@ -22,16 +20,7 @@ export default function EcosystemShowcase(){
         title="Tier 2 Products"
         products={products.tier2}
       />
-
-      <FutureProductSection
-        products={products.future}
-      />
-
-      <ServiceLayerSection
-        services={services}
-      />
-
-    </section>
+</section>
   );
 
 }
