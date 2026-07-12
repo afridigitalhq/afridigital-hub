@@ -3,12 +3,12 @@ import LandingEcosystemRegistry from "../../registry/LandingEcosystemRegistry";
 import FutureProductSection from "../../components/FutureProductSection";
 
 export default function CanonicalShowroomRoot(){
-  const products = LandingEcosystemRegistry;
+  const showroom = LandingEcosystemRegistry.products;
 
   return (
     <section className="canonical-showroom">
-      <FutureProductSection products={products.tier1} />
-      <FutureProductSection products={products.tier2} />
+      <FutureProductSection products={showroom.tier1} />
+      <FutureProductSection products={showroom.tier2} />
     </section>
   );
 }
