@@ -6,48 +6,78 @@ export default function CommerceHero(){
       <div className="commerce-hero-header">
 
         <span className="commerce-badge">
-          🛒 AFRICOMMERCE NETWORK
+          🛒 AFRICOMMERCE INTELLIGENCE NETWORK
         </span>
 
         <h1>
-          Africa's Intelligent Commerce Infrastructure
+          Africa's Digital Commerce Infrastructure
         </h1>
 
         <p>
-          A unified digital marketplace connecting
-          AfriShop, AfriMarket, AfriTrust and AfriBank
-          through secure commerce intelligence.
+          A unified marketplace ecosystem connecting
+          businesses, customers, trust systems and
+          financial intelligence through AfriDigital.
         </p>
 
       </div>
 
+
       <div className="commerce-hero-grid">
 
         <div className="commerce-panel">
-          <span>MARKETPLACE</span>
+          <span>MARKETPLACE CORE</span>
           <strong>AfriShop</strong>
           <p>
-            Digital storefronts built for African businesses.
+            Digital storefront infrastructure for African businesses.
           </p>
         </div>
 
+
         <div className="commerce-panel">
-          <span>TRUST ENGINE</span>
+          <span>TRUST INTELLIGENCE</span>
           <strong>AfriTrust</strong>
           <p>
-            Secure identity and transaction confidence.
+            Verified commerce relationships and secure transactions.
           </p>
         </div>
 
+
         <div className="commerce-panel">
-          <span>FINANCIAL CORE</span>
+          <span>FINANCIAL ENGINE</span>
           <strong>AfriBank</strong>
           <p>
-            Smart payment and commerce infrastructure.
+            Commerce payments and digital financial services.
+          </p>
+        </div>
+
+
+        <div className="commerce-panel">
+          <span>NETWORK STATUS</span>
+          <strong>ACTIVE</strong>
+          <p>
+            Connected AfriDigital commerce ecosystem.
           </p>
         </div>
 
       </div>
+
+
+      <div className="commerce-live-status">
+
+        <span>
+          SYSTEM: ONLINE
+        </span>
+
+        <span>
+          MARKETPLACE: ACTIVE
+        </span>
+
+        <span>
+          SECURITY: ENABLED
+        </span>
+
+      </div>
+
 
     </section>
   );
