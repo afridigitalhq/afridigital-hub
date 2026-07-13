@@ -1,0 +1,17 @@
+AFRINUCCHAIN WAVE-517 LOCK
+
+Module:
+Digital Product Support Foundation
+
+Completed:
+- Digital product contract
+- Digital delivery models
+- Digital categories
+- AfriShop digital catalog
+- Admin controlled digital products
+
+Boundary:
+AfriShop Admin ONLY
+
+Next:
+WAVE-518 Product API Integration
