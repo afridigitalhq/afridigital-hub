@@ -1,0 +1,6 @@
+=== PUBLIC SHELL ===
+/ -> AfriDigitalShell
+/auth -> AfriDigitalShell
+=== PROTECTED SHELL ===
+/user -> UserAppShell only
+/admin -> ControlRoomShell only
