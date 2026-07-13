@@ -1,0 +1,16 @@
+HERO CLEANUP
+
+Remove orphan selectors:
+- hero-brand-mark
+- hero-trust-bar
+- hero-actions
+
+Add:
+- hero-brand-logo
+
+Keep:
+- animated background
+- centered title
+- centered subtitle
+- logo top-left
+- compact hero
