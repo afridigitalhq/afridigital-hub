@@ -1,16 +1,29 @@
+import useCommerceProducts from "../../../hooks/commerce/useCommerceProducts";
+import ProductCard from "./components/ProductCard";
+
 export default function ProductDiscovery(){
 
+  const products = useCommerceProducts();
+
   return (
-    <section className="product-discovery">
 
-      <h2>
+    <section className="commerce-product-discovery">
+
+      <h1>
         Discover Products
-      </h2>
+      </h1>
 
-      <p>
-        Search, filter and explore marketplace products.
-      </p>
+      {
+        products?.data?.map(product=>(
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))
+      }
 
     </section>
+
   );
+
 }
