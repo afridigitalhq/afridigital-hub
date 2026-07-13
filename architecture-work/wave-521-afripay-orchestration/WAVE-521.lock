@@ -1,0 +1,25 @@
+AFRINUCCHAIN WAVE-521 LOCK
+
+Module:
+AfriPay Payment Orchestration Foundation
+
+Completed:
+
+- Payment contract
+- Payment method boundary
+- AfriCoin payment provider
+- Native payment provider
+- Crypto payment provider
+- Payment router
+- Payment events
+
+Ownership:
+
+Payment Experience:
+AFRIPAY
+
+Financial Core:
+AFRIBANK
+
+Next:
+WAVE-522 Afribank Wallet Profile
