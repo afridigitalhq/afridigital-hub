@@ -1,0 +1,116 @@
+src/pages/landing/landing.css:85:  max-width: 700px;
+src/pages/landing/landing.css:125:  grid-template-columns:repeat(3,1fr);
+src/pages/landing/landing.css:131:  grid-template-columns:repeat(5,1fr);
+src/pages/landing/landing.css:147:@media(max-width:900px){
+src/pages/landing/landing.css:149:    grid-template-columns:repeat(2,1fr);
+src/pages/landing/landing.css:153:    grid-template-columns:repeat(3,1fr);
+src/pages/landing/landing.css:157:@media(max-width:600px){
+src/pages/landing/landing.css:164:    grid-template-columns:1fr;
+src/pages/landing/landing.css:178:  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+src/pages/landing/landing.css:202:  grid-template-columns: repeat(2, 1fr);
+src/pages/landing/landing.css:241:@media(max-width:600px){
+src/pages/landing/landing.css:243:    grid-template-columns:1fr;
+src/pages/landing/landing.css:249:    grid-template-columns:1fr;
+src/pages/landing/landing.css:347:@media(max-width:768px){
+src/pages/landing/landing.css:367:  max-width: 100%;
+src/pages/landing/landing.css:379:  max-width: none;
+src/pages/landing/landing.css:411:max-width:900px;
+src/pages/landing/landing.css:440:max-width:85%;
+src/pages/landing/landing.css:489:@media (max-width:768px){
+src/pages/landing/landing.css:491:.ai-msg{max-width:100%;}
+src/pages/landing/landing.css:492:.afriai-chat-row{flex-direction:row;}
+src/pages/landing/landing.css:504:  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+src/pages/landing/landing.css:511:  flex-direction:column;
+src/pages/landing/landing.css:544:@media(max-width:768px){
+src/pages/landing/landing.css:546:    grid-template-columns:1fr;
+src/pages/landing/landing.css:645:@media(max-width:768px){
+src/pages/landing/landing.css:647:    flex-direction:column;
+src/pages/landing/landing.css:767:  min-width:170px;
+src/pages/landing/landing.css:805:@media(max-width:768px){
+src/pages/landing/landing.css:837:@media(max-width:768px){
+src/pages/landing/landing.css:888:@media(max-width:768px){
+src/pages/landing/landing.css:890:    flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:10:  grid-template-columns:minmax(0,1fr) 320px;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:17:  flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:23:  grid-template-columns:repeat(2,minmax(0,1fr));
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:94:  grid-template-columns:repeat(6,1fr);
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:114:  flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:125:@media(max-width:1100px){
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:127:    grid-template-columns:1fr;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:131:@media(max-width:768px){
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:133:    grid-template-columns:1fr;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:149:  flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:155:  grid-template-columns:2fr 2fr 1.5fr 2fr 1.5fr;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:166:  flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:193:  flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:199:  flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:244:@media(max-width:1100px){
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:247:    grid-template-columns:1fr;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:251:    flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:453:  grid-template-columns:2fr 1fr;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:460:  grid-template-columns:repeat(2,1fr);
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:471:  flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:487:@media(max-width:768px){
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:489:    grid-template-columns:1fr;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:493:    grid-template-columns:1fr;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:2:.africctv-marketing{display:flex;flex-direction:column;gap:24px;padding:24px;background:#07111b;border-radius:22px}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:4:.africctv-marketing-wall{display:flex;flex-direction:column;gap:18px}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:5:.africctv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:10:@media(max-width:768px){.africctv-grid{grid-template-columns:1fr}}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:13:max-width:1280px;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:24:grid-template-columns:repeat(2,minmax(0,1fr));
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:80:@media(max-width:768px){
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:82:grid-template-columns:1fr;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:122:flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:3:flex-direction:column;
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:5:max-width:1280px;
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:43:grid-template-columns:repeat(2,minmax(0,1fr));
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:78:grid-template-columns:repeat(4,1fr);
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:93:@media(max-width:768px){
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:95:grid-template-columns:1fr;
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:107:grid-template-columns:1fr 1fr;
+src/pages/auth/auth.css:9:  grid-template-columns:1fr 420px;
+src/pages/auth/auth.css:53:  flex-direction:column;
+src/pages/auth/auth.css:94:@media(max-width:900px){
+src/pages/auth/auth.css:96:    grid-template-columns:1fr;
+src/pages/auth/auth.css:107:  flex-direction:column;
+src/pages/auth/auth.css:126:  max-width:520px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:10:  grid-template-columns:minmax(0,1fr) 320px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:17:  flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:23:  grid-template-columns:repeat(2,minmax(0,1fr));
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:94:  grid-template-columns:repeat(6,1fr);
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:114:  flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:125:@media(max-width:1100px){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:127:    grid-template-columns:1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:131:@media(max-width:768px){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:133:    grid-template-columns:1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:149:  flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:155:  grid-template-columns:2fr 2fr 1.5fr 2fr 1.5fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:166:  flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:193:  flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:199:  flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:244:@media(max-width:1100px){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:247:    grid-template-columns:1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:251:    flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:453:  grid-template-columns:2fr 1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:460:  grid-template-columns:repeat(2,1fr);
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:471:  flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:487:@media(max-width:768px){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:489:    grid-template-columns:1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:493:    grid-template-columns:1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:2:.africctv-marketing{display:flex;flex-direction:column;gap:24px;padding:24px;background:#07111b;border-radius:22px}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:4:.africctv-marketing-wall{display:flex;flex-direction:column;gap:18px}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:5:.africctv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:10:@media(max-width:768px){.africctv-grid{grid-template-columns:1fr}}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:13:max-width:1280px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:24:grid-template-columns:repeat(2,minmax(0,1fr));
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:80:@media(max-width:768px){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:82:grid-template-columns:1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:122:flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:3:flex-direction:column;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:5:max-width:1280px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:43:grid-template-columns:repeat(2,minmax(0,1fr));
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:78:grid-template-columns:repeat(4,1fr);
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:93:@media(max-width:768px){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:95:grid-template-columns:1fr;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:107:grid-template-columns:1fr 1fr;
