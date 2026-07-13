@@ -1,0 +1,5 @@
+src/pages/landing/hero/LandingHero.jsx:20:        <span>🛡️ Enterprise Security</span>
+src/pages/landing/hero/LandingHero.jsx:21:        <span>⚡ AI Powered</span>
+src/pages/landing/hero/LandingHero.jsx:22:        <span>☁️ Cloud Ready</span>
+src/pages/landing/hero/LandingHero.jsx:23:        <span>🌍 Africa Focused</span>
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:29:          <img
