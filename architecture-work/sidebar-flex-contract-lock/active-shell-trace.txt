@@ -1,0 +1,32 @@
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:4:import EnterpriseSidebar from "./AfriCCTV/marketing/EnterpriseSidebar";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:14:        <EnterpriseSidebar />
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:1:export default function EnterpriseSidebar(){
+src/pages/user/UserHome.jsx:2:import UserAppShell from "./shell/UserAppShell";
+src/pages/user/UserHome.jsx:5:  return <UserAppShell />;
+src/pages/user/shell/UserAppShell.jsx:3:import UserSidebar from "../sidebar/UserSidebar";
+src/pages/user/shell/UserAppShell.jsx:6:export default function UserAppShell(){
+src/pages/user/shell/UserAppShell.jsx:12:<UserSidebar collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/pages/user/sidebar/UserSidebar.jsx:2:import SidebarHeader from "./sections/SidebarHeader";
+src/pages/user/sidebar/UserSidebar.jsx:3:import SidebarNavigation from "./sections/SidebarNavigation";
+src/pages/user/sidebar/UserSidebar.jsx:4:import SidebarFooter from "./sections/SidebarFooter";
+src/pages/user/sidebar/UserSidebar.jsx:6:export default function UserSidebar({collapsed,onToggle}){
+src/pages/user/sidebar/UserSidebar.jsx:10:<SidebarHeader />
+src/pages/user/sidebar/UserSidebar.jsx:11:<div style={{flex:1}}><SidebarNavigation /></div>
+src/pages/user/sidebar/UserSidebar.jsx:12:<SidebarFooter />
+src/pages/user/sidebar/sections/SidebarHeader.jsx:3:export default function SidebarHeader(){
+src/pages/user/sidebar/sections/SidebarHeader.jsx:6:      <h3>SidebarHeader</h3>
+src/pages/user/sidebar/sections/SidebarNavigation.jsx:5:export default function SidebarNavigation() {
+src/pages/user/sidebar/sections/SidebarFooter.jsx:3:export default function SidebarFooter(){
+src/pages/user/sidebar/sections/SidebarFooter.jsx:6:      <h3>SidebarFooter</h3>
+src/pages/admin/modules/AfriCCTV/partials/LeftSidebar.jsx:16:export default function LeftSidebar(){
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:4:import LeftSidebar from "../partials/LeftSidebar";
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:18:<LeftSidebar/>
+src/pages/admin/AdminHome.jsx:3:import ControlRoomShell from "../../control-room/core/ControlRoomShell";
+src/pages/admin/AdminHome.jsx:13:return <ControlRoomShell/>;
+src/control-room/core/ControlRoomShell.jsx:2:import Sidebar from "../sidebar/Sidebar";
+src/control-room/core/ControlRoomShell.jsx:5:export default function ControlRoomShell(){
+src/control-room/core/ControlRoomShell.jsx:11:<Sidebar active={active} onSelect={setActive} collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/control-room/shell/ControlRoomApp.jsx:1:import Sidebar from "../sidebar/Sidebar";
+src/control-room/shell/ControlRoomApp.jsx:11:      <Sidebar />
+src/control-room/sidebar/Sidebar.jsx:3:export default function Sidebar({active,onSelect,collapsed,onToggle}){
+src/control-room/sidebar/items/AfriAISection.jsx:4: * 🧠 AfriAI Sidebar Entry
