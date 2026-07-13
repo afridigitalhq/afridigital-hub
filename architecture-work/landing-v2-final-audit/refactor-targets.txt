@@ -1,0 +1,80 @@
+
+===== hero =====
+src/pages/landing/hero/LandingHero.jsx:5:      <div className="hero-badge">
+src/pages/landing/hero/LandingHero.jsx:6:        <span className="hero-status-dot"></span><span>AfriDigital Platform Online</span>
+src/pages/landing/hero/LandingHero.jsx:11:      <p className="hero-subtitle">Build. Connect. Secure.</p>
+
+===== footer =====
+src/pages/landing/footer/partials/FooterBrand.jsx:1:export default function FooterBrand(){return(<section><h3>🌍 AfriDigital</h3><p>Building Africa's intelligent digital ecosystem powered by AI, security, commerce and connected services.</p></section>);}
+src/pages/landing/footer/partials/FooterNewsletter.jsx:1:export default function FooterNewsletter(){return(<section><h4>📬 Stay Updated</h4><p>Get ecosystem updates, releases and platform news.</p><button>Join Updates</button></section>);}
+src/pages/landing/footer/partials/FooterLegal.jsx:1:export default function FooterLegal(){return(<section><small>© {new Date().getFullYear()} AfriDigital • Privacy • Terms • Security • Status</small></section>);}
+
+===== products/showcase =====
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:9:import CommerceCTA from "./commerce/CommerceCTA";
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:32:      <CommerceCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:5:import EnterpriseCTA from "./AfriCCTV/marketing/EnterpriseCTA";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:18:      <EnterpriseCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:5:import SportsCTA from "./sports/SportsCTA";
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:14:      <SportsCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx:4:import MetaWorldCTA from "./metaworld/MetaWorldCTA";
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx:12:      <MetaWorldCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:6:      <span className="commerce-badge">
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:14:      <p>
+src/pages/landing/products/showcase/commerce/CommerceCTA.jsx:1:export default function CommerceCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriCommerce →</button>);}
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:9:        <p>
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:19:        <p>
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsCTA.jsx:1:export default function SportsCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriSports →</button>);}
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:6:      <p>📈 Win Probability</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:7:      <p>🇫🇷 France: 68%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:8:      <p>🇲🇦 Morocco: 32%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:9:      <p>⚽ Expected Goals: 2.1 • 0.9</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:10:      <p>🔥 AI Insight: France is expected to dominate possession and create more scoring chances.</p>
+src/pages/landing/products/showcase/metaworld/MetaWorldHero.jsx:5:      <p>Premium virtual world experience</p>
+src/pages/landing/products/showcase/metaworld/MetaWorldCTA.jsx:1:export default function MetaWorldCTA({onExplore}){
+src/pages/landing/products/showcase/metaworld/MetaWorldCTA.jsx:3:    <button onClick={onExplore}>
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:5:      <p>AI-powered growth and promotion engine</p>
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:6:      <span className="status-pill">🟢 GROWTH ENGINE READY</span>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:5:      <p>🚀 Active Campaigns: 12</p>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:6:      <p>📈 Growth Reach: +45%</p>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:7:      <p>🎯 Audience Targeting: AI Optimized</p>
+src/pages/landing/products/showcase/afriboost/BoostCTA.jsx:1:export default function BoostCTA({onExplore}){
+src/pages/landing/products/showcase/afriboost/BoostCTA.jsx:3:    <button className="premium-cta" onClick={onExplore}>
+src/pages/landing/products/showcase/AfriBoostPreview.jsx:4:import BoostCTA from "./afriboost/BoostCTA";
+src/pages/landing/products/showcase/AfriBoostPreview.jsx:12:      <BoostCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:5:      <p>Digital workforce and opportunity ecosystem</p>
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:6:      <span className="status-pill">🟢 WORK ENGINE READY</span>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:5:      <p>👥 Talent Network: Connected</p>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:6:      <p>💼 Opportunities: Active</p>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:7:      <p>🤖 AI Skill Matching: Ready</p>
+src/pages/landing/products/showcase/afriwork/WorkCTA.jsx:1:export default function WorkCTA({onExplore}){
+src/pages/landing/products/showcase/afriwork/WorkCTA.jsx:3:    <button className="premium-cta" onClick={onExplore}>
+src/pages/landing/products/showcase/AfriWorkPreview.jsx:4:import WorkCTA from "./afriwork/WorkCTA";
+src/pages/landing/products/showcase/AfriWorkPreview.jsx:12:      <WorkCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/AfriTrackerPreview.jsx:5:import TrackerCTA from "./afritracker/TrackerCTA";
+src/pages/landing/products/showcase/AfriTrackerPreview.jsx:14:      <TrackerCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:8:  status="ONLINE",
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:67:            {evidence.status === "SAVED" && (
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:86:          <span>{status}</span>
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:1:export default function CCTVStatusPanel({runtime}) {
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:4:    {id:"CAM-01",status:"ONLINE"},
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:5:    {id:"CAM-02",status:"ONLINE"},
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:6:    {id:"CAM-03",status:"ONLINE"},
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:7:    {id:"CAM-04",status:"ONLINE"}
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:11:    <aside className="cctv-status-panel">
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:17:      <div className="cctv-status-list">
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:20:          <div key={feed.id} className="cctv-status-item">
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:23:              {feed.status === "ONLINE" ? "🔴" : "○"} {feed.id}
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:27:              {feed.status}
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:41:        <p>
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx:11:        status={runtime?.cameras?.[0]?.status || "ONLINE"}
+src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx:10:      <div className="africctv-status">
+src/pages/landing/products/showcase/AfriCCTV/partials/SOCWidgets.jsx:5:      <div>Recording Status: ACTIVE</div>
+src/pages/landing/products/showcase/AfriCCTV/components/StatusDot.jsx:1:export default function StatusDot(){return null;}
+src/pages/landing/products/showcase/AfriCCTV/components/StatusChip.jsx:1:export default function StatusChip(){return null;}
+src/pages/landing/products/showcase/AfriCCTV/marketing/AfriCCTVHero.jsx:5:      <p>AI Security Monitoring Platform</p>
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:3:    ["System Status","Protected"],
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseCTA.jsx:1:export default function EnterpriseCTA({onExplore}){
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseCTA.jsx:2:  return <button onClick={onExplore}>Explore AfriCCTV</button>;
+
+===== services =====
