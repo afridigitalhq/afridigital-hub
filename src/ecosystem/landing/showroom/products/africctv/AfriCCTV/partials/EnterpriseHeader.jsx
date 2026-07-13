@@ -4,16 +4,54 @@ export default function EnterpriseHeader(){
     <header className="africctv-enterprise-header">
 
       <div className="africctv-brand">
-        🛡️ AfriCCTV
+
+        <span className="security-icon">
+          🛡️
+        </span>
+
+        <div>
+          <strong>
+            AfriCCTV
+          </strong>
+
+          <small>
+            AI SECURITY MONITORING PLATFORM
+          </small>
+        </div>
+
       </div>
 
-      <div className="africctv-status">
-        <span>LIVE SYSTEM</span>
-        <span>DEPLOYMENT HEALTH: ONLINE</span>
+
+      <div className="africctv-system-panel">
+
+        <div>
+          <span>SYSTEM STATUS</span>
+          <strong>PROTECTED</strong>
+        </div>
+
+        <div>
+          <span>DEPLOYMENT</span>
+          <strong>ONLINE</strong>
+        </div>
+
+        <div>
+          <span>AI ENGINE</span>
+          <strong>ACTIVE</strong>
+        </div>
+
       </div>
+
 
       <div className="africctv-clock">
-        LIVE CLOCK
+
+        <span>
+          LIVE CLOCK
+        </span>
+
+        <strong>
+          REAL TIME
+        </strong>
+
       </div>
 
     </header>
