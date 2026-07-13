@@ -1,0 +1,380 @@
+src/core/layout/AfriDigitalShell.jsx:6:export default function AfriDigitalShell({children}){
+src/core/layout/AfriDigitalShell.jsx:8:    <div className="afridigital-shell">
+src/core/layout/AfriDigitalShell.jsx:10:      <main>{children}</main>
+src/core/layout/AfriDigitalRouteShell.jsx:1:import AfriDigitalShell from "./AfriDigitalShell";
+src/core/layout/AfriDigitalRouteShell.jsx:3:export default function AfriDigitalRouteShell({children}){
+src/core/layout/AfriDigitalRouteShell.jsx:5:    <AfriDigitalShell>
+src/core/layout/AfriDigitalRouteShell.jsx:6:      {children}
+src/core/layout/AfriDigitalRouteShell.jsx:7:    </AfriDigitalShell>
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:40:    <div className="afri-grid-wrapper">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:41:      <div className="afri-grid">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:43:          <div key={index} className={getClass(tile?.size)}>
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:45:              <div className="feed-card">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:46:                <div className="feed-header">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:47:                  <span className="feed-title">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:50:                  <span className="feed-score">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:55:                <div className="feed-body">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:62:                  <div className="focus-indicator">
+src/core/afrivision/ui/AfriVisionGridRenderer.jsx:68:              <div className="empty-tile">Idle</div>
+src/ui/clusterhud/ClusterHUD.jsx:19:    <div className="cluster-hud">
+src/ui/control-center/panels/RiskSidebar.jsx:3:export default function RiskSidebar({ alerts, explanation, selectedNode }) {
+src/ui/control-center/ui/AfriScanControlPlane.jsx:3:import RiskSidebar from "../panels/RiskSidebar";
+src/ui/control-center/ui/AfriScanControlPlane.jsx:37:      <RiskSidebar
+src/ui/cyberdag/CyberDAGView.jsx:17:    <div className="cyber-dag">
+src/ui/hologram/HolographicDAG.jsx:21:    <div className="holo-dag">
+src/ui/hud/GodHUD.jsx:27:  return <canvas ref={canvasRef} className="god-hud" />;
+src/admin/dag/DAGSidebarEngine.jsx:4:export default function OSShellSidebar({ onNavigate }) {
+src/auth/SocRouteGuard.jsx:5:export default function SocRouteGuard({ user, children }) {
+src/auth/SocRouteGuard.jsx:10:  return children;
+src/ecosystem/landing/components/ServiceLayerSection.jsx:4:    <section className="service-layer-section">
+src/ecosystem/landing/components/FutureProductSection.jsx:4:    <section className="future-product-section">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceActivity.jsx:1:export default function CommerceActivity(){return(<div className="commerce-activity"><div>🟢 New seller joined</div><div>📦 Inventory synchronized</div><div>💳 Secure payment verified</div></div>);}
+src/ecosystem/landing/showroom/cards/africommerce/CommerceCTA.jsx:1:export default function CommerceCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriCommerce →</button>);}
+src/ecosystem/landing/showroom/cards/africommerce/CommerceCategories.jsx:13:    <div className="commerce-categories">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx:4:    <div className="commerce-ecosystem">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx:6:      <div className="commerce-card">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx:7:        <div className="commerce-icon">🏪</div>
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx:16:      <div className="commerce-card">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx:17:        <div className="commerce-icon">🌍</div>
+src/ecosystem/landing/showroom/cards/africommerce/CommerceHero.jsx:4:    <div className="commerce-hero">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceHero.jsx:6:      <span className="commerce-badge">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceJourney.jsx:12:    <div className="commerce-journey">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceSecurityBanner.jsx:4:    <div className="commerce-security-banner">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceStats.jsx:4:    <div className="commerce-stats">
+src/ecosystem/landing/showroom/cards/africommerce/CommerceTrustPanel.jsx:4:    <div className="commerce-trust-panel">
+src/ecosystem/landing/showroom/PremiumProductShowroom.jsx:9:    <section className="premium-product-showroom">
+src/ecosystem/landing/showroom/preview/AfriCommerceHeroPreview.jsx:14:    <section className="glass-card product-showcase commerce-showcase premium-showcase">
+src/ecosystem/landing/showroom/preview/AfriCCTVPreview.jsx:4:import EnterpriseSidebar from "../products/africctv/AfriCCTV/marketing/EnterpriseSidebar";
+src/ecosystem/landing/showroom/preview/AfriCCTVPreview.jsx:9:    <section className="africctv-marketing">
+src/ecosystem/landing/showroom/preview/AfriCCTVPreview.jsx:12:      <section className="africctv-enterprise-layout">
+src/ecosystem/landing/showroom/preview/AfriCCTVPreview.jsx:14:        <EnterpriseSidebar />
+src/ecosystem/landing/showroom/preview/AfriTrackerPreview.jsx:9:    <section className="glass-card product-showcase">
+src/ecosystem/landing/showroom/preview/AfriWorkPreview.jsx:8:    <section className="glass-card product-showcase">
+src/ecosystem/landing/showroom/preview/AfriBoostPreview.jsx:8:    <section className="glass-card product-showcase">
+src/ecosystem/landing/showroom/preview/AfriSportsPreview.jsx:9:    <section className="glass-card product-showcase">
+src/ecosystem/landing/showroom/preview/AfriMetaWorldPreview.jsx:8:    <section className="glass-card product-showcase">
+src/ecosystem/landing/showroom/products/africommerce/CommerceActivity.jsx:3:    <section className="commerce-activity">
+src/ecosystem/landing/showroom/products/africommerce/CommerceCTA.jsx:3:    <section className="commerce-cta">
+src/ecosystem/landing/showroom/products/africommerce/CommerceCategories.jsx:3:    <section className="commerce-categories">
+src/ecosystem/landing/showroom/products/africommerce/CommerceCategories.jsx:4:      <h2>Commerce Domains</h2>
+src/ecosystem/landing/showroom/products/africommerce/CommerceEcosystem.jsx:3:    <section className="commerce-ecosystem">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:4:    <section className="commerce-hero enterprise-commerce-hero">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:6:      <div className="commerce-hero-header">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:8:        <span className="commerce-badge">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:25:      <div className="commerce-hero-grid">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:27:        <div className="commerce-panel">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:36:        <div className="commerce-panel">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:45:        <div className="commerce-panel">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:54:        <div className="commerce-panel">
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:65:      <div className="commerce-live-status">
+src/ecosystem/landing/showroom/products/africommerce/CommerceJourney.jsx:3:    <section className="commerce-journey">
+src/ecosystem/landing/showroom/products/africommerce/CommerceSecurityBanner.jsx:3:    <section className="commerce-security-banner">
+src/ecosystem/landing/showroom/products/africommerce/CommerceStats.jsx:3:    <section className="commerce-stats">
+src/ecosystem/landing/showroom/products/africommerce/CommerceStats.jsx:4:      <div className="commerce-stat-card">
+src/ecosystem/landing/showroom/products/africommerce/CommerceStats.jsx:10:      <div className="commerce-stat-card">
+src/ecosystem/landing/showroom/products/africommerce/CommerceStats.jsx:16:      <div className="commerce-stat-card">
+src/ecosystem/landing/showroom/products/africommerce/CommerceTrustPanel.jsx:3:    <section className="commerce-trust-panel">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:24:    <div className="cctv-camera-feed">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:26:      <div className="cctv-feed-frame">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:32:            className="cctv-feed-image"
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:35:          <div className="cctv-feed-placeholder">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:40:        <div className="cctv-overlay">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:43:            <div className="cctv-camera-id">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:55:            <div className="cctv-timestamp">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:79:          className={
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CCTVStatusPanel.jsx:11:    <aside className="cctv-status-panel">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CCTVStatusPanel.jsx:17:      <div className="cctv-status-list">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CCTVStatusPanel.jsx:20:          <div key={feed.id} className="cctv-status-item">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CCTVStatusPanel.jsx:35:      <div className="cctv-ai-preview">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/MobileCCTVFeed.jsx:5:    <div className="mobile-cctv-feed">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/EnterpriseHeader.jsx:4:    <header className="africctv-enterprise-header">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/EnterpriseHeader.jsx:6:      <div className="africctv-brand">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/EnterpriseHeader.jsx:8:        <span className="security-icon">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/EnterpriseHeader.jsx:25:      <div className="africctv-system-panel">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/EnterpriseHeader.jsx:45:      <div className="africctv-clock">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraFeed.jsx:3:    <div className="camera-feed">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraFeed.jsx:4:      <div className="camera-label">{id}</div>
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraFeed.jsx:5:      <div className="camera-screen">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraFeed.jsx:7:        <div className="ai-scan-overlay">AI SCAN</div>
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraWall.jsx:31:    <section className="camera-wall">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraWall.jsx:33:      <div className="camera-wall-header">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraWall.jsx:44:      <div className="camera-grid">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraWall.jsx:48:            className="camera-feed"
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraWall.jsx:52:            <div className="camera-overlay">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraWall.jsx:65:            <div className="camera-screen">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/SOCWidgets.jsx:32:    <section className="soc-widgets">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/SOCWidgets.jsx:34:      <header className="soc-header">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/SOCWidgets.jsx:45:      <div className="soc-grid">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/SOCWidgets.jsx:49:            className="soc-card"
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/components/LiveIndicator.jsx:2:  return <span className="cctv-live-indicator">🟢 LIVE FEED</span>;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/components/RecordingIndicator.jsx:2:  return <span className="cctv-record-indicator">🔴 REC</span>;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/AfriCCTVHero.jsx:4:    <header className="africctv-hero enterprise-africctv-hero">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/AfriCCTVHero.jsx:6:      <span className="africctv-badge">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/AfriCCTVHero.jsx:20:      <div className="africctv-hero-status">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:1:export default function EnterpriseSidebar(){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:12:    <aside className="enterprise-sidebar">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:15:        <div key={label} className="sidebar-row">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/EnterpriseMonitor.jsx:7:    <section className="enterprise-monitor">
+src/ecosystem/landing/showroom/products/afritracker/TrackerCTA.jsx:4:    <section className="tracker-cta">
+src/ecosystem/landing/showroom/products/afritracker/TrackerFeatures.jsx:4:    <section className="tracker-features">
+src/ecosystem/landing/showroom/products/afritracker/TrackerHero.jsx:4:    <section className="tracker-hero enterprise-tracker-hero">
+src/ecosystem/landing/showroom/products/afritracker/TrackerHero.jsx:6:      <span className="tracker-badge">
+src/ecosystem/landing/showroom/products/afritracker/TrackerMap.jsx:4:    <section className="tracker-map">
+src/ecosystem/landing/showroom/products/afritracker/TrackerMap.jsx:10:      <div className="tracker-map-grid">
+src/ecosystem/landing/showroom/products/afritracker/TrackerPreview.jsx:4:    <section className="tracker-preview">
+src/ecosystem/landing/showroom/products/afriwork/WorkCTA.jsx:4:    <section className="work-cta">
+src/ecosystem/landing/showroom/products/afriwork/WorkFeatures.jsx:4:    <section className="work-features">
+src/ecosystem/landing/showroom/products/afriwork/WorkHero.jsx:4:    <section className="work-hero enterprise-work-hero">
+src/ecosystem/landing/showroom/products/afriwork/WorkHero.jsx:6:      <span className="work-badge">
+src/ecosystem/landing/showroom/products/afriwork/WorkPreview.jsx:4:    <section className="work-preview">
+src/ecosystem/landing/showroom/products/afriboost/BoostCTA.jsx:4:    <section className="boost-cta">
+src/ecosystem/landing/showroom/products/afriboost/BoostFeatures.jsx:4:    <section className="boost-features">
+src/ecosystem/landing/showroom/products/afriboost/BoostHero.jsx:4:    <section className="boost-hero enterprise-boost-hero">
+src/ecosystem/landing/showroom/products/afriboost/BoostHero.jsx:6:      <span className="boost-badge">
+src/ecosystem/landing/showroom/products/afriboost/BoostPreview.jsx:4:    <section className="boost-preview">
+src/ecosystem/landing/showroom/canonical/CanonicalShowroomRoot.jsx:9:    <section className="canonical-showroom">
+src/pages/landing/LandingPage.jsx:11:    <div className="landing-shell">
+src/pages/landing/hero/HeroHighlights.jsx:16:    <div className="mt-10 overflow-hidden rounded-2xl border border-cyan-500/20 bg-white/5">
+src/pages/landing/hero/HeroHighlights.jsx:17:      <div className="ticker-track">
+src/pages/landing/hero/HeroHighlights.jsx:19:          <span key={index} className="ticker-item">
+src/pages/landing/hero/HeroHighlights.jsx:21:            <span className="mx-4">•</span>
+src/pages/landing/hero/LandingHero.jsx:3:    <section className="hero-panel">
+src/pages/landing/hero/LandingHero.jsx:5:      <div className="hero-badge">
+src/pages/landing/hero/LandingHero.jsx:6:        <span className="hero-status-dot"></span><span>AfriDigital Platform Online</span>
+src/pages/landing/hero/LandingHero.jsx:9:      <div className="hero-brand"><div className="hero-brand-mark">🛡️</div><h1>AfriDigital</h1></div>
+src/pages/landing/hero/LandingHero.jsx:11:      <p className="hero-subtitle">
+src/pages/landing/hero/LandingHero.jsx:19:      <div className="hero-trust-bar">
+src/pages/landing/discovery/DiscoveryCard.jsx:3:    <li className="glass-card discovery-card">
+src/pages/landing/discovery/EcosystemDiscovery.jsx:14:      <h2 className="section-title">🌐 Ecosystem Discovery</h2>
+src/pages/landing/discovery/EcosystemDiscovery.jsx:16:      <ul className="discovery-grid">
+src/pages/landing/footer/LandingFooter.jsx:10:    <footer className="glass-card landing-footer">
+src/pages/landing/intelligence/AfriAIDock.jsx:6:export default function AfriAIDock(){return(<section className="glass-card ai-panel"><AfriAIStatusBar/><AfriAIConversation/><AfriAIQuickActions/><div className="afriai-chat-row"><AfriAIChatInput/><AfriAIMicButton/></div></section>);}
+src/pages/landing/intelligence/AfriAIStatusBar.jsx:1:export default function AfriAIStatusBar(){return <div className="afriai-status"><span>🧠 AfriAI</span><span className="online">● ONLINE</span></div>;}
+src/pages/landing/intelligence/AfriAIConversation.jsx:1:export default function AfriAIConversation(){return <div className="afriai-conversation"><div className="ai-msg">👋 Welcome to AfriDigital. How can I help you today?</div></div>;}
+src/pages/landing/intelligence/AfriAIChatInput.jsx:1:export default function AfriAIChatInput(){return <input className="afriai-input" placeholder="Ask AfriAI anything..."/>;}
+src/pages/landing/intelligence/AfriAIMicButton.jsx:1:export default function AfriAIMicButton(){return <button className="afriai-mic">🎤</button>;}
+src/pages/landing/intelligence/AfriAIQuickActions.jsx:1:export default function AfriAIQuickActions(){return <div className="afriai-actions"><button>📊 Analytics</button><button>🎥 CCTV</button><button>🛒 Commerce</button><button>⚽ Sports</button></div>;}
+src/pages/landing/products/ProductCard.jsx:5:      className="glass-card product-card"
+src/pages/landing/products/showcase/AfriCommercePreview.jsx:14:    <section className="glass-card product-showcase commerce-showcase premium-showcase">
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:4:import EnterpriseSidebar from "./AfriCCTV/marketing/EnterpriseSidebar";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:9:    <section className="africctv-marketing">
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:12:      <section className="africctv-enterprise-layout">
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:14:        <EnterpriseSidebar />
+src/pages/landing/products/showcase/AfriSportsPreview.jsx:9:    <section className="glass-card product-showcase">
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx:8:    <section className="glass-card product-showcase">
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:4:    <div className="commerce-hero">
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:6:      <span className="commerce-badge">
+src/pages/landing/products/showcase/commerce/CommerceStats.jsx:4:    <div className="commerce-stats">
+src/pages/landing/products/showcase/commerce/CommerceActivity.jsx:1:export default function CommerceActivity(){return(<div className="commerce-activity"><div>🟢 New seller joined</div><div>📦 Inventory synchronized</div><div>💳 Secure payment verified</div></div>);}
+src/pages/landing/products/showcase/commerce/CommerceCTA.jsx:1:export default function CommerceCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriCommerce →</button>);}
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:4:    <div className="commerce-ecosystem">
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:6:      <div className="commerce-card">
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:7:        <div className="commerce-icon">🏪</div>
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:16:      <div className="commerce-card">
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:17:        <div className="commerce-icon">🌍</div>
+src/pages/landing/products/showcase/commerce/CommerceTrustPanel.jsx:4:    <div className="commerce-trust-panel">
+src/pages/landing/products/showcase/commerce/CommerceCategories.jsx:13:    <div className="commerce-categories">
+src/pages/landing/products/showcase/commerce/CommerceSecurityBanner.jsx:4:    <div className="commerce-security-banner">
+src/pages/landing/products/showcase/commerce/CommerceJourney.jsx:12:    <div className="commerce-journey">
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsScoreboard.jsx:1:export default function SportsScoreboard(){return(<div className="sports-scoreboard"><div className="score-card"><strong>Lions FC</strong><span>2</span></div><div className="score-card"><strong>Eagles FC</strong><span>1</span></div><small>76' • Second Half</small></div>);}
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:3:    <div className="sports-fixtures">
+src/pages/landing/products/showcase/sports/SportsCTA.jsx:1:export default function SportsCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriSports →</button>);}
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:3:    <div className="sports-analysis glass-card">
+src/pages/landing/products/showcase/metaworld/MetaWorldPreview.jsx:3:    <div className="metaworld-preview">
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:3:    <div className="boost-hero">
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:6:      <span className="status-pill">🟢 GROWTH ENGINE READY</span>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:3:    <div className="boost-preview glass-card">
+src/pages/landing/products/showcase/afriboost/BoostFeatures.jsx:3:    <div className="boost-features">
+src/pages/landing/products/showcase/afriboost/BoostCTA.jsx:3:    <button className="premium-cta" onClick={onExplore}>
+src/pages/landing/products/showcase/AfriBoostPreview.jsx:8:    <section className="glass-card product-showcase">
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:3:    <div className="work-hero">
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:6:      <span className="status-pill">🟢 WORK ENGINE READY</span>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:3:    <div className="work-preview glass-card">
+src/pages/landing/products/showcase/afriwork/WorkFeatures.jsx:3:    <div className="work-features">
+src/pages/landing/products/showcase/afriwork/WorkCTA.jsx:3:    <button className="premium-cta" onClick={onExplore}>
+src/pages/landing/products/showcase/AfriWorkPreview.jsx:8:    <section className="glass-card product-showcase">
+src/pages/landing/products/showcase/AfriTrackerPreview.jsx:9:    <section className="glass-card product-showcase">
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:24:    <div className="cctv-camera-feed">
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:26:      <div className="cctv-feed-frame">
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:32:            className="cctv-feed-image"
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:35:          <div className="cctv-feed-placeholder">
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:40:        <div className="cctv-overlay">
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:43:            <div className="cctv-camera-id">
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:55:            <div className="cctv-timestamp">
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:79:          className={
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:11:    <aside className="cctv-status-panel">
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:17:      <div className="cctv-status-list">
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:20:          <div key={feed.id} className="cctv-status-item">
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:35:      <div className="cctv-ai-preview">
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx:5:    <div className="mobile-cctv-feed">
+src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx:4:    <header className="africctv-enterprise-header">
+src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx:6:      <div className="africctv-brand">
+src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx:10:      <div className="africctv-status">
+src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx:15:      <div className="africctv-clock">
+src/pages/landing/products/showcase/AfriCCTV/partials/CameraFeed.jsx:3:    <div className="camera-feed">
+src/pages/landing/products/showcase/AfriCCTV/partials/CameraFeed.jsx:4:      <div className="camera-label">{id}</div>
+src/pages/landing/products/showcase/AfriCCTV/partials/CameraFeed.jsx:5:      <div className="camera-screen">
+src/pages/landing/products/showcase/AfriCCTV/partials/CameraFeed.jsx:7:        <div className="ai-scan-overlay">AI SCAN</div>
+src/pages/landing/products/showcase/AfriCCTV/partials/CameraWall.jsx:5:    <section className="camera-wall">
+src/pages/landing/products/showcase/AfriCCTV/partials/SOCWidgets.jsx:3:    <section className="soc-widgets">
+src/pages/landing/products/showcase/AfriCCTV/components/LiveIndicator.jsx:2:  return <span className="cctv-live-indicator">🟢 LIVE FEED</span>;
+src/pages/landing/products/showcase/AfriCCTV/components/RecordingIndicator.jsx:2:  return <span className="cctv-record-indicator">🔴 REC</span>;
+src/pages/landing/products/showcase/AfriCCTV/marketing/AfriCCTVHero.jsx:3:    <header className="africctv-hero">
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:1:export default function EnterpriseSidebar(){
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:12:    <aside className="enterprise-sidebar">
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:15:        <div key={label} className="sidebar-row">
+src/pages/landing/products/showcase/AfriCCTV/EnterpriseMonitor.jsx:7:    <section className="enterprise-monitor">
+src/pages/landing/services/PlatformServiceCard.jsx:3:    <div className="glass-card service-card">
+src/pages/landing/services/PlatformServices.jsx:14:      <h2 className="section-title">🔌 Platform Services</h2>
+src/pages/landing/services/PlatformServices.jsx:16:      <div className="service-grid">
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx:5:    <section className="glass-card ai-panel">
+src/pages/landing/marquee/EcosystemMarquee.jsx:14:    <section className="ecosystem-marquee">
+src/pages/landing/marquee/EcosystemMarquee.jsx:15:      <div className="ticker-track">
+src/pages/landing/marquee/EcosystemMarquee.jsx:17:          <span key={index} className="ticker-item">
+src/pages/landing/marquee/EcosystemMarquee.jsx:19:            <span className="ticker-dot">•</span>
+src/pages/landing/auth/LandingAuthCTA.jsx:3:return (<section className='glass-card landing-auth-cta' data-module={LANDING_AUTH_CTA_TRUTH.MODULE}><h2>Join AfriDigital</h2><p>Access the full ecosystem experience.</p><div><button onClick={()=>navigate(LANDING_AUTH_CTA_TRUTH.LOGIN)}>🔐 Login</button><button onClick={()=>navigate(LANDING_AUTH_CTA_TRUTH.SIGNUP)}>🚀 Sign Up</button></div></section>);
+src/pages/auth/components/AuthHero.jsx:3:    <section className="auth-hero">
+src/pages/auth/components/AuthHero.jsx:5:      <div className="auth-hero-badge">
+src/pages/auth/components/AuthHero.jsx:6:        <span className="auth-status-dot"></span>
+src/pages/auth/components/AuthHero.jsx:10:      <div className="auth-brand">
+src/pages/auth/components/AuthHero.jsx:11:        <div className="auth-brand-mark">🛡️</div>
+src/pages/auth/components/AuthHero.jsx:15:      <p className="auth-subtitle">
+src/pages/auth/components/GoogleAuthButton.jsx:3:    <button className="google-auth-button" onClick={onGoogleAuth}>
+src/pages/auth/components/GoogleAuthButton.jsx:4:      <span className="google-icon">G</span>
+src/pages/auth/components/AuthDivider.jsx:3:    <div className="auth-divider">
+src/pages/auth/components/LoginForm.jsx:3:    <form className="auth-form">
+src/pages/auth/components/SignupForm.jsx:3:    <form className="auth-form">
+src/pages/auth/components/ForgotPasswordLink.jsx:3:    <button className="forgot-password-link">
+src/pages/auth/components/DevelopmentLinks.jsx:17:    <div className="development-links">
+src/pages/auth/AuthPage.jsx:16:    <div className="auth-shell">
+src/pages/auth/AuthPage.jsx:18:      <main className="auth-layout">
+src/pages/auth/AuthPage.jsx:19:        <section className="auth-card">
+src/pages/auth/AuthPage.jsx:27:      </main>
+src/pages/user/UserHome.jsx:2:import UserAppShell from "./shell/UserAppShell";
+src/pages/user/UserHome.jsx:5:  return <UserAppShell />;
+src/pages/user/shell/UserAppShell.jsx:3:import UserSidebar from "../sidebar/UserSidebar";
+src/pages/user/shell/UserAppShell.jsx:6:export default function UserAppShell(){
+src/pages/user/shell/UserAppShell.jsx:12:<UserSidebar collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/pages/user/shell/UserAppShell.jsx:13:<main style={{padding:20}}>
+src/pages/user/shell/UserAppShell.jsx:15:</main>
+src/pages/user/sidebar/UserSidebar.jsx:2:import SidebarHeader from "./sections/SidebarHeader";
+src/pages/user/sidebar/UserSidebar.jsx:3:import SidebarNavigation from "./sections/SidebarNavigation";
+src/pages/user/sidebar/UserSidebar.jsx:4:import SidebarFooter from "./sections/SidebarFooter";
+src/pages/user/sidebar/UserSidebar.jsx:6:export default function UserSidebar({collapsed,onToggle}){
+src/pages/user/sidebar/UserSidebar.jsx:10:<SidebarHeader />
+src/pages/user/sidebar/UserSidebar.jsx:11:<div style={{flex:1}}><SidebarNavigation /></div>
+src/pages/user/sidebar/UserSidebar.jsx:12:<SidebarFooter />
+src/pages/user/sidebar/sections/SidebarHeader.jsx:3:export default function SidebarHeader(){
+src/pages/user/sidebar/sections/SidebarHeader.jsx:6:      <h3>SidebarHeader</h3>
+src/pages/user/sidebar/sections/SidebarNavigation.jsx:5:export default function SidebarNavigation() {
+src/pages/user/sidebar/sections/SidebarFooter.jsx:3:export default function SidebarFooter(){
+src/pages/user/sidebar/sections/SidebarFooter.jsx:6:      <h3>SidebarFooter</h3>
+src/pages/user/context/UserNavigationContext.jsx:5:export function UserNavigationProvider({ children }) {
+src/pages/user/context/UserNavigationContext.jsx:18:      {children}
+src/pages/admin/modules/AfriCCTV/partials/LeftSidebar.jsx:16:export default function LeftSidebar(){
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:4:import LeftSidebar from "../partials/LeftSidebar";
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:18:<LeftSidebar/>
+src/pages/admin/AdminHome.jsx:3:import ControlRoomShell from "../../control-room/core/ControlRoomShell";
+src/pages/admin/AdminHome.jsx:13:return <ControlRoomShell/>;
+src/pages/apps/commerce/buyer/Marketplace.jsx:8:    <section className="commerce-marketplace">
+src/pages/apps/commerce/buyer/ProductDiscovery.jsx:10:    <section className="commerce-product-discovery">
+src/pages/apps/commerce/buyer/ProductDetails.jsx:4:    <section className="product-details">
+src/pages/apps/commerce/buyer/Cart.jsx:8:    <section className="commerce-cart">
+src/pages/apps/commerce/buyer/Checkout.jsx:8:    <section className="commerce-checkout">
+src/pages/apps/commerce/buyer/Orders.jsx:8:    <section className="commerce-orders">
+src/pages/apps/commerce/buyer/components/ProductCard.jsx:4:    <article className="commerce-product-card">
+src/pages/apps/commerce/buyer/checkout/Checkout.jsx:5:    <section className="commerce-checkout">
+src/pages/apps/commerce/seller/SellerDashboard.jsx:4:    <section className="seller-dashboard">
+src/pages/apps/commerce/seller/ProductManagement.jsx:8:    <section className="seller-products">
+src/pages/apps/commerce/seller/InventoryManagement.jsx:8:    <section className="seller-inventory">
+src/pages/apps/commerce/seller/OrderManagement.jsx:8:    <section className="seller-orders">
+src/pages/apps/commerce/seller/Analytics.jsx:4:    <section className="seller-analytics">
+src/pages/apps/commerce/seller/StoreManagement.jsx:4:    <section className="seller-store">
+src/pages/apps/commerce/seller/upload/SellerProductUpload.jsx:5:    <section className="seller-product-upload">
+src/pages/apps/commerce/admin/AdminDashboard.jsx:4:    <section className="commerce-admin-dashboard">
+src/pages/apps/commerce/admin/MarketplaceOperations.jsx:8:    <section className="marketplace-operations">
+src/pages/apps/commerce/admin/SellerManagement.jsx:4:    <section className="seller-management">
+src/pages/apps/commerce/admin/ProductModeration.jsx:4:    <section className="product-moderation">
+src/pages/apps/commerce/admin/OrderOperations.jsx:8:    <section className="order-operations">
+src/pages/apps/commerce/admin/CommerceAnalytics.jsx:4:    <section className="commerce-analytics">
+src/pages/apps/commerce/admin/TrustMonitoring.jsx:4:    <section className="trust-monitoring">
+src/pages/apps/commerce/shell/CommerceShell.jsx:1:export default function CommerceShell({ children }){
+src/pages/apps/commerce/shell/CommerceShell.jsx:4:    <section className="commerce-shell">
+src/pages/apps/commerce/shell/CommerceShell.jsx:5:      {children}
+src/pages/apps/commerce/shell/BuyerShell.jsx:1:import CommerceShell from "./CommerceShell";
+src/pages/apps/commerce/shell/BuyerShell.jsx:3:export default function BuyerShell({ children }){
+src/pages/apps/commerce/shell/BuyerShell.jsx:6:    <CommerceShell>
+src/pages/apps/commerce/shell/BuyerShell.jsx:7:      <section className="buyer-shell">
+src/pages/apps/commerce/shell/BuyerShell.jsx:8:        {children}
+src/pages/apps/commerce/shell/BuyerShell.jsx:10:    </CommerceShell>
+src/pages/apps/commerce/shell/SellerShell.jsx:1:import CommerceShell from "./CommerceShell";
+src/pages/apps/commerce/shell/SellerShell.jsx:3:export default function SellerShell({ children }){
+src/pages/apps/commerce/shell/SellerShell.jsx:6:    <CommerceShell>
+src/pages/apps/commerce/shell/SellerShell.jsx:7:      <section className="seller-shell">
+src/pages/apps/commerce/shell/SellerShell.jsx:8:        {children}
+src/pages/apps/commerce/shell/SellerShell.jsx:10:    </CommerceShell>
+src/pages/apps/commerce/shell/AdminShell.jsx:1:import CommerceShell from "./CommerceShell";
+src/pages/apps/commerce/shell/AdminShell.jsx:3:export default function AdminShell({ children }){
+src/pages/apps/commerce/shell/AdminShell.jsx:6:    <CommerceShell>
+src/pages/apps/commerce/shell/AdminShell.jsx:7:      <section className="admin-shell">
+src/pages/apps/commerce/shell/AdminShell.jsx:8:        {children}
+src/pages/apps/commerce/shell/AdminShell.jsx:10:    </CommerceShell>
+src/pages/apps/commerce/app/AfriCommerceApp.jsx:8:    <section className="africommerce-app">
+src/pages/apps/commerce/app/BuyerApp.jsx:1:import BuyerShell from "../shell/BuyerShell";
+src/pages/apps/commerce/app/BuyerApp.jsx:11:    <BuyerShell>
+src/pages/apps/commerce/app/BuyerApp.jsx:19:    </BuyerShell>
+src/pages/apps/commerce/app/SellerApp.jsx:1:import SellerShell from "../shell/SellerShell";
+src/pages/apps/commerce/app/SellerApp.jsx:11:    <SellerShell>
+src/pages/apps/commerce/app/SellerApp.jsx:19:    </SellerShell>
+src/pages/apps/commerce/app/AdminApp.jsx:1:import AdminShell from "../shell/AdminShell";
+src/pages/apps/commerce/app/AdminApp.jsx:13:    <AdminShell>
+src/pages/apps/commerce/app/AdminApp.jsx:23:    </AdminShell>
+src/routes/AppRouter.jsx:8:import AfriDigitalRouteShell from "../core/layout/AfriDigitalRouteShell";
+src/routes/AppRouter.jsx:15:const ProtectedRoute = ({ children, role }) => {
+src/routes/AppRouter.jsx:21:  return children;
+src/routes/AppRouter.jsx:29:        <Route path="/" element={<AfriDigitalRouteShell><Landing /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:35:        <Route path="/auth" element={<AfriDigitalRouteShell><AuthPage /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:44:              <AfriDigitalRouteShell><UserHome /></AfriDigitalRouteShell>
+src/routes/AppRouter.jsx:54:              <AfriDigitalRouteShell><AdminHome /></AfriDigitalRouteShell>
+src/security/AdminGuard.jsx:4:export default function AdminGuard({ children }) {
+src/security/AdminGuard.jsx:14:  return children;
+src/products/AfriCommerce/landing/showcase/AfriShopShowcase.jsx:4:    <section className="afrishop-showcase">
+src/products/AfriCommerce/landing/showcase/AfriShopShowcase.jsx:14:      <div className="product-preview-slot">
+src/products/AfriCommerce/landing/showcase/AfriMarketShowcase.jsx:4:    <section className="afr imarket-showcase">
+src/products/AfriCommerce/landing/showcase/AfriMarketShowcase.jsx:14:      <div className="seller-preview-slot">
+src/products/AfriCommerce/landing/catalog/CommerceVisualCatalog.jsx:8:    <section className="commerce-visual-catalog">
+src/products/AfriCommerce/landing/components/CommerceCTA.jsx:4:    <section className="commerce-cta">
+src/products/AfriCommerce/landing/AfriCommerceLanding.jsx:8:    <section className="africommerce-landing">
+src/control-room/core/ControlRoomShell.jsx:2:import Sidebar from "../sidebar/Sidebar";
+src/control-room/core/ControlRoomShell.jsx:5:export default function ControlRoomShell(){
+src/control-room/core/ControlRoomShell.jsx:11:<Sidebar active={active} onSelect={setActive} collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/control-room/core/ControlRoomShell.jsx:18:<main style={{flex:1,padding:"20px",overflow:"auto"}}>
+src/control-room/core/ControlRoomShell.jsx:20:</main>
+src/control-room/dashboard/DashboardCore.jsx:8:    <div className="dashboard-core">
+src/control-room/dock/items/ContextPanel.jsx:21:    <div className="afriai-context-panel">
+src/control-room/dock/items/ConversationFeed.jsx:15:    <div className="afriai-conversation-feed">
+src/control-room/dock/items/ConversationFeed.jsx:17:        <div key={i} className={`afriai-msg ${m.role}`}>
+src/control-room/dock/items/QuickCommands.jsx:17:    <div className="afriai-quick-commands">
+src/control-room/global/LayoutProvider.jsx:1:export default function LayoutProvider({children}){ return children; }
+src/control-room/global/ThemeProvider.jsx:1:export default function ThemeProvider({children}){ return children; }
+src/control-room/layout/Panel.jsx:1:export default function Panel({ children }) {
+src/control-room/layout/Panel.jsx:2:  return children;
+src/control-room/layout/SOCGrid.jsx:1:export default function SOCGrid({ children }) {
+src/control-room/layout/SOCGrid.jsx:2:  return children;
+src/control-room/layout/SOCLayout.jsx:1:export default function SOCLayout({ children }) {
+src/control-room/layout/SOCLayout.jsx:2:  return children;
+src/control-room/shell/ControlRoomApp.jsx:1:import Sidebar from "../sidebar/Sidebar";
+src/control-room/shell/ControlRoomApp.jsx:9:    <div className="afridigital-control-room">
+src/control-room/shell/ControlRoomApp.jsx:11:      <Sidebar />
+src/control-room/shell/ControlRoomApp.jsx:12:      <main className="control-room-main">
+src/control-room/shell/ControlRoomApp.jsx:14:      </main>
+src/control-room/sidebar/Sidebar.jsx:3:export default function Sidebar({active,onSelect,collapsed,onToggle}){
+src/control-room/sidebar/items/AfriAISection.jsx:4: * 🧠 AfriAI Sidebar Entry
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:20:  const grouped = AfriAIEcosystemExecutor.groupByDomain?.() || {};
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:26:      {Object.keys(grouped).map((domain) => (
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:28:          key={domain}
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:35:          <h3>📡 {domain}</h3>
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:37:          {grouped[domain].map((m) => (
+src/control-room/ui/ControlRoomUI.jsx:10:    <div className="control-room-ui">
+src/components/ads/AfriBoostSidebar.jsx:4:export default function AfriBoostSidebar() {

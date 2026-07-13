@@ -1,0 +1,67 @@
+src/core/theme/afridigital.tokens.css:13:.afridigital-shell{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:15:.desktop-cctv-main{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:50:  justify-content:center;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:62:  justify-content:space-between;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:86:  justify-content:space-between;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:112:.desktop-cctv-sidebar{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:140:  .desktop-cctv-sidebar{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:147:.desktop-cctv-shell{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:182:  justify-content:center;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:191:.desktop-cctv-sidebar{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:224:  justify-content:space-between;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:238:  justify-content:center;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:378:.desktop-cctv-main{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:451:.africctv-v4-layout{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:472:  justify-content:center;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:488:  .africctv-v4-layout{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:7:.camera-image{height:180px;background:linear-gradient(180deg,#24384f,#0b1623);display:flex;justify-content:space-between;align-items:flex-start;padding:12px}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:9:.camera-overlay{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#0d1724;border-radius:14px}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:49:justify-content:space-between;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:67:justify-content:space-between;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:98:content:"";
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:25:justify-content:space-between;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:59:justify-content:center;
+src/pages/landing/landing.css:2:.landing-shell {
+src/pages/landing/landing.css:158:  .landing-shell {
+src/pages/landing/landing.css:233:  justify-content:space-between;
+src/pages/landing/landing.css:263:.landing-shell {
+src/pages/landing/landing.css:361:.landing-shell {
+src/pages/landing/landing.css:369:  contain: layout paint;
+src/pages/landing/landing.css:378:  width: max-content;
+src/pages/landing/landing.css:421:justify-content:space-between;
+src/pages/landing/landing.css:529:  width:max-content;
+src/pages/landing/landing.css:592:  justify-content:space-between;
+src/pages/landing/landing.css:653:    justify-content:space-between;
+src/pages/landing/landing.css:675:  content:"";
+src/pages/landing/landing.css:733:  content:"";
+src/pages/landing/landing.css:796:  justify-content:center;
+src/pages/landing/landing.css:839:    justify-content:center;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:15:.desktop-cctv-main{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:50:  justify-content:center;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:62:  justify-content:space-between;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:86:  justify-content:space-between;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:112:.desktop-cctv-sidebar{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:140:  .desktop-cctv-sidebar{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:147:.desktop-cctv-shell{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:182:  justify-content:center;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:191:.desktop-cctv-sidebar{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:224:  justify-content:space-between;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:238:  justify-content:center;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:378:.desktop-cctv-main{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:451:.africctv-v4-layout{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:472:  justify-content:center;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:488:  .africctv-v4-layout{
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:7:.camera-image{height:180px;background:linear-gradient(180deg,#24384f,#0b1623);display:flex;justify-content:space-between;align-items:flex-start;padding:12px}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:9:.camera-overlay{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#0d1724;border-radius:14px}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:49:justify-content:space-between;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:67:justify-content:space-between;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:98:content:"";
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:25:justify-content:space-between;
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:59:justify-content:center;
+src/pages/auth/auth.css:1:.auth-shell{
+src/pages/auth/auth.css:7:.auth-layout{
+src/pages/auth/auth.css:27:  justify-content:center;
+src/pages/auth/auth.css:84:  justify-content:center;
+src/pages/auth/auth.css:95:  .auth-layout{
+src/pages/auth/auth.css:108:  justify-content:center;
+src/soc-ui/fluent/fluent.css:30:  justify-content: center;
