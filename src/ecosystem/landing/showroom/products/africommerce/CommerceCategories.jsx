@@ -1,27 +1,13 @@
 export default function CommerceCategories(){
-
-  const categories = [
-    "PHYSICAL",
-    "DIGITAL",
-    "SERVICE",
-    "RENTAL",
-    "SUBSCRIPTION",
-    "EVENT TICKET"
-  ];
-
   return (
-    <div className="commerce-categories">
-
-      <h3>Everything Commerce</h3>
-
+    <section className="commerce-categories">
+      <h2>Commerce Domains</h2>
       <div>
-        {categories.map(category => (
-          <span key={category}>
-            {category}
-          </span>
-        ))}
+        <span>AfriShop</span>
+        <span>AfriMarket</span>
+        <span>AfriBusiness</span>
+        <span>AfriServices</span>
       </div>
-
-    </div>
+    </section>
   );
 }

@@ -1,1 +1,10 @@
-export default function CommerceActivity(){return(<div className="commerce-activity"><div>🟢 New seller joined</div><div>📦 Inventory synchronized</div><div>💳 Secure payment verified</div></div>);}
+export default function CommerceActivity(){
+  return (
+    <section className="commerce-activity">
+      <h2>Live Commerce Intelligence</h2>
+      <p>
+        Marketplace activity and ecosystem insights.
+      </p>
+    </section>
+  );
+}
