@@ -1,33 +1,42 @@
-import WarRoomHUD from "../../warroom/hud/WarRoomHUD";
 import React from "react";
+import WarRoomHUD from "../../warroom/hud/WarRoomHUD";
 import ViewRouter from "../router/ViewRouter";
+import { resolveAdminPlugin } from "../../../plugins/admin/adminPluginRegistry";
 
-export default function WarRoomLayout({ screens = [], dagData }) {
+export default function WarRoomLayout() {
   return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "2fr 1fr",
-      gridTemplateRows: "1fr 1fr",
-      height: "100vh",
-      background: "#050816",
-      gap: 6
-    }}>
-
-      {/* MAIN DAG SCREEN */}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "2fr 1fr",
+        gridTemplateRows: "1fr 1fr",
+        height: "100vh",
+        background: "#050816",
+        gap: 6
+      }}
+    >
       <div style={{ gridColumn: "1 / 2", gridRow: "1 / 3" }}>
-        <ViewRouter activeDashboard="afriscan" dagData={dagData} />
+        <ViewRouter
+          plugin={resolveAdminPlugin("afriScan")}
+          fallback="Loading AfriScan..."
+        />
       </div>
 
-      {/* TOP RIGHT: FINANCE */}
       <div style={{ background: "#0a0f1c" }}>
-        <ViewRouter activeDashboard="afribank" dagData={dagData} />
+        <ViewRouter
+          plugin={resolveAdminPlugin("afriBank")}
+          fallback="Loading AfriBank..."
+        />
       </div>
 
-      {/* BOTTOM RIGHT: SECURITY */}
       <div style={{ background: "#0a0f1c" }}>
-        <ViewRouter activeDashboard="security" dagData={dagData} />
+        <ViewRouter
+          plugin={resolveAdminPlugin("soc")}
+          fallback="Loading SOC..."
+        />
       </div>
 
+      <WarRoomHUD />
     </div>
   );
 }

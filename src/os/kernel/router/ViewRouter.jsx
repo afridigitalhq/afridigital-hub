@@ -1,17 +1,14 @@
 import React from "react";
-import { resolveAdminPlugin } from "../../../plugins/admin/adminPluginRegistry";
 
-export default function ViewRouter({ activeDashboard }) {
-  const plugin = resolveAdminPlugin(activeDashboard);
-
+export default function ViewRouter({ plugin, fallback = "Loading..." }) {
   if (!plugin) {
-    return <div>🧠 Workspace not found.</div>;
+    return <div>🧠 Plugin not found.</div>;
   }
 
   const Component = plugin.component;
 
   return (
-    <React.Suspense fallback={<div>Loading workspace...</div>}>
+    <React.Suspense fallback={<div>{fallback}</div>}>
       <Component />
     </React.Suspense>
   );
