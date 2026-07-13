@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { UnifiedPluginRegistry } from "./UnifiedPluginRegistry";
+import { UnifiedPluginRegistry } from "../../core/runtime/adapters/UnifiedPluginRegistry";
 
 export default function OSShellSidebar({ onNavigate }) {
   const [activeNode, setActiveNode] = useState(null);

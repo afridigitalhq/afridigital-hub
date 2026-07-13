@@ -1,5 +1,4 @@
 import React from "react";
-import OSRuntimeBootstrap from "../../orchestrator/ui/OSRuntimeBootstrap";
 import GlobalHeatMap from "../../orchestrator/heat/GlobalHeatMap";
 import IncidentNarratorPanel from "../../orchestrator/ai/IncidentNarratorPanel";
 
@@ -17,7 +16,7 @@ export default function SOCCommandCenter({
     }}>
 
       {/* MAIN CONTROL CENTER */}
-      <OSRuntimeBootstrap dagData={dagData} />
+      <div data-soc-runtime="active" />
 
       {/* GLOBAL OVERLAY LAYERS */}
       <GlobalHeatMap zones={heatZones} />

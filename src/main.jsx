@@ -1,13 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import appBootstrap from "./core/bootstrap/AppBootstrap";
-
-// Initialize AfriDigital ecosystem
-appBootstrap.start();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <h1 style={{color:"#00ff88",padding:"20px"}}>React Main.jsx Works ✅</h1>
 );

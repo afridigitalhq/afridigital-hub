@@ -1,4 +1,4 @@
-import { UnifiedPluginRegistry } from "./UnifiedPluginRegistry";
+import { UnifiedPluginRegistry } from "../../core/runtime/adapters/UnifiedPluginRegistry";
 
 export function resolveNodeByRoute(route) {
   return UnifiedPluginRegistry.find((n) => n.route === route);

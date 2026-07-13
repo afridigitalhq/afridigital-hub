@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import Sidebar from "../sidebar/Sidebar";
-import ViewRouter from "../../os/kernel/router/ViewRouter";
+import ViewRouter from "../router/ControlRoomRouter";
 
 export default function ControlRoomShell(){
 const [active,setActive]=useState("afriScan");

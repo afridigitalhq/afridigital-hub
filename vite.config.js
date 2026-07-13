@@ -1,6 +1,9 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ["react", "react-dom"]
+  },
   build: {
     outDir: "dist"
   }

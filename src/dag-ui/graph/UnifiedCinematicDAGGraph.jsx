@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import ReactFlow, { Background, Controls, MiniMap } from "reactflow";
 import "reactflow/dist/style.css";
 
-import { UnifiedPluginRegistry } from "../../os/registry/UnifiedPluginRegistry";
+import { UnifiedPluginRegistry } from "../../core/runtime/adapters/UnifiedPluginRegistry";
 
 export default function UnifiedCinematicDAGGraph({
   dagRuntime,

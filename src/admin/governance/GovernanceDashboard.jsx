@@ -1,7 +1,7 @@
-import { useKernelSnapshot } from "../../os/kernel-contract/useKernelSnapshot";
+import { readSnapshot } from "../../runtime/snapshot/afriRuntimeSnapshot";
 
 export default function GovernanceDashboard() {
-  const kernel = useKernelSnapshot();
+  const kernel = readSnapshot();
 
   return (
     <div>

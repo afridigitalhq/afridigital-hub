@@ -1,5 +1,3 @@
-import "../afriai/AfriAICommandBridge";
-
 class AppBootstrap {
   constructor() {
     this.started = false;

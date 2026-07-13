@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import ReactFlow, { Background, Controls, MiniMap, useNodesState, useEdgesState } from "reactflow";
 import "reactflow/dist/style.css";
-import { UnifiedPluginRegistry } from "../../os/registry/UnifiedPluginRegistry";
+import { UnifiedPluginRegistry } from "../../core/runtime/adapters/UnifiedPluginRegistry";
 
 export default function CinematicDAGGraph({ dagRuntime, onSelect }) {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
