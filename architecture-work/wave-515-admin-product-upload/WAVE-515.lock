@@ -1,0 +1,16 @@
+AFRINUCCHAIN WAVE-515 LOCK
+
+Module:
+AfriShop Admin Product Upload Foundation
+
+Completed:
+- Admin upload contract
+- Admin permission boundary
+- AfriShop publishing path
+- Product upload service foundation
+
+Permission:
+AFRIDIGITAL ADMIN ONLY
+
+Next:
+WAVE-516 Seller Dashboard Product Upload Foundation
