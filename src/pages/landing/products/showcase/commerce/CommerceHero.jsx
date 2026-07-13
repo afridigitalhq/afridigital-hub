@@ -1,20 +1,18 @@
 export default function CommerceHero(){
 
   return (
-    <div className="commerce-hero">
+    <div className="commerce-hero text-center">
 
-      <span className="commerce-badge">
-        AFRICOMMERCE ECOSYSTEM
-      </span>
+      <div className="commerce-icon">
+        🛒
+      </div>
 
       <h1>
-        Africa's Trusted Commerce Network
+        AfriCommerce
       </h1>
 
       <p>
-        AfriCommerce connects AfriShop, AfriMarket,
-        AfriTrust and AfriBank into one seamless
-        digital commerce experience.
+        Africa's digital commerce ecosystem
       </p>
 
     </div>
