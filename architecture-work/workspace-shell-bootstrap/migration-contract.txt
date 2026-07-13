@@ -1,0 +1,8 @@
+⚛️ AFRINUCCHAIN :: WORKSPACE SHELL CONVERGENCE
+WorkspaceShell owns layout
+WorkspaceShell owns sidebar width
+WorkspaceShell owns collapsed state
+UserSidebar becomes presentation only
+AdminSidebar becomes presentation only
+UserAppShell -> WorkspaceShell
+ControlRoomShell -> WorkspaceShell
