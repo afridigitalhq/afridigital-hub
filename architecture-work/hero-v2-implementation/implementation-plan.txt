@@ -1,0 +1,13 @@
+FILES TO UPDATE
+
+src/pages/landing/hero/LandingHero.jsx
+src/pages/landing/landing.css
+
+IMPLEMENTATION
+- Replace hero-brand-mark with hero-brand-logo styling
+- Remove hero-trust-bar styling
+- Remove hero-actions styling
+- Reduce hero height by ~40%
+- Keep logo top-left
+- Center title and subtitle
+- Preserve ambient animation
