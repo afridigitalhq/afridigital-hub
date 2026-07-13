@@ -1,0 +1,12 @@
+LANDING V2 PHASE 2
+
+Apply:
+- Logo fixed top-left inside hero
+- Hero title centered
+- Hero subtitle centered
+- Reduce hero vertical padding by ~40%
+- Remove remaining orphan hero CSS (hero-actions, hero-trust-bar)
+- Center landing content containers
+- Simplify product cards to graphic + name only
+- Reduce footer height and spacing
+- Preserve animations, gradients, and architecture
