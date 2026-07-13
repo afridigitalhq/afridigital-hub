@@ -11,14 +11,12 @@ import "./landing.css";
 export default function LandingPage() {
   const navigate = useNavigate();
 
-;
-
   return (
     <div className="landing-shell">
 
 
       {/* HERO */}
-      <LandingHero navigate={navigate} />
+      <LandingHero />
 
       {/* ECOSYSTEM MARQUEE */}
       <EcosystemMarquee />

@@ -1,4 +1,4 @@
-export default function LandingHero({ navigate }) {
+export default function LandingHero() {
   return (
     <section className="hero-panel">
 
