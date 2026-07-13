@@ -1,0 +1,65 @@
+src/core/bus/AfriEventBus.js:17:    this.ws.onopen = () => {
+src/core/bus/AfriEventBus.fixed.js:24:    this.ws.onopen = () => {
+src/core/stream/GraphStream.js:20:    this.ws.onopen = () => {
+src/core/ws/AfriCCTVSocket.js:8:    this.ws.onopen = () => console.log("CCTV_WS_CONNECTED");
+src/ui/control-center/panels/RiskSidebar.jsx:3:export default function RiskSidebar({ alerts, explanation, selectedNode }) {
+src/ui/control-center/ui/AfriScanControlPlane.jsx:3:import RiskSidebar from "../panels/RiskSidebar";
+src/ui/control-center/ui/AfriScanControlPlane.jsx:37:      <RiskSidebar
+src/admin/dag/DAGSidebarEngine.jsx:4:export default function OSShellSidebar({ onNavigate }) {
+src/ecosystem/landing/showroom/preview/AfriCCTVPreview.jsx:4:import EnterpriseSidebar from "../products/africctv/AfriCCTV/marketing/EnterpriseSidebar";
+src/ecosystem/landing/showroom/preview/AfriCCTVPreview.jsx:14:        <EnterpriseSidebar />
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:1:export default function EnterpriseSidebar(){
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:12:    <aside className="enterprise-sidebar">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:15:        <div key={label} className="sidebar-row">
+src/mie/moduleLoader.js:31:function buildSidebar(modules) {
+src/mie/moduleLoader.js:33:    label: m?.sidebar?.label || m.id,
+src/mie/moduleLoader.js:34:    icon: m?.sidebar?.icon || "📦",
+src/mie/moduleLoader.js:45:  buildSidebar
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:4:import EnterpriseSidebar from "./AfriCCTV/marketing/EnterpriseSidebar";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:14:        <EnterpriseSidebar />
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:1:export default function EnterpriseSidebar(){
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:12:    <aside className="enterprise-sidebar">
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:15:        <div key={label} className="sidebar-row">
+src/pages/user/shell/UserAppShell.jsx:3:import UserSidebar from "../sidebar/UserSidebar";
+src/pages/user/shell/UserAppShell.jsx:7:const [collapsed,setCollapsed]=useState(false);
+src/pages/user/shell/UserAppShell.jsx:11:<div style={{display:"grid",gridTemplateColumns:collapsed?"70px 1fr":"260px 1fr",minHeight:"100vh",transition:"0.3s"}}>
+src/pages/user/shell/UserAppShell.jsx:12:<UserSidebar collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/pages/user/sidebar/UserSidebar.jsx:2:import SidebarHeader from "./sections/SidebarHeader";
+src/pages/user/sidebar/UserSidebar.jsx:3:import SidebarNavigation from "./sections/SidebarNavigation";
+src/pages/user/sidebar/UserSidebar.jsx:4:import SidebarFooter from "./sections/SidebarFooter";
+src/pages/user/sidebar/UserSidebar.jsx:6:export default function UserSidebar({collapsed,onToggle}){
+src/pages/user/sidebar/UserSidebar.jsx:8:<aside style={{width:collapsed?70:260,minHeight:"100vh",display:"flex",flexDirection:"column",transition:"0.3s",overflow:"hidden"}}>
+src/pages/user/sidebar/UserSidebar.jsx:10:<SidebarHeader />
+src/pages/user/sidebar/UserSidebar.jsx:11:<div style={{flex:1}}><SidebarNavigation /></div>
+src/pages/user/sidebar/UserSidebar.jsx:12:<SidebarFooter />
+src/pages/user/sidebar/sections/SidebarHeader.jsx:3:export default function SidebarHeader(){
+src/pages/user/sidebar/sections/SidebarHeader.jsx:6:      <h3>SidebarHeader</h3>
+src/pages/user/sidebar/sections/SidebarNavigation.jsx:5:export default function SidebarNavigation() {
+src/pages/user/sidebar/sections/SidebarFooter.jsx:3:export default function SidebarFooter(){
+src/pages/user/sidebar/sections/SidebarFooter.jsx:6:      <h3>SidebarFooter</h3>
+src/pages/admin/modules/AfriCCTV/partials/LeftSidebar.jsx:16:export default function LeftSidebar(){
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:4:import LeftSidebar from "../partials/LeftSidebar";
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:18:<LeftSidebar/>
+src/soc-world/modes/SOCDualModeEngine.js:8:  toggleLive(state) {
+src/soc-world/modes/SOCDualModeEngine.js:12:  toggleTraining(state) {
+src/ws/client.js:20:    this.ws.onopen = () => {
+src/control-room/afrai/AfriAIController.js:16:    if (command.startsWith("open ")) {
+src/control-room/afrai/AfriAIController.js:17:      const module = command.replace("open ", "").trim();
+src/control-room/afrai/AfriAIController.js:25:      return `module_opened:${module}`;
+src/control-room/core/ControlRoomShell.jsx:2:import Sidebar from "../sidebar/Sidebar";
+src/control-room/core/ControlRoomShell.jsx:7:const [collapsed,setCollapsed]=useState(false);
+src/control-room/core/ControlRoomShell.jsx:11:<Sidebar active={active} onSelect={setActive} collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/control-room/shell/ControlRoomApp.jsx:1:import Sidebar from "../sidebar/Sidebar";
+src/control-room/shell/ControlRoomApp.jsx:11:      <Sidebar />
+src/control-room/sidebar/Sidebar.jsx:3:export default function Sidebar({active,onSelect,collapsed,onToggle}){
+src/control-room/sidebar/Sidebar.jsx:7:<aside style={{width:collapsed?70:240,padding:10,transition:"0.3s"}}>
+src/control-room/sidebar/Sidebar.jsx:9:{items.map(item=><button key={item} onClick={()=>onSelect(item)} style={{display:"block",width:"100%"}}>{collapsed?item[0]:item}</button>)}
+src/control-room/sidebar/items/AfriAISection.jsx:4: * 🧠 AfriAI Sidebar Entry
+src/plugins/admin/adminPluginRegistry.js:12:sidebarGroup:"intelligence",
+src/plugins/admin/adminPluginRegistry.js:25:sidebarGroup:"products",
+src/plugins/admin/adminPluginRegistry.js:38:sidebarGroup:"business",
+src/plugins/admin/adminPluginRegistry.js:51:sidebarGroup:"intelligence",
+src/plugins/admin/adminPluginRegistry.js:64:sidebarGroup:"operations",
+src/components/ads/AfriBoostSidebar.jsx:4:export default function AfriBoostSidebar() {
+src/shared/components/cta/AfriWhatsappCTA.jsx:2:  const open = () => {
+src/shared/components/cta/AfriWhatsappCTA.jsx:7:    <button onClick={open}>

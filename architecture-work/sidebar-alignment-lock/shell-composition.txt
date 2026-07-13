@@ -1,0 +1,40 @@
+src/control-room/core/ControlRoomShell.jsx:18:<main style={{flex:1,padding:"20px",overflow:"auto"}}>
+src/control-room/core/ControlRoomShell.jsx:20:</main>
+src/control-room/dashboard/DashboardCore.jsx:8:    <div className="dashboard-core">
+src/control-room/dock/items/ContextPanel.jsx:21:    <div className="afriai-context-panel">
+src/control-room/dock/items/ConversationFeed.jsx:15:    <div className="afriai-conversation-feed">
+src/control-room/dock/items/ConversationFeed.jsx:17:        <div key={i} className={`afriai-msg ${m.role}`}>
+src/control-room/dock/items/QuickCommands.jsx:17:    <div className="afriai-quick-commands">
+src/control-room/dock/services/ConversationMemory.jsx:4:  add(role, content) {
+src/control-room/dock/services/ConversationMemory.jsx:8:      content,
+src/control-room/global/LayoutProvider.jsx:1:export default function LayoutProvider({children}){ return children; }
+src/control-room/global/ThemeProvider.jsx:1:export default function ThemeProvider({children}){ return children; }
+src/control-room/layout/Panel.jsx:1:export default function Panel({ children }) {
+src/control-room/layout/Panel.jsx:2:  return children;
+src/control-room/layout/SOCGrid.jsx:1:export default function SOCGrid({ children }) {
+src/control-room/layout/SOCGrid.jsx:2:  return children;
+src/control-room/layout/SOCLayout.jsx:1:export default function SOCLayout({ children }) {
+src/control-room/layout/SOCLayout.jsx:2:  return children;
+src/control-room/shell/ControlRoomApp.jsx:9:    <div className="afridigital-control-room">
+src/control-room/shell/ControlRoomApp.jsx:12:      <main className="control-room-main">
+src/control-room/shell/ControlRoomApp.jsx:14:      </main>
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:20:  const grouped = AfriAIEcosystemExecutor.groupByDomain?.() || {};
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:26:      {Object.keys(grouped).map((domain) => (
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:28:          key={domain}
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:35:          <h3>📡 {domain}</h3>
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:37:          {grouped[domain].map((m) => (
+src/control-room/ui/ControlRoomUI.jsx:10:    <div className="control-room-ui">
+src/pages/user/UserHome.jsx:2:import UserAppShell from "./shell/UserAppShell";
+src/pages/user/shell/UserAppShell.jsx:13:<main style={{padding:20}}>
+src/pages/user/shell/UserAppShell.jsx:15:</main>
+src/pages/user/context/UserNavigationContext.jsx:5:export function UserNavigationProvider({ children }) {
+src/pages/user/context/UserNavigationContext.jsx:18:      {children}
+src/core/layout/AfriDigitalLayoutEngine.jsx:9: *   registerSection(Component, { order, layout })
+src/core/layout/AfriDigitalLayoutEngine.jsx:17:      ? { order: config, layout: "default" }
+src/core/layout/AfriDigitalLayoutEngine.jsx:20:          layout: config.layout ?? "default"
+src/core/layout/AfriDigitalLayoutEngine.L16.backup.jsx:5: * Central registry-driven layout system
+src/core/layout/AfriDigitalShell.jsx:6:export default function AfriDigitalShell({children}){
+src/core/layout/AfriDigitalShell.jsx:8:    <div className="afridigital-shell">
+src/core/layout/AfriDigitalShell.jsx:10:      <main>{children}</main>
+src/core/layout/AfriDigitalRouteShell.jsx:3:export default function AfriDigitalRouteShell({children}){
+src/core/layout/AfriDigitalRouteShell.jsx:6:      {children}

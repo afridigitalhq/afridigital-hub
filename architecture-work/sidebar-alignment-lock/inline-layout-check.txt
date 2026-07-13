@@ -1,0 +1,98 @@
+src/control-room/afrai-dashboard/command-console/AfriAICommandConsole.jsx:29:    <div style={{ padding: 16, fontFamily: "monospace" }}>
+src/control-room/afrai-dashboard/command-console/AfriAICommandConsole.jsx:36:        style={{ width: "100%", padding: 8 }}
+src/control-room/afrai-dashboard/command-console/AfriAICommandConsole.jsx:39:      <button onClick={runCommand} style={{ marginTop: 8 }}>
+src/control-room/afrai-dashboard/command-console/AfriAICommandConsole.jsx:43:      <div style={{ marginTop: 16 }}>
+src/control-room/afrai-dashboard/command-console/AfriAICommandConsole.jsx:45:          <div key={i} style={{ marginBottom: 8 }}>
+src/control-room/afrai-dashboard/devops-panel/AfriAIDevOpsPanel.jsx:22:    <div style={{ padding: 16, fontFamily: "monospace" }}>
+src/control-room/afrai-dashboard/devops-panel/AfriAIDevOpsPanel.jsx:29:        <div style={{ marginTop: 12 }}>
+src/control-room/afrai-dashboard/system-monitor/AfriAILiveFeed.jsx:16:    <div style={{ padding: 16, fontFamily: "monospace" }}>
+src/control-room/afrai-dashboard/system-monitor/AfriAILiveFeed.jsx:21:          <div key={i} style={{ marginBottom: 6 }}>
+src/control-room/afrai/dashboard/AfriAIDashboard.jsx:14:    <div style={{ padding: 20, color: "#fff" }}>
+src/control-room/afrai/dashboard/AfriAIDashboard.jsx:17:      <div style={{ display: "grid", gap: 20 }}>
+src/control-room/afrai/dashboard/components/AfriAIDecisionTimeline.jsx:5:    <div style={{ padding: 12, border: "1px solid #333", background: "#111" }}>
+src/control-room/afrai/dashboard/components/AfriAIDecisionTimeline.jsx:7:      <div style={{ fontSize: 12, opacity: 0.6 }}>
+src/control-room/afrai/dashboard/components/AfriAIExecutionMap.jsx:5:    <div style={{ padding: 12, border: "1px solid #333", background: "#111" }}>
+src/control-room/afrai/dashboard/components/AfriAIExecutionMap.jsx:7:      <div style={{ fontSize: 12, opacity: 0.6 }}>
+src/control-room/afrai/dashboard/components/AfriAIIntentAnalyzer.jsx:5:    <div style={{ padding: 12, border: "1px solid #333", background: "#111" }}>
+src/control-room/afrai/dashboard/components/AfriAIIntentAnalyzer.jsx:7:      <div style={{ fontSize: 12, opacity: 0.6 }}>
+src/control-room/afrai/dashboard/components/AfriAIThoughtStream.jsx:24:    <div style={{ padding: 12, border: "1px solid #333", background: "#111" }}>
+src/control-room/afrai/dashboard/components/AfriAIThoughtStream.jsx:27:      <div style={{ maxHeight: 200, overflow: "auto", fontSize: 12 }}>
+src/control-room/afrai/dashboard/components/AfriAIThoughtStream.jsx:29:          <div key={i} style={{ marginBottom: 6, opacity: 0.85 }}>
+src/control-room/afrai/dashboard/components/AfriAIThoughtStream.jsx:30:            <span style={{ color: "#00ffcc" }}>{t.time}</span> —{" "}
+src/control-room/afrai/ui/AfriAICommandCenter.jsx:29:    <div style={{ padding: 20 }}>
+src/control-room/afrai/ui/AfriAICommandCenter.jsx:36:        style={{ width: "60%", padding: 10 }}
+src/control-room/afrai/ui/AfriAICommandCenter.jsx:39:      <button onClick={sendCommand} style={{ marginLeft: 10 }}>
+src/control-room/afrai/ui/AfriAICommandCenter.jsx:43:      <div style={{ marginTop: 20 }}>
+src/control-room/afrai/ui/AfriAICommandCenter.jsx:45:          <div key={idx} style={{ marginBottom: 10 }}>
+src/control-room/afrai/ui/AfriAIWorkflowPanel.jsx:31:        style={{
+src/control-room/afrai/ui/AfriAIWorkflowPanel.jsx:38:        <div style={{ fontWeight: "bold" }}>
+src/control-room/afrai/ui/AfriAIWorkflowPanel.jsx:42:        <pre style={{ color: "#0f0", fontSize: 12 }}>
+src/control-room/afrai/ui/AfriAIWorkflowPanel.jsx:50:    <div style={{ padding: 20 }}>
+src/control-room/afrai/ui/governance/AfriAIGovernancePanel.jsx:31:    <div style={{ padding: 20 }}>
+src/control-room/afrai/ui/governance/AfriAIGovernancePanel.jsx:41:          style={{
+src/control-room/afrai/ui/governance/AfriAIGovernancePanel.jsx:52:          <div style={{ marginTop: 10 }}>
+src/control-room/afrai/ui/governance/AfriAIGovernancePanel.jsx:57:            <button onClick={() => reject(item.id)} style={{ marginLeft: 10 }}>
+src/control-room/afrai/ui/governance/AfriAIGovernancePanel.jsx:61:            <button onClick={() => rollback(item.id)} style={{ marginLeft: 10 }}>
+src/control-room/core/ControlRoomShell.jsx:10:<div style={{display:"flex",minHeight:"100vh",background:"#0b0f14",color:"#fff"}}>
+src/control-room/core/ControlRoomShell.jsx:13:<div style={{flex:1,display:"flex",flexDirection:"column"}}>
+src/control-room/core/ControlRoomShell.jsx:14:<header style={{padding:"16px",borderBottom:"1px solid #1f2937",background:"#111827"}}>
+src/control-room/core/ControlRoomShell.jsx:18:<main style={{flex:1,padding:"20px",overflow:"auto"}}>
+src/control-room/sidebar/Sidebar.jsx:7:<aside style={{width:collapsed?70:240,padding:10,transition:"0.3s"}}>
+src/control-room/sidebar/Sidebar.jsx:9:{items.map(item=><button key={item} onClick={()=>onSelect(item)} style={{display:"block",width:"100%"}}>{collapsed?item[0]:item}</button>)}
+src/control-room/sidebar/items/AfriAISection.jsx:9:    <div style={{ padding: 10, cursor: "pointer" }} onClick={() => onSelect("afrai")}>
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:23:    <div style={{ padding: 20, color: "#fff" }}>
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:29:          style={{
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:40:              style={{
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:48:              <div style={{ fontSize: 12, opacity: 0.7 }}>
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:51:              <div style={{ fontSize: 12, opacity: 0.7 }}>
+src/control-room/soc/visualization/flow/ExecutionFlowAnimator.jsx:22:    <div style={{ padding: 20, color: "#fff" }}>
+src/control-room/soc/visualization/flow/ExecutionFlowAnimator.jsx:25:      <div style={{ marginTop: 20 }}>
+src/control-room/soc/visualization/flow/ExecutionFlowAnimator.jsx:57:        <div style={{ marginTop: 20, fontSize: 12, opacity: 0.7 }}>
+src/control-room/soc/visualization/flow/ExecutionFlowAnimator.jsx:68:      style={{
+src/control-room/ui/AfriAICommandBox.jsx:31:      <div style={{ marginTop: 10 }}>
+src/pages/user/dashboard/partials/WelcomeBanner.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/partials/EcosystemOverview.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/partials/QuickActions.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/partials/ActivityFeed.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/partials/AfriAIPanel.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/partials/InsightsPanel.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/partials/ProductLauncher.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/partials/PluginWorkspace.jsx:11:      <section style={{ padding: 16 }}>
+src/pages/user/dashboard/partials/PluginWorkspace.jsx:22:      <section style={{ padding: 16 }}>
+src/pages/user/dashboard/partials/PluginWorkspace.jsx:29:    <section style={{ padding: 16 }}>
+src/pages/user/dashboard/partials/PluginWorkspace.jsx:31:        style={{
+src/pages/user/dashboard/UserDashboard.jsx:13:    <div style={{display:"grid",gap:16}}>
+src/pages/user/dashboard/widgets/WalletSummary.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/EcosystemGrid.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/NotificationsPanel.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/RecentActivity.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/QuickActionsPanel.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/ProductOverviewGrid.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/FavoritesPanel.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/SystemStatus.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/UserProfileSnapshot.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/PaymentCenter.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/ProductOverview.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/dashboard/widgets/PromotionsPanel.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/shell/UserAppShell.jsx:11:<div style={{display:"grid",gridTemplateColumns:collapsed?"70px 1fr":"260px 1fr",minHeight:"100vh",transition:"0.3s"}}>
+src/pages/user/shell/UserAppShell.jsx:13:<main style={{padding:20}}>
+src/pages/user/sidebar/UserSidebar.jsx:8:<aside style={{width:collapsed?70:260,minHeight:"100vh",display:"flex",flexDirection:"column",transition:"0.3s",overflow:"hidden"}}>
+src/pages/user/sidebar/UserSidebar.jsx:11:<div style={{flex:1}}><SidebarNavigation /></div>
+src/pages/user/sidebar/sections/SidebarHeader.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/sections/SidebarNavigation.jsx:20:    <nav style={{ display: "flex", flexDirection: "column", gap: 8, padding: 12 }}>
+src/pages/user/sidebar/sections/SidebarNavigation.jsx:22:        style={buttonStyle(activePlugin === "dashboard")}
+src/pages/user/sidebar/sections/SidebarNavigation.jsx:31:          style={buttonStyle(activePlugin === plugin.key)}
+src/pages/user/sidebar/sections/SidebarFooter.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/DashboardItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriCommerceItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriSportsItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriWorkItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriCommItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriLoveItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriTrackerItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriCCTVItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriEducationItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriLogisticsItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriTickingItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriMetaWorldItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
+src/pages/user/sidebar/items/AfriBoostItem.jsx:5:    <section style={{padding:16,border:"1px solid #2a2f45",borderRadius:12}}>
