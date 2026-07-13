@@ -1,7 +1,7 @@
-import WorkHero from "../products/afriwork/WorkHero";
-import WorkPreview from "../products/afriwork/WorkPreview";
-import WorkFeatures from "../products/afriwork/WorkFeatures";
-import WorkCTA from "../products/afriwork/WorkCTA";
+import WorkHero from "./afriwork/WorkHero";
+import WorkPreview from "./afriwork/WorkPreview";
+import WorkFeatures from "./afriwork/WorkFeatures";
+import WorkCTA from "./afriwork/WorkCTA";
 
 export default function AfriWorkPreview({onExplore}){
   return (

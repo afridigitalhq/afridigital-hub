@@ -1,7 +1,7 @@
-import BoostHero from "../products/afriboost/BoostHero";
-import BoostPreview from "../products/afriboost/BoostPreview";
-import BoostFeatures from "../products/afriboost/BoostFeatures";
-import BoostCTA from "../products/afriboost/BoostCTA";
+import BoostHero from "./afriboost/BoostHero";
+import BoostPreview from "./afriboost/BoostPreview";
+import BoostFeatures from "./afriboost/BoostFeatures";
+import BoostCTA from "./afriboost/BoostCTA";
 
 export default function AfriBoostPreview({ onExplore }) {
   return (

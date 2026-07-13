@@ -1,12 +1,12 @@
-import CommerceHero from "./commerce/CommerceHero";
-import CommerceStats from "./commerce/CommerceStats";
-import CommerceEcosystem from "./commerce/CommerceEcosystem";
-import CommerceCategories from "./commerce/CommerceCategories";
-import CommerceTrustPanel from "./commerce/CommerceTrustPanel";
-import CommerceSecurityBanner from "./commerce/CommerceSecurityBanner";
-import CommerceJourney from "./commerce/CommerceJourney";
-import CommerceActivity from "./commerce/CommerceActivity";
-import CommerceCTA from "./commerce/CommerceCTA";
+import CommerceHero from "../products/africommerce/CommerceHero";
+import CommerceStats from "../products/africommerce/CommerceStats";
+import CommerceEcosystem from "../products/africommerce/CommerceEcosystem";
+import CommerceCategories from "../products/africommerce/CommerceCategories";
+import CommerceTrustPanel from "../products/africommerce/CommerceTrustPanel";
+import CommerceSecurityBanner from "../products/africommerce/CommerceSecurityBanner";
+import CommerceJourney from "../products/africommerce/CommerceJourney";
+import CommerceActivity from "../products/africommerce/CommerceActivity";
+import CommerceCTA from "../products/africommerce/CommerceCTA";
 
 export default function AfriCommercePreview({ onExplore }) {
 

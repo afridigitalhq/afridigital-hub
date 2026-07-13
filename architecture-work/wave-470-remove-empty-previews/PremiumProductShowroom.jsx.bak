@@ -3,6 +3,8 @@ import AfriCCTVPreview from "./preview/AfriCCTVPreview";
 import AfriTrackerPreview from "./preview/AfriTrackerPreview";
 import AfriWorkPreview from "./preview/AfriWorkPreview";
 import AfriBoostPreview from "./preview/AfriBoostPreview";
+import AfriSportsPreview from "./preview/AfriSportsPreview";
+import AfriMetaWorldPreview from "./preview/AfriMetaWorldPreview";
 
 export default function PremiumProductShowroom() {
   return (

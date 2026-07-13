@@ -1,13 +1,5 @@
-import CanonicalShowroomRoot from "../../../ecosystem/landing/showroom/canonical/CanonicalShowroomRoot";
+import PremiumProductShowroom from "../../../ecosystem/landing/showroom/PremiumProductShowroom";
 
-export default function LandingEcosystemBridge(){
-
-  return (
-    <section className="landing-ecosystem-bridge">
-
-      <CanonicalShowroomRoot />
-
-    </section>
-  );
-
+export default function LandingEcosystemBridge() {
+  return <PremiumProductShowroom />;
 }
