@@ -1,0 +1,2 @@
+src/pages/landing/hero/HeroHighlights.jsx
+src/pages/landing/hero/LandingHero.jsx

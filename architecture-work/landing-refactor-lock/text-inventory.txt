@@ -1,0 +1,66 @@
+src/pages/landing/hero/LandingHero.jsx:11:      <p className="hero-subtitle">
+src/pages/landing/hero/LandingHero.jsx:14:        The intelligent digital infrastructure platform powering Africa’s next generation.
+src/pages/landing/hero/LandingHero.jsx:20:        <span>🛡️ Enterprise Security</span>
+src/pages/landing/discovery/DiscoveryCard.jsx:1:export default function DiscoveryCard({title}) {
+src/pages/landing/discovery/EcosystemDiscovery.jsx:1:import DiscoveryCard from "./DiscoveryCard";
+src/pages/landing/discovery/EcosystemDiscovery.jsx:3:export default function EcosystemDiscovery() {
+src/pages/landing/discovery/EcosystemDiscovery.jsx:14:      <h2 className="section-title">🌐 Ecosystem Discovery</h2>
+src/pages/landing/discovery/EcosystemDiscovery.jsx:18:          <DiscoveryCard
+src/pages/landing/footer/partials/FooterBrand.jsx:1:export default function FooterBrand(){return(<section><h3>🌍 AfriDigital</h3><p>Building Africa's intelligent digital ecosystem powered by AI, security, commerce and connected services.</p></section>);}
+src/pages/landing/footer/partials/FooterEcosystemMap.jsx:4:      <h4>🏢 Platform</h4>
+src/pages/landing/footer/partials/FooterQuickLinks.jsx:1:export default function FooterQuickLinks(){return(<section><h4>🏢 Platform</h4><div>User OS<br/>Admin Control<br/>Developers<br/>Documentation<br/>Security Center</div></section>);}
+src/pages/landing/footer/partials/FooterContact.jsx:1:export default function FooterContact(){return(<section><h4>📞 Contact</h4><div>Support Center<br/>WhatsApp Gateway<br/>Business Enquiries<br/>Partnerships</div></section>);}
+src/pages/landing/footer/partials/FooterNewsletter.jsx:1:export default function FooterNewsletter(){return(<section><h4>📬 Stay Updated</h4><p>Get ecosystem updates, releases and platform news.</p><button>Join Updates</button></section>);}
+src/pages/landing/products/ProductCard.jsx:7:      <h3>{product.icon} {product.id}</h3>
+src/pages/landing/products/ProductCard.jsx:8:      <p>{product.desc}</p>
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:3:import EnterpriseMonitor from "./AfriCCTV/EnterpriseMonitor";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:4:import EnterpriseSidebar from "./AfriCCTV/marketing/EnterpriseSidebar";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:5:import EnterpriseCTA from "./AfriCCTV/marketing/EnterpriseCTA";
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:13:        <EnterpriseMonitor />
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:14:        <EnterpriseSidebar />
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx:18:      <EnterpriseCTA onExplore={onExplore} />
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx:14:      <p>
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:8:        <h3>AfriShop</h3>
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:9:        <p>
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:11:          Discover ecosystem products, services and digital offerings.
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:18:        <h3>AfriMarket</h3>
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:19:        <p>
+src/pages/landing/products/showcase/commerce/CommerceCategories.jsx:15:      <h3>Everything Commerce</h3>
+src/pages/landing/products/showcase/sports/SportsHero.jsx:1:export default function SportsHero(){return(<div className="sports-hero"><div><h3>⚽ AfriSports</h3><p>Live matches & AI sports intelligence</p></div><span className="status-pill">🔴 LIVE</span></div>);}
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx:4:      <h4>🌍 Today's Match Slate</h4>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:4:      <h4>🧠 AfriAI Match Analysis</h4>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:6:      <p>📈 Win Probability</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:7:      <p>🇫🇷 France: 68%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:8:      <p>🇲🇦 Morocco: 32%</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:9:      <p>⚽ Expected Goals: 2.1 • 0.9</p>
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx:10:      <p>🔥 AI Insight: France is expected to dominate possession and create more scoring chances.</p>
+src/pages/landing/products/showcase/metaworld/MetaWorldHero.jsx:4:      <h3>🎮 AfriMetaWorld</h3>
+src/pages/landing/products/showcase/metaworld/MetaWorldHero.jsx:5:      <p>Premium virtual world experience</p>
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:4:      <h3>🚀 AfriBoost</h3>
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx:5:      <p>AI-powered growth and promotion engine</p>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:4:      <h4>📊 Campaign Intelligence</h4>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:5:      <p>🚀 Active Campaigns: 12</p>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:6:      <p>📈 Growth Reach: +45%</p>
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx:7:      <p>🎯 Audience Targeting: AI Optimized</p>
+src/pages/landing/products/showcase/afriboost/BoostFeatures.jsx:4:      <h4>⚡ Growth Features</h4>
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:4:      <h3>💼 AfriWork</h3>
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx:5:      <p>Digital workforce and opportunity ecosystem</p>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:4:      <h4>🌍 Workforce Intelligence</h4>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:5:      <p>👥 Talent Network: Connected</p>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:6:      <p>💼 Opportunities: Active</p>
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx:7:      <p>🤖 AI Skill Matching: Ready</p>
+src/pages/landing/products/showcase/afriwork/WorkFeatures.jsx:4:      <h4>⚡ AfriWork Capabilities</h4>
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:13:      <h4>
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx:41:        <p>
+src/pages/landing/products/showcase/AfriCCTV/partials/EnterpriseHeader.jsx:1:export default function EnterpriseHeader(){
+src/pages/landing/products/showcase/AfriCCTV/marketing/AfriCCTVHero.jsx:4:      <h3>🛡 AfriCCTV</h3>
+src/pages/landing/products/showcase/AfriCCTV/marketing/AfriCCTVHero.jsx:5:      <p>AI Security Monitoring Platform</p>
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:1:export default function EnterpriseSidebar(){
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:13:      <h3>Security Operations</h3>
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseCTA.jsx:1:export default function EnterpriseCTA({onExplore}){
+src/pages/landing/products/showcase/AfriCCTV/EnterpriseMonitor.jsx:1:import EnterpriseHeader from "./partials/EnterpriseHeader";
+src/pages/landing/products/showcase/AfriCCTV/EnterpriseMonitor.jsx:5:export default function EnterpriseMonitor(){
+src/pages/landing/products/showcase/AfriCCTV/EnterpriseMonitor.jsx:8:      <EnterpriseHeader />
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx:6:      <h3>💚 Use AfriDigital via WhatsApp</h3>
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx:8:      <p>
+src/pages/landing/auth/LandingAuthCTA.jsx:3:return (<section className='glass-card landing-auth-cta' data-module={LANDING_AUTH_CTA_TRUTH.MODULE}><h2>Join AfriDigital</h2><p>Access the full ecosystem experience.</p><div><button onClick={()=>navigate(LANDING_AUTH_CTA_TRUTH.LOGIN)}>🔐 Login</button><button onClick={()=>navigate(LANDING_AUTH_CTA_TRUTH.SIGNUP)}>🚀 Sign Up</button></div></section>);

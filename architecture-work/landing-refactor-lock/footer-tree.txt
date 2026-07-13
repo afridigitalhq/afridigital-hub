@@ -1,0 +1,7 @@
+src/pages/landing/footer/LandingFooter.jsx
+src/pages/landing/footer/partials/FooterBrand.jsx
+src/pages/landing/footer/partials/FooterContact.jsx
+src/pages/landing/footer/partials/FooterEcosystemMap.jsx
+src/pages/landing/footer/partials/FooterLegal.jsx
+src/pages/landing/footer/partials/FooterNewsletter.jsx
+src/pages/landing/footer/partials/FooterQuickLinks.jsx
