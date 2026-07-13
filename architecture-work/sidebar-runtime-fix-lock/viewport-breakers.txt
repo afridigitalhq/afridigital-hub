@@ -1,0 +1,71 @@
+src/ui/clusterhud/cluster.css:4:  left: 20px;
+src/ui/hud/hud.css:4:  left: 0;
+src/control-plane/physics/PacketHeatwaveSystem.jsx:49:        left: 0,
+src/control-plane/physics/PacketHeatwaveSystem.jsx:62:            left: `${p.x}%`,
+src/control-plane/physics/PacketHeatwaveSystem.jsx:77:        left: 10,
+src/control-plane/physics/FailureShockwaveLayer.jsx:30:          left: "50%",
+src/control-plane/physics/FailureShockwaveLayer.jsx:43:        left: 10,
+src/control-plane/cinematic/CinematicControlRoom.jsx:56:          left: "50%",
+src/dag-ui/graph/InteractiveCinematicDAGGraph.jsx:43:          right: 20,
+src/dag-ui/minimap/FloatingMiniMap.jsx:8:      right: 20,
+src/dag-ui/minimap/MiniMapOverlay.jsx:8:      right: 20,
+src/dag-ui/risk/CascadePaths.jsx:13:            left: c.fromX,
+src/dag-ui/risk/RedZones.jsx:11:            left: z.x,
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:42:  width:100%;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:56:  position:absolute;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:58:  left:0;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:59:  right:0;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:81:  position:absolute;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:82:  left:0;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:83:  right:0;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:44:position:absolute;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:46:left:16px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:47:right:16px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:55:position:absolute;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:57:right:16px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:62:position:absolute;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:63:left:16px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:64:right:16px;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:99:position:absolute;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:108:position:absolute;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:115:.corner.tl{top:12px;left:12px;border-top:2px solid #fff;border-left:2px solid #fff;}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:116:.corner.tr{top:12px;right:12px;border-top:2px solid #fff;border-right:2px solid #fff;}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:117:.corner.bl{bottom:12px;left:12px;border-bottom:2px solid #fff;border-left:2px solid #fff;}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:118:.corner.br{bottom:12px;right:12px;border-bottom:2px solid #fff;border-right:2px solid #fff;}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/styles/africctv-enterprise.css:66:position:absolute;
+src/pages/landing/landing.css:362:  overflow-x: hidden;
+src/pages/landing/landing.css:491:.ai-msg{max-width:100%;}
+src/pages/landing/landing.css:652:    width:100%;
+src/pages/landing/landing.css:676:  position:absolute;
+src/pages/landing/landing.css:734:  position:absolute;
+src/pages/landing/landing.css:896:    width:100%;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:42:  width:100%;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:56:  position:absolute;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:58:  left:0;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:59:  right:0;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:81:  position:absolute;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:82:  left:0;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:83:  right:0;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:44:position:absolute;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:46:left:16px;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:47:right:16px;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:55:position:absolute;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:57:right:16px;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:62:position:absolute;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:63:left:16px;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:64:right:16px;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:99:position:absolute;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:108:position:absolute;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:115:.corner.tl{top:12px;left:12px;border-top:2px solid #fff;border-left:2px solid #fff;}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:116:.corner.tr{top:12px;right:12px;border-top:2px solid #fff;border-right:2px solid #fff;}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:117:.corner.bl{bottom:12px;left:12px;border-bottom:2px solid #fff;border-left:2px solid #fff;}
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:118:.corner.br{bottom:12px;right:12px;border-bottom:2px solid #fff;border-right:2px solid #fff;}
+src/pages/landing/products/showcase/AfriCCTV/styles/africctv-enterprise.css:66:position:absolute;
+src/pages/auth/auth.css:25:  width:100%;
+src/pages/auth/auth.css:101:    width:100%;
+src/soc-ui/fluent/fluent.css:9:  width: 100vw;
+src/soc-ui/fluent/fluent.css:41:  left: 50%;
+src/soc/ui/SOCCommandCenter.jsx:27:        right: 0,
+src/ai/AfriAICommandDock.jsx:21:      left: 0,
+src/ai/AfriAICommandDock.jsx:22:      right: 0,
+src/components/ads/AfriBoostSidebar.jsx:54:      right: "15px",

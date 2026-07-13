@@ -1,0 +1,36 @@
+src/brain/NeuralBrain.jsx:38:  return () => { alive = false; ws?.close(); };
+src/brain/NeuralBrain.jsx:44:  return () => { alive = false; ws?.close(); };
+src/brain/NeuralBrain.jsx:46:return()=>{alive=false;ws?.close();};
+src/brain/NeuralBrain.jsx:57:    return () => ws.close();
+src/control/ControlTower.jsx:39:  return () => { alive = false; ws?.close(); };
+src/control/ControlTower.jsx:45:  return () => { alive = false; ws?.close(); };
+src/control/ControlTower.jsx:47:return()=>{alive=false;ws?.close();};
+src/control/ControlTower.jsx:55:    return () => ws.close();
+src/ui/GraphLive.jsx:55:      stream.close();
+src/control-plane/cockpit/ControlPlaneCockpit.jsx:18:    return () => ws.close();
+src/control-plane/ControlPlaneUI.jsx:21:    return () => ws.close();
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:112:.desktop-cctv-sidebar{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:140:  .desktop-cctv-sidebar{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:191:.desktop-cctv-sidebar{
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:12:    <aside className="enterprise-sidebar">
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx:15:        <div key={label} className="sidebar-row">
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:112:.desktop-cctv-sidebar{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:140:  .desktop-cctv-sidebar{
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:191:.desktop-cctv-sidebar{
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:12:    <aside className="enterprise-sidebar">
+src/pages/landing/products/showcase/AfriCCTV/marketing/EnterpriseSidebar.jsx:15:        <div key={label} className="sidebar-row">
+src/pages/user/shell/UserAppShell.jsx:3:import UserSidebar from "../sidebar/UserSidebar";
+src/pages/user/shell/UserAppShell.jsx:7:const [collapsed,setCollapsed]=useState(false);
+src/pages/user/shell/UserAppShell.jsx:11:<div style={{display:"grid",gridTemplateColumns:collapsed?"70px 1fr":"260px 1fr",minHeight:"100vh",transition:"0.3s"}}>
+src/pages/user/shell/UserAppShell.jsx:12:<UserSidebar collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/pages/user/sidebar/UserSidebar.jsx:6:export default function UserSidebar({collapsed,onToggle}){
+src/pages/user/sidebar/UserSidebar.jsx:8:<aside style={{width:collapsed?70:260,minHeight:"100vh",display:"flex",flexDirection:"column",transition:"0.3s",overflow:"hidden"}}>
+src/control-room/core/ControlRoomShell.jsx:2:import Sidebar from "../sidebar/Sidebar";
+src/control-room/core/ControlRoomShell.jsx:7:const [collapsed,setCollapsed]=useState(false);
+src/control-room/core/ControlRoomShell.jsx:11:<Sidebar active={active} onSelect={setActive} collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/control-room/shell/ControlRoomApp.jsx:1:import Sidebar from "../sidebar/Sidebar";
+src/control-room/sidebar/Sidebar.jsx:3:export default function Sidebar({active,onSelect,collapsed,onToggle}){
+src/control-room/sidebar/Sidebar.jsx:7:<aside style={{width:collapsed?70:240,padding:10,transition:"0.3s"}}>
+src/control-room/sidebar/Sidebar.jsx:9:{items.map(item=><button key={item} onClick={()=>onSelect(item)} style={{display:"block",width:"100%"}}>{collapsed?item[0]:item}</button>)}
+src/shared/components/cta/AfriWhatsappCTA.jsx:2:  const open = () => {
+src/shared/components/cta/AfriWhatsappCTA.jsx:7:    <button onClick={open}>
