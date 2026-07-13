@@ -1,7 +1,5 @@
-import AuthFooter from "./components/AuthFooter";
 import useAuthMode from "./hooks/useAuthMode";
 import useAuthActions from "./hooks/useAuthActions";
-import AuthHero from "./components/AuthHero";
 import GoogleAuthButton from "./components/GoogleAuthButton";
 import AuthDivider from "./components/AuthDivider";
 import LoginForm from "./components/LoginForm";
@@ -18,8 +16,6 @@ export default function AuthPage(){
     <div className="auth-shell">
 
       <main className="auth-layout">
-        <AuthHero />
-
         <section className="auth-card">
           <GoogleAuthButton onGoogleAuth={googleLogin} />
           <AuthDivider />
@@ -29,8 +25,6 @@ export default function AuthPage(){
           <DevelopmentLinks />
         </section>
       </main>
-
-      <AuthFooter />
     </div>
   );
 }

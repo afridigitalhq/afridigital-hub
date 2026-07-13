@@ -1,11 +1,23 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function DevelopmentLinks(){
+  const navigate = useNavigate();
+
+  const enterUser = () => {
+    localStorage.setItem("role","user");
+    navigate("/user");
+  };
+
+  const enterAdmin = () => {
+    localStorage.setItem("role","admin");
+    navigate("/admin");
+  };
+
   return (
     <div className="development-links">
-      <Link to="/">Home</Link>
-      <Link to="/user">User</Link>
-      <Link to="/admin">Admin</Link>
+      <button onClick={()=>navigate("/")}>Home</button>
+      <button onClick={enterUser}>🚀 Preview Main App</button>
+      <button onClick={enterAdmin}>🛡️ Preview Admin</button>
     </div>
   );
 }
