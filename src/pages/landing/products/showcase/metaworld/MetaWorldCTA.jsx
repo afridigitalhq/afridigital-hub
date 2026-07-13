@@ -1,6 +1,4 @@
-export default function MetaWorldCTA({onExplore}){
-  return (
-    <button onClick={onExplore}>
+export default function CTA(){return null;}>
       Enter AfriMetaWorld
     </button>
   );

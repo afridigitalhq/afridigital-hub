@@ -1,1 +1,1 @@
-export default function SportsCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriSports →</button>);}
+export default function CTA(){return null;}>Explore AfriSports →</button>);}

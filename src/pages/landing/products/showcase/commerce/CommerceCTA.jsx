@@ -1,1 +1,1 @@
-export default function CommerceCTA({onExplore}){return(<button className="premium-cta" onClick={onExplore}>Explore AfriCommerce →</button>);}
+export default function CTA(){return null;}>Explore AfriCommerce →</button>);}

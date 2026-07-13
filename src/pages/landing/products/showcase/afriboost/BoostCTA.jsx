@@ -1,6 +1,4 @@
-export default function BoostCTA({onExplore}){
-  return (
-    <button className="premium-cta" onClick={onExplore}>
+export default function CTA(){return null;}>
       Launch AfriBoost →
     </button>
   );
