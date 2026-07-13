@@ -1,0 +1,24 @@
+HERO
+- Reduce height 35-45%
+- Center logo
+- Center AfriDigital title
+- Center single tagline
+- Remove CTA
+- Preserve animated background
+
+PRODUCT GRID
+- Graphic only
+- Product name only
+- Remove descriptions
+- Remove badges
+- Center all cards
+- Equal card heights
+
+FOOTER
+- Compact height
+- Remove long paragraphs
+- Center content
+- Keep logo, links and socials
+
+LOGO
+- Temporary placeholder until official AfriDigital logo
