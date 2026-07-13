@@ -1,22 +1,21 @@
 :root {
-  --afri-bg: #050914;
-  --afri-surface: rgba(255,255,255,0.06);
-  --afri-border: rgba(0,255,204,0.25);
-  --afri-text: #ffffff;
-  --afri-muted: rgba(255,255,255,0.75);
-  --afri-primary: #00ffcc;
-  --afri-secondary: #0066ff;
-  --afri-radius: 20px;
-  --afri-glass: blur(18px);
+  --afri-bg:#06142f;
+  --afri-surface:rgba(255,255,255,.08);
+  --afri-border:rgba(24,119,242,.35);
+  --afri-text:#ffffff;
+  --afri-muted:rgba(255,255,255,.72);
+  --afri-primary:#1877f2;
+  --afri-secondary:#0b5ed7;
+  --afri-accent:#00d4ff;
+  --afri-radius:20px;
+  --afri-glass:blur(18px);
 }
-
-.afridigital-shell {
+.afridigital-shell{
   min-height:100vh;
   background:var(--afri-bg);
   color:var(--afri-text);
 }
-
-.afri-glass {
+.afri-glass{
   background:var(--afri-surface);
   border:1px solid var(--afri-border);
   backdrop-filter:var(--afri-glass);

@@ -1,0 +1,27 @@
+src/core/layout/AfriDigitalShell.jsx:2:import AfriAIDock from "../../pages/landing/intelligence/AfriAIDock";
+src/core/layout/AfriDigitalShell.jsx:3:import AfriWhatsappGateway from "../../pages/landing/whatsapp/AfriWhatsappGateway";
+src/core/layout/AfriDigitalShell.jsx:4:import LandingFooter from "../../pages/landing/footer/LandingFooter";
+src/core/layout/AfriDigitalShell.jsx:6:export default function AfriDigitalShell({children}){
+src/core/layout/AfriDigitalShell.jsx:11:      <AfriAIDock />
+src/core/layout/AfriDigitalShell.jsx:12:      <AfriWhatsappGateway />
+src/core/layout/AfriDigitalShell.jsx:13:      <LandingFooter />
+src/core/layout/AfriDigitalRouteShell.jsx:1:import AfriDigitalShell from "./AfriDigitalShell";
+src/core/layout/AfriDigitalRouteShell.jsx:3:export default function AfriDigitalRouteShell({children}){
+src/core/layout/AfriDigitalRouteShell.jsx:5:    <AfriDigitalShell>
+src/core/layout/AfriDigitalRouteShell.jsx:7:    </AfriDigitalShell>
+src/pages/landing/footer/LandingFooter.jsx:8:export default function LandingFooter(){
+src/pages/landing/intelligence/AfriAIDock.jsx:6:export default function AfriAIDock(){return(<section className="glass-card ai-panel"><AfriAIStatusBar/><AfriAIConversation/><AfriAIQuickActions/><div className="afriai-chat-row"><AfriAIChatInput/><AfriAIMicButton/></div></section>);}
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx:3:export default function AfriWhatsappGateway() {
+src/pages/auth/components/AuthFooter.jsx:1:import LandingFooter from "../../landing/footer/LandingFooter";
+src/pages/auth/components/AuthFooter.jsx:4:  return <LandingFooter />;
+src/pages/admin/modules/AfriCCTV/partials/AfriAIDock.jsx:3:export default function AfriAIDock({observations=[]}){
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:9:import AfriAIDock from "../partials/AfriAIDock";
+src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx:25:<AfriAIDock observations={stream.flatMap(item => item.aiObservation?.observations || [])}/>
+src/routes/AppRouter.jsx:8:import AfriDigitalRouteShell from "../core/layout/AfriDigitalRouteShell";
+src/routes/AppRouter.jsx:29:        <Route path="/" element={<AfriDigitalRouteShell><Landing /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:35:        <Route path="/auth" element={<AfriDigitalRouteShell><AuthPage /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:44:              <AfriDigitalRouteShell><UserHome /></AfriDigitalRouteShell>
+src/routes/AppRouter.jsx:54:              <AfriDigitalRouteShell><AdminHome /></AfriDigitalRouteShell>
+src/control-room/dock/AfriAIDock.jsx:7:export default function AfriAIDock() {
+src/control-room/shell/ControlRoomApp.jsx:3:import AfriAIDock from "../dock/AfriAIDock";
+src/control-room/shell/ControlRoomApp.jsx:15:      <AfriAIDock />

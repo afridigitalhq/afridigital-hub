@@ -1,0 +1,27 @@
+src/pages/landing/landing.css:7:    #050914;
+src/pages/landing/landing.css:37:  border-color: #00ffcc;
+src/pages/landing/landing.css:67:  color: #00ffcc;
+src/pages/landing/landing.css:78:    #00ffcc
+src/pages/landing/landing.css:107:  background: #00ffcc;
+src/pages/landing/landing.css:300:  background:#1877F2;
+src/pages/landing/landing.css:533:  background:#1877F2;
+src/pages/landing/landing.css:572:  background:linear-gradient(90deg,#ffffff,#1877f2);
+src/pages/landing/landing.css:578:  background:#1877f2;
+src/pages/landing/landing.css:635:  background:#1877f2;
+src/pages/landing/landing.css:798:  background:linear-gradient(135deg,#1877f2,#0b1f4d);
+src/pages/landing/landing.css:869:  background:linear-gradient(135deg,#1877f2,#125fcb);
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:119:  background:#0f172a;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:158:  background:#08111b;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:228:  background:#08111b;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:298:  background:#08111b;
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:444:  background:linear-gradient(180deg,#172554,#0f172a);
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css:468:  background:#08111b;
+src/pages/landing/products/showcase/AfriCCTV/marketing/marketing.css:2:.africctv-marketing{display:flex;flex-direction:column;gap:24px;padding:24px;background:#07111b;border-radius:22px}
+src/pages/auth/auth.css:3:  background:#050b1a;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:119:  background:#0f172a;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:158:  background:#08111b;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:228:  background:#08111b;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:298:  background:#08111b;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:444:  background:linear-gradient(180deg,#172554,#0f172a);
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/afri-cctv.css:468:  background:#08111b;
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/marketing.css:2:.africctv-marketing{display:flex;flex-direction:column;gap:24px;padding:24px;background:#07111b;border-radius:22px}
