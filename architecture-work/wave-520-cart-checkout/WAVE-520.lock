@@ -1,0 +1,20 @@
+AFRINUCCHAIN WAVE-520 LOCK
+
+Module:
+Cart + Checkout Experience Foundation
+
+Completed:
+
+- Cart contract
+- Checkout contract
+- AfriBank payment interface
+- AfriCoin payment option boundary
+- Native payment boundary
+- Crypto payment boundary
+- Buyer checkout UI foundation
+
+Payment Ownership:
+AFRIBANK
+
+Next:
+WAVE-521 Order Processing Foundation
