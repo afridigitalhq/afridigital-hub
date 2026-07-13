@@ -3,7 +3,7 @@ import Sidebar from "../sidebar/Sidebar";
 import ViewRouter from "../router/ControlRoomRouter";
 
 export default function ControlRoomShell(){
-const [active,setActive]=useState("afriScan");
+const [active,setActive]=useState("Dashboard");
 
 return(
 <div style={{display:"flex",minHeight:"100vh",background:"#0b0f14",color:"#fff"}}>
