@@ -5,7 +5,6 @@ export default function ProductCard({product,navigate}) {
       className="glass-card product-card"
     >
       <h3>{product.icon} {product.id}</h3>
-      <p>{product.desc}</p>
     </div>
   );
 }
