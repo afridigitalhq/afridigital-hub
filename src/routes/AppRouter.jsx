@@ -5,6 +5,7 @@ import AuthPage from "../pages/auth/AuthPage";
 import UserHome from "../pages/user/UserHome";
 import AdminHome from "../pages/admin/AdminHome";
 import CommerceRouter from "../pages/apps/commerce/routes/CommerceRouter";
+import AfriDigitalRouteShell from "../core/layout/AfriDigitalRouteShell";
 
 // TEMP AUTH MOCK (we will replace with real authService later)
 const getUserRole = () => {
@@ -25,13 +26,13 @@ export default function AppRouter() {
     <Routes>
 
         {/* 🌍 LANDING */}
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<AfriDigitalRouteShell><Landing /></AfriDigitalRouteShell>} />
 
         {/* 🛒 COMMERCE APP */}
         <Route path="/commerce/*" element={<CommerceRouter />} />
 
         {/* 🔐 AUTH */}
-        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/auth" element={<AfriDigitalRouteShell><AuthPage /></AfriDigitalRouteShell>} />
         <Route path="/login" element={<Navigate to="/auth" replace />} />
         <Route path="/register" element={<Navigate to="/auth?mode=signup" replace />} />
 
@@ -40,7 +41,7 @@ export default function AppRouter() {
           path="/user"
           element={
             <ProtectedRoute role="user">
-              <UserHome />
+              <AfriDigitalRouteShell><UserHome /></AfriDigitalRouteShell>
             </ProtectedRoute>
           }
         />
@@ -50,7 +51,7 @@ export default function AppRouter() {
           path="/admin"
           element={
             <ProtectedRoute role="admin">
-              <AdminHome />
+              <AfriDigitalRouteShell><AdminHome /></AfriDigitalRouteShell>
             </ProtectedRoute>
           }
         />

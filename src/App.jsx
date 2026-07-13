@@ -1,5 +1,5 @@
-import React from "react";
+import AppRouter from "./routes/AppRouter.jsx";
 
 export default function App(){
-  return <h1 style={{color:"#00ff88"}}>AFRIDIGITAL REACT ONLINE</h1>;
+  return <AppRouter />;
 }
