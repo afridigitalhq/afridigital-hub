@@ -1,10 +1,17 @@
 export default function WorkPreview(){
+
   return (
-    <div className="work-preview glass-card">
-      <h4>🌍 Workforce Intelligence</h4>
-      <p>👥 Talent Network: Connected</p>
-      <p>💼 Opportunities: Active</p>
-      <p>🤖 AI Skill Matching: Ready</p>
-    </div>
+    <section className="work-preview">
+
+      <h2>
+        Workforce Command Center
+      </h2>
+
+      <p>
+        Discover talent networks, projects and
+        business collaboration opportunities.
+      </p>
+
+    </section>
   );
 }
