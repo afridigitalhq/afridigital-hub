@@ -1,0 +1,23 @@
+AFRINUCCHAIN WAVE-525 LOCK
+
+Module:
+AfriCommerce Payment Bridge
+
+Completed:
+
+- Commerce payment bridge
+- Transaction mapper
+- Payment event publisher
+- AfriPay connection boundary
+- AfriBank ledger connection boundary
+
+Ownership:
+
+AFRICOMMERCE
+        |
+AFRIPAY
+        |
+AFRIBANK
+
+Next:
+WAVE-526 Admin Financial Control Center
