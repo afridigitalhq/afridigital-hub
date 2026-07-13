@@ -1,0 +1,12 @@
+LANDING V2 IMPLEMENTATION
+
+1. Hero: reduce height by ~40%
+2. Remove Hero CTA
+3. Center AfriDigital logo/title/tagline
+4. Center all landing sections
+5. Product cards: graphic + name only
+6. Remove product descriptions
+7. Remove badges
+8. Compact footer
+9. Preserve animations and background effects
+10. Preserve architecture and component boundaries
