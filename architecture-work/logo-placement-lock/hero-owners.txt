@@ -1,0 +1,3 @@
+src/core/layout/AfriDigitalShell.jsx:1:import LandingHero from "../../pages/landing/hero/LandingHero";
+src/core/layout/AfriDigitalShell.jsx:9:      <LandingHero />
+src/pages/landing/hero/LandingHero.jsx:1:export default function LandingHero() {

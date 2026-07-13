@@ -1,0 +1,90 @@
+src/core/layout/AfriDigitalLayoutEngine.jsx:4: * AfriDigital Layout Engine
+src/core/layout/AfriDigitalLayoutEngine.jsx:29:export default function AfriDigitalLayoutEngine() {
+src/core/layout/AfriDigitalLayoutEngine.L16.backup.jsx:4: * AfriDigitalLayoutEngine
+src/core/layout/AfriDigitalLayoutEngine.L16.backup.jsx:15:export default function AfriDigitalLayoutEngine() {
+src/core/layout/AfriDigitalShell.jsx:6:export default function AfriDigitalShell({children}){
+src/core/layout/AfriDigitalRouteShell.jsx:1:import AfriDigitalShell from "./AfriDigitalShell";
+src/core/layout/AfriDigitalRouteShell.jsx:3:export default function AfriDigitalRouteShell({children}){
+src/core/layout/AfriDigitalRouteShell.jsx:5:    <AfriDigitalShell>
+src/core/layout/AfriDigitalRouteShell.jsx:7:    </AfriDigitalShell>
+src/core/bootstrap/AppBootstrap.js:9:    console.log("🟢 AfriDigital App Bootstrap Complete");
+src/core/runtime/EventBus.js:3: * AfriDigital Runtime EventBus
+src/core/runtime/EventBus.js:5: * Shared by all AfriDigital ecosystem modules.
+src/core/runtime/EventBus.js:46:          `[AfriDigital EventBus] "${eventName}" listener failed:`,
+src/admin/control-plane/DevOpsControlPlane.jsx:6:      <h1>🧠 AfriDigital DevOps Control Plane</h1>
+src/admin/control-plane/ControlPlane.jsx:6:      <h1>🧠 AfriDigital Control Plane</h1>
+src/control-plane/ui/ControlPlane.jsx:3:      <h1>🧠 AfriDigital Control Plane</h1>
+src/control-plane/index.jsx:3:      <h2>🧠 AfriDigital Control Cockpit</h2>
+src/ecosystem/landing/components/FutureProductSection.jsx:11:            <small>New AfriDigital products will appear here.</small>
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx:10:          The official AfriDigital commerce experience.
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:19:          financial intelligence through AfriDigital.
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx:58:            Connected AfriDigital commerce ecosystem.
+src/ecosystem/landing/showroom/products/africommerce/CommerceSecurityBanner.jsx:6:        Protected commerce infrastructure powered by AfriDigital security layers.
+src/ecosystem/landing/showroom/products/africommerce/CommerceStats.jsx:19:        <p>Integrated AfriDigital platforms.</p>
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:29:          <img
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx:30:            src={image}
+src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/AfriCCTVHero.jsx:17:        infrastructure powered by AfriDigital.
+src/ecosystem/landing/showroom/products/afritracker/TrackerHero.jsx:16:        through AfriDigital location infrastructure.
+src/ecosystem/landing/showroom/products/afriwork/WorkHero.jsx:16:        through AfriDigital workforce intelligence.
+src/ecosystem/landing/showroom/products/afriboost/BoostCTA.jsx:11:        Expand visibility across the AfriDigital ecosystem.
+src/ecosystem/landing/showroom/products/afriboost/BoostHero.jsx:16:        tools powering businesses across AfriDigital.
+src/pages/landing/hero/LandingHero.jsx:6:        <span className="hero-status-dot"></span><span>AfriDigital Platform Online</span>
+src/pages/landing/hero/LandingHero.jsx:9:      <div className="hero-brand"><div className="hero-brand-mark">🛡️</div><h1>AfriDigital</h1></div>
+src/pages/landing/discovery/EcosystemDiscovery.jsx:9:    "💚 AfriDigital via WhatsApp"
+src/pages/landing/footer/partials/FooterBrand.jsx:1:export default function FooterBrand(){return(<section><h3>🌍 AfriDigital</h3><p>Building Africa's intelligent digital ecosystem powered by AI, security, commerce and connected services.</p></section>);}
+src/pages/landing/footer/partials/FooterLegal.jsx:1:export default function FooterLegal(){return(<section><small>© {new Date().getFullYear()} AfriDigital • Privacy • Terms • Security • Status</small></section>);}
+src/pages/landing/intelligence/AfriAIConversation.jsx:1:export default function AfriAIConversation(){return <div className="afriai-conversation"><div className="ai-msg">👋 Welcome to AfriDigital. How can I help you today?</div></div>;}
+src/pages/landing/landing.css:588:/* ===== AfriDigital Navigation V2 ===== */
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx:10:          The official AfriDigital commerce experience.
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:29:          <img
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx:30:            src={image}
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx:6:      <h3>💚 Use AfriDigital via WhatsApp</h3>
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx:9:        Access AfriDigital services through WhatsApp with AI-powered interaction.
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx:13:        label="💚 Open AfriDigital via WhatsApp"
+src/pages/landing/auth/LandingAuthCTA.jsx:3:return (<section className='glass-card landing-auth-cta' data-module={LANDING_AUTH_CTA_TRUTH.MODULE}><h2>Join AfriDigital</h2><p>Access the full ecosystem experience.</p><div><button onClick={()=>navigate(LANDING_AUTH_CTA_TRUTH.LOGIN)}>🔐 Login</button><button onClick={()=>navigate(LANDING_AUTH_CTA_TRUTH.SIGNUP)}>🚀 Sign Up</button></div></section>);
+src/pages/auth/components/AuthHero.jsx:7:        <span>AfriDigital Platform Online</span>
+src/pages/auth/components/AuthHero.jsx:12:        <h1>AfriDigital</h1>
+src/pages/user/dashboard/partials/PluginWorkspace.jsx:13:        <p>Welcome to your AfriDigital workspace.</p>
+src/routes/AppRouter.jsx:8:import AfriDigitalRouteShell from "../core/layout/AfriDigitalRouteShell";
+src/routes/AppRouter.jsx:29:        <Route path="/" element={<AfriDigitalRouteShell><Landing /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:35:        <Route path="/auth" element={<AfriDigitalRouteShell><AuthPage /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:44:              <AfriDigitalRouteShell><UserHome /></AfriDigitalRouteShell>
+src/routes/AppRouter.jsx:54:              <AfriDigitalRouteShell><AdminHome /></AfriDigitalRouteShell>
+src/app/MainApp.jsx:2:export default function MainApp(){return <h1>🏠 AfriDigital Main App</h1>;}
+src/adminhomepage/AdminHome.jsx:9:      <h1>🛡️ AfriDigital Admin Home</h1>
+src/dashboard/SystemStream.jsx:36:      <h2>🧠 AfriDigital Intelligence Stream</h2>
+src/products/AfriCommerce/landing/AfriCommerceLanding.jsx:15:        Shop, sell and grow across the AfriDigital ecosystem.
+src/runtime/modules/AfriRuntimeModules.js:1:/* AfriDigital Runtime Module Manifest */
+src/runtime/legacy/runtime/modules/AfriRuntimeModules.js:1:/* AfriDigital Runtime Module Manifest */
+src/orchestrator/AfriDigitalCoreController.js:7:export function AfriDigitalCoreController(event) {
+src/orchestrator/AfriDigitalCoreController.js:28:  source:"src/orchestrator/AfriDigitalCoreController.js",
+src/control-room/afrai/cross-ecosystem/WorkflowPlanner.js:1:import AfriDigitalRegistry from "../../../ecosystem/AfriDigitalRegistry";
+src/control-room/afrai/cross-ecosystem/WorkflowPlanner.js:9:    Object.entries(AfriDigitalRegistry).forEach(([name, meta]) => {
+src/control-room/afrai/ecosystem/AfriAIEcosystemExecutor.js:8: * Dynamically handles ALL AfriDigital modules
+src/control-room/afrai/intelligence/EcosystemReasoner.js:1:import AfriDigitalRegistry from "../../../ecosystem/AfriDigitalRegistry";
+src/control-room/afrai/intelligence/EcosystemReasoner.js:7:    const matches = Object.entries(AfriDigitalRegistry).filter(([name]) =>
+src/control-room/afrai/modules/ModuleCapabilityMap.js:1:import AfriDigitalRegistry from "../../../ecosystem/AfriDigitalRegistry";
+src/control-room/afrai/modules/ModuleCapabilityMap.js:7:    Object.entries(AfriDigitalRegistry).forEach(([name, meta]) => {
+src/control-room/bootstrap/ControlRoomBootstrap.js:1:import AfriDigitalKernel from "../core/AfriDigitalKernel";
+src/control-room/bootstrap/ControlRoomBootstrap.js:10:    kernel: AfriDigitalKernel,
+src/control-room/bootstrap/ControlRoomBootstrap.js:22:  console.log("🚀 AfriDigital Runtime Bootstrapped");
+src/control-room/core/AfriDigitalKernel.js:6:const AfriDigitalKernel = {
+src/control-room/core/AfriDigitalKernel.js:35:  window.__AFRI_KERNEL__ = AfriDigitalKernel;
+src/control-room/core/AfriDigitalKernel.js:38:export default AfriDigitalKernel;
+src/control-room/core/ControlRoomShell.jsx:15:<h2>🧠 AfriDigital Command Center</h2>
+src/control-room/dock/items/ContextPanel.jsx:5:    module:"AfriDigital",
+src/control-room/dock/items/QuickCommands.jsx:5:  AfriDigital:["System Health","Open Dashboard","Show Notifications"],
+src/control-room/dock/items/QuickCommands.jsx:13:  const ctx=window.__AFRI_CONTEXT__||{module:"AfriDigital"};
+src/control-room/dock/items/QuickCommands.jsx:14:  const items=COMMANDS[ctx.module]||COMMANDS.AfriDigital;
+src/control-room/soc/EcosystemSOCBridge.js:1:import AfriDigitalRegistry from "../../ecosystem/AfriDigitalRegistry";
+src/control-room/soc/EcosystemSOCBridge.js:11:      const meta = AfriDigitalRegistry[p];
+src/control-room/soc/visualization/EcosystemLiveMap.jsx:24:      <h2>🌍 AfriDigital Ecosystem Live Map</h2>
+src/control-room/soc/visualization/flow/ExecutionFlowAnimator.jsx:23:      <h2>🌊 AfriDigital Execution Flow</h2>
+src/control-room/standards/RegistryContract.js:1:import AfriDigitalRegistry from "../../ecosystem/AfriDigitalRegistry";
+src/control-room/standards/RegistryContract.js:10:    return AfriDigitalRegistry;
+src/control-room/standards/RegistryContract.js:14:    return AfriDigitalRegistry[name] || null;
+src/control-room/standards/SystemTruthRules.js:4: * RULE 1: AfriDigitalRegistry is the ONLY source of ecosystem truth
+src/control-room/standards/SystemTruthRules.js:12:  registry: "AfriDigitalRegistry",
+src/components/ads/AfriBoostSidebar.jsx:8:      { title: "🚀 Welcome to AfriDigital", desc: "Explore the ecosystem" },
+src/_legacy/runtime/legacy/runtime/modules/AfriRuntimeModules.js:1:/* AfriDigital Runtime Module Manifest */
+src/_legacy/runtime/modules/AfriRuntimeModules.js:1:/* AfriDigital Runtime Module Manifest */
