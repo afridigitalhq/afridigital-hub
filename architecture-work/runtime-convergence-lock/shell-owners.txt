@@ -1,0 +1,16 @@
+src/core/layout/AfriDigitalShell.jsx:6:export default function AfriDigitalShell({children}){
+src/core/layout/AfriDigitalRouteShell.jsx:1:import AfriDigitalShell from "./AfriDigitalShell";
+src/core/layout/AfriDigitalRouteShell.jsx:3:export default function AfriDigitalRouteShell({children}){
+src/core/layout/AfriDigitalRouteShell.jsx:5:    <AfriDigitalShell>
+src/core/layout/AfriDigitalRouteShell.jsx:7:    </AfriDigitalShell>
+src/pages/user/UserHome.jsx:2:import UserAppShell from "./shell/UserAppShell";
+src/pages/user/UserHome.jsx:5:  return <UserAppShell />;
+src/pages/user/shell/UserAppShell.jsx:6:export default function UserAppShell(){
+src/pages/admin/AdminHome.jsx:3:import ControlRoomShell from "../../control-room/core/ControlRoomShell";
+src/pages/admin/AdminHome.jsx:13:return <ControlRoomShell/>;
+src/routes/AppRouter.jsx:8:import AfriDigitalRouteShell from "../core/layout/AfriDigitalRouteShell";
+src/routes/AppRouter.jsx:29:        <Route path="/" element={<AfriDigitalRouteShell><Landing /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:35:        <Route path="/auth" element={<AfriDigitalRouteShell><AuthPage /></AfriDigitalRouteShell>} />
+src/routes/AppRouter.jsx:44:              <AfriDigitalRouteShell><UserHome /></AfriDigitalRouteShell>
+src/routes/AppRouter.jsx:54:              <AfriDigitalRouteShell><AdminHome /></AfriDigitalRouteShell>
+src/control-room/core/ControlRoomShell.jsx:5:export default function ControlRoomShell(){

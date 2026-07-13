@@ -1,0 +1,13 @@
+src/pages/user/shell/UserAppShell.jsx:7:const [collapsed,setCollapsed]=useState(false);
+src/pages/user/shell/UserAppShell.jsx:11:<div style={{display:"grid",gridTemplateColumns:collapsed?"70px 1fr":"260px 1fr",minHeight:"100vh",transition:"0.3s"}}>
+src/pages/user/shell/UserAppShell.jsx:12:<UserSidebar collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/pages/user/sidebar/UserSidebar.jsx:6:export default function UserSidebar({collapsed,onToggle}){
+src/pages/user/sidebar/UserSidebar.jsx:8:<aside style={{width:collapsed?70:260,minHeight:"100vh",display:"flex",flexDirection:"column",transition:"0.3s",overflow:"hidden"}}>
+src/pages/admin/modules/AfriCCTV/partials/LeftSidebar.jsx:18:<aside style={{width:"260px",background:"#0f172a",color:"#fff",padding:"20px",display:"flex",flexDirection:"column",gap:"12px"}}>
+src/control-room/core/ControlRoomShell.jsx:7:const [collapsed,setCollapsed]=useState(false);
+src/control-room/core/ControlRoomShell.jsx:10:<div style={{display:"flex",minHeight:"100vh",background:"#0b0f14",color:"#fff", "--sidebar-width": collapsed ? "72px" : "260px"}}>
+src/control-room/core/ControlRoomShell.jsx:11:<Sidebar active={active} onSelect={setActive} collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+src/control-room/core/ControlRoomShell.jsx:13:<div style={{flex:"1 1 auto",width:"calc(100% - var(--sidebar-width))",display:"flex",flexDirection:"column",transition:"width .25s ease"}}>
+src/control-room/sidebar/Sidebar.jsx:3:export default function Sidebar({active,onSelect,collapsed,onToggle}){
+src/control-room/sidebar/Sidebar.jsx:7:<aside style={{width:collapsed?70:240,padding:10,transition:"0.3s"}}>
+src/control-room/sidebar/Sidebar.jsx:9:{items.map(item=><button key={item} onClick={()=>onSelect(item)} style={{display:"block",width:"100%"}}>{collapsed?item[0]:item}</button>)}
