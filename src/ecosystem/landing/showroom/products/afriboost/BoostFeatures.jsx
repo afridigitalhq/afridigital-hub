@@ -1,13 +1,19 @@
 export default function BoostFeatures(){
+
   return (
-    <div className="boost-features">
-      <h4>⚡ Growth Features</h4>
-      <ul>
-        <li>🤖 AI Campaign Suggestions</li>
-        <li>🎯 Smart Audience Targeting</li>
-        <li>📢 Ecosystem Promotion</li>
-        <li>📈 Performance Analytics</li>
-      </ul>
-    </div>
+    <section className="boost-features">
+
+      <h2>
+        Growth Capabilities
+      </h2>
+
+      <div>
+        <span>Campaign Intelligence</span>
+        <span>Business Promotion</span>
+        <span>Audience Analytics</span>
+        <span>Market Reach</span>
+      </div>
+
+    </section>
   );
 }

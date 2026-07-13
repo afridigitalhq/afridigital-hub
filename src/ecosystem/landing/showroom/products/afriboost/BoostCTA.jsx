@@ -1,7 +1,16 @@
-export default function BoostCTA({onExplore}){
+export default function BoostCTA(){
+
   return (
-    <button className="premium-cta" onClick={onExplore}>
-      Launch AfriBoost →
-    </button>
+    <section className="boost-cta">
+
+      <h2>
+        Grow With AfriBoost
+      </h2>
+
+      <p>
+        Expand visibility across the AfriDigital ecosystem.
+      </p>
+
+    </section>
   );
 }
