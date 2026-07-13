@@ -1,4 +1,4 @@
-import AfriCommerceApiClient from "../../../core/africommerce/api/AfriCommerceApiClient";
+import AfriCommerceApiClient from "../../core/africommerce/api/AfriCommerceApiClient";
 
 export default function useCommerceProducts(){
 

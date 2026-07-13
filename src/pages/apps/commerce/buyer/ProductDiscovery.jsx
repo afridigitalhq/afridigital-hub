@@ -1,4 +1,4 @@
-import useCommerceProducts from "../../../hooks/commerce/useCommerceProducts";
+import useCommerceProducts from "../../../../hooks/commerce/useCommerceProducts";
 import ProductCard from "./components/ProductCard";
 
 export default function ProductDiscovery(){
