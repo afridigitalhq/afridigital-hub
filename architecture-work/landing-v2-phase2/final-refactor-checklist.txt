@@ -1,0 +1,21 @@
+LANDING V2 PHASE 2
+
+REMOVE
+- hero-badge
+- FooterBrand paragraph
+- FooterNewsletter paragraph
+- FooterNewsletter button
+- All *CTA components
+- All status-pill/status badges (except live CCTV runtime)
+- Product hero paragraphs
+- Product preview paragraphs
+
+KEEP
+- AfriDigital logo
+- AfriDigital title
+- Build. Connect. Secure.
+- Product graphics
+- Product names
+- CCTV monitoring visuals
+- Background animations
+- Component architecture
