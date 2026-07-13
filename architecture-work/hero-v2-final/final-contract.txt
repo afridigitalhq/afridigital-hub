@@ -1,0 +1,10 @@
+HERO V2 FINAL
+
+- Logo top-left
+- Center title
+- Center tagline
+- Reduce hero height by ~40%
+- Preserve ambient animation
+- Remove hero-actions CSS
+- Remove hero-trust-bar CSS
+- Compact spacing and padding
