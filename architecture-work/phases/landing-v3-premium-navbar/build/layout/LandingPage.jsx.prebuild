@@ -1,6 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import LandingNavigation from "../../components/landing/LandingNavigation";
-import LandingHero from "./hero/LandingHero";
 import EcosystemMarquee from "./marquee/EcosystemMarquee";
 import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
 import LandingAuthCTA from "./auth/LandingAuthCTA";
@@ -11,15 +9,20 @@ export default function LandingPage() {
 
   return (
     <div className="landing-shell">
-      <LandingNavigation />
 
-      <LandingHero />
 
+      {/* ECOSYSTEM MARQUEE */}
       <EcosystemMarquee />
 
+      {/* LANDING AUTH CTA */}
       <LandingAuthCTA navigate={navigate} />
 
+      {/* TIER 1 PRODUCTS */}
       <LandingEcosystemBridge />
+
+      {/* TIER 2 PRODUCTS */}
+      
+
     </div>
   );
 }
