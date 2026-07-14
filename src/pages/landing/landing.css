@@ -1033,3 +1033,35 @@ cursor:pointer;
 
 }
 
+
+.ecosystem-map-card{
+  width:100%;
+  max-width:520px;
+  min-height:360px;
+  border-radius:32px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(103,232,249,0.25);
+  backdrop-filter:blur(20px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  box-shadow:0 0 60px rgba(34,211,238,0.15);
+}
+
+.ecosystem-map{
+  font-size:120px;
+  filter:drop-shadow(0 0 30px rgba(34,211,238,0.5));
+}
+
+.ecosystem-map-card span{
+  font-size:1.2rem;
+  font-weight:700;
+}
+
+.ecosystem-map-card strong{
+  color:#67e8f9;
+  letter-spacing:3px;
+}
+
