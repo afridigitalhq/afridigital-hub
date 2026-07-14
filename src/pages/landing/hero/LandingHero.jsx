@@ -36,9 +36,12 @@ export default function LandingHero() {
       </div>
 
       <div className="hero-visual">
-        <div className="hero-glass-card">
-          <span>AfriVision Runtime</span>
-          <strong>ONLINE</strong>
+        <div className="ecosystem-map-card">
+          <div className="ecosystem-map">
+            🌍
+          </div>
+          <span>AfriDigital Global Ecosystem</span>
+          <strong>CONNECTED</strong>
         </div>
       </div>
     </section>
