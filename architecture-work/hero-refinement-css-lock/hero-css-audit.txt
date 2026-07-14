@@ -1,0 +1,54 @@
+12:.hero-panel {
+48:.hero-panel {
+61:.hero-badge {
+72:.hero-panel h1 {
+84:.hero-subtitle {
+91:.hero-actions {
+167:  .hero-panel {
+220:.metaworld-preview {
+317:.hero-panel {
+557:.hero-panel{
+565:.hero-badge{
+571:.hero-panel h1{
+663:.hero-panel{
+674:.hero-panel::before{
+682:.hero-badge{
+705:.hero-status-dot{
+712:  animation:heroStatusPulse 1.8s ease-in-out infinite;
+715:@keyframes heroStatusPulse{
+727:.hero-panel{
+732:.hero-panel::after{
+741:  animation:heroAmbientFlow 18s ease-in-out infinite alternate;
+746:@keyframes heroAmbientFlow{
+755:.hero-panel h1{
+761:.hero-subtitle{
+784:.hero-brand{
+791:.hero-brand-logo{
+799:  .hero-brand{
+803:  .hero-brand-logo{
+810:.hero-trust-bar{
+817:.hero-trust-bar span{
+830:  .hero-trust-bar{
+836:.hero-actions{
+881:  .hero-actions{
+943:.premium-hero {
+952:.hero-content h2 {
+965:.hero-description {
+971:.hero-glass-card {
+989:.hero-glass-card span {
+994:.hero-glass-card strong {
+1001:.hero-primary,
+1002:.hero-secondary {
+1007:.hero-primary {
+1012:.hero-secondary {
+1030:  .premium-hero {
+1037:.ecosystem-map-card{
+1053:.ecosystem-map{
+1058:.ecosystem-map-card span{
+1063:.ecosystem-map-card strong{
+1069:/* ===== Landing Hero V3 ===== */
+1071:.landing-hero{
+1079:.landing-hero-topbar{
+1110:.landing-hero-content{
+1126:.landing-hero-content h1{
+1142:  .landing-hero-topbar{
