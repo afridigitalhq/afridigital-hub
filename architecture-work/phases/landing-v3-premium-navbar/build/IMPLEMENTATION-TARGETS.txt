@@ -1,5 +1,0 @@
-src/pages/landing/LandingPage.jsx
-src/pages/landing/hero/LandingHero.jsx
-src/pages/landing/landing.css
-src/pages/landing/marquee/EcosystemMarquee.jsx
-src/pages/landing/auth/LandingAuthCTA.jsx
