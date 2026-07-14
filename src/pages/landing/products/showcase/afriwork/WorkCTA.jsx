@@ -1,5 +1,7 @@
-export default function CTA(){return null;}>
-      Explore AfriWork →
+export default function WorkCTA(){
+  return (
+    <button>
+      Explore AfriWork
     </button>
   );
 }

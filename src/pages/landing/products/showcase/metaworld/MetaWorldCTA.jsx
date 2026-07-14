@@ -1,5 +1,7 @@
-export default function CTA(){return null;}>
-      Enter AfriMetaWorld
+export default function MetaWorldCTA(){
+  return (
+    <button>
+      Explore AfriMetaWorld
     </button>
   );
 }

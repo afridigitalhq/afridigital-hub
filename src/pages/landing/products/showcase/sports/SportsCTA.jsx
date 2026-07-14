@@ -1,1 +1,7 @@
-export default function CTA(){return null;}>Explore AfriSports →</button>);}
+export default function SportsCTA(){
+  return (
+    <button>
+      Explore AfriSports
+    </button>
+  );
+}

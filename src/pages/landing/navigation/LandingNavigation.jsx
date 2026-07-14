@@ -8,9 +8,15 @@ export default function LandingNavigation() {
 
       <div className="landing-nav-links">
         <a href="#ecosystem">Ecosystem</a>
+        <a href="#products">Products</a>
         <a href="#security">Security</a>
         <a href="#commerce">Commerce</a>
-        <a href="#contact">Contact</a>
+      </div>
+
+      <div className="landing-nav-actions">
+        <button className="notification-button">🔔</button>
+        <button className="login-button">Login</button>
+        <button className="signup-button">Sign Up</button>
       </div>
     </nav>
   );

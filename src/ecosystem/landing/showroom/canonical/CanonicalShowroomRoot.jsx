@@ -1,14 +1,28 @@
 import LandingEcosystemRegistry from "../../registry/LandingEcosystemRegistry";
-
-import FutureProductSection from "../../components/FutureProductSection";
+import ProductPreviewResolver from "../resolver/ProductPreviewResolver";
 
 export default function CanonicalShowroomRoot(){
   const showroom = LandingEcosystemRegistry.products;
 
   return (
     <section className="canonical-showroom">
-      <FutureProductSection products={showroom.tier1} />
-      <FutureProductSection products={showroom.tier2} />
+      <section className="tier-showcase tier-one">
+        {showroom.tier1.map(product => (
+          <ProductPreviewResolver
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </section>
+
+      <section className="tier-showcase tier-two">
+        {showroom.tier2.map(product => (
+          <ProductPreviewResolver
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </section>
     </section>
   );
 }

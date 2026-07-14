@@ -1,0 +1,91 @@
+=== PRODUCT REGISTRY ===
+import LandingShowroomRegistry from "./LandingShowroomRegistry";
+import LandingServiceCatalog from "../catalog/LandingServiceCatalog";
+
+const LandingEcosystemRegistry = Object.freeze({
+
+  products: LandingShowroomRegistry,
+
+  services: LandingServiceCatalog,
+
+  version: "LANDING_V1",
+
+  status: "LOCKED"
+
+});
+
+export default LandingEcosystemRegistry;
+
+=== SHOWROOM COMPOSITION ===
+
+=== PRODUCT CARDS ===
+src/ecosystem/landing/showroom/cards/AfriBoostCard.jsx
+src/ecosystem/landing/showroom/cards/AfriCCTVCard.jsx
+src/ecosystem/landing/showroom/cards/AfriCommerceHeroCard.jsx
+src/ecosystem/landing/showroom/cards/AfriTrackerCard.jsx
+src/ecosystem/landing/showroom/cards/AfriWorkCard.jsx
+src/ecosystem/landing/showroom/cards/EcosystemCard.jsx
+src/ecosystem/landing/showroom/cards/PlaceholderCard.jsx
+src/ecosystem/landing/showroom/cards/ProductCard.jsx
+src/ecosystem/landing/showroom/cards/Tier1HeroCard.jsx
+src/ecosystem/landing/showroom/cards/TierCard.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroActions.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroBadges.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroCard.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroLayout.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroStats.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceActivity.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceCTA.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceCategories.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceHero.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceJourney.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceSecurityBanner.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceStats.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceTrustPanel.jsx
+
+=== ACTIVE PREVIEWS ===
+src/pages/landing/products/showcase/AfriBoostPreview.jsx
+src/pages/landing/products/showcase/AfriCCTV/CCTVStatusPanel.jsx
+src/pages/landing/products/showcase/AfriCCTV/CameraFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/EnterpriseMonitor.jsx
+src/pages/landing/products/showcase/AfriCCTV/MobileCCTVFeed.jsx
+src/pages/landing/products/showcase/AfriCCTV/afri-cctv.css
+src/pages/landing/products/showcase/AfriCCTV/useAfriCCTVLive.js
+src/pages/landing/products/showcase/AfriCCTVPreview.jsx
+src/pages/landing/products/showcase/AfriCommercePreview.jsx
+src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx
+src/pages/landing/products/showcase/AfriSportsPreview.jsx
+src/pages/landing/products/showcase/AfriTrackerPreview.jsx
+src/pages/landing/products/showcase/AfriWorkPreview.jsx
+src/pages/landing/products/showcase/afriboost/BoostCTA.jsx
+src/pages/landing/products/showcase/afriboost/BoostFeatures.jsx
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx
+src/pages/landing/products/showcase/afriboost/BoostPreview.jsx
+src/pages/landing/products/showcase/afritracker/TrackerCTA.jsx
+src/pages/landing/products/showcase/afritracker/TrackerFeatures.jsx
+src/pages/landing/products/showcase/afritracker/TrackerHero.jsx
+src/pages/landing/products/showcase/afritracker/TrackerMap.jsx
+src/pages/landing/products/showcase/afritracker/TrackerPreview.jsx
+src/pages/landing/products/showcase/afriwork/WorkCTA.jsx
+src/pages/landing/products/showcase/afriwork/WorkFeatures.jsx
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx
+src/pages/landing/products/showcase/afriwork/WorkPreview.jsx
+src/pages/landing/products/showcase/commerce/CommerceActivity.jsx
+src/pages/landing/products/showcase/commerce/CommerceCTA.jsx
+src/pages/landing/products/showcase/commerce/CommerceCategories.jsx
+src/pages/landing/products/showcase/commerce/CommerceEcosystem.jsx
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx
+src/pages/landing/products/showcase/commerce/CommerceJourney.jsx
+src/pages/landing/products/showcase/commerce/CommerceSecurityBanner.jsx
+src/pages/landing/products/showcase/commerce/CommerceStats.jsx
+src/pages/landing/products/showcase/commerce/CommerceTrustPanel.jsx
+src/pages/landing/products/showcase/metaworld/MetaWorldCTA.jsx
+src/pages/landing/products/showcase/metaworld/MetaWorldExperiences.jsx
+src/pages/landing/products/showcase/metaworld/MetaWorldHero.jsx
+src/pages/landing/products/showcase/metaworld/MetaWorldPreview.jsx
+src/pages/landing/products/showcase/sports/SportsAnalysis.jsx
+src/pages/landing/products/showcase/sports/SportsCTA.jsx
+src/pages/landing/products/showcase/sports/SportsFixtures.jsx
+src/pages/landing/products/showcase/sports/SportsHero.jsx
+src/pages/landing/products/showcase/sports/SportsScoreboard.jsx

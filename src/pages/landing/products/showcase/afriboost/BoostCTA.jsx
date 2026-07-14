@@ -1,5 +1,7 @@
-export default function CTA(){return null;}>
-      Launch AfriBoost →
+export default function BoostCTA(){
+  return (
+    <button>
+      Explore AfriBoost
     </button>
   );
 }

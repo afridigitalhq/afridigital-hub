@@ -1,0 +1,30 @@
+=== ACTIVE SHOWROOM CHAIN ===
+src/pages/landing/LandingPage.jsx:6:import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
+src/pages/landing/LandingPage.jsx:26:      <LandingEcosystemBridge />
+src/pages/landing/composition/LandingEcosystemBridge.jsx:1:import CanonicalShowroomRoot from "../../../ecosystem/landing/showroom/canonical/CanonicalShowroomRoot";
+src/pages/landing/composition/LandingEcosystemBridge.jsx:3:export default function LandingEcosystemBridge() {
+src/pages/landing/composition/LandingEcosystemBridge.jsx:4:  return <CanonicalShowroomRoot />;
+src/ecosystem/landing/showroom/resolver/ProductPreviewResolver.jsx:19:export default function ProductPreviewResolver({ product }) {
+src/ecosystem/landing/showroom/canonical/CanonicalShowroomRoot.jsx:2:import ProductPreviewResolver from "../resolver/ProductPreviewResolver";
+src/ecosystem/landing/showroom/canonical/CanonicalShowroomRoot.jsx:4:export default function CanonicalShowroomRoot(){
+src/ecosystem/landing/showroom/canonical/CanonicalShowroomRoot.jsx:11:          <ProductPreviewResolver
+src/ecosystem/landing/showroom/canonical/CanonicalShowroomRoot.jsx:20:          <ProductPreviewResolver
+src/ecosystem/landing/showroom/canonical/ShowroomSourceAuthority.js:2:  source:"CanonicalShowroomRoot",
+src/ecosystem/landing/showroom/canonical/ShowroomSourceAuthority.js:3:  path:"src/ecosystem/landing/showroom/canonical/CanonicalShowroomRoot.jsx",
+src/ecosystem/landing/showroom/canonical/seal/CanonicalShowroomSeal.js:2:  source:"CanonicalShowroomRoot",
+
+=== UNUSED SHOWROOM ROOT CANDIDATES ===
+src/ecosystem/landing/showroom/canonical/CanonicalShowroomRoot.jsx
+src/ecosystem/landing/showroom/composer/ShowroomComposer.jsx
+src/ecosystem/landing/showroom/gateway/ShowroomEntry.jsx
+src/ecosystem/landing/showroom/landing-binding/LandingMountRegistry.js
+src/ecosystem/landing/showroom/mount/FlagshipMountResolver.js
+src/ecosystem/landing/showroom/mount/PremiumShowroomMount.jsx
+src/ecosystem/landing/showroom/render/ShowroomRenderRoot.jsx
+src/ecosystem/landing/showroom/verify/AfriCommerceFlagshipComposerAudit.js
+src/ecosystem/landing/showroom/verify/AfriCommerceHeroMountAudit.js
+src/ecosystem/landing/showroom/verify/AfriCommerceMountAudit.js
+src/ecosystem/landing/showroom/verify/CommerceComposerAudit.js
+src/ecosystem/landing/showroom/verify/FinalMountAudit.js
+src/ecosystem/landing/showroom/verify/MountBindingAudit.js
+src/ecosystem/landing/showroom/verify/ShowroomMountAudit.js

@@ -1,2 +1,7 @@
-export default function CTA(){return null;}>Explore AfriCCTV</button>;
+export default function EnterpriseCTA(){
+  return (
+    <button>
+      Explore AfriCCTV
+    </button>
+  );
 }

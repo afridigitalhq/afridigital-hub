@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import LandingNavigation from "../../components/landing/LandingNavigation";
+import LandingNavigation from "./navigation/LandingNavigation";
 import LandingHero from "./hero/LandingHero";
+import HeroHighlights from "./hero/HeroHighlights";
 import EcosystemMarquee from "./marquee/EcosystemMarquee";
 import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
+import AfriAIDock from "./intelligence/AfriAIDock";
 import LandingAuthCTA from "./auth/LandingAuthCTA";
+import LandingFooter from "./footer/LandingFooter";
 import "./landing.css";
 
 export default function LandingPage() {
@@ -11,15 +14,23 @@ export default function LandingPage() {
 
   return (
     <div className="landing-shell">
+
       <LandingNavigation />
 
       <LandingHero />
 
+      <HeroHighlights />
+
       <EcosystemMarquee />
+
+      <LandingEcosystemBridge />
+
+      <AfriAIDock />
 
       <LandingAuthCTA navigate={navigate} />
 
-      <LandingEcosystemBridge />
+      <LandingFooter />
+
     </div>
   );
 }
