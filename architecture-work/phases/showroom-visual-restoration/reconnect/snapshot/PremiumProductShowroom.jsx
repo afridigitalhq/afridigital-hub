@@ -1,0 +1,17 @@
+import AfriCommercePreview from "./preview/AfriCommerceHeroPreview";
+import AfriCCTVPreview from "./preview/AfriCCTVPreview";
+import AfriTrackerPreview from "./preview/AfriTrackerPreview";
+import AfriWorkPreview from "./preview/AfriWorkPreview";
+import AfriBoostPreview from "./preview/AfriBoostPreview";
+
+export default function PremiumProductShowroom() {
+  return (
+    <section className="premium-product-showroom">
+      <AfriCommercePreview />
+      <AfriCCTVPreview />
+      <AfriTrackerPreview />
+      <AfriWorkPreview />
+      <AfriBoostPreview />
+    </section>
+  );
+}
