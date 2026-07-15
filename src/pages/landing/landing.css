@@ -725,7 +725,7 @@ cursor:pointer;
 .landing-globe{
   position:absolute;
   inset:0;
-  background:url("/assets/images/afridigital-hero-world-map.png") center/cover no-repeat;
+  background:url("/assets/images/afridigital-cinematic-hero.png") center/cover no-repeat;
   opacity:.35;
   z-index:0;
 }
