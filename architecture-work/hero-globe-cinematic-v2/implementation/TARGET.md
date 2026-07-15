@@ -1,0 +1,12 @@
+# IMPLEMENTATION TARGETS
+- Globe fills 45-55% of hero.
+- Globe anchored to hero bottom.
+- Multi-layer blue atmospheric glow.
+- Bright cyan horizon edge lighting.
+- Africa receives strongest bloom.
+- Large cinematic scale.
+- Soft floating animation.
+- Slow horizontal light sweep.
+- Bottom gradient fade into next section.
+- Hero text remains above globe.
+- Premium enterprise presentation.
