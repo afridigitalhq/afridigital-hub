@@ -1,0 +1,58 @@
+=== SERVICE CATALOG ===
+const LandingServiceCatalog = Object.freeze({
+
+  ai: {
+    name: "AfriAI",
+    role: "ECOSYSTEM_GUIDE"
+  },
+
+  finance: {
+    name: "AfriBank",
+    role: "FINANCIAL_INFRASTRUCTURE"
+  },
+
+  advertising: {
+    name: "AfriAds",
+    role: "ADVERTISING_INFRASTRUCTURE"
+  },
+
+  vision: {
+    name: "AfriVision",
+    role: "VISUAL_RUNTIME_ENGINE"
+  },
+
+  trust: {
+    name: "AfriTrust",
+    role: "TRUST_SECURITY_LAYER"
+  }
+
+});
+
+export default LandingServiceCatalog;
+
+=== SERVICE HOOK ===
+import ServiceLayerRenderer from "../renderers/ServiceLayerRenderer";
+
+export default function useLandingServices(){
+
+  return ServiceLayerRenderer.getServices();
+
+}
+
+=== REGISTRY ===
+import LandingShowroomRegistry from "./LandingShowroomRegistry";
+import LandingServiceCatalog from "../catalog/LandingServiceCatalog";
+
+const LandingEcosystemRegistry = Object.freeze({
+
+  products: LandingShowroomRegistry,
+
+  services: LandingServiceCatalog,
+
+  version: "LANDING_V1",
+
+  status: "LOCKED"
+
+});
+
+export default LandingEcosystemRegistry;

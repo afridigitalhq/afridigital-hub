@@ -1,0 +1,121 @@
+=== VISUAL BUILDING BLOCKS ===
+src/ecosystem/landing/showroom/assembly-lock/sections/EcosystemGridMount.jsx
+src/ecosystem/landing/showroom/assembly-lock/sections/FooterAssemblyMount.jsx
+src/ecosystem/landing/showroom/assembly-lock/sections/HeroAssemblyMount.jsx
+src/ecosystem/landing/showroom/cards/AfriBoostCard.jsx
+src/ecosystem/landing/showroom/cards/AfriCCTVCard.jsx
+src/ecosystem/landing/showroom/cards/AfriCommerceHeroCard.jsx
+src/ecosystem/landing/showroom/cards/AfriTrackerCard.jsx
+src/ecosystem/landing/showroom/cards/AfriWorkCard.jsx
+src/ecosystem/landing/showroom/cards/EcosystemCard.jsx
+src/ecosystem/landing/showroom/cards/PlaceholderCard.jsx
+src/ecosystem/landing/showroom/cards/ProductCard.jsx
+src/ecosystem/landing/showroom/cards/Tier1HeroCard.jsx
+src/ecosystem/landing/showroom/cards/TierCard.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroActions.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroBadges.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroCard.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroLayout.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroStats.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceActivity.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceCTA.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceCategories.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceEcosystem.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceHero.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceJourney.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceSecurityBanner.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceStats.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceTrustPanel.jsx
+src/ecosystem/landing/showroom/cinematic-controller/core/CinematicExperienceController.js
+src/ecosystem/landing/showroom/cinematic-controller/spotlight/SpotlightController.js
+src/ecosystem/landing/showroom/cinematic-controller/transitions/SceneTransitionManager.js
+src/ecosystem/landing/showroom/cinematic/commerce/CommerceCinematicExperience.jsx
+src/ecosystem/landing/showroom/cinematic/commerce/CommerceHeroScene.jsx
+src/ecosystem/landing/showroom/cinematic/frames/GlassFrame.jsx
+src/ecosystem/landing/showroom/cinematic/frames/ProductFrame.jsx
+src/ecosystem/landing/showroom/cinematic/media/CinematicMediaRegistry.js
+src/ecosystem/landing/showroom/cinematic/overlays/CommerceFeatureOverlay.jsx
+src/ecosystem/landing/showroom/cinematic/overlays/CommerceInfoOverlay.jsx
+src/ecosystem/landing/showroom/cinematic/overlays/FeatureOverlay.jsx
+src/ecosystem/landing/showroom/cinematic/overlays/HologramOverlay.jsx
+src/ecosystem/landing/showroom/cinematic/registry/CinematicRegistry.js
+src/ecosystem/landing/showroom/cinematic/stage/CinematicStage.jsx
+src/ecosystem/landing/showroom/cinematic/stage/CommerceShowroomStage.jsx
+src/ecosystem/landing/showroom/cinematic/stage/CommerceViewportController.js
+src/ecosystem/landing/showroom/cinematic/stage/FlagshipViewport.jsx
+src/ecosystem/landing/showroom/composition-lock/audit/CompositionIntegrityAudit.js
+src/ecosystem/landing/showroom/composition-lock/ecosystem/EcosystemGridComposer.jsx
+src/ecosystem/landing/showroom/composition-lock/sections/AfriAIDockConnector.jsx
+src/ecosystem/landing/showroom/composition-lock/sections/AfriWhatsAppConnector.jsx
+src/ecosystem/landing/showroom/composition-lock/sections/HeroShowroomConnector.jsx
+src/ecosystem/landing/showroom/composition-lock/sections/ProductShowroomConnector.jsx
+src/ecosystem/landing/showroom/composition-lock/tier1/AfriCommercePriorityMount.jsx
+src/ecosystem/landing/showroom/composition-lock/tier1/Tier1SpotlightLock.js
+src/ecosystem/landing/showroom/composition/ShowroomComposition.jsx
+src/ecosystem/landing/showroom/composition/commerce/AfriCommerceComposition.jsx
+src/ecosystem/landing/showroom/composition/commerce/AfriCommerceCompositionRoot.jsx
+src/ecosystem/landing/showroom/composition/commerce/layers/CommerceExperienceCompositionLayer.jsx
+src/ecosystem/landing/showroom/composition/commerce/layers/CommerceHeroCompositionLayer.jsx
+src/ecosystem/landing/showroom/composition/commerce/registry/CommerceCompositionRegistry.js
+src/ecosystem/landing/showroom/composition/layers/FlagshipLayer.jsx
+src/ecosystem/landing/showroom/composition/layers/HeroLayer.jsx
+src/ecosystem/landing/showroom/composition/layers/ProductGridLayer.jsx
+src/ecosystem/landing/showroom/composition/sections/EcosystemRevealSection.jsx
+src/ecosystem/landing/showroom/composition/sections/Tier1PremiumSection.jsx
+src/ecosystem/landing/showroom/experience/composition/FlagshipComposer.jsx
+src/ecosystem/landing/showroom/experience/composition/ProductExperienceMapper.js
+src/ecosystem/landing/showroom/flagships/africommerce/cinematic/CommerceCinematicHero.jsx
+src/ecosystem/landing/showroom/flagships/africommerce/cinematic/CommerceVisualStage.jsx
+src/ecosystem/landing/showroom/flagships/africommerce/composition/AfriCommerceExperienceComposer.jsx
+src/ecosystem/landing/showroom/flagships/africommerce/composition/AfriCommerceFlagship.jsx
+src/ecosystem/landing/showroom/flagships/africommerce/hero/CommerceHeroExperience.jsx
+src/ecosystem/landing/showroom/flagships/africommerce/sections/CommerceFeatureExperience.jsx
+src/ecosystem/landing/showroom/hero/commerce/AfriCommerceHeroMount.jsx
+src/ecosystem/landing/showroom/hero/commerce/AfriCommerceHeroRenderer.jsx
+src/ecosystem/landing/showroom/hero/commerce/registry/CommerceHeroRegistry.js
+src/ecosystem/landing/showroom/hero/commerce/stages/CommerceHeroContentStage.jsx
+src/ecosystem/landing/showroom/hero/commerce/stages/CommerceHeroSceneStage.jsx
+src/ecosystem/landing/showroom/runtime/commerce/cinematic/CommerceCinematicRuntime.jsx
+src/ecosystem/landing/showroom/runtime/commerce/cinematic/CommerceSceneController.js
+src/ecosystem/landing/showroom/sections/EcosystemShowcase.jsx
+src/ecosystem/landing/showroom/sections/Tier1Showcase.jsx
+src/ecosystem/landing/showroom/styles/cards.css
+src/ecosystem/landing/showroom/styles/commerce/africommerce-hero.css
+src/ecosystem/landing/showroom/visual-polish/assets/ShowcaseMediaRegistry.js
+src/ecosystem/landing/showroom/visual-polish/assets/VisualAssetPriority.js
+src/ecosystem/landing/showroom/visual-polish/commerce/AfriCommerceFeaturePresentation.jsx
+src/ecosystem/landing/showroom/visual-polish/commerce/AfriCommerceHeroPolish.jsx
+src/ecosystem/landing/showroom/visual-polish/core/FlagshipExperienceTheme.js
+src/ecosystem/landing/showroom/visual-polish/core/ShowroomVisualController.js
+src/ecosystem/landing/showroom/visual-polish/layout/PremiumShowroomLayoutRefiner.js
+src/ecosystem/landing/showroom/visual-polish/layout/Tier1SpotlightComposer.js
+
+=== CURRENT ROOT ===
+import LandingEcosystemRegistry from "../../registry/LandingEcosystemRegistry";
+import ProductPreviewResolver from "../resolver/ProductPreviewResolver";
+
+export default function CanonicalShowroomRoot(){
+  const showroom = LandingEcosystemRegistry.products;
+
+  return (
+    <section className="canonical-showroom">
+      <section className="tier-showcase tier-one">
+        {showroom.tier1.map(product => (
+          <ProductPreviewResolver
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </section>
+
+      <section className="tier-showcase tier-two">
+        {showroom.tier2.map(product => (
+          <ProductPreviewResolver
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </section>
+    </section>
+  );
+}

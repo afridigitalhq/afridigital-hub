@@ -1,0 +1,8 @@
+=== SNAPSHOT VISUAL FILES ===
+architecture-work/phases/showroom-visual-restoration/snapshot/current/composition/ShowroomComposition.jsx
+architecture-work/phases/showroom-visual-restoration/snapshot/current/composition/layers/HeroLayer.jsx
+architecture-work/phases/showroom-visual-restoration/snapshot/current/composition/sections/Tier1PremiumSection.jsx
+architecture-work/phases/showroom-visual-restoration/snapshot/current/composition/sections/EcosystemRevealSection.jsx
+
+=== GIT HISTORY SEARCH ===
+2677a2a feat(showroom): enforce canonical ecosystem showroom source

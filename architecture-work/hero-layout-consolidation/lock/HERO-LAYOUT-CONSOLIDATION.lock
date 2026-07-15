@@ -1,0 +1,13 @@
+========================================
+⚛️ AFRIDIGITAL NUCLEAR CHAIN :: HERO LAYOUT CONSOLIDATION
+========================================
+OBJECTIVES
+- Consolidate duplicate .landing-shell rules into one authoritative block
+- Remove horizontal padding from .landing-shell so the hero reaches both screen edges
+- Keep horizontal spacing for sections below the hero only
+- Consolidate hero/navigation CSS into one authoritative block
+- Reduce hero top spacing
+- Increase utility font/icon sizes (☰ Login Sign Up 🔔 👤)
+- Increase separation between 🛡️ and AfriDigital while keeping AfriDigital centered
+- Preserve presentation-only architecture
+========================================

@@ -1,0 +1,149 @@
+=== LANDING COMPONENT GRAPH ===
+src/ecosystem/landing/catalog/LandingServiceCatalog.js
+src/ecosystem/landing/components/FutureProductSection.jsx
+src/ecosystem/landing/components/ServiceLayerSection.jsx
+src/ecosystem/landing/hooks/useLandingServices.js
+src/ecosystem/landing/renderers/ServiceLayerRenderer.js
+src/ecosystem/landing/showroom/PremiumProductShowroom.jsx
+src/ecosystem/landing/showroom/activation/tier1/Tier1ActivationEngine.jsx
+src/ecosystem/landing/showroom/activation/tier1/Tier1FlagshipRouter.jsx
+src/ecosystem/landing/showroom/adapters/ProductPreviewAdapter.js
+src/ecosystem/landing/showroom/assembly-lock/mounts/ProductCardMountResolver.js
+src/ecosystem/landing/showroom/assembly-lock/mounts/ShowroomSectionMount.jsx
+src/ecosystem/landing/showroom/assembly-lock/sections/FooterAssemblyMount.jsx
+src/ecosystem/landing/showroom/assembly-lock/sections/HeroAssemblyMount.jsx
+src/ecosystem/landing/showroom/assembly/commerce/AfriCommerceSectionComposer.jsx
+src/ecosystem/landing/showroom/assembly/layers/CommerceHeroLayer.jsx
+src/ecosystem/landing/showroom/assets/commerce/slots/HeroVisualSlot.js
+src/ecosystem/landing/showroom/cards/AfriCommerceHeroCard.jsx
+src/ecosystem/landing/showroom/cards/ProductCard.jsx
+src/ecosystem/landing/showroom/cards/Tier1HeroCard.jsx
+src/ecosystem/landing/showroom/cards/TierCard.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroActions.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroBadges.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroCard.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroLayout.jsx
+src/ecosystem/landing/showroom/cards/africommerce/AfriCommerceHeroStats.jsx
+src/ecosystem/landing/showroom/cards/africommerce/CommerceHero.jsx
+src/ecosystem/landing/showroom/cinematic/commerce/CommerceHeroScene.jsx
+src/ecosystem/landing/showroom/cinematic/frames/ProductFrame.jsx
+src/ecosystem/landing/showroom/composition-lock/sections/AfriAIDockConnector.jsx
+src/ecosystem/landing/showroom/composition-lock/sections/HeroShowroomConnector.jsx
+src/ecosystem/landing/showroom/composition-lock/sections/ProductShowroomConnector.jsx
+src/ecosystem/landing/showroom/composition-lock/tier1/Tier1SpotlightLock.js
+src/ecosystem/landing/showroom/composition/commerce/layers/CommerceHeroCompositionLayer.jsx
+src/ecosystem/landing/showroom/composition/layers/HeroLayer.jsx
+src/ecosystem/landing/showroom/composition/layers/ProductGridLayer.jsx
+src/ecosystem/landing/showroom/composition/sections/EcosystemRevealSection.jsx
+src/ecosystem/landing/showroom/composition/sections/Tier1PremiumSection.jsx
+src/ecosystem/landing/showroom/ecosystem-registry/EcosystemProductRegistry.js
+src/ecosystem/landing/showroom/ecosystem-registry/maps/ProductCapabilityMap.js
+src/ecosystem/landing/showroom/ecosystem-registry/resolvers/ProductManifestResolver.js
+src/ecosystem/landing/showroom/engine/Tier1Engine.jsx
+src/ecosystem/landing/showroom/engine/Tier2Engine.jsx
+src/ecosystem/landing/showroom/engine/UniversalProductEngine.jsx
+src/ecosystem/landing/showroom/experience/composition/ProductExperienceMapper.js
+src/ecosystem/landing/showroom/experience/panels/HeroVisualPanel.jsx
+src/ecosystem/landing/showroom/final-integration/mount/FlagshipProductMountResolver.js
+src/ecosystem/landing/showroom/final-integration/mount/ProductShowroomMount.js
+src/ecosystem/landing/showroom/flagships/africommerce/cinematic/CommerceCinematicHero.jsx
+src/ecosystem/landing/showroom/flagships/africommerce/hero/CommerceHeroExperience.jsx
+src/ecosystem/landing/showroom/flagships/africommerce/registry/AfriCommerceSectionRegistry.js
+src/ecosystem/landing/showroom/hero/commerce/AfriCommerceHeroMount.jsx
+src/ecosystem/landing/showroom/hero/commerce/AfriCommerceHeroRenderer.jsx
+src/ecosystem/landing/showroom/hero/commerce/registry/CommerceHeroRegistry.js
+src/ecosystem/landing/showroom/hero/commerce/stages/CommerceHeroContentStage.jsx
+src/ecosystem/landing/showroom/hero/commerce/stages/CommerceHeroSceneStage.jsx
+src/ecosystem/landing/showroom/hooks/useProductShowroom.js
+src/ecosystem/landing/showroom/hooks/useShowroomProducts.js
+src/ecosystem/landing/showroom/integration/live/ShowroomProductBridge.jsx
+src/ecosystem/landing/showroom/layout/HeroLayout.jsx
+src/ecosystem/landing/showroom/merge-control/bindings/SectionCompositionResolver.js
+src/ecosystem/landing/showroom/merge-control/commerce/Tier1PresentationResolver.js
+src/ecosystem/landing/showroom/mount-binding/products/Tier1ProductMountResolver.js
+src/ecosystem/landing/showroom/orchestration/controllers/ProductExperienceCoordinator.js
+src/ecosystem/landing/showroom/orchestration/core/Tier1ShowroomOrchestrator.js
+src/ecosystem/landing/showroom/orchestration/registry/Tier1ExperienceRegistry.js
+src/ecosystem/landing/showroom/pipeline/commerce/resolvers/CommerceSectionResolver.js
+src/ecosystem/landing/showroom/pipeline/router/ProductExperienceResolver.js
+src/ecosystem/landing/showroom/presentation-lock/commerce/AfriCommerceHeroExperience.js
+src/ecosystem/landing/showroom/preview/AfriCommerceHeroPreview.jsx
+src/ecosystem/landing/showroom/priority/commerce/controllers/Tier1ProductRouter.js
+src/ecosystem/landing/showroom/product-activation/commerce/AfriCommerceProductActivator.jsx
+src/ecosystem/landing/showroom/product-activation/commerce/boot/CommerceProductResolver.js
+src/ecosystem/landing/showroom/products/afriboost/BoostHero.jsx
+src/ecosystem/landing/showroom/products/africommerce/CommerceHero.jsx
+src/ecosystem/landing/showroom/products/afritracker/TrackerHero.jsx
+src/ecosystem/landing/showroom/products/afriwork/WorkHero.jsx
+src/ecosystem/landing/showroom/registry/ProductCardRegistry.js
+src/ecosystem/landing/showroom/registry/ProductShowcaseRegistry.js
+src/ecosystem/landing/showroom/registry/live/ProductExperienceRegistry.js
+src/ecosystem/landing/showroom/registry/truth/ProductTruthMap.js
+src/ecosystem/landing/showroom/release-gate/ProductionReadinessCheck.js
+src/ecosystem/landing/showroom/renderers/ProductRenderer.jsx
+src/ecosystem/landing/showroom/renderers/TierRenderer.jsx
+src/ecosystem/landing/showroom/resolver/ProductPreviewResolver.jsx
+src/ecosystem/landing/showroom/runtime/commerce/stages/CommerceHeroRuntimeStage.jsx
+src/ecosystem/landing/showroom/sections/Tier1Showcase.jsx
+src/ecosystem/landing/showroom/source-lock/core/ProductPresentationPolicy.js
+src/ecosystem/landing/showroom/themes/ProductThemes.js
+src/ecosystem/landing/showroom/tier/Tier1Showcase.jsx
+src/ecosystem/landing/showroom/utils/ProductSorter.js
+src/ecosystem/landing/showroom/verify/AfriCommerceHeroAudit.js
+src/ecosystem/landing/showroom/verify/AfriCommerceHeroMountAudit.js
+src/ecosystem/landing/showroom/verify/AfriCommerceProductActivationAudit.js
+src/ecosystem/landing/showroom/verify/ProductMigrationAudit.js
+src/ecosystem/landing/showroom/verify/Tier1ActivationAudit.js
+src/ecosystem/landing/showroom/verify/Tier1OrchestrationAudit.js
+src/ecosystem/landing/showroom/visual-polish/commerce/AfriCommerceHeroPolish.jsx
+src/ecosystem/landing/showroom/visual-polish/layout/Tier1SpotlightComposer.js
+src/pages/landing/footer/LandingFooter.jsx
+src/pages/landing/footer/partials/FooterBrand.jsx
+src/pages/landing/footer/partials/FooterContact.jsx
+src/pages/landing/footer/partials/FooterEcosystemMap.jsx
+src/pages/landing/footer/partials/FooterLegal.jsx
+src/pages/landing/footer/partials/FooterNewsletter.jsx
+src/pages/landing/footer/partials/FooterQuickLinks.jsx
+src/pages/landing/hero/HeroHighlights.jsx
+src/pages/landing/hero/LandingHero.jsx
+src/pages/landing/intelligence/AfriAIDock.jsx
+src/pages/landing/products/ProductCard.jsx
+src/pages/landing/products/showcase/AfriCCTV/marketing/AfriCCTVHero.jsx
+src/pages/landing/products/showcase/afriboost/BoostHero.jsx
+src/pages/landing/products/showcase/afritracker/TrackerHero.jsx
+src/pages/landing/products/showcase/afriwork/WorkHero.jsx
+src/pages/landing/products/showcase/commerce/CommerceHero.jsx
+src/pages/landing/products/showcase/metaworld/MetaWorldHero.jsx
+src/pages/landing/products/showcase/sports/SportsHero.jsx
+src/pages/landing/services/PlatformServiceCard.jsx
+src/pages/landing/services/PlatformServices.jsx
+
+=== CANONICAL ROOT ===
+import LandingEcosystemRegistry from "../../registry/LandingEcosystemRegistry";
+import ProductPreviewResolver from "../resolver/ProductPreviewResolver";
+
+export default function CanonicalShowroomRoot(){
+  const showroom = LandingEcosystemRegistry.products;
+
+  return (
+    <section className="canonical-showroom">
+      <section className="tier-showcase tier-one">
+        {showroom.tier1.map(product => (
+          <ProductPreviewResolver
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </section>
+
+      <section className="tier-showcase tier-two">
+        {showroom.tier2.map(product => (
+          <ProductPreviewResolver
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </section>
+    </section>
+  );
+}

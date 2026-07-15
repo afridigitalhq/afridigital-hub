@@ -1,0 +1,14 @@
+=== HERO LAYER CONTENT ===
+
+=== ECOSYSTEM REVEAL CONTENT ===
+
+=== TIER 1 PREMIUM CONTENT ===
+
+=== SHOWROOM COMPOSITION CONTENT ===
+export default function ShowroomComposition({ children }) {
+  return (
+    <section className="showroom-composition">
+      {children}
+    </section>
+  );
+}

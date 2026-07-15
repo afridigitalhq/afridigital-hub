@@ -1,0 +1,60 @@
+=== PRODUCT PREVIEW ADAPTER ===
+
+=== PREMIUM SHOWROOM ===
+import AfriCommercePreview from "./preview/AfriCommerceHeroPreview";
+import AfriCCTVPreview from "./preview/AfriCCTVPreview";
+import AfriTrackerPreview from "./preview/AfriTrackerPreview";
+import AfriWorkPreview from "./preview/AfriWorkPreview";
+import AfriBoostPreview from "./preview/AfriBoostPreview";
+
+export default function PremiumProductShowroom() {
+  return (
+    <section className="premium-product-showroom">
+      <AfriCommercePreview />
+      <AfriCCTVPreview />
+      <AfriTrackerPreview />
+      <AfriWorkPreview />
+      <AfriBoostPreview />
+    </section>
+  );
+}
+
+=== TIER SECTIONS ===
+
+=== LANDING PAGE ORDER ===
+import { useNavigate } from "react-router-dom";
+import LandingNavigation from "./navigation/LandingNavigation";
+import LandingHero from "./hero/LandingHero";
+import HeroHighlights from "./hero/HeroHighlights";
+import EcosystemMarquee from "./marquee/EcosystemMarquee";
+import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
+import AfriAIDock from "./intelligence/AfriAIDock";
+import LandingAuthCTA from "./auth/LandingAuthCTA";
+import LandingFooter from "./footer/LandingFooter";
+import "./landing.css";
+
+export default function LandingPage() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="landing-shell">
+
+      <LandingNavigation />
+
+      <LandingHero />
+
+      <HeroHighlights />
+
+      <EcosystemMarquee />
+
+      <LandingEcosystemBridge />
+
+      <AfriAIDock />
+
+      <LandingAuthCTA navigate={navigate} />
+
+      <LandingFooter />
+
+    </div>
+  );
+}

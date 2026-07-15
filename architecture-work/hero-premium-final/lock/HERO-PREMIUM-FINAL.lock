@@ -1,0 +1,20 @@
+========================================
+⚛️ AFRIDIGITAL NUCLEAR CHAIN :: HERO PREMIUM FINAL
+========================================
+
+BUILD OBJECTIVES
+✓ Hero background spans full viewport width (remove parent side padding if present)
+✓ Reduce top hero spacing so content begins higher
+✓ Keep 🛡️ pinned left with larger separation from AfriDigital
+✓ Keep AfriDigital centered, bold and dominant
+✓ Utility row: ☰ left | Login Sign Up 🔔 👤 right
+✓ Increase utility font/icon sizes for premium appearance
+✓ Reduce gap between utility row and hero headline
+✓ Move world map upward to begin immediately beneath headline
+
+LOCK RULES
+- One responsibility per component
+- Navigation JSX structure unchanged unless required
+- Landing remains presentation-only
+- No runtime hacks or inline mutations
+========================================

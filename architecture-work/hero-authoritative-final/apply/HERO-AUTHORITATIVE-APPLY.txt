@@ -1,0 +1,25 @@
+========================================
+⚛️ AFRIDIGITAL NUCLEAR CHAIN :: HERO AUTHORITATIVE APPLY
+========================================
+NEXT ACTIONS
+1. Replace the current Hero CSS block with the authoritative hero-authoritative.css block.
+2. Remove legacy classes:
+   - .landing-hero-topbar
+   - .landing-brand
+   - .landing-actions
+   - .landing-actions button
+3. Keep only ONE definition for:
+   - .landing-hero
+   - .landing-globe
+   - .landing-navigation
+   - .landing-nav-brand-row
+   - .brand-shield
+   - .brand-name
+   - .landing-nav-utility-row
+   - .landing-nav-actions
+   - .menu-button
+   - .login-button
+   - .notification-button
+   - .profile-button
+   - .landing-hero-content
+4. Build and verify the layout.
