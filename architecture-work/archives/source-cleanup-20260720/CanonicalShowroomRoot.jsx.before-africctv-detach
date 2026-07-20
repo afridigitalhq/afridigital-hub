@@ -1,0 +1,24 @@
+import AfriCCTVPreview from "../preview/AfriCCTVPreview";
+import EcosystemServiceGrid from "../components/EcosystemServiceGrid";
+
+export default function CanonicalShowroomRoot(){
+
+  return (
+    <section className="canonical-showroom">
+
+      <section className="tier-showcase tier-flagship">
+
+        <AfriCCTVPreview />
+
+      </section>
+
+
+      <section className="tier-showcase tier-services">
+
+        <EcosystemServiceGrid />
+
+      </section>
+
+    </section>
+  );
+}

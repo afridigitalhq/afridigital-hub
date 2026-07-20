@@ -1,0 +1,39 @@
+import { useNavigate } from "react-router-dom";
+import LandingHero from "./hero/LandingHero";
+import HeroHighlights from "./hero/HeroHighlights";
+import EcosystemMarquee from "./marquee/EcosystemMarquee";
+import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
+import AfriAIDock from "./intelligence/AfriAIDock";
+import LandingAuthCTA from "./auth/LandingAuthCTA";
+import LandingFooter from "./footer/LandingFooter";
+import "./landing.css";
+
+export default function LandingPage() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="landing-shell">
+
+
+
+      <LandingHero />
+
+      <div className="landing-container">
+
+        <HeroHighlights />
+
+        <LandingEcosystemBridge />
+
+        <LandingAuthCTA navigate={navigate} />
+
+      </div>
+
+      <EcosystemMarquee />
+
+      <AfriAIDock />
+
+      <LandingFooter />
+
+    </div>
+  );
+}
