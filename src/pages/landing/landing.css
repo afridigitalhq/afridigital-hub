@@ -1,6 +1,6 @@
 
 .landing-shell {
-  min-height:60vh;
+  min-height:100vh;
   padding:0;
   background:
     radial-gradient(circle at top, rgba(0,255,204,0.12), transparent 35%),
@@ -502,7 +502,7 @@ cursor:pointer;
   padding:48px 32px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:36px;
+  gap:20px;
   border-top:1px solid rgba(24,119,242,.25);
 }
 
@@ -643,7 +643,7 @@ cursor:pointer;
 .hero-glass-card strong {
   margin-top:15px;
   color:#00ffcc;
-  font-size:2rem;
+  font-size:1.6rem;
 }
 
 
@@ -668,7 +668,7 @@ cursor:pointer;
 
   .landing-navigation {
     flex-direction:column;
-    gap:18px;
+    gap:8px;
   }
 
   .premium-hero {
@@ -713,7 +713,7 @@ cursor:pointer;
 
 .landing-hero{
   position:relative;
-  min-height:60vh;
+  min-height:100vh;
   width:100%;
   padding:0;
   overflow:hidden;
@@ -722,74 +722,109 @@ cursor:pointer;
   background:#06131b;
 }
 
+
+
 .landing-globe{
   position:absolute;
   inset:0;
-  background:url("/assets/images/afridigital-cinematic-hero.png") center/cover no-repeat;
-  opacity:.35;
   z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(to bottom, rgba(4,10,20,.05), rgba(4,10,20,.22)),
+    url("/assets/images/afridigital-cinematic-hero.png") center bottom/cover no-repeat;
+  filter:brightness(1.15) contrast(1.12) saturate(1.18);
 }
 
+.landing-globe::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 2px);
+  background-size:140px 140px;
+  opacity:.10;
+}
+
+.landing-globe::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,transparent 45%,rgba(6,19,27,.35) 100%);
+}
 .landing-navigation{
   position:relative;
   z-index:2;
   width:100%;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  padding:12px 56px 0;
+  display:grid;
+  grid-template-rows:auto auto;
+  gap:6px;
+  padding:24px 48px 0;
+  max-width:1400px;
+  margin:0 auto;
 }
 
-.landing-nav-brand-row{
-  position:relative;
-  width:100%;
+.landing-nav-brand-row{display:flex;justify-content:center;align-items:center;min-height:64px;margin-bottom:6px;}
+
+
+.landing-nav-brand{
   display:flex;
-  justify-content:center;
   align-items:center;
-  min-height:72px;
+  justify-content:center;
+  gap:10px;
 }
+.brand-shield{position:static;font-size:2rem;transform:none;}
 
-.brand-shield{
-  position:absolute;
-  left:80px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:2rem;
-}
-
-.brand-name{
-  font-size:2.8rem;
-  font-weight:900;
-  letter-spacing:.02em;
-  line-height:1;
-  color:#fff;
-}
+.brand-name{font-size:2.6rem;font-weight:900;line-height:1;color:#fff;}
 
 .landing-nav-utility-row{
-  width:100%;
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:center;
-}
-
-.landing-nav-actions{
-  display:flex;
-  align-items:center;
-  gap:36px;
+  width:100%;
+  min-height:64px;
+  gap:20px;
 }
 
 .menu-button{
-  font-size:2.2rem;
+  flex:0 0 72px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  font-size:2rem;
+  background:none;
+  border:none;
+  color:#fff;
 }
 
 .login-button{
-  font-size:1.5rem;
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:1.15rem;
   font-weight:800;
+  line-height:1.2;
+  background:none;
+  border:none;
+  color:#fff;
+}
+
+.landing-nav-actions{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
 .notification-button,
 .profile-button{
-  font-size:2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:48px;
+  font-size:1.6rem;
 }
 
 .menu-button,
@@ -806,14 +841,14 @@ cursor:pointer;
   position:relative;
   z-index:2;
   flex:1;
-  width:min(100% - 112px, 1400px);
-  margin-inline:auto;
+  width:calc(100% - 96px); max-width:1400px;
+  margin:0 auto;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
   text-align:center;
-  padding-top:80px;
+  padding-top:44px;
 }
 
 .landing-hero-content h1{
