@@ -10,9 +10,12 @@ export default function LandingHero(){
 
       <div className="landing-hero-content">
         <h1>
-          Building Africa's Connected<br/>
-          Digital Ecosystem
+          Africa's Biggest Digital Ecosystem
         </h1>
+
+        <p>
+          Sell, shop, work, promote ads, secure businesses, track devices, buy tickets, and connect with digital services across Africa — all from one platform.
+        </p>
       </div>
     </section>
   );

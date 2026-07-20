@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import LandingHero from "./hero/LandingHero";
-import HeroHighlights from "./hero/HeroHighlights";
 import EcosystemMarquee from "./marquee/EcosystemMarquee";
 import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
 import AfriAIDock from "./intelligence/AfriAIDock";
@@ -18,17 +17,20 @@ export default function LandingPage() {
 
       <LandingHero />
 
-      <HeroHighlights />
-
       <EcosystemMarquee />
 
-      <LandingEcosystemBridge />
+      <div className="landing-container">
 
-      <AfriAIDock />
 
-      <LandingAuthCTA navigate={navigate} />
+        <LandingEcosystemBridge />
 
-      <LandingFooter />
+        <AfriAIDock />
+
+        <LandingAuthCTA navigate={navigate} />
+
+        <LandingFooter />
+
+      </div>
 
     </div>
   );
