@@ -13,18 +13,17 @@ export default function LandingPage() {
   return (
     <div className="landing-shell">
 
-
-
       <LandingHero />
 
       <EcosystemMarquee />
 
+      <LandingAuthCTA navigate={navigate} />
+
+      <AfriAIDock />
+
       <div className="landing-container">
 
-
         <LandingEcosystemBridge />
-
-        <AfriAIDock />
 
         <LandingAuthCTA navigate={navigate} />
 

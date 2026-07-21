@@ -1,13 +1,14 @@
 const services = [
   { icon:"🛒", name:"AfriCommerce" },
-  { icon:"", name:"AfriCCTV" },
-  { icon:"⚽", name:"AfriSports" },
-  { icon:"🌍", name:"AfriMetaWorld" },
-  { icon:"🚀", name:"AfriBoost" },
+  { icon:"📹", name:"AfriCCTV" },
   { icon:"💼", name:"AfriWork" },
+  { icon:"🚀", name:"AfriBoost" },
   { icon:"📍", name:"AfriTracker" },
+  { icon:"📈", name:"AfriForex" },
   { icon:"🎟️", name:"AfriTicking" },
   { icon:"🚚", name:"AfriLogistics" },
+  { icon:"⚽", name:"AfriSports" },
+  { icon:"🌍", name:"AfriMetaWorld" },
   { icon:"🎓", name:"AfriEducation" },
   { icon:"❤️", name:"AfriLove" }
 ];

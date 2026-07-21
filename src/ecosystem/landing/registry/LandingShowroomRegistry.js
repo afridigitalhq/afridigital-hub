@@ -44,6 +44,13 @@ const LandingShowroomRegistry = Object.freeze({
     },
 
     {
+      id: "afriforex",
+      name: "AfriForex",
+      tier: "TIER_2",
+      status: "ACTIVE"
+    },
+
+    {
       id: "afrilogistics",
       name: "AfriLogistics",
       tier: "TIER_2",
