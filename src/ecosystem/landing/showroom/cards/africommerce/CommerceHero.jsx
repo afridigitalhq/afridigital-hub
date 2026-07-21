@@ -4,17 +4,15 @@ export default function CommerceHero(){
     <div className="commerce-hero">
 
       <span className="commerce-badge">
-        AFRICOMMERCE ECOSYSTEM
+        AFRICOMMERCE
       </span>
 
       <h1>
-        Africa's Trusted Commerce Network
+        AfriCommerce
       </h1>
 
       <p>
-        AfriCommerce connects AfriShop, AfriMarket,
-        AfriTrust and AfriBank into one seamless
-        digital commerce experience.
+        Buy, sell, and discover products across Africa with AfriShop and AfriMarket. From smart technology to everyday products, AfriCommerce brings trusted commerce into one platform.
       </p>
 
     </div>

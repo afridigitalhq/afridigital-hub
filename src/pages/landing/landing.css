@@ -11,7 +11,10 @@
 }
 
 .landing-container{
-  width:min(calc(100% - 48px),1400px);
+  width:100%;
+  max-width:none;
+  padding:0;
+  box-sizing:border-box;
   margin:0 auto;
 }
 
@@ -832,14 +835,14 @@ cursor:pointer;
 .landing-hero-content{
   position:relative;
   z-index:2;
-  width:min(calc(100% - 48px),1400px);
+  width:100%;
   margin:0 auto;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
   text-align:center;
-  padding-top:45px;
+  padding-top:18px;
 }
 
 .landing-hero-content h1{
@@ -954,3 +957,16 @@ cursor:pointer;
 
 }
 
+
+.ecosystem-service-icon img{
+  width:100%;
+  max-width:140px;
+  height:120px;
+  object-fit:contain;
+  border-radius:18px;
+  display:block;
+  margin:0 auto;
+}
+
+.ecosystem-service-card-featured .ecosystem-service-icon{height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.ecosystem-service-card-featured .ecosystem-service-icon img{width:100%;max-width:220px;height:160px;object-fit:contain;border-radius:18px;display:block;margin:0 auto;}

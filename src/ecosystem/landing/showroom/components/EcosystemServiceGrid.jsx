@@ -21,11 +21,15 @@ export default function EcosystemServiceGrid(){
 
         <article 
           key={service.name}
-          className="ecosystem-service-card"
+          className={`ecosystem-service-card ${service.image ? "ecosystem-service-card-featured" : ""}`}
         >
 
           <div className="ecosystem-service-icon">
-            {service.icon}
+            {service.image ? (
+              <img src={service.image} alt={service.name} />
+            ) : (
+              service.icon
+            )}
           </div>
 
           <h3>
