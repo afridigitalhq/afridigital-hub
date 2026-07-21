@@ -1,0 +1,27 @@
+export default function AfriAIConversation(){
+
+  return (
+    <div className="afriai-conversation">
+
+      <div className="ai-msg">
+        👋 Welcome to AfriDigital. I can help you discover services, manage your ecosystem, and launch digital experiences.
+      </div>
+
+      <div className="ai-msg ai-msg-card">
+        🚀 Recommended for you:
+        <strong> AfriCommerce</strong>
+        <span>
+          Buy, sell, and grow your digital business across Africa.
+        </span>
+      </div>
+
+      <div className="ai-msg ai-msg-card">
+        📈 AfriForex insights available.
+        <span>
+          Explore currency tools and financial services.
+        </span>
+      </div>
+
+    </div>
+  );
+}

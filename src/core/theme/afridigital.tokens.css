@@ -21,3 +21,10 @@
   backdrop-filter:var(--afri-glass);
   border-radius:var(--afri-radius);
 }
+
+.afridigital-shell > main{
+  display:block;
+  width:100%;
+  margin:0;
+  padding:0;
+}

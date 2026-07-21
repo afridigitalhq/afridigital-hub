@@ -10,7 +10,7 @@ const LandingCompositionRegistry = Object.freeze({
 
     "AfriFutureProducts",
 
-    "AfriAIDock",
+    "LandingAfriAI",
 
     "InfrastructureTrustLayer"
 

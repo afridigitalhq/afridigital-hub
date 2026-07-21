@@ -1,0 +1,32 @@
+import "./LandingAfriAI.css";
+import AfriAIStatusBar from "../AfriAIStatusBar";
+import LandingAfriAIInput from "./components/LandingAfriAIInput";
+import LandingAfriAIMic from "./components/LandingAfriAIMic";
+
+export default function LandingAfriAI(){
+
+  return (
+    <section className="landing-afriai-panel">
+
+      <AfriAIStatusBar />
+
+      <div className="afriai-canonical-message">
+        👋 Welcome to AfriDigital.
+        <br />
+        AfriAI helps you discover, manage, and connect with the ecosystem.
+      </div>
+
+      <div className="afriai-canonical-actions">
+        <button>🛒 Explore AfriCommerce</button>
+        <button>🔐 Secure with AfriCCTV</button>
+        <button>💼 Find AfriWork</button>
+      </div>
+
+      <div className="landing-afriai-composer">
+        <LandingAfriAIInput />
+        <LandingAfriAIMic />
+      </div>
+
+    </section>
+  );
+}

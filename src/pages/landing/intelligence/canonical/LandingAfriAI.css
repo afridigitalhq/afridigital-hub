@@ -1,0 +1,100 @@
+.landing-afriai-panel{
+  width:min(920px,calc(100% - 40px));
+  margin:-10px auto 40px;
+  padding:30px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:24px;
+
+  background:var(--afri-card-bg);
+  border:1px solid var(--afri-primary-border);
+  border-radius:32px;
+  backdrop-filter:blur(var(--afriglass-blur));
+  -webkit-backdrop-filter:blur(var(--afriglass-blur));
+  box-shadow:var(--afriglass-shadow);
+}
+
+.landing-afriai-header{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.landing-afriai-brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+
+.landing-afriai-icon{
+  font-size:2.5rem;
+}
+
+.landing-afriai-brand h2{
+  margin:0;
+}
+
+.landing-afriai-brand p{
+  margin:4px 0 0;
+  opacity:.75;
+}
+
+.landing-afriai-status{
+  padding:8px 14px;
+  border-radius:999px;
+  background:var(--afri-primary-soft);
+}
+
+.landing-afriai-welcome{
+  width:100%;
+  padding:20px;
+  border-radius:22px;
+  background:rgba(255,255,255,.04);
+}
+
+.landing-afriai-recommendations{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.landing-afriai-recommendations button{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px;
+  border-radius:20px;
+  border:1px solid var(--afri-primary-border);
+  background:var(--afri-primary-soft);
+}
+
+.landing-afriai-composer{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.landing-afriai-waveform span{
+  background:var(--afri-primary);
+}
+
+.landing-afriai-mic{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  border:1px solid var(--afri-primary-border);
+  background:var(--afri-primary-soft);
+  color:white;
+}
+
+@media(max-width:768px){
+ .landing-afriai-recommendations{
+   grid-template-columns:1fr;
+ }
+}
