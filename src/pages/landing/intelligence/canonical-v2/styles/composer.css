@@ -1,6 +1,6 @@
 .landing-afriai-composer-wrap{
   width:100%;
-  max-width:760px;
+  max-width:none;
   margin:0 auto;
   display:flex;
   flex-direction:column;
@@ -54,9 +54,8 @@
 .landing-afriai-toolbar{
   width:100%;
   display:flex;
-  justify-content:center;
   align-items:center;
-  gap:28px;
+  gap:16px;
 }
 
 .landing-afriai-upload,
@@ -74,9 +73,9 @@
 }
 
 .landing-afriai-waveform{
-  width:110px;
+  width:auto;
+  flex:1;
   height:40px;
-  flex:0 0 auto;
   display:flex;
   align-items:center;
   justify-content:center;
