@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import LandingHero from "./hero/LandingHero";
 import EcosystemMarquee from "./marquee/EcosystemMarquee";
 import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
-import LandingAfriAI from "./intelligence/canonical/LandingAfriAI";
+import LandingAfriAINext from "./intelligence/canonical-v2/LandingAfriAINext";
 import LandingAuthCTA from "./auth/LandingAuthCTA";
 import LandingFooter from "./footer/LandingFooter";
 import LandingNavigation from "./navigation/LandingNavigation";
@@ -28,7 +28,7 @@ export default function LandingPage() {
 
       <LandingAuthCTA navigate={navigate} />
 
-      <LandingAfriAI />
+      <LandingAfriAINext />
 
       <div className="landing-container">
 

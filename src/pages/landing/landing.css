@@ -574,21 +574,16 @@ button:hover {
   font-size:1.4rem;
 }
 
-.menu-button{
-  flex:0 0 auto;
-}
-
 .landing-nav-brand{
   display:flex;
   align-items:center;
   gap:10px;
   margin-right:auto;
-  margin-left:16px;
 }
 
 .brand-name{
-  font-size:clamp(2.5rem,4.5vw,3.8rem);
-  letter-spacing:-1px;
+  font-size:clamp(3rem,5.5vw,4.8rem);
+  letter-spacing:-1.5px;
   font-weight:900;
   color:#fff;
   white-space:nowrap;
@@ -629,7 +624,7 @@ button:hover {
   }
 
   .brand-name{
-    font-size:2rem;
+    font-size:2.4rem;
   }
 
   .landing-nav-brand{
@@ -661,7 +656,7 @@ button:hover {
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:24px;
   width:100%;
-  margin:50px 0;
+  margin:28px 0;
 
 }
 
