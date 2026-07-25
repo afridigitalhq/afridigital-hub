@@ -8,6 +8,7 @@ export default function LandingAfriAIComposer({
   onChange,
   onSubmit,
   onMic,
+  onRelease,
   onUpload,
   attachmentsOpen,
   files=[],
@@ -57,7 +58,9 @@ export default function LandingAfriAIComposer({
         />
 
         <LandingAfriAIMic
+          active={status==="listening"}
           onActivate={onMic}
+          onRelease={onRelease}
         />
 
       </div>
