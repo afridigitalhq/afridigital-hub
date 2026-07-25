@@ -4,6 +4,7 @@ import LandingAfriAIComposer from "./LandingAfriAIComposer";
 
 export default function LandingAfriAICard({
   status,
+  messages=[],
   message,
   onChange,
   onSubmit,
@@ -18,9 +19,7 @@ export default function LandingAfriAICard({
         <LandingAfriAIAvatar status={status} />
 
         <div className="landing-afriai-identity">
-          <h2><span className="afriai-live-dot"></span> AfriAI
-          </h2>
-
+          <h2><span className="afriai-live-dot"></span> AfriAI</h2>
           <p>Your AfriDigital intelligence assistant</p>
         </div>
 
@@ -29,7 +28,7 @@ export default function LandingAfriAICard({
       <div className="landing-afriai-chat">
 
         <LandingAfriAIConversation
-          messages={[]}
+          messages={messages}
         />
 
         <LandingAfriAIComposer

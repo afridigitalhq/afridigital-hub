@@ -1,0 +1,11 @@
+
+> afridigital-hub@1.0.0 dev
+> vite --host 0.0.0.0
+
+
+  VITE v8.1.5  ready in 2031 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://10.34.146.142:5173/
+8:36:06 AM [vite] (client) page reload src/pages/landing/intelligence/canonical-v2/components/LandingAfriAICard.jsx
+8:38:30 AM [vite] (client) hmr update /src/pages/landing/intelligence/canonical-v2/LandingAfriAI.css

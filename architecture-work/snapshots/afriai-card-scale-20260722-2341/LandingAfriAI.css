@@ -1,0 +1,73 @@
+.landing-afriai-section{
+  width:100%;
+  box-sizing:border-box;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 24px;
+  position:relative;
+  overflow:hidden;
+}
+
+.landing-afriai-card{
+  width:100%;
+  max-width:none;
+  margin:0;
+  box-sizing:border-box;
+  margin:0 auto;
+  padding:36px;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  border-radius:28px;
+  background:var(--afri-card-bg);
+  border:1px solid var(--afri-primary-border);
+  backdrop-filter:blur(var(--afriglass-blur));
+  -webkit-backdrop-filter:blur(var(--afriglass-blur));
+  box-shadow:var(--afriglass-shadow);
+  position:relative;
+}
+
+.landing-afriai-topbar{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.landing-afriai-identity{
+  flex:1;
+}
+
+.landing-afriai-identity h2{
+  margin:0;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:clamp(1.5rem,2vw,2rem);
+  font-weight:700;
+}
+
+.landing-afriai-identity p{
+  margin:6px 0 0;
+  opacity:.78;
+  font-size:.98rem;
+}
+
+.landing-afriai-actions{
+  width:100%;
+}
+
+.afriai-live-dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#00ff66;
+  box-shadow:0 0 14px #00ff66;
+  animation:afriaiLivePulse 1.8s infinite;
+}
+
+@keyframes afriaiLivePulse{
+  0%,100%{transform:scale(1);opacity:.7;}
+  50%{transform:scale(1.35);opacity:1;}
+}

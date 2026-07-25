@@ -1,0 +1,18 @@
+import "../styles/waveform.css";
+
+export default function LandingAfriAIWaveEngine({
+  status = "idle"
+}) {
+
+  return (
+    <div className={`landing-afriai-wave ${status}`}>
+
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </div>
+  );
+}

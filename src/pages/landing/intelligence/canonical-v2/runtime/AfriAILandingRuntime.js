@@ -1,80 +1,84 @@
-/**
- * AfriAI Landing Runtime
- *
- * OWNER:
- * Runtime interactions and orchestration.
- *
- * RULE:
- * UI components do not contain intelligence logic.
- * Runtime owns events, transitions, and future AI connections.
- */
+import { askAfriAI } from "../../../../../api/AfriAIClient";
 
-class AfriAILandingRuntime {
+class AfriAILandingRuntime{
 
   constructor(){
-    this.state = {
+    this.state={
       status:"idle",
       listening:false,
       thinking:false,
-      speaking:false
+      speaking:false,
+      messages:[]
     };
-
-    this.listeners = new Set();
+    this.listeners=new Set();
   }
-
 
   subscribe(listener){
     this.listeners.add(listener);
-
-    return ()=>{
-      this.listeners.delete(listener);
-    };
+    return()=>this.listeners.delete(listener);
   }
-
 
   emit(){
-    this.listeners.forEach(listener=>{
-      listener(this.state);
-    });
+    this.listeners.forEach(listener=>listener({...this.state}));
   }
 
-
   setStatus(status){
-
-    this.state = {
+    this.state={
       ...this.state,
       status,
       listening:status==="listening",
       thinking:status==="thinking",
       speaking:status==="speaking"
     };
-
     this.emit();
   }
 
+  async sendMessage(message){
+    if(!message.trim()) return;
+
+    this.state.messages.push({
+      role:"user",
+      content:message
+    });
+
+    this.setStatus("thinking");
+
+    try{
+      const result=await askAfriAI(message);
+
+      this.state.messages.push({
+        role:"assistant",
+        content:result?.data?.reply || result?.afriai?.reply || "AfriAI is ready."
+      });
+
+      this.setStatus("speaking");
+
+      setTimeout(()=>this.setStatus("idle"),700);
+
+    }catch(err){
+
+      console.error("AfriAI ERROR:", err);
+
+      this.state.messages.push({
+        role:"assistant",
+        content:`Unable to reach AfriAI: ${err.message}`
+      });
+
+      this.setStatus("idle");
+    }
+
+    this.emit();
+  }
 
   startListening(){
     this.setStatus("listening");
   }
 
-
-  startThinking(){
-    this.setStatus("thinking");
-  }
-
-
-  startSpeaking(){
-    this.setStatus("speaking");
-  }
-
-
   reset(){
+    this.state.messages=[];
     this.setStatus("idle");
   }
 
 }
 
-
-const afriAILandingRuntime = new AfriAILandingRuntime();
-
-export default afriAILandingRuntime;
+export default new AfriAILandingRuntime();

@@ -1,0 +1,62 @@
+.landing-afriai-composer{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 14px;
+  margin-top:18px;
+  border:1px solid var(--afri-primary-border);
+  border-radius:22px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  transition:.25s ease;
+}
+
+.landing-afriai-composer:focus-within{
+  border-color:var(--afri-primary);
+  box-shadow:0 0 18px rgba(0,180,255,.18);
+}
+
+.landing-afriai-upload,
+.landing-afriai-send{
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:14px;
+  background:var(--afri-primary);
+  color:#001018;
+  font-size:1.25rem;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.landing-afriai-upload:hover,
+.landing-afriai-send:hover{
+  transform:scale(1.05);
+}
+
+.landing-afriai-composer input{
+  flex:1;
+  height:58px;
+  border:none;
+  outline:none;
+  background:rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:0 18px;
+  color:#fff;
+  font-size:1rem;
+}
+
+.landing-afriai-composer input::placeholder{
+  color:rgba(255,255,255,.75);
+}
+
+.landing-afriai-composer .landing-afriai-mic{
+  margin:0;
+  flex-shrink:0;
+}

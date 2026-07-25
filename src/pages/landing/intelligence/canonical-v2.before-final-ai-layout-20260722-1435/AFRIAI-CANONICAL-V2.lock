@@ -1,0 +1,42 @@
+PROJECT=AfriDigital
+MODULE=AfriAI Landing Canonical V2
+
+STATUS=ARCHITECTURE_FROZEN
+
+OWNERSHIP:
+
+RUNTIME_OWNER=runtime/AfriAILandingRuntime.js
+STATE_OWNER=hooks/useAfriAIState.js
+COMPOSITION_OWNER=LandingAfriAINext.jsx
+
+RULES:
+
+1=Frontend components are UI composition and state rendering only
+2=Runtime owns interactions, transitions, and orchestration
+3=Visual components must remain stateless wherever practical
+4=Components must not contain AI intelligence logic
+5=Components communicate through props and callbacks
+6=Future Brain and orchestration modules connect through Runtime
+
+CANONICAL_COMPONENTS:
+
+Avatar=StatelessVisual
+Halo=StatelessVisual
+Status=StatelessVisual
+Composer=CallbackDrivenVisual
+
+EXTENSION_MODEL=Runtime_First
+ARCHITECTURE=UI_COMPOSITION_RUNTIME_ORCHESTRATION
+
+
+FULL_COMPONENT_REGISTRY:
+
+LandingAfriAIHalo=StatelessVisual
+LandingAfriAIAvatar=StatelessVisual
+LandingAfriAIStatus=StatelessVisual
+LandingAfriAIWaveEngine=StatelessVisual
+LandingAfriAIConversation=DisplayOnly
+LandingAfriAIComposer=CallbackDrivenVisual
+LandingAfriAIMic=CallbackDrivenVisual
+LandingAfriAIAttachments=CallbackDrivenVisual
+

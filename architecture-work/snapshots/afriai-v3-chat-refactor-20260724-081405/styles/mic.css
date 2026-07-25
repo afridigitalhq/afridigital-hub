@@ -1,0 +1,33 @@
+.landing-afriai-mic{
+  width:44px;
+  height:44px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  color:#ffffff;
+  font-size:1.2rem;
+  border:1px solid var(--afri-primary-border);
+  transition:.25s ease;
+}
+
+.landing-afriai-mic:hover{
+  transform:scale(1.08);
+}
+
+.landing-afriai-mic.active{
+  animation:afriaiMicPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes afriaiMicPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.08);
+  }
+}

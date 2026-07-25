@@ -6,10 +6,6 @@ export default function LandingNavigation() {
   return (
     <nav className="landing-navigation">
 
-      <button className="menu-button" aria-label="Menu">
-        ☰
-      </button>
-
       <div className="landing-nav-brand">
         <span className="brand-name">AfriDigital</span>
       </div>
