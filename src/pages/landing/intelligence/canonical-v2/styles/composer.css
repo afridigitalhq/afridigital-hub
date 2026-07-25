@@ -117,3 +117,46 @@
     width:90px;
   }
 }
+
+/* AfriAI Media Drawer */
+
+.landing-afriai-media-drawer{
+  position:absolute;
+  bottom:70px;
+  left:0;
+  width:220px;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  border-radius:18px;
+  background:rgba(15,15,20,.92);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  z-index:20;
+}
+
+.landing-afriai-media-option{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:14px;
+  transition:.2s ease;
+}
+
+.landing-afriai-media-option:hover{
+  background:rgba(255,255,255,.08);
+}
+
+.landing-afriai-selected-files{
+  margin-top:8px;
+  padding-top:8px;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:12px;
+  opacity:.8;
+}
+

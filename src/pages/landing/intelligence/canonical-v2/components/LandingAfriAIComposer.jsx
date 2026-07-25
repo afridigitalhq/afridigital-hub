@@ -1,6 +1,7 @@
 import "../styles/composer.css";
 import LandingAfriAIMic from "./LandingAfriAIMic";
 import LandingAfriAIWaveEngine from "./LandingAfriAIWaveEngine";
+import LandingAfriAIAttachments from "./LandingAfriAIAttachments";
 
 export default function LandingAfriAIComposer({
   value="",
@@ -8,6 +9,9 @@ export default function LandingAfriAIComposer({
   onSubmit,
   onMic,
   onUpload,
+  attachmentsOpen,
+  files=[],
+  onAttach,
   status
 }){
 

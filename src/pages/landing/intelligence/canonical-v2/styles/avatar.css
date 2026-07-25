@@ -36,3 +36,52 @@
     transform:translateY(-6px);
   }
 }
+
+/* AfriAI Presence States */
+
+.landing-afriai-avatar.expanded{
+  width:220px;
+  height:220px;
+  animation:afriaiListeningPulse 1.8s ease-in-out infinite;
+  z-index:10;
+}
+
+.landing-afriai-avatar.expanded .landing-afriai-image{
+  width:200px;
+  height:200px;
+  transition:all .35s ease;
+}
+
+
+.landing-afriai-avatar.speaking{
+  animation:afriaiSpeakingPulse .9s ease-in-out infinite;
+}
+
+
+.landing-afriai-avatar.speaking .landing-afriai-image{
+  transform:scale(1.08);
+  transition:transform .2s ease;
+}
+
+
+@keyframes afriaiListeningPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+}
+
+
+@keyframes afriaiSpeakingPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.03);
+  }
+}
+

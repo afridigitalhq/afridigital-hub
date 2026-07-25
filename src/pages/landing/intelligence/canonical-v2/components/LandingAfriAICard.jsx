@@ -4,6 +4,7 @@ import LandingAfriAIComposer from "./LandingAfriAIComposer";
 
 export default function LandingAfriAICard({
   status,
+  avatarMode="idle",
   messages=[],
   suggestions=[],
   actions=[],
@@ -11,7 +12,12 @@ export default function LandingAfriAICard({
   message,
   onChange,
   onSubmit,
-  onMic
+  onMic,
+  onMicRelease,
+  onUpload,
+  attachmentsOpen,
+  files=[],
+  onAttach
 }){
 
   return(
@@ -19,7 +25,10 @@ export default function LandingAfriAICard({
 
       <div className="landing-afriai-topbar">
 
-        <LandingAfriAIAvatar status={status} />
+        <LandingAfriAIAvatar 
+              status={status}
+              avatarMode={avatarMode}
+            />
 
         <div className="landing-afriai-identity">
           <h2><span className="afriai-live-dot"></span> AfriAI</h2>
@@ -40,6 +49,7 @@ export default function LandingAfriAICard({
           onChange={onChange}
           onSubmit={onSubmit}
           onMic={onMic}
+                                   onRelease={onMicRelease}
         />
 
       </div>

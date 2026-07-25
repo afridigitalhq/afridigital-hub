@@ -10,9 +10,11 @@ import "./LandingAfriAI.css";
 export default function LandingAfriAINext(){
 
   const state = useAfriAIState();
-  const { status, messages, suggestions, actions, metadata } = state;
+  const { status, avatarMode, messages, suggestions, actions, metadata } = state;
 
   const [message,setMessage]=useState("");
+  const [attachmentsOpen,setAttachmentsOpen]=useState(false);
+  const [files,setFiles]=useState([]);
 
   function handleChange(event){
     setMessage(event.target.value);
@@ -33,10 +35,19 @@ export default function LandingAfriAINext(){
     afriAILandingRuntime.startListening();
   }
 
+  function handleUpload(){
+    setAttachmentsOpen(prev=>!prev);
+  }
+
+  function handleAttach(event){
+    setFiles(Array.from(event.target.files || []));
+  }
+
   return(
     <section className="landing-afriai-section">
       <LandingAfriAICard
         status={status}
+        avatarMode={avatarMode}
         messages={messages}
         suggestions={suggestions}
         actions={actions}
@@ -45,6 +56,7 @@ export default function LandingAfriAINext(){
         onChange={handleChange}
         onSubmit={handleSubmit}
         onMic={handleMic}
+        onMicRelease={handleMicRelease}
       />
     </section>
   );

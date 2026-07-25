@@ -24,3 +24,19 @@
 .landing-afriai-upload:hover{
   transform:scale(1.08);
 }
+
+.landing-afriai-mic.active{
+  transform:scale(1.12);
+  animation:afriaiMicPulse 1s ease-in-out infinite;
+}
+
+@keyframes afriaiMicPulse{
+  0%,100%{
+    box-shadow:0 0 0 0 rgba(36,120,255,.35);
+  }
+
+  50%{
+    box-shadow:0 0 0 18px rgba(36,120,255,0);
+  }
+}
+

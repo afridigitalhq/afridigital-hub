@@ -104,6 +104,10 @@ class AfriAILandingRuntime{
     this.setStatus("listening");
   }
 
+  stopListening(){
+    this.setStatus("idle");
+  }
+
   reset(){
     this.state={
       ...this.state,

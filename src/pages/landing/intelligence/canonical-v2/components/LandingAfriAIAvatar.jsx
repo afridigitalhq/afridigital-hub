@@ -3,11 +3,12 @@ import "../styles/avatar.css";
 
 export default function LandingAfriAIAvatar({
   status = "idle",
+  avatarMode = "idle",
   small = false
 }) {
 
   return (
-    <div className={`landing-afriai-avatar ${small ? "small" : ""} ${status}`}>
+    <div className={`landing-afriai-avatar ${small ? "small" : ""} ${status} ${avatarMode}`}>
 
       <img
         src={avatar}
