@@ -36,20 +36,34 @@ class AfriAILandingRuntime{
   async sendMessage(message){
     if(!message.trim()) return;
 
-    this.state.messages.push({
-      role:"user",
-      content:message
-    });
+    this.state={
+      ...this.state,
+      messages:[
+        ...this.state.messages,
+        {
+          role:"user",
+          content:message
+        }
+      ]
+    };
+
+    this.emit();
 
     this.setStatus("thinking");
 
     try{
       const result=await askAfriAI(message);
 
-      this.state.messages.push({
-        role:"assistant",
-        content:result?.data?.reply || result?.afriai?.reply || "AfriAI is ready."
-      });
+      this.state={
+        ...this.state,
+        messages:[
+          ...this.state.messages,
+          {
+            role:"assistant",
+            content:result?.data?.reply || result?.afriai?.reply || "AfriAI is ready."
+          }
+        ]
+      };
 
       this.setStatus("speaking");
 
@@ -59,10 +73,16 @@ class AfriAILandingRuntime{
 
       console.error("AfriAI ERROR:", err);
 
-      this.state.messages.push({
-        role:"assistant",
-        content:`Unable to reach AfriAI: ${err.message}`
-      });
+      this.state={
+        ...this.state,
+        messages:[
+          ...this.state.messages,
+          {
+            role:"assistant",
+            content:`Unable to reach AfriAI: ${err.message}`
+          }
+        ]
+      };
 
       this.setStatus("idle");
     }
