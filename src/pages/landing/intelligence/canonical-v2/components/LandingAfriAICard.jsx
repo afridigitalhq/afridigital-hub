@@ -5,6 +5,9 @@ import LandingAfriAIComposer from "./LandingAfriAIComposer";
 export default function LandingAfriAICard({
   status,
   messages=[],
+  suggestions=[],
+  actions=[],
+  metadata={},
   message,
   onChange,
   onSubmit,

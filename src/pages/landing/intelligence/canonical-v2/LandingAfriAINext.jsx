@@ -10,7 +10,7 @@ import "./LandingAfriAI.css";
 export default function LandingAfriAINext(){
 
   const state = useAfriAIState();
-  const { status, messages } = state;
+  const { status, messages, suggestions, actions, metadata } = state;
 
   const [message,setMessage]=useState("");
 
@@ -38,6 +38,9 @@ export default function LandingAfriAINext(){
       <LandingAfriAICard
         status={status}
         messages={messages}
+        suggestions={suggestions}
+        actions={actions}
+        metadata={metadata}
         message={message}
         onChange={handleChange}
         onSubmit={handleSubmit}

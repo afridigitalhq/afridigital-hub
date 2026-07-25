@@ -8,7 +8,10 @@ class AfriAILandingRuntime{
       listening:false,
       thinking:false,
       speaking:false,
-      messages:[]
+      messages:[],
+      suggestions:[],
+      actions:[],
+      metadata:{}
     };
     this.listeners=new Set();
   }
@@ -60,9 +63,16 @@ class AfriAILandingRuntime{
           ...this.state.messages,
           {
             role:"assistant",
-            content:result?.data?.reply || result?.afriai?.reply || "AfriAI is ready."
+            content:result?.reply || "AfriAI is ready."
           }
         ]
+      };
+
+      this.state={
+        ...this.state,
+        suggestions:result?.suggestions || [],
+        actions:result?.actions || [],
+        metadata:result?.metadata || {}
       };
 
       this.setStatus("speaking");
@@ -95,7 +105,14 @@ class AfriAILandingRuntime{
   }
 
   reset(){
-    this.state.messages=[];
+    this.state={
+      ...this.state,
+      messages:[],
+      suggestions:[],
+      actions:[],
+      metadata:{}
+    };
+
     this.setStatus("idle");
   }
 
