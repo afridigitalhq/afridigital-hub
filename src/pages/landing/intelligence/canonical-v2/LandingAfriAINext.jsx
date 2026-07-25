@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import afriAILandingRuntime from "./runtime/AfriAILandingRuntime";
+import afriAIVoiceController from "./voice/AfriAIVoiceController";
 import useAfriAIState from "./hooks/useAfriAIState";
 
 import LandingAfriAICard from "./components/LandingAfriAICard";
