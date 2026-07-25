@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import afriAILandingRuntime from "./runtime/AfriAILandingRuntime";
 import afriAIVoiceController from "./voice/AfriAIVoiceController";
+import afriAIAudioAnalyzer from "./voice/AfriAIAudioAnalyzer";
+import "./voice/AfriAIVoiceRuntimeBridge";
 import useAfriAIState from "./hooks/useAfriAIState";
 
 import LandingAfriAICard from "./components/LandingAfriAICard";
@@ -11,7 +13,7 @@ import "./LandingAfriAI.css";
 export default function LandingAfriAINext(){
 
   const state = useAfriAIState();
-  const { status, avatarMode, messages, suggestions, actions, metadata } = state;
+  const { status, avatarMode, voiceLevel, messages, suggestions, actions, metadata } = state;
 
   const [message,setMessage]=useState("");
   const [attachmentsOpen,setAttachmentsOpen]=useState(false);
@@ -58,6 +60,7 @@ export default function LandingAfriAINext(){
         onSubmit={handleSubmit}
         onMic={handleMic}
         onMicRelease={handleMicRelease}
+        voiceLevel={voiceLevel}
       />
     </section>
   );

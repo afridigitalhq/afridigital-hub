@@ -1,0 +1,137 @@
+
+.landing-afriai-waveform span{
+  height:calc(
+    var(--bar-height) * 35px +
+    var(--voice-level,0) * 45px
+  );
+  transition:height .12s ease;
+}
+
+.landing-afriai-waveform.idle span{
+  animation:afriaiWaveIdle 1.8s ease-in-out infinite;
+}
+
+.landing-afriai-waveform.listening span{
+  animation:afriaiWaveListening .35s ease-in-out infinite alternate;
+}
+
+@keyframes afriaiWaveIdle{
+  from{
+    transform:scaleY(.8);
+  }
+
+  to{
+    transform:scaleY(1);
+  }
+}
+
+@keyframes afriaiWaveListening{
+  from{
+    transform:scaleY(.7);
+  }
+
+  to{
+    transform:scaleY(1.25);
+  }
+}
+
+
+/* AfriAI Live Audio Reactive Wave */
+
+.landing-afriai-waveform{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  height:42px;
+}
+
+.landing-afriai-waveform span{
+  width:4px;
+  height:calc(
+    10px +
+    (var(--bar-height) * 20px) +
+    (var(--voice-level) * 35px)
+  );
+  border-radius:10px;
+  animation:afriaiIdleWave 1.4s ease-in-out infinite;
+  transition:height .08s ease;
+}
+
+.landing-afriai-waveform.listening span,
+.landing-afriai-waveform.speaking span{
+  animation-duration:.35s;
+}
+
+.landing-afriai-waveform span:nth-child(2){
+  animation-delay:.1s;
+}
+
+.landing-afriai-waveform span:nth-child(3){
+  animation-delay:.2s;
+}
+
+.landing-afriai-waveform span:nth-child(4){
+  animation-delay:.3s;
+}
+
+.landing-afriai-waveform span:nth-child(5){
+  animation-delay:.4s;
+}
+
+@keyframes afriaiIdleWave{
+  0%,100%{
+    transform:scaleY(.75);
+  }
+
+  50%{
+    transform:scaleY(1);
+  }
+}
+
+
+.landing-afriai-waveform span{
+  height:calc(
+    10px +
+    (var(--voice-level) * 55px)
+  );
+  transition:
+    height .08s linear;
+}
+
+
+.landing-afriai-waveform.idle span{
+  animation:afriaiIdleWave 2.4s ease-in-out infinite;
+}
+
+
+.landing-afriai-waveform.speaking span{
+  animation:afriaiSpeakingWave .7s ease-in-out infinite;
+}
+
+
+@keyframes afriaiIdleWave{
+
+  0%,100%{
+    transform:scaleY(.6);
+  }
+
+  50%{
+    transform:scaleY(1);
+  }
+
+}
+
+
+@keyframes afriaiSpeakingWave{
+
+  0%,100%{
+    transform:scaleY(.8);
+  }
+
+  50%{
+    transform:scaleY(1.35);
+  }
+
+}
+

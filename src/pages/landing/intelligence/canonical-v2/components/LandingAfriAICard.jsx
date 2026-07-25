@@ -5,6 +5,7 @@ import LandingAfriAIComposer from "./LandingAfriAIComposer";
 export default function LandingAfriAICard({
   status,
   avatarMode="idle",
+  voiceLevel=0,
   messages=[],
   suggestions=[],
   actions=[],

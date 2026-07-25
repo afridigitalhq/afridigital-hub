@@ -100,6 +100,17 @@ class AfriAILandingRuntime{
     this.emit();
   }
 
+  updateVoiceLevel(level){
+
+    this.state={
+      ...this.state,
+      voiceLevel:level
+    };
+
+    this.emit();
+
+  }
+
   startListening(){
     this.setStatus("listening");
   }

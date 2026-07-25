@@ -12,6 +12,7 @@ export default function LandingAfriAIComposer({
   attachmentsOpen,
   files=[],
   onAttach,
+  voiceLevel=0,
   status
 }){
 
