@@ -1,0 +1,15 @@
+MODULE=AfriAI
+FEATURE=Voice_Presence_Intelligence
+STATUS=LOCKED
+VERSION=V1
+CAPABILITIES=
+- VoiceRecognition
+- AudioLevelAnalysis
+- ReactiveWaveform
+- HumanBlinking
+- BreathingAnimation
+- ListeningPresence
+- ThinkingPresence
+- SpeakingPresence
+ARCHITECTURE=Canonical-V2
+OWNER=AfriDigital

@@ -85,3 +85,140 @@
   }
 }
 
+
+/* AfriAI cinematic presence states */
+
+.landing-afriai-avatar.listening{
+  animation:
+    afriaiFloat 5s ease-in-out infinite,
+    afriaiListeningGlow 1.8s ease-in-out infinite;
+}
+
+
+.landing-afriai-avatar.thinking{
+  animation:
+    afriaiFloat 5s ease-in-out infinite,
+    afriaiThinkingPulse 1.2s ease-in-out infinite;
+}
+
+
+.landing-afriai-avatar.speaking{
+  animation:
+    afriaiFloat 5s ease-in-out infinite,
+    afriaiSpeakingGlow .8s ease-in-out infinite;
+}
+
+
+.landing-afriai-avatar.listening .landing-afriai-image{
+  transform:scale(1.04);
+}
+
+
+.landing-afriai-avatar.thinking .landing-afriai-image{
+  transform:scale(1.06);
+}
+
+
+.landing-afriai-avatar.speaking .landing-afriai-image{
+  transform:scale(1.1);
+}
+
+
+@keyframes afriaiListeningGlow{
+
+  0%,100%{
+    filter:drop-shadow(0 0 8px rgba(36,120,255,.35));
+  }
+
+  50%{
+    filter:drop-shadow(0 0 22px rgba(36,120,255,.8));
+  }
+
+}
+
+
+@keyframes afriaiThinkingPulse{
+
+  0%,100%{
+    filter:drop-shadow(0 0 10px rgba(160,90,255,.4));
+  }
+
+  50%{
+    filter:drop-shadow(0 0 28px rgba(160,90,255,.9));
+  }
+
+}
+
+
+@keyframes afriaiSpeakingGlow{
+
+  0%,100%{
+    filter:drop-shadow(0 0 12px rgba(0,220,255,.5));
+  }
+
+  50%{
+    filter:drop-shadow(0 0 35px rgba(0,220,255,1));
+  }
+
+}
+
+
+/* AfriAI human-like eye presence */
+
+.landing-afriai-avatar::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  animation:afriaiEyeBlink 5.5s infinite;
+}
+
+
+@keyframes afriaiEyeBlink{
+
+  0%,18%,22%,100%{
+    opacity:0;
+  }
+
+  19%,21%{
+    opacity:1;
+  }
+
+}
+
+
+/* subtle breathing presence */
+
+.landing-afriai-avatar{
+  animation:
+    afriaiFloat 5s ease-in-out infinite,
+    afriaiBreathing 4s ease-in-out infinite;
+}
+
+
+@keyframes afriaiBreathing{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.015);
+  }
+
+}
+
+
+/* faster micro expressions */
+
+.landing-afriai-avatar.speaking::after{
+  animation:
+    afriaiEyeBlink 3.2s infinite;
+}
+
+
+.landing-afriai-avatar.thinking::after{
+  animation:
+    afriaiEyeBlink 7s infinite;
+}
+
