@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Campaign Reactivation Runtime V1
+STATUS=LOCKED
+TYPE=LIFECYCLE_LAYER
+OWNER=AfriBoostCore
+INPUT=HistoricalCampaign,PerformanceData,OwnerRequest
+OUTPUT=NewCampaignCycle
+CONNECTED=AfriAds,AfriCoin,Analytics,AfriAI
+RULE=Campaigns can restart without losing historical intelligence
