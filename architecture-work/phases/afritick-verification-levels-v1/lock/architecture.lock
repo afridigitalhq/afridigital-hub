@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Verification Levels V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=IdentityVerification
+OUTPUT=TrustLevels
+CONNECTED=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=Verification and Premium membership remain separate
