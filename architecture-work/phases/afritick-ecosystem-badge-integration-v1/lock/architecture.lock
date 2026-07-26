@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Ecosystem Badge Integration V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=IdentityStatus
+OUTPUT=UniversalBadges
+CONNECTED=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=One trust identity layer across ecosystem
