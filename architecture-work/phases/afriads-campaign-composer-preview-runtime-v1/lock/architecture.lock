@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Campaign Composer Preview Runtime V1
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriAdsCore
+INPUT=Media,Description,Pricing,Targeting,Duration
+OUTPUT=PreviewReadyCampaign
+CONNECTED=AfriTick,AfriCoin,AfriAI,AfriCommerce
+RULE=Users preview ads before activation
