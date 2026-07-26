@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Public Trust Passport Runtime V1
+STATUS=LOCKED
+TYPE=PUBLIC_TRUST_IDENTITY_LAYER
+OWNER=AfriTrustCore
+INPUT=VerifiedIdentity,ProductTrustProfiles,Badges,Achievements
+OUTPUT=PublicTrustPassport
+CONNECTED=IdentityGraph,ProfileRegistry,BadgeEngine,AchievementEngine,PublicDisplay
+RULE=One verified identity may expose multiple independent product trust profiles without combining trust scores
