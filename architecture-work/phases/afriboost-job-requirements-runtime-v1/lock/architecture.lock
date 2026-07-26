@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Job Requirements Runtime V1
+STATUS=LOCKED
+TYPE=TASK_DEFINITION_LAYER
+OWNER=AfriBoostCore
+INPUT=CampaignGoal,WorkerRules,ProofRules,RewardRules
+OUTPUT=VerifiedJobRequirements
+CONNECTED=AfriWork,AfriAds,AfriAI,AfriCoin
+RULE=Every worker task must have clear requirements before acceptance
