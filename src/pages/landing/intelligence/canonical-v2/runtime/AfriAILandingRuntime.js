@@ -57,6 +57,8 @@ class AfriAILandingRuntime{
 
   setStatus(status){
 
+    console.log("[AfriAI Runtime Status]",status);
+
     this.state={
       ...this.state,
 
@@ -92,6 +94,8 @@ class AfriAILandingRuntime{
 
 
   async sendMessage(message){
+
+    console.log("[AfriAI sendMessage]",message);
 
     if(!message.trim()) return;
 

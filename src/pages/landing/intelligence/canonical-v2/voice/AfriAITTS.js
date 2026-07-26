@@ -29,6 +29,8 @@ class AfriAITTS{
 
   speak(text){
 
+    console.log("[AfriAI Browser TTS]",text);
+
     const engine=this.getEngine();
 
     if(!engine || !text) return;

@@ -9,6 +9,8 @@ class AfriAITTSRuntimeConnector{
 
     afriAILandingRuntime.subscribe((state)=>{
 
+      console.log("[AfriAI TTS State]",state.status,state.messages.length);
+
       const last =
         state.messages[state.messages.length - 1];
 
@@ -21,6 +23,8 @@ class AfriAITTSRuntimeConnector{
       ){
 
         this.lastSpoken=last.content;
+
+        console.log("[AfriAI TTS Speak]",last.content);
 
         afriAITTSRuntimeBridge.speak(
           last.content
