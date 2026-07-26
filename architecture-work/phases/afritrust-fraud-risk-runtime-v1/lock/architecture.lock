@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Fraud & Risk Runtime V1
+STATUS=LOCKED
+TYPE=RISK_ANALYSIS_LAYER
+OWNER=AfriTrustCore
+INPUT=Identity,TrustSignals,Timeline,ProductEvents
+OUTPUT=RiskAssessment
+CONNECTED=IdentityGraph,ReputationTimeline,AdminConsole,AfriAI,VerificationEngine
+RULE=Risk analysis detects suspicious behavior and produces recommendations without making final trust decisions

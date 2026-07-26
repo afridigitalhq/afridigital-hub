@@ -1,0 +1,13 @@
+const AfriTrustRiskTypes = [
+  "IDENTITY_FRAUD",
+  "ACCOUNT_ABUSE",
+  "REVIEW_MANIPULATION",
+  "PAYMENT_RISK",
+  "DEVICE_RISK",
+  "LOCATION_ANOMALY",
+  "BOT_ACTIVITY",
+  "REPUTATION_ABUSE",
+  "POLICY_VIOLATION"
+];
+
+export default AfriTrustRiskTypes;
