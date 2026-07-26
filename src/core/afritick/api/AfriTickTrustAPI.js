@@ -1,44 +1,23 @@
 /**
- * AfriTick Trust API
+ * AfriTick Trust API V2
  *
- * OWNER:
- * Universal ecosystem trust gateway.
+ * Universal trust access gateway.
  *
  * RULE:
- * Products consume trust through one interface.
+ * Ecosystem products consume trust through one API source.
  */
-
-import AfriTickTrustScoreEngine from "../trust/score/AfriTickTrustScoreEngine";
-import AfriTickTrustEnforcementEngine from "../enforcement/AfriTickTrustEnforcementEngine";
-import AfriTickVerificationResolver from "../verification/levels/AfriTickVerificationResolver";
 
 const AfriTickTrustAPI = {
 
-  profile(profile={}){
+  getTrustProfile(profile){
 
     return {
-
-      verification:
-        AfriTickVerificationResolver.resolve(
-          profile.verificationType
-        ),
-
-      trustScore:
-        AfriTickTrustScoreEngine.calculate(
-          profile
-        )
-
+      identity: profile.identity || null,
+      verification: profile.verification || "UNVERIFIED",
+      trustScore: profile.trustScore || 0,
+      badges: profile.badges || [],
+      permissions: profile.permissions || []
     };
-
-  },
-
-
-  permission(action,profile={}){
-
-    return AfriTickTrustEnforcementEngine.check(
-      action,
-      profile
-    );
 
   }
 

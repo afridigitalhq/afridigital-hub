@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Trust API Gateway Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriTickCore
+UPGRADES=TrustAPIAdapterV1
+INPUT=Identity,Verification,TrustScore,Badges,Permissions
+OUTPUT=UniversalTrustProfile
+CONNECTED=EntireAfriDigitalEcosystem
+RULE=One trust gateway serves all products
