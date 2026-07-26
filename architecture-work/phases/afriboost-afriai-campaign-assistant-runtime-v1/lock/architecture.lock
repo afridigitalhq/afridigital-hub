@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=AfriAI Campaign Assistant Runtime V1
+STATUS=LOCKED
+TYPE=INTELLIGENCE_LAYER
+OWNER=AfriAI
+INPUT=CampaignData,AnalyticsData,EscrowData
+OUTPUT=CampaignRecommendations
+CONNECTED=AfriBoost,AfriAds,AfriCoin,Analytics
+RULE=AfriAI advises campaign owners without controlling financial execution
