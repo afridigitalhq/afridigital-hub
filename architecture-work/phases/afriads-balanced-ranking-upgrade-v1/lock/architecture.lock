@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Balanced Ranking Upgrade V1
+STATUS=LOCKED
+OWNER=AfriAdsRankingEngine
+INPUT=CampaignSignals
+OUTPUT=BalancedVisibilityScore
+CONNECTED=LearningEngine,FeedEngine,Analytics
+RULE=Performance optimized with fair campaign discovery
