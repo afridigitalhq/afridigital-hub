@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Public Trust Display Runtime V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Verification,Premium,TrustScore
+OUTPUT=PublicTrustSignals
+CONNECTED=EntireAfriDigitalEcosystem
+RULE=One visual trust language across all products
