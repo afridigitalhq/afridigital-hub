@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Campaign Lifecycle Manager Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=Composer,Preview,Payment,Targeting
+OUTPUT=CampaignState
+CONNECTED=AfriAI,AfriCoin,Analytics,DistributionFeed
+RULE=One lifecycle manager controls campaign progression
