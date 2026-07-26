@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Reward Release Runtime V1
+STATUS=LOCKED
+TYPE=PAYMENT_LAYER
+OWNER=AfriBoostCore
+INPUT=ApprovedSubmission,AutoApproval,DisputeResolution
+OUTPUT=AfriCoinReward
+CONNECTED=AfriWork,AfriCoin,AfriAI,Analytics
+RULE=Every approved task releases reward once with complete payment history
