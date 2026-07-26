@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Advertiser Portal V1
+STATUS=LOCKED
+OWNER=AfriAdsAdvertiserPortal
+INPUT=AdvertiserCampaigns
+OUTPUT=SubmittedCampaigns
+CONNECTED=AfriAdsHub,AdminApproval
+RULE=All campaigns enter through controlled publishing
