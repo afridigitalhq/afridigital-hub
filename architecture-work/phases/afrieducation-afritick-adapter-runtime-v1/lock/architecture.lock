@@ -1,0 +1,9 @@
+MODULE=AfriEducation
+PHASE=AfriTick Adapter Runtime V1
+STATUS=LOCKED
+TYPE=EDUCATION_TRUST_INTEGRATION_LAYER
+OWNER=AfriEducationCore
+INPUT=Courses,Certificates,Assessments,Skills,LearningHistory
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriTick,AfriWork,AfriAI,Marketplace,Analytics
+RULE=AfriEducation provides learning signals while AfriTick owns trust calculation
