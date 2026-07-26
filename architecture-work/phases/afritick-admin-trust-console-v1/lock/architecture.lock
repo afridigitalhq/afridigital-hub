@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Admin Trust Console V1
+STATUS=LOCKED
+OWNER=AfriControlCenter
+INPUT=Verification,TrustAPI,Reports,Policies
+OUTPUT=TrustGovernanceActions
+CONNECTED=AfriTickCore,AfriAI,EntireEcosystem
+RULE=Admin governance controls trust operations
