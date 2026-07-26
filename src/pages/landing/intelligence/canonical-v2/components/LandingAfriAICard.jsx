@@ -5,6 +5,7 @@ import LandingAfriAIComposer from "./LandingAfriAIComposer";
 export default function LandingAfriAICard({
   status,
   avatarMode="idle",
+  transitionState="stable",
   voiceLevel=0,
   messages=[],
   suggestions=[],
@@ -29,6 +30,7 @@ export default function LandingAfriAICard({
         <LandingAfriAIAvatar 
               status={status}
               avatarMode={avatarMode}
+              transitionState={transitionState}
             />
 
         <div className="landing-afriai-identity">

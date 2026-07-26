@@ -15,7 +15,7 @@ import "./LandingAfriAI.css";
 export default function LandingAfriAINext(){
 
   const state = useAfriAIState();
-  const { status, avatarMode, voiceLevel, messages, suggestions, actions, metadata } = state;
+  const { status, avatarMode, transitionState, voiceLevel, messages, suggestions, actions, metadata } = state;
 
   const [message,setMessage]=useState("");
   const [attachmentsOpen,setAttachmentsOpen]=useState(false);
@@ -59,6 +59,7 @@ export default function LandingAfriAINext(){
       <LandingAfriAICard
         status={status}
         avatarMode={avatarMode}
+        transitionState={transitionState}
         messages={messages}
         suggestions={suggestions}
         actions={actions}

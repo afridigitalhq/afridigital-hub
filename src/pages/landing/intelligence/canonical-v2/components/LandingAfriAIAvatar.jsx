@@ -5,12 +5,13 @@ export default function LandingAfriAIAvatar({
   status = "idle",
   avatarMode = "idle",
   voiceLevel = 0,
+  transitionState = "stable",
   small = false
 }) {
 
   return (
     <div
-      className={`landing-afriai-avatar ${small ? "small" : ""} ${status} ${avatarMode} ${status==="listening" ? "expanded" : ""}`}
+      className={`landing-afriai-avatar ${small ? "small" : ""} ${status} ${avatarMode} ${status==="listening" ? "expanded" : ""} ${transitionState}`}
       style={{
         "--voice-level": voiceLevel
       }}
