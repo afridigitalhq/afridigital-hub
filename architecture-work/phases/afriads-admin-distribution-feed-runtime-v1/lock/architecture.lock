@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Admin Distribution Feed Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=RegisteredCampaignInventory
+OUTPUT=EcosystemAdFeed
+CONNECTED=AfriAI,AfriCommerce,AfriHome,AfriDesign,AfriTick,AfriLove
+RULE=Approved campaigns distribute through centralized feed
