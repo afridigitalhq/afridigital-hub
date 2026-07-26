@@ -6,6 +6,7 @@ import afriAILandingRuntime from "./runtime/AfriAILandingRuntime";
 import afriAIVoiceController from "./voice/AfriAIVoiceController";
 import afriAIAudioAnalyzer from "./voice/AfriAIAudioAnalyzer";
 import "./voice/AfriAIVoiceRuntimeBridge";
+import "./voice/AfriAITTSRuntimeConnector";
 import useAfriAIState from "./hooks/useAfriAIState";
 
 import LandingAfriAICard from "./components/LandingAfriAICard";
