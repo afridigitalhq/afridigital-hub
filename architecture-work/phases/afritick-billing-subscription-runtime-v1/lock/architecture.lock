@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Billing Subscription Runtime V1
+STATUS=LOCKED
+OWNER=AfriTickBillingRuntime
+INPUT=Plans,Payments
+OUTPUT=ActiveSubscriptions,RevenueEvents
+CONNECTED=AfriTickCore,AfriAds,AdminControlCenter
+RULE=Premium identity generates measurable subscription revenue
