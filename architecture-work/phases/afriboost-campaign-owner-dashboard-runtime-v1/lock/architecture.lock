@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Campaign Owner Dashboard Runtime V1
+STATUS=LOCKED
+TYPE=OWNER_CONTROL_LAYER
+OWNER=AfriBoostCore
+INPUT=CampaignData,EscrowData,SubmissionData,AnalyticsData
+OUTPUT=OwnerDashboardView
+CONNECTED=AfriAds,AfriCoin,AfriWork,AfriAI,Analytics
+RULE=Owners manage campaigns while platform controls verified payment execution
