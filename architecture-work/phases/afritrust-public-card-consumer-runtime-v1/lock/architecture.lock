@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Public Card Consumer Runtime V1
+STATUS=LOCKED
+TYPE=ECOSYSTEM_CONSUMER_LAYER
+OWNER=AfriTrustCore
+INPUT=CanonicalPublicListingCard
+OUTPUT=UnifiedTrustPresentation
+CONNECTED=AfriCommerce,AfriWork,AfriEducation,AfriDesignStudio,AfriLogistics,AfriCCTV,AfriAI,Marketplace
+RULE=All AfriDigital products must consume the canonical AfriTrust public listing card instead of implementing custom trust card layouts
