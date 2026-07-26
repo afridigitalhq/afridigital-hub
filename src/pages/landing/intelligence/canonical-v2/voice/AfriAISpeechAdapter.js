@@ -4,11 +4,20 @@ class AfriAISpeechAdapter{
     this.recognition=null;
     this.listeners=new Set();
 
+  }
+
+  init(){
+
     const SpeechRecognition =
       window.SpeechRecognition ||
       window.webkitSpeechRecognition;
 
-    if(SpeechRecognition){
+    if(!SpeechRecognition){
+      return false;
+    }
+
+    if(!this.recognition){
+
       this.recognition=new SpeechRecognition();
 
       this.recognition.continuous=false;
@@ -52,6 +61,8 @@ class AfriAISpeechAdapter{
         console.log("AfriAI speech detected end");
       };
     }
+
+    return true;
   }
 
   subscribe(listener){
@@ -64,7 +75,10 @@ class AfriAISpeechAdapter{
   }
 
   start(){
-    if(!this.recognition){
+
+    const ready=this.init();
+
+    if(!ready){
       this.emit({
         type:"unsupported"
       });
@@ -72,6 +86,7 @@ class AfriAISpeechAdapter{
     }
 
     this.recognition.start();
+
   }
 
   stop(){
