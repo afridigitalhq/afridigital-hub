@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Admin Campaign Manager V1
+STATUS=LOCKED
+OWNER=AfriAdsCampaignManager
+INPUT=Admin,Partners,InternalProducts
+OUTPUT=ApprovedCampaigns
+CONNECTED=AfriAdsHub,DecisionEngine,RankingEngine
+RULE=Controlled campaign publishing
