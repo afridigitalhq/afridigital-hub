@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Ranking Engine V1
+STATUS=LOCKED
+OWNER=AfriAdsRankingEngine
+INPUT=ApprovedCampaigns
+OUTPUT=RankedCampaigns
+CONNECTED=DecisionEngine,Analytics,AfriAdsHub
+RULE=Relevant and performing ads receive visibility
