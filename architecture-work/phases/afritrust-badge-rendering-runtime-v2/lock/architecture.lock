@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Badge Rendering Runtime V2
+STATUS=LOCKED
+TYPE=BADGE_RENDERING_LAYER
+OWNER=AfriTrustCore
+INPUT=PlatformTrust,ProductTrust,AfriVerified,AfriTickPremium,ProductStatistics,Ratings
+OUTPUT=StandardizedPublicTrustCard
+CONNECTED=PublicPassport,Marketplace,Profiles,AfriCommerce,AfriWork,AfriAI
+RULE=Every AfriDigital product must render trust badges using the canonical display order
