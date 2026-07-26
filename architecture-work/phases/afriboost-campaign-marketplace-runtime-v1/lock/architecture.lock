@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Campaign Marketplace Runtime V1
+STATUS=LOCKED
+TYPE=DISCOVERY_LAYER
+OWNER=AfriBoostCore
+INPUT=CampaignData,RewardData,WorkerFilters
+OUTPUT=AvailableCampaignJobs
+CONNECTED=AfriWork,AfriAI,AfriCoin,Analytics
+RULE=Workers discover campaigns while payment remains controlled by escrow system
