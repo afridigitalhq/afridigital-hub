@@ -1,0 +1,9 @@
+MODULE=AfriCommerce
+PHASE=AfriTick Adapter Runtime V1
+STATUS=LOCKED
+TYPE=TRUST_INTEGRATION_LAYER
+OWNER=AfriCommerceCore
+INPUT=StoreActivity,Orders,CustomerFeedback,VerificationData
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriTick,AfriAI,AfriMarket,AfriShop,Analytics
+RULE=AfriCommerce provides commerce signals while AfriTick owns trust calculation
