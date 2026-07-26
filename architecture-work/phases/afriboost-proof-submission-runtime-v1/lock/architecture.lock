@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Proof Submission Runtime V1
+STATUS=LOCKED
+TYPE=VERIFICATION_LAYER
+OWNER=AfriBoostCore
+INPUT=CompletedSocialTask,MediaEvidence,WorkerSubmission
+OUTPUT=VerificationRequest
+CONNECTED=AfriWork,AfriCoin,AfriAI,AfriAds
+RULE=Rewards require verified proof before release
