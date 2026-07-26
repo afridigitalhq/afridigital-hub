@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=AI Trust Assistant V1
+STATUS=LOCKED
+OWNER=AfriAI
+INPUT=TrustSignals,Verification,Reports
+OUTPUT=Recommendations
+CONNECTED=AfriTickAdminConsole,AfriControlCenter,AfriAI
+RULE=AI assists trust decisions without replacing governance
