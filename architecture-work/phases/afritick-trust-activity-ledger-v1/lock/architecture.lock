@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Trust Activity Ledger V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Verification,Badges,TrustScore,Governance
+OUTPUT=TrustHistory
+CONNECTED=EntireAfriDigitalEcosystem
+RULE=Every trust action is auditable
