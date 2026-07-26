@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Audience Privacy Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=TargetingCategories,UserPreferences
+OUTPUT=ApprovedAudienceSelection
+CONNECTED=TargetingEngine,CampaignComposer,AfriAI,Analytics
+RULE=Audience delivery respects user privacy controls
