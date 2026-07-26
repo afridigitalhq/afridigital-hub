@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Marketplace Trust Integration V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Identity,Verification,Premium,TrustScore
+OUTPUT=TrustedListings
+CONNECTED=AfriCommerce,AfriHome,AfriAds,AfriDesign
+RULE=All marketplace listings use centralized trust signals
