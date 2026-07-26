@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=User Campaign Payment Gateway Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=Campaign,Reach,Duration,Budget
+OUTPUT=ActivatedPaidCampaign
+CONNECTED=AfriCoin,AfriCommerce,AfriAI
+RULE=Users pay with AfriCoin to activate ads while admins publish without payment
