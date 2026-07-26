@@ -40,3 +40,102 @@
   }
 }
 
+
+/* =====================================
+   AFRIAI MIC ACTIVATION EXPERIENCE V1
+   ===================================== */
+
+.landing-afriai-mic{
+  position:relative;
+  overflow:visible;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    filter .25s ease;
+}
+
+
+.landing-afriai-mic.active{
+
+  transform:scale(1.18);
+
+  filter:
+    drop-shadow(
+      0 0 18px rgba(0,220,255,.8)
+    );
+
+}
+
+
+.landing-afriai-mic.active::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-18px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,220,255,.45),
+      transparent 70%
+    );
+
+  animation:
+    afriaiMicEnergy 1s ease-out infinite;
+
+  z-index:-1;
+
+}
+
+
+.landing-afriai-mic.active::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-8px;
+
+  border-radius:50%;
+
+  border:2px solid rgba(0,220,255,.65);
+
+  animation:
+    afriaiMicRing 1.2s ease-out infinite;
+
+}
+
+
+@keyframes afriaiMicEnergy{
+
+  0%{
+    transform:scale(.7);
+    opacity:.8;
+  }
+
+  100%{
+    transform:scale(1.8);
+    opacity:0;
+  }
+
+}
+
+
+@keyframes afriaiMicRing{
+
+  0%{
+    transform:scale(.9);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(1.5);
+    opacity:0;
+  }
+
+}
+
