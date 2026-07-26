@@ -1,0 +1,9 @@
+MODULE=AfriCCTV
+PHASE=AfriTick Adapter Runtime V1
+STATUS=LOCKED
+TYPE=SECURITY_TRUST_INTEGRATION_LAYER
+OWNER=AfriCCTVCore
+INPUT=Installations,SecurityEvents,CustomerFeedback,MaintenanceHistory
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriTick,AfriAI,AfriCommerce,AfriWork,Analytics
+RULE=AfriCCTV provides security signals while AfriTick owns trust calculation
