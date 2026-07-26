@@ -1,0 +1,10 @@
+const AfriAITrustSignalTypes = [
+"AI_INTERACTIONS",
+"SUCCESSFUL_TASKS",
+"FEEDBACK_SCORE",
+"POLICY_VIOLATIONS",
+"VERIFIED_IDENTITY",
+"ECOSYSTEM_ACTIVITY"
+];
+
+export default AfriAITrustSignalTypes;

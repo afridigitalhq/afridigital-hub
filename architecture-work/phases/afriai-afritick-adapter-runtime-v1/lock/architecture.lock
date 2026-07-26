@@ -1,0 +1,9 @@
+MODULE=AfriAI
+PHASE=AfriTick Adapter Runtime V1
+STATUS=LOCKED
+TYPE=AI_TRUST_INTEGRATION_LAYER
+OWNER=AfriAICore
+INPUT=AIActivity,Feedback,Identity,PolicySignals
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriTick,AfriBoost,AfriWork,AfriCommerce,Analytics
+RULE=AfriAI provides intelligence signals while AfriTick owns trust calculation
