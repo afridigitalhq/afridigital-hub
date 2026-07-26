@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Worker Skill Verification Runtime V1
+STATUS=LOCKED
+TYPE=WORKER_QUALIFICATION_LAYER
+OWNER=AfriBoostCore
+INPUT=WorkerProfile,Skills,AfriTicks,TaskHistory
+OUTPUT=VerifiedWorkerSkills
+CONNECTED=AfriWork,AfriAI,Marketplace,Analytics
+RULE=Verified skills improve worker matching and campaign access
