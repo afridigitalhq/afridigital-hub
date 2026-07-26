@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Platform Core V1
+STATUS=LOCKED
+TYPE=FOUNDATION
+OWNER=AfriAdsCore
+INPUT=AdminPublishedCampaigns
+OUTPUT=EcosystemAdInventory
+CONNECTED=AfriAI,AfriCommerce,AfriHome,AfriDesign
+RULE=All ads flow through one centralized platform
