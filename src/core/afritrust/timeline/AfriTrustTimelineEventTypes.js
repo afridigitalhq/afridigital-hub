@@ -1,0 +1,14 @@
+const AfriTrustTimelineEventTypes = [
+  "VERIFICATION_APPROVED",
+  "VERIFICATION_REJECTED",
+  "TRUST_SCORE_CHANGED",
+  "BADGE_GRANTED",
+  "BADGE_REMOVED",
+  "PROFILE_UPDATED",
+  "APPEAL_APPROVED",
+  "APPEAL_REJECTED",
+  "ACCOUNT_RESTRICTED",
+  "ACCOUNT_RESTORED"
+];
+
+export default AfriTrustTimelineEventTypes;

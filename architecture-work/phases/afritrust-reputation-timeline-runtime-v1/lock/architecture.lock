@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Reputation Timeline Runtime V1
+STATUS=LOCKED
+TYPE=TRUST_HISTORY_LAYER
+OWNER=AfriTrustCore
+INPUT=TrustEvents,VerificationEvents,Badges,Appeals
+OUTPUT=ReputationTimeline
+CONNECTED=IdentityGraph,TrustScoreEngine,TrustLedger,AdminConsole,AfriAI
+RULE=Every trust decision becomes an immutable timeline event linked to a verified identity and product trust profile
