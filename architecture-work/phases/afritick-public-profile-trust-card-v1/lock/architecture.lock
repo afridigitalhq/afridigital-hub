@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Public Profile Trust Card V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Identity,Verification,Premium,TrustScore
+OUTPUT=PublicTrustCard
+CONNECTED=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=One public trust identity format across ecosystem
