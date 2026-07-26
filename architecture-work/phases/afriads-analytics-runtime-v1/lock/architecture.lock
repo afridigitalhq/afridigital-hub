@@ -1,0 +1,7 @@
+MODULE=AfriAds
+PHASE=Analytics Runtime V1
+STATUS=LOCKED
+OWNER=AfriAdsAnalyticsRuntime
+CONNECTED=AfriAdsHub
+OUTPUT=Impressions,Clicks,Conversions,RevenueSignals
+RULE=Every campaign interaction must be measurable
