@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Autonomous Approval Engine V1
+STATUS=LOCKED
+OWNER=AfriAdsApprovalEngine
+INPUT=SubmittedCampaigns
+OUTPUT=ApprovedCampaigns
+CONNECTED=AfriAI,AfriAdsHub,AdminControlCenter
+RULE=AI approves safe campaigns, humans control exceptions
