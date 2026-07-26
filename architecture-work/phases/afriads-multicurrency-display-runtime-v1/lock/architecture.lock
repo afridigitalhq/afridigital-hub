@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Multi Currency Display Runtime V1
+STATUS=LOCKED
+TYPE=DISPLAY_LAYER
+OWNER=AfriAdsCore
+INPUT=AfriCoinPricing
+OUTPUT=MultiCurrencyView
+CONNECTED=AfriCoin,AfriCommerce,WalletSystem,CampaignComposer
+RULE=AfriCoin remains primary internal pricing while other values are reference displays
