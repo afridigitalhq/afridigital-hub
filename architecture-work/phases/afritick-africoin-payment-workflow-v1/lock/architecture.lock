@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=AfriCoin Payment Workflow V1
+STATUS=LOCKED
+OWNER=AfriTickBillingRuntime
+INPUT=Plans,Subscriptions,Payments
+OUTPUT=ActivePremiumMemberships,RevenueEvents
+CONNECTED=AfriCoin,AfriAds,AfriCommerce,AdminControlCenter
+RULE=Premium identity services use AfriCoin payments
