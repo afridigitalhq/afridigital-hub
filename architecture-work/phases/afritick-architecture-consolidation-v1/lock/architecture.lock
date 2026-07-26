@@ -1,0 +1,9 @@
+MODULE=AfriTick
+PHASE=Architecture Consolidation V1
+STATUS=LOCKED
+TYPE=CONSOLIDATION
+OWNER=AfriTickCore
+ACTION=REMOVE_DUPLICATE_RESPONSIBILITY
+KEEP=SingleSourceTrustIdentityVerificationDisplay
+UPGRADES=ExistingRuntimeLayersOnly
+RULE=Future AfriTick improvements upgrade existing engines instead of creating duplicates
