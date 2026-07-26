@@ -1,4 +1,5 @@
 import { askAfriAI } from "../../../../../api/AfriAIClient";
+import AfriAIPresenceMap from "./AfriAIPresenceMap";
 
 class AfriAILandingRuntime{
 
@@ -6,6 +7,7 @@ class AfriAILandingRuntime{
 
     this.state={
       status:"idle",
+      avatarMode:"idle",
       presenceMode:"idle",
       transitionState:"stable",
       listening:false,
@@ -59,6 +61,8 @@ class AfriAILandingRuntime{
       ...this.state,
 
       status,
+
+      avatarMode:AfriAIPresenceMap[status]?.avatar || "idle",
 
       presenceMode:status,
 
@@ -201,6 +205,7 @@ class AfriAILandingRuntime{
     this.state={
       ...this.state,
       status:"idle",
+      avatarMode:"idle",
       presenceMode:"idle",
       transitionState:"stable",
       listening:false,
