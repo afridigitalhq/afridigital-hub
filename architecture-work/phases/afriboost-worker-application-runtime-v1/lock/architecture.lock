@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Worker Application Runtime V1
+STATUS=LOCKED
+TYPE=WORKER_ENTRY_LAYER
+OWNER=AfriBoostCore
+INPUT=WorkerProfile,CampaignJob,Requirements
+OUTPUT=WorkerApplication
+CONNECTED=AfriWork,Marketplace,Requirements,Escrow
+RULE=Workers must accept verified requirements before performing paid tasks
