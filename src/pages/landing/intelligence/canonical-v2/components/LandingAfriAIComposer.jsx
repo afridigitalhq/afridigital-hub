@@ -1,6 +1,7 @@
 import "../styles/composer.css";
 import LandingAfriAIMic from "./LandingAfriAIMic";
 import LandingAfriAIWaveEngine from "./LandingAfriAIWaveEngine";
+import LandingAfriAIVoiceControl from "./LandingAfriAIVoiceControl";
 import LandingAfriAIAttachments from "./LandingAfriAIAttachments";
 
 export default function LandingAfriAIComposer({
@@ -57,6 +58,8 @@ export default function LandingAfriAIComposer({
           status={status}
           level={voiceLevel}
         />
+
+        <LandingAfriAIVoiceControl />
 
         <LandingAfriAIMic
           active={status==="listening"}

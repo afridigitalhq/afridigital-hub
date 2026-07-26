@@ -4,6 +4,7 @@ class AfriAITTS{
     this.engine=null;
     this.listeners=new Set();
     this.voice=null;
+    this.muted=false;
     this.init();
   }
 
@@ -61,6 +62,23 @@ class AfriAITTS{
     },50);
   }
 
+  setMute(state){
+    this.muted=state;
+
+    if(this.muted){
+      this.stop();
+    }
+  }
+
+  toggleMute(){
+    this.setMute(!this.muted);
+    return this.muted;
+  }
+
+  isMuted(){
+    return this.muted;
+  }
+
   subscribe(listener){
     this.listeners.add(listener);
     return ()=>this.listeners.delete(listener);
@@ -81,7 +99,7 @@ class AfriAITTS{
 
     const engine=this.getEngine();
 
-    if(!engine || !text) return;
+    if(!engine || !text || this.muted) return;
 
     if(engine.speaking){
       engine.cancel();

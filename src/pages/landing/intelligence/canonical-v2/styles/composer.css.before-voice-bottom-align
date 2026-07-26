@@ -159,12 +159,11 @@
 
 .landing-afriai-toolbar{
   width:100%;
-  height:70px;
   display:flex;
-  align-items:center;
+  align-items:flex-end;
   justify-content:space-between;
   gap:12px;
-  padding:6px 10px;
+  padding:4px 10px;
   margin-top:0;
   border-radius:18px;
   background:linear-gradient(145deg,var(--afri-primary-soft),rgba(5,11,24,.88));
@@ -193,9 +192,14 @@
   -webkit-backdrop-filter:blur(12px);
 }
 
-/* AfriAI Voice Dock Alignment */
+/* AfriAI Voice Dock Vertical Alignment */
 
 .landing-afriai-toolbar > *{
-  transform:none;
+  transform:translateY(6px);
+}
+
+.landing-afriai-toolbar{
+  padding-top:4px;
+  padding-bottom:4px;
 }
 

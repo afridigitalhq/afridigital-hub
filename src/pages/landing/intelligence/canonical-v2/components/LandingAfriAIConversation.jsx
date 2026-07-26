@@ -2,8 +2,7 @@ import avatar from "../../../../../assets/ai/avatars/afriai-avatar-idle.png";
 import "../styles/conversation.css";
 
 export default function LandingAfriAIConversation({
-  messages=[],
-  suggestions=[]
+  messages=[]
 }){
 
   const hasMessages=messages.length>0;
@@ -26,16 +25,6 @@ export default function LandingAfriAIConversation({
               👋 Welcome to AfriDigital.<br/><br/>
               I'm your intelligent assistant for the entire AfriDigital ecosystem.
             </p>
-
-            {suggestions.length > 0 && (
-          <div className="landing-afriai-suggestions">
-            {suggestions.map((card,index)=>(
-              <button key={card.id || index}>
-                {card.title || card.id}
-              </button>
-            ))}
-          </div>
-        )}
 
           </div>
 

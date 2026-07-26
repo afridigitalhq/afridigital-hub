@@ -1,6 +1,7 @@
 import LandingAfriAIAvatar from "./LandingAfriAIAvatar";
 import LandingAfriAIConversation from "./LandingAfriAIConversation";
 import LandingAfriAIComposer from "./LandingAfriAIComposer";
+import LandingAfriAIServiceDock from "./LandingAfriAIServiceDock";
 
 export default function LandingAfriAICard({
   status,
@@ -45,6 +46,10 @@ export default function LandingAfriAICard({
 
         <LandingAfriAIConversation
           messages={messages}
+        />
+
+        <LandingAfriAIServiceDock
+          suggestions={suggestions}
         />
 
         <LandingAfriAIComposer

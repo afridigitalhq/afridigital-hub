@@ -1,19 +1,19 @@
 .landing-afriai-composer-wrap{
-  width:min(640px,100%);
+  width:100%;
+  max-width:none;
   margin:0 auto;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:0;
+  gap:12px;
 }
 
 .landing-afriai-composer{
   width:100%;
-  height:70px;
   display:flex;
   align-items:center;
   gap:12px;
-  padding:6px 10px;
+  padding:12px 18px;
   border-radius:20px;
   border:1px solid var(--afri-primary-border);
   background:linear-gradient(145deg,var(--afri-primary-soft),rgba(5,11,24,.88));
@@ -51,11 +51,17 @@
   transform:scale(1.05);
 }
 
+.landing-afriai-toolbar{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
 
 .landing-afriai-upload,
 .landing-afriai-mic{
   width:40px;
-  height:56px;
+  height:40px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -67,9 +73,9 @@
 }
 
 .landing-afriai-waveform{
-  width:110px;
-  flex:none;
-  height:56px;
+  width:auto;
+  flex:1;
+  height:40px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -159,12 +165,11 @@
 
 .landing-afriai-toolbar{
   width:100%;
-  height:70px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
   gap:12px;
-  padding:6px 10px;
+  padding:10px 14px;
   margin-top:0;
   border-radius:18px;
   background:linear-gradient(145deg,var(--afri-primary-soft),rgba(5,11,24,.88));
@@ -172,30 +177,3 @@
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
 }
-
-
-/* AfriAI Voice Controls Glass Fix */
-
-.landing-afriai-voice-control{
-  width:56px;
-  height:56px;
-  flex:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  color:#fff;
-  font-size:1.4rem;
-  cursor:pointer;
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-}
-
-/* AfriAI Voice Dock Alignment */
-
-.landing-afriai-toolbar > *{
-  transform:none;
-}
-

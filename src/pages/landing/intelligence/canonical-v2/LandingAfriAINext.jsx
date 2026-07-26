@@ -16,7 +16,16 @@ import "./LandingAfriAI.css";
 export default function LandingAfriAINext(){
 
   const state = useAfriAIState();
-  const { status, avatarMode, transitionState, voiceLevel, messages, suggestions, actions, metadata } = state;
+  const { status, avatarMode, transitionState, voiceLevel, messages, suggestions=[], actions, metadata } = state;
+
+  const landingSuggestions = suggestions.length ? suggestions : [
+    {id:"commerce",title:"AfriCommerce"},
+    {id:"design",title:"AfriDesign Studio"},
+    {id:"cctv",title:"AfriCCTV"},
+    {id:"boost",title:"AfriBoost"},
+    {id:"work",title:"AfriWork"},
+    {id:"ecosystem",title:"Explore Ecosystem"}
+  ];
 
   const [message,setMessage]=useState("");
   const [attachmentsOpen,setAttachmentsOpen]=useState(false);
@@ -61,7 +70,7 @@ export default function LandingAfriAINext(){
         avatarMode={avatarMode}
         transitionState={transitionState}
         messages={messages}
-        suggestions={suggestions}
+        suggestions={landingSuggestions}
         actions={actions}
         metadata={metadata}
         message={message}
