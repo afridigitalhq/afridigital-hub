@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=AfriTick Adapter Migration Runtime V1
+STATUS=LOCKED
+TYPE=TRUST_ADAPTER_LAYER
+OWNER=AfriTick
+INPUT=WorkerActivity,JobHistory,Skills,Disputes
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriBoost,AfriWork,AfriAI,AfriTick,Analytics
+RULE=AfriBoost consumes AfriTick reputation without owning trust calculation
