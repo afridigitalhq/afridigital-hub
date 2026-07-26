@@ -1,0 +1,11 @@
+const AfriTrustAppealTypes = [
+  "VERIFICATION_REJECTION",
+  "BADGE_SUSPENSION",
+  "BADGE_REVOCATION",
+  "TRUST_SCORE_REVIEW",
+  "ACCOUNT_RESTRICTION",
+  "FRAUD_FLAG_REVIEW",
+  "IDENTITY_UPDATE"
+];
+
+export default AfriTrustAppealTypes;

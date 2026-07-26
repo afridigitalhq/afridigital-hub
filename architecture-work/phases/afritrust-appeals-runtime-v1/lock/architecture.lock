@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Appeals & Dispute Resolution Runtime V1
+STATUS=LOCKED
+TYPE=GOVERNANCE_LAYER
+OWNER=AfriTrustCore
+INPUT=Appeals,Evidence,Timeline,RiskAssessment
+OUTPUT=AppealDecision
+CONNECTED=AdminConsole,ReputationTimeline,RiskEngine,VerificationEngine,IdentityGraph
+RULE=All trust decisions may be appealed through a governed review process with complete audit history
