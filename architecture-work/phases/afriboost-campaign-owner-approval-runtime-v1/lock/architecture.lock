@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Campaign Owner Approval Runtime V1
+STATUS=LOCKED
+TYPE=TRUST_APPROVAL_LAYER
+OWNER=AfriBoostCore
+INPUT=VerificationRequest,CampaignOwner,WorkerProof
+OUTPUT=ApprovalDecision
+CONNECTED=AfriWork,AfriCoin,AfriAI,AfriAds
+RULE=Campaign owners approve human task completion while system protects workers through 24 hour auto approval
