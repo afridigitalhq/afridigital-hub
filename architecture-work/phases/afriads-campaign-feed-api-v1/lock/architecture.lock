@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Campaign Feed API Runtime V1
+STATUS=LOCKED
+OWNER=AfriAdsFeedEngine
+INPUT=IntentQueries
+OUTPUT=LiveCampaignFeed
+CONNECTED=AfriAI,AfriAdsHub,Lifecycle,Analytics
+RULE=All products consume ads through central feed
