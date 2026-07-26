@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Campaign Targeting Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=CampaignData,AudiencePreferences
+OUTPUT=TargetedCampaign
+CONNECTED=AfriAI,AfriCommerce,AfriHome,AfriDesign
+RULE=Targeting improves delivery without bypassing user privacy controls
