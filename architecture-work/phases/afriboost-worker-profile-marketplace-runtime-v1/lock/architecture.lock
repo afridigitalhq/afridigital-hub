@@ -1,0 +1,12 @@
+MODULE=AfriBoost
+PHASE=Worker Profile Marketplace Runtime V1
+STATUS=LOCKED
+TYPE=REPUTATION_PROFILE_LAYER
+OWNER=AfriBoostCore
+
+INPUT=AfriTicks,PerformanceProfile,Skills,RankingProfile
+OUTPUT=WorkerMarketplaceProfile
+
+CONNECTED=AfriWork,AfriAI,Marketplace,Analytics,AfriCoin
+
+RULE=Worker reputation profiles improve trust and campaign matching
