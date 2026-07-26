@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Core Separation Runtime V1
+STATUS=LOCKED
+TYPE=PLATFORM_TRUST_CORE
+OWNER=AfriTrustCore
+INPUT=Identity,Verification,TrustSignals,ProductAdapters
+OUTPUT=ProductSpecificTrustProfiles
+CONNECTED=AfriTick,AfriBoost,AfriWork,AfriCommerce,AfriDesignStudio,AfriEducation,AfriCCTV,AfriLogistics,AfriAI,Marketplace,Analytics
+RULE=AfriTrust owns verification, reputation and trust while AfriTick ⭐ owns premium membership, subscriptions and billing
