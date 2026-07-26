@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Developer SDK Runtime V1
+STATUS=LOCKED
+TYPE=DEVELOPER_INTEGRATION_LAYER
+OWNER=AfriTrustCore
+INPUT=ProductRequests,TrustSignals
+OUTPUT=StandardizedTrustServices
+CONNECTED=AfriCommerce,AfriWork,AfriBoost,AfriDesignStudio,AfriEducation,AfriAI,AfriCCTV,AfriLogistics
+RULE=Products integrate with AfriTrust through a stable SDK while trust logic remains inside AfriTrust
