@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Trust API Adapter V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Identity,Verification,TrustScore,Enforcement
+OUTPUT=UniversalTrustGateway
+CONNECTED=EntireAfriDigitalEcosystem
+RULE=All products consume trust through AfriTick API
