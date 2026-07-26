@@ -1,42 +1,40 @@
 /**
- * AfriTick Admin Trust Console
+ * AfriTick Admin Trust Console V2
  *
- * OWNER:
- * AfriControlCenter trust operations.
+ * Central governance interface.
  *
  * RULE:
- * Admins manage trust governance centrally.
+ * AI and automation assist.
+ * Admin governance controls final decisions.
  */
 
 const AfriTickAdminTrustConsole = {
 
-  requests:[],
-
-  approve(requestId){
+  review(request){
 
     return {
-      requestId,
-      status:"APPROVED"
-    };
-
-  },
-
-
-  reject(requestId){
-
-    return {
-      requestId,
-      status:"REJECTED"
-    };
-
-  },
-
-
-  review(requestId){
-
-    return {
-      requestId,
+      requestId: request.id,
       status:"UNDER_REVIEW"
+    };
+
+  },
+
+  approve(request){
+
+    return {
+      requestId: request.id,
+      status:"APPROVED",
+      trustAction:"ACTIVATED"
+    };
+
+  },
+
+  reject(request){
+
+    return {
+      requestId: request.id,
+      status:"REJECTED",
+      trustAction:"BLOCKED"
     };
 
   }

@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Admin Trust Console Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriControlCenter
+UPGRADES=AdminTrustConsoleV1
+INPUT=TrustAPI,Enforcement,VerificationQueue,Ledger
+OUTPUT=GovernanceActions
+CONNECTED=AfriTickCore,AdminControlCenter
+RULE=Central governance manages trust decisions
