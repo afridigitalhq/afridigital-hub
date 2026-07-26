@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Escrow Balance Runtime V1
+STATUS=LOCKED
+TYPE=FINANCIAL_LAYER
+OWNER=AfriBoostCore
+INPUT=CampaignFunding,RewardReserve,ApprovalDecision
+OUTPUT=SecureRewardRelease
+CONNECTED=AfriCoin,AfriWork,AfriAds,Analytics
+RULE=Campaign owners fund escrow while platform controls verified worker payouts
