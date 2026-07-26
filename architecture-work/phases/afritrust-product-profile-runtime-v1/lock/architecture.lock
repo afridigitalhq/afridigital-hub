@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Product Profile Runtime V1
+STATUS=LOCKED
+TYPE=PRODUCT_TRUST_PROFILE_LAYER
+OWNER=AfriTrustCore
+INPUT=Identity,Verification,TrustSignals,ProductAdapters
+OUTPUT=ProductTrustProfiles
+CONNECTED=AfriCommerce,AfriWork,AfriBoost,AfriDesignStudio,AfriEducation,AfriLogistics,AfriCCTV,AfriAI
+RULE=Each product maintains an independent trust profile while sharing one verified identity
