@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Revenue Billing Runtime V1
+STATUS=LOCKED
+OWNER=AfriAdsRevenueRuntime
+INPUT=TrackingEvents
+OUTPUT=RevenueMetrics,BillingRecords
+CONNECTED=Analytics,AdminDashboard
+RULE=All monetization events are measurable
