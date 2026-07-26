@@ -1,0 +1,9 @@
+MODULE=AfriLogistics
+PHASE=AfriTick Adapter Runtime V1
+STATUS=LOCKED
+TYPE=DELIVERY_TRUST_INTEGRATION_LAYER
+OWNER=AfriLogisticsCore
+INPUT=DeliveryHistory,CustomerFeedback,DriverVerification,PackageSafety
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriTick,AfriCommerce,AfriMarket,AfriAI,Analytics
+RULE=AfriLogistics provides delivery signals while AfriTick owns trust calculation
