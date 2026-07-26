@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Public Trust Card Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriTickCore
+UPGRADES=PublicProfileTrustCardV1
+INPUT=Badges,Verification,Premium,TrustScore
+OUTPUT=UniversalTrustCard
+CONNECTED=AfriCommerce,AfriHome,AfriAds,AfriDesign
+RULE=All public cards consume centralized AfriTick trust rendering

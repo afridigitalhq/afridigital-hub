@@ -1,32 +1,23 @@
 /**
- * AfriTick Profile Trust Card
+ * AfriTick Public Trust Card V2
  *
- * OWNER:
- * Public trust identity display.
+ * Central public identity card renderer.
  *
  * RULE:
- * All ecosystem profiles use centralized trust presentation.
+ * Trust badges appear only from AfriTick resolver output.
  */
-
-import AfriTickBadge from "../ui/AfriTickBadge";
-import AfriTickTrustScoreEngine from "../trust/score/AfriTickTrustScoreEngine";
 
 const AfriTickProfileTrustCard = {
 
-  build(profile={}){
+  render(profile){
 
     return {
-
-      name: profile.name,
-
-      badges:
-        AfriTickBadge.render(profile),
-
-      trustScore:
-        AfriTickTrustScoreEngine.calculate(profile),
-
-      action:"VIEW_PROFILE"
-
+      title: profile.title || "",
+      location: profile.location || "",
+      badges: profile.badges || [],
+      action: {
+        label: profile.action || "View"
+      }
     };
 
   }
