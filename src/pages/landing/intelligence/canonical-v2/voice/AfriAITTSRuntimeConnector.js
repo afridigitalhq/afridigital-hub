@@ -5,7 +5,7 @@ class AfriAITTSRuntimeConnector{
 
   constructor(){
 
-    this.lastSpoken="";
+    this.lastSpokenIndex=-1;
 
     afriAILandingRuntime.subscribe((state)=>{
 
@@ -14,15 +14,16 @@ class AfriAITTSRuntimeConnector{
       const last =
         state.messages[state.messages.length - 1];
 
+      const index = state.messages.length - 1;
+
       if(
         last &&
         last.role==="assistant" &&
-        state.status==="speaking" &&
         last.content &&
-        last.content!==this.lastSpoken
+        index !== this.lastSpokenIndex
       ){
 
-        this.lastSpoken=last.content;
+        this.lastSpokenIndex=index;
 
         console.log("[AfriAI TTS Speak]",last.content);
 
