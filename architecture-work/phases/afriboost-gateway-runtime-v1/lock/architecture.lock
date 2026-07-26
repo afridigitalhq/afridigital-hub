@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Gateway Runtime V1
+STATUS=LOCKED
+TYPE=ECOSYSTEM_GATEWAY
+OWNER=AfriBoostCore
+INPUT=UserCampaignRequest
+OUTPUT=AfriAdsCampaign
+CONNECTED=AfriAds,AfriAI,AfriCoin,AfriWork
+RULE=AfriBoost creates promotion experiences while AfriAds controls advertising infrastructure
