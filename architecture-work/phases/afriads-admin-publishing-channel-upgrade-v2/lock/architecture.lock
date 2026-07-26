@@ -1,0 +1,10 @@
+MODULE=AfriAds
+PHASE=Admin Publishing Channel Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriAdsCore
+UPGRADES=AdminPostingRuntimeV1
+INPUT=CampaignData,Media,Placement,Duration
+OUTPUT=PublishedAdminCampaign
+CONNECTED=AfriAI,AfriCommerce,AfriTick,AfriDesign
+RULE=Admin campaigns publish without AfriCoin payment
