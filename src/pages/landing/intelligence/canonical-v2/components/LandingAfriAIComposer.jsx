@@ -55,6 +55,7 @@ export default function LandingAfriAIComposer({
 
         <LandingAfriAIWaveEngine
           status={status}
+          level={voiceLevel}
         />
 
         <LandingAfriAIMic

@@ -45,6 +45,7 @@ export default function LandingAfriAICard({
         />
 
         <LandingAfriAIComposer
+          voiceLevel={voiceLevel}
           value={message}
           status={status}
           onChange={onChange}

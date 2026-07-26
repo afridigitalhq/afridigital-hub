@@ -15,6 +15,13 @@ class AfriAISpeechAdapter{
       this.recognition.interimResults=true;
       this.recognition.lang="en-US";
 
+      this.recognition.onstart=()=>{
+        console.log("AfriAI speech started");
+        this.emit({
+          type:"start"
+        });
+      };
+
       this.recognition.onresult=(event)=>{
         const transcript=
           Array.from(event.results)
@@ -35,9 +42,14 @@ class AfriAISpeechAdapter{
       };
 
       this.recognition.onend=()=>{
+        console.log("AfriAI speech ended");
         this.emit({
           type:"end"
         });
+      };
+
+      this.recognition.onspeechend=()=>{
+        console.log("AfriAI speech detected end");
       };
     }
   }

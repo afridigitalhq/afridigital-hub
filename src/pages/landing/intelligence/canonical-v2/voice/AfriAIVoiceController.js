@@ -1,6 +1,7 @@
 import speechAdapter from "./AfriAISpeechAdapter";
 import afriAILandingRuntime from "../runtime/AfriAILandingRuntime";
 import afriAIPresenceController from "../runtime/AfriAIPresenceController";
+import afriAIAudioAnalyzer from "./AfriAIAudioAnalyzer";
 
 class AfriAIVoiceController{
 
@@ -23,15 +24,21 @@ class AfriAIVoiceController{
 
   start(){
     afriAIPresenceController.listening();
+    afriAIAudioAnalyzer.start();
     speechAdapter.start();
   }
 
   stop(){
     speechAdapter.stop();
+    afriAIAudioAnalyzer.stop();
     afriAIPresenceController.idle();
   }
 
   async handleSpeechEvent(event){
+
+    if(event.type==="start"){
+      afriAIPresenceController.listening();
+    }
 
     if(event.type==="transcript"){
       this.emit(event);

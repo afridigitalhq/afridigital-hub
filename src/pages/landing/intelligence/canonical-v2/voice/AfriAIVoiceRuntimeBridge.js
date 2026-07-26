@@ -8,12 +8,9 @@ class AfriAIVoiceRuntimeBridge{
 
     afriAIAudioAnalyzer.subscribe((level)=>{
 
-      afriAILandingRuntime.state={
-        ...afriAILandingRuntime.state,
-        voiceLevel:smoother.update(level)
-      };
-
-      afriAILandingRuntime.emit();
+      afriAILandingRuntime.setVoiceLevel(
+        smoother.update(level)
+      );
 
     });
 
