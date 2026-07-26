@@ -1,0 +1,9 @@
+MODULE=AfriWork
+PHASE=AfriTick Adapter Runtime V1
+STATUS=LOCKED
+TYPE=TRUST_INTEGRATION_LAYER
+OWNER=AfriWorkCore
+INPUT=WorkerActivity,JobHistory,Skills,ClientFeedback
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriTick,AfriAI,Marketplace,Analytics
+RULE=AfriWork provides worker signals while AfriTick owns trust calculation
