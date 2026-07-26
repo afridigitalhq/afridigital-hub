@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Trust Score Engine Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriTickCore
+UPGRADES=TrustScoreEngineV1
+INPUT=Verification,Activity,Transactions,Reputation,Premium
+OUTPUT=DynamicTrustScore
+CONNECTED=VerificationRules,PublicDisplay,Marketplace,AfriAI
+RULE=Trust score improves ranking but never replaces verification
