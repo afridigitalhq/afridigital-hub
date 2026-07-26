@@ -1,32 +1,42 @@
 /**
- * AfriTick Public Trust Display
+ * AfriTick Public Trust Display V2
  *
- * OWNER:
- * AfriTick Core.
- *
- * RULE:
- * All ecosystem cards use one trust display format.
+ * Canonical Public Trust Display
  */
 
 const AfriTickPublicTrustDisplay = {
 
-  render(profile={}){
-
+  render(profile = {}) {
     return {
-      premium:
-        profile.premium
-          ? "AFRITICK_PREMIUM"
-          : null,
+      trust: {
+        title: profile.trustTitle || "New Seller",
+        level: profile.trustLevel || ""
+      },
 
-      verification:
-        profile.verified
-          ? "VERIFIED"
-          : null,
+      seller: {
+        name: profile.name || ""
+      },
 
-      icon:"AFRITICK_SAFEGUARD_BLUE"
+      listing: {
+        title: profile.listingTitle || "",
+        location: profile.location || "",
+        price: profile.price || ""
+      },
 
+      badges: {
+        afriVerified: !!profile.afriVerified,
+        afriTickPremium: !!profile.afriTick,
+        afriTrust: profile.afriTrust || null
+      },
+
+      stats: {
+        successfulSales: profile.successfulSales || 0,
+        rating: profile.rating || 0,
+        reviews: profile.reviews || 0
+      },
+
+      icon: "AFRITICK_SAFEGUARD_BLUE"
     };
-
   }
 
 };
