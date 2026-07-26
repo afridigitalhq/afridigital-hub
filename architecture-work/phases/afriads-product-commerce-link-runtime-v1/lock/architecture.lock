@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Product Commerce Link Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=ProductData,CampaignData,SellerData
+OUTPUT=CommerceLinkedAd
+CONNECTED=AfriCommerce,AfriCoin,CampaignComposer,Analytics
+RULE=Ads reference commerce products without duplicating product ownership
