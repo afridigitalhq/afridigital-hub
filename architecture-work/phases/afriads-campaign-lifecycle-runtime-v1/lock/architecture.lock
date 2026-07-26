@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Campaign Lifecycle Runtime V1
+STATUS=LOCKED
+OWNER=AfriAdsCampaignLifecycle
+INPUT=ApprovedCampaigns
+OUTPUT=ManagedCampaignStates
+CONNECTED=ApprovalEngine,Hub,Analytics,Revenue
+RULE=Every campaign follows controlled lifecycle states
