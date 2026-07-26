@@ -1,0 +1,15 @@
+MODULE=AfriTrust
+PHASE=Platform Trust Policy V1
+STATUS=LOCKED
+TYPE=PLATFORM_GOVERNANCE_LAYER
+OWNER=AfriTrustCore
+PLATFORM_DIAMOND=AfriDigital HQ,Platform Owner,Core Platform
+PLATFORM_PLATINUM=Official Products,Official Admin Accounts
+PRODUCT_TRUST=Earned independently per product
+AFRIVERIFIED=Identity Verification
+AFRITICK=Premium Subscription
+RULE_1=Platform Trusted Diamond is permanent and reserved for AfriDigital HQ and Platform Owner
+RULE_2=Platform Trusted Platinum is reserved for official product accounts and official administrators while they remain official
+RULE_3=Product Trust is earned independently for each product and may increase or decrease
+RULE_4=Product Trust scores must never be merged across different products
+RULE_5=Badge display order is Platform/Product Trust, AfriVerified, AfriTick Premium, Product Statistics, Ratings
