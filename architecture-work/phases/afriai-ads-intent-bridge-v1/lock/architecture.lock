@@ -1,0 +1,6 @@
+MODULE=AfriAI+AfriAds
+PHASE=Intent Bridge V1
+STATUS=LOCKED
+OWNER=AfriAIAdsIntentBridge
+RULE=AI detects intent, Ads monetizes opportunity
+OUTPUT=IntentSignals,AdPlacements,TrackingEvents
