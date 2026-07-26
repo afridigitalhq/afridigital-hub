@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Performance Dashboard Runtime V1
+STATUS=LOCKED
+TYPE=ANALYTICS_RUNTIME
+OWNER=AfriAdsCore
+INPUT=CampaignEvents,Payments,Distribution,UserInteractions
+OUTPUT=PerformanceData
+CONNECTED=AfriAI,AfriCoin,AfriCommerce,AdminControlCenter
+RULE=Dashboards consume analytics data without owning campaign logic
