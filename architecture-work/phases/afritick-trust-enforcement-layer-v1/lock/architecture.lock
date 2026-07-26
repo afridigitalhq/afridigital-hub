@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Trust Enforcement Layer V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Verification,TrustScore,Identity
+OUTPUT=PermissionDecision
+CONNECTED=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=Trust controls ecosystem actions
