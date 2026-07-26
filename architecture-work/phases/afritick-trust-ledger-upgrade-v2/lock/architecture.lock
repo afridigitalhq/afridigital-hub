@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Trust Activity Ledger Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriTickCore
+UPGRADES=TrustActivityLedgerV1
+INPUT=Verification,Badges,AdminActions,Premium,Enforcement
+OUTPUT=AuditableTrustHistory
+CONNECTED=AdminControlCenter,TrustAPI,AfriAI
+RULE=Every trust action creates an audit event

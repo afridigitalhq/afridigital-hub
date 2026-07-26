@@ -1,11 +1,10 @@
 /**
- * AfriTick Trust Activity Ledger
+ * AfriTick Trust Activity Ledger V2
  *
- * OWNER:
- * AfriTickCore audit history.
+ * Immutable trust event history.
  *
  * RULE:
- * Every trust-related action creates a traceable event.
+ * Every trust decision must be auditable.
  */
 
 const AfriTickTrustActivityLedger = {
@@ -15,19 +14,21 @@ const AfriTickTrustActivityLedger = {
   record(event){
 
     this.events.push({
-      ...event,
-      timestamp:Date.now()
+      type:event.type,
+      actor:event.actor || "SYSTEM",
+      timestamp:Date.now(),
+      metadata:event.metadata || {}
     });
 
-    return event;
+    return {
+      status:"RECORDED"
+    };
 
   },
 
-  history(entityId){
+  history(){
 
-    return this.events.filter(
-      event => event.entityId === entityId
-    );
+    return this.events;
 
   }
 
