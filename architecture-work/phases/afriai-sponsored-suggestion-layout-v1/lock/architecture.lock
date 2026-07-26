@@ -1,0 +1,8 @@
+MODULE=AfriAI+AfriAds
+PHASE=Sponsored Suggestion Layout V1
+STATUS=LOCKED
+OWNER=AfriAISponsoredLayoutEngine
+INPUT=IntentCards,SponsoredAds
+OUTPUT=MixedSuggestionCards
+CONNECTED=DeliveryEngine,RankingEngine
+RULE=Revenue cards never bypass relevance
