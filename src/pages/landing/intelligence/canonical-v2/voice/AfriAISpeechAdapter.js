@@ -3,6 +3,7 @@ class AfriAISpeechAdapter{
   constructor(){
     this.recognition=null;
     this.listeners=new Set();
+    this.active=false;
 
   }
 
@@ -52,6 +53,7 @@ class AfriAISpeechAdapter{
 
       this.recognition.onend=()=>{
         console.log("AfriAI speech ended");
+        this.active=false;
         this.emit({
           type:"end"
         });
@@ -76,6 +78,10 @@ class AfriAISpeechAdapter{
 
   start(){
 
+    if(this.active){
+      return;
+    }
+
     const ready=this.init();
 
     if(!ready){
@@ -85,12 +91,14 @@ class AfriAISpeechAdapter{
       return;
     }
 
+    this.active=true;
     this.recognition.start();
 
   }
 
   stop(){
     if(this.recognition){
+      this.active=false;
       this.recognition.stop();
     }
   }

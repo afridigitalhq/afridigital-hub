@@ -57,7 +57,13 @@ class AfriAIVoiceController{
       });
     }
 
+    if(event.type==="end"){
+      afriAIPresenceController.idle();
+    }
+
     if(event.type==="error"){
+      afriAIPresenceController.idle();
+
       this.emit({
         type:"error",
         message:"Voice recognition error."
