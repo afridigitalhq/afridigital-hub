@@ -1,0 +1,7 @@
+MODULE=AfriAI
+PHASE=Suggestion Intent Registry V1
+STATUS=LOCKED
+OWNER=AfriAISuggestionRegistry
+RULE=Suggestions represent user goals, not product names
+DISPLAY=Desktop6-Mobile4
+RUNTIME_OWNER=AfriAILandingRuntime

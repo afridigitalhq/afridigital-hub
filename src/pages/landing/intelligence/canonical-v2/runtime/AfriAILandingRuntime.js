@@ -1,5 +1,6 @@
 import { askAfriAI } from "../../../../../api/AfriAIClient";
 import AfriAIPresenceMap from "./AfriAIPresenceMap";
+import AfriAISuggestionRegistry from "./AfriAISuggestionRegistry";
 
 class AfriAILandingRuntime{
 
@@ -15,7 +16,7 @@ class AfriAILandingRuntime{
       speaking:false,
       voiceLevel:0,
       messages:[],
-      suggestions:[],
+      suggestions:AfriAISuggestionRegistry,
       actions:[],
       metadata:{}
     };
@@ -137,7 +138,7 @@ class AfriAILandingRuntime{
           }
         ],
 
-        suggestions:data?.suggestions || [],
+        suggestions:data?.suggestions || AfriAISuggestionRegistry,
 
         actions:data?.actions || [],
 
@@ -214,7 +215,7 @@ class AfriAILandingRuntime{
       speaking:false,
       voiceLevel:0,
       messages:[],
-      suggestions:[],
+      suggestions:AfriAISuggestionRegistry,
       actions:[],
       metadata:{}
     };
