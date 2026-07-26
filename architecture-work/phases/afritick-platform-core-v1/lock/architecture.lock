@@ -1,0 +1,6 @@
+MODULE=AfriTick
+PHASE=Platform Identity Subscription Core V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+CONSUMERS=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=Verification proves identity, AfriTick provides premium membership
