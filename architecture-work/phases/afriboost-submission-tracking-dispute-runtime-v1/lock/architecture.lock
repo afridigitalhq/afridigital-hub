@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Submission Tracking Dispute Runtime V1
+STATUS=LOCKED
+TYPE=GOVERNANCE_LAYER
+OWNER=AfriBoostCore
+INPUT=SubmissionReceipt,ApprovalRequest,WorkerProof
+OUTPUT=TrackingRecord,DisputeReference
+CONNECTED=AfriWork,AfriCoin,AdminControlCenter,AfriAI
+RULE=Every submission has a permanent ID and countdown protected approval lifecycle
