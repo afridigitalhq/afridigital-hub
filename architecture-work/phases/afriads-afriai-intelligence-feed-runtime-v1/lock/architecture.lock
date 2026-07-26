@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=AfriAI Intelligence Feed Runtime V1
+STATUS=LOCKED
+TYPE=INTELLIGENCE_LAYER
+OWNER=AfriAdsCore
+INPUT=ApprovedCampaigns,UserContext,Analytics
+OUTPUT=AIRecommendations
+CONNECTED=AfriAI,AfriCommerce,AfriHome,AfriDesign
+RULE=AfriAI consumes approved ads without owning campaign management
