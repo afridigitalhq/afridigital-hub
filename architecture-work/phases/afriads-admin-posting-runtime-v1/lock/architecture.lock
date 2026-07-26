@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Admin Posting Runtime V1
+STATUS=LOCKED
+TYPE=OPERATOR_LAYER
+OWNER=AfriAdsCore
+INPUT=CampaignData
+OUTPUT=ApprovedAds
+CONNECTED=AfriAI,AfriCommerce,AfriTick,AfriDesign
+RULE=Termux simulates admin publishing until dashboard exists
