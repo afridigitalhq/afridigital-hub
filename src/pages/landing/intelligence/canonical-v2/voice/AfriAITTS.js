@@ -1,8 +1,16 @@
 class AfriAITTS{
 
   constructor(){
-    this.engine=window.speechSynthesis;
+    this.engine=null;
     this.listeners=new Set();
+  }
+
+  getEngine(){
+    if(!this.engine){
+      this.engine=window.speechSynthesis;
+    }
+
+    return this.engine;
   }
 
   subscribe(listener){
@@ -21,9 +29,11 @@ class AfriAITTS{
 
   speak(text){
 
-    if(!this.engine || !text) return;
+    const engine=this.getEngine();
 
-    this.engine.cancel();
+    if(!engine || !text) return;
+
+    engine.cancel();
 
     const utterance=new SpeechSynthesisUtterance(text);
 
@@ -32,7 +42,7 @@ class AfriAITTS{
     utterance.pitch=1;
     utterance.volume=1;
 
-    const voices=this.engine.getVoices();
+    const voices=engine.getVoices();
 
     const preferred=
       voices.find(v=>v.lang.startsWith("en")) || voices[0];
@@ -53,7 +63,7 @@ class AfriAITTS{
       this.emit({type:"error",error});
     };
 
-    this.engine.speak(utterance);
+    engine.speak(utterance);
 
   }
 

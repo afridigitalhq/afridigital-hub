@@ -5,6 +5,8 @@ class AfriAITTSRuntimeConnector{
 
   constructor(){
 
+    this.lastSpoken="";
+
     afriAILandingRuntime.subscribe((state)=>{
 
       const last =
@@ -14,8 +16,11 @@ class AfriAITTSRuntimeConnector{
         last &&
         last.role==="assistant" &&
         state.status==="speaking" &&
-        last.content
+        last.content &&
+        last.content!==this.lastSpoken
       ){
+
+        this.lastSpoken=last.content;
 
         afriAITTSRuntimeBridge.speak(
           last.content
