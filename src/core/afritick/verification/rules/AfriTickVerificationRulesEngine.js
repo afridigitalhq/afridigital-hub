@@ -1,32 +1,48 @@
 /**
- * AfriTick Verification Rules Engine
+ * AfriTick Verification Rules Engine V2
  *
  * OWNER:
- * AfriTick Core.
+ * AfriTickCore
  *
  * RULE:
- * Automates verification decisions using trust signals.
+ * Automation assists governance without replacing admin control.
  */
 
 const AfriTickVerificationRulesEngine = {
 
-  evaluate(profile={}){
+  evaluate(request={}){
 
-    const score =
-      (profile.phoneVerified ? 25 : 0) +
-      (profile.accountAge ? 25 : 0) +
-      (profile.activity ? 25 : 0) +
-      (profile.reputation ? 25 : 0);
+    const score = request.trustScore || 0;
+    const verified = request.identityVerified || false;
+    const activity = request.activityScore || 0;
+
+    if(
+      verified &&
+      score >= 80 &&
+      activity >= 50
+    ){
+
+      return {
+        decision:"AUTO_APPROVE",
+        reason:"HIGH_TRUST_PROFILE"
+      };
+
+    }
+
+    if(
+      score >= 50
+    ){
+
+      return {
+        decision:"ADMIN_REVIEW",
+        reason:"MODERATE_TRUST_PROFILE"
+      };
+
+    }
 
     return {
-
-      score,
-
-      decision:
-        score >= 75
-          ? "AUTO_APPROVE"
-          : "ADMIN_REVIEW"
-
+      decision:"REJECT",
+      reason:"INSUFFICIENT_TRUST_SIGNALS"
     };
 
   }

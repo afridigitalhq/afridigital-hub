@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Verification Rules Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriTickCore
+UPGRADES=VerificationAutomationRulesV1
+INPUT=Identity,TrustScore,Activity,Reputation
+OUTPUT=VerificationDecision
+CONNECTED=VerificationQueue,AdminTrustConsole,TrustAPI
+RULE=Improve automation intelligence without creating duplicate engines
