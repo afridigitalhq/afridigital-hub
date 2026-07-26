@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Trust Marketplace Layer V1
+STATUS=LOCKED
+OWNER=AfriTickTrustLayer
+INPUT=Identity,Verification,Badges
+OUTPUT=TrustSignals
+CONNECTED=AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=Trust signals improve ecosystem safety
