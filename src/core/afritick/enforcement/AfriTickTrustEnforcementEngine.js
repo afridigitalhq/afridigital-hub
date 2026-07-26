@@ -1,48 +1,41 @@
 /**
- * AfriTick Trust Enforcement Engine
+ * AfriTick Trust Enforcement Engine V2
  *
- * OWNER:
- * Ecosystem safety decisions.
+ * Controls ecosystem permissions.
  *
  * RULE:
- * Trust signals control permissions,
- * not just visual badges.
+ * Trust enables actions.
+ * Governance remains human controlled.
  */
 
 const AfriTickTrustEnforcementEngine = {
 
-  check(action, profile={}){
+  evaluate(action, profile){
 
-    const trustScore =
-      profile.trustScore || 0;
+    const score = profile.trustScore || 0;
+    const verified = profile.verified || false;
 
-    const verified =
-      profile.verified || false;
+    if(action === "CREATE_TRUSTED_LISTING"){
 
+      if(!verified){
+        return {
+          decision:"REVIEW",
+          reason:"VERIFICATION_REQUIRED"
+        };
+      }
 
-    if(!verified){
-
-      return {
-        status:"REVIEW",
-        reason:"VERIFICATION_REQUIRED"
-      };
-
-    }
-
-
-    if(trustScore < 40){
-
-      return {
-        status:"LIMITED",
-        reason:"LOW_TRUST_SCORE"
-      };
+      if(score < 50){
+        return {
+          decision:"REVIEW",
+          reason:"LOW_TRUST_SCORE"
+        };
+      }
 
     }
-
 
     return {
-      status:"APPROVED",
-      action
+      decision:"ALLOW",
+      reason:"TRUST_REQUIREMENTS_MET"
     };
 
   }

@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Enforcement Layer Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriTickCore
+UPGRADES=TrustEnforcementLayerV1
+INPUT=Verification,TrustScore,Permissions,Policies
+OUTPUT=PermissionDecision
+CONNECTED=TrustAPI,AdminControlCenter,Marketplace
+RULE=Trust controls access while governance controls decisions
