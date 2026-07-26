@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Worker Earnings Dashboard Runtime V1
+STATUS=LOCKED
+TYPE=USER_FINANCE_LAYER
+OWNER=AfriBoostCore
+INPUT=RewardRelease,EscrowEvents,SubmissionHistory
+OUTPUT=WorkerEarningsView
+CONNECTED=AfriWork,AfriCoin,AfriAI,Analytics
+RULE=Dashboard displays earnings history without controlling payment execution
