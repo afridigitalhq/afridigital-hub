@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Ad Approval Quality Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=Campaign,Creative,Product,Payment
+OUTPUT=ApprovedCampaign
+CONNECTED=AdminPublisher,DistributionFeed,AfriAI,Analytics
+RULE=Only validated campaigns enter distribution
