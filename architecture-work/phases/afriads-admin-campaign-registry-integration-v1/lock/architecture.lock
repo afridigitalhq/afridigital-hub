@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Admin Campaign Registry Integration V1
+STATUS=LOCKED
+TYPE=INTEGRATION
+OWNER=AfriAdsCore
+INPUT=PublishedAdminCampaigns
+OUTPUT=RegisteredCampaignInventory
+CONNECTED=AfriAI,AfriCommerce,AfriHome,AfriDesign,AfriTick
+RULE=All admin campaigns enter centralized registry before distribution
