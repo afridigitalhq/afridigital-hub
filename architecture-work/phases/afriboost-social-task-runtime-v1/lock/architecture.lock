@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Social Task Runtime V1
+STATUS=LOCKED
+TYPE=WORKFORCE_LAYER
+OWNER=AfriBoostCore
+INPUT=PromotionCampaign
+OUTPUT=SocialTasks
+CONNECTED=AfriWork,AfriAds,AfriAI,AfriCoin
+RULE=Social tasks create earning opportunities without owning campaign analytics
