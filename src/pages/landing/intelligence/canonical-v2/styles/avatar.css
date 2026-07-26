@@ -222,3 +222,137 @@
     afriaiEyeBlink 7s infinite;
 }
 
+
+
+/* AfriAI voice reactive presence */
+
+.landing-afriai-avatar.listening{
+  transform:
+    scale(calc(1 + (var(--voice-level) * .08)));
+  transition:transform .12s ease;
+}
+
+
+.landing-afriai-avatar.listening .landing-afriai-image{
+  animation:
+    afriaiListeningBreath .8s ease-in-out infinite;
+}
+
+
+.landing-afriai-avatar.speaking .landing-afriai-image{
+  animation:
+    afriaiSpeakingExpression .55s ease-in-out infinite;
+}
+
+
+@keyframes afriaiListeningBreath{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+}
+
+
+@keyframes afriaiSpeakingExpression{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.08);
+  }
+
+}
+
+
+/* =====================================
+   AFRIAI CINEMATIC PRESENCE TRANSITION
+   ===================================== */
+
+.landing-afriai-avatar.expanded{
+  position:relative;
+  z-index:20;
+  transform:scale(1.8);
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    filter .45s ease;
+}
+
+
+.landing-afriai-avatar.expanded::before{
+
+  content:"";
+  position:absolute;
+
+  inset:-35px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,220,255,.35),
+      transparent 65%
+    );
+
+  animation:
+    afriaiWakeGlow 1.5s infinite;
+
+  z-index:-1;
+
+}
+
+
+.landing-afriai-avatar.listening{
+
+  filter:
+    drop-shadow(0 0 35px rgba(0,220,255,.8));
+
+}
+
+
+.landing-afriai-avatar.thinking{
+
+  filter:
+    drop-shadow(0 0 30px rgba(150,90,255,.8));
+
+}
+
+
+.landing-afriai-avatar.speaking{
+
+  filter:
+    drop-shadow(0 0 45px rgba(0,255,180,.9));
+
+}
+
+
+@keyframes afriaiWakeGlow{
+
+  0%,100%{
+    transform:scale(.9);
+    opacity:.5;
+  }
+
+  50%{
+    transform:scale(1.2);
+    opacity:1;
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  .landing-afriai-avatar.expanded{
+    transform:scale(1.45);
+  }
+
+}
+
