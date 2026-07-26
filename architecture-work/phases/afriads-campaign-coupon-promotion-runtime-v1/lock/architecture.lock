@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Campaign Coupon Promotion Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=CampaignPrice,CouponCode,PromotionRules
+OUTPUT=DiscountedCampaignCost
+CONNECTED=AfriCoin,CampaignComposer,PaymentGateway,Analytics
+RULE=Promotions reduce campaign cost without bypassing payment verification
