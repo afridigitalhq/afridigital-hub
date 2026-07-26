@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Badge Rendering Integration V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Identity,Badges,Verification,Premium
+OUTPUT=TrustedCards
+CONNECTED=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=All ecosystem cards consume centralized badge rendering
