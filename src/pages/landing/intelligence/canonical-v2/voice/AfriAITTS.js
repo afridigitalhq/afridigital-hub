@@ -3,14 +3,62 @@ class AfriAITTS{
   constructor(){
     this.engine=null;
     this.listeners=new Set();
+    this.voice=null;
+    this.init();
+  }
+
+  init(){
+
+    const engine=this.getEngine();
+
+    if(!engine) return;
+
+    this.cacheVoice();
+
+    engine.onvoiceschanged=()=>{
+      this.cacheVoice();
+    };
+
   }
 
   getEngine(){
-    if(!this.engine){
+    if(!this.engine && typeof window!=="undefined"){
       this.engine=window.speechSynthesis;
     }
 
     return this.engine;
+  }
+
+  cacheVoice(){
+
+    const engine=this.getEngine();
+
+    if(!engine) return;
+
+    const voices=engine.getVoices();
+
+    this.voice=
+      voices.find(v=>v.lang.startsWith("en")) ||
+      voices[0] ||
+      null;
+
+  }
+
+
+  warmup(){
+    const engine=this.getEngine();
+
+    if(!engine) return;
+
+    const warm=new SpeechSynthesisUtterance("");
+    warm.volume=0;
+    warm.rate=10;
+
+    engine.speak(warm);
+
+    setTimeout(()=>{
+      engine.cancel();
+    },50);
   }
 
   subscribe(listener){
@@ -35,7 +83,9 @@ class AfriAITTS{
 
     if(!engine || !text) return;
 
-    engine.cancel();
+    if(engine.speaking){
+      engine.cancel();
+    }
 
     const utterance=new SpeechSynthesisUtterance(text);
 
@@ -44,13 +94,12 @@ class AfriAITTS{
     utterance.pitch=1;
     utterance.volume=1;
 
-    const voices=engine.getVoices();
+    if(!this.voice){
+      this.cacheVoice();
+    }
 
-    const preferred=
-      voices.find(v=>v.lang.startsWith("en")) || voices[0];
-
-    if(preferred){
-      utterance.voice=preferred;
+    if(this.voice){
+      utterance.voice=this.voice;
     }
 
     utterance.onstart=()=>{
@@ -59,11 +108,27 @@ class AfriAITTS{
 
     utterance.onend=()=>{
       this.emit({type:"end"});
+
+      setTimeout(()=>{
+        if(engine.paused){
+          engine.resume();
+        }
+      },100);
     };
 
     utterance.onerror=(error)=>{
       this.emit({type:"error",error});
+
+      setTimeout(()=>{
+        if(engine.paused){
+          engine.resume();
+        }
+      },100);
     };
+
+    if(engine.paused){
+      engine.resume();
+    }
 
     engine.speak(utterance);
 
