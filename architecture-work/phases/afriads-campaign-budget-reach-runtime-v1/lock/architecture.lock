@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Campaign Budget Reach Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=Budget,Duration,Targeting,Audience
+OUTPUT=ReachEstimate
+CONNECTED=AfriCoin,Composer,Preview,Analytics
+RULE=Users understand campaign cost before activation
