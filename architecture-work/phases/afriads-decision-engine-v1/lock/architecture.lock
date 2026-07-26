@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Decision Engine V1
+STATUS=LOCKED
+OWNER=AfriAdsDecisionEngine
+INPUT=IntentSignals
+OUTPUT=ApprovedCampaigns
+CONNECTED=AfriAI,AfriAdsHub,Analytics
+RULE=Intent-driven advertisement delivery
