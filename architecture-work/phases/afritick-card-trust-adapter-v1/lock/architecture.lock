@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Card Trust Adapter V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Identity,Verification,Subscription
+OUTPUT=TrustedCards
+CONNECTED=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
+RULE=All ecosystem cards use centralized trust rendering
