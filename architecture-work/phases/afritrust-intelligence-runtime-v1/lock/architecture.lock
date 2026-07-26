@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Trust Intelligence Runtime V1
+STATUS=LOCKED
+TYPE=TRUST_INTELLIGENCE_LAYER
+OWNER=AfriTrustCore
+INPUT=VerifiedIdentity,ProductTrustProfiles,Badges,Achievements,RiskAssessment
+OUTPUT=TrustInsights
+CONNECTED=IdentityGraph,PublicPassport,RiskEngine,AfriAI,AdminConsole
+RULE=Trust Intelligence summarizes independent product trust profiles without combining or recalculating trust scores

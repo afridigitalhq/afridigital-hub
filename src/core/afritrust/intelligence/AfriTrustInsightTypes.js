@@ -1,0 +1,11 @@
+const AfriTrustInsightTypes = [
+  "PRODUCT_TRUST_SUMMARY",
+  "VERIFICATION_STATUS",
+  "BADGE_SUMMARY",
+  "ACHIEVEMENT_SUMMARY",
+  "RISK_OVERVIEW",
+  "PROFILE_COMPLETENESS",
+  "RECOMMENDED_ACTIONS"
+];
+
+export default AfriTrustInsightTypes;
