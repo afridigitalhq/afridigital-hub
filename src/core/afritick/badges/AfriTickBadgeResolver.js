@@ -1,28 +1,53 @@
 /**
- * AfriTick Badge Resolver
+ * AfriTick Badge Resolver V2
  *
- * OWNER:
- * Badge rendering intelligence.
+ * Uses verification + trust intelligence
+ * to determine public trust badges.
+ *
+ * RULE:
+ * Trust score supports discovery.
+ * Verification controls verified status.
  */
 
 const AfriTickBadgeResolver = {
 
   resolve(profile){
 
-    if(profile.afriTick){
-      return [
-        "AFRITICK",
-        "KYC_VERIFIED"
-      ];
+    const badges = [];
+
+    if(profile.premium){
+      badges.push({
+        type:"PREMIUM",
+        label:"AfriTick Premium",
+        icon:"blue-check"
+      });
     }
 
-    if(profile.kycVerified){
-      return [
-        "KYC_VERIFIED"
-      ];
+    if(profile.verifiedSeller){
+      badges.push({
+        type:"VERIFIED_SELLER",
+        label:"Verified Seller",
+        icon:"shield-check"
+      });
     }
 
-    return [];
+    if(profile.verifiedAgent){
+      badges.push({
+        type:"VERIFIED_AGENT",
+        label:"Verified Agent",
+        icon:"shield-check"
+      });
+    }
+
+    if(profile.trustScore >= 80){
+      badges.push({
+        type:"TRUSTED",
+        label:"Trusted",
+        icon:"blue-check"
+      });
+    }
+
+    return badges;
 
   }
 

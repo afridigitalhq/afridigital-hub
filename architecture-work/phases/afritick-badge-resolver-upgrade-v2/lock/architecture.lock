@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Badge Resolver Upgrade V2
+STATUS=LOCKED
+TYPE=UPGRADE
+OWNER=AfriTickCore
+UPGRADES=UniversalBadgeComponentV1
+INPUT=Verification,Premium,TrustScore
+OUTPUT=PublicBadges
+CONNECTED=PublicDisplay,CardRenderer,Marketplace
+RULE=One badge resolver controls ecosystem trust badges
