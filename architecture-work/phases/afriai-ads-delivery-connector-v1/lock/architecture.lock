@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Delivery Connector V1
+STATUS=LOCKED
+OWNER=AfriAdsDeliveryEngine
+INPUT=RankedCampaigns
+OUTPUT=RenderableAdCards
+CONNECTED=AfriAI,AfriAdsHub,Analytics
+RULE=Only approved campaigns reach users
