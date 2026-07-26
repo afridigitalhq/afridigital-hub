@@ -124,6 +124,8 @@ class AfriAILandingRuntime{
       const result=await askAfriAI(message);
 
 
+      const data=result?.data || result;
+
       this.state={
         ...this.state,
 
@@ -131,15 +133,15 @@ class AfriAILandingRuntime{
           ...this.state.messages,
           {
             role:"assistant",
-            content:result?.reply || "AfriAI is ready."
+            content:data?.reply || "AfriAI is ready."
           }
         ],
 
-        suggestions:result?.suggestions || [],
+        suggestions:data?.suggestions || [],
 
-        actions:result?.actions || [],
+        actions:data?.actions || [],
 
-        metadata:result?.metadata || {}
+        metadata:data?.metadata || {}
 
       };
 
