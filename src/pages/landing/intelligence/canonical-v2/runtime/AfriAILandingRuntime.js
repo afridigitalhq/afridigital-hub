@@ -7,6 +7,7 @@ class AfriAILandingRuntime{
     this.state={
       status:"idle",
       presenceMode:"idle",
+      transitionState:"stable",
       listening:false,
       thinking:false,
       speaking:false,
@@ -36,6 +37,18 @@ class AfriAILandingRuntime{
     this.listeners.forEach(listener=>{
       listener({...this.state});
     });
+
+  }
+
+
+  setTransition(state){
+
+    this.state={
+      ...this.state,
+      transitionState:state
+    };
+
+    this.emit();
 
   }
 
@@ -164,7 +177,14 @@ class AfriAILandingRuntime{
 
   startListening(){
 
-    this.setStatus("listening");
+    this.setTransition("awakening");
+
+    setTimeout(()=>{
+
+      this.setStatus("listening");
+      this.setTransition("stable");
+
+    },600);
 
   }
 
@@ -182,6 +202,7 @@ class AfriAILandingRuntime{
       ...this.state,
       status:"idle",
       presenceMode:"idle",
+      transitionState:"stable",
       listening:false,
       thinking:false,
       speaking:false,

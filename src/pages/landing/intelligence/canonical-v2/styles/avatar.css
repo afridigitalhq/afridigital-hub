@@ -430,3 +430,63 @@
 
 }
 
+
+/* =====================================
+   AFRIAI LIVING PRESENCE V1
+   VOICE REACTIVE AVATAR
+   ===================================== */
+
+.landing-afriai-avatar.listening{
+
+  transform:
+    scale(calc(1 + (var(--voice-level) * .12)));
+
+  transition:
+    transform .12s ease;
+
+}
+
+
+.landing-afriai-avatar.listening::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-25px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,220,255,.45),
+      transparent 70%
+    );
+
+  opacity:
+    calc(.3 + (var(--voice-level) * .7));
+
+  transform:
+    scale(calc(1 + (var(--voice-level) * .35)));
+
+  transition:
+    opacity .12s ease,
+    transform .12s ease;
+
+}
+
+
+.landing-afriai-avatar.listening .landing-afriai-image{
+
+  filter:
+    drop-shadow(
+      0 0 calc(12px + (var(--voice-level) * 30px))
+      rgba(0,220,255,.85)
+    );
+
+  transition:
+    filter .12s ease;
+
+}
+
