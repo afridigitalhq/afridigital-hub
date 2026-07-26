@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Creative Asset Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=Images,Videos,ProductMedia,Descriptions
+OUTPUT=CampaignCreativePackage
+CONNECTED=CampaignComposer,LivePreview,DistributionFeed,AfriAI
+RULE=Every campaign creative is validated before activation
