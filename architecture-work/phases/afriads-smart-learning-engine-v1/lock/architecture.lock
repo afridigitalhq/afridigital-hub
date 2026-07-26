@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Smart Campaign Learning Engine V1
+STATUS=LOCKED
+OWNER=AfriAdsLearningEngine
+INPUT=AnalyticsEvents
+OUTPUT=OptimizationSignals
+CONNECTED=RankingEngine,FeedEngine,RevenueRuntime
+RULE=Campaign performance improves future delivery
