@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Architecture Freeze V1
+STATUS=FROZEN
+TYPE=FINALIZATION
+OWNER=AfriTickCore
+CANONICAL=AfriTickV2Runtime
+RULE=Future improvements upgrade existing layers only
+CONNECTED=AfriAI,AfriAds,AfriCommerce,AfriHome,AfriDesign
