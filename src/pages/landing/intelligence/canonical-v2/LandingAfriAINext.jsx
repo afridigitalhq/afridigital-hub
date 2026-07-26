@@ -38,7 +38,6 @@ export default function LandingAfriAINext(){
   }
 
   function handleMic(){
-    afriAILandingRuntime.startListening();
     afriAIVoiceController.start();
   }
 

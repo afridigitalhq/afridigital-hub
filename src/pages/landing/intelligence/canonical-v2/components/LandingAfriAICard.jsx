@@ -31,6 +31,7 @@ export default function LandingAfriAICard({
               status={status}
               avatarMode={avatarMode}
               transitionState={transitionState}
+              voiceLevel={voiceLevel}
             />
 
         <div className="landing-afriai-identity">

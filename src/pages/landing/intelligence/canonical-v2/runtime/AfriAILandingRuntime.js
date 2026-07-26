@@ -143,13 +143,6 @@ class AfriAILandingRuntime{
       this.setStatus("speaking");
 
 
-      setTimeout(()=>{
-
-        this.setStatus("idle");
-
-      },700);
-
-
     }catch(err){
 
       console.error("AfriAI ERROR:",err);
