@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Admin Campaign Analytics Runtime V1
+STATUS=LOCKED
+TYPE=RUNTIME
+OWNER=AfriAdsCore
+INPUT=DistributedCampaigns,UserInteractions
+OUTPUT=CampaignPerformanceData
+CONNECTED=AfriAI,AfriAdsAdminPublisher,AfriCommerce
+RULE=Campaign performance is measurable before dashboard completion
