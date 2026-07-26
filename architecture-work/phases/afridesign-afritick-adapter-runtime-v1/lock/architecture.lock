@@ -1,0 +1,9 @@
+MODULE=AfriDesignStudio
+PHASE=AfriTick Adapter Runtime V1
+STATUS=LOCKED
+TYPE=CREATOR_TRUST_INTEGRATION_LAYER
+OWNER=AfriDesignCore
+INPUT=Projects,ClientFeedback,Skills,Portfolio,DeliveryHistory
+OUTPUT=AfriTickTrustSignals
+CONNECTED=AfriTick,AfriAI,Marketplace,AfriWork,Analytics
+RULE=AfriDesign provides creator signals while AfriTick owns trust calculation
