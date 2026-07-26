@@ -1,0 +1,8 @@
+MODULE=AfriAds
+PHASE=Admin Revenue Dashboard V1
+STATUS=LOCKED
+OWNER=AfriAdsRevenueDashboardRuntime
+INPUT=RevenueRuntime,Analytics
+OUTPUT=AdminMetrics
+CONNECTED=AdminControlCenter
+RULE=Admin controls monetization visibility
