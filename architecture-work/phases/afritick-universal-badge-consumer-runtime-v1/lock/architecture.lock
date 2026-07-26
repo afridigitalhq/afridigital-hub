@@ -1,0 +1,9 @@
+MODULE=AfriTick
+PHASE=Universal Badge Consumer Runtime V1
+STATUS=LOCKED
+TYPE=IDENTITY_DISPLAY_LAYER
+OWNER=AfriTickCore
+INPUT=TrustScore,VerificationLevel,EntityProfile
+OUTPUT=AfriTickBadgeDisplay
+CONNECTED=AfriBoost,AfriWork,AfriCommerce,AfriDesignStudio,AfriAI
+RULE=Products display AfriTick identity without owning trust calculation
