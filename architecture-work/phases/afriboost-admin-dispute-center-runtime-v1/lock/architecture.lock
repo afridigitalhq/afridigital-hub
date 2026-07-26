@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Admin Dispute Center Runtime V1
+STATUS=LOCKED
+TYPE=GOVERNANCE_LAYER
+OWNER=AfriControlCenter
+INPUT=SubmissionID,WorkerProof,OwnerDecision,Timeline
+OUTPUT=DisputeResolution
+CONNECTED=AfriWork,AfriCoin,AfriAI,AdminControlCenter
+RULE=Admins resolve disputes using evidence history without controlling normal reward flow
