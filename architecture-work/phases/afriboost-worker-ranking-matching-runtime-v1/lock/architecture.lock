@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Worker Ranking Matching Runtime V1
+STATUS=LOCKED
+TYPE=MATCHING_INTELLIGENCE_LAYER
+OWNER=AfriBoostCore
+INPUT=AfriTicks,PerformanceProfile,Skills,CampaignRequirements
+OUTPUT=WorkerRankingProfile
+CONNECTED=AfriWork,AfriAI,Marketplace,Analytics,AfriCoin
+RULE=Ranking improves campaign matching without removing worker opportunity
