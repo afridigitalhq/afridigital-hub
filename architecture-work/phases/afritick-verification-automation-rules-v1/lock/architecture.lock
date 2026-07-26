@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Verification Automation Rules V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=VerificationRequests,TrustSignals
+OUTPUT=VerificationDecision
+CONNECTED=VerificationQueue,AdminTrustConsole,TrustScore
+RULE=Automation assists governance without replacing control
