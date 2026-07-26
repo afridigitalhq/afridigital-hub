@@ -142,6 +142,8 @@ class AfriAILandingRuntime{
 
       this.setStatus("speaking");
 
+      this.setTransition("speaking");
+
 
     }catch(err){
 

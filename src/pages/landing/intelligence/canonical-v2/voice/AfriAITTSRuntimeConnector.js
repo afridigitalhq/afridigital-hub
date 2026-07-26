@@ -13,7 +13,8 @@ class AfriAITTSRuntimeConnector{
       if(
         last &&
         last.role==="assistant" &&
-        state.status==="speaking"
+        state.status==="speaking" &&
+        last.content
       ){
 
         afriAITTSRuntimeBridge.speak(
