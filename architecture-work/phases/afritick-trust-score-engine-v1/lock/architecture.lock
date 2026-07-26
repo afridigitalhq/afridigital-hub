@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Trust Score Engine V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=Verification,Activity,Transactions,Reputation
+OUTPUT=TrustScore
+CONNECTED=AfriAds,AfriCommerce,AfriHome,AfriDesign,AfriAI
+RULE=Trust score improves discovery without replacing verification
