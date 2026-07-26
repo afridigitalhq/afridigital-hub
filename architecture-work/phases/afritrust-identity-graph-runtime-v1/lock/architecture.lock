@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Identity Graph Runtime V1
+STATUS=LOCKED
+TYPE=IDENTITY_GRAPH_LAYER
+OWNER=AfriTrustCore
+INPUT=VerifiedIdentity,ProductTrustProfiles,Badges,TrustEvents
+OUTPUT=IdentityGraph
+CONNECTED=AfriCommerce,AfriWork,AfriBoost,AfriDesignStudio,AfriEducation,AfriLogistics,AfriCCTV,AfriAI
+RULE=One verified identity links multiple independent product trust profiles without combining their trust scores
