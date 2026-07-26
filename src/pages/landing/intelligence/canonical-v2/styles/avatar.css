@@ -356,3 +356,77 @@
 
 }
 
+
+/* =====================================
+   AFRIAI AWAKENING SEQUENCE V1
+   ===================================== */
+
+.landing-afriai-avatar.awakening{
+  animation:
+    afriaiAwaken 0.8s cubic-bezier(.22,1,.36,1);
+}
+
+
+.landing-afriai-avatar.awakening::before{
+
+  content:"";
+  position:absolute;
+
+  inset:-45px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,220,255,.55),
+      transparent 65%
+    );
+
+  animation:
+    afriaiEnergyPulse 1s ease-out infinite;
+
+  z-index:-1;
+
+}
+
+
+@keyframes afriaiAwaken{
+
+  0%{
+    transform:scale(1);
+    filter:brightness(1);
+  }
+
+  50%{
+    transform:scale(1.25);
+    filter:brightness(1.5);
+  }
+
+  100%{
+    transform:scale(1);
+    filter:brightness(1);
+  }
+
+}
+
+
+@keyframes afriaiEnergyPulse{
+
+  0%{
+    transform:scale(.7);
+    opacity:.2;
+  }
+
+  50%{
+    transform:scale(1.15);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(1.4);
+    opacity:0;
+  }
+
+}
+
