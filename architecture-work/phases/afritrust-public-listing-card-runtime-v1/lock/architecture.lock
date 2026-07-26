@@ -1,0 +1,9 @@
+MODULE=AfriTrust
+PHASE=Public Listing Card Runtime V1
+STATUS=LOCKED
+TYPE=PUBLIC_PRESENTATION_LAYER
+OWNER=AfriTrustCore
+INPUT=PlatformTrust,ProductTrust,AfriVerified,AfriTickPremium,Statistics,Ratings
+OUTPUT=CanonicalPublicListingCard
+CONNECTED=AfriCommerce,AfriWork,AfriEducation,AfriDesignStudio,AfriLogistics,AfriCCTV,Marketplace
+RULE=All public listings across the AfriDigital ecosystem must use one canonical listing card structure
