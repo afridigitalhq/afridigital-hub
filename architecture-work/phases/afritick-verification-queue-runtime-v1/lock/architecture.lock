@@ -1,0 +1,8 @@
+MODULE=AfriTick
+PHASE=Verification Queue Runtime V1
+STATUS=LOCKED
+OWNER=AfriTickCore
+INPUT=VerificationRequests
+OUTPUT=ApprovedTrustBadges
+CONNECTED=AdminTrustConsole,TrustAPI,PublicDisplay
+RULE=Verification remains governed and auditable
