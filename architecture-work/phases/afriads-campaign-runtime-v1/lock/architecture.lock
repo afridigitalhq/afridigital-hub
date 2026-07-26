@@ -1,0 +1,7 @@
+MODULE=AfriAds
+PHASE=Campaign Runtime V1
+STATUS=LOCKED
+OWNER=AfriAdsRuntime
+CONNECTED=AfriAIIntentBridge
+OUTPUT=Campaigns,Placements,Tracking
+RULE=Ads are matched by intent, not random display
