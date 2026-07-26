@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Worker AfriTicks Runtime V1
+STATUS=LOCKED
+TYPE=REPUTATION_LAYER
+OWNER=AfriBoostCore
+INPUT=CompletedTasks,ApprovalHistory,QualityScore,Disputes
+OUTPUT=WorkerTrustScore,AfriTicksBalance
+CONNECTED=AfriWork,AfriAI,Marketplace,AfriCoin,Analytics
+RULE=AfriTicks measure worker reputation without replacing AfriCoin rewards
