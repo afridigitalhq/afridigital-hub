@@ -1,0 +1,9 @@
+MODULE=AfriAds
+PHASE=Billing Revenue Runtime V1
+STATUS=LOCKED
+TYPE=COMMERCIAL_RUNTIME
+OWNER=AfriAdsCore
+INPUT=ActivatedCampaign,Budget,PaymentMethod
+OUTPUT=RevenueEvent
+CONNECTED=AfriCoin,CampaignLifecycle,Analytics,AfriCommerce
+RULE=Users pay for campaigns while platform campaigns remain internal inventory
