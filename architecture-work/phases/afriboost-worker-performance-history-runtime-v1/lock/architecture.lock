@@ -1,0 +1,9 @@
+MODULE=AfriBoost
+PHASE=Worker Performance History Runtime V1
+STATUS=LOCKED
+TYPE=WORKER_ANALYTICS_LAYER
+OWNER=AfriBoostCore
+INPUT=CompletedJobs,FailedJobs,Approvals,Disputes,Complexity
+OUTPUT=WorkerPerformanceProfile
+CONNECTED=AfriWork,AfriTicks,AfriAI,Marketplace,Analytics
+RULE=Performance history improves trust and matching decisions
