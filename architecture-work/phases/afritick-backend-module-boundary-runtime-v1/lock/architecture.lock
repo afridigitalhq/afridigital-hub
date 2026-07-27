@@ -1,0 +1,11 @@
+MODULE=AfriTick
+PHASE=Backend Module Boundary Runtime V1
+STATUS=LOCKED
+TYPE=BACKEND_ARCHITECTURE_BOUNDARY_LAYER
+OWNER=AfriTickCore
+INPUT=APIContracts,ServiceRegistry
+OUTPUT=BackendModuleStructure
+CONNECTED=AfriDigitalAPI,AfriTickSDK
+RULE=AfriTick backend modules execute only inside backend services
+RULE_2=Frontend cannot contain subscription, billing or payment decisions
+RULE_3=AfriTrust remains separate from membership status
