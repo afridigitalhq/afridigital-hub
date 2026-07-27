@@ -1,0 +1,11 @@
+MODULE=AfriTick
+PHASE=Backend Service Registry Runtime V1
+STATUS=LOCKED
+TYPE=BACKEND_SERVICE_BOUNDARY_LAYER
+OWNER=AfriTickCore
+INPUT=APIContracts,UserRequests,PaymentEvents
+OUTPUT=ServiceExecutionRoutes
+CONNECTED=AfriDigitalAPI,AfriTickSDK,Products
+RULE=AfriTick business execution belongs to backend services
+RULE_2=Frontend modules only consume contracts and never execute membership logic
+RULE_3=AfriTrust reputation remains completely independent
