@@ -1,0 +1,10 @@
+const AfriTickSubscriptionEvents = [
+  "SUBSCRIPTION_STARTED",
+  "SUBSCRIPTION_RENEWED",
+  "SUBSCRIPTION_UPGRADED",
+  "SUBSCRIPTION_DOWNGRADED",
+  "SUBSCRIPTION_EXPIRED",
+  "SUBSCRIPTION_CANCELLED"
+];
+
+export default AfriTickSubscriptionEvents;

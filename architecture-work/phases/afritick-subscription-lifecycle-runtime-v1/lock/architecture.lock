@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Subscription Lifecycle Runtime V1
+STATUS=LOCKED
+TYPE=SUBSCRIPTION_MANAGEMENT_LAYER
+OWNER=AfriTickCore
+INPUT=MembershipTier,Billing,Payments,AfriCoin
+OUTPUT=SubscriptionStatus,SubscriptionEvents
+CONNECTED=AfriTickBenefits,AfriTrust,AfriVerified,AfriCommerce,AfriWork,AfriAI
+RULE=AfriTick manages subscription lifecycle while AfriTrust remains independent
+RULE_2=Subscription status changes never modify reputation scores
