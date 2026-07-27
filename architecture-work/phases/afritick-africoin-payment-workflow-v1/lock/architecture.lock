@@ -1,8 +1,10 @@
 MODULE=AfriTick
 PHASE=AfriCoin Payment Workflow V1
 STATUS=LOCKED
-OWNER=AfriTickBillingRuntime
-INPUT=Plans,Subscriptions,Payments
-OUTPUT=ActivePremiumMemberships,RevenueEvents
-CONNECTED=AfriCoin,AfriAds,AfriCommerce,AdminControlCenter
-RULE=Premium identity services use AfriCoin payments
+TYPE=PAYMENT_PROCESSING_LAYER
+OWNER=AfriTickCore
+INPUT=SubscriptionPlan,Wallet,PaymentMethod
+OUTPUT=PaymentConfirmation,MembershipActivation
+CONNECTED=AfriCoin,Wallet,AfriTickBilling,SubscriptionEngine,BenefitsEngine
+RULE=AfriTick payments activate membership only after verified payment confirmation
+RULE_2=Payment activity never contributes to AfriTrust reputation scores

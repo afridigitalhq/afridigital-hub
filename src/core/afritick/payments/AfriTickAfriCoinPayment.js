@@ -1,22 +1,23 @@
-/**
- * AfriTick AfriCoin Payment Runtime
- *
- * OWNER:
- * AfriTick Billing.
- *
- * RULE:
- * Premium trust membership uses AfriCoin.
- */
-
 const AfriTickAfriCoinPayment = {
 
-  pay(subscription){
+  createPayment(subscription){
 
     return {
-      userId:subscription.userId,
-      plan:subscription.plan,
-      currency:"AFRICOIN",
-      status:"PAID"
+      subscriptionId: subscription.id || null,
+      currency: "AFRICOIN",
+      amount: subscription.amount || 0,
+      status: "PENDING",
+      createdAt: Date.now()
+    };
+
+  },
+
+  confirmPayment(payment){
+
+    return {
+      ...payment,
+      status:"COMPLETED",
+      confirmedAt:Date.now()
     };
 
   }
