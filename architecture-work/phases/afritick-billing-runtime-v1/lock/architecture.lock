@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Billing Runtime V1
+STATUS=LOCKED
+TYPE=SUBSCRIPTION_BILLING_LAYER
+OWNER=AfriTickCore
+INPUT=SubscriptionStatus,Payments,AfriCoin
+OUTPUT=BillingStatus,PaymentEvents
+CONNECTED=AfriTickSubscription,AfriTickBenefits,AfriCoin,Wallet,Analytics
+RULE=AfriTick billing manages payments only and never modifies trust reputation
+RULE_2=Payment success activates membership benefits through subscription state
