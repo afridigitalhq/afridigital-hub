@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Membership Tier Runtime V1
+STATUS=LOCKED
+TYPE=SUBSCRIPTION_MEMBERSHIP_LAYER
+OWNER=AfriTickCore
+INPUT=UserAccount,Payments,AfriCoin,Billing
+OUTPUT=MembershipTierStatus
+CONNECTED=AfriVerified,AfriTrust,AfriCommerce,AfriWork,AfriAI,AfriDesignStudio
+RULE=AfriTick manages membership tiers while AfriTrust manages earned reputation
+RULE_2=AfriTick Platinum is reserved for official AfriDigital platform accounts
