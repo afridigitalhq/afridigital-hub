@@ -1,19 +1,11 @@
-/**
- * AfriTick API Consumers
- */
-
 const AfriTickAPIConsumers = [
-
-  "AFRIAI",
-  "AFRIADS",
-  "AFRICOMMERCE",
-  "AFRICCTV",
-  "AFRISPORTS",
-  "AFRILOGISTICS",
-  "AFRILOVE",
-  "AFRIDESIGN",
-  "AFRIEDUCATION"
-
+  "AfriCommerce",
+  "AfriWork",
+  "AfriAI",
+  "AfriDesignStudio",
+  "AfriEducation",
+  "AfriCCTV",
+  "AfriLogistics"
 ];
 
 export default AfriTickAPIConsumers;

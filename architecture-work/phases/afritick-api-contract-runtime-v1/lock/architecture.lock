@@ -1,0 +1,11 @@
+MODULE=AfriTick
+PHASE=API Contract Runtime V1
+STATUS=LOCKED
+TYPE=SERVICE_CONTRACT_LAYER
+OWNER=AfriTickCore
+INPUT=ProductRequests,UserAccount,SubscriptionData
+OUTPUT=StandardizedAfriTickAPIResponses
+CONNECTED=AfriDigitalAPI,AfriTickSDK,Products
+RULE=Products access AfriTick through API contracts only
+RULE_2=Business logic remains inside backend services
+RULE_3=Frontend displays membership state without calculating trust or payments
