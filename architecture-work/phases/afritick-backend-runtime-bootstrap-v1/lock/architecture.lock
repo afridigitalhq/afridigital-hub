@@ -1,0 +1,11 @@
+MODULE=AfriTick
+PHASE=Backend Runtime Bootstrap V1
+STATUS=LOCKED
+TYPE=BACKEND_RUNTIME_INITIALIZATION_LAYER
+OWNER=AfriTickCore
+INPUT=BackendModules,ServiceRegistry,APIContracts
+OUTPUT=AfriTickRuntimeRegistry
+CONNECTED=AfriDigitalAPI,AfriTickSDK
+RULE=AfriTick runtime executes through backend services only
+RULE_2=Frontend remains a consumer of runtime APIs
+RULE_3=AfriTrust calculations remain outside AfriTick
