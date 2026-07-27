@@ -1,0 +1,10 @@
+MODULE=AfriTick
+PHASE=Benefits Runtime V1
+STATUS=LOCKED
+TYPE=MEMBERSHIP_BENEFITS_LAYER
+OWNER=AfriTickCore
+INPUT=MembershipTierStatus,SubscriptionStatus
+OUTPUT=TierBenefits
+CONNECTED=Billing,AfriCoin,AfriTrust,AfriVerified,AfriCommerce,AfriAI,AfriWork
+RULE=AfriTick benefits depend on membership tier and never modify trust scores
+RULE_2=AfriTick Platinum benefits are reserved for official AfriDigital accounts

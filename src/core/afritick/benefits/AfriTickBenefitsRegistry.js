@@ -1,16 +1,33 @@
-/**
- * AfriTick Benefits Registry
- *
- * OWNER:
- * Premium membership benefits.
- */
+const AfriTickBenefitsRegistry = {
+  BASIC:[
+    "ACCOUNT_ACCESS"
+  ],
 
-const AfriTickBenefitsRegistry = [
+  SILVER:[
+    "ENHANCED_PROFILE",
+    "BASIC_SUPPORT"
+  ],
 
-  "PREMIUM_PROFILE",
-  "ENHANCED_VISIBILITY",
-  "ADVANCED_ANALYTICS"
+  GOLD:[
+    "PROFILE_VISIBILITY_BOOST",
+    "PRIORITY_SUPPORT",
+    "SELLER_TOOLS"
+  ],
 
-];
+  PREMIUM:[
+    "ADVANCED_VISIBILITY",
+    "AI_ASSISTANCE",
+    "BUSINESS_ANALYTICS",
+    "PREMIUM_SUPPORT",
+    "MARKETPLACE_FEATURES"
+  ],
+
+  PLATINUM:[
+    "OFFICIAL_PLATFORM_STATUS",
+    "ADMIN_CONTROLS",
+    "ECOSYSTEM_MANAGEMENT",
+    "PLATFORM_ANALYTICS"
+  ]
+};
 
 export default AfriTickBenefitsRegistry;
