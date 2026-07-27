@@ -1,0 +1,11 @@
+MODULE=AfriTick
+PHASE=Backend API Adapter Runtime V1
+STATUS=LOCKED
+TYPE=BACKEND_API_INTEGRATION_LAYER
+OWNER=AfriTickCore
+INPUT=SDKRequests,ProductRequests
+OUTPUT=BackendServiceRequests
+CONNECTED=AfriDigitalAPI,AfriTickSDK,Products
+RULE=All AfriTick execution passes through backend API adapters
+RULE_2=Frontend never executes membership, billing or payment decisions
+RULE_3=AfriTrust remains completely independent
