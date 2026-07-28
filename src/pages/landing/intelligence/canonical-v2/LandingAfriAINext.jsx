@@ -15,6 +15,8 @@ import "./LandingAfriAI.css";
 
 export default function LandingAfriAINext(){
 
+  console.log('🔥 AfriAI Canonical v2 mounted');
+
   const state = useAfriAIState();
   const { status, avatarMode, transitionState, voiceLevel, messages, suggestions=[], actions, metadata } = state;
 

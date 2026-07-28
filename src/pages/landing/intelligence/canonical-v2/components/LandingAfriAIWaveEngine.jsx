@@ -1,4 +1,4 @@
-import LandingAfriAIWaveform from "../../canonical/components/LandingAfriAIWaveform";
+import LandingAfriAIWaveform from "./LandingAfriAIWaveform";
 
 export default function LandingAfriAIWaveEngine({
   status,
