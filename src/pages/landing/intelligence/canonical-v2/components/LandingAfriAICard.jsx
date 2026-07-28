@@ -24,7 +24,7 @@ export default function LandingAfriAICard({
 }){
 
   return(
-    <section className="landing-afriai-card">
+    <section className="landing-afriai-card" style={{border:"3px solid #00ff88",minHeight:"700px"}}>
 
       <div className="landing-afriai-topbar">
 
