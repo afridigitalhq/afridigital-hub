@@ -1,0 +1,6 @@
+BATCH=15
+TASK=ProductRegistry Canonical Import Migration
+OPERATION=REWRITE_IMPORT
+SOURCE=src/bootstrap/registry/ProductRegistry.js
+TARGET=src/bootstrap/registry/AfriProductRegistry.js
+MODE=PREPARE

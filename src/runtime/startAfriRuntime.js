@@ -5,7 +5,7 @@ import { afriRuntimeRegistry } from "../core/runtime/AfriRuntimeRegistry.js";
 
 
 
-const _global = typeof _global !== "undefined" ? _global : window;
+const _global = typeof globalThis !== "undefined" ? globalThis : window;
 
 let booted = false;
 

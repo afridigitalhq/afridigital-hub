@@ -123,9 +123,7 @@ BrainKernel.prototype.syncCoreState=function(event){
 
 
 
-heartbeat(){
-
-
+BrainKernel.prototype.heartbeat=function(){
   return {
     timestamp:Date.now(),
     status:"alive",
@@ -134,10 +132,7 @@ heartbeat(){
     orchestrator:this.getSystemState("orchestrator"),
     eventBus:this.getSystemState("eventBus")
   };
-
-}
-
-
+};
 
 BrainKernel.prototype.loadModule=function(name,module={},meta={}){
  return BrainModuleLoader.load(name,module,meta);

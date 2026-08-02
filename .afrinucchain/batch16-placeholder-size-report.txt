@@ -1,0 +1,64 @@
+===== src/core/afriai/nucchain/artifacts/AfriNucChainArtifactRuntimeBridge.js =====
+2 src/core/afriai/nucchain/artifacts/AfriNucChainArtifactRuntimeBridge.js
+===== src/core/afriai/nucchain/artifacts/FilesystemArtifactAdapter.js =====
+2 src/core/afriai/nucchain/artifacts/FilesystemArtifactAdapter.js
+===== src/core/afriai/nucchain/artifacts/MaterializationArtifactMapper.js =====
+2 src/core/afriai/nucchain/artifacts/MaterializationArtifactMapper.js
+===== src/core/afriai/nucchain/artifacts/ArtifactExecutionConnector.js =====
+2 src/core/afriai/nucchain/artifacts/ArtifactExecutionConnector.js
+===== src/core/afriai/nucchain/artifacts/ArtifactRuntimeVerifier.js =====
+2 src/core/afriai/nucchain/artifacts/ArtifactRuntimeVerifier.js
+===== src/core/afriai/nucchain/artifacts/verification/ChecksumValidationEngine.js =====
+2 src/core/afriai/nucchain/artifacts/verification/ChecksumValidationEngine.js
+===== src/core/afriai/nucchain/artifacts/verification/ArtifactContentValidator.js =====
+2 src/core/afriai/nucchain/artifacts/verification/ArtifactContentValidator.js
+===== src/core/afriai/nucchain/artifacts/verification/ArtifactEvidenceBinder.js =====
+2 src/core/afriai/nucchain/artifacts/verification/ArtifactEvidenceBinder.js
+===== src/core/afriai/nucchain/artifacts/verification/ExecutionProofValidator.js =====
+2 src/core/afriai/nucchain/artifacts/verification/ExecutionProofValidator.js
+===== src/core/afriai/nucchain/artifacts/verification/ArtifactVerificationReport.js =====
+2 src/core/afriai/nucchain/artifacts/verification/ArtifactVerificationReport.js
+===== src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemRuntime.js =====
+50 src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemRuntime.js
+===== src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemMaterializationRuntime.js =====
+2 src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemMaterializationRuntime.js
+===== src/core/afriai/nucchain/filesystem/FilesystemDirectoryEngine.js =====
+2 src/core/afriai/nucchain/filesystem/FilesystemDirectoryEngine.js
+===== src/core/afriai/nucchain/filesystem/FilesystemFileEngine.js =====
+2 src/core/afriai/nucchain/filesystem/FilesystemFileEngine.js
+===== src/core/afriai/nucchain/filesystem/FilesystemEvidenceCollector.js =====
+2 src/core/afriai/nucchain/filesystem/FilesystemEvidenceCollector.js
+===== src/core/afriai/nucchain/filesystem/FilesystemVerificationEngine.js =====
+2 src/core/afriai/nucchain/filesystem/FilesystemVerificationEngine.js
+===== src/core/afriai/nucchain/filesystem/FilesystemRollbackEngine.js =====
+2 src/core/afriai/nucchain/filesystem/FilesystemRollbackEngine.js
+===== src/core/afriai/nucchain/filesystem/FilesystemExecutionReportEngine.js =====
+2 src/core/afriai/nucchain/filesystem/FilesystemExecutionReportEngine.js
+===== src/core/afriai/nucchain/filesystem/FilesystemPatchEngine.js.bak =====
+2 src/core/afriai/nucchain/filesystem/FilesystemPatchEngine.js.bak
+===== src/core/afriai/nucchain/runtime/filesystem/AfriNucChainFilesystemRuntime.js =====
+2 src/core/afriai/nucchain/runtime/filesystem/AfriNucChainFilesystemRuntime.js
+===== src/core/afriai/nucchain/runtime/filesystem/DirectoryWriter.js =====
+2 src/core/afriai/nucchain/runtime/filesystem/DirectoryWriter.js
+===== src/core/afriai/nucchain/runtime/filesystem/FileWriter.js =====
+2 src/core/afriai/nucchain/runtime/filesystem/FileWriter.js
+===== src/core/afriai/nucchain/runtime/filesystem/FileReader.js =====
+2 src/core/afriai/nucchain/runtime/filesystem/FileReader.js
+===== src/core/afriai/nucchain/runtime/filesystem/PathResolver.js =====
+2 src/core/afriai/nucchain/runtime/filesystem/PathResolver.js
+===== src/core/afriai/nucchain/runtime/filesystem/FilesystemInspector.js =====
+2 src/core/afriai/nucchain/runtime/filesystem/FilesystemInspector.js
+===== src/core/afriai/nucchain/runtime/filesystem/ChecksumGenerator.js =====
+2 src/core/afriai/nucchain/runtime/filesystem/ChecksumGenerator.js
+===== src/core/afriai/nucchain/templates/ModuleTemplateEngine.js =====
+2 src/core/afriai/nucchain/templates/ModuleTemplateEngine.js
+===== src/core/afriai/nucchain/templates/ClassTemplateGenerator.js =====
+2 src/core/afriai/nucchain/templates/ClassTemplateGenerator.js
+===== src/core/afriai/nucchain/templates/FunctionTemplateGenerator.js =====
+2 src/core/afriai/nucchain/templates/FunctionTemplateGenerator.js
+===== src/core/afriai/nucchain/templates/ManifestTemplateGenerator.js =====
+2 src/core/afriai/nucchain/templates/ManifestTemplateGenerator.js
+===== src/core/afriai/nucchain/templates/RuntimeTemplateGenerator.js =====
+2 src/core/afriai/nucchain/templates/RuntimeTemplateGenerator.js
+===== src/core/afriai/nucchain/templates/TemplateRegistry.js =====
+2 src/core/afriai/nucchain/templates/TemplateRegistry.js
