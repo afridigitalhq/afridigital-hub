@@ -1,5 +1,5 @@
 import ModuleCapabilityMap from "./ModuleCapabilityMap";
-import ModuleRegistry from "../../modules/ModuleRegistry";
+import ModuleRegistry from "../../../core/runtime/ModuleRegistry";
 
 const ModuleMountEngine = {
   mounted: {},

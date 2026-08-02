@@ -1,32 +1,60 @@
+import fs from "fs/promises";
+import crypto from "crypto";
 import AfriNucChainTrace from "../AfriNucChainTrace.js";
+
+async function checksum(file){
+
+  const content =
+    await fs.readFile(file);
+
+  return crypto
+    .createHash("sha256")
+    .update(content)
+    .digest("hex");
+
+}
+
 
 const AfriNucChainArtifactVerifier = {
 
-  verify(artifact = {}){
+  async verify(artifact = {}){
 
-    const checks = {
+    const checks = [];
 
-      artifactExists:
-        Boolean(artifact.artifactId),
+    for(const file of artifact.files || []){
 
-      migrationLinked:
-        Boolean(artifact.migrationId),
+      let exists = false;
+      let checksumValid = false;
 
-      sourceDefined:
-        Boolean(artifact.source),
+      try{
 
-      targetDefined:
-        Boolean(artifact.target),
+        const hash =
+          await checksum(file.path);
 
-      filesDefined:
-        Array.isArray(artifact.files) &&
-        artifact.files.length > 0
+        exists = true;
 
-    };
+        checksumValid =
+          hash === file.checksum;
 
-    const valid =
-      Object.values(checks)
-        .every(Boolean);
+      }catch{}
+
+      checks.push({
+        path:file.path,
+        exists,
+        checksumValid
+      });
+
+    }
+
+
+    const verified =
+      checks.length > 0 &&
+      checks.every(
+        item =>
+          item.exists &&
+          item.checksumValid
+      );
+
 
     const result = {
 
@@ -34,12 +62,11 @@ const AfriNucChainArtifactVerifier = {
         artifact.artifactId || "UNKNOWN",
 
       status:
-        valid
+        verified
           ? "ARTIFACT_VERIFIED"
           : "ARTIFACT_INVALID",
 
-      verified:
-        valid,
+      verified,
 
       checks,
 
@@ -48,22 +75,21 @@ const AfriNucChainArtifactVerifier = {
 
     };
 
+
     return {
-
       ...result,
-
       trace:
         AfriNucChainTrace.create(
-          valid
+          verified
             ? "ARTIFACT_VERIFIED"
             : "ARTIFACT_VERIFICATION_FAILED",
           result
         )
-
     };
 
   }
 
 };
+
 
 export default AfriNucChainArtifactVerifier;

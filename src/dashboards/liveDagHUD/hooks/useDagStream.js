@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AfriBus } from "../../../core/bus/AfriEventBus";
+import { AfriBus } from "../../../core/runtime/AfriEventBus";
 
 export function useDagStream() {
   const [events, setEvents] = useState([]);

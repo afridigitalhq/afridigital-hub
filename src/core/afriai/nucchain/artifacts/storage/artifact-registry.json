@@ -1,0 +1,1048 @@
+[
+  {
+    "artifactId": "ARTIFACT-1785417366772",
+    "migrationId": "AFDS-REAL-EXECUTION-001",
+    "source": "AfriNucChain",
+    "target": "generated-real",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/generated-real/proof.txt",
+        "checksum": "5d446a11063f5d9ce988ddbacc5dc948594d302cc8fb8d613421f8cb96b8d8f1",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785417366773
+  },
+  {
+    "artifactId": "ARTIFACT-1785417551120",
+    "migrationId": "AFDS023-REAL-ARTIFACT-VERIFICATION",
+    "source": "AfriNucChain",
+    "target": "src/core/afriai/nucchain/generated-real",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785417551120
+  },
+  {
+    "artifactId": "ARTIFACT-1785418854837",
+    "migrationId": "AFDS024AfriNucChainMaterializationPlannerManifest",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/materialization/planner",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785418854837
+  },
+  {
+    "artifactId": "ARTIFACT-1785418893867",
+    "migrationId": "AFDS024AfriNucChainMaterializationPlannerManifest",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/materialization/planner",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785418893867
+  },
+  {
+    "artifactId": "ARTIFACT-1785419000422",
+    "migrationId": "AFDS025AfriNucChainMaterializationPlannerRuntimeManifest",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/materialization/planner",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785419000422
+  },
+  {
+    "artifactId": "ARTIFACT-1785420053854",
+    "migrationId": "AFDS023-REAL-FILESYSTEM-TEST",
+    "source": "AfriNucChain",
+    "target": "src/core/afriai/nucchain/generated-test",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785420053854
+  },
+  {
+    "artifactId": "ARTIFACT-1785421075632",
+    "migrationId": "AFDS024-REAL-FILESYSTEM-TEST",
+    "source": "AfriNucChain",
+    "target": "src/core/afriai/nucchain/real-test",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/real-test/TestEngine.js",
+        "checksum": "7c788a700962e9c4db252e5be04bcd1effe96341bb070f0e4871de05552cffd6",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/real-test/TestManifest.js",
+        "checksum": "cb6ec7dd11a7f224cd9c46f21816d81f6b83cc6c47ed3ac58732ed825e91981d",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/real-test/TestRuntime.js",
+        "checksum": "c6275ee8c6054e1859e392980be0d51734589989ec4d4f72b9e4e604dca1ce28",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785421075633
+  },
+  {
+    "artifactId": "ARTIFACT-1785421145354",
+    "migrationId": "AFDS024-REAL-FILESYSTEM-TEST",
+    "source": "AfriNucChain",
+    "target": "src/core/afriai/nucchain/real-test",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/real-test/TestEngine.js",
+        "checksum": "7c788a700962e9c4db252e5be04bcd1effe96341bb070f0e4871de05552cffd6",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/real-test/TestManifest.js",
+        "checksum": "cb6ec7dd11a7f224cd9c46f21816d81f6b83cc6c47ed3ac58732ed825e91981d",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/real-test/TestRuntime.js",
+        "checksum": "c6275ee8c6054e1859e392980be0d51734589989ec4d4f72b9e4e604dca1ce28",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785421145354
+  },
+  {
+    "artifactId": "ARTIFACT-1785421443674",
+    "migrationId": "AFDS025AfriNucChainArtifactRuntimeIntegration",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/artifacts",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/artifacts/AfriNucChainArtifactRuntimeBridge.js",
+        "checksum": "c51265dc5c2e6fb83a40b566a99f32af48ab0a5da3084ea66fd98900449b2f4e",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/FilesystemArtifactAdapter.js",
+        "checksum": "ce644b280d46a52f53e90db4ab169f3dfa815440b1eb45f94af2322e292b37c6",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/MaterializationArtifactMapper.js",
+        "checksum": "e32ff71fc8f0feba1ba0dbab7ad0800c970022f4cc20477401c0d1b125780839",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/ArtifactExecutionConnector.js",
+        "checksum": "1ce7c31d38b1154e68c266d83da665afefc4c5af51c27e4a9a2ce6a1b5097bbb",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/ArtifactRuntimeVerifier.js",
+        "checksum": "6a5588dfce3604d5faaf7df9c033b82a0d01720e5d138abd4701382d2017689c",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785421443674
+  },
+  {
+    "artifactId": "ARTIFACT-1785424787818",
+    "migrationId": "AFDS026AfriNucChainArtifactVerificationHardening",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/artifacts/verification",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/artifacts/verification/ChecksumValidationEngine.js",
+        "checksum": "d9f4719fd012fd34582aa73ba045b857313da5734acf2ed6bd32d2d7cf5d6e97",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/verification/ArtifactContentValidator.js",
+        "checksum": "70bf8d96dc67f57d3b18c67ba262415b2fd8f4625d3e89c7bfc1ae4a551b825f",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/verification/ArtifactEvidenceBinder.js",
+        "checksum": "6b762df5f39c49eee024099f0f4c8f96f798a4eb99cb6c2c7301dfba987517df",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/verification/ExecutionProofValidator.js",
+        "checksum": "9bbcced1acd1dda5a4fe412dcfbae323fe3691cb5c9a3764db7162eb751b7e3d",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/artifacts/verification/ArtifactVerificationReport.js",
+        "checksum": "41aa3f2202da9073558e6ca1d13e0c1efa7369dc644e5345d14d7193d8b7729e",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785424787818
+  },
+  {
+    "artifactId": "ARTIFACT-1785424948224",
+    "migrationId": "AFDS024AfriNucChainFilesystemRuntimeImplementationManifest",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/runtime/filesystem",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/AfriNucChainFilesystemRuntime.js",
+        "checksum": "1f0f077f1f30c05a997f5b029f85d3844a5b776bfdca100ba8617791f352b2e6",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/DirectoryWriter.js",
+        "checksum": "951caba09665733230afbe5c9763ea29fbcc321ee51f38677fcd329e084c300d",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/FileWriter.js",
+        "checksum": "0c6cb3969372703ed7e85314dfbe9c20a01bc0c81bc02f12cc118bb21dab1941",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/FileReader.js",
+        "checksum": "3755a692056183a9866f806e8e552a8a17d6f1b077e069e6dfaba2fcb8bd402a",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/PathResolver.js",
+        "checksum": "21dd2122b4206a6074a1baa4fa7d0b6a583ff2ac6833d81509febf447cee26da",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/FilesystemInspector.js",
+        "checksum": "94a1faa57d842ee431b528a9c03413673fc2454a227c97eb6e0711e01f887eba",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/ChecksumGenerator.js",
+        "checksum": "e316761a9a7546ef5781453b7347e508a9ec39a0e3cbc86b96ebf419a59b5350",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785424948224
+  },
+  {
+    "artifactId": "ARTIFACT-1785425065879",
+    "migrationId": "AFDS025AfriNucChainFilesystemRuntimeImplementation",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/runtime/filesystem",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/AfriNucChainFilesystemRuntime.js",
+        "checksum": "1f0f077f1f30c05a997f5b029f85d3844a5b776bfdca100ba8617791f352b2e6",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/DirectoryWriter.js",
+        "checksum": "951caba09665733230afbe5c9763ea29fbcc321ee51f38677fcd329e084c300d",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/FileWriter.js",
+        "checksum": "0c6cb3969372703ed7e85314dfbe9c20a01bc0c81bc02f12cc118bb21dab1941",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/FileReader.js",
+        "checksum": "3755a692056183a9866f806e8e552a8a17d6f1b077e069e6dfaba2fcb8bd402a",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/PathResolver.js",
+        "checksum": "21dd2122b4206a6074a1baa4fa7d0b6a583ff2ac6833d81509febf447cee26da",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/FilesystemInspector.js",
+        "checksum": "94a1faa57d842ee431b528a9c03413673fc2454a227c97eb6e0711e01f887eba",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/runtime/filesystem/ChecksumGenerator.js",
+        "checksum": "e316761a9a7546ef5781453b7347e508a9ec39a0e3cbc86b96ebf419a59b5350",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785425065879
+  },
+  {
+    "artifactId": "ARTIFACT-1785427921532",
+    "migrationId": "AFDS024AfriDebugBridgeKnowledgeRoutingManifest",
+    "source": "AfriDebug Pipeline",
+    "target": "src/core/afriai/debug/bridge",
+    "files": [
+      {
+        "path": "src/core/afriai/debug/bridge/AfriDebugBridgeKnowledgeRoutingEngine.js",
+        "checksum": "416213c9def729c2de0d821d817c6b0fbc0e616bce9c7a529ed58c5c993ad8fd",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785427921532
+  },
+  {
+    "artifactId": "ARTIFACT-1785429524585",
+    "migrationId": "AFDS025AfriNucChainFilesystemMaterializationRuntimeManifest",
+    "source": "AfriNucChain Core",
+    "target": "src/core/afriai/nucchain/filesystem",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemMaterializationRuntime.js",
+        "checksum": "00f9e9a67c8b86fdb23e52fbc85008c7bfb9002015b7bdbae21277b0b1fe31eb",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/filesystem/FilesystemDirectoryEngine.js",
+        "checksum": "24b4e2db147f4df4e36c8ccf0193036c2dc3ebb933fc505669a76e00c96a3ef8",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/filesystem/FilesystemFileEngine.js",
+        "checksum": "6147386f1aecf1931934c7137abb17f0adb6260d078eba387455976f67767fee",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/filesystem/FilesystemPatchEngine.js",
+        "checksum": "e8d2321e08c0862feb22ca922e82ce20e99e05b7778896020265e11d0e0aecb2",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/filesystem/FilesystemEvidenceCollector.js",
+        "checksum": "8d1c4214b85068283a7dff22837f06c31c8c8cb3d0e3057f6eb29a1489efa0a9",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/filesystem/FilesystemVerificationEngine.js",
+        "checksum": "df193731e8f377599cfeb121b504569328dffa6cc0e7a20ec2ab3fbea32dc9cd",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/filesystem/FilesystemRollbackEngine.js",
+        "checksum": "8f49b55e3174d959caf2dc78885be4ee468802101479bc657e95817935e02944",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/filesystem/FilesystemExecutionReportEngine.js",
+        "checksum": "bd8a1d9554a70f980fe4d35f9b0c265dcb8ac578cf27f0974861928d0e8160da",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785429524585
+  },
+  {
+    "artifactId": "ARTIFACT-1785429996343",
+    "migrationId": "AFDS024AfriNucChainTemplateGenerationManifest",
+    "source": "AfriNucChain Core Evolution",
+    "target": "src/core/afriai/nucchain/templates",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/templates/ModuleTemplateEngine.js",
+        "checksum": "acbf16ce5f513375f6b94d367230d416e2d14ae731a78b01923a357861e8550e",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/templates/ClassTemplateGenerator.js",
+        "checksum": "1c4746bca081295123734183d99cbcf08b271b76f498d6cfa443b2ffa2503100",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/templates/FunctionTemplateGenerator.js",
+        "checksum": "b5d4e07bdfacdf322113d16f3352434f4423f1e9dbb239176fc5b6b93476aea1",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/templates/ManifestTemplateGenerator.js",
+        "checksum": "608ec24e0230ebd13264fb686340be4683fcfdf1be95a729766c17aff28d2e55",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/templates/RuntimeTemplateGenerator.js",
+        "checksum": "6d053a8ed736093483aeb63ed41314e849b24372e66e0bee26b5b85bde4bf150",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/templates/TemplateRegistry.js",
+        "checksum": "830e69d7976b7ba0f33cd5812cccedcec43a8ac64bc4c21fc544ebfad51d5c35",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785429996343
+  },
+  {
+    "artifactId": "ARTIFACT-1785524574890",
+    "migrationId": "AFRI-NUCCHAIN-BUILD",
+    "source": null,
+    "target": "src/core/afriai/nucchain/generated",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785524574890
+  },
+  {
+    "artifactId": "ARTIFACT-1785524970580",
+    "migrationId": "TEST-BUILD",
+    "source": null,
+    "target": "src/core/afriai/nucchain/generated",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785524970580
+  },
+  {
+    "artifactId": "ARTIFACT-1785524999686",
+    "migrationId": "AFRI-NUCCHAIN-BUILD",
+    "source": null,
+    "target": "src/core/afriai/nucchain/generated",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785524999686
+  },
+  {
+    "artifactId": "ARTIFACT-1785525010836",
+    "migrationId": "TEST-DEBUG",
+    "source": null,
+    "target": "src/core/afriai/nucchain/generated",
+    "files": [],
+    "status": "REGISTERED",
+    "createdAt": 1785525010836
+  },
+  {
+    "artifactId": "ARTIFACT-1785526086570",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785526086570
+  },
+  {
+    "artifactId": "ARTIFACT-1785527484067",
+    "migrationId": "AFDS-001",
+    "source": "AfriDesign-Studio/src/platform/ai",
+    "target": "AfriDigital-hub/src/core/afridesign/ai",
+    "files": [
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/components.js",
+        "checksum": "a617cba6a6d7ee421bc0098c8c3d03adc133463caa2c0d4c36b7632dfe77b5c8",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/context.js",
+        "checksum": "e485fce94b76ca6691a33f267a124e2143d9a58c3dfd6e0364a3fd6777c300ba",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/runtime.js",
+        "checksum": "5352d92b903bd92763a09e1dd76bf15d349251bea08b92fb6dda3af7bb3a20f5",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/services.js",
+        "checksum": "d39ea6e35377d095896241dc2ddd785928d6186f4ed81c30ef311aba1755d51d",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785527484067
+  },
+  {
+    "artifactId": "ARTIFACT-1785527484975",
+    "migrationId": "AFDS-002",
+    "source": "AfriNucChainMigrationExecutor",
+    "target": "AfriNucChainMigrationExecutor",
+    "files": [
+      {
+        "path": "AfriNucChainMigrationExecutor/execution.js",
+        "checksum": "6b717a75f8ddd73587875034d0997b363c805908e4a052d4980c03978bed381c",
+        "exists": true
+      },
+      {
+        "path": "AfriNucChainMigrationExecutor/trace.js",
+        "checksum": "368e67c69f311c9c6958110e98b2bceac52b1e3a282d1b25c04a1fed63ee37b3",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785527484975
+  },
+  {
+    "artifactId": "ARTIFACT-1785527485875",
+    "migrationId": "AFDS-004",
+    "source": "AfriNucChain",
+    "target": "AfriDebug",
+    "files": [
+      {
+        "path": "AfriDebug/registry.js",
+        "checksum": "9a035a26b0b1a26a3402fbf04249a95e8ecf0741765d1f0e3c1b105a6953a9f5",
+        "exists": true
+      },
+      {
+        "path": "AfriDebug/analysis.js",
+        "checksum": "8e762ff2b2d7adfeb064739b4b78f06e3f0b25561441c0545fe86fcc616d3373",
+        "exists": true
+      },
+      {
+        "path": "AfriDebug/reports.js",
+        "checksum": "9c5cbce077677ed3b30389ea7234315826111da328a789d95428dbb0d3e3f639",
+        "exists": true
+      },
+      {
+        "path": "AfriDebug/runtime-monitoring.js",
+        "checksum": "390f66aca3d42a662bdf98fdc82bc523b9591c53b5e5f382d4f85c0a30982c47",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785527485875
+  },
+  {
+    "artifactId": "ARTIFACT-1785529788638",
+    "migrationId": "AFDS-001",
+    "source": "AfriDesign-Studio/src/platform/ai",
+    "target": "AfriDigital-hub/src/core/afridesign/ai",
+    "files": [
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/components.js",
+        "checksum": "a617cba6a6d7ee421bc0098c8c3d03adc133463caa2c0d4c36b7632dfe77b5c8",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/context.js",
+        "checksum": "e485fce94b76ca6691a33f267a124e2143d9a58c3dfd6e0364a3fd6777c300ba",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/runtime.js",
+        "checksum": "5352d92b903bd92763a09e1dd76bf15d349251bea08b92fb6dda3af7bb3a20f5",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-hub/src/core/afridesign/ai/services.js",
+        "checksum": "d39ea6e35377d095896241dc2ddd785928d6186f4ed81c30ef311aba1755d51d",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785529788638
+  },
+  {
+    "artifactId": "ARTIFACT-1785530499611",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785530499611
+  },
+  {
+    "artifactId": "ARTIFACT-1785530721367",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785530721367
+  },
+  {
+    "artifactId": "ARTIFACT-1785531041505",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785531041505
+  },
+  {
+    "artifactId": "ARTIFACT-1785531646279",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785531646279
+  },
+  {
+    "artifactId": "ARTIFACT-1785531789871",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785531789871
+  },
+  {
+    "artifactId": "ARTIFACT-1785571192272",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785571192273
+  },
+  {
+    "artifactId": "ARTIFACT-1785571260713",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785571260713
+  },
+  {
+    "artifactId": "ARTIFACT-1785571260799",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785571260799
+  },
+  {
+    "artifactId": "ARTIFACT-1785574870296",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785574870296
+  },
+  {
+    "artifactId": "ARTIFACT-1785575081048",
+    "migrationId": "AFDS011RealExecution",
+    "source": "AfriNucChain Test Source",
+    "target": "src/core/afriai/nucchain/generated-real/AFDS011",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/generated-real/AFDS011/TestGeneratedModule.js",
+        "checksum": "c677f60e0c0f56b03552aec7d95858198520ea5fcf5019833fc10d58a7449556",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/generated-real/AFDS011/TestRuntimeModule.js",
+        "checksum": "ad919d427fdf3f34a62478bdedf669c087c1ed74c628a8202c21e30af8e72c1a",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785575081048
+  },
+  {
+    "artifactId": "ARTIFACT-1785575184865",
+    "migrationId": "AFRI-NUCCHAIN-INTEGRATION-001",
+    "source": "AfriDigital",
+    "target": "src/core/afriai/nucchain/generated-real/integration-test",
+    "files": [
+      {
+        "path": "src/core/afriai/nucchain/generated-real/integration-test/IntegrationModule.js",
+        "checksum": "62a129a9d7688c31d4a365a7d7671d1507007305f9b7a6f6f0bedf6eb0468799",
+        "exists": true
+      },
+      {
+        "path": "src/core/afriai/nucchain/generated-real/integration-test/RuntimeModule.js",
+        "checksum": "64466919b78c828cb37685b04621573e84ca80b943a3f8a269ca88a9543f6ee9",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785575184865
+  },
+  {
+    "artifactId": "ARTIFACT-1785583710948",
+    "migrationId": "AFDS-011",
+    "source": "AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriProductRegistry.js",
+        "checksum": "5547edff91aad768e938fe570dacf468eedff66b58eb6dd6a7a8691f51e6020a",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AfriDigitalBootstrap.js",
+        "checksum": "d539f228863db04a545b63dc672f8800187581dc166b202501beb6145e54841d",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/SidebarInventory.js",
+        "checksum": "1850776f687af92af8d89041a3ebff91f92365746f73af4c9d547c3b3f503c98",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductPluginMap.js",
+        "checksum": "644f542526036d50165dbca9eb11437167ddf73d93d87ecb056003e72ec66ec1",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/ProductsAPI.js",
+        "checksum": "cd739a9b6dbdff9c8ff96b07b26d8a2cab2e63f39abd4be63efa08103e6045e6",
+        "exists": true
+      },
+      {
+        "path": "AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js/AdminOS.js",
+        "checksum": "2eb0b2a66bcbbc94f180beb09299bfc1cb0d655227a1ccc99a57b1ff25eedfdb",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785583710948
+  },
+  {
+    "artifactId": "ARTIFACT-1785610333000",
+    "migrationId": "BATCH15-PRODUCTREGISTRY",
+    "source": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+        "checksum": "98158670690b9783dd1fe786a9a3792b00f8cce48657333aab04faa135cd4ab3",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785610333000
+  },
+  {
+    "artifactId": "ARTIFACT-1785610805379",
+    "migrationId": "BATCH15-PRODUCTREGISTRY",
+    "source": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+        "checksum": "98158670690b9783dd1fe786a9a3792b00f8cce48657333aab04faa135cd4ab3",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785610805379
+  },
+  {
+    "artifactId": "ARTIFACT-1785611667410",
+    "migrationId": "BATCH15-PRODUCTREGISTRY",
+    "source": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/ProductRegistry.js",
+    "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+    "files": [
+      {
+        "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/src/bootstrap/registry/AfriProductRegistry.js",
+        "checksum": "98158670690b9783dd1fe786a9a3792b00f8cce48657333aab04faa135cd4ab3",
+        "exists": true
+      }
+    ],
+    "status": "REGISTERED",
+    "createdAt": 1785611667410
+  }
+]

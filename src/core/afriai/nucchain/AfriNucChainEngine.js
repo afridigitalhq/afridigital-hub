@@ -13,6 +13,7 @@ import AfriNucChainMigrationExecutor from "./execution/AfriNucChainMigrationExec
 import AfriNucChainAuditManager from "./audit/AfriNucChainAuditManager.js";
 import AfriNucChainArtifactManager from "./artifacts/AfriNucChainArtifactManager.js";
 import AfriNucChainDebugBridge from "./AfriNucChainDebugBridge.js";
+import AfriNucChainRuntimeVerifier from "./runtime/verification/AfriNucChainRuntimeVerifier.js";
 
 const AfriNucChainEngine = {
 
@@ -130,6 +131,9 @@ const AfriNucChainEngine = {
       ...execution.trace
     );
 
+    batch.generatedFiles =
+      execution.materialization?.created || [];
+
     const registry =
       AfriNucChainMigrationRegistry.register({
         batch,
@@ -145,11 +149,11 @@ const AfriNucChainEngine = {
     });
 
     const artifact =
-      AfriNucChainArtifactManager.register({
+      await AfriNucChainArtifactManager.register({
         migrationId: batch.batchId,
         source: batch.source,
         target: batch.target,
-        files: batch.modules
+        files: batch.generatedFiles || []
       });
 
     trace.push({
@@ -159,7 +163,7 @@ const AfriNucChainEngine = {
     });
 
     const artifactVerification =
-      AfriNucChainArtifactVerifier.verify(
+      await AfriNucChainArtifactVerifier.verify(
         artifact
       );
 

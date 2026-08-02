@@ -15,6 +15,9 @@ const AfriNucChainManifestLoader = {
       modules:
         manifest.modules || [],
 
+      operations:
+        manifest.operations || [],
+
       rules:
         manifest.rules || [],
 

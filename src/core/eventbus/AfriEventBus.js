@@ -1,4 +1,4 @@
-import memory from "../memory/AfriMemory";
+const memory = { record(){ } };
 
 class AfriEventBus {
   constructor() {
@@ -34,6 +34,6 @@ class AfriEventBus {
 }
 
 const bus = new AfriEventBus();
-window.AfriBus = bus;
+if (typeof window !== "undefined") window.AfriBus = bus;
 
 export default bus;

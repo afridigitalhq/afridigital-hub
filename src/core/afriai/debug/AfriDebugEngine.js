@@ -4,6 +4,10 @@ import AfriAIImportTracer from "./AfriAIImportTracer.js";
 import AfriAIBuildFailureAnalyzer from "./AfriAIBuildFailureAnalyzer.js";
 import AfriAIRuntimeInspector from "./AfriAIRuntimeInspector.js";
 import AfriAIDebugMemory from "./AfriAIDebugMemory.js";
+import AfriAIKnowledgeGapAnalyzer from "./AfriAIKnowledgeGapAnalyzer.js";
+import AfriAIRuntimeEvidenceCollector from "./AfriAIRuntimeEvidenceCollector.js";
+import AfriAIKnowledgeRepairMapper from "./AfriAIKnowledgeRepairMapper.js";
+import AfriAIKnowledgeRegistryLocator from "./AfriAIKnowledgeRegistryLocator.js";
 
 const AfriDebugEngine = {
 
@@ -72,6 +76,52 @@ const AfriDebugEngine = {
           input.runtime
         )
       );
+
+    }
+
+
+    if(input.knowledge){
+
+      report.findings.push(
+        AfriAIKnowledgeGapAnalyzer.analyze(
+          input.knowledge
+        )
+      );
+
+    }
+
+
+    if(input.aiResponse){
+
+      const evidence =
+        AfriAIRuntimeEvidenceCollector.collect(
+          input.aiResponse
+        );
+
+      report.evidence = evidence;
+
+      if(evidence.knowledge.response){
+
+        const finding =
+          AfriAIKnowledgeGapAnalyzer.analyze(
+            evidence.knowledge
+          );
+
+        report.findings.push(
+          finding
+        );
+
+        report.repairPlan =
+          AfriAIKnowledgeRepairMapper.map(
+            finding
+          );
+
+        report.registryLocation =
+          AfriAIKnowledgeRegistryLocator.locate(
+            evidence.knowledge
+          );
+
+      }
 
     }
 

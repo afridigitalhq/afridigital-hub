@@ -1,4 +1,4 @@
-import AfriAIOrchestrator from "./AfriAIOrchestrator";
+import AfriAIOrchestrator from "../../../core/afriai/AfriAIOrchestrator";
 
 const AfriAIRuntimeBridge = {
   handle(input) {

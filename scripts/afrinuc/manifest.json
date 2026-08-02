@@ -1,0 +1,8 @@
+{
+  "id": "AFRI-NUCCHAIN-TEST-001",
+  "source": "src",
+  "target": "src/core/afriai/nucchain/generated-real",
+  "modules": [
+    "AfriNucChainTestModule"
+  ]
+}

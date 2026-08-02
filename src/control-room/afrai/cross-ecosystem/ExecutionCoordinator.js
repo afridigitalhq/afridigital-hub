@@ -1,6 +1,6 @@
 import WorkflowPlanner from "./WorkflowPlanner";
 import EventStream from "../../bridge/EventStream";
-import ModuleRegistry from "../../modules/ModuleRegistry";
+import ModuleRegistry from "../../../core/runtime/ModuleRegistry";
 
 const ExecutionCoordinator = {
   run(input) {

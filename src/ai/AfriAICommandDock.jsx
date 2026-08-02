@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bus from "../core/eventbus/AfriEventBus";
+import bus from "../core/runtime/AfriEventBus";
 
 export default function AfriAICommandDock() {
   const [input, setInput] = useState("");

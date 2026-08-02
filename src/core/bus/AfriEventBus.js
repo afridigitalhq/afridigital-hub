@@ -73,6 +73,6 @@ AfriBus.connect();
 
 
 dispatchBrainEvent("eventbus.online",{
-  source:"src/core/bus/AfriEventBus.js",
+  source:"src/core/runtime/AfriEventBus.js",
   status:"online"
 });

@@ -1,4 +1,4 @@
-import bus from "../core/eventbus/AfriEventBus";
+import bus from "../core/runtime/AfriEventBus";
 import memory from "../core/memory/AfriMemory";
 
 class SystemKernel {

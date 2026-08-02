@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactFlow, { Background, Controls } from "reactflow";
-import { AfriBus } from "../../core/bus/AfriEventBus";
+import { AfriBus } from "../../core/runtime/AfriEventBus";
 
 export default function CyberDAGView({ initialNodes, initialEdges }) {
   const [nodes, setNodes] = useState(initialNodes || []);

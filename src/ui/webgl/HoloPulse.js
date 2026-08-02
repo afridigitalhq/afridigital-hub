@@ -1,4 +1,4 @@
-import { AfriBus } from "../../core/bus/AfriEventBus";
+import { AfriBus } from "../../core/runtime/AfriEventBus";
 
 AfriBus.on("*", (event) => {
   const intensity =

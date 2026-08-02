@@ -4,7 +4,7 @@ import SystemHandshake from "../deploy/SystemHandshake";
 import ControlRoomRuntime from "../runtime/ControlRoomRuntime";
 import DashboardController from "../dashboard/DashboardController";
 import EcosystemBootstrap from "../modules/EcosystemBootstrap";
-import AfriAIController from "../afrai/AfriAIController";
+import AfriAIController from "../../core/afriai/AfriAIController";
 import SystemHealthMonitor from "../soc/SystemHealthMonitor";
 
 const ProductionOrchestrator = {

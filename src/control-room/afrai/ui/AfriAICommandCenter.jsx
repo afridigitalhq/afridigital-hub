@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AfriAIInterface from "../governed/AfriAIInterface";
+import AfriAIInterface from "../../../core/afriai/AfriAIInterface";
 import EventStream from "../../bridge/EventStream";
 
 const AfriAICommandCenter = () => {

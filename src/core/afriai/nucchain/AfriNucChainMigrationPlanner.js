@@ -15,6 +15,15 @@ const AfriNucChainMigrationPlanner = {
       modules:
         request.modules || [],
 
+      operations:
+        request.operations || [],
+
+      files:
+        request.files || [],
+
+      artifacts:
+        request.artifacts || [],
+
       mode:
         request.mode || "MIGRATION",
 

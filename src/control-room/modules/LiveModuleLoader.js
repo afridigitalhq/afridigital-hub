@@ -1,4 +1,4 @@
-import ModuleRegistry from "./ModuleRegistry";
+import ModuleRegistry from "../../core/runtime/ModuleRegistry";
 import EventStream from "../bridge/EventStream";
 
 const LiveModuleLoader = {

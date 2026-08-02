@@ -1,4 +1,4 @@
-import AfriAIController from "./AfriAIController";
+import AfriAIController from "../../core/afriai/AfriAIController";
 
 const AfriAINLPBridge = {
   process(text) {

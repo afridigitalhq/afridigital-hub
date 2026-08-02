@@ -1,4 +1,4 @@
-import AfriAICrossBrain from "../intelligence/AfriAICrossBrain";
+import AfriAICrossBrain from "../../../core/afriai/AfriAICrossBrain";
 import ModuleMountEngine from "../modules/ModuleMountEngine";
 
 /**

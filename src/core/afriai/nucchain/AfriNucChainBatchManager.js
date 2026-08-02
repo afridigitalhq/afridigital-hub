@@ -18,6 +18,23 @@ const AfriNucChainBatchManager = {
       modules:
         plan.modules || [],
 
+      operations:
+        plan.operations || [],
+
+      files:
+        plan.files || [],
+
+      artifacts:
+        plan.artifacts || [],
+
+      materialization:{
+        directory:
+          plan.target || null,
+
+        files:
+          plan.files || []
+      },
+
       status:
         "READY_FOR_VALIDATION",
 
