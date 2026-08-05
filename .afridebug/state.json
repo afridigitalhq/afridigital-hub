@@ -1,0 +1,62 @@
+{
+  "connectors": [
+    {
+      "id": "afriwhatsapp",
+      "name": "AfriWhatsApp",
+      "type": "messaging",
+      "status": "approved"
+    },
+    {
+      "id": "afriweb",
+      "name": "AfriWeb",
+      "type": "web",
+      "status": "approved"
+    },
+    {
+      "id": "africommerce",
+      "name": "AfriCommerce",
+      "type": "commerce",
+      "status": "approved"
+    },
+    {
+      "id": "afrdesignstudio",
+      "name": "AfriDesignStudio",
+      "type": "design",
+      "status": "approved"
+    }
+  ],
+  "events": [
+    {
+      "connectorId": "afriwhatsapp",
+      "type": "diagnostic_event",
+      "payload": {
+        "source": "AfriWhatsApp"
+      },
+      "approvalRequired": true
+    },
+    {
+      "connectorId": "afriweb",
+      "type": "diagnostic_event",
+      "payload": {
+        "source": "AfriWeb"
+      },
+      "approvalRequired": true
+    },
+    {
+      "connectorId": "africommerce",
+      "type": "diagnostic_event",
+      "payload": {
+        "source": "AfriCommerce"
+      },
+      "approvalRequired": true
+    },
+    {
+      "connectorId": "afrdesignstudio",
+      "type": "diagnostic_event",
+      "payload": {
+        "source": "AfriDesignStudio"
+      },
+      "approvalRequired": true
+    }
+  ]
+}

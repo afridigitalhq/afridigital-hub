@@ -1,7 +1,7 @@
 const AFDS009AfriDebugRepairIntelligenceRuntimeHardeningManifest = {
   id: "AFDS-009",
 
-  source: "AfriDebug Autonomous Repair Orchestration",
+  source: "AfriDebug Intelligence Orchestration",
 
   target: "AfriDigital-hub/src/core/afridebug/repair-runtime",
 

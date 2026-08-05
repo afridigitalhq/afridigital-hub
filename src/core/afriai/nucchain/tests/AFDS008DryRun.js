@@ -1,11 +1,11 @@
-import AFDS008AfriDebugAutonomousRepairOrchestrationManifest from "../manifests/AFDS008AfriDebugAutonomousRepairOrchestrationManifest.js";
+import AFDS008AfriDebugIntelligenceOrchestrationManifest from "../manifests/AFDS008AfriDebugIntelligenceOrchestrationManifest.js";
 import AfriNucChainEngine from "../AfriNucChainEngine.js";
 
 async function run(){
 
   const result =
     await AfriNucChainEngine.execute(
-      AFDS008AfriDebugAutonomousRepairOrchestrationManifest
+      AFDS008AfriDebugIntelligenceOrchestrationManifest
     );
 
   console.log(

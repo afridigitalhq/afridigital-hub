@@ -9,7 +9,7 @@ const AFDS007AfriDebugIntelligenceLayerManifest = {
     "pattern-detection",
     "root-cause-analysis",
     "ai-suggestions",
-    "auto-repair-planner"
+    "repair-planner"
   ],
 
   mode: "IMPLEMENTATION",

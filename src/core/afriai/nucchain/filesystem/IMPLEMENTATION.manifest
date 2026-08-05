@@ -51,7 +51,7 @@ src/core/afriai/nucchain/manifests/AFDS004AfriDebugCoreManifest.js
 src/core/afriai/nucchain/manifests/AFDS005AfriDebugCoreImplementationManifest.js
 src/core/afriai/nucchain/manifests/AFDS006AfriDebugRuntimeLayerManifest.js
 src/core/afriai/nucchain/manifests/AFDS007AfriDebugIntelligenceLayerManifest.js
-src/core/afriai/nucchain/manifests/AFDS008AfriDebugAutonomousRepairOrchestrationManifest.js
+src/core/afriai/nucchain/manifests/AFDS008AfriDebugIntelligenceOrchestrationManifest.js
 src/core/afriai/nucchain/manifests/AFDS009AfriDebugRepairIntelligenceRuntimeHardeningManifest.js
 src/core/afriai/nucchain/manifests/AFDS010AfriDebugGovernanceLearningMemoryManifest.js
 src/core/afriai/nucchain/manifests/AFDS019AfriDebugProductionActivationGateManifest.js

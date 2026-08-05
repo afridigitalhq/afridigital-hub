@@ -1,9 +1,9 @@
-const AFDS008AfriDebugAutonomousRepairOrchestrationManifest = {
+const AFDS008AfriDebugIntelligenceOrchestrationManifest = {
   id: "AFDS-008",
 
   source: "AfriDebug Intelligence Layer",
 
-  target: "AfriDigital-hub/src/core/afridebug/autorepair",
+  target: "AfriDigital-hub/src/core/afriai/debug/intelligence",
 
   modules: [
     "repair-plans",
@@ -28,4 +28,4 @@ const AFDS008AfriDebugAutonomousRepairOrchestrationManifest = {
   createdAt: Date.now()
 };
 
-export default AFDS008AfriDebugAutonomousRepairOrchestrationManifest;
+export default AFDS008AfriDebugIntelligenceOrchestrationManifest;
