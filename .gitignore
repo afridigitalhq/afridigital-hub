@@ -6,3 +6,5 @@ src/soc-os/_disabled_entry_backup/
 
 .afri/
 vite.log
+
+.afridebug/keys/*.pem
