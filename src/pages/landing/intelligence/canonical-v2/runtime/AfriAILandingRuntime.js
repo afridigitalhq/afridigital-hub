@@ -126,6 +126,7 @@ class AfriAILandingRuntime{
 
 
       const data=result?.data || result;
+      const response=data?.response || data;
 
       this.state={
         ...this.state,
@@ -134,7 +135,7 @@ class AfriAILandingRuntime{
           ...this.state.messages,
           {
             role:"assistant",
-            content:data?.reply || "AfriAI is ready."
+            content:response?.reply || "AfriAI is ready."
           }
         ],
 
