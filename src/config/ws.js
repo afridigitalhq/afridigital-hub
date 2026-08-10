@@ -1,4 +1,4 @@
-const WS_BASE = "wss://API.base";
+const WS_BASE = "wss://afridigital-api.onrender.com";
 
 export const WS = {
   base: WS_BASE,
