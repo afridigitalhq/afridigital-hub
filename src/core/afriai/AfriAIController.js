@@ -1,7 +1,8 @@
-import EventStream from "../bridge/EventStream";
-import ModuleSwitcher from "../dashboard/ModuleSwitcher";
-import ControlRoomRuntime from "../runtime/ControlRoomRuntime";
-import AfriAIDebugTool from "./tools/debug/AfriAIDebugTool";
+import EventStream from "../../control-room/bridge/EventStream.js";
+import ModuleSwitcher from "../../control-room/dashboard/ModuleSwitcher.js";
+import ControlRoomRuntime from "../../control-room/runtime/ControlRoomRuntime.js";
+import AfriAIDebugTool from "./tools/debug/AfriAIDebugTool.js";
+import DecisionEngine from "../../control-room/afrai/DecisionEngine.js";
 
 const AfriAIController = {
   execute(input) {
@@ -15,6 +16,15 @@ const AfriAIController = {
         source: "afriai",
         authority: "ecosystem"
       });
+    }
+
+    // AfriAI knowledge decision routing
+    const decision = DecisionEngine.decide(input);
+    if (
+      decision.action === "knowledge_route" ||
+      decision.action === "knowledge_rejected"
+    ) {
+      return decision;
     }
 
     // runtime control

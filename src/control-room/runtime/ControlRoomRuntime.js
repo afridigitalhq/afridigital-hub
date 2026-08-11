@@ -1,5 +1,5 @@
-import ControlRoomBridge from "../bridge/ControlRoomBridge";
-import EventStream from "../bridge/EventStream";
+import ControlRoomBridge from "../bridge/ControlRoomBridge.js";
+import EventStream from "../bridge/EventStream.js";
 
 const ControlRoomRuntime = {
   initialized: false,
