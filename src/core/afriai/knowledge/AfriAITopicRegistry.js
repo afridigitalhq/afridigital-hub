@@ -1,0 +1,1 @@
+const AfriAITopicRegistry={topics:new Map(),register(topic){if(!topic?.id||!topic?.name)return false;if(!this.topics.has(topic.id))this.topics.set(topic.id,Object.freeze({...topic}));return true},resolve(id){return this.topics.get(id)||null},getAll(){return[...this.topics.values()]}};export default AfriAITopicRegistry;

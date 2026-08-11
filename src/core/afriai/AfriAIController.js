@@ -1,10 +1,21 @@
 import EventStream from "../bridge/EventStream";
 import ModuleSwitcher from "../dashboard/ModuleSwitcher";
 import ControlRoomRuntime from "../runtime/ControlRoomRuntime";
+import AfriAIDebugTool from "./tools/debug/AfriAIDebugTool";
 
 const AfriAIController = {
   execute(input) {
     const command = input.toLowerCase();
+
+    // AfriDebug intent routing
+    const debugIntent = /afridebug|afri debug|debug|diagnos|investigat|runtime issue|error|bug report/.test(command);
+    if (debugIntent) {
+      return AfriAIDebugTool.execute({
+        command: input,
+        source: "afriai",
+        authority: "ecosystem"
+      });
+    }
 
     // runtime control
     if (command.includes("init")) {
