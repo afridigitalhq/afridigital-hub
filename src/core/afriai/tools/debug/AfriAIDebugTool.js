@@ -1,18 +1,26 @@
-import AfriAIDebugBridge from "../../debug/bridge/AfriAIDebugBridge.js";
+import AfriDebugCore from "../../../afridebug/AfriDebugCore.js";
 
 const AfriAIDebugTool = {
-
   name: "AfriDebug",
 
   description:
     "Analyzes AfriAI errors, runtime issues, knowledge gaps, and generates repair intelligence.",
 
-  execute(input = {}){
+  execute(input = {}) {
+    const mode =
+      input.authority === "admin"
+        ? "admin"
+        : input.authority === "studio"
+          ? "studio"
+          : "ecosystem";
 
-    return AfriAIDebugBridge.analyze(input);
-
+    return AfriDebugCore.inspect({
+      ...input,
+      mode,
+      trustedAuthority:
+        mode === "admin" && input.trustedAuthority === true
+    });
   }
-
 };
 
 export default AfriAIDebugTool;
