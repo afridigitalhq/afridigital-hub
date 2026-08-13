@@ -27,19 +27,12 @@
 // AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
 // AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
 // DAG_GRAPH_LAYER_ACTIVE
-import { useEffect, useState } from "react";
-import { DagStore } from "./DAGRuntime";
+import { useState } from "react";
+import { DagStore } from "./DagCore";
 
 export default function DagInspector() {
   const [events, setEvents] = useState(DagStore.events);
 
-  useEffect(() => {
-    const handler = (e) => {
-      setEvents([...DagStore.events]);
-    };
-    window.addEventListener("DAG_EVENT", handler);
-    return () => window.removeEventListener("DAG_EVENT", handler);
-  }, []);
 
   return (
     <div style={{ padding: 10, color: "#0f0", fontFamily: "monospace" }}>

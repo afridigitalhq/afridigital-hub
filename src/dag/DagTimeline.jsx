@@ -29,7 +29,7 @@
 // AFRIDIGITAL_DAG_GRAPH_LAYER_ACTIVE
 // DAG_GRAPH_LAYER_ACTIVE
 import { useState } from "react";
-import { DagStore } from "./DAGRuntime";
+import { DagStore } from "./DagCore";
 
 export default function DagTimeline() {
   const [index, setIndex] = useState(DagStore.events.length);
@@ -37,7 +37,7 @@ export default function DagTimeline() {
   const stepBack = () => setIndex(i => Math.max(0, i - 1));
   const stepForward = () => setIndex(i => Math.min(DagStore.events.length, i + 1));
 
-  const event = DagStore.replaySnapshot(index);
+  const event = DagStore.travel(index);
 
   return (
     <div style={{ padding: 10 }}>

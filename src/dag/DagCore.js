@@ -18,7 +18,6 @@ export const DagStore = {
     };
     this.events.push(event);
     this.pointers.head = this.events.length - 1;
-    // BLOCKED_ESCAPE_TO_DAGRUNTIME(new CustomEvent("DAG_EVENT", { detail: event }));
     return event;
   },
 
