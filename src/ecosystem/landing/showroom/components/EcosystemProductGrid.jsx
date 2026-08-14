@@ -20,7 +20,7 @@ const products = [
   LandingShowroomRegistry.flagship,
   ...LandingShowroomRegistry.tier1,
   ...LandingShowroomRegistry.tier2
-].filter(product => product && product.status !== "HIDDEN");
+].filter(product => product && product.status !== "HIDDEN" && product.showcase !== false);
 
 export default function EcosystemProductGrid(){
 
@@ -41,6 +41,12 @@ export default function EcosystemProductGrid(){
           <h3>
             {product.name}
           </h3>
+
+          {product.tagline && (
+            <p className="ecosystem-service-tagline">
+              {product.tagline}
+            </p>
+          )}
 
         </article>
 

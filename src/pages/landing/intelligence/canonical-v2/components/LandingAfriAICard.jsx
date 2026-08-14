@@ -1,7 +1,6 @@
 import LandingAfriAIAvatar from "./LandingAfriAIAvatar";
 import LandingAfriAIConversation from "./LandingAfriAIConversation";
 import LandingAfriAIComposer from "./LandingAfriAIComposer";
-import LandingAfriAIServiceDock from "./LandingAfriAIServiceDock";
 
 export default function LandingAfriAICard({
   status,
@@ -24,7 +23,7 @@ export default function LandingAfriAICard({
 }){
 
   return(
-    <section className="landing-afriai-card" style={{border:"3px solid #00ff88",minHeight:"700px"}}>
+    <section className="landing-afriai-card" style={{border:"3px solid #00ff88",minHeight:"560px"}}>
 
       <div className="landing-afriai-topbar">
 
@@ -46,10 +45,6 @@ export default function LandingAfriAICard({
 
         <LandingAfriAIConversation
           messages={messages}
-        />
-
-        <LandingAfriAIServiceDock
-          suggestions={suggestions}
         />
 
         <LandingAfriAIComposer

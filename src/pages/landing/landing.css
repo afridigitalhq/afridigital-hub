@@ -723,6 +723,58 @@ button:hover {
 
 }
 
+.ecosystem-service-tagline{
+
+  max-width:280px;
+
+  margin:10px auto 0;
+
+  color:rgba(255,255,255,.72);
+
+  font-size:1rem;
+
+  line-height:1.5;
+
+  font-weight:400;
+
+}
+
+.ecosystem-service-card-featured{
+
+  min-height:260px;
+
+  border-width:1.5px;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--afri-primary-soft),
+      rgba(5,11,24,.92)
+    );
+
+}
+
+.ecosystem-service-card-featured .ecosystem-service-icon{
+
+  font-size:82px;
+
+  margin-bottom:12px;
+
+}
+
+.ecosystem-service-card-featured h3{
+
+  font-size:1.4rem;
+
+}
+
+.ecosystem-service-card-featured .ecosystem-service-tagline{
+
+  max-width:340px;
+  margin-top:6px;
+
+}
+
 
 @media(max-width:600px){
 
@@ -752,7 +804,7 @@ button:hover {
   margin:0 auto;
 }
 
-.ecosystem-service-card-featured .ecosystem-service-icon{height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.ecosystem-service-card-featured .ecosystem-service-icon{height:145px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
 .ecosystem-service-card-featured .ecosystem-service-icon img{width:100%;max-width:220px;height:160px;object-fit:contain;border-radius:18px;display:block;margin:0 auto;}
 
 
@@ -837,5 +889,13 @@ button:hover {
 .landing-auth-cta button:hover{
   background:var(--afri-primary);
   transform:translateY(-3px);
+}
+
+
+/* ===== AfriDesign Studio Flagship Content Position ===== */
+.ecosystem-service-card-featured > .ecosystem-service-icon,
+.ecosystem-service-card-featured > h3,
+.ecosystem-service-card-featured > .ecosystem-service-tagline{
+  transform:translateY(-10px);
 }
 
