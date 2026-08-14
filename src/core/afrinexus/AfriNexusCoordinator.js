@@ -64,6 +64,12 @@ const AfriNexusCoordinator = {
 
     const verification = AfriNexusVerificationEngine.prepare({
       batch,
+      scope: {
+        targets: targets.map(target => target.name)
+      },
+      investigation,
+      handovers,
+      afriFix: afriFixPlan,
       afriBuild: afriBuildPlan
     });
 
