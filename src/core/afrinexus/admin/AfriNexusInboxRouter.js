@@ -1,8 +1,4 @@
-const inboxes = {
-  visitor: [],
-  client: [],
-  watchdog: []
-};
+import AfriNexusAdminInbox from "./AfriNexusAdminInbox.js";
 
 const AfriNexusInboxRouter = {
 
@@ -18,31 +14,22 @@ const AfriNexusInboxRouter = {
       inbox = "watchdog";
     }
 
-    const item = {
-      id:`AFN-${Date.now()}`,
-      inbox,
-      status:"PENDING_REVIEW",
-      ...report,
-      createdAt:Date.now()
-    };
-
-    inboxes[inbox].push(item);
-
-    return item;
+    return AfriNexusAdminInbox.push({
+      id: report.id,
+      source: inbox,
+      target: report.target || "unknown",
+      message: report.message || "",
+      priority: report.priority || "normal",
+      artifact: report.artifact || null
+    });
   },
-
 
   getInbox(type) {
-    return inboxes[type] || [];
+    return AfriNexusAdminInbox.list(type);
   },
 
-
   summary() {
-    return {
-      visitor: inboxes.visitor.length,
-      client: inboxes.client.length,
-      watchdog: inboxes.watchdog.length
-    };
+    return AfriNexusAdminInbox.summary();
   }
 
 };
