@@ -7,6 +7,7 @@ import AfriBuildBatchPlanner from "../afribuild/batches/AfriBuildBatchPlanner.js
 import AfriNexusMissionIntentClassifier from "./mission/AfriNexusMissionIntentClassifier.js";
 import AfriNexusMissionScopeResolver from "./mission/AfriNexusMissionScopeResolver.js";
 import AfriNexusVerificationEngine from "./verification/AfriNexusVerificationEngine.js";
+import AfriNexusMissionEvidenceArtifact from "./evidence/AfriNexusMissionEvidenceArtifact.js";
 
 const AfriNexusCoordinator = {
 
@@ -73,6 +74,24 @@ const AfriNexusCoordinator = {
       afriBuild: afriBuildPlan
     });
 
+    const evidenceArtifact =
+      AfriNexusMissionEvidenceArtifact.generate({
+        type: "AFRINEXUS_ORCHESTRATION_RESULT",
+        batch,
+        missionScope,
+        discovery,
+        investigation,
+        handovers,
+        afriFix: afriFixPlan,
+        afriBuild: afriBuildPlan,
+        verification,
+        approvalGate: {
+          required: true,
+          approved: false,
+          stage: "human_review"
+        }
+      });
+
 
     return {
       type: "AFRINEXUS_ORCHESTRATION_RESULT",
@@ -95,6 +114,8 @@ const AfriNexusCoordinator = {
       afriBuild: afriBuildPlan,
 
       verification,
+
+      evidenceArtifact,
 
       approvalGate: {
         required: true,
