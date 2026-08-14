@@ -23,6 +23,13 @@ const AfriControlCenterDashboardBridge = {
   },
 
 
+  security(){
+
+    return API.security();
+
+  },
+
+
   dashboard(){
 
     return {
@@ -36,7 +43,10 @@ const AfriControlCenterDashboardBridge = {
         this.modules(),
 
       health:
-        this.health()
+        this.health(),
+
+      security:
+        this.security()
 
     };
 

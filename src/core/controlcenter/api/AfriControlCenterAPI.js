@@ -1,4 +1,5 @@
 import Runtime from "../runtime/AfriControlCenterRuntime.js";
+import AfriAIGatewaySecuritySnapshot from "../../afriai/gateway/AfriAIGatewaySecuritySnapshot.js";
 
 const AfriControlCenterAPI = {
 
@@ -26,6 +27,13 @@ const AfriControlCenterAPI = {
   report(){
 
     return Runtime.report();
+
+  },
+
+
+  security(){
+
+    return AfriAIGatewaySecuritySnapshot.capture();
 
   },
 
