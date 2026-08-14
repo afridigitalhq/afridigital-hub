@@ -17,9 +17,10 @@ const PRODUCT_ICONS = Object.freeze({
 });
 
 const products = [
+  LandingShowroomRegistry.flagship,
   ...LandingShowroomRegistry.tier1,
   ...LandingShowroomRegistry.tier2
-].filter(product => product.status !== "HIDDEN");
+].filter(product => product && product.status !== "HIDDEN");
 
 export default function EcosystemProductGrid(){
 
@@ -30,7 +31,7 @@ export default function EcosystemProductGrid(){
 
         <article
           key={product.id}
-          className="ecosystem-service-card"
+          className={`ecosystem-service-card${product.flagship ? " ecosystem-service-card-featured" : ""}`}
         >
 
           <div className="ecosystem-service-icon">
