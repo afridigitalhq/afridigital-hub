@@ -25,21 +25,27 @@ const AfriNexusVerificationEngine = {
     };
   },
 
-  execute(plan, reviewer = "admin") {
-    if (!plan.approved) {
+  execute(plan, approvalDecision = {}) {
+
+    const approved =
+      approvalDecision?.gate?.approved === true;
+
+    if (!approved) {
       return {
         type: "AFRINEXUS_VERIFICATION_BLOCKED",
-        reason: "Human approval required",
-        allowed: false
+        reason: "Valid human approval decision required",
+        allowed: false,
+        approvalRequired: true
       };
     }
 
     return {
       type: "AFRINEXUS_VERIFICATION_COMPLETE",
       missionId: plan.missionId,
-      verifiedBy: reviewer,
+      verifiedBy: approvalDecision.gate.reviewer || "human",
       status: "PASSED",
       evidenceGenerated: true,
+      approvalArtifact: approvalDecision.type,
       timestamp: Date.now()
     };
   }
