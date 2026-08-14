@@ -1,7 +1,7 @@
 const AfriAIKillSwitch = {
   state: {
-    enabled: true,
-    reason: null,
+    enabled: false,
+    reason: "startup_safety_lock",
     timestamp: null
   },
 
