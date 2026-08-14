@@ -10,7 +10,8 @@ const AfriAIKillSwitch = {
     if (
       !approval ||
       approval.type !== "AFRINEXUS_APPROVAL_DECISION" ||
-      approval.gate?.approved !== true
+      approval.executionAllowed !== true ||
+      approval.registry?.complete !== true
     ) {
       return {
         enabled: false,
