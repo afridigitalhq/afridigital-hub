@@ -1,3 +1,5 @@
+import AfriNexusAIGatewayEvidenceAdapter from "./AfriNexusAIGatewayEvidenceAdapter.js";
+
 const AfriNexusMissionEvidenceArtifact = {
 
   generate(result = {}) {
@@ -52,6 +54,8 @@ const AfriNexusMissionEvidenceArtifact = {
       security: {
         aiGateway: {
           killSwitch: result.security?.aiGateway?.killSwitch || null,
+          audit:
+            AfriNexusAIGatewayEvidenceAdapter.collect(),
           approvalRequired: true,
           executionAllowed: false
         }
