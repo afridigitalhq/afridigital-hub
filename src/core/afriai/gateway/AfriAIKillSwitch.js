@@ -5,10 +5,24 @@ const AfriAIKillSwitch = {
     timestamp: null
   },
 
-  enable(){
+  enable(approval = null){
+
+    if (
+      !approval ||
+      approval.type !== "AFRINEXUS_APPROVAL_DECISION" ||
+      approval.gate?.approved !== true
+    ) {
+      return {
+        enabled: false,
+        reason: "valid_afrinexus_approval_required",
+        timestamp: Date.now()
+      };
+    }
+
     this.state.enabled = true;
     this.state.reason = null;
     this.state.timestamp = Date.now();
+
     return this.state;
   },
 
