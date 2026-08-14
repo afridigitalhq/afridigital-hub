@@ -13,10 +13,9 @@ const AfriAIGovernedCore = {
     const orchestrated = AfriAIOrchestrator.run(input);
 
     // 3. Cross-ecosystem planning
-    const crossPlan = AfriAICrossBrain.execute(input);
+    const crossPlan = AfriAICrossBrain.analyze(input);
 
     const workflow = [
-      ...(crossPlan || []),
       ...(orchestrated?.execution ? [orchestrated.execution] : [])
     ];
 
