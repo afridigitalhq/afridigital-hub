@@ -9,6 +9,7 @@ import AfriNexusMissionScopeResolver from "./mission/AfriNexusMissionScopeResolv
 import AfriNexusVerificationEngine from "./verification/AfriNexusVerificationEngine.js";
 import AfriNexusMissionEvidenceArtifact from "./evidence/AfriNexusMissionEvidenceArtifact.js";
 import AfriNexusReviewGateway from "./admin/AfriNexusReviewGateway.js";
+import AfriAIGatewayInvestigationAdapter from "../afriai/gateway/AfriAIGatewayInvestigationAdapter.js";
 
 const AfriNexusCoordinator = {
 
@@ -75,6 +76,9 @@ const AfriNexusCoordinator = {
       afriBuild: afriBuildPlan
     });
 
+    const aiGatewayEvidence =
+      AfriAIGatewayInvestigationAdapter.collect();
+
     const evidenceArtifact =
       AfriNexusMissionEvidenceArtifact.generate({
         type: "AFRINEXUS_ORCHESTRATION_RESULT",
@@ -86,6 +90,9 @@ const AfriNexusCoordinator = {
         afriFix: afriFixPlan,
         afriBuild: afriBuildPlan,
         verification,
+        security: {
+          aiGateway: aiGatewayEvidence.evidence
+        },
         approvalGate: {
           required: true,
           approved: false,

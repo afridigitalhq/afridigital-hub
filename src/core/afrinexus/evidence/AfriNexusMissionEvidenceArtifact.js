@@ -49,6 +49,14 @@ const AfriNexusMissionEvidenceArtifact = {
 
       verification: result.verification || null,
 
+      security: {
+        aiGateway: {
+          killSwitch: result.security?.aiGateway?.killSwitch || null,
+          approvalRequired: true,
+          executionAllowed: false
+        }
+      },
+
       approvalGate: result.approvalGate || {
         required: true,
         approved: false
