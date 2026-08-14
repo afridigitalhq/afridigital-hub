@@ -1,4 +1,5 @@
 import AfriAIGatewayExecutionAudit from "../../afriai/gateway/AfriAIGatewayExecutionAudit.js";
+import AfriAIGatewaySecuritySnapshot from "../../afriai/gateway/AfriAIGatewaySecuritySnapshot.js";
 
 const AfriNexusAIGatewayEvidenceAdapter = {
 
@@ -7,6 +8,9 @@ const AfriNexusAIGatewayEvidenceAdapter = {
     const executions = AfriAIGatewayExecutionAudit.list();
 
     return {
+      securitySnapshot:
+        AfriAIGatewaySecuritySnapshot.capture(),
+
       killSwitch:
         executions.at(-1)?.authorization || null,
 
