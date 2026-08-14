@@ -8,6 +8,7 @@ import AfriNexusMissionIntentClassifier from "./mission/AfriNexusMissionIntentCl
 import AfriNexusMissionScopeResolver from "./mission/AfriNexusMissionScopeResolver.js";
 import AfriNexusVerificationEngine from "./verification/AfriNexusVerificationEngine.js";
 import AfriNexusMissionEvidenceArtifact from "./evidence/AfriNexusMissionEvidenceArtifact.js";
+import AfriNexusReviewGateway from "./admin/AfriNexusReviewGateway.js";
 
 const AfriNexusCoordinator = {
 
@@ -92,6 +93,9 @@ const AfriNexusCoordinator = {
         }
       });
 
+    const reviewPackage =
+      AfriNexusReviewGateway.submitArtifact(evidenceArtifact);
+
 
     return {
       type: "AFRINEXUS_ORCHESTRATION_RESULT",
@@ -116,6 +120,8 @@ const AfriNexusCoordinator = {
       verification,
 
       evidenceArtifact,
+
+      reviewPackage,
 
       approvalGate: {
         required: true,
