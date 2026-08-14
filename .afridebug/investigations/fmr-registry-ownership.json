@@ -1,0 +1,459 @@
+{
+  "type": "AFRIDEBUG_FMR_REGISTRY_OWNERSHIP",
+  "status": "ownership_probe_ready",
+  "repository": "AfriDigital-hub",
+  "objective": "Identify the authoritative global product/ecosystem registry that should own FMR experiences beyond the five feature plugins, without modifying or deleting existing surfaces",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "candidateFiles": [
+    {
+      "file": "src/core/admin/afridesign/AfriDesignRegistry.js",
+      "size": 260,
+      "signals": 3
+    },
+    {
+      "file": "src/core/admin/modules/afrishop/AfriShopAdminController.js",
+      "size": 520,
+      "signals": 6
+    },
+    {
+      "file": "src/core/afriads/admin/registry/AfriAdsAdminCampaignRegistry.js",
+      "size": 367,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriads/admin/registry/AfriAdsAdminRegistryConsumers.js",
+      "size": 210,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriads/assets/AfriAdsCreativeAssetRegistry.js",
+      "size": 378,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriads/assets/AfriAdsCreativeAssetTypes.js",
+      "size": 198,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afriads/audience/AfriAdsAudienceRegistry.js",
+      "size": 308,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriads/campaigns/AfriAdsCampaignRegistry.js",
+      "size": 400,
+      "signals": 5
+    },
+    {
+      "file": "src/core/afriads/products/AfriAdsProductLinkRegistry.js",
+      "size": 406,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriads/promotions/AfriAdsCouponRegistry.js",
+      "size": 355,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriads/publishing/AfriAdsAdminPublisher.js",
+      "size": 298,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afriai/capabilities/AfriAICapabilityResolver.js",
+      "size": 1391,
+      "signals": 10
+    },
+    {
+      "file": "src/core/afriai/knowledge/AfriAIKnowledgeRegistry.js",
+      "size": 804,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriai/knowledge/AfriAIKnowledgeRouter.js",
+      "size": 793,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriai/knowledge/AfriAIPaymentsKnowledge.js",
+      "size": 1114,
+      "signals": 6
+    },
+    {
+      "file": "src/core/afriai/knowledge/AfriAITopicRegistry.js",
+      "size": 321,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriai/nucchain/AfriNucChainEngine.js",
+      "size": 5056,
+      "signals": 7
+    },
+    {
+      "file": "src/core/afriai/nucchain/artifacts/AfriNucChainArtifactManager.js",
+      "size": 1785,
+      "signals": 10
+    },
+    {
+      "file": "src/core/afriai/nucchain/artifacts/storage/artifact-registry.json",
+      "size": 40675,
+      "signals": 210
+    },
+    {
+      "file": "src/core/afriai/nucchain/manifests/AFDS004AfriDebugCoreManifest.js",
+      "size": 504,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriai/nucchain/manifests/AFDS005AfriDebugCoreImplementationManifest.js",
+      "size": 525,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afriai/nucchain/manifests/AFDS010AfriDebugGovernanceLearningMemoryManifest.js",
+      "size": 620,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afriai/nucchain/manifests/AFDS011ProductRegistryMigrationManifest.js",
+      "size": 899,
+      "signals": 7
+    },
+    {
+      "file": "src/core/afriai/nucchain/manifests/migrations/Batch15ProductRegistryMigration.js",
+      "size": 664,
+      "signals": 8
+    },
+    {
+      "file": "src/core/afriai/nucchain/materialization/operations/registry/AfriNucChainOperationRegistry.js",
+      "size": 575,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriai/nucchain/materialization/operations/validation/AfriNucChainOperationValidator.js",
+      "size": 757,
+      "signals": 4
+    },
+    {
+      "file": "src/core/afriai/nucchain/operations/AFDS011ProductRegistryOperation.js",
+      "size": 757,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriai/nucchain/registry/AfriNucChainMigrationRegistry.js",
+      "size": 904,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriai/nucchain/runs/AFDS011Run.js",
+      "size": 386,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afriai/nucchain/templates/TemplateRegistry.js",
+      "size": 57,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afriai/nucchain/tests/AFDS011DryRun.js",
+      "size": 415,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriai/partials/executor/AfriAIExecutor.js",
+      "size": 790,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afriboost/earnings/AfriBoostWorkerEarningsRegistry.js",
+      "size": 709,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriboost/owner/AfriBoostOwnerDashboardRegistry.js",
+      "size": 579,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afriboost/profile/AfriBoostWorkerProfileRegistry.js",
+      "size": 536,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "size": 133,
+      "signals": 3
+    },
+    {
+      "file": "src/core/africctv/runtime/index.js",
+      "size": 536,
+      "signals": 2
+    },
+    {
+      "file": "src/core/africctv/runtime/registry/CameraRegistry.js",
+      "size": 39,
+      "signals": 1
+    },
+    {
+      "file": "src/core/africctv/runtime/registry/ProviderRegistry.js",
+      "size": 41,
+      "signals": 1
+    },
+    {
+      "file": "src/core/africctv/runtime/status/StatusRegistry.js",
+      "size": 39,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afrimarket/products/AfriMarketProductEngine.js",
+      "size": 479,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afrimarket/products/AfriMarketProductRegistry.js",
+      "size": 153,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afrishop/catalog/AfriShopCatalogEngine.js",
+      "size": 461,
+      "signals": 6
+    },
+    {
+      "file": "src/core/afrishop/catalog/products.registry.js",
+      "size": 158,
+      "signals": 1
+    },
+    {
+      "file": "src/core/afrishop/digital/AfriShopDigitalCatalog.js",
+      "size": 169,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afrishop/digital/AfriShopDigitalProductService.js",
+      "size": 276,
+      "signals": 4
+    },
+    {
+      "file": "src/core/afrishop/services/AfriShopProductService.js",
+      "size": 297,
+      "signals": 5
+    },
+    {
+      "file": "src/core/afrishop/services/AfriShopRegistryService.js",
+      "size": 808,
+      "signals": 15
+    },
+    {
+      "file": "src/core/afritick/benefits/AfriTickBenefitsRegistry.js",
+      "size": 534,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afritick/identity/AfriTickIdentityRegistry.js",
+      "size": 217,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afritick/integration/AfriTickConsumerRegistry.js",
+      "size": 240,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afritick/plans/AfriTickPlanRegistry.js",
+      "size": 376,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afritick/runtime/AfriTickRuntimeRegistry.js",
+      "size": 318,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afritick/services/AfriTickServiceRegistry.js",
+      "size": 236,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afritick/trust/AfriTickTrustRegistry.js",
+      "size": 403,
+      "signals": 3
+    },
+    {
+      "file": "src/core/afritrust/profiles/AfriTrustProductProfileRegistry.js",
+      "size": 226,
+      "signals": 2
+    },
+    {
+      "file": "src/core/afrivision/runtime/ui-adapters/AfriVisionDashboardRuntime.js",
+      "size": 1620,
+      "signals": 1
+    },
+    {
+      "file": "src/core/billing/universal/engine/BillingExecutionPipeline.js",
+      "size": 1126,
+      "signals": 3
+    },
+    {
+      "file": "src/core/billing/universal/guards/StrategyAccessGuard.js",
+      "size": 286,
+      "signals": 2
+    },
+    {
+      "file": "src/core/billing/universal/strategies/StrategyRegistry.js",
+      "size": 652,
+      "signals": 3
+    },
+    {
+      "file": "src/core/bus/AfriEventBus.js",
+      "size": 1861,
+      "signals": 1
+    },
+    {
+      "file": "src/core/controlcenter/admin/registry/AfriControlCenterAdminModuleRegistry.js",
+      "size": 480,
+      "signals": 3
+    },
+    {
+      "file": "src/core/controlcenter/admin/runtime/AfriControlCenterAdminRuntime.js",
+      "size": 674,
+      "signals": 4
+    },
+    {
+      "file": "src/core/controlcenter/frontend/components/registry/AfriControlCenterComponentRegistry.js",
+      "size": 498,
+      "signals": 3
+    },
+    {
+      "file": "src/core/controlcenter/frontend/runtime/AfriControlCenterUIRuntime.js",
+      "size": 589,
+      "signals": 4
+    },
+    {
+      "file": "src/core/controlcenter/frontend/shell/AfriControlCenterDashboardShellContract.js",
+      "size": 773,
+      "signals": 1
+    },
+    {
+      "file": "src/core/controlcenter/registry/AfriControlCenterRegistry.js",
+      "size": 447,
+      "signals": 3
+    },
+    {
+      "file": "src/core/controlcenter/runtime/AfriControlCenterRuntime.js",
+      "size": 715,
+      "signals": 4
+    },
+    {
+      "file": "src/core/layout/AfriDigitalLayoutEngine.jsx",
+      "size": 834,
+      "signals": 4
+    },
+    {
+      "file": "src/core/runtime/AfriRuntimeBootstrap.js",
+      "size": 241,
+      "signals": 4
+    },
+    {
+      "file": "src/core/runtime/AfriRuntimeRegistry.js",
+      "size": 925,
+      "signals": 13
+    },
+    {
+      "file": "src/core/runtime/ModuleRegistry.js",
+      "size": 324,
+      "signals": 2
+    },
+    {
+      "file": "src/core/runtime/adapters/UnifiedPluginRegistry.js",
+      "size": 202,
+      "signals": 4
+    },
+    {
+      "file": "src/ecosystem/landing/catalog/LandingExperienceCatalog.js",
+      "size": 248,
+      "signals": 2
+    },
+    {
+      "file": "src/ecosystem/landing/catalog/LandingServiceCatalog.js",
+      "size": 461,
+      "signals": 2
+    },
+    {
+      "file": "src/ecosystem/landing/guards/LandingTruthGuard.js",
+      "size": 367,
+      "signals": 3
+    },
+    {
+      "file": "src/ecosystem/landing/registry/LandingEcosystemRegistry.js",
+      "size": 352,
+      "signals": 9
+    },
+    {
+      "file": "src/ecosystem/landing/registry/LandingShowroomRegistry.js",
+      "size": 1636,
+      "signals": 2
+    },
+    {
+      "file": "src/ecosystem/landing/registry/TruthSource.js",
+      "size": 430,
+      "signals": 9
+    },
+    {
+      "file": "src/ecosystem/landing/renderers/ServiceLayerRenderer.js",
+      "size": 263,
+      "signals": 2
+    },
+    {
+      "file": "src/ecosystem/landing/showroom/components/EcosystemProductGrid.jsx",
+      "size": 998,
+      "signals": 5
+    },
+    {
+      "file": "src/ecosystem/navigation/EventSourceResolver.js",
+      "size": 318,
+      "signals": 4
+    },
+    {
+      "file": "src/ecosystem/navigation/SourceCodeRegistry.js",
+      "size": 647,
+      "signals": 1
+    },
+    {
+      "file": "src/plugins/admin/adminPluginRegistry.js",
+      "size": 1919,
+      "signals": 1
+    },
+    {
+      "file": "src/plugins/user/userPluginRegistry.js",
+      "size": 2006,
+      "signals": 2
+    },
+    {
+      "file": "src/pages/user/dashboard/partials/PluginWorkspace.jsx",
+      "size": 1083,
+      "signals": 1
+    },
+    {
+      "file": "src/pages/user/sidebar/sections/SidebarNavigation.jsx",
+      "size": 1135,
+      "signals": 1
+    }
+  ],
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "rename": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "nextPhase": "AFRIDEBUG_FMR_FINAL_CORRELATION",
+  "timestamp": 1786655577119
+}

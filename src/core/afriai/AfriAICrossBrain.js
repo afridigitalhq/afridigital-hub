@@ -1,4 +1,4 @@
-import ModuleMountEngine from "../modules/ModuleMountEngine";
+import ModuleMountEngine from "../../control-room/afrai/modules/ModuleMountEngine.js";
 
 /**
  * Cross-Ecosystem Reasoning Layer

@@ -1,0 +1,82 @@
+=== AFRIAI CAPABILITY CONTRACT GAP ===
+Fri Aug 14 20:08:12 WAT 2026
+
+=== FEATURE CONTRACTS ===
+src/features/afriai/index.js
+src/features/africomm/index.js
+src/features/africommerce/index.js
+
+=== RUNTIME REGISTRY ===
+import * as afriRuntimeModuleRegistry from "../../runtime/modules/afriRuntimeModuleRegistry.js";
+import * as afriRuntimeServiceRegistry from "../../runtime/services/afriRuntimeServiceRegistry.js";
+import * as afriRuntimeFeatureRegistry from "../../runtime/features/afriRuntimeFeatureRegistry.js";
+import * as afriRuntimeDependencyRegistry from "../../runtime/dependencies/afriRuntimeDependencyRegistry.js";
+
+const runtimeModules = new Map();
+
+export const afriRuntimeRegistry = {
+  modules: afriRuntimeModuleRegistry,
+  services: afriRuntimeServiceRegistry,
+  features: afriRuntimeFeatureRegistry,
+  dependencies: afriRuntimeDependencyRegistry,
+
+  register(name, module) {
+    runtimeModules.set(name, module);
+  },
+
+  get(name) {
+    return runtimeModules.get(name);
+  },
+
+  has(name) {
+    return runtimeModules.has(name);
+  },
+
+  list() {
+    return [...runtimeModules.keys()];
+  }
+};
+
+export default afriRuntimeRegistry;
+
+=== ACTIVATION ENGINE ===
+/* Afri Runtime Module Activator */
+
+import { afriRuntimeRegistry } from "../../core/runtime/AfriRuntimeRegistry.js";
+import { recordRuntimeLifecycle } from "../runtimeLifecycle.js";
+
+export function activateRuntimeModule(name) {
+  const module = afriRuntimeRegistry.get(name);
+
+  if (!module) {
+    recordRuntimeLifecycle("MODULE_MISSING", { name });
+    return false;
+  }
+
+  if (module?.init && typeof module.init === "function") {
+    module.init();
+  }
+
+  recordRuntimeLifecycle("MODULE_ACTIVATED", { name });
+  return true;
+}
+
+export function activateAllModules() {
+  const modules = afriRuntimeRegistry.list();
+  return modules.map(name => activateRuntimeModule(name));
+}
+
+=== USER WHATSAPP MODULE ===
+
+=== CTA ===
+export default function AfriWhatsappCTA({ label = "Open AfriWhatsapp", context = "general", module = "unknown" }) {
+  const open = () => {
+    window.location.href = "/afriwhatsapp?context=" + encodeURIComponent(context) + "&module=" + encodeURIComponent(module);
+  };
+
+  return (
+    <button onClick={open}>
+      {label}
+    </button>
+  );
+}

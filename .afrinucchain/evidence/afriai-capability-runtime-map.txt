@@ -1,0 +1,162 @@
+=== AFRIAI CAPABILITY CONTRACT ===
+const AfriAICapabilityContract = Object.freeze({
+  required: ["id", "topic", "description", "operations", "provider"],
+  authorityLevels: Object.freeze(["ecosystem", "studio", "admin"]),
+  validate(capability = {}) {
+    const missing = this.required.filter((field) => {
+      if (field === "operations") return !Array.isArray(capability[field]);
+      return !capability[field];
+    });
+    if (missing.length) return { valid: false, missing };
+    if (!this.authorityLevels.includes(capability.authority || "ecosystem")) {
+      return { valid: false, reason: "INVALID_AUTHORITY_LEVEL" };
+    }
+    return { valid: true, missing: [] };
+  }
+});
+export default AfriAICapabilityContract;
+
+=== RESOLVER ===
+import AfriAIKnowledgeRegistry from "../knowledge/AfriAIKnowledgeRegistry.js";
+import AfriAITopicRegistry from "../knowledge/AfriAITopicRegistry.js";
+
+const AfriAICapabilityResolver = {
+  resolve(intent = {}) {
+    const { capability, topic, operation, provider } = intent;
+
+    if (capability) {
+      const result = AfriAIKnowledgeRegistry.resolve(capability);
+      if (result) return result;
+    }
+
+    if (topic) {
+      const topicDefinition = AfriAITopicRegistry.resolve(topic);
+      if (topicDefinition) {
+        if (operation) {
+          const results = AfriAIKnowledgeRegistry
+            .findByTopic(topic)
+            .filter(
+              (capability) =>
+                Array.isArray(capability.operations) &&
+                capability.operations.includes(operation)
+            );
+          if (results.length) return results[0];
+          return null;
+        }
+
+        const results = AfriAIKnowledgeRegistry.findByTopic(topic);
+        if (results.length) return results[0];
+      }
+    }
+
+    if (operation) {
+      const results = AfriAIKnowledgeRegistry.findByOperation(operation);
+      if (results.length) return results[0];
+      return null;
+    }
+
+    if (provider) {
+      const results = AfriAIKnowledgeRegistry.findByProvider(provider);
+      if (results.length) return results[0];
+    }
+
+    return null;
+  }
+};
+
+export default AfriAICapabilityResolver;
+
+=== ROUTER ===
+import AfriAICapabilityResolver from "./AfriAICapabilityResolver.js";
+
+const AfriAICapabilityRouter = {
+  route(intent = {}) {
+    const capability = AfriAICapabilityResolver.resolve(intent);
+
+    if (!capability) {
+      return {
+        routed: false,
+        status: "CAPABILITY_NOT_FOUND",
+        capability: null,
+        execution: {
+          allowed: false
+        }
+      };
+    }
+
+    return {
+      routed: true,
+      status: "CAPABILITY_RESOLVED",
+      capability: {
+        id: capability.id,
+        topic: capability.topic,
+        operations: capability.operations,
+        provider: capability.provider
+      },
+      execution: {
+        allowed: false,
+        approvalRequired: true,
+        authority: capability.authority || "ecosystem"
+      }
+    };
+  }
+};
+
+export default AfriAICapabilityRouter;
+
+=== GATEWAY RUNTIME ===
+import ExternalAIGateway from "./ExternalAIGateway.js";
+import AfriAIProviderExecutor from "./AfriAIProviderExecutor.js";
+import AfriAIGatewayExecutionAudit from "./AfriAIGatewayExecutionAudit.js";
+
+const AfriAIGatewayRuntime = {
+
+  async request({
+    provider,
+    payload = {},
+    approvalDecision = null
+  } = {}) {
+
+    const gatewayRequest =
+      ExternalAIGateway.request({
+        provider,
+        approvalDecision
+      });
+
+    const audit =
+      AfriAIGatewayExecutionAudit.record({
+        authorization:
+          gatewayRequest.authorization || {
+            allowed:false
+          },
+        provider:
+          gatewayRequest.provider,
+        approvalDecision
+      });
+
+    if (!gatewayRequest.allowed) {
+      return {
+        gateway: gatewayRequest,
+        audit,
+        executed:false
+      };
+    }
+
+    const execution =
+      await AfriAIProviderExecutor.execute(
+        provider,
+        payload
+      );
+
+    return {
+      gateway: gatewayRequest,
+      execution,
+      audit,
+      executed: execution.executed === true,
+      timestamp: Date.now()
+    };
+  }
+
+};
+
+export default AfriAIGatewayRuntime;

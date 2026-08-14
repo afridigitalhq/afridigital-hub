@@ -1,4 +1,4 @@
-import EcosystemServiceGrid from "../components/EcosystemServiceGrid";
+import EcosystemProductGrid from "../components/EcosystemProductGrid";
 
 export default function CanonicalShowroomRoot(){
 
@@ -7,7 +7,7 @@ export default function CanonicalShowroomRoot(){
 
       <section className="tier-showcase tier-services">
 
-        <EcosystemServiceGrid />
+        <EcosystemProductGrid />
 
       </section>
 

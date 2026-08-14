@@ -1,0 +1,35 @@
+{
+  "type": "AFRIDEBUG_FMR_NAVIGATION_OWNERSHIP",
+  "status": "navigation_ownership_inspection_ready",
+  "repository": "AfriDigital-hub",
+  "objective": "Determine how the existing FMR sidebar owns navigation, activePlugin state, product surfaces, ecosystem surfaces and account surfaces without modifying files",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "files": {
+    "src/pages/user/sidebar/sections/SidebarNavigation.jsx": "import React from \"react\";\nimport { getActiveUserPlugins } from \"../../../../plugins/user/userPluginRegistry\";\nimport { useUserNavigation } from \"../../context/UserNavigationContext\";\n\nexport default function SidebarNavigation() {\n  const plugins = getActiveUserPlugins();\n  const { activePlugin, setActivePlugin } = useUserNavigation();\n\n  const buttonStyle = (active) => ({\n    textAlign: \"left\",\n    padding: \"10px 14px\",\n    borderRadius: 8,\n    border: \"1px solid #2a2f45\",\n    background: active ? \"#1d4ed8\" : \"transparent\",\n    color: active ? \"#fff\" : \"inherit\",\n    cursor: \"pointer\"\n  });\n\n  return (\n    <nav style={{ display: \"flex\", flexDirection: \"column\", gap: 8, padding: 12 }}>\n      <button\n        style={buttonStyle(activePlugin === \"dashboard\")}\n        onClick={() => setActivePlugin(\"dashboard\")}\n      >\n        🏠 Dashboard\n      </button>\n\n      {plugins.map((plugin) => (\n        <button\n          key={plugin.key}\n          style={buttonStyle(activePlugin === plugin.key)}\n          onClick={() => setActivePlugin(plugin.key)}\n        >\n          {plugin.name}\n        </button>\n      ))}\n    </nav>\n  );\n}\n",
+    "src/pages/user/sidebar/sections/SidebarHeader.jsx": "import React from \"react\";\n\nexport default function SidebarHeader(){\n  return (\n    <section style={{padding:16,border:\"1px solid #2a2f45\",borderRadius:12}}>\n      <h3>SidebarHeader</h3>\n    </section>\n  );\n}\n",
+    "src/pages/user/sidebar/sections/SidebarFooter.jsx": "import React from \"react\";\n\nexport default function SidebarFooter(){\n  return (\n    <section style={{padding:16,border:\"1px solid #2a2f45\",borderRadius:12}}>\n      <h3>SidebarFooter</h3>\n    </section>\n  );\n}\n",
+    "src/pages/user/sidebar/items/DashboardItem.jsx": "import React from \"react\";\n\nexport default function DashboardItem(){\n  return (\n    <section style={{padding:16,border:\"1px solid #2a2f45\",borderRadius:12}}>\n      <h3>DashboardItem</h3>\n    </section>\n  );\n}\n",
+    "src/pages/user/sidebar/items/AfriCommerceItem.jsx": "import React from \"react\";\n\nexport default function AfriCommerceItem(){\n  return (\n    <section style={{padding:16,border:\"1px solid #2a2f45\",borderRadius:12}}>\n      <h3>AfriCommerceItem</h3>\n    </section>\n  );\n}\n",
+    "src/pages/user/sidebar/items/AfriCommItem.jsx": "import React from \"react\";\n\nexport default function AfriCommItem(){\n  return (\n    <section style={{padding:16,border:\"1px solid #2a2f45\",borderRadius:12}}>\n      <h3>AfriCommItem</h3>\n    </section>\n  );\n}\n",
+    "src/pages/user/sidebar/items/AfriCCTVItem.jsx": "import React from \"react\";\n\nexport default function AfriCCTVItem(){\n  return (\n    <section style={{padding:16,border:\"1px solid #2a2f45\",borderRadius:12}}>\n      <h3>AfriCCTVItem</h3>\n    </section>\n  );\n}\n",
+    "src/pages/user/sidebar/items/AfriDesignStudioItem.jsx": null,
+    "src/pages/user/modules/index.jsx": "export default function modules(){return null;}\n",
+    "src/pages/user/ecosystem/index.jsx": "export default function ecosystem(){return null;}\n",
+    "src/pages/user/account/index.jsx": "export default function account(){return null;}\n"
+  },
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "rename": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "nextPhase": "AFRIDEBUG_FMR_EXPERIENCE_ROUTING_PLAN",
+  "timestamp": 1786655216824
+}

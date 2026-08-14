@@ -1,0 +1,65 @@
+{
+  "type": "AFRIDEBUG_ANDROID_TECHNOLOGY_PROBE",
+  "repository": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+  "root": "/data/data/com.termux/files/home",
+  "counts": {
+    "kotlin": 657,
+    "java": 9425,
+    "flutter": 0,
+    "reactNative": 0,
+    "total": 10127
+  },
+  "samples": {
+    "kotlin": [
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/bean-serialization-services/org/gradle/internal/serialize/beans/services/BeanConstructors.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/bean-serialization-services/org/gradle/internal/serialize/beans/services/BeanPropertyReader.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/bean-serialization-services/org/gradle/internal/serialize/beans/services/BeanPropertyWriter.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/bean-serialization-services/org/gradle/internal/serialize/beans/services/BeanSchema.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/bean-serialization-services/org/gradle/internal/serialize/beans/services/BeanSerializationServices.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/bean-serialization-services/org/gradle/internal/serialize/beans/services/DefaultBeanStateReaderLookup.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/bean-serialization-services/org/gradle/internal/serialize/beans/services/DefaultBeanStateWriterLookup.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/configurationcache/ConfigurationCacheBuildOperations.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/BuildTreeConfigurationCache.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/CachedBuildState.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/CheckedFingerprint.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAction.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareBuildModelController.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareBuildToolingModelController.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareBuildTreeModelCreator.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareBuildTreeWorkController.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareBuildTreeWorkGraphPreparer.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareFinishExecutor.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareLocalComponentCache.kt",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/configuration-cache/org/gradle/internal/cc/impl/ConfigurationCacheAwareProjectEvaluator.kt"
+    ],
+    "java": [
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/AntlrPlugin.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/AntlrSourceDirectorySet.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/AntlrTask.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/AntlrExecuter.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/AntlrResult.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/AntlrSourceGenerationException.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/AntlrSpec.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/AntlrSpecFactory.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/DefaultAntlrSourceDirectorySet.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/antlr2/GenerationPlan.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/antlr2/GenerationPlanBuilder.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/antlr2/GrammarDelegate.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/antlr2/GrammarFileMetadata.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/antlr2/GrammarMetadata.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/antlr2/MetadataExtracter.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/internal/antlr2/XRef.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/antlr/org/gradle/api/plugins/antlr/package-info.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/base-asm/org/gradle/model/internal/asm/AsmClassGeneratorUtils.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/base-asm/org/gradle/model/internal/asm/AsmConstants.java",
+      "/data/data/com.termux/files/home/.gradle/wrapper/dists/gradle-8.14.3-all/10utluxaxniiv4wxiphsi49nj/gradle-8.14.3/src/base-asm/org/gradle/model/internal/asm/BytecodeFragment.java"
+    ],
+    "flutter": [],
+    "reactNative": []
+  },
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786659174245
+}

@@ -1,0 +1,5 @@
+=== AFRIAI GAP AUDIT ===
+src/core/afriai/gateway/providers/OpenAIProviderAdapter.js:const OpenAIProviderAdapter = {
+src/core/afriai/gateway/providers/OpenAIProviderAdapter.js:export default OpenAIProviderAdapter;
+=== FEATURE ===
+export default { name: 'afriai', status: 'stub-loaded' };

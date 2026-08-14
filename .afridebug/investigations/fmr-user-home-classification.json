@@ -1,0 +1,520 @@
+{
+  "type": "AFRIDEBUG_FMR_CANDIDATE_CLASSIFICATION",
+  "status": "classification_ready",
+  "repository": "AfriDigital-hub",
+  "sourceCorrelation": ".afridebug/investigations/fmr-user-home-correlation.json",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "counts": {
+    "FMR_SURFACE_CANDIDATE": 55,
+    "INDIRECTLY_REFERENCED": 8,
+    "POTENTIAL_DEAD_OR_ORPHAN": 5
+  },
+  "candidates": [
+    {
+      "path": "src/pages/user/account/Billing/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/Devices/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/HelpSupport/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/Organizations/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/Privacy/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/Profile/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/Security/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/Settings/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/account/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/layout/DashboardLayout.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 21
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/EcosystemGrid.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/FavoritesPanel.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/NotificationsPanel.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/PaymentCenter.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/ProductOverview.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/ProductOverviewGrid.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/PromotionsPanel.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/QuickActionsPanel.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/RecentActivity.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/SystemStatus.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/UserProfileSnapshot.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/WalletSummary.jsx",
+      "category": "INDIRECTLY_REFERENCED",
+      "inboundCount": 1,
+      "inbound": [
+        "src/pages/user/dashboard/layout/DashboardLayout.jsx"
+      ],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/Community/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/Discover/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/Events/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/FeaturedExperiences/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/Feedback/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/LearningCenter/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/Marketplace/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/Promotions/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/SupportCenter/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/ecosystem/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriAI/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriBank/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriBoost/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriCCTV/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriComm/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriCommerce/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriEducation/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriLogistics/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriLove/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriMetaWorld/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriScan/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriSports/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriTicking/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriTracker/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/AfriWork/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/EventBus/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/modules/index.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriBoostItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriCCTVItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriCommItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriCommerceItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriEducationItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriLogisticsItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriLoveItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriMetaWorldItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriSportsItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriTickingItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriTrackerItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/AfriWorkItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/pages/user/sidebar/items/DashboardItem.jsx",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/userhome/UserAppOSShell.json",
+      "category": "FMR_SURFACE_CANDIDATE",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 2
+    },
+    {
+      "path": "src/routes/cinematic.route.jsx",
+      "category": "POTENTIAL_DEAD_OR_ORPHAN",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/routes/control-plane.route.js",
+      "category": "POTENTIAL_DEAD_OR_ORPHAN",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/routes/controlPlane.entry.js",
+      "category": "POTENTIAL_DEAD_OR_ORPHAN",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/routes/controlPlane.route.js",
+      "category": "POTENTIAL_DEAD_OR_ORPHAN",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    },
+    {
+      "path": "src/routes/fallback.jsx",
+      "category": "POTENTIAL_DEAD_OR_ORPHAN",
+      "inboundCount": 0,
+      "inbound": [],
+      "fmrSignals": 0
+    }
+  ],
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "nextPhase": "AFRIDEBUG_REPAIR_PLAN_PENDING",
+  "timestamp": 1786655048001
+}

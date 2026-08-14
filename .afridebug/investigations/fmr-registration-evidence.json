@@ -1,0 +1,140 @@
+{
+  "type": "AFRIDEBUG_FMR_REGISTRATION_EVIDENCE",
+  "status": "EVIDENCE_REFINED",
+  "repository": "AfriDigital-hub",
+  "policy": {
+    "delete": false,
+    "autoRegister": false,
+    "execute": false,
+    "humanApprovalRequired": true
+  },
+  "results": [
+    {
+      "product": "AfriCCTV",
+      "registration": "CANDIDATE_ONLY",
+      "featureTargets": [],
+      "userSurfaces": [
+        "src/pages/user/modules/AfriCCTV/index.jsx",
+        "src/pages/user/sidebar/items/AfriCCTVItem.jsx"
+      ],
+      "coreSurfaces": [
+        "src/core/africctv/billing/AfriCCTVUsageNormalizerV2.js",
+        "src/core/africctv/billing/CCTVUsageNormalizerV2.js",
+        "src/core/africctv/contracts/RuntimeContract.js",
+        "src/core/africctv/diagnostics/RuntimeDiagnostics.js",
+        "src/core/africctv/hooks/useAfriCCTVStream.js",
+        "src/core/africctv/landing/LandingAIEvents.js",
+        "src/core/africctv/landing/LandingPreviewFeeds.js",
+        "src/core/africctv/landing/LandingRetention.js",
+        "src/core/africctv/landing/LandingStatus.js",
+        "src/core/africctv/live/AfriCCTVLiveClient.js"
+      ],
+      "evidenceCount": 63,
+      "approval": "PENDING_HUMAN_APPROVAL",
+      "execution": "BLOCKED",
+      "architectureClass": "USER_CORE_BACKED",
+      "decision": "OWNERSHIP_REVIEW_REQUIRED"
+    },
+    {
+      "product": "AfriTracker",
+      "registration": "CANDIDATE_ONLY",
+      "featureTargets": [],
+      "userSurfaces": [
+        "src/pages/user/modules/AfriTracker/index.jsx",
+        "src/pages/user/sidebar/items/AfriTrackerItem.jsx"
+      ],
+      "coreSurfaces": [],
+      "evidenceCount": 2,
+      "approval": "PENDING_HUMAN_APPROVAL",
+      "execution": "BLOCKED",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "decision": "OWNERSHIP_REVIEW_REQUIRED"
+    },
+    {
+      "product": "AfriTicking",
+      "registration": "CANDIDATE_ONLY",
+      "featureTargets": [],
+      "userSurfaces": [
+        "src/pages/user/modules/AfriTicking/index.jsx",
+        "src/pages/user/sidebar/items/AfriTickingItem.jsx"
+      ],
+      "coreSurfaces": [],
+      "evidenceCount": 2,
+      "approval": "PENDING_HUMAN_APPROVAL",
+      "execution": "BLOCKED",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "decision": "OWNERSHIP_REVIEW_REQUIRED"
+    },
+    {
+      "product": "AfriLove",
+      "registration": "CANDIDATE_ONLY",
+      "featureTargets": [],
+      "userSurfaces": [
+        "src/pages/user/modules/AfriLove/index.jsx",
+        "src/pages/user/sidebar/items/AfriLoveItem.jsx"
+      ],
+      "coreSurfaces": [],
+      "evidenceCount": 2,
+      "approval": "PENDING_HUMAN_APPROVAL",
+      "execution": "BLOCKED",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "decision": "OWNERSHIP_REVIEW_REQUIRED"
+    },
+    {
+      "product": "AfriEducation",
+      "registration": "CANDIDATE_ONLY",
+      "featureTargets": [],
+      "userSurfaces": [
+        "src/pages/user/modules/AfriEducation/index.jsx",
+        "src/pages/user/sidebar/items/AfriEducationItem.jsx"
+      ],
+      "coreSurfaces": [
+        "src/core/afrieducation/trust/AfriEducationTrustAdapter.js",
+        "src/core/afrieducation/trust/AfriEducationTrustSignalTypes.js"
+      ],
+      "evidenceCount": 4,
+      "approval": "PENDING_HUMAN_APPROVAL",
+      "execution": "BLOCKED",
+      "architectureClass": "USER_CORE_BACKED",
+      "decision": "OWNERSHIP_REVIEW_REQUIRED"
+    },
+    {
+      "product": "AfriLogistics",
+      "registration": "CANDIDATE_ONLY",
+      "featureTargets": [],
+      "userSurfaces": [
+        "src/pages/user/modules/AfriLogistics/index.jsx",
+        "src/pages/user/sidebar/items/AfriLogisticsItem.jsx"
+      ],
+      "coreSurfaces": [
+        "src/core/afrilogistics/trust/AfriLogisticsTrustAdapter.js",
+        "src/core/afrilogistics/trust/AfriLogisticsTrustSignalTypes.js"
+      ],
+      "evidenceCount": 4,
+      "approval": "PENDING_HUMAN_APPROVAL",
+      "execution": "BLOCKED",
+      "architectureClass": "USER_CORE_BACKED",
+      "decision": "OWNERSHIP_REVIEW_REQUIRED"
+    },
+    {
+      "product": "AfriWork",
+      "registration": "CANDIDATE_ONLY",
+      "featureTargets": [],
+      "userSurfaces": [
+        "src/pages/user/modules/AfriWork/index.jsx",
+        "src/pages/user/sidebar/items/AfriWorkItem.jsx"
+      ],
+      "coreSurfaces": [
+        "src/core/afriwork/trust/AfriWorkTrustAdapter.js",
+        "src/core/afriwork/trust/AfriWorkTrustSignalTypes.js",
+        "src/core/billing/universal/strategies/AfriWorkStrategy.js"
+      ],
+      "evidenceCount": 5,
+      "approval": "PENDING_HUMAN_APPROVAL",
+      "execution": "BLOCKED",
+      "architectureClass": "USER_CORE_BACKED",
+      "decision": "OWNERSHIP_REVIEW_REQUIRED"
+    }
+  ],
+  "timestamp": 1786656886582
+}

@@ -1,8 +1,8 @@
-import AfriAICoreBrain from "../control-room/afrai/intelligence/AfriAICoreBrain";
-import AfriAICrossBrain from "../../../core/afriai/AfriAICrossBrain";
-import SafeExecutionPipeline from "../safety/SafeExecutionPipeline";
-import AfriAIOrchestrator from "../../../core/afriai/AfriAIOrchestrator";
-import EventStream from "../../bridge/EventStream";
+import AfriAICoreBrain from "../../control-room/afrai/intelligence/AfriAICoreBrain.js";
+import AfriAICrossBrain from "./AfriAICrossBrain.js";
+import SafeExecutionPipeline from "../../control-room/afrai/safety/SafeExecutionPipeline.js";
+import AfriAIOrchestrator from "./AfriAIOrchestrator.js";
+import EventStream from "../../control-room/bridge/EventStream.js";
 
 const AfriAIGovernedCore = {
   handle(input) {

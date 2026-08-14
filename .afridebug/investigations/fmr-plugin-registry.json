@@ -1,0 +1,40 @@
+{
+  "type": "AFRIDEBUG_FMR_PLUGIN_REGISTRY",
+  "status": "registry_extracted",
+  "repository": "AfriDigital-hub",
+  "source": "src/plugins/user/userPluginRegistry.js",
+  "objective": "Extract the authoritative FMR user plugin declarations and correlate their identity fields without modifying the registry",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "sourceText": "import React, { lazy } from \"react\";\n\n/**\n * AFRIDIGITAL USER PLUGIN REGISTRY (FEATURE-BASED CORE)\n * This is the REAL ecosystem mapping layer (not UI placeholders)\n */\n\n// 🔌 FEATURE LAYER IMPORTS (SOURCE OF TRUTH)\nconst AfriSports = lazy(() => import(\"../../features/afrisports\"));\nconst AfriCommerce = lazy(() => import(\"../../features/africommerce\"));\nconst AfriMetaWorld = lazy(() => import(\"../../features/afrimetaworld\"));\nconst AfriComm = lazy(() => import(\"../../features/africomm\"));\nconst AfriBoost = lazy(() => import(\"../../features/afriboost\"));\n\n/**\n * USER PLUGINS (Feature-driven ecosystem)\n * This layer is PLUG-AND-PLAY by design\n */\nexport const USER_PLUGINS = {\n  afriSports: {\n    name: \"AfriSports\",\n    component: AfriSports,\n    route: \"/user/sports\",\n    enabled: true,\n    type: \"feature\",\n    version: \"1.0\"\n  },\n\n  afriCommerce: {\n    name: \"AfriCommerce\",\n    component: AfriCommerce,\n    route: \"/user/commerce\",\n    enabled: true,\n    type: \"feature\",\n    version: \"1.0\"\n  },\n\n  afriMetaWorld: {\n    name: \"AfriMetaWorld\",\n    component: AfriMetaWorld,\n    route: \"/user/metaworld\",\n    enabled: true,\n    type: \"feature\",\n    version: \"1.0\"\n  },\n\n  afriComm: {\n    name: \"AfriComm\",\n    component: AfriComm,\n    route: \"/user/comm\",\n    enabled: true,\n    type: \"feature\",\n    version: \"1.0\"\n  },\n\n  afriBoost: {\n    name: \"AfriBoost\",\n    component: AfriBoost,\n    route: \"/user/boost\",\n    enabled: true,\n    type: \"feature\",\n    version: \"1.0\"\n  }\n};\n\n/**\n * Get only active plugins (runtime safe)\n */\nexport const getActiveUserPlugins = () => {\n  return Object.entries(USER_PLUGINS)\n    .filter(([_, plugin]) => plugin.enabled)\n    .map(([key, plugin]) => ({ key, ...plugin }));\n};\n\n/**\n * Plugin resolver (future AI + admin control ready)\n */\nexport const resolveUserPlugin = (key) => {\n  return USER_PLUGINS[key] || null;\n};\n\n/**\n * Feature discovery layer (future AfriAI hook-ready)\n */\nexport const listUserFeatures = () => {\n  return Object.keys(USER_PLUGINS);\n};\n",
+  "signals": {
+    "keys": [],
+    "names": [
+      "AfriSports",
+      "AfriCommerce",
+      "AfriMetaWorld",
+      "AfriComm",
+      "AfriBoost"
+    ],
+    "paths": [
+      "/user/sports",
+      "/user/commerce",
+      "/user/metaworld",
+      "/user/comm",
+      "/user/boost"
+    ]
+  },
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "rename": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786655338969
+}

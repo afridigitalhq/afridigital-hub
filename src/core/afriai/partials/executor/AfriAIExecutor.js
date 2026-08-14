@@ -1,5 +1,5 @@
-import EventStream from "../../bridge/EventStream";
-import ModuleRegistry from "../../../core/runtime/ModuleRegistry";
+import EventStream from "../../../../control-room/bridge/EventStream.js";
+import ModuleRegistry from "../../../runtime/ModuleRegistry.js";
 
 const AfriAIExecutor = {
   execute(decision) {

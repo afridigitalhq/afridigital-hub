@@ -1,0 +1,116 @@
+{
+  "type": "AFRIDEBUG_FMR_EXPERIENCE_ARCHITECTURE_MAP",
+  "status": "mapped",
+  "repository": "AfriDigital-hub",
+  "mode": "diagnostic_only",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "layers": {
+    "entry": "src/pages/user/UserHome.jsx",
+    "shell": "src/pages/user/shell/UserAppShell.jsx",
+    "dashboard": "src/pages/user/dashboard/UserDashboard.jsx",
+    "navigation": "src/pages/user/sidebar/sections/SidebarNavigation.jsx",
+    "registry": "src/plugins/user/userPluginRegistry.js",
+    "experienceContract": "src/userhome/UserAppOSShell.json"
+  },
+  "registry": {
+    "plugins": [
+      "AfriSports",
+      "AfriCommerce",
+      "AfriMetaWorld",
+      "AfriComm",
+      "AfriBoost"
+    ],
+    "pluginRoutes": [
+      "/user/sports",
+      "/user/commerce",
+      "/user/metaworld",
+      "/user/comm",
+      "/user/boost"
+    ],
+    "featureImports": [
+      "../../features/afrisports",
+      "../../features/africommerce",
+      "../../features/afrimetaworld",
+      "../../features/africomm",
+      "../../features/afriboost"
+    ],
+    "featureTargets": [
+      {
+        "source": "../../features/afrisports",
+        "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/afrisports",
+        "exists": true
+      },
+      {
+        "source": "../../features/africommerce",
+        "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/africommerce",
+        "exists": true
+      },
+      {
+        "source": "../../features/afrimetaworld",
+        "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/afrimetaworld",
+        "exists": true
+      },
+      {
+        "source": "../../features/africomm",
+        "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/africomm",
+        "exists": true
+      },
+      {
+        "source": "../../features/afriboost",
+        "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/afriboost",
+        "exists": true
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "src/pages/user/UserHome.jsx",
+      "exists": true,
+      "bytes": 143
+    },
+    {
+      "file": "src/pages/user/shell/UserAppShell.jsx",
+      "exists": true,
+      "bytes": 633
+    },
+    {
+      "file": "src/pages/user/dashboard/UserDashboard.jsx",
+      "exists": true,
+      "bytes": 776
+    },
+    {
+      "file": "src/pages/user/sidebar/sections/SidebarNavigation.jsx",
+      "exists": true,
+      "bytes": 1135
+    },
+    {
+      "file": "src/plugins/user/userPluginRegistry.js",
+      "exists": true,
+      "bytes": 2006
+    },
+    {
+      "file": "src/userhome/UserAppOSShell.json",
+      "exists": true,
+      "bytes": 679
+    }
+  ],
+  "questions": [
+    "Which FMR surfaces are active?",
+    "Which surfaces are alternate compositions?",
+    "Which ecosystem products have no user-navigation wiring?",
+    "Which existing FMR surfaces should become experience destinations rather than standalone duplicates?",
+    "Which repairs require approval?"
+  ],
+  "repair": {
+    "proposed": false,
+    "approved": false,
+    "executable": false
+  },
+  "timestamp": 1786655932227
+}

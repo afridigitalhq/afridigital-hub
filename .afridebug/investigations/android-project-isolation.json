@@ -1,0 +1,11 @@
+{
+  "type": "AFRIDEBUG_ANDROID_PROJECT_ISOLATION",
+  "repository": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+  "androidBuildSignals": [],
+  "possibleProjects": [],
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786659321290
+}

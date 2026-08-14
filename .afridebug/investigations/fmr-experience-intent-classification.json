@@ -1,0 +1,242 @@
+{
+  "type": "AFRIDEBUG_FMR_EXPERIENCE_INTENT_CLASSIFICATION",
+  "status": "classified",
+  "repository": "AfriDigital-hub",
+  "mode": "diagnostic_only",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "products": [
+    {
+      "name": "AfriCommerce",
+      "classification": "ACTIVE_RUNTIME",
+      "surfaces": [
+        "src/pages/user/modules/AfriCommerce/index.jsx",
+        "src/pages/user/sidebar/items/AfriCommerceItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriCCTV",
+      "classification": "REGISTRY_GAP_OR_EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/modules/AfriCCTV/index.jsx",
+        "src/pages/user/sidebar/items/AfriCCTVItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriSports",
+      "classification": "ACTIVE_RUNTIME",
+      "surfaces": [
+        "src/pages/user/modules/AfriSports/index.jsx",
+        "src/pages/user/sidebar/items/AfriSportsItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriMetaWorld",
+      "classification": "ACTIVE_RUNTIME",
+      "surfaces": [
+        "src/pages/user/modules/AfriMetaWorld/index.jsx",
+        "src/pages/user/sidebar/items/AfriMetaWorldItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriBoost",
+      "classification": "ACTIVE_RUNTIME",
+      "surfaces": [
+        "src/pages/user/modules/AfriBoost/index.jsx",
+        "src/pages/user/sidebar/items/AfriBoostItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriTracker",
+      "classification": "REGISTRY_GAP_OR_EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/modules/AfriTracker/index.jsx",
+        "src/pages/user/sidebar/items/AfriTrackerItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriTicking",
+      "classification": "REGISTRY_GAP_OR_EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/modules/AfriTicking/index.jsx",
+        "src/pages/user/sidebar/items/AfriTickingItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriLove",
+      "classification": "REGISTRY_GAP_OR_EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/modules/AfriLove/index.jsx",
+        "src/pages/user/sidebar/items/AfriLoveItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriEducation",
+      "classification": "REGISTRY_GAP_OR_EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/modules/AfriEducation/index.jsx",
+        "src/pages/user/sidebar/items/AfriEducationItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriLogistics",
+      "classification": "REGISTRY_GAP_OR_EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/modules/AfriLogistics/index.jsx",
+        "src/pages/user/sidebar/items/AfriLogisticsItem.jsx"
+      ]
+    },
+    {
+      "name": "AfriWork",
+      "classification": "REGISTRY_GAP_OR_EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/modules/AfriWork/index.jsx",
+        "src/pages/user/sidebar/items/AfriWorkItem.jsx"
+      ]
+    }
+  ],
+  "ecosystem": [
+    {
+      "name": "Product Marketplace",
+      "classification": "CONTRACT_ONLY",
+      "surfaces": []
+    },
+    {
+      "name": "Discover Products",
+      "classification": "CONTRACT_ONLY",
+      "surfaces": []
+    },
+    {
+      "name": "Featured Experiences",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/ecosystem/FeaturedExperiences/index.jsx"
+      ]
+    },
+    {
+      "name": "Community",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/ecosystem/Community/index.jsx"
+      ]
+    },
+    {
+      "name": "Events",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/ecosystem/Events/index.jsx"
+      ]
+    },
+    {
+      "name": "Promotions",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/dashboard/widgets/PromotionsPanel.jsx",
+        "src/pages/user/ecosystem/Promotions/index.jsx"
+      ]
+    },
+    {
+      "name": "Learning Center",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/ecosystem/LearningCenter/index.jsx"
+      ]
+    },
+    {
+      "name": "Support Center",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/ecosystem/SupportCenter/index.jsx"
+      ]
+    },
+    {
+      "name": "Feedback",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/ecosystem/Feedback/index.jsx"
+      ]
+    }
+  ],
+  "account": [
+    {
+      "name": "My Profile",
+      "classification": "CONTRACT_ONLY",
+      "surfaces": []
+    },
+    {
+      "name": "My Organizations",
+      "classification": "CONTRACT_ONLY",
+      "surfaces": []
+    },
+    {
+      "name": "Security",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/account/Security/index.jsx"
+      ]
+    },
+    {
+      "name": "Privacy",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/account/Privacy/index.jsx"
+      ]
+    },
+    {
+      "name": "Devices",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/account/Devices/index.jsx"
+      ]
+    },
+    {
+      "name": "Billing",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/account/Billing/index.jsx"
+      ]
+    },
+    {
+      "name": "Settings",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/account/Settings/index.jsx"
+      ]
+    },
+    {
+      "name": "Help & Support",
+      "classification": "EXPERIENCE_SURFACE",
+      "surfaces": [
+        "src/pages/user/account/HelpSupport/index.jsx"
+      ]
+    }
+  ],
+  "summary": {
+    "products": {
+      "ACTIVE_RUNTIME": 4,
+      "REGISTRY_GAP_OR_EXPERIENCE_SURFACE": 7
+    },
+    "ecosystem": {
+      "CONTRACT_ONLY": 2,
+      "EXPERIENCE_SURFACE": 7
+    },
+    "account": {
+      "CONTRACT_ONLY": 2,
+      "EXPERIENCE_SURFACE": 6
+    }
+  },
+  "decisionPolicy": [
+    "No deletion",
+    "No automatic registration",
+    "No UI rewrite",
+    "No product substitution",
+    "No repair execution",
+    "Human approval required before any change"
+  ],
+  "timestamp": 1786656046488
+}

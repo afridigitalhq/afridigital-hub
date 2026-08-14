@@ -1,15 +1,12 @@
 import AfriNexusCoordinator from "../AfriNexusCoordinator.js";
+import AfriNexusMissionTargetAdapter from "../mission/adapters/AfriNexusMissionTargetAdapter.js";
 
 const AfriNexusMissionEngine = {
 
   create(request = {}) {
 
-    const targets = request.targets || [
-      {
-        name: request.target || "unknown",
-        source: request.source || "afriai"
-      }
-    ];
+    const targets =
+      AfriNexusMissionTargetAdapter.resolve(request);
 
 
     return {

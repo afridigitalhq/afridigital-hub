@@ -1,0 +1,1383 @@
+{
+  "type": "AFRIDEBUG_APK_BUILDER_ATTRIBUTION",
+  "status": "EVIDENCE_ONLY",
+  "apk": "/storage/emulated/0/Download/afridigital-debug.apk",
+  "signals": {
+    "total": 568,
+    "afriAISignals": [
+      {
+        "file": "src/brain/SystemState.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/brain/BootstrapEcosystemModules.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/brain/BrainStartupSequencer.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/brain/BrainDependencyManager.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/registry/AfriSystemContracts.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAIContext.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/useAfriAIRouter.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAICommandBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/trust/AfriAITrustAdapter.js",
+        "signals": [
+          "afriai",
+          "build"
+        ]
+      },
+      {
+        "file": "src/core/afriai/trust/AfriAITrustSignalTypes.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/knowledge/AfriAIKnowledgeRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/knowledge/AfriAITopicRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/knowledge/AfriAIPaymentsKnowledge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/knowledge/AfriAIKnowledgeRouter.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/knowledge/AfriAIKnowledgeLoader.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/manifests/AFDS001Manifest.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/manifests/AFDS019AfriDebugProductionActivationGateManifest.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/manifests/AFDS008AfriDebugIntelligenceOrchestrationManifest.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/tests/AFDS011RealExecution.js",
+        "signals": [
+          "afrinucchain",
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/artifacts/AfriNucChainArtifactManager.js",
+        "signals": [
+          "afriai",
+          "afrinucchain"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/artifacts/storage/artifact-registry.json",
+        "signals": [
+          "afrinucchain",
+          "afriai",
+          "build"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemRuntime.js",
+        "signals": [
+          "afrinucchain",
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/nucchain/filesystem/IMPLEMENTATION.manifest",
+        "signals": [
+          "afriai",
+          "afrinucchain"
+        ]
+      },
+      {
+        "file": "src/core/afriai/tools/debug/AfriAIDebugTool.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/partials/executor/AfriAIExecutor.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAIOrchestrator.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAICrossBrain.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAIController.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAIInterface.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAIGovernedCore.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/capabilities/AfriAICapabilityResolver.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/capabilities/AfriAICapabilityContract.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/capabilities/AfriAICapabilityRouter.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriai/AfriAIKnowledgeDecisionBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/admin/afridesign/AfriDesignCompositionContract.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/admin/afridesign/AfriAI/AfriDesignAIContract.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriweather/AfriWeather.lock",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/integration/AfriTickConsumerRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/adapters/AfriTickProductConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/profile/AfriTickProfileConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/api/AfriTickAPIConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/ai/AfriTickAITrustAssistant.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/ai/AfriTickAIConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/display/AfriTickDisplayConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/consumers/AfriTickUniversalBadgeConsumer.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritick/services/AfriTickServiceOwnership.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriads/inventory/AfriAdsInventory.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriads/ai/AfriAdsAIFeed.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriads/admin/AfriAdsAdminConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriads/admin/registry/AfriAdsAdminRegistryConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriads/distribution/AfriAdsDistributionConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriads/intelligence/AfriAdsAIIntelligenceFeed.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriboost/gateway/AfriBoostCampaignGateway.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afriboost/social/AfriBoostSocialTaskEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritrust/profiles/AfriTrustProductProfileRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afritrust/consumers/AfriTrustPublicCardConsumers.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+        "signals": [
+          "afribuild",
+          "afriai",
+          "afrinucchain"
+        ]
+      },
+      {
+        "file": "src/ecosystem/edges/EcosystemEdgeTranslator.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ecosystem/ghost/GhostRuntimeEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ecosystem/twin/CascadeFailureModel.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ecosystem/twin/CascadeModel.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ecosystem/landing/catalog/LandingServiceCatalog.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ecosystem/landing/catalog/LandingExperienceCatalog.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ecosystem/migration/audit/ProductMigrationMap.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/modules/control-plane.json",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/LandingPage.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIAvatar.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIHalo.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIStatus.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIConversation.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIWaveEngine.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIComposer.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIMic.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIAttachments.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAICard.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIWaveform.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAITelegram.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIVoiceControl.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIServiceDock.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/styles/avatar.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/styles/halo.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/styles/waveform.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/styles/composer.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/styles/conversation.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/styles/servicedock.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/styles/mic.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/hooks/useAfriAIState.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/AfriAILandingRuntime.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceController.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceMap.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/AfriAISuggestionRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/AfriAISuggestionRouter.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/ads/AfriAdsPlacementEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/ads/AfriAIAdsMatcher.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/ads/AfriAdsCampaignResolver.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/ads/decision/AfriAdsDecisionEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/ads/delivery/AfriAIAdsCardResolver.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/ads/delivery/AfriAdsSlotController.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/runtime/ads/layout/AfriAISponsoredLayoutEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/LandingAfriAINext.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/LandingAfriAI.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/AFRIAI-CANONICAL-V2.lock",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAISpeechAdapter.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceController.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceEvents.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAIAudioAnalyzer.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceRuntimeBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceLevelSmoother.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAITTS.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAITTSRuntimeBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/voice/AfriAITTSRuntimeConnector.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/intelligence/canonical-v2/AFRIAI-VOICE-PRESENCE-V1.lock",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/products/showcase/sports/SportsAnalysis.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/services/PlatformServices.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/marquee/EcosystemMarquee.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/landing/composition/LandingCompositionRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriAI/index.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/user/dashboard/partials/AfriAIPanel.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/user/dashboard/UserDashboard.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/admin/modules/AfriCCTV/partials/AfriAIDock.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/admin/modules/AfriCCTV/views/AfriCCTVView.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/afridebug/desktop/components/AfriAIInvestigatorPanel.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/pages/afridebug/desktop/AfriDebugDesktop.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai-dashboard/AfriAIDashboardLayout.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai-dashboard/AfriAIWidgetRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai-dashboard/command-console/AfriAICommandConsole.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai-dashboard/devops-panel/AfriAIDevOpsPanel.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai-dashboard/runtime/AfriAIRuntimeBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai-dashboard/system-monitor/AfriAILiveFeed.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/DecisionEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/AfriAINLPBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/CommandRouter.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/approval/AfriAIApprovalGate.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/audit/AfriAIAudioNarrator.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/audit/AfriAIAuditExportEngine.js",
+        "signals": [
+          "afriai",
+          "build"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/dashboard/AfriAIDashboard.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/dashboard/components/AfriAIDecisionTimeline.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/dashboard/components/AfriAIExecutionMap.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/dashboard/components/AfriAIIntentAnalyzer.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/dashboard/components/AfriAIThoughtStream.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/ecosystem/AfriAIEcosystemExecutor.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/events/AfriAIEventStream.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/governance/AfriAIGlobalDecisionEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/governed/index.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/intelligence/AfriAICoreBrain.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/lifecycle/AfriAIGovernedLifecycleEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/modules/AfriAIModuleRuntime.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/orchestration/AfriAIRuntimeBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/policy/AfriAIExecutionPolicyEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/rollback/AfriAIEmergencyRestore.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/rollback/AfriAIRollbackEngine.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/soc/AfriAISOCBridge.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/soc/AfriAISOCListener.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/soc/index.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/ui/AfriAICommandCenter.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/ui/AfriAIExecutionFeed.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/ui/AfriAIWorkflowPanel.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/ui/governance/AfriAIGovernancePanel.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/ui/index.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/afrai/workflow/AfriAIWorkflowCore.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/bridge/AfriAICommandDock.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/dashboard/DashboardCore.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/dock/AfriAIDock.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/dock/items/ContextPanel.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/dock/items/ConversationFeed.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/dock/items/QuickCommands.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/dock/services/VoiceEngine.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/ecosystem/catalog/AfriAI.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/integrations/AfriAIBridge.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/integrations/ModuleBridge.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/modules/EcosystemBootstrap.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/orchestration/ProductionOrchestrator.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/router/ControlRoomRouter.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/router/RouteRegistry.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/runtime/AfriAIRuntimeHook.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/shell/ControlRoomApp.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/sidebar/Sidebar.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/sidebar/items/AfriAISection.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/soc/boards/AfriAIBoard.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/soc/boards/sections/AfriAIActivity.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/soc/regions/CenterRegion.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/soc/visualization/EcosystemLiveMap.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/control-room/ui/AfriAICommandBox.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/config/api.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/adminhomepage/AdminHome.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ai/AfriAICommandDock.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/dashboard/SystemStream.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/integration/runtimeDagIntegration.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/integration/runtimeEventBusIntegration.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/integration/runtimeWebSocketIntegration.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/middleware/afriAICommandMiddleware.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/modules/AfriModuleMap.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/modules/AfriRuntimeModules.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/modules/registerCoreRuntimeModules.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/runtime/startRuntime.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/ws/client.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/features/afriai/index.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/event-bus/event-log.json",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/plugins/user/userPluginRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/plugins/admin/adminPluginRegistry.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/components/ads/AfriBoostSidebar.jsx",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/userhome/UserAppOSShell.json",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "src/api/AfriAIClient.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "scripts/LOCK-RULES.md",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "scripts/afrinucchain/product-registry-audit.sh",
+        "signals": [
+          "afrinucchain",
+          "afriai"
+        ]
+      },
+      {
+        "file": "scripts/afrinucchain/landing-composition-audit.sh",
+        "signals": [
+          "afrinucchain",
+          "afriai"
+        ]
+      },
+      {
+        "file": "scripts/afrinucchain/landing-composition-final-audit.sh",
+        "signals": [
+          "afrinucchain",
+          "afriai"
+        ]
+      },
+      {
+        "file": "scripts/afrinuc/build.mjs",
+        "signals": [
+          "afrinucchain",
+          "afriai",
+          "build"
+        ]
+      },
+      {
+        "file": "scripts/afrinuc/manifest.json",
+        "signals": [
+          "afriai",
+          "afrinucchain"
+        ]
+      },
+      {
+        "file": "android/app/build/intermediates/incremental/mergeDebugAssets/merger.xml",
+        "signals": [
+          "capacitor",
+          "build",
+          "afriai"
+        ]
+      },
+      {
+        "file": "android/app/build/intermediates/assets/debug/mergeDebugAssets/public/assets/index-B-aNOCO0.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "android/app/build/intermediates/assets/debug/mergeDebugAssets/public/assets/index-C551_uAZ.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "android/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/public/assets/afriai-avatar-idle-RQG4QspV.png.jar",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "signals": [
+          "build",
+          "gradle",
+          "capacitor",
+          "afriai",
+          "apk"
+        ]
+      },
+      {
+        "file": "android/app/src/main/assets/public/assets/index-B-aNOCO0.js",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "android/app/src/main/assets/public/assets/index-C551_uAZ.css",
+        "signals": [
+          "afriai"
+        ]
+      },
+      {
+        "file": "android/.gradle/8.14.3/executionHistory/executionHistory.bin",
+        "signals": [
+          "build",
+          "gradle",
+          "capacitor",
+          "apk",
+          "afriai"
+        ]
+      }
+    ],
+    "afriBuildSignals": [
+      {
+        "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+        "signals": [
+          "afribuild",
+          "afriai",
+          "afrinucchain"
+        ]
+      },
+      {
+        "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+        "signals": [
+          "afribuild"
+        ]
+      },
+      {
+        "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+        "signals": [
+          "afribuild"
+        ]
+      },
+      {
+        "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+        "signals": [
+          "afribuild"
+        ]
+      }
+    ]
+  },
+  "git": {
+    "recentCommits": []
+  },
+  "determination": "AFRIAI_AND_AFRIBUILD_SIGNALS_PRESENT_BUT_NOT_PROVEN_AS_BUILDER",
+  "recognition": "DEFER_UNTIL_PROVENANCE_CHAIN_IS_CORRELATED",
+  "policy": {
+    "readOnly": true,
+    "noChanges": true,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786660533173
+}

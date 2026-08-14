@@ -1,0 +1,33 @@
+{
+  "type": "AFRIDEBUG_NUCCHAIN_FMR_GOVERNANCE_GATE",
+  "status": "READY_FOR_HUMAN_APPROVAL_GATE",
+  "phase": "AfriDebug_Evidence_to_AfriNucChain_Governance",
+  "handoffStatus": "READY_FOR_HUMAN_DECISION",
+  "artifacts": {
+    "required": 12,
+    "present": 12,
+    "missing": []
+  },
+  "governance": {
+    "delete": false,
+    "autoRegister": false,
+    "execute": false,
+    "humanApprovalRequired": true,
+    "approvalStatus": "PENDING_HUMAN_APPROVAL"
+  },
+  "protected": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "execution": {
+    "patchesApplied": false,
+    "filesChanged": false,
+    "registrationExecuted": false,
+    "deletionsExecuted": false
+  },
+  "nextGate": "HUMAN_APPROVAL_REQUIRED",
+  "timestamp": 1786657842385
+}

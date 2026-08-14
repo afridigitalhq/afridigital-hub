@@ -1,0 +1,224 @@
+{
+  "type": "AFRIDEBUG_FMR_PATCH_PLAN",
+  "status": "PROPOSED_ONLY",
+  "repository": "AfriDigital-hub",
+  "objective": "Prepare an ownership-aware FMR/User Home repair plan without executing changes",
+  "sourceArtifact": ".afridebug/investigations/fmr-experience-intent-classification.json",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "policy": {
+    "delete": false,
+    "autoRegister": false,
+    "uiRewrite": false,
+    "productSubstitution": false,
+    "execute": false,
+    "humanApprovalRequired": true
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Owner Verification",
+      "description": "Determine canonical owner for every existing FMR experience surface."
+    },
+    {
+      "phase": 2,
+      "name": "Registry Planning",
+      "description": "Propose plugin registration only where an existing canonical feature owner is verified."
+    },
+    {
+      "phase": 3,
+      "name": "Experience Wiring",
+      "description": "Propose navigation or routing changes only where ownership and UX intent are established."
+    },
+    {
+      "phase": 4,
+      "name": "Contract Reconciliation",
+      "description": "Reconcile UserAppOSShell contract with verified runtime capabilities without deleting declared capabilities."
+    },
+    {
+      "phase": 5,
+      "name": "Verification",
+      "description": "Run reachability, import, route and experience regression checks after approved implementation."
+    }
+  ],
+  "items": [
+    {
+      "target": "AfriCommerce",
+      "action": "VERIFY_EXISTING_RUNTIME",
+      "reason": "Already registered in the active user plugin registry.",
+      "execution": "NONE"
+    },
+    {
+      "target": "AfriCCTV",
+      "action": "INVESTIGATE_EXISTING_OWNER_THEN_PROPOSE_REGISTRATION_IF_VALID",
+      "reason": "Existing user experience surface detected but active plugin registration is absent.",
+      "execution": "BLOCKED_PENDING_OWNERSHIP_VERIFICATION"
+    },
+    {
+      "target": "AfriSports",
+      "action": "VERIFY_EXISTING_RUNTIME",
+      "reason": "Already registered in the active user plugin registry.",
+      "execution": "NONE"
+    },
+    {
+      "target": "AfriMetaWorld",
+      "action": "VERIFY_EXISTING_RUNTIME",
+      "reason": "Already registered in the active user plugin registry.",
+      "execution": "NONE"
+    },
+    {
+      "target": "AfriBoost",
+      "action": "VERIFY_EXISTING_RUNTIME",
+      "reason": "Already registered in the active user plugin registry.",
+      "execution": "NONE"
+    },
+    {
+      "target": "AfriTracker",
+      "action": "INVESTIGATE_EXISTING_OWNER_THEN_PROPOSE_REGISTRATION_IF_VALID",
+      "reason": "Existing user experience surface detected but active plugin registration is absent.",
+      "execution": "BLOCKED_PENDING_OWNERSHIP_VERIFICATION"
+    },
+    {
+      "target": "AfriTicking",
+      "action": "INVESTIGATE_EXISTING_OWNER_THEN_PROPOSE_REGISTRATION_IF_VALID",
+      "reason": "Existing user experience surface detected but active plugin registration is absent.",
+      "execution": "BLOCKED_PENDING_OWNERSHIP_VERIFICATION"
+    },
+    {
+      "target": "AfriLove",
+      "action": "INVESTIGATE_EXISTING_OWNER_THEN_PROPOSE_REGISTRATION_IF_VALID",
+      "reason": "Existing user experience surface detected but active plugin registration is absent.",
+      "execution": "BLOCKED_PENDING_OWNERSHIP_VERIFICATION"
+    },
+    {
+      "target": "AfriEducation",
+      "action": "INVESTIGATE_EXISTING_OWNER_THEN_PROPOSE_REGISTRATION_IF_VALID",
+      "reason": "Existing user experience surface detected but active plugin registration is absent.",
+      "execution": "BLOCKED_PENDING_OWNERSHIP_VERIFICATION"
+    },
+    {
+      "target": "AfriLogistics",
+      "action": "INVESTIGATE_EXISTING_OWNER_THEN_PROPOSE_REGISTRATION_IF_VALID",
+      "reason": "Existing user experience surface detected but active plugin registration is absent.",
+      "execution": "BLOCKED_PENDING_OWNERSHIP_VERIFICATION"
+    },
+    {
+      "target": "AfriWork",
+      "action": "INVESTIGATE_EXISTING_OWNER_THEN_PROPOSE_REGISTRATION_IF_VALID",
+      "reason": "Existing user experience surface detected but active plugin registration is absent.",
+      "execution": "BLOCKED_PENDING_OWNERSHIP_VERIFICATION"
+    },
+    {
+      "target": "ECOSYSTEM:Product Marketplace",
+      "action": "INVESTIGATE_MISSING_EXPERIENCE",
+      "reason": "CONTRACT_ONLY",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Discover Products",
+      "action": "INVESTIGATE_MISSING_EXPERIENCE",
+      "reason": "CONTRACT_ONLY",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Featured Experiences",
+      "action": "VERIFY_EXISTING_EXPERIENCE_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Community",
+      "action": "VERIFY_EXISTING_EXPERIENCE_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Events",
+      "action": "VERIFY_EXISTING_EXPERIENCE_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Promotions",
+      "action": "VERIFY_EXISTING_EXPERIENCE_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Learning Center",
+      "action": "VERIFY_EXISTING_EXPERIENCE_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Support Center",
+      "action": "VERIFY_EXISTING_EXPERIENCE_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ECOSYSTEM:Feedback",
+      "action": "VERIFY_EXISTING_EXPERIENCE_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:My Profile",
+      "action": "INVESTIGATE_MISSING_ACCOUNT_SURFACE",
+      "reason": "CONTRACT_ONLY",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:My Organizations",
+      "action": "INVESTIGATE_MISSING_ACCOUNT_SURFACE",
+      "reason": "CONTRACT_ONLY",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:Security",
+      "action": "VERIFY_EXISTING_ACCOUNT_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:Privacy",
+      "action": "VERIFY_EXISTING_ACCOUNT_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:Devices",
+      "action": "VERIFY_EXISTING_ACCOUNT_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:Billing",
+      "action": "VERIFY_EXISTING_ACCOUNT_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:Settings",
+      "action": "VERIFY_EXISTING_ACCOUNT_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    },
+    {
+      "target": "ACCOUNT:Help & Support",
+      "action": "VERIFY_EXISTING_ACCOUNT_OWNER",
+      "reason": "EXPERIENCE_SURFACE",
+      "execution": "NONE"
+    }
+  ],
+  "approval": {
+    "required": true,
+    "status": "PENDING_HUMAN_APPROVAL"
+  },
+  "timestamp": 1786656080320
+}

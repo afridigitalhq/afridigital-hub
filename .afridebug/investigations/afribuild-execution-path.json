@@ -1,0 +1,27 @@
+{
+  "type": "AFRIDEBUG_AFRIBUILD_EXECUTION_PATH",
+  "status": "EVIDENCE_ONLY",
+  "repository": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+  "signals": [
+    {
+      "file": "package.json",
+      "matches": [
+        "    \"build\": \"npm run prebuild && vite build\",",
+        "    \"@capacitor/android\": \"^8.5.0\",",
+        "    \"@capacitor/cli\": \"^8.5.0\",",
+        "    \"@capacitor/core\": \"^8.5.0\","
+      ]
+    },
+    {
+      "file": "capacitor.config.json",
+      "matches": [
+        "  \"webDir\": \"dist\""
+      ]
+    }
+  ],
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786660144542
+}

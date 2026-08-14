@@ -1,0 +1,26 @@
+{
+  "type": "AFRIDEBUG_FMR_FINAL_HANDOFF",
+  "status": "READY_FOR_HUMAN_DECISION",
+  "repository": "AfriDigital-hub",
+  "artifacts": {
+    "expected": 11,
+    "present": 11,
+    "missing": []
+  },
+  "governance": {
+    "delete": false,
+    "autoRegister": false,
+    "execute": false,
+    "humanApprovalRequired": true,
+    "approvalStatus": "PENDING_HUMAN_APPROVAL"
+  },
+  "protected": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "nextAction": "HUMAN_REVIEW_ONLY",
+  "timestamp": 1786657345053
+}

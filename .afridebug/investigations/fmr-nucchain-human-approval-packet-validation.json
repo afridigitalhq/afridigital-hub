@@ -1,0 +1,18 @@
+{
+  "type": "AFRINUCCHAIN_FMR_HUMAN_APPROVAL_PACKET_VALIDATION",
+  "status": "PASS",
+  "checks": {
+    "sourceExists": true,
+    "gateExists": true,
+    "decisionCount": true,
+    "ownershipReview": true,
+    "surfaceReview": true,
+    "noChange": true,
+    "executionBlocked": true,
+    "governanceBlocked": true,
+    "approvalPending": true
+  },
+  "packet": ".afridebug/investigations/fmr-nucchain-human-approval-packet.json",
+  "nextGate": "HUMAN_APPROVAL_DECISION",
+  "timestamp": 1786657994169
+}

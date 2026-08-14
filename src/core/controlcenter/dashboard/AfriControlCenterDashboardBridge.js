@@ -46,9 +46,19 @@ const AfriControlCenterDashboardBridge = {
         this.health(),
 
       security:
-        this.security()
+        this.security(),
+
+      nexusSecurity:
+        this.nexusSecurity([{name:"ExternalAIGateway"}])
 
     };
+
+  },
+
+
+  nexusSecurity(targets=[]){
+
+    return API.nexusSecurity(targets);
 
   },
 

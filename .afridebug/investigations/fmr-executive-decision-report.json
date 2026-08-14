@@ -1,0 +1,175 @@
+{
+  "type": "AFRIDEBUG_FMR_EXECUTIVE_DECISION_REPORT",
+  "status": "DECISION_READY",
+  "repository": "AfriDigital-hub",
+  "investigationArtifacts": [
+    "fmr-composition-inspection.json",
+    "fmr-experience-architecture-map.json",
+    "fmr-experience-coverage.json",
+    "fmr-experience-intent-classification.json",
+    "fmr-navigation-ownership.json",
+    "fmr-owner-confidence.json",
+    "fmr-owner-verification.json",
+    "fmr-ownership-correlation.json",
+    "fmr-ownership-resolution.json",
+    "fmr-patch-plan-validation.json",
+    "fmr-patch-plan.json",
+    "fmr-plugin-registry-inspection.json",
+    "fmr-plugin-registry.json",
+    "fmr-registration-candidate-matrix.json",
+    "fmr-registration-evidence.json",
+    "fmr-registry-feature-correlation.json",
+    "fmr-registry-ownership.json",
+    "fmr-runtime-surface-map.json",
+    "fmr-user-home-classification.json",
+    "fmr-user-home-correlation.json",
+    "fmr-user-home-graph.json",
+    "fmr-user-home-investigation.json"
+  ],
+  "scope": {
+    "preserve": [
+      "src/pages/user/**",
+      "src/userhome/**",
+      "AfriCommerce",
+      "AfriCCTV",
+      "AfriDesign Studio"
+    ],
+    "delete": false,
+    "autoRegister": false,
+    "execute": false
+  },
+  "approval": {
+    "required": true,
+    "status": "PENDING_HUMAN_APPROVAL"
+  },
+  "decisions": [
+    {
+      "product": "AfriCommerce",
+      "architectureClass": "UNCLASSIFIED",
+      "ownershipConfidence": "REGISTERED_RUNTIME_OWNER",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "NO_CHANGE",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriCCTV",
+      "architectureClass": "USER_CORE_BACKED",
+      "ownershipConfidence": "UI_CORE_OWNER_CANDIDATE",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "OWNERSHIP_REVIEW",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriSports",
+      "architectureClass": "UNCLASSIFIED",
+      "ownershipConfidence": "REGISTERED_RUNTIME_OWNER",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "NO_CHANGE",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriMetaWorld",
+      "architectureClass": "UNCLASSIFIED",
+      "ownershipConfidence": "REGISTERED_RUNTIME_OWNER",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "NO_CHANGE",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriBoost",
+      "architectureClass": "UNCLASSIFIED",
+      "ownershipConfidence": "REGISTERED_RUNTIME_OWNER",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "NO_CHANGE",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriTracker",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "ownershipConfidence": "UI_CORE_OWNER_CANDIDATE",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "SURFACE_OWNERSHIP_REVIEW",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriTicking",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "ownershipConfidence": "UI_CORE_OWNER_CANDIDATE",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "SURFACE_OWNERSHIP_REVIEW",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriLove",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "ownershipConfidence": "UI_CORE_OWNER_CANDIDATE",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "SURFACE_OWNERSHIP_REVIEW",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriEducation",
+      "architectureClass": "USER_CORE_BACKED",
+      "ownershipConfidence": "UI_CORE_OWNER_CANDIDATE",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "OWNERSHIP_REVIEW",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriLogistics",
+      "architectureClass": "USER_CORE_BACKED",
+      "ownershipConfidence": "UI_CORE_OWNER_CANDIDATE",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "OWNERSHIP_REVIEW",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriWork",
+      "architectureClass": "USER_CORE_BACKED",
+      "ownershipConfidence": "UI_CORE_OWNER_CANDIDATE",
+      "runtimeEvidence": 0,
+      "featureEvidence": 0,
+      "userEvidence": 0,
+      "ecosystemEvidence": 0,
+      "recommendedAction": "OWNERSHIP_REVIEW",
+      "execution": "BLOCKED"
+    }
+  ],
+  "summary": {
+    "products": 11,
+    "ownershipReview": 4,
+    "surfaceOwnershipReview": 3,
+    "noChange": 4
+  },
+  "timestamp": 1786657007277
+}

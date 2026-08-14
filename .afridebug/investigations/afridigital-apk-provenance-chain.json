@@ -1,0 +1,73 @@
+{
+  "type": "AFRIDEBUG_APK_PROVENANCE_CHAIN",
+  "status": "EVIDENCE_ONLY",
+  "determination": "UNRESOLVED",
+  "signals": {
+    "afriBuildReferences": [
+      "src/core/afribuild/contracts/AfriBuildContract.js\nsrc/core/afribuild/orchestrator/AfriBuildOrchestrator.js\nsrc/core/afribuild/registry/AfriBuildRegistry.js\nsrc/core/afribuild/runtime/AfriBuildRuntime.js"
+    ],
+    "ollamaReferences": [],
+    "afriAIReferences": [
+      "src/core/registry/AfriSystemContracts.js\nsrc/core/afriai/AfriAIContext.js\nsrc/core/afriai/useAfriAIRouter.js\nsrc/core/afriai/trust/AfriAITrustAdapter.js\nsrc/core/afriai/trust/AfriAITrustSignalTypes.js\nsrc/core/afriai/knowledge/AfriAIKnowledgeRegistry.js\nsrc/core/afriai/knowledge/AfriAITopicRegistry.js\nsrc/core/afriai/knowledge/AfriAIPaymentsKnowledge.js\nsrc/core/afriai/knowledge/AfriAIKnowledgeRouter.js\nsrc/core/afriai/knowledge/AfriAIKnowledgeLoader.js\nsrc/core/afriai/tools/debug/AfriAIDebugTool.js\nsrc/core/afriai/partials/executor/AfriAIExecutor.js\nsrc/core/afriai/AfriAIOrchestrator.js\nsrc/core/afriai/AfriAICrossBrain.js\nsrc/core/afriai/AfriAIController.js\nsrc/core/afriai/AfriAIInterface.js\nsrc/core/afriai/AfriAIGovernedCore.js\nsrc/core/afriai/capabilities/AfriAICapabilityResolver.js\nsrc/core/afriai/capabilities/AfriAICapabilityContract.js\nsrc/core/afriai/capabilities/AfriAICapabilityRouter.js\nsrc/core/afriai/AfriAIKnowledgeDecisionBridge.js\nsrc/core/admin/afridesign/AfriAI/AfriDesignAIContract.js\nsrc/core/afriweather/AfriWeather.lock\nsrc/core/afritick/api/AfriTickAPIConsumers.js\nsrc/core/afritick/ai/AfriTickAITrustAssistant.js\nsrc/core/afritick/consumers/AfriTickUniversalBadgeConsumer.js\nsrc/core/afritick/services/AfriTickServiceOwnership.js\nsrc/core/afriads/ai/AfriAdsAIFeed.js\nsrc/core/afriads/intelligence/AfriAdsAIIntelligenceFeed.js\nsrc/core/afriboost/gateway/AfriBoostCampaignGateway.js\nsrc/core/afriboost/social/AfriBoostSocialTaskEngine.js\nsrc/core/afritrust/profiles/AfriTrustProductProfileRegistry.js\nsrc/core/afritrust/consumers/AfriTrustPublicCardConsumers.js\nsrc/core/afribuild/contracts/AfriBuildContract.js\nsrc/ecosystem/edges/EcosystemEdgeTranslator.js\nsrc/ecosystem/ghost/GhostRuntimeEngine.js\nsrc/ecosystem/twin/CascadeFailureModel.js\nsrc/ecosystem/twin/CascadeModel.js\nsrc/ecosystem/landing/catalog/LandingServiceCatalog.js\nsrc/ecosystem/landing/catalog/LandingExperienceCatalog.js\nsrc/ecosystem/migration/audit/ProductMigrationMap.js\nsrc/pages/landing/LandingPage.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIAvatar.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIHalo.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIStatus.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIConversation.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIWaveEngine.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIComposer.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIMic.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIAttachments.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAICard.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIWaveform.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAITelegram.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIVoiceControl.jsx\nsrc/pages/landing/intelligence/canonical-v2/components/LandingAfriAIServiceDock.jsx\nsrc/pages/landing/intelligence/canonical-v2/styles/avatar.css\nsrc/pages/landing/intelligence/canonical-v2/styles/waveform.css\nsrc/pages/landing/intelligence/canonical-v2/styles/composer.css\nsrc/pages/landing/intelligence/canonical-v2/hooks/useAfriAIState.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/AfriAILandingRuntime.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceController.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceMap.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceEngine.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/AfriAISuggestionRegistry.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/AfriAISuggestionRouter.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/ads/AfriAIAdsMatcher.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/ads/AfriAdsCampaignResolver.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/ads/decision/AfriAdsDecisionEngine.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/ads/delivery/AfriAIAdsCardResolver.js\nsrc/pages/landing/intelligence/canonical-v2/runtime/ads/layout/AfriAISponsoredLayoutEngine.js\nsrc/pages/landing/intelligence/canonical-v2/LandingAfriAINext.jsx\nsrc/pages/landing/intelligence/canonical-v2/AFRIAI-CANONICAL-V2.lock\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAISpeechAdapter.js\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceController.js\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceEvents.js\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAIAudioAnalyzer.js\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceRuntimeBridge.js\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceLevelSmoother.js\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAITTS.js\nsrc/pages/landing/intelligence/canonical-v2/voice/AfriAITTSRuntimeBridge.js"
+    ],
+    "buildScriptReferences": [],
+    "apk": {
+      "exists": true,
+      "size": 8251084,
+      "mtime": 1786621196683.898
+    },
+    "buildCore": [
+      {
+        "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+        "exists": true,
+        "size": 293,
+        "mtime": 1786448645832.6838
+      },
+      {
+        "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+        "exists": true,
+        "size": 138,
+        "mtime": 1786448645832.6838
+      },
+      {
+        "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+        "exists": true,
+        "size": 135,
+        "mtime": 1786448645832.6838
+      },
+      {
+        "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+        "exists": true,
+        "size": 123,
+        "mtime": 1786448645832.6838
+      }
+    ],
+    "buildArtifacts": [
+      {
+        "file": "package.json",
+        "exists": true,
+        "size": 1334,
+        "mtime": 1786614332676.129
+      },
+      {
+        "file": "capacitor.config.json",
+        "exists": true,
+        "size": 85,
+        "mtime": 1786614347368.1287
+      },
+      {
+        "file": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "exists": true,
+        "size": 8251084,
+        "mtime": 1786621196683.898
+      }
+    ],
+    "recentCommits": []
+  },
+  "policy": {
+    "readOnly": true,
+    "noChanges": true,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786660647617
+}

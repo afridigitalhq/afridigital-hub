@@ -1,7 +1,0 @@
-{
-  "name":"AfriDigital User App OS",
-  "home":{"title":"User Home","sections":["Personalized Welcome","My Favorites","Recent Activity","Notifications","AfriAI Command Dock","Quick Actions","Ecosystem Discover","Personal Dashboard"]},
-  "products":["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld","AfriBoost","AfriTracker","AfriTicking","AfriLove","AfriEducation","AfriLogistics","AfriWork"],
-  "ecosystem":["Product Marketplace","Discover Products","Featured Experiences","Community","Events","Promotions","Learning Center","Support Center","Feedback"],
-  "account":["My Profile","My Organizations","Security","Privacy","Devices","Billing","Settings","Help & Support"]
-}

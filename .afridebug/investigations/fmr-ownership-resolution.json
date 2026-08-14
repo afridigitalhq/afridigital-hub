@@ -1,0 +1,197 @@
+{
+  "type": "AFRIDEBUG_FMR_OWNERSHIP_RESOLUTION",
+  "status": "RESOLUTION_ANALYSIS_READY",
+  "repository": "AfriDigital-hub",
+  "policy": {
+    "delete": false,
+    "autoRegister": false,
+    "execute": false,
+    "humanApprovalRequired": true
+  },
+  "targets": [
+    {
+      "product": "AfriCCTV",
+      "architectureClass": "USER_CORE_BACKED",
+      "runtimeEvidence": [
+        "src/core/africctv/billing/AfriCCTVUsageNormalizerV2.js",
+        "src/core/africctv/billing/CCTVUsageNormalizerV2.js",
+        "src/core/africctv/contracts/RuntimeContract.js",
+        "src/core/africctv/diagnostics/RuntimeDiagnostics.js",
+        "src/core/africctv/hooks/useAfriCCTVStream.js",
+        "src/core/africctv/landing/LandingAIEvents.js",
+        "src/core/africctv/landing/LandingPreviewFeeds.js",
+        "src/core/africctv/landing/LandingRetention.js",
+        "src/core/africctv/landing/LandingStatus.js",
+        "src/core/africctv/live/AfriCCTVLiveClient.js",
+        "src/core/africctv/live/AfriCCTVLiveClient.validate.js",
+        "src/core/africctv/models/AIEvent.js",
+        "src/core/africctv/models/CameraStatus.js",
+        "src/core/africctv/models/SystemStatus.js",
+        "src/core/africctv/models/VisitorLocation.js",
+        "src/core/africctv/presentation/ConnectionIndicator.js",
+        "src/core/africctv/presentation/HealthIndicator.js",
+        "src/core/africctv/presentation/LiveIndicator.js",
+        "src/core/africctv/presentation/RecordingIndicator.js",
+        "src/core/africctv/presentation/StatusChip.js"
+      ],
+      "featureEvidence": [],
+      "userEvidence": [
+        "src/pages/user/modules/AfriCCTV/index.jsx",
+        "src/pages/user/sidebar/items/AfriCCTVItem.jsx"
+      ],
+      "ecosystemEvidence": [
+        "src/ecosystem/landing/showroom/preview/AfriCCTVPreview.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CCTVStatusPanel.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/CameraFeed.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/EnterpriseMonitor.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/MobileCCTVFeed.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/components/LiveIndicator.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/components/RecordingIndicator.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/components/StatusChip.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/components/StatusDot.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/components/index.js",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/data/LandingDashboard.js",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/AfriCCTVHero.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseCTA.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/marketing/EnterpriseSidebar.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraFeed.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/CameraWall.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/EnterpriseHeader.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/partials/SOCWidgets.jsx",
+        "src/ecosystem/landing/showroom/products/africctv/AfriCCTV/useAfriCCTVLive.js"
+      ],
+      "runtimeEvidenceCount": 61,
+      "featureEvidenceCount": 0,
+      "userEvidenceCount": 2,
+      "ecosystemEvidenceCount": 19,
+      "decision": "OWNERSHIP_RESOLUTION_ONLY",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriTracker",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "runtimeEvidence": [],
+      "featureEvidence": [],
+      "userEvidence": [
+        "src/pages/user/modules/AfriTracker/index.jsx",
+        "src/pages/user/sidebar/items/AfriTrackerItem.jsx"
+      ],
+      "ecosystemEvidence": [
+        "src/ecosystem/landing/showroom/preview/AfriTrackerPreview.jsx",
+        "src/ecosystem/landing/showroom/products/afritracker/TrackerCTA.jsx",
+        "src/ecosystem/landing/showroom/products/afritracker/TrackerFeatures.jsx",
+        "src/ecosystem/landing/showroom/products/afritracker/TrackerHero.jsx",
+        "src/ecosystem/landing/showroom/products/afritracker/TrackerMap.jsx",
+        "src/ecosystem/landing/showroom/products/afritracker/TrackerPreview.jsx"
+      ],
+      "runtimeEvidenceCount": 0,
+      "featureEvidenceCount": 0,
+      "userEvidenceCount": 2,
+      "ecosystemEvidenceCount": 6,
+      "decision": "OWNERSHIP_RESOLUTION_ONLY",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriTicking",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "runtimeEvidence": [],
+      "featureEvidence": [],
+      "userEvidence": [
+        "src/pages/user/modules/AfriTicking/index.jsx",
+        "src/pages/user/sidebar/items/AfriTickingItem.jsx"
+      ],
+      "ecosystemEvidence": [],
+      "runtimeEvidenceCount": 0,
+      "featureEvidenceCount": 0,
+      "userEvidenceCount": 2,
+      "ecosystemEvidenceCount": 0,
+      "decision": "OWNERSHIP_RESOLUTION_ONLY",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriLove",
+      "architectureClass": "USER_SURFACE_ONLY",
+      "runtimeEvidence": [],
+      "featureEvidence": [],
+      "userEvidence": [
+        "src/pages/user/modules/AfriLove/index.jsx",
+        "src/pages/user/sidebar/items/AfriLoveItem.jsx"
+      ],
+      "ecosystemEvidence": [],
+      "runtimeEvidenceCount": 0,
+      "featureEvidenceCount": 0,
+      "userEvidenceCount": 2,
+      "ecosystemEvidenceCount": 0,
+      "decision": "OWNERSHIP_RESOLUTION_ONLY",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriEducation",
+      "architectureClass": "USER_CORE_BACKED",
+      "runtimeEvidence": [
+        "src/core/afrieducation/trust/AfriEducationTrustAdapter.js",
+        "src/core/afrieducation/trust/AfriEducationTrustSignalTypes.js"
+      ],
+      "featureEvidence": [],
+      "userEvidence": [
+        "src/pages/user/modules/AfriEducation/index.jsx",
+        "src/pages/user/sidebar/items/AfriEducationItem.jsx"
+      ],
+      "ecosystemEvidence": [],
+      "runtimeEvidenceCount": 2,
+      "featureEvidenceCount": 0,
+      "userEvidenceCount": 2,
+      "ecosystemEvidenceCount": 0,
+      "decision": "OWNERSHIP_RESOLUTION_ONLY",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriLogistics",
+      "architectureClass": "USER_CORE_BACKED",
+      "runtimeEvidence": [
+        "src/core/afrilogistics/trust/AfriLogisticsTrustAdapter.js",
+        "src/core/afrilogistics/trust/AfriLogisticsTrustSignalTypes.js"
+      ],
+      "featureEvidence": [],
+      "userEvidence": [
+        "src/pages/user/modules/AfriLogistics/index.jsx",
+        "src/pages/user/sidebar/items/AfriLogisticsItem.jsx"
+      ],
+      "ecosystemEvidence": [],
+      "runtimeEvidenceCount": 2,
+      "featureEvidenceCount": 0,
+      "userEvidenceCount": 2,
+      "ecosystemEvidenceCount": 0,
+      "decision": "OWNERSHIP_RESOLUTION_ONLY",
+      "execution": "BLOCKED"
+    },
+    {
+      "product": "AfriWork",
+      "architectureClass": "USER_CORE_BACKED",
+      "runtimeEvidence": [
+        "src/core/afriwork/trust/AfriWorkTrustAdapter.js",
+        "src/core/afriwork/trust/AfriWorkTrustSignalTypes.js",
+        "src/core/billing/universal/strategies/AfriWorkStrategy.js"
+      ],
+      "featureEvidence": [],
+      "userEvidence": [
+        "src/pages/user/modules/AfriWork/index.jsx",
+        "src/pages/user/sidebar/items/AfriWorkItem.jsx"
+      ],
+      "ecosystemEvidence": [
+        "src/ecosystem/landing/showroom/preview/AfriWorkPreview.jsx",
+        "src/ecosystem/landing/showroom/products/afriwork/WorkCTA.jsx",
+        "src/ecosystem/landing/showroom/products/afriwork/WorkFeatures.jsx",
+        "src/ecosystem/landing/showroom/products/afriwork/WorkHero.jsx",
+        "src/ecosystem/landing/showroom/products/afriwork/WorkPreview.jsx"
+      ],
+      "runtimeEvidenceCount": 3,
+      "featureEvidenceCount": 0,
+      "userEvidenceCount": 2,
+      "ecosystemEvidenceCount": 5,
+      "decision": "OWNERSHIP_RESOLUTION_ONLY",
+      "execution": "BLOCKED"
+    }
+  ],
+  "timestamp": 1786656963365
+}

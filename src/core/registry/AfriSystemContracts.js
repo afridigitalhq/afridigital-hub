@@ -1,25 +1,14 @@
-export const AfriSystemContracts = {
-  engines: {
+export const AfriSystemContracts = Object.freeze({
+  engines: Object.freeze({
     AfriVision: "visual-stream-core",
     AfriScan: "intelligence-core",
     AfriAI: "command-core"
-  },
-
-  forbiddenAliases: [
-    
-    
-  ],
-
-  tiers: {
-    tier1: ["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld"],
-    tier2: {
-      earning: ["AfriWork","AfriLogistics","AfriBoost","AfriEducation","AfriTracker","AfriTicking"],
-      social: ["AfriLove"]
-    }
-  },
-
-  futureSlots: {
+  }),
+  forbiddenAliases: Object.freeze([]),
+  futureSlots: Object.freeze({
     enabled: true,
     capacity: 20
-  }
-};
+  })
+});
+
+export default AfriSystemContracts;

@@ -1,0 +1,36 @@
+{
+  "type": "AFRIDEBUG_AFRIBUILD_EXECUTION_OWNERSHIP",
+  "status": "EVIDENCE_ONLY",
+  "repository": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+  "results": [
+    {
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+      "hits": [
+        "AfriBuildContract"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "hits": [
+        "AfriBuildOrchestrator"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "hits": [
+        "AfriBuildRegistry"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "hits": [
+        "AfriBuildRuntime"
+      ]
+    }
+  ],
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786660312909
+}

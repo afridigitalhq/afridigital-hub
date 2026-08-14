@@ -1,0 +1,25 @@
+{
+  "id": "AFN-AI-CONNECTION-001",
+  "type": "AFRIAI_UNIFIED_CONNECTION_AUDIT",
+  "status": "PENDING_REVIEW",
+  "targets": [
+    "AfriDigitalAppAfriAI",
+    "AfriAIWeb",
+    "AfriWhatsAppAI"
+  ],
+  "objectives": [
+    "discover current AfriAI connection paths",
+    "compare gateway usage",
+    "identify duplicated AI implementations",
+    "verify shared AfriAI runtime architecture",
+    "produce human approval fix plan"
+  ],
+  "security": {
+    "approvalRequired": true,
+    "executionAllowed": false
+  },
+  "handover": {
+    "owner": "AfriNexus",
+    "nextStep": "investigation"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "type": "AFRIDEBUG_FMR_OWNERSHIP_CORRELATION",
+  "status": "correlated",
+  "repository": "AfriDigital-hub",
+  "policy": "diagnostic_only_no_repairs",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "targets": [
+    {
+      "file": "src/pages/user/UserHome.jsx",
+      "exists": true,
+      "role": "ENTRY_SURFACE",
+      "inbound": 0,
+      "inboundSources": [],
+      "imports": []
+    },
+    {
+      "file": "src/pages/user/shell/UserAppShell.jsx",
+      "exists": true,
+      "role": "SHELL",
+      "inbound": 0,
+      "inboundSources": [],
+      "imports": []
+    },
+    {
+      "file": "src/pages/user/dashboard/UserDashboard.jsx",
+      "exists": true,
+      "role": "ACTIVE_DASHBOARD",
+      "inbound": 0,
+      "inboundSources": [],
+      "imports": []
+    },
+    {
+      "file": "src/pages/user/dashboard/layout/DashboardLayout.jsx",
+      "exists": true,
+      "role": "ALTERNATE_LAYOUT",
+      "inbound": 0,
+      "inboundSources": [],
+      "imports": []
+    },
+    {
+      "file": "src/pages/user/sidebar/sections/SidebarNavigation.jsx",
+      "exists": true,
+      "role": "NAVIGATION_OWNER",
+      "inbound": 0,
+      "inboundSources": [],
+      "imports": []
+    },
+    {
+      "file": "src/plugins/user/userPluginRegistry.js",
+      "exists": true,
+      "role": "FEATURE_REGISTRY",
+      "inbound": 0,
+      "inboundSources": [],
+      "imports": []
+    },
+    {
+      "file": "src/userhome/UserAppOSShell.json",
+      "exists": true,
+      "role": "EXPERIENCE_CONTRACT",
+      "inbound": 0,
+      "inboundSources": [],
+      "imports": []
+    }
+  ],
+  "timestamp": 1786655678825
+}

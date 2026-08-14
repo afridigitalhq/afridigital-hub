@@ -1,0 +1,40 @@
+{
+  "type": "AFRIDEBUG_FMR_PLUGIN_REGISTRY_INSPECTION",
+  "status": "registry_inspection_ready",
+  "repository": "AfriDigital-hub",
+  "objective": "Identify the authoritative FMR user plugin registry, registered products, plugin keys, ownership and rendering metadata before wiring the existing FMR experience",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "filesScanned": 34,
+  "registrySignals": [
+    {
+      "file": "src/plugins/user/userPluginRegistry.js",
+      "size": 2006,
+      "signals": 14
+    },
+    {
+      "file": "src/plugins/admin/adminPluginRegistry.js",
+      "size": 1919,
+      "signals": 6
+    },
+    {
+      "file": "src/plugins/user/userPluginRegistry.js",
+      "size": 2006,
+      "signals": 14
+    }
+  ],
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "rename": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "nextPhase": "AFRIDEBUG_FMR_PLUGIN_TO_SURFACE_CORRELATION",
+  "timestamp": 1786655261803
+}

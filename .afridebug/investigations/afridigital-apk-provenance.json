@@ -1,0 +1,293 @@
+{
+  "type": "AFRIDEBUG_AFRIDIGITAL_APK_PROVENANCE",
+  "status": "PROVENANCE_INVESTIGATION",
+  "apk": {
+    "path": "/storage/emulated/0/Download/afridigital-debug.apk",
+    "size": 8251084,
+    "mtime": 1786624759675.8955
+  },
+  "signals": [
+    {
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+      "size": 293,
+      "mtime": 1786448645832.6838
+    },
+    {
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "size": 138,
+      "mtime": 1786448645832.6838
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "size": 135,
+      "mtime": 1786448645832.6838
+    },
+    {
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "size": 123,
+      "mtime": 1786448645832.6838
+    },
+    {
+      "file": "scripts/soc-validate.sh",
+      "size": 251,
+      "mtime": 1783723096408.324
+    },
+    {
+      "file": "scripts/validate/buildValidation.js",
+      "size": 391,
+      "mtime": 1783723096444.324
+    },
+    {
+      "file": "android/app/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt",
+      "size": 81,
+      "mtime": 1786621270327.898
+    },
+    {
+      "file": "android/app/build/intermediates/assets/debug/mergeDebugAssets/capacitor.config.json",
+      "size": 82,
+      "mtime": 1786614866680.128
+    },
+    {
+      "file": "android/app/build/intermediates/assets/debug/mergeDebugAssets/capacitor.plugins.json",
+      "size": 3,
+      "mtime": 1786614866796.128
+    },
+    {
+      "file": "android/app/build/intermediates/assets/debug/mergeDebugAssets/native-bridge.js",
+      "size": 53467,
+      "mtime": 1786614320060.128
+    },
+    {
+      "file": "android/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt",
+      "size": 14890,
+      "mtime": 1786620502015.8984
+    },
+    {
+      "file": "android/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json",
+      "size": 321515,
+      "mtime": 1786621059399.898
+    },
+    {
+      "file": "android/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json",
+      "size": 48982,
+      "mtime": 1786621059411.898
+    },
+    {
+      "file": "android/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt",
+      "size": 94672,
+      "mtime": 1786621068351.898
+    },
+    {
+      "file": "android/app/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt",
+      "size": 5951,
+      "mtime": 1786620496659.8984
+    },
+    {
+      "file": "android/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt",
+      "size": 92100,
+      "mtime": 1786621067975.898
+    },
+    {
+      "file": "android/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt",
+      "size": 54572,
+      "mtime": 1786621069079.898
+    },
+    {
+      "file": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "size": 8251084,
+      "mtime": 1786621196683.898
+    },
+    {
+      "file": "android/app/build/outputs/apk/debug/output-metadata.json",
+      "size": 401,
+      "mtime": 1786621270159.898
+    },
+    {
+      "file": "android/app/build/outputs/logs/manifest-merger-debug-report.txt",
+      "size": 45018,
+      "mtime": 1786620502011.8984
+    },
+    {
+      "file": "android/app/build.gradle",
+      "size": 2136,
+      "mtime": 1786614402836.1287
+    },
+    {
+      "file": "android/app/capacitor.build.gradle",
+      "size": 370,
+      "mtime": 1786614866924.1284
+    },
+    {
+      "file": "android/app/src/main/assets/capacitor.config.json",
+      "size": 82,
+      "mtime": 1786614866680.1284
+    },
+    {
+      "file": "android/app/src/main/assets/capacitor.plugins.json",
+      "size": 3,
+      "mtime": 1786614866796.1284
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json",
+      "size": 364,
+      "mtime": 1786620501539.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json",
+      "size": 2,
+      "mtime": 1786620501479.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/annotations_typedef_file/debug/extractDebugAnnotations/typedefs.txt",
+      "size": 0,
+      "mtime": 1786621270055.898
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/compile_symbol_list/debug/generateDebugRFile/R.txt",
+      "size": 0,
+      "mtime": 1786620503607.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt",
+      "size": 55,
+      "mtime": 1786620501499.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt",
+      "size": 476,
+      "mtime": 1786620501527.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json",
+      "size": 2,
+      "mtime": 1786620501219.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt",
+      "size": 15,
+      "mtime": 1786620496475.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt",
+      "size": 34,
+      "mtime": 1786620503671.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build/outputs/logs/manifest-merger-debug-report.txt",
+      "size": 1865,
+      "mtime": 1786620501523.8984
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/build.gradle",
+      "size": 1668,
+      "mtime": 1786614866932.1284
+    },
+    {
+      "file": "android/capacitor-cordova-android-plugins/cordova.variables.gradle",
+      "size": 312,
+      "mtime": 1786614866936.1284
+    },
+    {
+      "file": "android/capacitor.settings.gradle",
+      "size": 207,
+      "mtime": 1786614866924.1284
+    },
+    {
+      "file": "android/settings.gradle",
+      "size": 208,
+      "mtime": 1785512756000
+    },
+    {
+      "file": "dist/assets/afriboost-CNPygam-.js",
+      "size": 67,
+      "mtime": 1786647137789.9602
+    },
+    {
+      "file": "dist/assets/africomm-BvYRW9VU.js",
+      "size": 66,
+      "mtime": 1786647137789.9602
+    },
+    {
+      "file": "dist/assets/africommerce-IL_8hXGU.js",
+      "size": 70,
+      "mtime": 1786647137789.9602
+    },
+    {
+      "file": "dist/assets/afrimetaworld-DOpQbK96.js",
+      "size": 71,
+      "mtime": 1786647137789.9602
+    },
+    {
+      "file": "dist/assets/afrisports-B_6YJpNd.js",
+      "size": 68,
+      "mtime": 1786647137789.9602
+    },
+    {
+      "file": "dist/assets/index-XChb_D9B.js",
+      "size": 265301,
+      "mtime": 1786647137789.9602
+    },
+    {
+      "file": ".afridebug/investigations/afribuild-callgraph-probe.json",
+      "size": 1805,
+      "mtime": 1786660262541.9507
+    },
+    {
+      "file": ".afridebug/investigations/afribuild-execution-ownership.json",
+      "size": 813,
+      "mtime": 1786660312909.9507
+    },
+    {
+      "file": ".afridebug/investigations/afribuild-execution-path.json",
+      "size": 663,
+      "mtime": 1786660144541.9507
+    },
+    {
+      "file": ".afridebug/investigations/afribuild-pipeline-probe.json",
+      "size": 4632,
+      "mtime": 1786660048141.951
+    },
+    {
+      "file": ".afridebug/investigations/afridigital-debug-apk-discovery.json",
+      "size": 341,
+      "mtime": 1786659639577.9512
+    },
+    {
+      "file": ".afridebug/investigations/android-technology-probe.json",
+      "size": 8675,
+      "mtime": 1786659174253.9514
+    },
+    {
+      "file": ".afridebug/investigations/capacitor-source-correlation.json",
+      "size": 1884,
+      "mtime": 1786659936509.951
+    },
+    {
+      "file": ".afridebug/investigations/fmr-owner-confidence.json",
+      "size": 5935,
+      "mtime": 1786656784665.9531
+    },
+    {
+      "file": ".afridebug/investigations/fmr-owner-verification.json",
+      "size": 5250,
+      "mtime": 1786656676393.9534
+    },
+    {
+      "file": ".afridebug/investigations/fmr-registry-ownership.json",
+      "size": 11618,
+      "mtime": 1786655577125.954
+    },
+    {
+      "file": ".afridebug/investigations/nucchain-execution-investigation.json",
+      "size": 36212,
+      "mtime": 1786652966317.9558
+    }
+  ],
+  "determination": "NOT_YET_ATTRIBUTED",
+  "policy": {
+    "readOnly": true,
+    "noChanges": true,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786660399516
+}

@@ -37,4 +37,3 @@ src/plugins/user/userPluginRegistry.js:57:    name: "AfriBoost",
 src/plugins/user/userPluginRegistry.js:58:    component: AfriBoost,
 src/components/ads/AfriBoostSidebar.jsx:4:export default function AfriBoostSidebar() {
 src/components/ads/AfriBoostSidebar.jsx:23:      { title: "💼 AfriWork Hub", desc: "Find remote jobs instantly" },
-src/userhome/UserAppOSShell.json:4:  "products":["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld","AfriBoost","AfriTracker","AfriTicking","AfriLove","AfriEducation","AfriLogistics","AfriWork"],

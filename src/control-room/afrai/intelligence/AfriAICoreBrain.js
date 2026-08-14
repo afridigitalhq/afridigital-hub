@@ -1,5 +1,5 @@
-import DecisionEngine from "./DecisionEngine";
-import EventStream from "../../bridge/EventStream";
+import DecisionEngine from "./DecisionEngine.js";
+import EventStream from "../../../control-room/bridge/EventStream.js";
 
 const AfriAICoreBrain = {
   execute(input) {

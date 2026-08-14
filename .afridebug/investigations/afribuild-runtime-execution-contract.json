@@ -1,0 +1,96 @@
+{
+  "type": "AFRIDEBUG_AFRIBUILD_RUNTIME_EXECUTION_CONTRACT",
+  "status": "EVIDENCE_ONLY",
+  "repository": "AfriDigital-hub",
+  "files": [
+    {
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+      "lines": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Foundation — scaffold only\nconst AfriBuildContract = Object.freeze({\n  id: \"afribuild\",\n  version: \"0.1.0\",\n  status: \"SCAFFOLDED\",\n  inherits: \"AfriFix\",\n  intelligence: \"AfriAI\",\n  execution: \"AfriNucChain\",\n  humanApprovalRequired: true\n});\nexport default AfriBuildContract;"
+        }
+      ]
+    },
+    {
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "lines": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Orchestrator — scaffold only\nconst AfriBuildOrchestrator = { status: \"SCAFFOLDED\" };\nexport default AfriBuildOrchestrator;"
+        }
+      ]
+    },
+    {
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "lines": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Runtime — scaffold only\nconst AfriBuildRuntime = { status: \"SCAFFOLDED\" };\nexport default AfriBuildRuntime;"
+        }
+      ]
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "lines": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Registry — scaffold only\nconst AfriBuildRegistry = { engines: [], capabilities: [] };\nexport default AfriBuildRegistry;"
+        }
+      ]
+    },
+    {
+      "file": "scripts/afrinuc/build.mjs",
+      "lines": [
+        {
+          "line": 1,
+          "text": "import AfriNucChainEngine from \"../../src/core/afriai/nucchain/AfriNucChainEngine.js\";\n\nconst manifest = {\n  id: process.argv[2] || \"AFRI-NUCCHAIN-BUILD\",\n  source: process.argv[3] || null,\n  target: process.argv[4] || \"src/core/afriai/nucchain/generated\",\n  modules: []\n};\n\nconst result = await AfriNucChainEngine.execute(manifest);\n\nconsole.log(JSON.stringify(result.completion, null, 2));"
+        }
+      ]
+    },
+    {
+      "file": "package.json",
+      "lines": [
+        {
+          "line": 1,
+          "text": "{\n  \"name\": \"afridigital-hub\",\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"npm run prebuild && vite build\",\n    \"start\": \"node server-spa/server.js\",\n    \"preview\": \"vite preview\",\n    \"audit:registry\": \"node scripts/audit/registryAudit.js\",\n    \"audit:architecture\": \"node scripts/audit/architectureAudit.js\",\n    \"audit:routes\": \"node scripts/audit/routeAudit.js\",\n    \"audit:plugins\": \"node scripts/audit/pluginAudit.js\",\n    \"audit:contracts\": \"node scripts/audit/contractAudit.js\",\n    \"bootstrap:registry\": \"node scripts/bootstrap/registryBootstrap.js\",\n    \"bootstrap:products\": \"node scripts/bootstrap/productBootstrap.js\",\n    \"bootstrap:os\": \"node scripts/bootstrap/osBootstrap.js\",\n    \"validate:build\": \"node scripts/validate/buildValidation.js\",\n    \"validate:composition\": \"node scripts/validate/compositionValidation.js\",\n    \"prebuild\": \"grep -R 'wa.me\\\\|whatsapp://' src && exit 1 || true\",\n    \"dev\": \"vite\"\n  },\n  \"dependencies\": {\n    \"@capacitor/android\": \"^8.5.0\",\n    \"@capacitor/cli\": \"^8.5.0\",\n    \"@capacitor/core\": \"^8.5.0\",\n    \"express\": \"^4.19.2\",\n    \"react\": \"^19.2.7\",\n    \"react-dom\": \"^19.2.7\",\n    \"react-icons\": \"^5.7.0\",\n    \"react-router-dom\": \"^7.18.1\",\n    \"socket.io-client\": \"^4.8.3\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"^10.6.0\",\n    \"vite\": \"^8.1.0\"\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "executionSignals": [
+    {
+      "line": 1,
+      "text": "// AfriBuild Foundation — scaffold only\nconst AfriBuildContract = Object.freeze({\n  id: \"afribuild\",\n  version: \"0.1.0\",\n  status: \"SCAFFOLDED\",\n  inherits: \"AfriFix\",\n  intelligence: \"AfriAI\",\n  execution: \"AfriNucChain\",\n  humanApprovalRequired: true\n});\nexport default AfriBuildContract;",
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js"
+    },
+    {
+      "line": 1,
+      "text": "// AfriBuild Orchestrator — scaffold only\nconst AfriBuildOrchestrator = { status: \"SCAFFOLDED\" };\nexport default AfriBuildOrchestrator;",
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js"
+    },
+    {
+      "line": 1,
+      "text": "// AfriBuild Runtime — scaffold only\nconst AfriBuildRuntime = { status: \"SCAFFOLDED\" };\nexport default AfriBuildRuntime;",
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js"
+    },
+    {
+      "line": 1,
+      "text": "import AfriNucChainEngine from \"../../src/core/afriai/nucchain/AfriNucChainEngine.js\";\n\nconst manifest = {\n  id: process.argv[2] || \"AFRI-NUCCHAIN-BUILD\",\n  source: process.argv[3] || null,\n  target: process.argv[4] || \"src/core/afriai/nucchain/generated\",\n  modules: []\n};\n\nconst result = await AfriNucChainEngine.execute(manifest);\n\nconsole.log(JSON.stringify(result.completion, null, 2));",
+      "file": "scripts/afrinuc/build.mjs"
+    },
+    {
+      "line": 1,
+      "text": "{\n  \"name\": \"afridigital-hub\",\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"npm run prebuild && vite build\",\n    \"start\": \"node server-spa/server.js\",\n    \"preview\": \"vite preview\",\n    \"audit:registry\": \"node scripts/audit/registryAudit.js\",\n    \"audit:architecture\": \"node scripts/audit/architectureAudit.js\",\n    \"audit:routes\": \"node scripts/audit/routeAudit.js\",\n    \"audit:plugins\": \"node scripts/audit/pluginAudit.js\",\n    \"audit:contracts\": \"node scripts/audit/contractAudit.js\",\n    \"bootstrap:registry\": \"node scripts/bootstrap/registryBootstrap.js\",\n    \"bootstrap:products\": \"node scripts/bootstrap/productBootstrap.js\",\n    \"bootstrap:os\": \"node scripts/bootstrap/osBootstrap.js\",\n    \"validate:build\": \"node scripts/validate/buildValidation.js\",\n    \"validate:composition\": \"node scripts/validate/compositionValidation.js\",\n    \"prebuild\": \"grep -R 'wa.me\\\\|whatsapp://' src && exit 1 || true\",\n    \"dev\": \"vite\"\n  },\n  \"dependencies\": {\n    \"@capacitor/android\": \"^8.5.0\",\n    \"@capacitor/cli\": \"^8.5.0\",\n    \"@capacitor/core\": \"^8.5.0\",\n    \"express\": \"^4.19.2\",\n    \"react\": \"^19.2.7\",\n    \"react-dom\": \"^19.2.7\",\n    \"react-icons\": \"^5.7.0\",\n    \"react-router-dom\": \"^7.18.1\",\n    \"socket.io-client\": \"^4.8.3\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"^10.6.0\",\n    \"vite\": \"^8.1.0\"\n  }\n}",
+      "file": "package.json"
+    }
+  ],
+  "determination": "EXECUTION_CAPABILITY_SIGNALS_FOUND",
+  "nextGate": "CORRELATE_RUNTIME_CONTRACT_WITH_ACTUAL_APK_BUILD",
+  "governance": {
+    "readOnly": true,
+    "noChanges": true,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786660978292
+}

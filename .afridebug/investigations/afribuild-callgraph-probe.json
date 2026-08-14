@@ -1,0 +1,63 @@
+{
+  "type": "AFRIDEBUG_AFRIBUILD_CALLGRAPH_PROBE",
+  "status": "EVIDENCE_ONLY",
+  "repository": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+  "targets": [
+    "AfriBuildOrchestrator",
+    "AfriBuildRuntime",
+    "AfriBuildRegistry",
+    "AfriBuildContract"
+  ],
+  "results": [
+    {
+      "file": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/.afridebug/investigations/afribuild-pipeline-probe.json",
+      "uses": [
+        "AfriBuildOrchestrator",
+        "AfriBuildRuntime",
+        "AfriBuildRegistry",
+        "AfriBuildContract"
+      ],
+      "imports": []
+    },
+    {
+      "file": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/.afridebug/investigations/fmr-registry-ownership.json",
+      "uses": [
+        "AfriBuildRegistry"
+      ],
+      "imports": []
+    },
+    {
+      "file": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/core/afribuild/contracts/AfriBuildContract.js",
+      "uses": [
+        "AfriBuildContract"
+      ],
+      "imports": []
+    },
+    {
+      "file": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "uses": [
+        "AfriBuildOrchestrator"
+      ],
+      "imports": []
+    },
+    {
+      "file": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/core/afribuild/registry/AfriBuildRegistry.js",
+      "uses": [
+        "AfriBuildRegistry"
+      ],
+      "imports": []
+    },
+    {
+      "file": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "uses": [
+        "AfriBuildRuntime"
+      ],
+      "imports": []
+    }
+  ],
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786660262535
+}

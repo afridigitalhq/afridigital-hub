@@ -1,0 +1,155 @@
+{
+  "type": "AFRIDEBUG_APK_BUILD_PROVENANCE_FINAL",
+  "status": "EVIDENCE_ONLY",
+  "repository": "AfriDigital-hub",
+  "apk": {
+    "exists": true,
+    "size": 8251084,
+    "mtime": 1786621196683.898
+  },
+  "evidence": [
+    {
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+      "afribuild": [
+        "AfriBuild",
+        "build"
+      ],
+      "gradle": [],
+      "capacitor": [],
+      "vite": []
+    },
+    {
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "afribuild": [
+        "AfriBuild",
+        "build",
+        "orchestrator"
+      ],
+      "gradle": [],
+      "capacitor": [],
+      "vite": []
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "afribuild": [
+        "AfriBuild",
+        "build",
+        "registry"
+      ],
+      "gradle": [],
+      "capacitor": [],
+      "vite": []
+    },
+    {
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "afribuild": [
+        "AfriBuild",
+        "build",
+        "runtime"
+      ],
+      "gradle": [],
+      "capacitor": [],
+      "vite": []
+    },
+    {
+      "file": "scripts/afrinuc/build.mjs",
+      "afribuild": [
+        "build"
+      ],
+      "gradle": [],
+      "capacitor": [],
+      "vite": []
+    },
+    {
+      "file": "package.json",
+      "afribuild": [
+        "build",
+        "registry"
+      ],
+      "gradle": [],
+      "capacitor": [
+        "@capacitor"
+      ],
+      "vite": [
+        "vite build"
+      ]
+    },
+    {
+      "file": "capacitor.config.json",
+      "afribuild": [],
+      "gradle": [],
+      "capacitor": [],
+      "vite": []
+    },
+    {
+      "file": "scripts/validate/buildValidation.js",
+      "afribuild": [
+        "build",
+        "registry"
+      ],
+      "gradle": [],
+      "capacitor": [],
+      "vite": [
+        "vite build"
+      ]
+    }
+  ],
+  "history": [
+    {
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+      "log": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "log": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "log": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "log": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "scripts/afrinuc/build.mjs",
+      "log": [
+        "a48793b1474279803b2afa60e26f3379496752e9\t2026-08-02T22:44:06+01:00\tAfriLove Team\tlock: migrate AfriRuntime core and remove legacy architecture"
+      ]
+    },
+    {
+      "file": "package.json",
+      "log": [
+        "130ab1d64529e1e34d103ce7a484d40999ac4a0f\t2026-07-09T23:00:10+01:00\tAfriLove Team\tfeat: bootstrap AfriCCTV landing runtime architecture\n6a26b462f0d3b809f5ffd38e15334c47be1fa864\t2026-07-08T06:37:43+01:00\tAfriLove Team\tProduction checkpoint before backup cleanup\nc042126ad268a0aaf75da70299edc1267676bfca\t2026-07-06T12:27:54+01:00\tAfriLove Team\tLOCK: canonical BillingExecutionPipeline established\nd0ff3ce8b605e76e56c4836df62c544c0614e50e\t2026-07-03T09:46:54+01:00\tAfriLove Team\tfeat: AfriDigital landing v3 ecosystem composition system\nf2903c16132a6759a06dcd49bcbb0fca890055df\t2026-07-03T00:10:25+01:00\tAfriLove Team\tAfriVision runtime live integration + heartbeat visualization + preview setup\n5cc2dff42594b0d64ac562220934213f7903597b\t2026-06-30T13:21:31+01:00\tAfriLove Team\tAdd react-router-dom dependency for routing\nd86d9921fc07e9f4b67b2ee8b36ac9ba6d52cc0d\t2026-06-23T19:29:09+01:00\tAfriLove Team\tfix: restore react runtime dependencies for Render build\nd1979811fe746e450ad11aee8c8ba27372c6754c\t2026-06-23T19:25:32+01:00\tAfriLove Team\tfix: ensure vite available in Render build environment\n62d85d850c6561d80371a5f4d57be3b97b1ddc13\t2026-06-23T19:12:26+01:00\tAfriLove Team\tfix: clean SPA fallback reset for Render routing\nc8452f49a0274cc4d5ca937c9e9a8d5ade0093fe\t2026-06-23T17:09:56+01:00\tAfriLove Team\tfeat: add control plane and AI runtime (no CI workflows)"
+      ]
+    },
+    {
+      "file": "capacitor.config.json",
+      "log": []
+    },
+    {
+      "file": "scripts/validate/buildValidation.js",
+      "log": [
+        "c042126ad268a0aaf75da70299edc1267676bfca\t2026-07-06T12:27:54+01:00\tAfriLove Team\tLOCK: canonical BillingExecutionPipeline established"
+      ]
+    }
+  ],
+  "buildRelatedGitHistory": [
+    "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tscaffold AfriBuild foundation\na48793b1474279803b2afa60e26f3379496752e9\t2026-08-02T22:44:06+01:00\tAfriLove Team\tlock: migrate AfriRuntime core and remove legacy architecture\n7a661caf9ce52843957032372c7ff830b8d19f9a\t2026-07-12T16:01:52+01:00\tAfriLove Team\t☢️ AfriNucChain: migrate landing ecosystem to single truth registry\n130ab1d64529e1e34d103ce7a484d40999ac4a0f\t2026-07-09T23:00:10+01:00\tAfriLove Team\tfeat: bootstrap AfriCCTV landing runtime architecture\n6a26b462f0d3b809f5ffd38e15334c47be1fa864\t2026-07-08T06:37:43+01:00\tAfriLove Team\tProduction checkpoint before backup cleanup\nc042126ad268a0aaf75da70299edc1267676bfca\t2026-07-06T12:27:54+01:00\tAfriLove Team\tLOCK: canonical BillingExecutionPipeline established\n58bfa3f08669d899fc73b3cdd63ebf31222baf70\t2026-07-04T20:02:17+01:00\tAfriLove Team\tAfriMonitor: stream-engine single clock architecture stabilized (UI cleansed, runtime decoupled)\nd0ff3ce8b605e76e56c4836df62c544c0614e50e\t2026-07-03T09:46:54+01:00\tAfriLove Team\tfeat: AfriDigital landing v3 ecosystem composition system\nf2903c16132a6759a06dcd49bcbb0fca890055df\t2026-07-03T00:10:25+01:00\tAfriLove Team\tAfriVision runtime live integration + heartbeat visualization + preview setup\n5cc2dff42594b0d64ac562220934213f7903597b\t2026-06-30T13:21:31+01:00\tAfriLove Team\tAdd react-router-dom dependency for routing\nd86d9921fc07e9f4b67b2ee8b36ac9ba6d52cc0d\t2026-06-23T19:29:09+01:00\tAfriLove Team\tfix: restore react runtime dependencies for Render build\nd1979811fe746e450ad11aee8c8ba27372c6754c\t2026-06-23T19:25:32+01:00\tAfriLove Team\tfix: ensure vite available in Render build environment\n62d85d850c6561d80371a5f4d57be3b97b1ddc13\t2026-06-23T19:12:26+01:00\tAfriLove Team\tfix: clean SPA fallback reset for Render routing\nc8452f49a0274cc4d5ca937c9e9a8d5ade0093fe\t2026-06-23T17:09:56+01:00\tAfriLove Team\tfeat: add control plane and AI runtime (no CI workflows)\n42c54c96b97322ab0fc7e09d6ffc1c8603ea77b4\t2026-06-23T10:19:45+01:00\tAfriLove Team\tSOC OS: production-ready validation passed (runtime stable + UI intact)\n53c71f2851cd029913ab79fbbda41981eb065a03\t2026-06-20T23:20:58+01:00\tAfriLove Team\tcheckpoint: pre-os-authority-lock\nc210fd10c312a4d3c09c21a96e4cb81572511587\t2026-06-20T12:45:17+01:00\tAfriLove Team\tfix: align vite 5 with compatible react plugin\n5f4d7c6129927d9a1621c6d11322e4f93719a725\t2026-06-20T12:21:26+01:00\tAfriLove Team\tfix: restore react runtime dependencies for vite build\n551cdee53385225df64d021e3e9400386f258f17\t2026-06-20T12:14:01+01:00\tAfriLove Team\tfix: render production static hosting config\n2daca956597e8f731881cbd5eb6666ae34f62168\t2026-06-20T11:05:47+01:00\tAfriLove Team\tfix: render compatible vite build output dist\ne33c6277e737b61d8c9424495e2435dda3f89929\t2026-06-20T10:55:46+01:00\tAfriLove Team\tfix: add vite build pipeline for render frontend\nb1d94107e5f869932912e290b82819f4b2ba4fa4\t2026-06-20T10:54:39+01:00\tAfriLove Team\tfix: frontend deploy structure for render"
+  ],
+  "determination": "CORRELATION_REQUIRES_BUILD_EXECUTION_EVIDENCE",
+  "governance": {
+    "readOnly": true,
+    "noChanges": true,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786660774315
+}

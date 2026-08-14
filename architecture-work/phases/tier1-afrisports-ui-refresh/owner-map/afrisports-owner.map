@@ -31,4 +31,3 @@ src/plugins/user/userPluginRegistry.js:9:const AfriSports = lazy(() => import(".
 src/plugins/user/userPluginRegistry.js:21:    name: "AfriSports",
 src/plugins/user/userPluginRegistry.js:22:    component: AfriSports,
 src/components/ads/AfriBoostSidebar.jsx:11:      { title: "⚽ AfriSports Live", desc: "Watch trending matches" },
-src/userhome/UserAppOSShell.json:4:  "products":["AfriCommerce","AfriCCTV","AfriSports","AfriMetaWorld","AfriBoost","AfriTracker","AfriTicking","AfriLove","AfriEducation","AfriLogistics","AfriWork"],

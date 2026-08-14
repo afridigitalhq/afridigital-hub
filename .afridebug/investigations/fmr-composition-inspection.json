@@ -1,0 +1,31 @@
+{
+  "type": "AFRIDEBUG_FMR_COMPOSITION_INSPECTION",
+  "status": "composition_inspection_ready",
+  "repository": "AfriDigital-hub",
+  "objective": "Determine the existing FMR User Home composition and ownership before route wiring or repair planning",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "files": {
+    "src/pages/user/UserHome.jsx": "import React from \"react\";\nimport UserAppShell from \"./shell/UserAppShell\";\n\nexport default function UserHome() {\n  return <UserAppShell />;\n}\n",
+    "src/pages/user/shell/UserAppShell.jsx": "import React,{useState} from \"react\";\nimport { UserNavigationProvider } from \"../context/UserNavigationContext\";\nimport UserSidebar from \"../sidebar/UserSidebar\";\nimport UserDashboard from \"../dashboard/UserDashboard\";\n\nexport default function UserAppShell(){\nconst [collapsed,setCollapsed]=useState(false);\n\nreturn (\n<UserNavigationProvider>\n<div style={{display:\"grid\",gridTemplateColumns:collapsed?\"70px 1fr\":\"260px 1fr\",minHeight:\"100vh\",transition:\"0.3s\"}}>\n<UserSidebar collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />\n<main style={{padding:20}}>\n<UserDashboard />\n</main>\n</div>\n</UserNavigationProvider>\n);\n}\n",
+    "src/pages/user/dashboard/UserDashboard.jsx": "import React from \"react\";\nimport WelcomeBanner from \"./partials/WelcomeBanner\";\nimport EcosystemOverview from \"./partials/EcosystemOverview\";\nimport ProductLauncher from \"./partials/ProductLauncher\";\nimport AfriAIPanel from \"./partials/AfriAIPanel\";\nimport QuickActions from \"./partials/QuickActions\";\nimport InsightsPanel from \"./partials/InsightsPanel\";\nimport ActivityFeed from \"./partials/ActivityFeed\";\nimport PluginWorkspace from \"./partials/PluginWorkspace\";\n\nexport default function UserDashboard(){\n  return (\n    <div style={{display:\"grid\",gap:16}}>\n      <WelcomeBanner />\n      <EcosystemOverview />\n      <ProductLauncher />\n      <AfriAIPanel />\n      <QuickActions />\n      <InsightsPanel />\n      <ActivityFeed />\n      <PluginWorkspace />\n    </div>\n  );\n}\n",
+    "src/pages/user/dashboard/layout/DashboardLayout.jsx": "import React from \"react\";\nimport WelcomeBanner from \"../partials/WelcomeBanner\";\nimport EcosystemOverview from \"../partials/EcosystemOverview\";\nimport QuickActions from \"../partials/QuickActions\";\nimport ActivityFeed from \"../partials/ActivityFeed\";\nimport ProductLauncher from \"../partials/ProductLauncher\";\nimport InsightsPanel from \"../partials/InsightsPanel\";\nimport WalletSummary from \"../widgets/WalletSummary\";\nimport EcosystemGrid from \"../widgets/EcosystemGrid\";\nimport ProductOverviewGrid from \"../widgets/ProductOverviewGrid\";\nimport NotificationsPanel from \"../widgets/NotificationsPanel\";\nimport RecentActivity from \"../widgets/RecentActivity\";\nimport FavoritesPanel from \"../widgets/FavoritesPanel\";\nimport QuickActionsPanel from \"../widgets/QuickActionsPanel\";\nimport SystemStatus from \"../widgets/SystemStatus\";\n\nexport {\n  WelcomeBanner,\n  WalletSummary,\n  EcosystemOverview,\n  EcosystemGrid,\n  QuickActions,\n  QuickActionsPanel,\n  ProductLauncher,\n  ProductOverviewGrid,\n  ActivityFeed,\n  RecentActivity,\n  NotificationsPanel,\n  FavoritesPanel,\n  InsightsPanel,\n  SystemStatus\n};\n",
+    "src/pages/user/sidebar/UserSidebar.jsx": "import React from \"react\";\nimport SidebarHeader from \"./sections/SidebarHeader\";\nimport SidebarNavigation from \"./sections/SidebarNavigation\";\nimport SidebarFooter from \"./sections/SidebarFooter\";\n\nexport default function UserSidebar({collapsed,onToggle}){\nreturn (\n<aside style={{width:collapsed?70:260,minHeight:\"100vh\",display:\"flex\",flexDirection:\"column\",transition:\"0.3s\",overflow:\"hidden\"}}>\n<button onClick={onToggle}>☰</button>\n<SidebarHeader />\n<div style={{flex:1}}><SidebarNavigation /></div>\n<SidebarFooter />\n</aside>\n);\n}\n",
+    "src/pages/user/context/UserNavigationContext.jsx": "import React, { createContext, useContext, useMemo, useState } from \"react\";\n\nconst UserNavigationContext = createContext(null);\n\nexport function UserNavigationProvider({ children }) {\n  const [activePlugin, setActivePlugin] = useState(\"dashboard\");\n\n  const value = useMemo(\n    () => ({\n      activePlugin,\n      setActivePlugin\n    }),\n    [activePlugin]\n  );\n\n  return (\n    <UserNavigationContext.Provider value={value}>\n      {children}\n    </UserNavigationContext.Provider>\n  );\n}\n\nexport function useUserNavigation() {\n  const context = useContext(UserNavigationContext);\n\n  if (!context) {\n    throw new Error(\"useUserNavigation must be used inside UserNavigationProvider\");\n  }\n\n  return context;\n}\n",
+    "src/userhome/UserAppOSShell.json": "{\n  \"name\":\"AfriDigital User App OS\",\n  \"home\":{\"title\":\"User Home\",\"sections\":[\"Personalized Welcome\",\"My Favorites\",\"Recent Activity\",\"Notifications\",\"AfriAI Command Dock\",\"Quick Actions\",\"Ecosystem Discover\",\"Personal Dashboard\"]},\n  \"products\":[\"AfriCommerce\",\"AfriCCTV\",\"AfriSports\",\"AfriMetaWorld\",\"AfriBoost\",\"AfriTracker\",\"AfriTicking\",\"AfriLove\",\"AfriEducation\",\"AfriLogistics\",\"AfriWork\"],\n  \"ecosystem\":[\"Product Marketplace\",\"Discover Products\",\"Featured Experiences\",\"Community\",\"Events\",\"Promotions\",\"Learning Center\",\"Support Center\",\"Feedback\"],\n  \"account\":[\"My Profile\",\"My Organizations\",\"Security\",\"Privacy\",\"Devices\",\"Billing\",\"Settings\",\"Help & Support\"]\n}\n"
+  },
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "routeChanges": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "nextPhase": "AFRIDEBUG_FMR_ROUTE_WIRING_PLAN",
+  "timestamp": 1786655155408
+}

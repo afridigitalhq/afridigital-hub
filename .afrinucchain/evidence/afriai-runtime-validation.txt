@@ -1,0 +1,135 @@
+=== AFRIAI RUNTIME VALIDATION ===
+DATE: Fri Aug 14 20:13:10 WAT 2026
+=== FEATURE ENTRY ===
+export default { name: 'afriai', status: 'stub-loaded' };
+=== CAPABILITY CONTRACT ===
+const AfriAICapabilityContract = Object.freeze({
+  required: ["id", "topic", "description", "operations", "provider"],
+  authorityLevels: Object.freeze(["ecosystem", "studio", "admin"]),
+  validate(capability = {}) {
+    const missing = this.required.filter((field) => {
+      if (field === "operations") return !Array.isArray(capability[field]);
+      return !capability[field];
+    });
+    if (missing.length) return { valid: false, missing };
+    if (!this.authorityLevels.includes(capability.authority || "ecosystem")) {
+      return { valid: false, reason: "INVALID_AUTHORITY_LEVEL" };
+    }
+    return { valid: true, missing: [] };
+  }
+});
+export default AfriAICapabilityContract;
+=== RUNTIME REGISTRY ===
+import * as afriRuntimeModuleRegistry from "../../runtime/modules/afriRuntimeModuleRegistry.js";
+import * as afriRuntimeServiceRegistry from "../../runtime/services/afriRuntimeServiceRegistry.js";
+import * as afriRuntimeFeatureRegistry from "../../runtime/features/afriRuntimeFeatureRegistry.js";
+import * as afriRuntimeDependencyRegistry from "../../runtime/dependencies/afriRuntimeDependencyRegistry.js";
+
+const runtimeModules = new Map();
+
+export const afriRuntimeRegistry = {
+  modules: afriRuntimeModuleRegistry,
+  services: afriRuntimeServiceRegistry,
+  features: afriRuntimeFeatureRegistry,
+  dependencies: afriRuntimeDependencyRegistry,
+
+  register(name, module) {
+    runtimeModules.set(name, module);
+  },
+
+  get(name) {
+    return runtimeModules.get(name);
+  },
+
+  has(name) {
+    return runtimeModules.has(name);
+  },
+
+  list() {
+    return [...runtimeModules.keys()];
+  }
+};
+
+export default afriRuntimeRegistry;
+=== NEXUS CONNECTION ===
+src/core/afrinexus/contracts/AfriNexusHandoverContract.js:const AfriNexusHandoverContract = {
+src/core/afrinexus/contracts/AfriNexusHandoverContract.js:export default AfriNexusHandoverContract;
+src/core/afrinexus/batches/AfriNexusBatchRegistry.js:const AfriNexusBatchRegistry = {
+src/core/afrinexus/batches/AfriNexusBatchRegistry.js:export default AfriNexusBatchRegistry;
+src/core/afrinexus/handover/AfriNexusEvidencePackage.js:import AfriNexusHandoverContract from "../contracts/AfriNexusHandoverContract.js";
+src/core/afrinexus/handover/AfriNexusEvidencePackage.js:const AfriNexusEvidencePackage = {
+src/core/afrinexus/handover/AfriNexusEvidencePackage.js:    return AfriNexusHandoverContract.create({
+src/core/afrinexus/handover/AfriNexusEvidencePackage.js:export default AfriNexusEvidencePackage;
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusDiscoveryEngine from "./discovery/AfriNexusDiscoveryEngine.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusEvidencePackage from "./handover/AfriNexusEvidencePackage.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusBatchRegistry from "./batches/AfriNexusBatchRegistry.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusMissionIntentClassifier from "./mission/AfriNexusMissionIntentClassifier.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusMissionScopeResolver from "./mission/AfriNexusMissionScopeResolver.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusVerificationEngine from "./verification/AfriNexusVerificationEngine.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusMissionEvidenceArtifact from "./evidence/AfriNexusMissionEvidenceArtifact.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriNexusReviewGateway from "./admin/AfriNexusReviewGateway.js";
+src/core/afrinexus/AfriNexusCoordinator.js:import AfriAIGatewayInvestigationAdapter from "../afriai/gateway/AfriAIGatewayInvestigationAdapter.js";
+src/core/afrinexus/AfriNexusCoordinator.js:const AfriNexusCoordinator = {
+src/core/afrinexus/AfriNexusCoordinator.js:    const discovery = AfriNexusDiscoveryEngine.run();
+src/core/afrinexus/AfriNexusCoordinator.js:      AfriNexusMissionIntentClassifier.classify(target)
+src/core/afrinexus/AfriNexusCoordinator.js:      AfriNexusMissionScopeResolver.resolve(
+src/core/afrinexus/AfriNexusCoordinator.js:    const batch = AfriNexusBatchRegistry.create({
+src/core/afrinexus/AfriNexusCoordinator.js:      AfriNexusEvidencePackage.generate(report)
+src/core/afrinexus/AfriNexusCoordinator.js:    const verification = AfriNexusVerificationEngine.prepare({
+src/core/afrinexus/AfriNexusCoordinator.js:      AfriAIGatewayInvestigationAdapter.collect();
+src/core/afrinexus/AfriNexusCoordinator.js:      AfriNexusMissionEvidenceArtifact.generate({
+src/core/afrinexus/AfriNexusCoordinator.js:      AfriNexusReviewGateway.submitArtifact(evidenceArtifact);
+src/core/afrinexus/AfriNexusCoordinator.js:export default AfriNexusCoordinator;
+src/core/afrinexus/mission/AfriNexusMissionRunner.js:import AfriNexusCoordinator from "../AfriNexusCoordinator.js";
+src/core/afrinexus/mission/AfriNexusMissionRunner.js:const AfriNexusMissionRunner = {
+src/core/afrinexus/mission/AfriNexusMissionRunner.js:    const result = AfriNexusCoordinator.run(targets);
+src/core/afrinexus/mission/AfriNexusMissionRunner.js:export default AfriNexusMissionRunner;
+src/core/afrinexus/mission/AfriNexusMissionIntentClassifier.js:const AfriNexusMissionIntentClassifier = {
+src/core/afrinexus/mission/AfriNexusMissionIntentClassifier.js:export default AfriNexusMissionIntentClassifier;
+src/core/afrinexus/mission/AfriNexusMissionScopeResolver.js:const AfriNexusMissionScopeResolver = {
+src/core/afrinexus/mission/AfriNexusMissionScopeResolver.js:export default AfriNexusMissionScopeResolver;
+src/core/afrinexus/mission/adapters/AfriNexusMissionTargetAdapter.js:const AfriNexusMissionTargetAdapter = {
+src/core/afrinexus/mission/adapters/AfriNexusMissionTargetAdapter.js:export default AfriNexusMissionTargetAdapter;
+src/core/afrinexus/missions/AfriNexusMissionEngine.js:import AfriNexusCoordinator from "../AfriNexusCoordinator.js";
+src/core/afrinexus/missions/AfriNexusMissionEngine.js:import AfriNexusMissionTargetAdapter from "../mission/adapters/AfriNexusMissionTargetAdapter.js";
+src/core/afrinexus/missions/AfriNexusMissionEngine.js:const AfriNexusMissionEngine = {
+src/core/afrinexus/missions/AfriNexusMissionEngine.js:      AfriNexusMissionTargetAdapter.resolve(request);
+src/core/afrinexus/missions/AfriNexusMissionEngine.js:        AfriNexusCoordinator.run(
+src/core/afrinexus/missions/AfriNexusMissionEngine.js:export default AfriNexusMissionEngine;
+src/core/afrinexus/approval/AfriNexusApprovalGate.js:const AfriNexusApprovalGate = {
+src/core/afrinexus/approval/AfriNexusApprovalGate.js:export default AfriNexusApprovalGate;
+src/core/afrinexus/approval/AfriNexusApprovalPolicy.js:const AfriNexusApprovalPolicy = {
+src/core/afrinexus/approval/AfriNexusApprovalPolicy.js:export default AfriNexusApprovalPolicy;
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:import AfriNexusApprovalGate from "./AfriNexusApprovalGate.js";
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:import AfriNexusApprovalPolicy from "./AfriNexusApprovalPolicy.js";
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:import AfriNexusSecurityPolicyEngine from "../security/AfriNexusSecurityPolicyEngine.js";
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:import AfriNexusApprovalRegistry from "./AfriNexusApprovalRegistry.js";
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:const AfriNexusApprovalDecision = {
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:        ? AfriNexusSecurityPolicyEngine.evaluate(context.targets)
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:        : AfriNexusApprovalPolicy.evaluate(context);
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:      AfriNexusApprovalRegistry.create(
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:      AfriNexusApprovalGate.create(
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:      AfriNexusApprovalRegistry.approve(
+src/core/afrinexus/approval/AfriNexusApprovalDecision.js:export default AfriNexusApprovalDecision;
+src/core/afrinexus/approval/AfriNexusApprovalRegistry.js:const AfriNexusApprovalRegistry = {
+src/core/afrinexus/approval/AfriNexusApprovalRegistry.js:export default AfriNexusApprovalRegistry;
+src/core/afrinexus/authority/AfriNexusPermissionMatrix.js:const AfriNexusPermissionMatrix = {
+src/core/afrinexus/authority/AfriNexusPermissionMatrix.js:export default AfriNexusPermissionMatrix;
+src/core/afrinexus/admin/AfriNexusAdminQueue.js:const AfriNexusAdminQueue = {
+src/core/afrinexus/admin/AfriNexusAdminQueue.js:export default AfriNexusAdminQueue;
+src/core/afrinexus/admin/AfriNexusInboxRouter.js:import AfriNexusAdminInbox from "./AfriNexusAdminInbox.js";
+src/core/afrinexus/admin/AfriNexusInboxRouter.js:const AfriNexusInboxRouter = {
+src/core/afrinexus/admin/AfriNexusInboxRouter.js:    return AfriNexusAdminInbox.push({
+src/core/afrinexus/admin/AfriNexusInboxRouter.js:    return AfriNexusAdminInbox.list(type);
+src/core/afrinexus/admin/AfriNexusInboxRouter.js:    return AfriNexusAdminInbox.summary();
+src/core/afrinexus/admin/AfriNexusInboxRouter.js:export default AfriNexusInboxRouter;
+src/core/afrinexus/admin/AfriNexusAdminInbox.js:import AfriNexusIdGenerator from "../utils/AfriNexusIdGenerator.js";
+src/core/afrinexus/admin/AfriNexusAdminInbox.js:const AfriNexusAdminInbox = {
+src/core/afrinexus/admin/AfriNexusAdminInbox.js:      id: report.id || AfriNexusIdGenerator.create(),
+src/core/afrinexus/admin/AfriNexusAdminInbox.js:export default AfriNexusAdminInbox;
+src/core/afrinexus/admin/AfriNexusReviewGateway.js:import AfriNexusInboxRouter from "./AfriNexusInboxRouter.js";
+src/core/afrinexus/admin/AfriNexusReviewGateway.js:import AfriNexusAdminQueue from "./AfriNexusAdminQueue.js";
+src/core/afrinexus/admin/AfriNexusReviewGateway.js:import AfriNexusApprovalDecision from "../approval/AfriNexusApprovalDecision.js";
+src/core/afrinexus/admin/AfriNexusReviewGateway.js:const AfriNexusReviewGateway = {
+src/core/afrinexus/admin/AfriNexusReviewGateway.js:    const inboxItem = AfriNexusInboxRouter.route({
+=== COMPLETE ===

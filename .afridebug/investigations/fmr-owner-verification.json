@@ -1,0 +1,152 @@
+{
+  "type": "AFRIDEBUG_FMR_OWNER_VERIFICATION",
+  "status": "VERIFICATION_COMPLETE",
+  "repository": "AfriDigital-hub",
+  "policy": {
+    "delete": false,
+    "autoRegister": false,
+    "execute": false,
+    "humanApprovalRequired": true
+  },
+  "results": [
+    {
+      "product": "AfriCommerce",
+      "registered": true,
+      "matchingFiles": 39,
+      "sample": [
+        "src/pages/user/modules/AfriCommerce/index.jsx",
+        "src/pages/user/sidebar/items/AfriCommerceItem.jsx",
+        "src/features/africommerce/index.js",
+        "src/core/admin/dashboard/AfriControlCenter.js",
+        "src/core/afriads/admin/AfriAdsAdminConsumers.js"
+      ],
+      "classification": "REGISTERED_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriCCTV",
+      "registered": false,
+      "matchingFiles": 73,
+      "sample": [
+        "src/pages/user/modules/AfriCCTV/index.jsx",
+        "src/pages/user/sidebar/items/AfriCCTVItem.jsx",
+        "src/core/africctv/billing/AfriCCTVUsageNormalizerV2.js",
+        "src/core/africctv/billing/CCTVUsageNormalizerV2.js",
+        "src/core/africctv/contracts/RuntimeContract.js"
+      ],
+      "classification": "EXISTING_SURFACE_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriSports",
+      "registered": true,
+      "matchingFiles": 6,
+      "sample": [
+        "src/pages/user/modules/AfriSports/index.jsx",
+        "src/pages/user/sidebar/items/AfriSportsItem.jsx",
+        "src/features/afrisports/index.js",
+        "src/core/billing/universal/strategies/AfriSportsStrategy.js",
+        "src/core/billing/universal/strategies/StrategyRegistry.js"
+      ],
+      "classification": "REGISTERED_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriMetaWorld",
+      "registered": true,
+      "matchingFiles": 4,
+      "sample": [
+        "src/pages/user/modules/AfriMetaWorld/index.jsx",
+        "src/pages/user/sidebar/items/AfriMetaWorldItem.jsx",
+        "src/features/afrimetaworld/index.js",
+        "src/core/registry/AfriSystemContracts.js"
+      ],
+      "classification": "REGISTERED_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriBoost",
+      "registered": true,
+      "matchingFiles": 48,
+      "sample": [
+        "src/pages/user/modules/AfriBoost/index.jsx",
+        "src/pages/user/sidebar/items/AfriBoostItem.jsx",
+        "src/features/afriboost/index.js",
+        "src/core/afriboost/ai/AfriBoostAICampaignAssistant.js",
+        "src/core/afriboost/ai/AfriBoostAIRecommendationTypes.js"
+      ],
+      "classification": "REGISTERED_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriTracker",
+      "registered": false,
+      "matchingFiles": 3,
+      "sample": [
+        "src/pages/user/modules/AfriTracker/index.jsx",
+        "src/pages/user/sidebar/items/AfriTrackerItem.jsx",
+        "src/core/registry/AfriSystemContracts.js"
+      ],
+      "classification": "EXISTING_SURFACE_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriTicking",
+      "registered": false,
+      "matchingFiles": 3,
+      "sample": [
+        "src/pages/user/modules/AfriTicking/index.jsx",
+        "src/pages/user/sidebar/items/AfriTickingItem.jsx",
+        "src/core/registry/AfriSystemContracts.js"
+      ],
+      "classification": "EXISTING_SURFACE_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriLove",
+      "registered": false,
+      "matchingFiles": 7,
+      "sample": [
+        "src/pages/user/modules/AfriLove/index.jsx",
+        "src/pages/user/sidebar/items/AfriLoveItem.jsx",
+        "src/core/afriads/distribution/AfriAdsDistributionConsumers.js",
+        "src/core/afritick/display/AfriTickDisplayConsumers.js",
+        "src/core/afritick/marketplace/AfriTickMarketplaceConsumers.js"
+      ],
+      "classification": "EXISTING_SURFACE_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriEducation",
+      "registered": false,
+      "matchingFiles": 9,
+      "sample": [
+        "src/pages/user/modules/AfriEducation/index.jsx",
+        "src/pages/user/sidebar/items/AfriEducationItem.jsx",
+        "src/core/afrieducation/trust/AfriEducationTrustAdapter.js",
+        "src/core/afrieducation/trust/AfriEducationTrustSignalTypes.js",
+        "src/core/afritick/api/AfriTickAPIConsumers.js"
+      ],
+      "classification": "EXISTING_SURFACE_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriLogistics",
+      "registered": false,
+      "matchingFiles": 9,
+      "sample": [
+        "src/pages/user/modules/AfriLogistics/index.jsx",
+        "src/pages/user/sidebar/items/AfriLogisticsItem.jsx",
+        "src/core/afrilogistics/trust/AfriLogisticsTrustAdapter.js",
+        "src/core/afrilogistics/trust/AfriLogisticsTrustSignalTypes.js",
+        "src/core/afritick/api/AfriTickAPIConsumers.js"
+      ],
+      "classification": "EXISTING_SURFACE_OWNER_CANDIDATE"
+    },
+    {
+      "product": "AfriWork",
+      "registered": false,
+      "matchingFiles": 14,
+      "sample": [
+        "src/pages/user/modules/AfriWork/index.jsx",
+        "src/pages/user/sidebar/items/AfriWorkItem.jsx",
+        "src/core/afriboost/gateway/AfriBoostCampaignGateway.js",
+        "src/core/afriboost/social/AfriBoostSocialTaskEngine.js",
+        "src/core/afritick/api/AfriTickAPIConsumers.js"
+      ],
+      "classification": "EXISTING_SURFACE_OWNER_CANDIDATE"
+    }
+  ],
+  "timestamp": 1786656676396
+}

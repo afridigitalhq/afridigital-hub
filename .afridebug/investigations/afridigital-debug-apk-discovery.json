@@ -1,0 +1,12 @@
+{
+  "type": "AFRIDEBUG_AFRIDIGITAL_DEBUG_APK_DISCOVERY",
+  "matches": [
+    "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api/modules/core/.artifacts/AfriTodo-1.0.0.apk",
+    "/storage/emulated/0/Download/afridigital-debug.apk"
+  ],
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786659639563
+}

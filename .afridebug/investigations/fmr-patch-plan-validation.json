@@ -1,0 +1,16 @@
+{
+  "type": "AFRIDEBUG_FMR_PATCH_PLAN_VALIDATION",
+  "status": "PASS",
+  "checks": {
+    "artifactExists": true,
+    "status": true,
+    "humanApproval": true,
+    "deletionDisabled": true,
+    "autoRegistrationDisabled": true,
+    "executionDisabled": true,
+    "protectedTargetsIntact": true
+  },
+  "executableItems": 0,
+  "protectedViolations": [],
+  "timestamp": 1786656619856
+}

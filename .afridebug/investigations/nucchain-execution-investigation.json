@@ -1,0 +1,229 @@
+{
+  "type": "AFRIDEBUG",
+  "version": "1.0.0",
+  "status": "diagnostic_available",
+  "mode": "admin",
+  "policy": {
+    "level": "admin",
+    "explain": true,
+    "diagnose": true,
+    "proposeRepair": true,
+    "executeRepair": true,
+    "requiresApproval": true
+  },
+  "diagnostic": {
+    "type": "AFRIDEBUG_DIAGNOSTIC",
+    "status": "diagnostic_available",
+    "source": "AfriNucChain architecture investigation",
+    "authority": "admin",
+    "error": "ARCHITECTURAL_INVESTIGATION_REQUEST",
+    "context": {
+      "objective": "Identify duplicate runtimes, dead execution paths, ownership conflicts, unreachable modules, and repair candidates in AfriNucChain",
+      "repository": "AfriDigital-hub",
+      "approvalRequired": true
+    },
+    "evidence": [
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/AfriNucChainEngine.js",
+        "exists": true,
+        "content": "import AfriNucChainMigrationPlanner from \"./AfriNucChainMigrationPlanner.js\";\nimport AfriNucChainSnapshot from \"./AfriNucChainSnapshot.js\";\nimport AfriNucChainBatchManager from \"./AfriNucChainBatchManager.js\";\nimport AfriNucChainValidator from \"./AfriNucChainValidator.js\";\nimport AfriNucChainManifestLoader from \"./loaders/AfriNucChainManifestLoader.js\";\nimport AfriNucChainTrace from \"./AfriNucChainTrace.js\";\nimport AfriNucChainApprovalGate from \"./AfriNucChainApprovalGate.js\";\nimport AfriNucChainExecutor from \"./AfriNucChainExecutor.js\";\nimport AfriNucChainRollbackManager from \"./AfriNucChainRollbackManager.js\";\nimport AfriNucChainMigrationRegistry from \"./registry/AfriNucChainMigrationRegistry.js\";\nimport AfriNucChainArtifactVerifier from \"./artifacts/AfriNucChainArtifactVerifier.js\";\nimport AfriNucChainMigrationExecutor from \"./execution/AfriNucChainMigrationExecutor.js\";\nimport AfriNucChainAuditManager from \"./audit/AfriNucChainAuditManager.js\";\nimport AfriNucChainArtifactManager from \"./artifacts/AfriNucChainArtifactManager.js\";\nimport AfriNucChainDebugBridge from \"./AfriNucChainDebugBridge.js\";\nimport AfriNucChainRuntimeVerifier from \"./runtime/verification/AfriNucChainRuntimeVerifier.js\";\n\nconst AfriNucChainEngine = {\n\n  async execute(manifest = {}){\n\n    const trace = [];\n\n    const request =\n      AfriNucChainManifestLoader.load(manifest);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"MANIFEST_LOADED\",\n        request\n      )\n    );\n\n    const plan =\n      AfriNucChainMigrationPlanner.create(request);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"PLAN_CREATED\",\n        plan\n      )\n    );\n\n    const snapshot =\n      AfriNucChainSnapshot.create(plan);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"SNAPSHOT_CREATED\",\n        snapshot\n      )\n    );\n\n    const batch =\n      await AfriNucChainBatchManager.run(\n        plan,\n        snapshot\n      );\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"BATCH_READY\",\n        batch\n      )\n    );\n\n    const validation =\n      AfriNucChainValidator.validate(batch);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"VALIDATION_COMPLETE\",\n        validation\n      )\n    );\n\n    const debugReport =\n      AfriNucChainDebugBridge.inspect({\n        plan,\n        snapshot,\n        batch,\n        validation,\n        trace\n      });\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"DEBUG_ANALYSIS_COMPLETE\",\n        debugReport\n      )\n    );\n\n    const approval =\n      AfriNucChainApprovalGate.approve({\n        validation,\n        debugReport\n      });\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"APPROVAL_COMPLETE\",\n        approval\n      )\n    );\n\n    const rollback =\n      AfriNucChainRollbackManager.createCheckpoint({\n        batch,\n        snapshot,\n        operations: [\n          {\n            action: \"MIGRATION_PREPARE\",\n            source: batch.source,\n            target: batch.target,\n            modules: batch.modules\n          }\n        ]\n      });\n\n    trace.push(\n      rollback.trace\n    );\n\n    const execution =\n      await AfriNucChainExecutor.execute({\n        approval,\n        batch\n      });\n\n    trace.push(\n      ...execution.trace\n    );\n\n    batch.generatedFiles =\n      execution.materialization?.created || [];\n\n    const registry =\n      AfriNucChainMigrationRegistry.register({\n        batch,\n        rollback,\n        approval,\n        execution\n      });\n\n    trace.push({\n      event: \"MIGRATION_REGISTERED\",\n      payload: registry,\n      timestamp: Date.now()\n    });\n\n    const artifact =\n      await AfriNucChainArtifactManager.register({\n        migrationId: batch.batchId,\n        source: batch.source,\n        target: batch.target,\n        files: batch.generatedFiles || []\n      });\n\n    trace.push({\n      event: \"ARTIFACT_REGISTERED\",\n      payload: artifact,\n      timestamp: Date.now()\n    });\n\n    const artifactVerification =\n      await AfriNucChainArtifactVerifier.verify(\n        artifact\n      );\n\n    trace.push(\n      artifactVerification.trace\n    );\n\n    const completion = {\n      migrationId:\n        batch.batchId,\n\n      status:\n        artifactVerification.verified\n          ? \"MIGRATION_COMPLETED\"\n          : \"MIGRATION_BLOCKED\",\n\n      completed:\n        artifactVerification.verified,\n\n      timestamp:\n        Date.now()\n    };\n\n    trace.push({\n      event: \"MIGRATION_COMPLETED\",\n      payload: completion,\n      timestamp: Date.now()\n    });\n\n    const audit =\n      AfriNucChainAuditManager.record({\n        migrationId: batch.batchId,\n        status: completion.status,\n        approval,\n        validation,\n        execution,\n        artifact,\n        rollback,\n        trace\n      });\n\n    trace.push(\n      audit.trace\n    );\n\n    return {\n      plan,\n      snapshot,\n      batch,\n      validation,\n      debugReport,\n      approval,\n      rollback,\n      execution,\n      registry,\n      artifact,\n      artifactVerification,\n      completion,\n      audit,\n      trace\n    };\n\n  }\n\n};\n\nexport default AfriNucChainEngine;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/AfriNucChainExecutor.js",
+        "exists": true,
+        "content": "import AfriNucChainExecutionPipeline from \"./execution/pipeline/AfriNucChainExecutionPipeline.js\";\nimport AfriNucChainTrace from \"./AfriNucChainTrace.js\";\nimport AfriNucChainFilesystemRuntime from \"./filesystem/AfriNucChainFilesystemRuntime.js\";\n\nconst AfriNucChainExecutor={\nasync execute(input={}){\nconst {approval={},batch={}}=input;\nconst trace=[];\nif(!approval.approved){const blocked={status:\"BLOCKED\",reason:\"APPROVAL_REQUIRED\",executed:false,timestamp:Date.now()};trace.push(AfriNucChainTrace.create(\"EXECUTION_BLOCKED\",blocked));return{...blocked,trace};}\nconst pipeline=AfriNucChainExecutionPipeline.run(batch);\ntrace.push(AfriNucChainTrace.create(\"PIPELINE_EXECUTED\",pipeline));\nconst materialization=await AfriNucChainFilesystemRuntime.execute({target:batch.target,modules:batch.modules,files:batch.files,operations:batch.operations});\nconst result={batchId:batch.batchId||\"UNKNOWN\",status:\"EXECUTED\",executed:true,pipeline,materialization,modules:batch.modules||[],timestamp:Date.now()};\ntrace.push(AfriNucChainTrace.create(\"EXECUTION_COMPLETE\",result));\nreturn{...result,trace};\n}\n};\n\nexport default AfriNucChainExecutor;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/execution/AfriNucChainMigrationExecutor.js",
+        "exists": true,
+        "content": "class AfriNucChainMigrationExecutor {\n\n  static execute({\n    batch,\n    snapshot,\n    approval\n  }) {\n\n    if (!approval?.approved) {\n      return {\n        executed: false,\n        status: \"EXECUTION_BLOCKED\",\n        reason: \"APPROVAL_REQUIRED\",\n        timestamp: Date.now()\n      };\n    }\n\n    if (!snapshot) {\n      return {\n        executed: false,\n        status: \"EXECUTION_BLOCKED\",\n        reason: \"SNAPSHOT_REQUIRED\",\n        timestamp: Date.now()\n      };\n    }\n\n    const result = {\n      batchId: batch.batchId,\n      status: \"EXECUTED\",\n      executed: true,\n      migrationMode: \"DRY_RUN_READY\",\n      modules: batch.modules,\n      timestamp: Date.now(),\n      trace: {\n        event: \"MIGRATION_EXECUTION_COMPLETE\",\n        payload: {\n          batchId: batch.batchId,\n          modules: batch.modules\n        },\n        timestamp: Date.now()\n      }\n    };\n\n    return result;\n  }\n\n}\n\nexport default AfriNucChainMigrationExecutor;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemRuntime.js",
+        "exists": true,
+        "content": "import fs from \"fs/promises\";\nimport path from \"path\";\nimport AfriNucChainOperationDispatcher from \"../execution/operations/AfriNucChainOperationDispatcher.js\";\n\nconst AfriNucChainFilesystemRuntime = {\n\n  async execute(input = {}) {\n\n    const target = input.target || \"src/core/afriai/nucchain/generated\";\n    const modules = input.modules || [];\n    const files = input.files || [];\n      const operations = input.operations || [];\n\n    const created = [];\n      const operationResults = [];\n      for (const operation of operations) {\n        operationResults.push(AfriNucChainOperationDispatcher.dispatch(operation));\n      }\n\n    if (files.length) {\n\n      for (const file of files) {\n\n        const fullPath = path.isAbsolute(file)\n          ? file\n          : path.resolve(process.cwd(), file);\n\n        await fs.mkdir(\n          path.dirname(fullPath),\n          { recursive:true }\n        );\n\n        await fs.writeFile(\n          fullPath,\n          `// Generated by AfriNucChain\\n// File: ${path.basename(fullPath)}\\n`,\n          \"utf8\"\n        );\n\n        created.push(fullPath);\n      }\n\n    } else {\n\n        await fs.mkdir(target.endsWith(\".js\") ? path.dirname(target) : target,{recursive:true});\n\n      for (const module of modules) {\n\n          const file = target.endsWith(\".js\") ? target : path.join(target, `${module}.js`);\n\n        await fs.writeFile(\n          file,\n          `// Generated by AfriNucChain\\n// Module: ${module}\\n`,\n          \"utf8\"\n        );\n\n        created.push(file);\n      }\n    }\n\n      return {\n        status:\"MATERIALIZED\",\n        created,\n        count:created.length,\n        operationResults,\n        timestamp:Date.now()\n      };\n  }\n};\n\nexport default AfriNucChainFilesystemRuntime;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/runtime/filesystem/AfriNucChainFilesystemRuntime.js",
+        "exists": true,
+        "content": "// Generated by AfriNucChain\n// Module: AfriNucChainFilesystemRuntime\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/materialization/operations/AfriNucChainOperationRuntime.js",
+        "exists": true,
+        "content": "import AfriNucChainOperationValidator from \"./validation/AfriNucChainOperationValidator.js\";\n\nimport FilesystemPatchEngine from \"../../filesystem/FilesystemPatchEngine.js\";\nimport RewriteImportHandler from \"./handlers/RewriteImportHandler.js\";\n\nconst AfriNucChainOperationRuntime = {\n\n  async execute(input = {}) {\n\n    const operations = input.operations || [];\n\n    const validation =\n      AfriNucChainOperationValidator.validate({\n        operations\n      });\n\n    if(validation.status !== \"VALIDATED\"){\n      return {\n        status:\"BLOCKED\",\n        validation,\n        timestamp:Date.now()\n      };\n    }\n\n    const results = [];\n\n    for(const operation of operations){\n\n      if(operation.type === \"UPDATE_FILE\"){\n\n        results.push({\n          type:operation.type,\n          status:\"READY\",\n          target:operation.target\n        });\n\n      }\n\n      if(operation.type === \"REWRITE_IMPORT\"){\n\n        const result = await RewriteImportHandler.execute(operation);\n\n        results.push({\n          type:operation.type,\n          status:result.patched ? \"EXECUTED\" : \"FAILED\",\n          result\n        });\n\n      }\n\n      if(operation.type === \"MOVE_FILE\"){\n\n        results.push({\n          type:operation.type,\n          status:\"READY\",\n          target:operation.target\n        });\n\n      }\n\n      if(operation.type === \"REMOVE_FILE\"){\n\n        results.push({\n          type:operation.type,\n          status:\"READY\",\n          target:operation.target\n        });\n\n      }\n\n    }\n\n    return {\n      status:\"OPERATIONS_READY\",\n      validation,\n      operations:results,\n      timestamp:Date.now()\n    };\n\n  }\n\n};\n\nexport default AfriNucChainOperationRuntime;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/execution/operations/AfriNucChainOperationDispatcher.js",
+        "exists": true,
+        "content": "import AfriNucChainRewriteImportOperation from \"./AfriNucChainRewriteImportOperation.js\";\nimport AfriNucChainRemoveFileOperation from \"./AfriNucChainRemoveFileOperation.js\";\n\nconst AfriNucChainOperationDispatcher={\ndispatch(operation={}){\nswitch(operation.type){\ncase \"REWRITE_IMPORT\":\nreturn AfriNucChainRewriteImportOperation.execute(operation);\ncase \"REMOVE_FILE\":\nreturn AfriNucChainRemoveFileOperation.execute(operation);\ndefault:\nreturn{type:operation.type||\"UNKNOWN\",status:\"UNKNOWN_OPERATION\",timestamp:Date.now()};\n}\n}\n};\n\nexport default AfriNucChainOperationDispatcher;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/materialization/operations/registry/AfriNucChainOperationRegistry.js",
+        "exists": true,
+        "content": "const operations = [\n  {\n    type: \"UPDATE_FILE\",\n    description: \"Update existing file content\"\n  },\n  {\n    type: \"MOVE_FILE\",\n    description: \"Move file from source to target\"\n  },\n  {\n    type: \"REMOVE_FILE\",\n    description: \"Remove deprecated file\"\n  },\n  {\n    type: \"REWRITE_IMPORT\",\n    description: \"Rewrite import references\"\n  }\n];\n\nconst AfriNucChainOperationRegistry = {\n  all() {\n    return operations;\n  },\n\n  exists(type) {\n    return operations.some(\n      operation => operation.type === type\n    );\n  }\n};\n\nexport default AfriNucChainOperationRegistry;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/execution/operations/AfriNucChainOperationRegistry.js",
+        "exists": false,
+        "content": ""
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afridebug/AfriDebugCore.js",
+        "exists": true,
+        "content": "import AfriDebugRuntime from \"./runtime/AfriDebugRuntime.js\";\nimport AfriDebugIntelligence from \"./intelligence/AfriDebugIntelligence.js\";\nimport AfriDebugPolicy from \"./AfriDebugPolicy.js\";\n\nconst AfriDebugCore = {\n  name: \"AfriDebug\",\n  version: \"1.0.0\",\n  enabled: true,\n\n  inspect(input = {}) {\n    if (!this.enabled || !AfriDebugPolicy.enabled) {\n      return {\n        type: \"AFRIDEBUG\",\n        status: \"disabled\",\n        execution: { allowed: false }\n      };\n    }\n\n    const mode = input.mode || \"ecosystem\";\n    const policy = AfriDebugPolicy.resolve(mode);\n\n    const diagnostic = AfriDebugRuntime.analyze({\n      ...input,\n      authority: mode,\n      trustedAuthority: input.trustedAuthority === true && mode === \"admin\"\n    });\n\n    const intelligence = AfriDebugIntelligence.explain(diagnostic);\n\n    return {\n      type: \"AFRIDEBUG\",\n      version: this.version,\n      status: diagnostic.status,\n      mode,\n      policy,\n      diagnostic,\n      intelligence,\n      execution: {\n        allowed: false,\n        approvalRequired: true\n      }\n    };\n  }\n};\n\nexport default AfriDebugCore;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afridebug/runtime/AfriDebugRuntime.js",
+        "exists": true,
+        "content": "const AfriDebugRuntime = {\n  analyze(input = {}) {\n    const {\n      error = null,\n      context = {},\n      evidence = [],\n      source = \"unknown\",\n      authority = \"restricted\",\n      trustedAuthority = false\n    } = input;\n\n    return {\n      type: \"AFRIDEBUG_DIAGNOSTIC\",\n      status: error || evidence.length ? \"diagnostic_available\" : \"insufficient_evidence\",\n      source,\n      authority,\n      error,\n      context,\n      evidence,\n      capabilities: {\n        explain: true,\n        diagnose: true,\n        proposeRepair: trustedAuthority && authority === \"admin\",\n        executeRepair: false\n      },\n      execution: {\n        allowed: false,\n        approvalRequired: true\n      },\n      timestamp: Date.now()\n    };\n  }\n};\n\nexport default AfriDebugRuntime;\n"
+      },
+      {
+        "type": "ARCHITECTURE_SIGNAL",
+        "id": "DUPLICATE_EXECUTOR_SURFACE",
+        "details": "AfriNucChainEngine imports AfriNucChainExecutor and AfriNucChainMigrationExecutor but calls only AfriNucChainExecutor.execute()"
+      },
+      {
+        "type": "ARCHITECTURE_SIGNAL",
+        "id": "DUPLICATE_FILESYSTEM_RUNTIME",
+        "details": "Filesystem runtime exists under filesystem/ and runtime/filesystem/"
+      },
+      {
+        "type": "ARCHITECTURE_SIGNAL",
+        "id": "OPERATION_LAYER_SPLIT",
+        "details": "Operation registry/dispatcher/runtime responsibilities are distributed across execution and materialization trees"
+      }
+    ],
+    "capabilities": {
+      "explain": true,
+      "diagnose": true,
+      "proposeRepair": false,
+      "executeRepair": false
+    },
+    "execution": {
+      "allowed": false,
+      "approvalRequired": true
+    },
+    "timestamp": 1786652966316
+  },
+  "intelligence": {
+    "type": "AFRIDEBUG_INTELLIGENCE",
+    "source": "AfriNucChain architecture investigation",
+    "explanation": "AfriDebug detected an error condition: ARCHITECTURAL_INVESTIGATION_REQUEST",
+    "likelyCause": "Requires correlation of the supplied evidence with the runtime context.",
+    "recommendations": [
+      "Inspect the supplied runtime evidence.",
+      "Correlate the error with the provided context.",
+      "Validate the suspected root cause before proposing a repair."
+    ],
+    "evidence": [
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/AfriNucChainEngine.js",
+        "exists": true,
+        "content": "import AfriNucChainMigrationPlanner from \"./AfriNucChainMigrationPlanner.js\";\nimport AfriNucChainSnapshot from \"./AfriNucChainSnapshot.js\";\nimport AfriNucChainBatchManager from \"./AfriNucChainBatchManager.js\";\nimport AfriNucChainValidator from \"./AfriNucChainValidator.js\";\nimport AfriNucChainManifestLoader from \"./loaders/AfriNucChainManifestLoader.js\";\nimport AfriNucChainTrace from \"./AfriNucChainTrace.js\";\nimport AfriNucChainApprovalGate from \"./AfriNucChainApprovalGate.js\";\nimport AfriNucChainExecutor from \"./AfriNucChainExecutor.js\";\nimport AfriNucChainRollbackManager from \"./AfriNucChainRollbackManager.js\";\nimport AfriNucChainMigrationRegistry from \"./registry/AfriNucChainMigrationRegistry.js\";\nimport AfriNucChainArtifactVerifier from \"./artifacts/AfriNucChainArtifactVerifier.js\";\nimport AfriNucChainMigrationExecutor from \"./execution/AfriNucChainMigrationExecutor.js\";\nimport AfriNucChainAuditManager from \"./audit/AfriNucChainAuditManager.js\";\nimport AfriNucChainArtifactManager from \"./artifacts/AfriNucChainArtifactManager.js\";\nimport AfriNucChainDebugBridge from \"./AfriNucChainDebugBridge.js\";\nimport AfriNucChainRuntimeVerifier from \"./runtime/verification/AfriNucChainRuntimeVerifier.js\";\n\nconst AfriNucChainEngine = {\n\n  async execute(manifest = {}){\n\n    const trace = [];\n\n    const request =\n      AfriNucChainManifestLoader.load(manifest);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"MANIFEST_LOADED\",\n        request\n      )\n    );\n\n    const plan =\n      AfriNucChainMigrationPlanner.create(request);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"PLAN_CREATED\",\n        plan\n      )\n    );\n\n    const snapshot =\n      AfriNucChainSnapshot.create(plan);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"SNAPSHOT_CREATED\",\n        snapshot\n      )\n    );\n\n    const batch =\n      await AfriNucChainBatchManager.run(\n        plan,\n        snapshot\n      );\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"BATCH_READY\",\n        batch\n      )\n    );\n\n    const validation =\n      AfriNucChainValidator.validate(batch);\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"VALIDATION_COMPLETE\",\n        validation\n      )\n    );\n\n    const debugReport =\n      AfriNucChainDebugBridge.inspect({\n        plan,\n        snapshot,\n        batch,\n        validation,\n        trace\n      });\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"DEBUG_ANALYSIS_COMPLETE\",\n        debugReport\n      )\n    );\n\n    const approval =\n      AfriNucChainApprovalGate.approve({\n        validation,\n        debugReport\n      });\n\n    trace.push(\n      AfriNucChainTrace.create(\n        \"APPROVAL_COMPLETE\",\n        approval\n      )\n    );\n\n    const rollback =\n      AfriNucChainRollbackManager.createCheckpoint({\n        batch,\n        snapshot,\n        operations: [\n          {\n            action: \"MIGRATION_PREPARE\",\n            source: batch.source,\n            target: batch.target,\n            modules: batch.modules\n          }\n        ]\n      });\n\n    trace.push(\n      rollback.trace\n    );\n\n    const execution =\n      await AfriNucChainExecutor.execute({\n        approval,\n        batch\n      });\n\n    trace.push(\n      ...execution.trace\n    );\n\n    batch.generatedFiles =\n      execution.materialization?.created || [];\n\n    const registry =\n      AfriNucChainMigrationRegistry.register({\n        batch,\n        rollback,\n        approval,\n        execution\n      });\n\n    trace.push({\n      event: \"MIGRATION_REGISTERED\",\n      payload: registry,\n      timestamp: Date.now()\n    });\n\n    const artifact =\n      await AfriNucChainArtifactManager.register({\n        migrationId: batch.batchId,\n        source: batch.source,\n        target: batch.target,\n        files: batch.generatedFiles || []\n      });\n\n    trace.push({\n      event: \"ARTIFACT_REGISTERED\",\n      payload: artifact,\n      timestamp: Date.now()\n    });\n\n    const artifactVerification =\n      await AfriNucChainArtifactVerifier.verify(\n        artifact\n      );\n\n    trace.push(\n      artifactVerification.trace\n    );\n\n    const completion = {\n      migrationId:\n        batch.batchId,\n\n      status:\n        artifactVerification.verified\n          ? \"MIGRATION_COMPLETED\"\n          : \"MIGRATION_BLOCKED\",\n\n      completed:\n        artifactVerification.verified,\n\n      timestamp:\n        Date.now()\n    };\n\n    trace.push({\n      event: \"MIGRATION_COMPLETED\",\n      payload: completion,\n      timestamp: Date.now()\n    });\n\n    const audit =\n      AfriNucChainAuditManager.record({\n        migrationId: batch.batchId,\n        status: completion.status,\n        approval,\n        validation,\n        execution,\n        artifact,\n        rollback,\n        trace\n      });\n\n    trace.push(\n      audit.trace\n    );\n\n    return {\n      plan,\n      snapshot,\n      batch,\n      validation,\n      debugReport,\n      approval,\n      rollback,\n      execution,\n      registry,\n      artifact,\n      artifactVerification,\n      completion,\n      audit,\n      trace\n    };\n\n  }\n\n};\n\nexport default AfriNucChainEngine;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/AfriNucChainExecutor.js",
+        "exists": true,
+        "content": "import AfriNucChainExecutionPipeline from \"./execution/pipeline/AfriNucChainExecutionPipeline.js\";\nimport AfriNucChainTrace from \"./AfriNucChainTrace.js\";\nimport AfriNucChainFilesystemRuntime from \"./filesystem/AfriNucChainFilesystemRuntime.js\";\n\nconst AfriNucChainExecutor={\nasync execute(input={}){\nconst {approval={},batch={}}=input;\nconst trace=[];\nif(!approval.approved){const blocked={status:\"BLOCKED\",reason:\"APPROVAL_REQUIRED\",executed:false,timestamp:Date.now()};trace.push(AfriNucChainTrace.create(\"EXECUTION_BLOCKED\",blocked));return{...blocked,trace};}\nconst pipeline=AfriNucChainExecutionPipeline.run(batch);\ntrace.push(AfriNucChainTrace.create(\"PIPELINE_EXECUTED\",pipeline));\nconst materialization=await AfriNucChainFilesystemRuntime.execute({target:batch.target,modules:batch.modules,files:batch.files,operations:batch.operations});\nconst result={batchId:batch.batchId||\"UNKNOWN\",status:\"EXECUTED\",executed:true,pipeline,materialization,modules:batch.modules||[],timestamp:Date.now()};\ntrace.push(AfriNucChainTrace.create(\"EXECUTION_COMPLETE\",result));\nreturn{...result,trace};\n}\n};\n\nexport default AfriNucChainExecutor;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/execution/AfriNucChainMigrationExecutor.js",
+        "exists": true,
+        "content": "class AfriNucChainMigrationExecutor {\n\n  static execute({\n    batch,\n    snapshot,\n    approval\n  }) {\n\n    if (!approval?.approved) {\n      return {\n        executed: false,\n        status: \"EXECUTION_BLOCKED\",\n        reason: \"APPROVAL_REQUIRED\",\n        timestamp: Date.now()\n      };\n    }\n\n    if (!snapshot) {\n      return {\n        executed: false,\n        status: \"EXECUTION_BLOCKED\",\n        reason: \"SNAPSHOT_REQUIRED\",\n        timestamp: Date.now()\n      };\n    }\n\n    const result = {\n      batchId: batch.batchId,\n      status: \"EXECUTED\",\n      executed: true,\n      migrationMode: \"DRY_RUN_READY\",\n      modules: batch.modules,\n      timestamp: Date.now(),\n      trace: {\n        event: \"MIGRATION_EXECUTION_COMPLETE\",\n        payload: {\n          batchId: batch.batchId,\n          modules: batch.modules\n        },\n        timestamp: Date.now()\n      }\n    };\n\n    return result;\n  }\n\n}\n\nexport default AfriNucChainMigrationExecutor;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/filesystem/AfriNucChainFilesystemRuntime.js",
+        "exists": true,
+        "content": "import fs from \"fs/promises\";\nimport path from \"path\";\nimport AfriNucChainOperationDispatcher from \"../execution/operations/AfriNucChainOperationDispatcher.js\";\n\nconst AfriNucChainFilesystemRuntime = {\n\n  async execute(input = {}) {\n\n    const target = input.target || \"src/core/afriai/nucchain/generated\";\n    const modules = input.modules || [];\n    const files = input.files || [];\n      const operations = input.operations || [];\n\n    const created = [];\n      const operationResults = [];\n      for (const operation of operations) {\n        operationResults.push(AfriNucChainOperationDispatcher.dispatch(operation));\n      }\n\n    if (files.length) {\n\n      for (const file of files) {\n\n        const fullPath = path.isAbsolute(file)\n          ? file\n          : path.resolve(process.cwd(), file);\n\n        await fs.mkdir(\n          path.dirname(fullPath),\n          { recursive:true }\n        );\n\n        await fs.writeFile(\n          fullPath,\n          `// Generated by AfriNucChain\\n// File: ${path.basename(fullPath)}\\n`,\n          \"utf8\"\n        );\n\n        created.push(fullPath);\n      }\n\n    } else {\n\n        await fs.mkdir(target.endsWith(\".js\") ? path.dirname(target) : target,{recursive:true});\n\n      for (const module of modules) {\n\n          const file = target.endsWith(\".js\") ? target : path.join(target, `${module}.js`);\n\n        await fs.writeFile(\n          file,\n          `// Generated by AfriNucChain\\n// Module: ${module}\\n`,\n          \"utf8\"\n        );\n\n        created.push(file);\n      }\n    }\n\n      return {\n        status:\"MATERIALIZED\",\n        created,\n        count:created.length,\n        operationResults,\n        timestamp:Date.now()\n      };\n  }\n};\n\nexport default AfriNucChainFilesystemRuntime;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/runtime/filesystem/AfriNucChainFilesystemRuntime.js",
+        "exists": true,
+        "content": "// Generated by AfriNucChain\n// Module: AfriNucChainFilesystemRuntime\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/materialization/operations/AfriNucChainOperationRuntime.js",
+        "exists": true,
+        "content": "import AfriNucChainOperationValidator from \"./validation/AfriNucChainOperationValidator.js\";\n\nimport FilesystemPatchEngine from \"../../filesystem/FilesystemPatchEngine.js\";\nimport RewriteImportHandler from \"./handlers/RewriteImportHandler.js\";\n\nconst AfriNucChainOperationRuntime = {\n\n  async execute(input = {}) {\n\n    const operations = input.operations || [];\n\n    const validation =\n      AfriNucChainOperationValidator.validate({\n        operations\n      });\n\n    if(validation.status !== \"VALIDATED\"){\n      return {\n        status:\"BLOCKED\",\n        validation,\n        timestamp:Date.now()\n      };\n    }\n\n    const results = [];\n\n    for(const operation of operations){\n\n      if(operation.type === \"UPDATE_FILE\"){\n\n        results.push({\n          type:operation.type,\n          status:\"READY\",\n          target:operation.target\n        });\n\n      }\n\n      if(operation.type === \"REWRITE_IMPORT\"){\n\n        const result = await RewriteImportHandler.execute(operation);\n\n        results.push({\n          type:operation.type,\n          status:result.patched ? \"EXECUTED\" : \"FAILED\",\n          result\n        });\n\n      }\n\n      if(operation.type === \"MOVE_FILE\"){\n\n        results.push({\n          type:operation.type,\n          status:\"READY\",\n          target:operation.target\n        });\n\n      }\n\n      if(operation.type === \"REMOVE_FILE\"){\n\n        results.push({\n          type:operation.type,\n          status:\"READY\",\n          target:operation.target\n        });\n\n      }\n\n    }\n\n    return {\n      status:\"OPERATIONS_READY\",\n      validation,\n      operations:results,\n      timestamp:Date.now()\n    };\n\n  }\n\n};\n\nexport default AfriNucChainOperationRuntime;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/execution/operations/AfriNucChainOperationDispatcher.js",
+        "exists": true,
+        "content": "import AfriNucChainRewriteImportOperation from \"./AfriNucChainRewriteImportOperation.js\";\nimport AfriNucChainRemoveFileOperation from \"./AfriNucChainRemoveFileOperation.js\";\n\nconst AfriNucChainOperationDispatcher={\ndispatch(operation={}){\nswitch(operation.type){\ncase \"REWRITE_IMPORT\":\nreturn AfriNucChainRewriteImportOperation.execute(operation);\ncase \"REMOVE_FILE\":\nreturn AfriNucChainRemoveFileOperation.execute(operation);\ndefault:\nreturn{type:operation.type||\"UNKNOWN\",status:\"UNKNOWN_OPERATION\",timestamp:Date.now()};\n}\n}\n};\n\nexport default AfriNucChainOperationDispatcher;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/materialization/operations/registry/AfriNucChainOperationRegistry.js",
+        "exists": true,
+        "content": "const operations = [\n  {\n    type: \"UPDATE_FILE\",\n    description: \"Update existing file content\"\n  },\n  {\n    type: \"MOVE_FILE\",\n    description: \"Move file from source to target\"\n  },\n  {\n    type: \"REMOVE_FILE\",\n    description: \"Remove deprecated file\"\n  },\n  {\n    type: \"REWRITE_IMPORT\",\n    description: \"Rewrite import references\"\n  }\n];\n\nconst AfriNucChainOperationRegistry = {\n  all() {\n    return operations;\n  },\n\n  exists(type) {\n    return operations.some(\n      operation => operation.type === type\n    );\n  }\n};\n\nexport default AfriNucChainOperationRegistry;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afriai/nucchain/execution/operations/AfriNucChainOperationRegistry.js",
+        "exists": false,
+        "content": ""
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afridebug/AfriDebugCore.js",
+        "exists": true,
+        "content": "import AfriDebugRuntime from \"./runtime/AfriDebugRuntime.js\";\nimport AfriDebugIntelligence from \"./intelligence/AfriDebugIntelligence.js\";\nimport AfriDebugPolicy from \"./AfriDebugPolicy.js\";\n\nconst AfriDebugCore = {\n  name: \"AfriDebug\",\n  version: \"1.0.0\",\n  enabled: true,\n\n  inspect(input = {}) {\n    if (!this.enabled || !AfriDebugPolicy.enabled) {\n      return {\n        type: \"AFRIDEBUG\",\n        status: \"disabled\",\n        execution: { allowed: false }\n      };\n    }\n\n    const mode = input.mode || \"ecosystem\";\n    const policy = AfriDebugPolicy.resolve(mode);\n\n    const diagnostic = AfriDebugRuntime.analyze({\n      ...input,\n      authority: mode,\n      trustedAuthority: input.trustedAuthority === true && mode === \"admin\"\n    });\n\n    const intelligence = AfriDebugIntelligence.explain(diagnostic);\n\n    return {\n      type: \"AFRIDEBUG\",\n      version: this.version,\n      status: diagnostic.status,\n      mode,\n      policy,\n      diagnostic,\n      intelligence,\n      execution: {\n        allowed: false,\n        approvalRequired: true\n      }\n    };\n  }\n};\n\nexport default AfriDebugCore;\n"
+      },
+      {
+        "type": "SOURCE_FILE",
+        "path": "src/core/afridebug/runtime/AfriDebugRuntime.js",
+        "exists": true,
+        "content": "const AfriDebugRuntime = {\n  analyze(input = {}) {\n    const {\n      error = null,\n      context = {},\n      evidence = [],\n      source = \"unknown\",\n      authority = \"restricted\",\n      trustedAuthority = false\n    } = input;\n\n    return {\n      type: \"AFRIDEBUG_DIAGNOSTIC\",\n      status: error || evidence.length ? \"diagnostic_available\" : \"insufficient_evidence\",\n      source,\n      authority,\n      error,\n      context,\n      evidence,\n      capabilities: {\n        explain: true,\n        diagnose: true,\n        proposeRepair: trustedAuthority && authority === \"admin\",\n        executeRepair: false\n      },\n      execution: {\n        allowed: false,\n        approvalRequired: true\n      },\n      timestamp: Date.now()\n    };\n  }\n};\n\nexport default AfriDebugRuntime;\n"
+      },
+      {
+        "type": "ARCHITECTURE_SIGNAL",
+        "id": "DUPLICATE_EXECUTOR_SURFACE",
+        "details": "AfriNucChainEngine imports AfriNucChainExecutor and AfriNucChainMigrationExecutor but calls only AfriNucChainExecutor.execute()"
+      },
+      {
+        "type": "ARCHITECTURE_SIGNAL",
+        "id": "DUPLICATE_FILESYSTEM_RUNTIME",
+        "details": "Filesystem runtime exists under filesystem/ and runtime/filesystem/"
+      },
+      {
+        "type": "ARCHITECTURE_SIGNAL",
+        "id": "OPERATION_LAYER_SPLIT",
+        "details": "Operation registry/dispatcher/runtime responsibilities are distributed across execution and materialization trees"
+      }
+    ],
+    "context": {
+      "objective": "Identify duplicate runtimes, dead execution paths, ownership conflicts, unreachable modules, and repair candidates in AfriNucChain",
+      "repository": "AfriDigital-hub",
+      "approvalRequired": true
+    },
+    "repair": {
+      "proposed": false,
+      "executable": false,
+      "approvalRequired": true
+    },
+    "timestamp": 1786652966317
+  },
+  "execution": {
+    "allowed": false,
+    "approvalRequired": true
+  }
+}

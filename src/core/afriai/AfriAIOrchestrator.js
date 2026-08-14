@@ -1,5 +1,5 @@
-import AfriAICoreBrain from "../intelligence/AfriAICoreBrain";
-import AfriAIExecutor from "../../../core/afriai/partials/executor/AfriAIExecutor";
+import AfriAICoreBrain from "../../control-room/afrai/intelligence/AfriAICoreBrain.js";
+import AfriAIExecutor from "./partials/executor/AfriAIExecutor.js";
 
 const AfriAIOrchestrator = {
   run(input) {

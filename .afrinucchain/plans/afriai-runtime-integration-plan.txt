@@ -1,0 +1,21 @@
+=== AFRIAI RUNTIME INTEGRATION PLAN ===
+DATE: Fri Aug 14 19:50:59 WAT 2026
+
+PROTECTED SURFACES:
+- src/core/afriai (NO MUTATION)
+- AfriAI Gateway (NO MUTATION)
+- AfriAI Governance (NO MUTATION)
+
+DISCOVERED RUNTIME:
+- Runtime loader exists
+- Runtime registry exists
+- Module activation exists
+
+CURRENT GAP:
+- Feature entries expose only stub-loaded state
+- Capability lifecycle attachment missing
+
+NEXT ACTION:
+- Build adapter layer outside AfriAI core
+- Register capability through runtime contract
+- Validate through AfriNucChain evidence

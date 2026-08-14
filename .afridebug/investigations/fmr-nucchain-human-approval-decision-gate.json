@@ -1,0 +1,40 @@
+{
+  "type": "AFRINUCCHAIN_FMR_HUMAN_APPROVAL_DECISION_GATE",
+  "status": "WAITING_FOR_HUMAN_DECISION",
+  "repository": "AfriDigital-hub",
+  "packet": ".afridebug/investigations/fmr-nucchain-human-approval-packet.json",
+  "decisionSummary": {
+    "products": 11,
+    "ownershipReview": 4,
+    "surfaceOwnershipReview": 3,
+    "noChange": 4,
+    "sourceSummary": {
+      "products": 11,
+      "ownershipReview": 4,
+      "surfaceOwnershipReview": 3,
+      "noChange": 4
+    }
+  },
+  "approval": {
+    "required": true,
+    "status": "PENDING_HUMAN_APPROVAL",
+    "decision": null,
+    "decidedBy": null,
+    "decidedAt": null
+  },
+  "execution": {
+    "enabled": false,
+    "patches": false,
+    "registration": false,
+    "deletions": false
+  },
+  "protected": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "nextGate": "HUMAN_DECISION_REQUIRED",
+  "timestamp": 1786658034222
+}

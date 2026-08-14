@@ -1,0 +1,105 @@
+=== AFRIDIGITAL AFRIAI RUNTIME ADAPTER GAP ===
+=== FEATURE ENTRY ===
+export default { name: 'afriai', status: 'stub-loaded' };
+=== CAPABILITY CONTRACT ===
+const AfriAICapabilityContract = Object.freeze({
+  required: ["id", "topic", "description", "operations", "provider"],
+  authorityLevels: Object.freeze(["ecosystem", "studio", "admin"]),
+  validate(capability = {}) {
+    const missing = this.required.filter((field) => {
+      if (field === "operations") return !Array.isArray(capability[field]);
+      return !capability[field];
+    });
+    if (missing.length) return { valid: false, missing };
+    if (!this.authorityLevels.includes(capability.authority || "ecosystem")) {
+      return { valid: false, reason: "INVALID_AUTHORITY_LEVEL" };
+    }
+    return { valid: true, missing: [] };
+  }
+});
+export default AfriAICapabilityContract;
+=== ROUTER ===
+import AfriAICapabilityResolver from "./AfriAICapabilityResolver.js";
+
+const AfriAICapabilityRouter = {
+  route(intent = {}) {
+    const capability = AfriAICapabilityResolver.resolve(intent);
+
+    if (!capability) {
+      return {
+        routed: false,
+        status: "CAPABILITY_NOT_FOUND",
+        capability: null,
+        execution: {
+          allowed: false
+        }
+      };
+    }
+
+    return {
+      routed: true,
+      status: "CAPABILITY_RESOLVED",
+      capability: {
+        id: capability.id,
+        topic: capability.topic,
+        operations: capability.operations,
+        provider: capability.provider
+      },
+      execution: {
+        allowed: false,
+        approvalRequired: true,
+        authority: capability.authority || "ecosystem"
+      }
+    };
+  }
+};
+
+export default AfriAICapabilityRouter;
+=== WHATSAPP SURFACE ===
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIAvatar.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIHalo.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIStatus.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIConversation.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIWaveEngine.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIComposer.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIMic.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIAttachments.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAICard.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIWaveform.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAITelegram.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIVoiceControl.jsx
+src/pages/landing/intelligence/canonical-v2/components/LandingAfriAIServiceDock.jsx
+src/pages/landing/intelligence/canonical-v2/hooks/useAfriAIState.js
+src/pages/landing/intelligence/canonical-v2/runtime/AfriAILandingRuntime.js
+src/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceController.js
+src/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceMap.js
+src/pages/landing/intelligence/canonical-v2/runtime/AfriAIPresenceEngine.js
+src/pages/landing/intelligence/canonical-v2/runtime/AfriAISuggestionRegistry.js
+src/pages/landing/intelligence/canonical-v2/runtime/AfriAISuggestionRouter.js
+src/pages/landing/intelligence/canonical-v2/runtime/ads/AfriAIAdsMatcher.js
+src/pages/landing/intelligence/canonical-v2/runtime/ads/delivery/AfriAIAdsCardResolver.js
+src/pages/landing/intelligence/canonical-v2/runtime/ads/layout/AfriAISponsoredLayoutEngine.js
+src/pages/landing/intelligence/canonical-v2/LandingAfriAINext.jsx
+src/pages/landing/intelligence/canonical-v2/LandingAfriAI.css
+src/pages/landing/intelligence/canonical-v2/AFRIAI-CANONICAL-V2.lock
+src/pages/landing/intelligence/canonical-v2/assets/afriai-mic.png
+src/pages/landing/intelligence/canonical-v2/voice/AfriAISpeechAdapter.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceController.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceEvents.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAIAudioAnalyzer.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceRuntimeBridge.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAIVoiceLevelSmoother.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAITTS.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAITTSRuntimeBridge.js
+src/pages/landing/intelligence/canonical-v2/voice/AfriAITTSRuntimeConnector.js
+src/pages/landing/intelligence/canonical-v2/AFRIAI-VOICE-PRESENCE-V1.lock
+src/pages/landing/whatsapp
+src/pages/landing/whatsapp/AfriWhatsappGateway.jsx
+src/pages/user/modules/AfriAI
+src/pages/user/modules/AfriWhatsApp
+src/pages/user/dashboard/partials/AfriAIPanel.jsx
+src/pages/admin/modules/AfriCCTV/partials/AfriAIDock.jsx
+src/pages/afridebug/desktop/components/AfriAIInvestigatorPanel.jsx
+src/features/afriai
+src/features/africommerce/platform/afriai
+=== COMPLETE ===

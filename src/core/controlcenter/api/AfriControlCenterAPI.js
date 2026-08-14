@@ -1,5 +1,7 @@
 import Runtime from "../runtime/AfriControlCenterRuntime.js";
 import AfriAIGatewaySecuritySnapshot from "../../afriai/gateway/AfriAIGatewaySecuritySnapshot.js";
+import AfriNexusSecurityPolicyEngine from "../../afrinexus/security/AfriNexusSecurityPolicyEngine.js";
+import NexusSecurityAPI from "./AfriControlCenterNexusSecurityAPI.js";
 
 const AfriControlCenterAPI = {
 
@@ -34,6 +36,12 @@ const AfriControlCenterAPI = {
   security(){
 
     return AfriAIGatewaySecuritySnapshot.capture();
+
+  },
+
+  nexusSecurity(targets=[]){
+
+    return AfriNexusSecurityPolicyEngine.evaluate(targets);
 
   },
 

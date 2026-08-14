@@ -1,0 +1,189 @@
+{
+  "type": "AFRIDEBUG_FMR_EXECUTIVE_CORRELATION_VALIDATION",
+  "status": "CORRELATION_DEFECT_DETECTED",
+  "sourceArtifacts": [
+    "fmr-registration-evidence.json",
+    "fmr-ownership-resolution.json",
+    "fmr-executive-decision-report.json"
+  ],
+  "rows": [
+    {
+      "product": "AfriCCTV",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 61,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 19,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriTracker",
+      "class": "USER_SURFACE_ONLY",
+      "sourceRuntime": 0,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 6,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriTicking",
+      "class": "USER_SURFACE_ONLY",
+      "sourceRuntime": 0,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriLove",
+      "class": "USER_SURFACE_ONLY",
+      "sourceRuntime": 0,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriEducation",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 2,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriLogistics",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 2,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriWork",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 3,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 5,
+      "reportedEcosystem": 0
+    }
+  ],
+  "mismatches": [
+    {
+      "product": "AfriCCTV",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 61,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 19,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriTracker",
+      "class": "USER_SURFACE_ONLY",
+      "sourceRuntime": 0,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 6,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriTicking",
+      "class": "USER_SURFACE_ONLY",
+      "sourceRuntime": 0,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriLove",
+      "class": "USER_SURFACE_ONLY",
+      "sourceRuntime": 0,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriEducation",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 2,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriLogistics",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 2,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 0,
+      "reportedEcosystem": 0
+    },
+    {
+      "product": "AfriWork",
+      "class": "USER_CORE_BACKED",
+      "sourceRuntime": 3,
+      "reportedRuntime": 0,
+      "sourceFeature": 0,
+      "reportedFeature": 0,
+      "sourceUser": 2,
+      "reportedUser": 0,
+      "sourceEcosystem": 5,
+      "reportedEcosystem": 0
+    }
+  ],
+  "policy": {
+    "delete": false,
+    "autoRegister": false,
+    "execute": false,
+    "humanApprovalRequired": true
+  },
+  "repair": "NOT_PROPOSED / NOT_APPROVED / NOT_EXECUTABLE",
+  "timestamp": 1786657174783
+}

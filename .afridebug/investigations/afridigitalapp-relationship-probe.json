@@ -1,0 +1,10 @@
+{
+  "type": "AFRIDEBUG_AFRIDIGITALAPP_RELATIONSHIP_PROBE",
+  "repository": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+  "candidates": [],
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786658698029
+}

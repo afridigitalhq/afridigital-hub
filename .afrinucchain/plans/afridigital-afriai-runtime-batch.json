@@ -1,0 +1,23 @@
+{
+  "mission":"AfriDigital AfriAI Web WhatsApp Runtime Integration",
+  "protected":["src/core/afriai","src/core/afrinexus"],
+  "targets":[
+    "src/features/afriai",
+    "src/pages/landing/whatsapp",
+    "src/pages/user/modules/AfriWhatsApp",
+    "src/runtime"
+  ],
+  "workflow":[
+    "discover",
+    "map",
+    "adapter",
+    "validate",
+    "evidence",
+    "human_review"
+  ],
+  "constraints":{
+    "no_core_mutation":true,
+    "capability_contract_required":true,
+    "nexus_evidence_required":true
+  }
+}

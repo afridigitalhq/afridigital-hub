@@ -1,0 +1,92 @@
+{
+  "type": "AFRIDEBUG_FMR_RUNTIME_SURFACE_MAP",
+  "status": "runtime_surface_inventory_ready",
+  "repository": "AfriDigital-hub",
+  "objective": "Map FMR navigation and runtime surface signals before any repair decision",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "filesScanned": 85,
+  "routeSignals": [
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/auth"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/user"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/commerce/*"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/auth"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/login"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/auth"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/register"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/auth?mode=signup"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/user"
+    },
+    {
+      "file": "src/routes/AppRouter.jsx",
+      "value": "/admin"
+    }
+  ],
+  "routeValues": [
+    "/auth",
+    "/user",
+    "/",
+    "/commerce/*",
+    "/login",
+    "/register",
+    "/auth?mode=signup",
+    "/admin"
+  ],
+  "navValues": [
+    "/auth",
+    "/user",
+    "/auth?mode=signup"
+  ],
+  "entrypoints": [
+    "src/routes/AppRouter.jsx",
+    "src/pages/user/UserHome.jsx",
+    "src/pages/user/shell/UserAppShell.jsx",
+    "src/pages/user/dashboard/UserDashboard.jsx",
+    "src/pages/user/sidebar/UserSidebar.jsx",
+    "src/userhome/UserAppOSShell.json"
+  ],
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "rename": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "nextPhase": "AFRIDEBUG_RUNTIME_REACHABILITY_CORRELATION",
+  "timestamp": 1786655125747
+}

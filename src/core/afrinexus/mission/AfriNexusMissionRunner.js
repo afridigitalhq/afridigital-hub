@@ -1,11 +1,10 @@
-import AfriNexusCoordinator from "../AfriNexusCoordinator.js";
+import AfriNexusMissionEngine from "../missions/AfriNexusMissionEngine.js";
 
 const AfriNexusMissionRunner = {
   start(request = {}) {
 
-    const targets = request.targets || [];
-
-    const result = AfriNexusCoordinator.run(targets);
+    const result =
+      AfriNexusMissionEngine.create(request);
 
     return {
       type: "AFRINEXUS_MISSION_REPORT",

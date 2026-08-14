@@ -1,0 +1,73 @@
+{
+  "type": "AFRIDEBUG_FMR_REGISTRY_FEATURE_CORRELATION",
+  "status": "correlation_ready",
+  "repository": "AfriDigital-hub",
+  "objective": "Correlate registered FMR plugins and declared routes with their actual feature modules without modifying any source",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "registry": "src/plugins/user/userPluginRegistry.js",
+  "entries": [
+    {
+      "key": "afriSports",
+      "name": "AfriSports",
+      "route": "/user/sports"
+    },
+    {
+      "key": "afriCommerce",
+      "name": "AfriCommerce",
+      "route": "/user/commerce"
+    },
+    {
+      "key": "afriMetaWorld",
+      "name": "AfriMetaWorld",
+      "route": "/user/metaworld"
+    },
+    {
+      "key": "afriComm",
+      "name": "AfriComm",
+      "route": "/user/comm"
+    },
+    {
+      "key": "afriBoost",
+      "name": "AfriBoost",
+      "route": "/user/boost"
+    }
+  ],
+  "featureImports": [
+    {
+      "spec": "../../features/afrisports",
+      "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/afrisports"
+    },
+    {
+      "spec": "../../features/africommerce",
+      "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/africommerce"
+    },
+    {
+      "spec": "../../features/afrimetaworld",
+      "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/afrimetaworld"
+    },
+    {
+      "spec": "../../features/africomm",
+      "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/africomm"
+    },
+    {
+      "spec": "../../features/afriboost",
+      "target": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub/src/features/afriboost"
+    }
+  ],
+  "missingFeatures": [],
+  "policy": {
+    "delete": false,
+    "modify": false,
+    "rename": false,
+    "repair": false,
+    "humanApprovalRequired": true
+  },
+  "nextPhase": "AFRIDEBUG_FMR_REPAIR_PLAN",
+  "timestamp": 1786655462193
+}

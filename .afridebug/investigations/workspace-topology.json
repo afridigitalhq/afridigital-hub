@@ -1,0 +1,109 @@
+{
+  "type": "AFRIDEBUG_WORKSPACE_TOPOLOGY",
+  "repository": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+  "parent": "/data/data/com.termux/files/home/AfriDigitalHub",
+  "directories": [
+    {
+      "directory": ".afri",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/.afri",
+      "git": false,
+      "packageJson": false,
+      "packageName": null,
+      "src": false,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": ".afrinucchain",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/.afrinucchain",
+      "git": false,
+      "packageJson": false,
+      "packageName": null,
+      "src": false,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": ".prod-manifest",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/.prod-manifest",
+      "git": false,
+      "packageJson": false,
+      "packageName": null,
+      "src": false,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": "AfriDesign-Admin-Studio",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDesign-Admin-Studio",
+      "git": false,
+      "packageJson": false,
+      "packageName": null,
+      "src": true,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": "AfriDesign-Studio",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDesign-Studio",
+      "git": false,
+      "packageJson": true,
+      "packageName": "afridesign-studio",
+      "src": true,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": "AfriDigital-api",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api",
+      "git": true,
+      "packageJson": true,
+      "packageName": "afridigital-api",
+      "src": true,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": "AfriDigital-hub",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+      "git": true,
+      "packageJson": true,
+      "packageName": "afridigital-hub",
+      "src": true,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": "AfriDigitalHubRuntime",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigitalHubRuntime",
+      "git": false,
+      "packageJson": false,
+      "packageName": null,
+      "src": true,
+      "app": false,
+      "pages": false
+    },
+    {
+      "directory": "legacy_quarantine",
+      "path": "/data/data/com.termux/files/home/AfriDigitalHub/legacy_quarantine",
+      "git": false,
+      "packageJson": false,
+      "packageName": null,
+      "src": false,
+      "app": false,
+      "pages": false
+    }
+  ],
+  "likelyProjectDirectories": [
+    "/data/data/com.termux/files/home/AfriDigitalHub/AfriDesign-Admin-Studio",
+    "/data/data/com.termux/files/home/AfriDigitalHub/AfriDesign-Studio",
+    "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-api",
+    "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigital-hub",
+    "/data/data/com.termux/files/home/AfriDigitalHub/AfriDigitalHubRuntime"
+  ],
+  "policy": {
+    "readOnly": true,
+    "noChanges": true
+  },
+  "timestamp": 1786658832227
+}

@@ -1,4 +1,4 @@
-import ModuleCapabilityMap from "./ModuleCapabilityMap";
+import ModuleCapabilityMap from "./ModuleCapabilityMap.js";
 import ModuleRegistry from "../../../core/runtime/ModuleRegistry";
 
 const ModuleMountEngine = {

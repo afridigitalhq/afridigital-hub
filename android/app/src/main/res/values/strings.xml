@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AfriDigital</string>
+    <string name="title_activity_main">AfriDigital</string>
+    <string name="package_name">com.afridigital.app</string>
+    <string name="custom_url_scheme">com.afridigital.app</string>
+</resources>

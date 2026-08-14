@@ -1,0 +1,30 @@
+{
+  "mission": "External AI Gateway Security Upgrade",
+  "priority": "HIGH",
+  "objectives": [
+    "Discover external AI gateway implementation",
+    "Map gateway dependencies",
+    "Validate kill switch capability",
+    "Verify authorization boundaries",
+    "Generate security evidence report",
+    "Prepare repair recommendations"
+  ],
+  "targets": [
+    {
+      "name": "ExternalAIGateway",
+      "capabilities": [
+        "gateway",
+        "security",
+        "runtime",
+        "kill_switch",
+        "approval",
+        "contract",
+        "evidence"
+      ]
+    }
+  ],
+  "constraints": {
+    "autoExecute": false,
+    "requiresHumanApproval": true
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "type": "AFRIDEBUG_BUILD_EXECUTION_CHAIN",
+  "status": "EVIDENCE_ONLY",
+  "repository": "AfriDigital-hub",
+  "scripts": {
+    "build": "npm run prebuild && vite build",
+    "start": "node server-spa/server.js",
+    "preview": "vite preview",
+    "audit:registry": "node scripts/audit/registryAudit.js",
+    "audit:architecture": "node scripts/audit/architectureAudit.js",
+    "audit:routes": "node scripts/audit/routeAudit.js",
+    "audit:plugins": "node scripts/audit/pluginAudit.js",
+    "audit:contracts": "node scripts/audit/contractAudit.js",
+    "bootstrap:registry": "node scripts/bootstrap/registryBootstrap.js",
+    "bootstrap:products": "node scripts/bootstrap/productBootstrap.js",
+    "bootstrap:os": "node scripts/bootstrap/osBootstrap.js",
+    "validate:build": "node scripts/validate/buildValidation.js",
+    "validate:composition": "node scripts/validate/compositionValidation.js",
+    "prebuild": "grep -R 'wa.me\\|whatsapp://' src && exit 1 || true",
+    "dev": "vite"
+  },
+  "sourceEvidence": [
+    {
+      "file": "scripts/afrinuc/build.mjs",
+      "signals": [
+        {
+          "line": 1,
+          "text": "import AfriNucChainEngine from \"../../src/core/afriai/nucchain/AfriNucChainEngine.js\";\n\nconst manifest = {\n  id: process.argv[2] || \"AFRI-NUCCHAIN-BUILD\",\n  source: process.argv[3] || null,\n  target: process.argv[4] || \"src/core/afriai/nucchain/generated\",\n  modules: []\n};\n\nconst result = await AfriNucChainEngine.execute(manifest);\n\nconsole.log(JSON.stringify(result.completion, null, 2));"
+        }
+      ]
+    },
+    {
+      "file": "package.json",
+      "signals": [
+        {
+          "line": 1,
+          "text": "{\n  \"name\": \"afridigital-hub\",\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"npm run prebuild && vite build\",\n    \"start\": \"node server-spa/server.js\",\n    \"preview\": \"vite preview\",\n    \"audit:registry\": \"node scripts/audit/registryAudit.js\",\n    \"audit:architecture\": \"node scripts/audit/architectureAudit.js\",\n    \"audit:routes\": \"node scripts/audit/routeAudit.js\",\n    \"audit:plugins\": \"node scripts/audit/pluginAudit.js\",\n    \"audit:contracts\": \"node scripts/audit/contractAudit.js\",\n    \"bootstrap:registry\": \"node scripts/bootstrap/registryBootstrap.js\",\n    \"bootstrap:products\": \"node scripts/bootstrap/productBootstrap.js\",\n    \"bootstrap:os\": \"node scripts/bootstrap/osBootstrap.js\",\n    \"validate:build\": \"node scripts/validate/buildValidation.js\",\n    \"validate:composition\": \"node scripts/validate/compositionValidation.js\",\n    \"prebuild\": \"grep -R 'wa.me\\\\|whatsapp://' src && exit 1 || true\",\n    \"dev\": \"vite\"\n  },\n  \"dependencies\": {\n    \"@capacitor/android\": \"^8.5.0\",\n    \"@capacitor/cli\": \"^8.5.0\",\n    \"@capacitor/core\": \"^8.5.0\",\n    \"express\": \"^4.19.2\",\n    \"react\": \"^19.2.7\",\n    \"react-dom\": \"^19.2.7\",\n    \"react-icons\": \"^5.7.0\",\n    \"react-router-dom\": \"^7.18.1\",\n    \"socket.io-client\": \"^4.8.3\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"^10.6.0\",\n    \"vite\": \"^8.1.0\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "signals": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Orchestrator — scaffold only\nconst AfriBuildOrchestrator = { status: \"SCAFFOLDED\" };\nexport default AfriBuildOrchestrator;"
+        }
+      ]
+    },
+    {
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "signals": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Runtime — scaffold only\nconst AfriBuildRuntime = { status: \"SCAFFOLDED\" };\nexport default AfriBuildRuntime;"
+        }
+      ]
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "signals": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Registry — scaffold only\nconst AfriBuildRegistry = { engines: [], capabilities: [] };\nexport default AfriBuildRegistry;"
+        }
+      ]
+    },
+    {
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+      "signals": [
+        {
+          "line": 1,
+          "text": "// AfriBuild Foundation — scaffold only\nconst AfriBuildContract = Object.freeze({\n  id: \"afribuild\",\n  version: \"0.1.0\",\n  status: \"SCAFFOLDED\",\n  inherits: \"AfriFix\",\n  intelligence: \"AfriAI\",\n  execution: \"AfriNucChain\",\n  humanApprovalRequired: true\n});\nexport default AfriBuildContract;"
+        }
+      ]
+    },
+    {
+      "file": "capacitor.config.json",
+      "signals": [
+        {
+          "line": 1,
+          "text": "{\n  \"appId\": \"com.afridigital.app\",\n  \"appName\": \"AfriDigital\",\n  \"webDir\": \"dist\"\n}"
+        }
+      ]
+    }
+  ],
+  "recentAndroidBuildFiles": [
+    "android/app/build.gradle\nandroid/app/build/outputs/logs/manifest-merger-debug-report.txt\nandroid/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin\nandroid/app/src/main/assets/capacitor.config.json\nandroid/app/src/main/assets/capacitor.plugins.json\nandroid/app/capacitor.build.gradle\nandroid/gradle.properties\nandroid/capacitor-cordova-android-plugins/build.gradle\nandroid/capacitor-cordova-android-plugins/src/main/AndroidManifest.xml\nandroid/capacitor-cordova-android-plugins/cordova.variables.gradle\nandroid/capacitor-cordova-android-plugins/build/outputs/logs/manifest-merger-debug-report.txt\nandroid/capacitor-cordova-android-plugins/build/outputs/aar/capacitor-cordova-android-plugins-debug.aar\nandroid/capacitor-cordova-android-plugins/build/.transforms/995d0ba87e539c541cf686e40ce00fb1/results.bin\nandroid/capacitor-cordova-android-plugins/build/.transforms/fd86c113dcd131dfe9bb4ddd54025125/results.bin\nandroid/capacitor.settings.gradle\nandroid/.gradle/9.7.0/fileHashes/fileHashes.lock\nandroid/.gradle/9.7.0/fileChanges/last-build.bin\nandroid/.gradle/9.7.0/checksums/checksums.lock\nandroid/.gradle/9.7.0/checksums/sha1-checksums.bin\nandroid/.gradle/9.7.0/checksums/md5-checksums.bin\nandroid/.gradle/9.7.0/gc.properties\nandroid/.gradle/buildOutputCleanup/buildOutputCleanup.lock\nandroid/.gradle/buildOutputCleanup/cache.properties\nandroid/.gradle/buildOutputCleanup/outputFiles.bin\nandroid/.gradle/vcs-1/gc.properties\nandroid/.gradle/8.14.3/fileHashes/fileHashes.lock\nandroid/.gradle/8.14.3/fileHashes/fileHashes.bin\nandroid/.gradle/8.14.3/fileHashes/resourceHashesCache.bin\nandroid/.gradle/8.14.3/fileChanges/last-build.bin\nandroid/.gradle/8.14.3/checksums/checksums.lock\nandroid/.gradle/8.14.3/checksums/sha1-checksums.bin\nandroid/.gradle/8.14.3/checksums/md5-checksums.bin\nandroid/.gradle/8.14.3/gc.properties\nandroid/.gradle/8.14.3/executionHistory/executionHistory.lock\nandroid/.gradle/8.14.3/executionHistory/executionHistory.bin\nandroid/build/reports/problems/problems-report.html"
+  ],
+  "apk": {
+    "exists": true,
+    "size": 8251084,
+    "mtime": 1786621196683.898,
+    "mtimeISO": "2026-08-13T11:39:56.683Z"
+  },
+  "determination": "EXECUTION_CHAIN_REQUIRES_RUNTIME_OR_BUILD_LOG_CORRELATION",
+  "governance": {
+    "readOnly": true,
+    "noChanges": true,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786660901934
+}

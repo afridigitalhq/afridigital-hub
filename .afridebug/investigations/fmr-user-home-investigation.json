@@ -1,0 +1,86 @@
+{
+  "type": "AFRIDEBUG_FMR_INVESTIGATION",
+  "status": "investigation_requested",
+  "repository": "AfriDigital-hub",
+  "objective": "Map existing FMR/User Home architecture, identify duplicate surfaces, dead paths, ownership conflicts, unreachable modules, missing wiring and repair candidates without manual repair",
+  "approvalRequired": true,
+  "roots": [
+    "src/pages/user",
+    "src/userhome",
+    "src/routes/AppRouter.jsx"
+  ],
+  "filesScanned": 80,
+  "references": [
+    {
+      "path": "src/pages/user/UserHome.jsx",
+      "size": 143,
+      "signals": 4
+    },
+    {
+      "path": "src/pages/user/dashboard/UserDashboard.jsx",
+      "size": 776,
+      "signals": 13
+    },
+    {
+      "path": "src/pages/user/dashboard/layout/DashboardLayout.jsx",
+      "size": 1099,
+      "signals": 21
+    },
+    {
+      "path": "src/pages/user/dashboard/partials/AfriAIPanel.jsx",
+      "size": 205,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/partials/EcosystemOverview.jsx",
+      "size": 217,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/partials/ProductLauncher.jsx",
+      "size": 213,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/partials/QuickActions.jsx",
+      "size": 207,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/FavoritesPanel.jsx",
+      "size": 211,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/NotificationsPanel.jsx",
+      "size": 219,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/QuickActionsPanel.jsx",
+      "size": 217,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/dashboard/widgets/RecentActivity.jsx",
+      "size": 211,
+      "signals": 2
+    },
+    {
+      "path": "src/pages/user/shell/UserAppShell.jsx",
+      "size": 633,
+      "signals": 4
+    },
+    {
+      "path": "src/userhome/UserAppOSShell.json",
+      "size": 679,
+      "signals": 2
+    },
+    {
+      "path": "src/routes/AppRouter.jsx",
+      "size": 1911,
+      "signals": 3
+    }
+  ],
+  "timestamp": 1786654582743
+}

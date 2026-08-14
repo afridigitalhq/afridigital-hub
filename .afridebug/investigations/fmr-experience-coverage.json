@@ -1,0 +1,458 @@
+{
+  "type": "AFRIDEBUG_FMR_EXPERIENCE_COVERAGE",
+  "status": "correlated",
+  "repository": "AfriDigital-hub",
+  "mode": "diagnostic_only",
+  "preservation": [
+    "src/pages/user/**",
+    "src/userhome/**",
+    "AfriCommerce",
+    "AfriCCTV",
+    "AfriDesign Studio"
+  ],
+  "contract": {
+    "products": [
+      "AfriCommerce",
+      "AfriCCTV",
+      "AfriSports",
+      "AfriMetaWorld",
+      "AfriBoost",
+      "AfriTracker",
+      "AfriTicking",
+      "AfriLove",
+      "AfriEducation",
+      "AfriLogistics",
+      "AfriWork"
+    ],
+    "ecosystem": [
+      "Product Marketplace",
+      "Discover Products",
+      "Featured Experiences",
+      "Community",
+      "Events",
+      "Promotions",
+      "Learning Center",
+      "Support Center",
+      "Feedback"
+    ],
+    "account": [
+      "My Profile",
+      "My Organizations",
+      "Security",
+      "Privacy",
+      "Devices",
+      "Billing",
+      "Settings",
+      "Help & Support"
+    ]
+  },
+  "registry": {
+    "plugins": [
+      "AfriSports",
+      "AfriCommerce",
+      "AfriMetaWorld",
+      "AfriComm",
+      "AfriBoost"
+    ],
+    "routes": [
+      "/user/sports",
+      "/user/commerce",
+      "/user/metaworld",
+      "/user/comm",
+      "/user/boost"
+    ]
+  },
+  "coverage": {
+    "products": [
+      {
+        "name": "AfriCommerce",
+        "registered": true,
+        "registryRoute": "/user/commerce"
+      },
+      {
+        "name": "AfriCCTV",
+        "registered": false,
+        "registryRoute": null
+      },
+      {
+        "name": "AfriSports",
+        "registered": true,
+        "registryRoute": "/user/sports"
+      },
+      {
+        "name": "AfriMetaWorld",
+        "registered": true,
+        "registryRoute": "/user/metaworld"
+      },
+      {
+        "name": "AfriBoost",
+        "registered": true,
+        "registryRoute": "/user/boost"
+      },
+      {
+        "name": "AfriTracker",
+        "registered": false,
+        "registryRoute": null
+      },
+      {
+        "name": "AfriTicking",
+        "registered": false,
+        "registryRoute": null
+      },
+      {
+        "name": "AfriLove",
+        "registered": false,
+        "registryRoute": null
+      },
+      {
+        "name": "AfriEducation",
+        "registered": false,
+        "registryRoute": null
+      },
+      {
+        "name": "AfriLogistics",
+        "registered": false,
+        "registryRoute": null
+      },
+      {
+        "name": "AfriWork",
+        "registered": false,
+        "registryRoute": null
+      }
+    ],
+    "ecosystem": [
+      {
+        "name": "Product Marketplace",
+        "existingSurface": false
+      },
+      {
+        "name": "Discover Products",
+        "existingSurface": false
+      },
+      {
+        "name": "Featured Experiences",
+        "existingSurface": true
+      },
+      {
+        "name": "Community",
+        "existingSurface": true
+      },
+      {
+        "name": "Events",
+        "existingSurface": true
+      },
+      {
+        "name": "Promotions",
+        "existingSurface": true
+      },
+      {
+        "name": "Learning Center",
+        "existingSurface": true
+      },
+      {
+        "name": "Support Center",
+        "existingSurface": true
+      },
+      {
+        "name": "Feedback",
+        "existingSurface": true
+      }
+    ],
+    "account": [
+      {
+        "name": "My Profile",
+        "existingSurface": false
+      },
+      {
+        "name": "My Organizations",
+        "existingSurface": false
+      },
+      {
+        "name": "Security",
+        "existingSurface": true
+      },
+      {
+        "name": "Privacy",
+        "existingSurface": true
+      },
+      {
+        "name": "Devices",
+        "existingSurface": true
+      },
+      {
+        "name": "Billing",
+        "existingSurface": true
+      },
+      {
+        "name": "Settings",
+        "existingSurface": true
+      },
+      {
+        "name": "Help & Support",
+        "existingSurface": false
+      }
+    ]
+  },
+  "signals": {
+    "sidebar": [
+      {
+        "file": "src/pages/user/sidebar/UserSidebar.jsx",
+        "signals": []
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriBoostItem.jsx",
+        "signals": [
+          "AfriBoostItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriCCTVItem.jsx",
+        "signals": [
+          "AfriCCTVItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriCommItem.jsx",
+        "signals": [
+          "AfriCommItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriCommerceItem.jsx",
+        "signals": [
+          "AfriCommerceItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriEducationItem.jsx",
+        "signals": [
+          "AfriEducationItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriLogisticsItem.jsx",
+        "signals": [
+          "AfriLogisticsItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriLoveItem.jsx",
+        "signals": [
+          "AfriLoveItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriMetaWorldItem.jsx",
+        "signals": [
+          "AfriMetaWorldItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriSportsItem.jsx",
+        "signals": [
+          "AfriSportsItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriTickingItem.jsx",
+        "signals": [
+          "AfriTickingItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriTrackerItem.jsx",
+        "signals": [
+          "AfriTrackerItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/AfriWorkItem.jsx",
+        "signals": [
+          "AfriWorkItem"
+        ]
+      },
+      {
+        "file": "src/pages/user/sidebar/items/DashboardItem.jsx",
+        "signals": []
+      },
+      {
+        "file": "src/pages/user/sidebar/sections/SidebarFooter.jsx",
+        "signals": []
+      },
+      {
+        "file": "src/pages/user/sidebar/sections/SidebarHeader.jsx",
+        "signals": []
+      },
+      {
+        "file": "src/pages/user/sidebar/sections/SidebarNavigation.jsx",
+        "signals": []
+      }
+    ],
+    "modules": [
+      {
+        "file": "src/pages/user/modules/AfriAI/index.jsx",
+        "signals": [
+          "AfriAI"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriBank/index.jsx",
+        "signals": [
+          "AfriBank"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriBoost/index.jsx",
+        "signals": [
+          "AfriBoost"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriCCTV/index.jsx",
+        "signals": [
+          "AfriCCTV"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriComm/index.jsx",
+        "signals": [
+          "AfriComm"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriCommerce/index.jsx",
+        "signals": [
+          "AfriCommerce"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriEducation/index.jsx",
+        "signals": [
+          "AfriEducation"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriLogistics/index.jsx",
+        "signals": [
+          "AfriLogistics"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriLove/index.jsx",
+        "signals": [
+          "AfriLove"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriMetaWorld/index.jsx",
+        "signals": [
+          "AfriMetaWorld"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriScan/index.jsx",
+        "signals": [
+          "AfriScan"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriSports/index.jsx",
+        "signals": [
+          "AfriSports"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriTicking/index.jsx",
+        "signals": [
+          "AfriTicking"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriTracker/index.jsx",
+        "signals": [
+          "AfriTracker"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/AfriWork/index.jsx",
+        "signals": [
+          "AfriWork"
+        ]
+      },
+      {
+        "file": "src/pages/user/modules/EventBus/index.jsx",
+        "signals": []
+      },
+      {
+        "file": "src/pages/user/modules/index.jsx",
+        "signals": []
+      }
+    ],
+    "ecosystem": [
+      {
+        "file": "src/pages/user/ecosystem/Community/index.jsx",
+        "signals": [
+          "Community"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/Discover/index.jsx",
+        "signals": [
+          "Discover"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/Events/index.jsx",
+        "signals": [
+          "Events"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/FeaturedExperiences/index.jsx",
+        "signals": [
+          "FeaturedExperiences"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/Feedback/index.jsx",
+        "signals": [
+          "Feedback"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/LearningCenter/index.jsx",
+        "signals": [
+          "LearningCenter"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/Marketplace/index.jsx",
+        "signals": [
+          "Marketplace"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/Promotions/index.jsx",
+        "signals": [
+          "Promotions"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/SupportCenter/index.jsx",
+        "signals": [
+          "SupportCenter"
+        ]
+      },
+      {
+        "file": "src/pages/user/ecosystem/index.jsx",
+        "signals": []
+      }
+    ]
+  },
+  "repair": {
+    "proposed": false,
+    "approved": false,
+    "executable": false
+  },
+  "timestamp": 1786655973815
+}

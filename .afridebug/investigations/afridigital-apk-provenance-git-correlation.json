@@ -1,0 +1,318 @@
+{
+  "type": "AFRIDEBUG_APK_PROVENANCE_GIT_CORRELATION",
+  "status": "EVIDENCE_ONLY",
+  "repository": "AfriDigital-hub",
+  "commits": [
+    {
+      "hash": "0859dd0da5acdac567701f68b051430c49bc8861",
+      "date": "2026-08-13T10:40:17+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "decommission orphan D3 force engine"
+    },
+    {
+      "hash": "47e4006c0724504d4574e3d35e5cb7b1d0ac24d7",
+      "date": "2026-08-13T10:35:32+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "decommission orphan kernel implementations"
+    },
+    {
+      "hash": "97747bb0d0e2fcfc2818448850b5214cdc36d328",
+      "date": "2026-08-13T10:31:52+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "remove stale kernel authority and bridge surfaces"
+    },
+    {
+      "hash": "7837f29e9e1a63d1e84f99220d15066b3b49046d",
+      "date": "2026-08-13T10:27:32+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "decommission orphan WS and AfriSync runtime branches"
+    },
+    {
+      "hash": "185f3cb07b351b61ee66078aaead70ecf1b349e8",
+      "date": "2026-08-13T10:14:06+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "decommission orphan DAG and kernel branches"
+    },
+    {
+      "hash": "ad62fa7240cda4e798435d1330dbd8df0832654e",
+      "date": "2026-08-11T15:46:04+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "integrate AfriAI knowledge decision routing"
+    },
+    {
+      "hash": "249a7084c4ea9415a1556a12005e2c498062c841",
+      "date": "2026-08-11T15:37:30+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "add AfriAI knowledge capability routing"
+    },
+    {
+      "hash": "16f3b517f6a7b9ecea7ab4677c472a606698061f",
+      "date": "2026-08-11T12:53:59+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "scaffold AfriBuild foundation"
+    },
+    {
+      "hash": "0b69a87c099f534e0fb3cf72276641c2d550f0b7",
+      "date": "2026-08-11T11:51:36+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "checkpoint: AfriAI WhatsApp integration working state"
+    },
+    {
+      "hash": "c8dadbcc1b02e186ac5f69d6ce6442b1dfa293d1",
+      "date": "2026-08-10T23:34:21+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "fix: consume nested AfriAI landing response"
+    },
+    {
+      "hash": "96523ba076160dcd115422b5c94a7f10ac13ccb6",
+      "date": "2026-08-10T21:53:19+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "chore: establish verified AfriDigital baseline"
+    },
+    {
+      "hash": "1921842a032b2931dcbc1754cba9c50ec3c442e5",
+      "date": "2026-08-05T12:52:33+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "refactor: move debug runtime responsibilities out of frontend"
+    },
+    {
+      "hash": "c2f44c9b94ebf828dfc6c29ffd2867816ced3a91",
+      "date": "2026-08-05T08:36:09+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "security: remove AfriDebug keys from repository tracking"
+    },
+    {
+      "hash": "5438b67e6856f2ce2c16ceff0dd62a73e7171c40",
+      "date": "2026-08-05T08:31:24+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: migrate AfriDebug AFDS008 intelligence orchestration runtime"
+    },
+    {
+      "hash": "a02efda40bf4a3b08ea240b9290e9a002b1e925f",
+      "date": "2026-08-05T08:26:22+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: add AfriDebug runtime inspection services"
+    },
+    {
+      "hash": "dd4fd2aa850b1e6a0e078dc7c8928808394a92d5",
+      "date": "2026-08-05T08:25:10+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: connect AfriDebug importer to intake runtime"
+    },
+    {
+      "hash": "b51cb1ffb92f4fe5a95f0bedb5ce257d09db56ce",
+      "date": "2026-08-05T08:20:46+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: add AfriDebug repository intake service"
+    },
+    {
+      "hash": "437ed1302b86e8636c223a0cb657f4d5984abc82",
+      "date": "2026-08-05T08:08:59+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: create AfriDebug runtime state foundation"
+    },
+    {
+      "hash": "7540ab623a3e5f2689fb01ee416f66e27a62e168",
+      "date": "2026-08-05T07:47:29+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: assemble AfriDebug IDE workspace layout"
+    },
+    {
+      "hash": "7544967a96ed15e47673ed3e5a583f1f9f325c22",
+      "date": "2026-08-05T07:46:29+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: build AfriDebug workspace navigation shell"
+    },
+    {
+      "hash": "44c0531204a5962c74af406acc239f6da8e91321",
+      "date": "2026-08-05T07:45:20+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: build AfriDebug desktop investigation panels"
+    },
+    {
+      "hash": "753897d16f2e039b12f40147aa388f8767ebc772",
+      "date": "2026-08-05T07:41:04+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: create AfriDebug desktop control center composition"
+    },
+    {
+      "hash": "c10bfee426f1af7486e30e9dc2b90f0fa092ad2d",
+      "date": "2026-08-05T07:14:18+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: scaffold AfriDebug desktop mobile admin experience layer"
+    },
+    {
+      "hash": "b76ef0edd7bb9038cf2e6d6de7d98b37e49d14f5",
+      "date": "2026-08-02T23:05:42+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat: add AfriDebug service runtime adapter"
+    },
+    {
+      "hash": "1dabdac0bacf2e357f0b3ff6ecd9a5f597ddc897",
+      "date": "2026-08-02T22:50:03+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "fix: stabilize runtime bootstrap after legacy migration"
+    },
+    {
+      "hash": "a48793b1474279803b2afa60e26f3379496752e9",
+      "date": "2026-08-02T22:44:06+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "lock: migrate AfriRuntime core and remove legacy architecture"
+    },
+    {
+      "hash": "f775f036cc2de6ddf5b3e2ebc2ca088b6221cbcd",
+      "date": "2026-07-30T10:52:57+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "AFDS: activate AfriAI Debug Runtime and AfriNucChain foundation"
+    },
+    {
+      "hash": "219fabd99764afc30fa44c8c63e2c84bd4fd5d3c",
+      "date": "2026-07-28T21:03:29+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "feat(afriai): lock canonical card, stabilize composer layout, improve viewport"
+    },
+    {
+      "hash": "eeace5942a68a2c36e947627620786c375ea9fa2",
+      "date": "2026-07-28T20:22:19+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "debug(afriai): add temporary green border to canonical card"
+    },
+    {
+      "hash": "b1320ad52fbef9009ab5ee2a659030926be5d85d",
+      "date": "2026-07-28T19:00:44+01:00",
+      "author": "AfriLove Team",
+      "email": "afriloveteam@gmail.com",
+      "message": "lock AfriAI canonical v2 single source architecture"
+    }
+  ],
+  "fileEvidence": [
+    {
+      "file": "src/core/afribuild/contracts/AfriBuildContract.js",
+      "exists": true,
+      "size": 293,
+      "mtime": 1786448645832.6838,
+      "gitLog": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tafriloveteam@gmail.com\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/orchestrator/AfriBuildOrchestrator.js",
+      "exists": true,
+      "size": 138,
+      "mtime": 1786448645832.6838,
+      "gitLog": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tafriloveteam@gmail.com\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/registry/AfriBuildRegistry.js",
+      "exists": true,
+      "size": 135,
+      "mtime": 1786448645832.6838,
+      "gitLog": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tafriloveteam@gmail.com\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "src/core/afribuild/runtime/AfriBuildRuntime.js",
+      "exists": true,
+      "size": 123,
+      "mtime": 1786448645832.6838,
+      "gitLog": [
+        "16f3b517f6a7b9ecea7ab4677c472a606698061f\t2026-08-11T12:53:59+01:00\tAfriLove Team\tafriloveteam@gmail.com\tscaffold AfriBuild foundation"
+      ]
+    },
+    {
+      "file": "src/core/afriai",
+      "exists": true,
+      "size": 3452,
+      "mtime": 1786459344967.5132,
+      "gitLog": [
+        "ad62fa7240cda4e798435d1330dbd8df0832654e\t2026-08-11T15:46:04+01:00\tAfriLove Team\tafriloveteam@gmail.com\tintegrate AfriAI knowledge decision routing",
+        "249a7084c4ea9415a1556a12005e2c498062c841\t2026-08-11T15:37:30+01:00\tAfriLove Team\tafriloveteam@gmail.com\tadd AfriAI knowledge capability routing",
+        "0b69a87c099f534e0fb3cf72276641c2d550f0b7\t2026-08-11T11:51:36+01:00\tAfriLove Team\tafriloveteam@gmail.com\tcheckpoint: AfriAI WhatsApp integration working state",
+        "1921842a032b2931dcbc1754cba9c50ec3c442e5\t2026-08-05T12:52:33+01:00\tAfriLove Team\tafriloveteam@gmail.com\trefactor: move debug runtime responsibilities out of frontend",
+        "5438b67e6856f2ce2c16ceff0dd62a73e7171c40\t2026-08-05T08:31:24+01:00\tAfriLove Team\tafriloveteam@gmail.com\tfeat: migrate AfriDebug AFDS008 intelligence orchestration runtime"
+      ]
+    },
+    {
+      "file": "scripts/afrinuc/build.mjs",
+      "exists": true,
+      "size": 392,
+      "mtime": 1785524561458.7712,
+      "gitLog": [
+        "a48793b1474279803b2afa60e26f3379496752e9\t2026-08-02T22:44:06+01:00\tAfriLove Team\tafriloveteam@gmail.com\tlock: migrate AfriRuntime core and remove legacy architecture"
+      ]
+    },
+    {
+      "file": "package.json",
+      "exists": true,
+      "size": 1334,
+      "mtime": 1786614332676.129,
+      "gitLog": [
+        "130ab1d64529e1e34d103ce7a484d40999ac4a0f\t2026-07-09T23:00:10+01:00\tAfriLove Team\tafriloveteam@gmail.com\tfeat: bootstrap AfriCCTV landing runtime architecture",
+        "6a26b462f0d3b809f5ffd38e15334c47be1fa864\t2026-07-08T06:37:43+01:00\tAfriLove Team\tafriloveteam@gmail.com\tProduction checkpoint before backup cleanup",
+        "c042126ad268a0aaf75da70299edc1267676bfca\t2026-07-06T12:27:54+01:00\tAfriLove Team\tafriloveteam@gmail.com\tLOCK: canonical BillingExecutionPipeline established",
+        "d0ff3ce8b605e76e56c4836df62c544c0614e50e\t2026-07-03T09:46:54+01:00\tAfriLove Team\tafriloveteam@gmail.com\tfeat: AfriDigital landing v3 ecosystem composition system",
+        "f2903c16132a6759a06dcd49bcbb0fca890055df\t2026-07-03T00:10:25+01:00\tAfriLove Team\tafriloveteam@gmail.com\tAfriVision runtime live integration + heartbeat visualization + preview setup"
+      ]
+    },
+    {
+      "file": "capacitor.config.json",
+      "exists": true,
+      "size": 85,
+      "mtime": 1786614347368.1287,
+      "gitLog": []
+    },
+    {
+      "file": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "exists": true,
+      "size": 8251084,
+      "mtime": 1786621196683.898,
+      "gitLog": []
+    }
+  ],
+  "apk": {
+    "file": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "exists": true,
+    "size": 8251084,
+    "mtime": 1786621196683.898,
+    "gitLog": []
+  },
+  "determination": "PROVENANCE_CORRELATION_PENDING",
+  "policy": {
+    "readOnly": true,
+    "noChanges": true,
+    "humanApprovalRequired": true
+  },
+  "timestamp": 1786660686201
+}
