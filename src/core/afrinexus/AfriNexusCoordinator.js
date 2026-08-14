@@ -51,7 +51,10 @@ const AfriNexusCoordinator = {
 
 
     const afriFixPlan = AfriFixBatchPlanner.plan(
-      handovers
+      handovers,
+      {
+        targets: targets.map(target => target.name)
+      }
     );
 
 

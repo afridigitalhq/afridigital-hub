@@ -1,9 +1,16 @@
 const AfriFixBatchPlanner = {
-  plan(handovers = []) {
+  plan(handovers = [], scope = null) {
+
+    const scopedHandovers = scope?.targets
+      ? handovers.filter(item =>
+          scope.targets.includes(item.target)
+        )
+      : handovers;
+
     return {
       type: "AFRIFIX_BATCH_PLAN",
-      total: handovers.length,
-      repairs: handovers.map(item => ({
+      total: scopedHandovers.length,
+      repairs: scopedHandovers.map(item => ({
         target: item.target,
         requirements: item.requirements,
         strategy: [
