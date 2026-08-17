@@ -60,7 +60,7 @@ const LandingShowroomRegistry = Object.freeze({
       name: "AfriLogistics",
       tier: "TIER_2",
       showcase: false,
-      status: "SCAFFOLD"
+      status: "HIDDEN"
     },
     {
       id: "afriticking",
@@ -88,7 +88,7 @@ const LandingShowroomRegistry = Object.freeze({
       name: "AfriMetaWorld",
       tier: "TIER_2",
       showcase: false,
-      status: "SCAFFOLD"
+      status: "HIDDEN"
     },
     {
       id: "afriforex",

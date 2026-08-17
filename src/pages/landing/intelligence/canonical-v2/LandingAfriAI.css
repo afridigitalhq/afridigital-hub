@@ -9,8 +9,8 @@
 
 .landing-afriai-card{
   width:min(1200px,calc(100% - 40px));
-  height:900px;
-  max-height:900px;
+  height:560px;
+  max-height:560px;
   overflow:hidden;
   margin:0 auto;
   padding:12px 28px 14px;
@@ -18,7 +18,7 @@
   flex-direction:column;
   gap:8px;
   border-radius:28px;
-  min-height:900px;
+  min-height:560px;
   background:linear-gradient(145deg,var(--afri-primary-soft),rgba(5,11,24,.88));
   border:1px solid var(--afri-primary-border);
   backdrop-filter:blur(var(--afriglass-blur));
@@ -93,7 +93,7 @@
 @media (max-width:768px){
   .landing-afriai-card{
     padding:20px;
-    min-height:840px;
+    min-height:620px;
   }
 
   .landing-afriai-topbar{

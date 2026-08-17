@@ -23,11 +23,11 @@ export default function LandingAfriAICard({
 }){
 
   return(
-    <section className="landing-afriai-card" style={{border:"3px solid #00ff88",minHeight:"560px"}}>
+    <section className="landing-afriai-card">
 
       <div className="landing-afriai-topbar">
 
-        <LandingAfriAIAvatar 
+        <LandingAfriAIAvatar
               status={status}
               avatarMode={avatarMode}
               transitionState={transitionState}
