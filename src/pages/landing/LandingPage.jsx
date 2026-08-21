@@ -5,7 +5,6 @@ import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
 import LandingAfriAINext from "./intelligence/canonical-v2/LandingAfriAINext";
 import LandingAuthCTA from "./auth/LandingAuthCTA";
 import LandingFooter from "./footer/LandingFooter";
-import LandingNavigation from "./navigation/LandingNavigation";
 import LandingBackground from "./background/LandingBackground";
 import LandingWorldLayer from "./world/LandingWorldLayer";
 import "./landing.css";
@@ -20,7 +19,6 @@ export default function LandingPage() {
 
       <LandingWorldLayer />
 
-      <LandingNavigation />
 
       <LandingHero />
 

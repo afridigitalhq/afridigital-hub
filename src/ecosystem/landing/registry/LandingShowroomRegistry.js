@@ -1,36 +1,50 @@
 const LandingShowroomRegistry = Object.freeze({
-  flagship: Object.freeze({
-    id: "afridesignstudio",
-    name: "AfriDesign Studio",
-    tagline: "Creative studio for creating apps, websites, graphics, templates, and videos.",
-    tier: "FLAGSHIP",
+  primaryFlagship: Object.freeze({
+    id: "afriaiwhatsappbusiness",
+    name: "AfriAI WhatsApp Business",
+    tagline: "AI-powered WhatsApp business automation, engagement, and intelligence.",
+    tier: "PRIMARY_FLAGSHIP",
     flagship: true,
+    primary: true,
     status: "ACTIVE"
   }),
 
-  tier1: Object.freeze([
-    {
-      id: "afrieducation",
-      name: "AfriEducation",
-      tagline: "Where anyone can create, teach, learn, and earn.",
-      tier: "TIER_1",
-      promoted: true,
-      status: "ACTIVE"
-    },
+  flagship: Object.freeze([
     {
       id: "africommerce",
       name: "AfriCommerce",
       tagline: "A unified marketplace connecting businesses, sellers, and shoppers.",
-      tier: "TIER_1",
+      tier: "FLAGSHIP",
       status: "ACTIVE"
+    },
+    {
+      id: "africctv",
+      name: "AfriCCTV",
+      tagline: "Connect your cameras. Keep watch over your home and business, anywhere.",
+      tier: "FLAGSHIP",
+      status: "ACTIVE"
+    },
+    {
+      id: "afrieducation",
+      name: "AfriEducation",
+      tagline: "Where anyone can create, teach, learn, and earn.",
+      tier: "FLAGSHIP",
+      status: "ACTIVE"
+    },
+    {
+      id: "afrisports",
+      name: "AfriSports",
+      tagline: "Live sports, expert analysis, and AI-powered predictions.",
+      tier: "FLAGSHIP",
+      status: "SCAFFOLD"
     }
   ]),
 
   tier2: Object.freeze([
     {
-      id: "africctv",
-      name: "AfriCCTV",
-      tagline: "Connect your cameras. Keep watch over your home and business, anywhere.",
+      id: "afriboost",
+      name: "AfriBoost",
+      tagline: "Boost your content. Reach more people.",
       tier: "TIER_2",
       status: "ACTIVE"
     },
@@ -42,25 +56,11 @@ const LandingShowroomRegistry = Object.freeze({
       status: "ACTIVE"
     },
     {
-      id: "afriboost",
-      name: "AfriBoost",
-      tagline: "Boost your content. Reach more people.",
-      tier: "TIER_2",
-      status: "ACTIVE"
-    },
-    {
       id: "afritracker",
       name: "AfriTracker",
       tagline: "Track your vehicles, pets, devices, bikes, and more.",
       tier: "TIER_2",
       status: "ACTIVE"
-    },
-    {
-      id: "afrilogistics",
-      name: "AfriLogistics",
-      tier: "TIER_2",
-      showcase: false,
-      status: "HIDDEN"
     },
     {
       id: "afriticking",
@@ -75,31 +75,25 @@ const LandingShowroomRegistry = Object.freeze({
       tagline: "A place to meet, connect, and find love.",
       tier: "TIER_2",
       status: "SCAFFOLD"
-    },
-    {
-      id: "afrisports",
-      name: "AfriSports",
-      tagline: "Live sports, expert analysis, and AI-powered predictions.",
-      tier: "TIER_2",
-      status: "SCAFFOLD"
-    },
-    {
-      id: "afrimetaworld",
-      name: "AfriMetaWorld",
-      tier: "TIER_2",
-      showcase: false,
-      status: "HIDDEN"
-    },
-    {
-      id: "afriforex",
-      name: "AfriForex",
-      tagline: "AI-powered forex insights with real-time market analysis.",
-      tier: "TIER_2",
-      status: "ACTIVE"
     }
   ]),
 
-  future: Object.freeze([])
+  services: Object.freeze([
+    { id: "afriai", name: "AfriAI", role: "ECOSYSTEM_GUIDE" },
+    { id: "afribank", name: "AfriBank", role: "FINANCIAL_INFRASTRUCTURE" },
+    { id: "afriads", name: "AfriAds", role: "ADVERTISING_INFRASTRUCTURE" },
+    { id: "afrivision", name: "AfriVision", role: "VISUAL_RUNTIME_ENGINE" },
+    { id: "afritrust", name: "AfriTrust", role: "TRUST_SECURITY_LAYER" }
+  ]),
+
+  hidden: Object.freeze([
+    "afrimetaWorld",
+    "afrilogistics"
+  ]),
+
+  excluded: Object.freeze([
+    "internal_afriwhatsapp"
+  ])
 });
 
 export default LandingShowroomRegistry;

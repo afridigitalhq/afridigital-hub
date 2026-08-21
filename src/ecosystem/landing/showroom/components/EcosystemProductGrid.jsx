@@ -1,56 +1,72 @@
 import LandingShowroomRegistry from "../../registry/LandingShowroomRegistry";
 
 const PRODUCT_ICONS = Object.freeze({
-  afridesignstudio: "🎨",
+  afriaiwhatsappbusiness: "🤖",
   africommerce: "🛒",
-  afrieducation: "🎓",
   africctv: "📹",
-  afriwork: "💼",
-  afriboost: "🚀",
-  afritracker: "📍",
-  afriforex: "📈",
-  afriticking: "🎟️",
-  afrilogistics: "🚚",
+  afrieducation: "🎓",
   afrisports: "⚽",
-  afrimetaworld: "🌍",
+  afriboost: "🚀",
+  afriwork: "💼",
+  afritracker: "📍",
+  afriticking: "🎟️",
   afrilove: "❤️"
 });
 
-const products = [
-  LandingShowroomRegistry.flagship,
-  ...LandingShowroomRegistry.tier1,
-  ...LandingShowroomRegistry.tier2
-].filter(product => product && product.status !== "HIDDEN" && product.showcase !== false);
+function ProductCard({ product, primary = false }) {
+  return (
+    <article className={
+      primary
+        ? "ecosystem-service-card ecosystem-service-card-primary"
+        : "ecosystem-service-card"
+    }>
+      <div className="ecosystem-service-icon">
+        {PRODUCT_ICONS[product.id] || "✦"}
+      </div>
 
-export default function EcosystemProductGrid(){
+      <h3>{product.name}</h3>
+
+      {product.tagline && (
+        <p className="ecosystem-service-tagline">
+          {product.tagline}
+        </p>
+      )}
+    </article>
+  );
+}
+
+export default function EcosystemProductGrid() {
+  const {
+    primaryFlagship,
+    flagship,
+    tier2
+  } = LandingShowroomRegistry;
 
   return (
-    <section className="ecosystem-service-grid">
+    <section className="ecosystem-showroom-groups">
 
-      {products.map(product => (
+      <section className="showroom-group showroom-primary-flagship">
+        <h2>⭐ Primary Flagship</h2>
+        <ProductCard product={primaryFlagship} primary />
+      </section>
 
-        <article
-          key={product.id}
-          className={`ecosystem-service-card${product.flagship ? " ecosystem-service-card-featured" : ""}`}
-        >
+      <section className="showroom-group showroom-flagship-products">
+        <h2>Flagship Products</h2>
+        <div className="ecosystem-service-grid">
+          {flagship.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
 
-          <div className="ecosystem-service-icon">
-            {PRODUCT_ICONS[product.id]}
-          </div>
-
-          <h3>
-            {product.name}
-          </h3>
-
-          {product.tagline && (
-            <p className="ecosystem-service-tagline">
-              {product.tagline}
-            </p>
-          )}
-
-        </article>
-
-      ))}
+      <section className="showroom-group showroom-tier2-products">
+        <h2>Tier 2 Products</h2>
+        <div className="ecosystem-service-grid">
+          {tier2.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
 
     </section>
   );

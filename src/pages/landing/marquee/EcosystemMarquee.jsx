@@ -1,18 +1,17 @@
 export default function EcosystemMarquee() {
   const items = [
-    "🛒 AfriCommerce Sell & Shop",
-    "🎥 AfriCCTV Secure Homes & Businesses",
-    "💼 AfriWork Opportunities",
-    "🚀 AfriBoost Digital Advertising",
-    "📍 AfriTracker Device Management",
-    "🎟️ AfriTicking Online Tickets",
-    "🚚 AfriLogistics Delivery Network",
-    "⚽ AfriSports Connect Fans & Events",
-    "🌍 AfriMetaWorld Digital Experiences",
-    "🎓 AfriEducation Learning Platform",
-    "💚 AfriLove Social Connections",
-    "🤖 AfriAI Digital Assistant"
+    "🤖 AfriAI WhatsApp Business",
+    "🛒 AfriCommerce",
+    "📹 AfriCCTV",
+    "🎓 AfriEducation",
+    "⚽ AfriSports",
+    "🚀 AfriBoost",
+    "💼 AfriWork",
+    "📍 AfriTracker",
+    "🎟️ AfriTicking",
+    "❤️ AfriLove"
   ];
+
   return (
     <section className="ecosystem-marquee">
       <div className="ticker-track">
@@ -23,8 +22,6 @@ export default function EcosystemMarquee() {
           </span>
         ))}
       </div>
-    
-
     </section>
   );
 }
