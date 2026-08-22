@@ -1,0 +1,52 @@
+.hero-card-v2{
+  position:relative;
+  width:100%;
+  min-height:52vh;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:transparent;
+}
+
+.hero-card-v2-inner{
+  position:relative;
+  z-index:1;
+  width:100%;
+  min-height:52vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-content{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 24px 16vh;
+}
+
+.hero-content h1{
+  margin:0 auto;
+  max-width:760px;
+  font-size:clamp(1.8rem,3.5vw,3rem);
+  line-height:1.15;
+}
+
+.hero-content p{
+  margin:20px auto 0;
+  max-width:850px;
+  font-size:clamp(1rem,1.6vw,1.25rem);
+  font-weight:600;
+  line-height:1.7;
+}
+
+.hero-nav-layer{
+  position:relative;
+  z-index:300;
+}
