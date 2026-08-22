@@ -2,7 +2,7 @@ const LandingShowroomRegistry = Object.freeze({
   primaryFlagship: Object.freeze({
     id: "afriaiwhatsappbusiness",
     name: "AfriAI WhatsApp Business",
-    tagline: "AI-powered WhatsApp business automation, engagement, and intelligence.",
+    tagline: "Grow your business on WhatsApp with AI-powered customer conversations, instant replies, and smart automation.",
     tier: "PRIMARY_FLAGSHIP",
     flagship: true,
     primary: true,

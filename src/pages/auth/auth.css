@@ -1,24 +1,33 @@
 .auth-shell{
   min-height:100vh;
-  background:#050b1a;
+  background:transparent;
   color:#ffffff;
 }
 
 .auth-layout{
-  display:grid;
-  grid-template-columns:1fr 420px;
-  gap:2rem;
-  padding:3rem;
-  align-items:center;
+  display:block;
+  width:100%;
+  margin:0;
+  padding:16px 0 4px;
+  position:relative;
+  z-index:10;
+  box-sizing:border-box;
+}
+
+.auth-layout .auth-card{
+  flex:1 1 auto;
+  width:100%;
+  max-width:none;
+  box-sizing:border-box;
 }
 
 .auth-card{
-  background:rgba(15,23,42,.72);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:blur(18px);
-  border-radius:24px;
+  background:var(--afri-card-bg);
+  border:1px solid var(--afri-primary-border);
+  backdrop-filter:blur(var(--afriglass-blur));
+  border-radius:var(--afriglass-radius);
   padding:2rem;
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
+  box-shadow:var(--afriglass-shadow);
 }
 
 .google-auth-button{
@@ -28,8 +37,8 @@
   align-items:center;
   gap:.8rem;
   padding:14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--afriglass-radius);
+  border:1px solid var(--afri-primary-border);
   background:#ffffff;
   color:#111827;
   font-weight:700;
@@ -57,25 +66,26 @@
 .auth-form input{
   padding:14px;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,.15);
-  background:rgba(255,255,255,.06);
+  border:1px solid var(--afri-primary-border);
+  background:var(--afriglass-bg);
   color:white;
 }
 
 .auth-form button{
   padding:14px;
   border-radius:12px;
-  border:none;
-  background:#2563eb;
+  border:1px solid var(--afri-primary-border);
+  background:var(--afri-primary);
   color:white;
   font-weight:700;
+  box-shadow:0 10px 30px var(--afri-primary-glow);
 }
 
 .forgot-password-link{
   margin-top:1rem;
   background:none;
   border:none;
-  color:#60a5fa;
+  color:var(--afri-primary);
   cursor:pointer;
 }
 
@@ -87,18 +97,20 @@
 }
 
 .development-links a{
-  color:#93c5fd;
+  color:var(--afri-primary);
   text-decoration:none;
 }
 
 @media(max-width:900px){
   .auth-layout{
-    grid-template-columns:1fr;
-    padding:1.5rem;
+    width:100%;
+    padding:16px 0 4px;
+    margin-top:0;
   }
 
-  .auth-card{
+  .auth-layout .auth-card{
     width:100%;
+    max-width:none;
   }
 }
 

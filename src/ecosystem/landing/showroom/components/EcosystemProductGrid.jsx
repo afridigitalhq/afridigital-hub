@@ -1,7 +1,8 @@
 import LandingShowroomRegistry from "../../registry/LandingShowroomRegistry";
+import afriaiWhatsappBusinessIcon from "../../../../assets/images/afriai-whatsapp-business.png";
 
 const PRODUCT_ICONS = Object.freeze({
-  afriaiwhatsappbusiness: "🤖",
+  afriaiwhatsappbusiness: afriaiWhatsappBusinessIcon,
   africommerce: "🛒",
   africctv: "📹",
   afrieducation: "🎓",
@@ -21,20 +22,29 @@ function ProductCard({ product, primary = false }) {
         : "ecosystem-service-card"
     }>
       <div className="ecosystem-service-icon">
-        {PRODUCT_ICONS[product.id] || "✦"}
+        {product.id === "afriaiwhatsappbusiness" ? (
+          <img src={PRODUCT_ICONS[product.id]} alt="AfriAI WhatsApp Business" />
+        ) : (
+          PRODUCT_ICONS[product.id] || "✦"
+        )}
       </div>
 
-      <h3>{product.name}</h3>
+      <div className={
+        product.id === "afriaiwhatsappbusiness"
+          ? "afriai-whatsapp-business-card-content"
+          : undefined
+      }>
+        <h3>{product.name}</h3>
 
-      {product.tagline && (
-        <p className="ecosystem-service-tagline">
-          {product.tagline}
-        </p>
-      )}
+        {product.tagline && (
+          <p className="ecosystem-service-tagline">
+            {product.tagline}
+          </p>
+        )}
+      </div>
     </article>
   );
 }
-
 export default function EcosystemProductGrid() {
   const {
     primaryFlagship,
