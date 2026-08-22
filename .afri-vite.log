@@ -1,0 +1,13 @@
+nohup: ignoring input
+
+> afridigital-hub@1.0.0 dev
+> vite --host 0.0.0.0 --port 5173
+
+
+  VITE v8.1.5  ready in 2181 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://10.34.182.112:5173/
+10:33:05 AM [vite] (client) page reload src/pages/landing/footer/LandingFooter.jsx
+10:33:05 AM [vite] (client) hmr update /src/pages/landing/landing.css
+10:43:32 AM [vite] (client) hmr update /src/pages/landing/landing.css

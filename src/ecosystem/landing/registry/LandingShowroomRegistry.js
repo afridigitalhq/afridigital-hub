@@ -18,6 +18,13 @@ const LandingShowroomRegistry = Object.freeze({
       status: "ACTIVE"
     },
     {
+      id: "afridesign",
+      name: "AfriDesign Studio",
+      tagline: "Create, design, build, and launch with AfriDigital.",
+      tier: "FLAGSHIP",
+      status: "ACTIVE"
+    },
+    {
       id: "africctv",
       name: "AfriCCTV",
       tagline: "Connect your cameras. Keep watch over your home and business, anywhere.",

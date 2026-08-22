@@ -1,6 +1,11 @@
+nohup: ignoring input
 
-> afridigital-hub@1.0.0 preview
-> vite preview --host 0.0.0.0
+> afridigital-hub@1.0.0 dev
+> vite --host 0.0.0.0 --port 5173
 
-  ➜  Local:   http://localhost:4173/
-  ➜  Network: http://10.34.104.236:4173/
+Port 5173 is in use, trying another one...
+
+  VITE v8.1.5  ready in 2025 ms
+
+  ➜  Local:   http://localhost:5174/
+  ➜  Network: http://10.34.104.236:5174/
