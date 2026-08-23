@@ -14,6 +14,7 @@ import LandingFooter from "../landing/footer/LandingFooter";
 import "../landing/hero/hero-v2.css";
 import "../landing/landing.css";
 import "./auth.css";
+import LandingExperienceShell from "../landing/shell/LandingExperienceShell";
 
 export default function AuthPage(){
   const { mode } = useAuthMode();
@@ -24,11 +25,7 @@ export default function AuthPage(){
   };
   return (
     <div className="landing-shell auth-shell">
-      <LandingBackground />
-      <LandingWorldLayer />
-      <LandingNavigation />
-      <LandingHero />
-      <EcosystemMarquee />
+      <LandingExperienceShell>
 
       <div className="landing-container">
         <main className="auth-layout">
