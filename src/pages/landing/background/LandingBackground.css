@@ -6,7 +6,6 @@
 
   background:
     linear-gradient(to bottom,rgba(4,10,20,0),rgba(4,10,20,.015)),
-    url("/assets/images/afridigital-cinematic-hero.png") center center/cover no-repeat;
 
   background-attachment:fixed;
 }
