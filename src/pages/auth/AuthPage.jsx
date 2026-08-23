@@ -5,16 +5,9 @@ import AuthDivider from "./components/AuthDivider";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import ForgotPasswordLink from "./components/ForgotPasswordLink";
-import LandingNavigation from "../landing/navigation/LandingNavigation";
-import LandingBackground from "../landing/background/LandingBackground";
-import LandingWorldLayer from "../landing/world/LandingWorldLayer";
-import LandingHero from "../landing/hero/LandingHero";
-import EcosystemMarquee from "../landing/marquee/EcosystemMarquee";
 import LandingFooter from "../landing/footer/LandingFooter";
-import "../landing/hero/hero-v2.css";
-import "../landing/landing.css";
 import "./auth.css";
-import LandingExperienceShell from "../landing/shell/LandingExperienceShell";
+import GlobalExperienceShell from "../../core/layout/global-shell/GlobalExperienceShell";
 
 export default function AuthPage(){
   const { mode } = useAuthMode();
@@ -24,8 +17,7 @@ export default function AuthPage(){
     window.location.href = role==="admin" ? "/admin" : "/user";
   };
   return (
-    <div className="landing-shell auth-shell">
-      <LandingExperienceShell>
+    <GlobalExperienceShell>
 
       <div className="landing-container">
         <main className="auth-layout">
@@ -58,6 +50,6 @@ export default function AuthPage(){
 
         <LandingFooter />
       </div>
-    </div>
+    </GlobalExperienceShell>
   );
 }

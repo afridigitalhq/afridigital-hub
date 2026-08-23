@@ -10,11 +10,6 @@
   --afri-radius:20px;
   --afri-glass:blur(18px);
 }
-.afridigital-shell{
-  min-height:100vh;
-  background:var(--afri-bg);
-  color:var(--afri-text);
-}
 .afri-glass{
   background:var(--afri-surface);
   border:1px solid var(--afri-border);
@@ -22,9 +17,3 @@
   border-radius:var(--afri-radius);
 }
 
-.afridigital-shell > main{
-  display:block;
-  width:100%;
-  margin:0;
-  padding:0;
-}

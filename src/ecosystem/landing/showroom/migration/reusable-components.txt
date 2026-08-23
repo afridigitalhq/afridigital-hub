@@ -1,10 +1,4 @@
 src/pages/landing/products/showcase/AfriBoostPreview.jsx
-src/pages/landing/products/showcase/AfriCCTVPreview.jsx
-src/pages/landing/products/showcase/AfriCommercePreview.jsx
-src/pages/landing/products/showcase/AfriMetaWorldPreview.jsx
-src/pages/landing/products/showcase/AfriSportsPreview.jsx
-src/pages/landing/products/showcase/AfriTrackerPreview.jsx
-src/pages/landing/products/showcase/AfriWorkPreview.jsx
 src/pages/landing/products/showcase/afriboost/BoostCTA.jsx
 src/pages/landing/products/showcase/afriboost/BoostHero.jsx
 src/pages/landing/products/showcase/afriboost/BoostPreview.jsx
