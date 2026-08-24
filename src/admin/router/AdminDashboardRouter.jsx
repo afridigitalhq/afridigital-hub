@@ -1,14 +1,10 @@
+import AdminCommandCenter from "../dashboards/AdminCommandCenter";
 import React from "react";
 import AdminDashboardPlaceholder from "../dashboards/AdminDashboardPlaceholder";
 import AfriAIDashboard from "../../control-room/afrai/dashboard/AfriAIDashboard";
 
 const dashboards = {
-  "command-center": (
-    <AdminDashboardPlaceholder
-      title="🏠 AfriDigital Admin Command Center"
-      description="Global administrative overview and ecosystem control surface."
-    />
-  ),
+  "command-center": <AdminCommandCenter />,
 
   afriai: <AfriAIDashboard />,
 
