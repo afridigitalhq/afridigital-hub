@@ -103,36 +103,17 @@
 }
 
 /* =========================================================
-   LIVING COMMAND CENTER — FRONTEND VISUAL MOTION ONLY
-   Backend/WebSocket/EventStream integration intentionally deferred.
+   LIVING COMMAND CENTER — FRONTEND VISUAL MOTION
 ========================================================= */
-
-@keyframes command-core-breathe{
-  0%,100%{transform:scale(1);box-shadow:0 0 45px rgba(24,119,242,.4)}
-  50%{transform:scale(1.035);box-shadow:0 0 68px rgba(24,119,242,.58)}
-}
-
-@keyframes command-orbit-drift{
-  0%,100%{transform:translate3d(0,0,0)}
-  50%{transform:translate3d(0,-5px,0)}
-}
-
-@keyframes command-status-pulse{
-  0%,100%{opacity:.72;box-shadow:0 0 6px currentColor}
-  50%{opacity:1;box-shadow:0 0 16px currentColor}
-}
-
-@keyframes command-attention-pulse{
-  0%,100%{transform:scale(1);opacity:.78}
-  50%{transform:scale(1.16);opacity:1}
-}
 
 .core-ring{
   animation:command-core-breathe 5s ease-in-out infinite;
+  will-change:transform,box-shadow;
 }
 
 .ecosystem-orbit{
   animation:command-orbit-drift 4.5s ease-in-out infinite;
+  will-change:transform;
 }
 
 .orbit-one{animation-delay:0s}
@@ -156,24 +137,65 @@
   animation:command-status-pulse 2.4s ease-in-out infinite;
 }
 
-.attention-row{
-  transition:background .25s ease,transform .25s ease,padding-left .25s ease;
-}
-
-.attention-row:hover{
-  background:rgba(255,255,255,.035);
-  transform:translateX(3px);
-  padding-left:6px;
-}
-
 .command-panel,
 .command-metric,
 .command-state{
   transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 }
 
+.command-panel:hover,
 .command-metric:hover{
   transform:translateY(-3px);
+}
+
+@keyframes command-core-breathe{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 0 35px rgba(24,119,242,.38);
+    filter:brightness(.95);
+  }
+  50%{
+    transform:scale(1.08);
+    box-shadow:0 0 95px rgba(24,119,242,.85);
+    filter:brightness(1.18);
+  }
+}
+
+@keyframes command-orbit-drift{
+  0%,100%{
+    transform:translate3d(0,0,0) scale(1);
+    box-shadow:0 0 8px rgba(0,212,255,.18);
+  }
+  50%{
+    transform:translate3d(0,-12px,0) scale(1.08);
+    box-shadow:0 0 24px rgba(0,212,255,.65);
+  }
+}
+
+@keyframes command-status-pulse{
+  0%,100%{
+    opacity:.55;
+    transform:scale(.82);
+    box-shadow:0 0 5px rgba(0,212,255,.35);
+  }
+  50%{
+    opacity:1;
+    transform:scale(1.45);
+    box-shadow:0 0 22px rgba(0,212,255,.95);
+  }
+}
+
+@keyframes command-attention-pulse{
+  0%,100%{
+    transform:scale(.82);
+    opacity:.55;
+    box-shadow:0 0 5px rgba(245,158,11,.35);
+  }
+  50%{
+    transform:scale(1.45);
+    opacity:1;
+    box-shadow:0 0 22px rgba(245,158,11,.95);
+  }
 }
 
 @media(prefers-reduced-motion:reduce){
