@@ -595,7 +595,6 @@ button:hover {
   display:flex;
   align-items:center;
   gap:10px;
-  margin-right:auto;
 }
 
 .brand-name{
@@ -610,6 +609,7 @@ button:hover {
   display:flex;
   align-items:center;
   gap:12px;
+  margin-left:auto;
 }
 
 .profile-container{

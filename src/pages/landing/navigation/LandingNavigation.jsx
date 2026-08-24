@@ -1,13 +1,37 @@
 import { useState } from "react";
 
-export default function LandingNavigation() {
+export default function LandingNavigation({ adminHeroControls }) {
   const [profileOpen, setProfileOpen] = useState(false);
 
   return (
-    <nav className="landing-navigation">
+    <nav className={`landing-navigation ${adminHeroControls ? "admin-landing-navigation" : ""}`}>
 
-      <div className="landing-nav-brand">
-        <span className="brand-name">AfriDigital</span>
+      <div className="landing-nav-left">
+
+        {adminHeroControls && (
+          <div className="admin-nav-controls">
+            <button
+              type="button"
+              onClick={adminHeroControls.onHome}
+              aria-label="Admin Home"
+            >
+              🏠
+            </button>
+
+            <button
+              type="button"
+              onClick={adminHeroControls.onMenu}
+              aria-label="Open Admin Menu"
+            >
+              ☰
+            </button>
+          </div>
+        )}
+
+        <div className="landing-nav-brand">
+          <span className="brand-name">AfriDigital</span>
+        </div>
+
       </div>
 
       <div className="landing-nav-actions">

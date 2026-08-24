@@ -5,13 +5,13 @@ import LandingHero from "../../../pages/landing/hero/LandingHero";
 import EcosystemMarquee from "../../../pages/landing/marquee/EcosystemMarquee";
 import "../../../pages/landing/landing.css";
 
-export default function GlobalExperienceShell({ children }) {
+export default function GlobalExperienceShell({ children, adminHeroControls }) {
   return (
     <div className="landing-shell global-experience-shell">
       <LandingBackground />
       <LandingWorldLayer />
-      <LandingNavigation />
-      <LandingHero />
+      <LandingNavigation adminHeroControls={adminHeroControls} />
+      <LandingHero adminHeroControls={adminHeroControls} />
       <EcosystemMarquee />
       {children}
     </div>

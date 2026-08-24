@@ -1,24 +1,42 @@
 import React,{useState} from "react";
 import Sidebar from "../sidebar/Sidebar";
-import ViewRouter from "../router/ControlRoomRouter";
+import AdminDashboardRouter from "../../admin/router/AdminDashboardRouter";
 
-export default function ControlRoomShell(){
-const [active,setActive]=useState("Dashboard");
-const [collapsed,setCollapsed]=useState(false);
+export default function ControlRoomShell({
+  active="command-center",
+  setActive,
+  mobileOpen=false,
+  setMobileOpen
+}){
+  const [localActive,setLocalActive]=useState(active);
+  const [collapsed,setCollapsed]=useState(false);
 
-return (
-<div style={{display:"flex",minHeight:"100vh",background:"#0b0f14",color:"#fff", "--sidebar-width": collapsed ? "72px" : "260px"}}>
-<Sidebar active={active} onSelect={setActive} collapsed={collapsed} onToggle={()=>setCollapsed(!collapsed)} />
+  const currentActive=setActive ? active : localActive;
+  const selectActive=setActive || setLocalActive;
 
-<div style={{flex:"1 1 auto",width:"calc(100% - var(--sidebar-width))",display:"flex",flexDirection:"column",transition:"width .25s ease"}}>
-<header style={{padding:"16px",borderBottom:"1px solid #1f2937",background:"#111827"}}>
-<h2>🧠 AfriDigital Command Center</h2>
-<p>Unified Plug-and-Play Workspace</p>
-</header>
-<main style={{flex:1,padding:"20px",overflow:"auto"}}>
-<ViewRouter activeDashboard={active}/>
-</main>
-</div>
-</div>
-);
+  return (
+    <div className="admin-control-room">
+      <Sidebar
+        active={currentActive}
+        onSelect={selectActive}
+        collapsed={collapsed}
+        onToggle={()=>setCollapsed(!collapsed)}
+        mobileOpen={mobileOpen}
+        onClose={()=>setMobileOpen?.(false)}
+      />
+
+      <div className={`admin-control-content ${collapsed ? "admin-content-collapsed" : ""}`}>
+        <header className="admin-control-hero">
+          <div>
+            <h2>🧠 AfriDigital Command Center</h2>
+            <p>Unified Plug-and-Play Workspace</p>
+          </div>
+        </header>
+
+        <main className="admin-control-main">
+          <AdminDashboardRouter active={currentActive}/>
+        </main>
+      </div>
+    </div>
+  );
 }

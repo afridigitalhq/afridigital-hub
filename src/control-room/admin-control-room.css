@@ -1,0 +1,250 @@
+.admin-control-room{
+  display:flex;
+  min-height:100vh;
+  background:#0b0f14;
+  color:#fff;
+}
+
+.admin-sidebar{
+  width:240px;
+  flex:0 0 240px;
+  padding:10px;
+  background:#0f1720;
+  transition:.25s ease;
+  z-index:1000;
+}
+
+.admin-sidebar-collapsed{
+  width:70px;
+  flex-basis:70px;
+}
+
+.admin-sidebar-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.admin-sidebar nav{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.admin-sidebar button{
+  border:0;
+  border-radius:8px;
+  padding:10px;
+  text-align:left;
+  background:transparent;
+  color:inherit;
+  cursor:pointer;
+}
+
+.admin-sidebar button:hover,
+.admin-nav-active{
+  background:#1f2937 !important;
+}
+
+.admin-sidebar-collapsed .admin-nav-label,
+.admin-sidebar-collapsed .admin-sidebar-header strong{
+  display:none;
+}
+
+.admin-control-content{
+  flex:1 1 auto;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.admin-control-hero{
+  position:relative;
+  min-height:86px;
+  padding:16px 16px 16px 68px;
+  border-bottom:1px solid #1f2937;
+  background:#111827;
+}
+
+
+.admin-control-main{
+  flex:1;
+  padding:20px;
+  overflow:auto;
+}
+
+.admin-sidebar-backdrop{
+  display:none;
+}
+
+@media (max-width: 768px){
+  .admin-control-room{
+    display:block;
+    min-height:100vh;
+  }
+
+  .admin-sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    width:min(82vw,320px);
+    transform:translateX(-105%);
+    transition:transform .25s ease;
+    box-shadow:0 0 30px rgba(0,0,0,.45);
+  }
+
+  .admin-sidebar-open{
+    transform:translateX(0);
+  }
+
+  .admin-sidebar-backdrop{
+    display:block;
+    position:fixed;
+    inset:0;
+    border:0;
+    background:rgba(0,0,0,.55);
+    z-index:999;
+  }
+
+  .admin-sidebar-header button{
+    display:block;
+  }
+
+  .admin-control-content,
+  .admin-content-collapsed{
+    width:100%;
+  }
+
+  .admin-control-hero{
+    min-height:86px;
+    padding:16px 16px 16px 62px;
+  }
+
+  .admin-control-main{
+    padding:12px;
+  }
+}
+
+
+/* =========================================================
+   ADMIN NAVIGATION GEOMETRY
+========================================================= */
+
+.admin-landing-navigation{
+  position:relative;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.admin-landing-navigation .landing-nav-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-left:0 !important;
+  flex:0 0 auto;
+}
+
+.admin-landing-navigation .admin-nav-controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex:0 0 auto;
+}
+
+.admin-landing-navigation .landing-nav-brand{
+  display:flex;
+  align-items:center;
+  margin:0;
+}
+
+.admin-landing-navigation .landing-nav-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-left:auto;
+  flex:0 0 auto;
+}
+
+@media (max-width:768px){
+  .admin-landing-navigation{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .admin-landing-navigation .landing-nav-left{
+    gap:8px;
+    margin-left:0 !important;
+  }
+
+  .admin-landing-navigation .admin-nav-controls{
+    gap:4px;
+  }
+}
+
+/* =========================================================
+   ADMIN NAV CONTROLS
+   Admin-only controls rendered inside the existing
+   LandingNavigation row.
+========================================================= */
+
+.landing-nav-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+  margin-left:0;
+}
+
+.admin-nav-controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex:0 0 auto;
+}
+
+.admin-nav-controls button{
+  width:44px;
+  height:44px;
+  padding:0;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:14px;
+  background:transparent !important;
+  color:#fff;
+  font-size:1.5rem;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:none;
+}
+
+.admin-nav-controls button:hover,
+.admin-nav-controls button:focus{
+  background:transparent !important;
+  outline:none;
+}
+
+@media (max-width:768px){
+  .landing-nav-left{
+    gap:8px;
+    margin-left:0;
+  }
+
+  .admin-nav-controls{
+    gap:4px;
+  }
+
+  .admin-nav-controls button{
+    width:40px;
+    height:40px;
+    font-size:1.4rem;
+  }
+}
