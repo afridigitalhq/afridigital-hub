@@ -226,6 +226,10 @@
   box-shadow:none;
 }
 
+.admin-nav-controls button:nth-child(1){position:relative;left:-12px;}
+.admin-nav-controls button:nth-child(2){position:relative;left:-24px;}
+.admin-landing-navigation .notification-button{position:relative;left:18px;}
+
 .admin-nav-controls button:hover,
 .admin-nav-controls button:focus{
   background:transparent !important;
