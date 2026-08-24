@@ -26,13 +26,6 @@ export default function ControlRoomShell({
       />
 
       <div className={`admin-control-content ${collapsed ? "admin-content-collapsed" : ""}`}>
-        <header className="admin-control-hero">
-          <div>
-            <h2>🧠 AfriDigital Command Center</h2>
-            <p>Unified Plug-and-Play Workspace</p>
-          </div>
-        </header>
-
         <main className="admin-control-main">
           <AdminDashboardRouter active={currentActive}/>
         </main>

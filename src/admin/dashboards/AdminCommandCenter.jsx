@@ -8,28 +8,6 @@ const metrics = [
   ["Attention Required", "04", "Items awaiting review", "warning"],
 ];
 
-const products = [
-  ["AfriAI WhatsApp Business", "FLAGSHIP"],
-  ["AfriCommerce", "PRODUCT"],
-  ["AfriCCTV", "PRODUCT"],
-  ["AfriEducation", "PRODUCT"],
-  ["AfriSports", "PRODUCT"],
-  ["AfriBoost", "PRODUCT"],
-  ["AfriWork", "PRODUCT"],
-  ["AfriTracker", "PRODUCT"],
-  ["AfriTicking", "PRODUCT"],
-  ["AfriLove", "PRODUCT"],
-];
-
-const services = [
-  ["AfriAI", "Intelligence"],
-  ["AfriBank", "Financial"],
-  ["AfriAds", "Growth"],
-  ["AfriTrust", "Trust & Identity"],
-  ["AfriVision", "Vision"],
-  ["AfriMeta", "Ecosystem Layer"],
-];
-
 const attention = [
   ["Approvals", "04 pending administrative decisions", "warning"],
   ["Security", "No critical security incidents detected", "online"],
@@ -115,52 +93,6 @@ export default function AdminCommandCenter() {
           ))}
         </section>
       </div>
-
-      <section className="command-panel section-panel">
-        <div className="panel-heading">
-          <div>
-            <span>PRODUCT COMMAND</span>
-            <h2>Ecosystem Products</h2>
-          </div>
-          <b>10 SURFACES</b>
-        </div>
-
-        <div className="product-command-grid">
-          {products.map(([name, type]) => (
-            <article className="product-command-card" key={name}>
-              <div className="product-status">
-                <i className="online" />
-                Operational
-              </div>
-              <h3>{name}</h3>
-              <span>{type}</span>
-              <button type="button">
-                Open Dashboard <b>›</b>
-              </button>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="command-panel section-panel">
-        <div className="panel-heading">
-          <div>
-            <span>PLATFORM SERVICES</span>
-            <h2>Shared Ecosystem Layer</h2>
-          </div>
-          <b>6 SERVICES</b>
-        </div>
-
-        <div className="service-command-grid">
-          {services.map(([name, type]) => (
-            <article key={name}>
-              <strong>{name}</strong>
-              <span>{type}</span>
-              <i className="online" />
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className="command-panel command-actions">
         <div>
