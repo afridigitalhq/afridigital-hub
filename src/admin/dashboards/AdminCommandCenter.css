@@ -47,6 +47,155 @@
 .action-buttons{width:min(900px,100%);display:grid;grid-template-columns:repeat(2,minmax(180px,280px));gap:14px;justify-content:center;align-items:stretch}
 .action-buttons button{margin:0;min-height:72px;padding:15px 18px;border:1px solid var(--afri-primary-border);background:rgba(255,255,255,.07);color:#fff;border-radius:16px;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 10px 28px rgba(0,0,0,.18);transition:transform .2s ease,border-color .2s ease,background .2s ease}
 .action-buttons button:hover{transform:translateY(-2px);background:rgba(255,255,255,.1);border-color:var(--afri-accent,#00d4ff)}
+.command-state{
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:7px;
+}
+
+.command-state .status-dot{
+  width:11px;
+  height:11px;
+  margin:0 auto 2px;
+}
+
+.command-state strong{
+  font-size:.92rem;
+  letter-spacing:.08em;
+}
+
+.command-digital-time{
+  margin-top:4px;
+  font-size:1.85rem;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.1em;
+  font-variant-numeric:tabular-nums;
+  color:#fff;
+  animation:command-digital-second-rhythm .8s ease-out;
+  will-change:transform,text-shadow,opacity;
+}
+
+.command-digital-date{
+  margin-top:2px;
+  color:var(--afri-muted,rgba(255,255,255,.72));
+  font-size:.76rem;
+  line-height:1.4;
+}
+
+@keyframes command-digital-second-rhythm{
+  0%{
+    transform:scale(1);
+    opacity:.86;
+    text-shadow:0 0 10px rgba(0,212,255,.18);
+  }
+  35%{
+    transform:scale(1.045);
+    opacity:1;
+    text-shadow:0 0 32px rgba(0,212,255,.72);
+  }
+  100%{
+    transform:scale(1);
+    opacity:.92;
+    text-shadow:0 0 12px rgba(0,212,255,.22);
+  }
+}
+
+/* =========================================================
+   LIVING COMMAND CENTER — FRONTEND VISUAL MOTION ONLY
+   Backend/WebSocket/EventStream integration intentionally deferred.
+========================================================= */
+
+@keyframes command-core-breathe{
+  0%,100%{transform:scale(1);box-shadow:0 0 45px rgba(24,119,242,.4)}
+  50%{transform:scale(1.035);box-shadow:0 0 68px rgba(24,119,242,.58)}
+}
+
+@keyframes command-orbit-drift{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-5px,0)}
+}
+
+@keyframes command-status-pulse{
+  0%,100%{opacity:.72;box-shadow:0 0 6px currentColor}
+  50%{opacity:1;box-shadow:0 0 16px currentColor}
+}
+
+@keyframes command-attention-pulse{
+  0%,100%{transform:scale(1);opacity:.78}
+  50%{transform:scale(1.16);opacity:1}
+}
+
+.core-ring{
+  animation:command-core-breathe 5s ease-in-out infinite;
+}
+
+.ecosystem-orbit{
+  animation:command-orbit-drift 4.5s ease-in-out infinite;
+}
+
+.orbit-one{animation-delay:0s}
+.orbit-two{animation-delay:-.9s}
+.orbit-three{animation-delay:-1.8s}
+.orbit-four{animation-delay:-2.7s}
+.orbit-five{animation-delay:-3.6s}
+
+.status-dot.online,
+.command-metric i.online{
+  animation:command-status-pulse 2.8s ease-in-out infinite;
+}
+
+.command-metric i.warning,
+.attention-row i.warning{
+  animation:command-attention-pulse 2.2s ease-in-out infinite;
+}
+
+.command-metric i.info,
+.attention-row i.info{
+  animation:command-status-pulse 2.4s ease-in-out infinite;
+}
+
+.attention-row{
+  transition:background .25s ease,transform .25s ease,padding-left .25s ease;
+}
+
+.attention-row:hover{
+  background:rgba(255,255,255,.035);
+  transform:translateX(3px);
+  padding-left:6px;
+}
+
+.command-panel,
+.command-metric,
+.command-state{
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+
+.command-metric:hover{
+  transform:translateY(-3px);
+}
+
+@media(prefers-reduced-motion:reduce){
+  .core-ring,
+  .ecosystem-orbit,
+  .status-dot.online,
+  .command-metric i.online,
+  .command-metric i.warning,
+  .attention-row i.warning,
+  .command-metric i.info,
+  .attention-row i.info{
+    animation:none;
+  }
+
+  .attention-row,
+  .command-panel,
+  .command-metric,
+  .command-state{
+    transition:none;
+  }
+}
+
 @media(max-width:1000px){.product-command-grid{grid-template-columns:repeat(3,1fr)}.service-command-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.command-center-heading,.command-actions{display:block}.command-state{margin-top:15px}.command-metrics{grid-template-columns:repeat(2,1fr)}.command-main-grid{grid-template-columns:1fr}.product-command-grid{grid-template-columns:repeat(2,1fr)}.service-command-grid{grid-template-columns:repeat(2,1fr)}.action-buttons{grid-template-columns:repeat(2,minmax(150px,1fr))}}
 @media(max-width:480px){.command-metrics,.product-command-grid,.service-command-grid{grid-template-columns:1fr}.ecosystem-core{height:270px;transform:scale(.9);margin:0 -20px}.action-buttons{grid-template-columns:1fr;width:100%}}

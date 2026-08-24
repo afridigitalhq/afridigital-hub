@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import "./AdminCommandCenter.css";
 
 const metrics = [
@@ -16,6 +16,25 @@ const attention = [
 ];
 
 export default function AdminCommandCenter() {
+  const [now,setNow]=useState(new Date());
+  useEffect(()=>{
+    const timer=setInterval(()=>setNow(new Date()),1000);
+    return ()=>clearInterval(timer);
+  },[]);
+
+  const digitalTime=now.toLocaleTimeString([],{
+    hour:"2-digit",
+    minute:"2-digit",
+    second:"2-digit"
+  });
+
+  const digitalDate=now.toLocaleDateString([],{
+    weekday:"long",
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+  });
+
   return (
     <section className="admin-command-center">
       <header className="command-center-heading">
@@ -28,7 +47,8 @@ export default function AdminCommandCenter() {
         <div className="command-state">
           <span className="status-dot online" />
           <strong>ECOSYSTEM OPERATIONAL</strong>
-          <small>UI SCAFFOLD · BACKEND NOT WIRED</small>
+          <div key={digitalTime} className="command-digital-time">{digitalTime}</div>
+          <div className="command-digital-date">{digitalDate}</div>
         </div>
       </header>
 
