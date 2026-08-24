@@ -1,4 +1,4 @@
-.admin-command-center{color:var(--afri-text,#fff);padding:4px 0 48px}
+.admin-command-center{color:var(--afri-text,#fff);padding:4px 0 0}
 .command-center-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:22px}
 .command-kicker,.panel-heading>div>span,.command-actions>div>span{font-size:.7rem;letter-spacing:.16em;color:var(--afri-accent,#00d4ff);font-weight:800}
 .command-center-heading h1{margin:7px 0 5px;font-size:clamp(1.8rem,3vw,2.7rem)}
