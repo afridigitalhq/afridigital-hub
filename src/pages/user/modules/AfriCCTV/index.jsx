@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AfriCCTV.css";
 
 const cameras = [
@@ -10,6 +10,19 @@ const cameras = [
 
 export default function AfriCCTV() {
   const [activeCamera, setActiveCamera] = useState("01");
+  const [liveTime, setLiveTime] = useState(() => new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setLiveTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formattedLiveTime = liveTime.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
   const [cameraState, setCameraState] = useState(() => Object.fromEntries(cameras.map((camera) => [camera.id, { playing: true, favorite: false }])));
 
   const updateCamera = (id, patch) => {
@@ -69,9 +82,9 @@ export default function AfriCCTV() {
 
                 <div className="africtv-camera-overlay">
                   <span>
-                    CAM {camera.id} · {camera.name.toUpperCase()}
+                    <b>● LIVE</b> · CAM {camera.id} · {camera.name.toUpperCase()}
                   </span>
-                  <strong>LIVE</strong>
+                  <strong>{formattedLiveTime}</strong>
                 </div>
 
                 <div className="africctv-viewport-center">

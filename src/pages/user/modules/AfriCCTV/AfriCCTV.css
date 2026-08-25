@@ -270,12 +270,20 @@
   letter-spacing:.07em;
 }
 
+.africtv-camera-overlay span b{
+  color:#4cff87;
+  font-weight:800;
+  animation:africtvLivePulse 1.2s infinite;
+}
+
 .africtv-camera-overlay strong{
   flex:0 0 auto;
-  color:#4cff87;
-  font-size:.65rem;
+  color:#fff;
+  font-family:monospace;
+  font-size:.68rem;
+  font-weight:700;
   letter-spacing:.08em;
-  animation:africtvLivePulse 1.2s infinite;
+  font-variant-numeric:tabular-nums;
 }
 
 .africctv-viewport-center{
