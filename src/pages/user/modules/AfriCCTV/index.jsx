@@ -1,1 +1,161 @@
-export default function AfriCCTV(){return null;}
+import React, { useState } from "react";
+import "./AfriCCTV.css";
+
+const cameras = [
+  { id: "01", name: "Main Entrance" },
+  { id: "02", name: "Front Gate" },
+  { id: "03", name: "Parking Area" },
+  { id: "04", name: "Back Entrance" }
+];
+
+export default function AfriCCTV() {
+  const [activeCamera, setActiveCamera] = useState("01");
+  const [cameraState, setCameraState] = useState(() => Object.fromEntries(cameras.map((camera) => [camera.id, { playing: true, favorite: false }])));
+
+  const updateCamera = (id, patch) => {
+    setCameraState((current) => ({ ...current, [id]: { ...current[id], ...patch } }));
+  }
+
+  return (
+    <section className="africtv-user-surface">
+      <header className="africtv-header">
+        <div>
+          <span className="africctv-eyebrow">AFRICCTV</span>
+          <h1>Secure Vision</h1>
+          <p>Monitor, manage and protect your connected spaces.</p>
+        </div>
+
+        <div className="africctv-status">
+          <span className="africctv-status-dot" />
+          SYSTEM ONLINE
+        </div>
+      </header>
+
+      <div className="africctv-frame">
+        <aside className="africctv-side-panel africctv-left-panel">
+          <div className="africctv-panel-heading">
+            <span>CAMERAS</span>
+            <strong>Live View</strong>
+          </div>
+
+          {cameras.map((camera) => (
+            <button
+              type="button"
+              key={camera.id}
+              className={`africctv-camera-item ${
+                activeCamera === camera.id ? "active" : ""
+              }`}
+              onClick={() => setActiveCamera(camera.id)}
+            >
+              <span className="africctv-camera-dot" />
+              {camera.name}
+              <small>
+                {activeCamera === camera.id ? "LIVE" : "READY"}
+              </small>
+            </button>
+          ))}
+        </aside>
+
+        <main className="africctv-main-frame">
+          <div className="africctv-feed-grid">
+            {cameras.map((camera) => (
+              <article
+                key={camera.id}
+                className={`africctv-feed ${
+                  activeCamera === camera.id ? "active" : ""
+                }`}
+              >
+                <div className="africctv-viewport-grid" />
+
+                <div className="africtv-camera-overlay">
+                  <span>
+                    CAM {camera.id} · {camera.name.toUpperCase()}
+                  </span>
+                  <strong>LIVE</strong>
+                </div>
+
+                <div className="africctv-viewport-center">
+                  <div className="africctv-camera-symbol">◉</div>
+                  <span>LIVE SURVEILLANCE</span>
+                  <strong>{camera.name}</strong>
+                </div>
+
+                <div className="africtv-timestamp">
+                  AFRICCTV · SECURE CHANNEL
+                </div>
+
+                <div className="africtv-camera-controls">
+                  <button type="button" title="Rewind" onClick={() => updateCamera(camera.id, { playing: false })}>◀</button>
+                  <button type="button" title={cameraState[camera.id].playing ? "Pause" : "Play"} onClick={() => updateCamera(camera.id, { playing: !cameraState[camera.id].playing })}>{cameraState[camera.id].playing ? "Ⅱ" : "▶"}</button>
+                  <button type="button" title="Forward" onClick={() => updateCamera(camera.id, { playing: true })}>▶</button>
+                  <button type="button" title="Fullscreen" onClick={() => setActiveCamera(camera.id)}>⛶</button>
+                  <button type="button" title="Favorite" className={cameraState[camera.id].favorite ? "selected" : ""} onClick={() => updateCamera(camera.id, { favorite: !cameraState[camera.id].favorite })}>♥</button>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <section className="africtv-central-control">
+            <div className="africtv-central-heading">
+              <div>
+                <span>CONTROL CENTER</span>
+                <strong>Playback &amp; Recording</strong>
+              </div>
+              <small>Central system controls</small>
+            </div>
+
+            <div className="africtv-timeline">
+              <div className="africtv-timeline-labels"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div>
+              <div className="africtv-timeline-track"><span className="africtv-timeline-progress" /><i /><i /><i /></div>
+            </div>
+
+            <div className="africtv-central-tools">
+              <button type="button">◀</button>
+              <button type="button" className="primary">▶</button>
+              <button type="button">▶▶</button>
+              <span className="africtv-playback-time">CAM {activeCamera} · 00:00:00</span>
+              <button type="button">📷 Snapshot</button>
+              <button type="button">⬇ Download Feed</button>
+              <button type="button">▣ Export Clip</button>
+            </div>
+
+            <div className="africtv-central-row">
+              <div className="africtv-camera-selector">
+                <span>CAMERAS</span>
+                {cameras.map((camera) => <button type="button" key={camera.id} className={activeCamera === camera.id ? "active" : ""} onClick={() => setActiveCamera(camera.id)}>CAM {camera.id}</button>)}
+              </div>
+              <div className="africtv-central-status"><span>RECORDING</span><strong>04 CHANNELS</strong><small>Timeline synchronized</small></div>
+            </div>
+          </section>
+        </main>
+
+        <aside className="africctv-side-panel africtv-right-panel">
+          <div className="africtv-panel-heading">
+            <span>SECURITY</span>
+            <strong>System Status</strong>
+          </div>
+
+          <div className="africtv-stat">
+            <span>Connected Cameras</span>
+            <strong>04</strong>
+          </div>
+
+          <div className="africtv-stat">
+            <span>Active Alerts</span>
+            <strong>00</strong>
+          </div>
+
+          <div className="africctv-stat">
+            <span>System Health</span>
+            <strong className="online">ONLINE</strong>
+          </div>
+
+          <div className="africtv-event">
+            <span>RECENT ACTIVITY</span>
+            <p>No security events detected.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+}
