@@ -65,7 +65,7 @@ export default function AfriCCTV() {
                   activeCamera === camera.id ? "active" : ""
                 }`}
               >
-                <div className="africctv-viewport-grid" />
+                <img className={`africctv-mock-feed-image cam-${camera.id}`} src="/mock/compound-feed.jpg" alt={`${camera.name} live camera feed`} /><div className="africctv-viewport-grid" />
 
                 <div className="africtv-camera-overlay">
                   <span>
