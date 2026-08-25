@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./AfriCCTV.css";
 
 const cameras = [
-  { id: "01", name: "Main Entrance" },
-  { id: "02", name: "Front Gate" },
-  { id: "03", name: "Parking Area" },
-  { id: "04", name: "Back Entrance" }
+  { id: "01", name: "Main Entrance", image: "/mock/compound-feed.jpg" },
+  { id: "02", name: "Living Room", image: "/mock/living-room-feed.png" },
+  { id: "03", name: "Building Site", image: "/mock/building-site-feed.jpeg" },
+  { id: "04", name: "Back Entrance", image: "/mock/compound-feed.jpg" }
 ];
 
 export default function AfriCCTV() {
@@ -78,7 +78,7 @@ export default function AfriCCTV() {
                   activeCamera === camera.id ? "active" : ""
                 }`}
               >
-                <img className={`africctv-mock-feed-image cam-${camera.id}`} src="/mock/compound-feed.jpg" alt={`${camera.name} live camera feed`} /><div className="africctv-viewport-grid" />
+                <img className={`africctv-mock-feed-image cam-${camera.id}`} src={camera.image || "/mock/compound-feed.jpg"} alt={`${camera.name} live camera feed`} /><div className="africctv-viewport-grid" />
 
                 <div className="africtv-camera-overlay">
                   <span>
