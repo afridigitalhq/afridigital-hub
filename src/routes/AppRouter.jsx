@@ -3,6 +3,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from "../pages/landing/LandingPage";
 import AuthPage from "../pages/auth/AuthPage";
 import UserHome from "../pages/user/UserHome";
+import AfriCCTV from "../pages/user/modules/AfriCCTV";
+import GlobalExperienceShell from "../core/layout/global-shell/GlobalExperienceShell";
+import LandingFooter from "../pages/landing/footer/LandingFooter";
 import AdminHome from "../pages/admin/AdminHome";
 import CommerceRouter from "../pages/apps/commerce/routes/CommerceRouter";
 
@@ -41,6 +44,18 @@ export default function AppRouter() {
           element={
             <ProtectedRoute role="user">
               <UserHome />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/user/africctv"
+          element={
+            <ProtectedRoute role="user">
+              <GlobalExperienceShell>
+                <AfriCCTV />
+                <LandingFooter />
+              </GlobalExperienceShell>
             </ProtectedRoute>
           }
         />

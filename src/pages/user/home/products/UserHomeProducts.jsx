@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import LandingShowroomRegistry from "../../../../ecosystem/landing/registry/LandingShowroomRegistry";
 import afriaiWhatsappBusinessIcon from "../../../../assets/images/afriai-whatsapp-business.png";
 
@@ -16,10 +17,14 @@ const PRODUCT_ICONS = Object.freeze({
 });
 
 function UserHomeProductCard({ product, primary = false }) {
+  const navigate = useNavigate();
   const icon = PRODUCT_ICONS[product.id] || "✦";
 
   return (
     <article
+      onClick={() => product.id === "africctv" && navigate("/user/africctv")}
+      role={product.id === "africctv" ? "button" : undefined}
+      tabIndex={product.id === "africctv" ? 0 : undefined}
       className={
         primary
           ? "user-home-product-card user-home-product-card-primary"

@@ -11,6 +11,7 @@ const AfriCommerce = lazy(() => import("../../features/africommerce"));
 const AfriMetaWorld = lazy(() => import("../../features/afrimetaworld"));
 const AfriComm = lazy(() => import("../../features/africomm"));
 const AfriBoost = lazy(() => import("../../features/afriboost"));
+const AfriCCTV = lazy(() => import("../../pages/user/modules/AfriCCTV"));
 
 /**
  * USER PLUGINS (Feature-driven ecosystem)
@@ -50,6 +51,15 @@ export const USER_PLUGINS = {
     route: "/user/comm",
     enabled: true,
     type: "feature",
+    version: "1.0"
+  },
+
+  afriCCTV: {
+    name: "AfriCCTV",
+    component: AfriCCTV,
+    route: "/user/africctv",
+    enabled: true,
+    type: "module",
     version: "1.0"
   },
 
