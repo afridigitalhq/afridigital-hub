@@ -4,8 +4,8 @@ import "./AfriCCTV.css";
 const cameras = [
   { id: "01", name: "Main Entrance", image: "/mock/compound-feed.jpg" },
   { id: "02", name: "Living Room", image: "/mock/living-room-feed.jpg" },
-  { id: "03", name: "Building Site", image: "/mock/building-site-feed.jpeg" },
-  { id: "04", name: "Back Entrance", image: "/mock/car-park-feed.jpg" }
+  { id: "03", name: "Car Park", image: "/mock/car-park-feed.jpg" },
+  { id: "04", name: "Building Site", image: "/mock/building-site-feed.jpeg" }
 ];
 
 export default function AfriCCTV() {
