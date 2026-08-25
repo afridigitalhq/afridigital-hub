@@ -10,6 +10,7 @@ const cameras = [
 
 export default function AfriCCTV() {
   const [activeCamera, setActiveCamera] = useState("01");
+  const [fullscreenCamera, setFullscreenCamera] = useState(null);
   const [liveTime, setLiveTime] = useState(() => new Date());
 
   useEffect(() => {
@@ -76,7 +77,7 @@ export default function AfriCCTV() {
                 key={camera.id}
                 className={`africctv-feed ${
                   activeCamera === camera.id ? "active" : ""
-                }`}
+                } ${fullscreenCamera === camera.id ? "fullscreen" : ""}`}
               >
                 <img className={`africctv-mock-feed-image cam-${camera.id}`} src={camera.image || "/mock/compound-feed.jpg"} alt={`${camera.name} live camera feed`} /><div className="africctv-viewport-grid" />
 
@@ -87,12 +88,6 @@ export default function AfriCCTV() {
                   <strong>{formattedLiveTime}</strong>
                 </div>
 
-                <div className="africctv-viewport-center">
-                  <div className="africctv-camera-symbol">◉</div>
-                  <span>LIVE SURVEILLANCE</span>
-                  <strong>{camera.name}</strong>
-                </div>
-
                 <div className="africtv-timestamp">
                   AFRICCTV · SECURE CHANNEL
                 </div>
@@ -101,12 +96,34 @@ export default function AfriCCTV() {
                   <button type="button" title="Rewind" onClick={() => updateCamera(camera.id, { playing: false })}>◀</button>
                   <button type="button" title={cameraState[camera.id].playing ? "Pause" : "Play"} onClick={() => updateCamera(camera.id, { playing: !cameraState[camera.id].playing })}>{cameraState[camera.id].playing ? "Ⅱ" : "▶"}</button>
                   <button type="button" title="Forward" onClick={() => updateCamera(camera.id, { playing: true })}>▶</button>
-                  <button type="button" title="Fullscreen" onClick={() => setActiveCamera(camera.id)}>⛶</button>
+                  <button type="button" title="Fullscreen" onClick={() => setFullscreenCamera(camera.id)}>⛶</button>
                   <button type="button" title="Favorite" className={cameraState[camera.id].favorite ? "selected" : ""} onClick={() => updateCamera(camera.id, { favorite: !cameraState[camera.id].favorite })}>♥</button>
                 </div>
               </article>
             ))}
           </div>
+
+          {fullscreenCamera && (
+            <div className="africtv-fullscreen-overlay" role="dialog" aria-modal="true">
+              <div className="africtv-fullscreen-feed">
+                <img
+                  src={cameras.find((camera) => camera.id === fullscreenCamera)?.image || "/mock/compound-feed.jpg"}
+                  alt={`${cameras.find((camera) => camera.id === fullscreenCamera)?.name || "Camera"} fullscreen live feed`}
+                />
+                <div className="africtv-fullscreen-osd">
+                  <span><b>● LIVE</b> · CAM {fullscreenCamera} · {cameras.find((camera) => camera.id === fullscreenCamera)?.name.toUpperCase()}</span>
+                  <strong>{formattedLiveTime}</strong>
+                </div>
+                <button
+                  type="button"
+                  className="africtv-fullscreen-close"
+                  title="Close fullscreen"
+                  aria-label="Close fullscreen"
+                  onClick={() => setFullscreenCamera(null)}
+                >×</button>
+              </div>
+            </div>
+          )}
 
           <section className="africtv-central-control">
             <div className="africtv-central-heading">
