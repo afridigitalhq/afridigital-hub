@@ -980,3 +980,16 @@
   letter-spacing:.08em;
   line-height:1.2;
 }
+\n
+
+/* ===== AFRICCTV HEADER BRAND SYSTEM ===== */
+.africtv-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:30px}
+.africtv-header > div:first-child{min-width:0}
+.africctv-eyebrow{display:block;margin:0 0 8px;color:#35d6c8;font-size:clamp(1.6rem,3.2vw,2.45rem);font-weight:950;line-height:1;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 0 20px rgba(53,214,200,.3)}
+.africtv-header h1{margin:0;color:#b8e9ff;font-size:clamp(1.3rem,2.3vw,1.85rem);font-weight:800;line-height:1.1}
+.africtv-header p{margin:8px 0 0;color:#91aebe;font-size:.95rem}
+.africtv-header-status{display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:nowrap}
+.africtv-subscription-status{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 17px;border:1px solid rgba(39,220,126,.38);border-radius:999px;background:rgba(39,220,126,.08);color:#6ff0a9;font-size:.78rem;font-weight:900;letter-spacing:.08em;white-space:nowrap}
+.africtv-subscription-dot{color:#27dc7e;font-size:1.05rem;line-height:1;text-shadow:0 0 10px rgba(39,220,126,.7)}
+@media(max-width:850px){.africtv-header{grid-template-columns:minmax(0,1fr) auto;flex-direction:row;align-items:center}.africtv-header-status{align-items:flex-end;flex-direction:column}.africtv-subscription-status{font-size:.7rem;min-height:42px;padding:0 13px}}
+@media(max-width:600px){.africtv-header{grid-template-columns:1fr;gap:18px}.africtv-header-status{align-items:flex-start;justify-content:flex-start;flex-direction:row;flex-wrap:wrap}}

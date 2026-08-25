@@ -68,9 +68,15 @@ export default function AfriCCTV() {
           <p>Monitor, manage and protect your connected spaces.</p>
         </div>
 
-        <div className="africctv-status">
-          <span className="africctv-status-dot" />
-          SYSTEM ONLINE
+        <div className="africtv-header-status">
+          <div className="africctv-status">
+            <span className="africctv-status-dot" />
+            SYSTEM ONLINE
+          </div>
+          <div className="africtv-subscription-status" data-status="on">
+            <span className="africtv-subscription-dot">●</span>
+            <span>SUBSCRIPTION ON</span>
+          </div>
         </div>
       </header>
 
