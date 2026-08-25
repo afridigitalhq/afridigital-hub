@@ -11,7 +11,7 @@
 .africtv-user-surface{
   width:100%;
   box-sizing:border-box;
-  padding:34px clamp(18px,3vw,48px) 56px;
+  padding:24px clamp(8px,1.2vw,18px) 48px;
   color:var(--afri-text,#fff);
 }
 
@@ -90,7 +90,7 @@
 .africctv-frame{
   width:100%;
   display:grid;
-  grid-template-columns:minmax(210px,240px) minmax(0,1fr) minmax(230px,290px);
+  grid-template-columns:minmax(185px,210px) minmax(0,1fr) minmax(200px,235px);
   gap:18px;
   align-items:stretch;
 }
@@ -190,7 +190,8 @@
 .africctv-feed-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
+  gap:8px;
+  gap:8px;
 }
 
 .africctv-feed{
@@ -612,3 +613,97 @@
 .africtv-central-status{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
 .africtv-central-status span{color:#4cff87;font-size:.6rem;font-weight:800}.africtv-central-status strong{color:#fff;font-size:.75rem}.africtv-central-status small{color:#71889a;font-size:.62rem}
 @media(max-width:600px){.africtv-camera-controls{left:6px;right:6px;bottom:6px}.africtv-camera-controls button{width:28px}.africtv-central-heading{align-items:flex-start;flex-direction:column}.africtv-central-status{align-items:flex-start}.africtv-central-tools{display:grid;grid-template-columns:repeat(3,1fr)}.africtv-playback-time{grid-column:1/-1;order:-1}.africtv-central-tools button{width:100%}}
+
+/* ===== AFRICCTV WIDE VIEWPORT ===== */
+.africtv-user-surface{
+  max-width:1800px;
+  margin:0 auto;
+}
+
+.africctv-frame{
+  grid-template-columns:minmax(175px,205px) minmax(0,1fr) minmax(190px,225px);
+  gap:8px;
+}
+
+.africctv-main-frame{
+  width:100%;
+  padding:8px;
+}
+
+.africctv-feed-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.africctv-feed{
+  min-width:0;
+  width:100%;
+  aspect-ratio:16/9;
+}
+
+@media(max-width:1180px){
+  .africctv-frame{
+    grid-template-columns:190px minmax(0,1fr);
+    gap:10px;
+  }
+}
+
+@media(max-width:850px){
+  .africtv-user-surface{
+    padding-left:8px;
+    padding-right:8px;
+  }
+
+  .africctv-frame{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+}
+
+/* ===== AFRICCTV MOBILE CAMERA SIZE ===== */
+@media(max-width:850px){
+  .africtv-user-surface{
+    padding-left:6px;
+    padding-right:6px;
+  }
+
+  .africctv-main-frame{
+    padding:6px;
+  }
+
+  .africctv-feed-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .africctv-feed{
+    aspect-ratio:auto;
+    height:clamp(190px,34vw,280px);
+    min-height:190px;
+  }
+}
+
+@media(max-width:600px){
+  .africctv-feed-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .africctv-feed{
+    width:100%;
+    height:clamp(230px,58vw,340px);
+    min-height:230px;
+    border-radius:14px;
+  }
+
+  .africctv-viewport-center strong{
+    font-size:1rem;
+  }
+
+  .africtv-camera-controls{
+    left:10px;
+    right:10px;
+    bottom:10px;
+    gap:7px;
+  }
+}
