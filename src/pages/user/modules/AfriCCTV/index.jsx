@@ -5,7 +5,7 @@ const cameras = [
   { id: "01", name: "Main Entrance", image: "/mock/compound-feed.jpg" },
   { id: "02", name: "Living Room", image: "/mock/living-room-feed.jpg" },
   { id: "03", name: "Building Site", image: "/mock/building-site-feed.jpeg" },
-  { id: "04", name: "Back Entrance", image: "/mock/compound-feed.jpg" }
+  { id: "04", name: "Back Entrance", image: "/mock/car-park-feed.jpg" }
 ];
 
 export default function AfriCCTV() {
@@ -132,27 +132,52 @@ export default function AfriCCTV() {
             ))}
           </div>
 
-          {fullscreenCamera && (
-            <div className="africtv-fullscreen-overlay" role="dialog" aria-modal="true">
-              <div ref={fullscreenFeedRef} className="africtv-fullscreen-feed">
-                <img
-                  src={cameras.find((camera) => camera.id === fullscreenCamera)?.image || "/mock/compound-feed.jpg"}
-                  alt={`${cameras.find((camera) => camera.id === fullscreenCamera)?.name || "Camera"} fullscreen live feed`}
-                />
-                <div className="africtv-fullscreen-osd">
-                  <span><b>● LIVE</b> · CAM {fullscreenCamera} · {cameras.find((camera) => camera.id === fullscreenCamera)?.name.toUpperCase()}</span>
-                  <strong>{formattedLiveTime}</strong>
+          {fullscreenCamera && (() => {
+            const fullscreenCameraData = cameras.find((camera) => camera.id === fullscreenCamera);
+            const fullscreenState = cameraState[fullscreenCamera];
+            return (
+              <div className="africtv-fullscreen-overlay" role="dialog" aria-modal="true">
+                <div ref={fullscreenFeedRef} className="africtv-fullscreen-feed">
+                  <img
+                    className={`africctv-mock-feed-image cam-${fullscreenCamera}`}
+                    src={fullscreenCameraData?.image || "/mock/compound-feed.jpg"}
+                    alt={`${fullscreenCameraData?.name || "Camera"} fullscreen live camera feed`}
+                  />
+                  <div className="africctv-viewport-grid" />
+
+                  <div className="africtv-camera-overlay">
+                    <span>
+                      <b>● LIVE</b> · CAM {fullscreenCamera} · {fullscreenCameraData?.name.toUpperCase()}
+                    </span>
+                    <strong>{formattedLiveTime}</strong>
+                  </div>
+
+                  <div className="africtv-fullscreen-timestamp">
+                    AFRICCTV · SECURE CHANNEL
+                  </div>
+
+                  <div className="africtv-camera-controls">
+                    <button type="button" title="Rewind" onClick={() => updateCamera(fullscreenCamera, { playing: false })}>◀</button>
+                    <button
+                      type="button"
+                      title={fullscreenState.playing ? "Pause" : "Play"}
+                      onClick={() => updateCamera(fullscreenCamera, { playing: !fullscreenState.playing })}
+                    >
+                      {fullscreenState.playing ? "Ⅱ" : "▶"}
+                    </button>
+                    <button type="button" title="Forward" onClick={() => updateCamera(fullscreenCamera, { playing: true })}>▶</button>
+                    <button type="button" title="Exit fullscreen" aria-label="Exit fullscreen" onClick={exitFullscreen}>×</button>
+                    <button
+                      type="button"
+                      title="Favorite"
+                      className={fullscreenState.favorite ? "selected" : ""}
+                      onClick={() => updateCamera(fullscreenCamera, { favorite: !fullscreenState.favorite })}
+                    >♥</button>
+                  </div>
                 </div>
-                <button
-                  type="button"
-                  className="africtv-fullscreen-close"
-                  title="Close fullscreen"
-                  aria-label="Close fullscreen"
-                  onClick={exitFullscreen}
-                >×</button>
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           <section className="africtv-central-control">
             <div className="africtv-central-heading">
