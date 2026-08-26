@@ -1,0 +1,90 @@
+.africctv-shell {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background: #080b10;
+  color: #f5f7fa;
+}
+
+.africctv-shell__sidebar {
+  flex: 0 0 260px;
+  min-height: 100vh;
+}
+
+.africctv-shell__workspace {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.africctv-shell__topbar {
+  flex: 0 0 auto;
+}
+
+.africctv-shell__body {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.africctv-shell__main {
+  min-width: 0;
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.africctv-shell__controls {
+  flex: 0 0 280px;
+  min-width: 240px;
+}
+
+.africctv-region {
+  min-width: 0;
+}
+
+.africctv-region--camera-wall {
+  flex: 1 1 auto;
+}
+
+.africctv-region--filmstrip,
+.africctv-region--ai,
+.africctv-region--evidence,
+.africctv-region--playback {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .africctv-shell__sidebar {
+    flex-basis: 220px;
+  }
+
+  .africctv-shell__controls {
+    flex-basis: 230px;
+  }
+}
+
+@media (max-width: 820px) {
+  .africctv-shell {
+    overflow: auto;
+  }
+
+  .africctv-shell__body {
+    flex-direction: column;
+  }
+
+  .africctv-shell__sidebar {
+    min-height: auto;
+    flex-basis: auto;
+  }
+
+  .africctv-shell__controls {
+    flex-basis: auto;
+  }
+}
