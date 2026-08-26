@@ -22,9 +22,9 @@ function UserHomeProductCard({ product, primary = false }) {
 
   return (
     <article
-      onClick={() => product.id === "africctv" && navigate("/user/africctv")}
-      role={product.id === "africctv" ? "button" : undefined}
-      tabIndex={product.id === "africctv" ? 0 : undefined}
+      onClick={() => { if (product.id === "africctv") navigate("/user/africctv"); if (product.id === "afrisports") navigate("/user/sports"); }}
+      role={product.id === "africctv" || product.id === "afrisports" ? "button" : undefined}
+      tabIndex={product.id === "africctv" || product.id === "afrisports" ? 0 : undefined}
       className={
         primary
           ? "user-home-product-card user-home-product-card-primary"

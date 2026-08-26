@@ -1,1 +1,1 @@
-export default { name: 'afrisports', status: 'stub-loaded' };
+export { default } from "../../pages/user/modules/AfriSports";

@@ -7,7 +7,10 @@ import AfriSportsRightPanel from "./components/AfriSportsRightPanel";
 import AfriSportsAIZone from "./components/AfriSportsAIZone";
 
 export default function AfriSports() {
+  console.log("AFRISPORTS COMPONENT MOUNTED");
   const { selectedMatch, fixtures, analysis } = useAfriSportsFeed();
+
+  console.log("AFRISPORTS STATE", {selectedMatch, fixtures});
 
   return (
     <main className="afrisports-shell">

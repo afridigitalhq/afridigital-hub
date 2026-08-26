@@ -2,6 +2,7 @@ import AdminCommandCenter from "../dashboards/AdminCommandCenter";
 import React from "react";
 import AdminDashboardPlaceholder from "../dashboards/AdminDashboardPlaceholder";
 import AfriAIDashboard from "../../control-room/afrai/dashboard/AfriAIDashboard";
+import AfriCCTV from "../../pages/admin/modules/AfriCCTV";
 
 const dashboards = {
   "command-center": <AdminCommandCenter />,
@@ -22,9 +23,7 @@ const dashboards = {
     <AdminDashboardPlaceholder title="🎨 AfriDesign Studio Admin" />
   ),
 
-  africctv: (
-    <AdminDashboardPlaceholder title="📹 AfriCCTV Admin" />
-  ),
+  africctv: <AfriCCTV />,
 
   afrieducation: (
     <AdminDashboardPlaceholder title="🎓 AfriEducation Admin" />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "http://localhost:10000/api/afrisports";
+const API = "https://afridigital-api.onrender.com/api/afrisports";
 
 function normalize(match){
   return {
@@ -23,13 +23,28 @@ export default function useAfriSportsFeed(){
 
   useEffect(()=>{
     async function load(){
-      const response = await fetch(`${API}/trending`);
-      const data = await response.json();
+      try{
+        console.log("AFRISPORTS FETCH:", `${API}/trending`);
 
-      const items = (data.matches || []).map(normalize);
+        const response = await fetch(`${API}/trending`);
 
-      setMatches(items);
-      setSelectedMatch(items[0] || null);
+        console.log("AFRISPORTS STATUS:", response.status);
+
+        const data = await response.json();
+
+        console.log("AFRISPORTS DATA:", data);
+
+        const items = (data.matches || []).map(normalize);
+
+        setMatches(items);
+        console.log("AFRISPORTS ITEMS:", items.length, items[0]);
+        setSelectedMatch(items[0] || null);
+
+      }catch(error){
+        console.error("AFRISPORTS FEED ERROR:", error);
+        setMatches([]);
+        setSelectedMatch(null);
+      }
     }
 
     load();

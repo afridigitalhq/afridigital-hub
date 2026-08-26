@@ -4,6 +4,7 @@ import Landing from "../pages/landing/LandingPage";
 import AuthPage from "../pages/auth/AuthPage";
 import UserHome from "../pages/user/UserHome";
 import AfriCCTV from "../pages/user/modules/AfriCCTV";
+import AfriSports from "../pages/user/modules/AfriSports";
 import GlobalExperienceShell from "../core/layout/global-shell/GlobalExperienceShell";
 import LandingFooter from "../pages/landing/footer/LandingFooter";
 import AdminHome from "../pages/admin/AdminHome";
@@ -54,6 +55,18 @@ export default function AppRouter() {
             <ProtectedRoute role="user">
               <GlobalExperienceShell>
                 <AfriCCTV />
+                <LandingFooter />
+              </GlobalExperienceShell>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/user/sports"
+          element={
+            <ProtectedRoute role="user">
+              <GlobalExperienceShell>
+                <AfriSports />
                 <LandingFooter />
               </GlobalExperienceShell>
             </ProtectedRoute>
