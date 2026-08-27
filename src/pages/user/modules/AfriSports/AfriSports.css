@@ -357,3 +357,327 @@
     gap: 8px;
   }
 }
+
+
+/* AfriSports Feature Launcher */
+.afrisports-left-panel {
+  position: relative;
+  z-index: 200;
+  overflow: visible;
+}
+
+.afrisports-panel-heading {
+  position: relative;
+  z-index: 210;
+  overflow: visible;
+}
+
+.afrisports-feature-launcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  z-index: 220;
+}
+
+.afrisports-feature-launcher-button {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 12px;
+  background: rgba(255,255,255,.06);
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition:
+    transform .18s ease,
+    background .18s ease,
+    border-color .18s ease;
+}
+
+.afrisports-feature-launcher-button:hover,
+.afrisports-feature-launcher-button[aria-expanded="true"] {
+  transform: translateY(-1px);
+  background: rgba(24,119,242,.2);
+  border-color: var(--afri-primary, #1877f2);
+}
+
+.afrisports-feature-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 130;
+  width: min(320px, calc(100vw - 32px));
+  max-height: min(430px, calc(100vh - 120px));
+  box-sizing: border-box;
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 16px;
+  background: rgba(6,20,47,.98);
+  box-shadow: 0 18px 45px rgba(0,0,0,.38);
+  backdrop-filter: blur(18px);
+  transform-origin: top right;
+  animation: afrisports-feature-dropdown-in .16s ease-out;
+}
+
+@keyframes afrisports-feature-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.afrisports-feature-menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px 10px;
+}
+
+.afrisports-feature-menu-heading small {
+  opacity: .55;
+}
+
+.afrisports-feature-menu-list {
+  display: grid;
+  gap: 5px;
+  max-height: 360px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 2px;
+}
+
+.afrisports-feature-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255,255,255,.045);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.afrisports-feature-item:hover,
+.afrisports-feature-item:focus-visible {
+  background: rgba(24,119,242,.2);
+  outline: none;
+}
+
+.afrisports-feature-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+  font-size: 1rem;
+}
+
+.afrisports-feature-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.afrisports-feature-copy strong {
+  font-size: .82rem;
+}
+
+.afrisports-feature-copy small {
+  font-size: .68rem;
+  opacity: .55;
+  line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+  .afrisports-feature-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: -6px;
+    width: min(300px, calc(100vw - 28px));
+    max-height: min(420px, calc(100vh - 110px));
+    border-radius: 15px;
+  }
+}
+
+/* AfriSports Feature Surface */
+.afrisports-feature-surface {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.afrisports-feature-surface-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 9, 24, .68);
+  backdrop-filter: blur(8px);
+}
+
+.afrisports-feature-surface-panel {
+  position: relative;
+  z-index: 1;
+  width: min(920px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
+  overflow: auto;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 22px;
+  background: rgba(6, 20, 47, .96);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .5);
+  backdrop-filter: blur(20px);
+}
+
+.afrisports-feature-surface-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+  border-bottom: 1px solid var(--afri-primary-border, var(--afri-border));
+}
+
+.afrisports-feature-surface-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.afrisports-feature-surface-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 14px;
+  background: rgba(24, 119, 242, .12);
+  font-size: 1.35rem;
+}
+
+.afrisports-feature-surface-heading h2,
+.afrisports-feature-surface-heading p {
+  margin: 0;
+}
+
+.afrisports-feature-surface-heading h2 {
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+}
+
+.afrisports-feature-surface-heading p {
+  margin-top: 5px;
+  opacity: .62;
+  line-height: 1.5;
+}
+
+.afrisports-feature-surface-close {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 12px;
+  background: rgba(255,255,255,.06);
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.afrisports-feature-surface-close:hover {
+  background: rgba(24, 119, 242, .2);
+  border-color: var(--afri-primary, #1877f2);
+}
+
+.afrisports-feature-surface-body {
+  min-height: 320px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 42px 24px;
+  text-align: center;
+}
+
+.afrisports-feature-surface-status {
+  font-size: .68rem;
+  letter-spacing: .14em;
+  opacity: .52;
+}
+
+.afrisports-feature-surface-body h3,
+.afrisports-feature-surface-body p {
+  margin: 0;
+}
+
+.afrisports-feature-surface-body h3 {
+  font-size: 1.35rem;
+}
+
+.afrisports-feature-surface-body p {
+  max-width: 560px;
+  line-height: 1.6;
+  opacity: .68;
+}
+
+@media (max-width: 720px) {
+  .afrisports-feature-menu {
+    position: fixed;
+    top: 68px;
+    right: 14px;
+    width: min(340px, calc(100vw - 28px));
+    max-height: calc(100vh - 90px);
+  }
+
+  .afrisports-feature-surface {
+    padding: 14px;
+  }
+
+  .afrisports-feature-surface-panel {
+    max-height: calc(100vh - 28px);
+    border-radius: 18px;
+  }
+
+  .afrisports-feature-surface-header {
+    padding: 16px;
+  }
+
+  .afrisports-feature-surface-heading {
+    gap: 10px;
+  }
+
+  .afrisports-feature-surface-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .afrisports-feature-surface-body {
+    min-height: 260px;
+    padding: 32px 18px;
+  }
+}
+
+
