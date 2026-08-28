@@ -805,19 +805,19 @@
   text-align: center;
 }
 .afrisports-probability-columns small {
-  font-size: .58rem;
+  font-size: .78rem;
   letter-spacing: .12em;
   opacity: .55;
 }
 .afrisports-probability-columns strong {
-  font-size: 1.45rem;
+  font-size: 1.75rem;
 }
 .afrisports-probability-columns em {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: .62rem;
+  font-size: .82rem;
   font-style: normal;
   opacity: .65;
 }
@@ -833,6 +833,33 @@
     padding: 10px 4px;
   }
   .afrisports-probability-columns strong {
-    font-size: 1.15rem;
+    font-size: 1.45rem;
   }
+  .afrisports-probability-columns small {
+    font-size: .7rem;
+  }
+  .afrisports-probability-columns em {
+    font-size: .74rem;
+  }
+}
+
+
+/* AfriAI scorecard readability */
+.afrisports-ai-card > span {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.afrisports-ai-card > strong {
+  font-size: 1.55rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+.afrisports-ai-card small {
+  font-size: .9rem;
+  line-height: 1.4;
+}
+.afrisports-ai-insight p {
+  font-size: 1rem;
+  line-height: 1.5;
 }

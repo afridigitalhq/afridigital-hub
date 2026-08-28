@@ -47,29 +47,33 @@ export default function AfriSportsAIZone({ analysis, prediction }) {
         </div>
 
         <div className="afrisports-ai-card">
-          <span>Expected Goals</span>
-          <strong>{prediction?.expectedGoals ?? analysis?.expectedGoals ?? "--"}</strong>
+          <span>Goals Prediction</span>
+          <strong>
+            {prediction?.totalGoals != null
+              ? `${prediction.totalGoals >= 2.5 ? "Over" : "Under"} 2.5 Goals`
+              : "Over/Under 2.5"}
+          </strong>
           <small>
-            {prediction?.homeExpectedGoals != null && prediction?.awayExpectedGoals != null
-              ? `${prediction.homeExpectedGoals} — ${prediction.awayExpectedGoals} xG`
-              : "Expected goals"}
+            {prediction?.totalGoals != null
+              ? `Projected total: ${prediction.totalGoals} goals`
+              : "Total-goals prediction unavailable"}
           </small>
         </div>
 
         <div className="afrisports-ai-card">
           <span>Predicted Outcome</span>
-          <strong>{prediction?.prediction || "--"}</strong>
+          <strong>
+            {prediction?.prediction
+              ? prediction.prediction === "Draw"
+                ? "Draw"
+                : `${prediction.prediction} to Win`
+              : "--"}
+          </strong>
           <small>
             {prediction?.confidence
               ? `${prediction.confidence}% model confidence`
               : "Prediction confidence unavailable"}
           </small>
-        </div>
-
-        <div className="afrisports-ai-card">
-          <span>Total Goals</span>
-          <strong>{prediction?.totalGoals ?? "--"}</strong>
-          <small>From predicted correct score</small>
         </div>
 
         <div className="afrisports-ai-card afrisports-ai-insight">
