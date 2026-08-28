@@ -3,7 +3,6 @@ export default function AfriSportsAIZone({ analysis, prediction }) {
   const homeProbability = probabilities.home ?? analysis?.homeProbability ?? 0;
   const drawProbability = probabilities.draw ?? 0;
   const awayProbability = probabilities.away ?? analysis?.awayProbability ?? 0;
-  const hasPrediction = Boolean(prediction);
 
   return (
     <section className="afrisports-ai-zone">
@@ -12,19 +11,38 @@ export default function AfriSportsAIZone({ analysis, prediction }) {
           <span className="afrisports-kicker">AFRIAI SPORTS INTELLIGENCE</span>
           <h2>🧠 {prediction?.model || analysis?.title || "AfriAI Match Analysis"}</h2>
         </div>
-        <span className="afrisports-ai-badge">
-          {hasPrediction ? "LIVE AI PREDICTION" : "AI INSIGHT"}
-        </span>
+        <span className="afrisports-ai-badge">AI INSIGHT</span>
       </div>
 
       <div className="afrisports-ai-grid">
-        <div className="afrisports-ai-card">
+        <div className="afrisports-ai-card afrisports-ai-probabilities">
           <span>Win Probability</span>
-          <strong>{homeProbability}% — {drawProbability}% — {awayProbability}%</strong>
+          <div className="afrisports-probability-columns">
+            <div>
+              <small>HOME</small>
+              <strong>{homeProbability}%</strong>
+              <em>{prediction?.match?.split(" vs ")[0] || "Home"}</em>
+            </div>
+            <div>
+              <small>DRAW</small>
+              <strong>{drawProbability}%</strong>
+              <em>Draw</em>
+            </div>
+            <div>
+              <small>AWAY</small>
+              <strong>{awayProbability}%</strong>
+              <em>{prediction?.match?.split(" vs ")[1] || "Away"}</em>
+            </div>
+          </div>
+        </div>
+
+        <div className="afrisports-ai-card afrisports-ai-score">
+          <span>Correct Score</span>
+          <strong>{prediction?.correctScore || "--"}</strong>
           <small>
-            {prediction?.match
-              ? `${prediction.match} • Home / Draw / Away`
-              : "Awaiting match prediction"}
+            {prediction?.correctScoreProbability
+              ? `${prediction.correctScoreProbability}% scoreline probability`
+              : "Scoreline prediction unavailable"}
           </small>
         </div>
 
@@ -32,17 +50,33 @@ export default function AfriSportsAIZone({ analysis, prediction }) {
           <span>Expected Goals</span>
           <strong>{prediction?.expectedGoals ?? analysis?.expectedGoals ?? "--"}</strong>
           <small>
+            {prediction?.homeExpectedGoals != null && prediction?.awayExpectedGoals != null
+              ? `${prediction.homeExpectedGoals} — ${prediction.awayExpectedGoals} xG`
+              : "Expected goals"}
+          </small>
+        </div>
+
+        <div className="afrisports-ai-card">
+          <span>Predicted Outcome</span>
+          <strong>{prediction?.prediction || "--"}</strong>
+          <small>
             {prediction?.confidence
               ? `${prediction.confidence}% model confidence`
               : "Prediction confidence unavailable"}
           </small>
         </div>
 
+        <div className="afrisports-ai-card">
+          <span>Total Goals</span>
+          <strong>{prediction?.totalGoals ?? "--"}</strong>
+          <small>From predicted correct score</small>
+        </div>
+
         <div className="afrisports-ai-card afrisports-ai-insight">
-          <span>AI Prediction</span>
+          <span>AI Insight</span>
           <p>
             {prediction?.prediction
-              ? `${prediction.prediction} is the current AfriAI prediction for ${prediction.match}.`
+              ? `${prediction.prediction} is the current AfriAI prediction for ${prediction.match}, based on the model scoreline and probability analysis.`
               : "Match analysis and prediction will appear when the live prediction is available."}
           </p>
           {prediction?.factors?.length ? (
