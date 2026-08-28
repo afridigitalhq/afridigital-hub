@@ -84,6 +84,8 @@ function normalize(match){
   return {
     homeTeam: homeName,
     awayTeam: awayName,
+    homeLogo: match?.home?.image_path || match?.teams?.home?.image_path || null,
+    awayLogo: match?.away?.image_path || match?.teams?.away?.image_path || null,
     homeScore,
     awayScore,
     competition: match?.league?.name || "Football",
@@ -132,6 +134,8 @@ export default function useAfriSportsFeed(){
         setMatches(items);
         console.log("AFRISPORTS ITEMS:", items.length, items[0]);
         setSelectedMatch(items[0] || null);
+        setLoading(false);
+
         const predictionEntries = await Promise.all(items.map(async (item) => {
           try {
             const predictionResponse = await fetch(`${API}/prediction/${item.raw?.id ?? item.id}?date=${encodeURIComponent((item.kickoff || "").slice(0,10))}`);
@@ -140,7 +144,6 @@ export default function useAfriSportsFeed(){
           } catch { return [item.raw?.id ?? item.id, null]; }
         }));
         setPredictions(Object.fromEntries(predictionEntries));
-        setLoading(false);
 
       }catch(error){
         console.error("AFRISPORTS FEED ERROR:", error);

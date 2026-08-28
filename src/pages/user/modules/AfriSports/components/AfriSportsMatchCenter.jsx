@@ -106,7 +106,16 @@ export default function AfriSportsMatchCenter({ match, activeFeature, loading, e
           <span>{safeMatch.competition}</span>
 
           <div className="afrisports-teams">
-            <strong>{safeMatch.homeTeam}</strong>
+            <div className="afrisports-team">
+              {safeMatch.homeLogo && (
+                <img
+                  className="afrisports-team-logo"
+                  src={safeMatch.homeLogo}
+                  alt={`${safeMatch.homeTeam} logo`}
+                />
+              )}
+              <strong>{safeMatch.homeTeam}</strong>
+            </div>
 
             <div className="afrisports-score">
               <b>{safeMatch.homeScore}</b>
@@ -114,29 +123,38 @@ export default function AfriSportsMatchCenter({ match, activeFeature, loading, e
               <b>{safeMatch.awayScore}</b>
             </div>
 
-            <strong>{safeMatch.awayTeam}</strong>
+            <div className="afrisports-team">
+              {safeMatch.awayLogo && (
+                <img
+                  className="afrisports-team-logo"
+                  src={safeMatch.awayLogo}
+                  alt={`${safeMatch.awayTeam} logo`}
+                />
+              )}
+              <strong>{safeMatch.awayTeam}</strong>
+            </div>
           </div>
 
           <span className="afrisports-match-status">
             {safeMatch.minute} • {safeMatch.status}
           </span>
 
-          <button
-            type="button"
-            className="afrisports-watch-live-button"
-            onClick={() => {
-              if (safeMatch.raw?.liveStreamUrl) {
-                window.open(safeMatch.raw.liveStreamUrl, "_blank", "noopener,noreferrer");
-                return;
-              }
-              window.alert("Live match streaming will be available when the live streaming API is connected.");
-            }}
-            aria-label={`Watch ${safeMatch.homeTeam} vs ${safeMatch.awayTeam} live`}
-          >
-            📺 Watch Live
-          </button>
         </div>
       )}
+      <button
+        type="button"
+        className="afrisports-watch-live-button"
+        onClick={() => {
+          if (safeMatch.raw?.liveStreamUrl) {
+            window.open(safeMatch.raw.liveStreamUrl, "_blank", "noopener,noreferrer");
+            return;
+          }
+          window.alert("Live match streaming will be available when the live streaming API is connected.");
+        }}
+        aria-label={`Watch ${safeMatch.homeTeam} vs ${safeMatch.awayTeam} live`}
+      >
+        📺 Watch Live
+      </button>
     </section>
   );
 }

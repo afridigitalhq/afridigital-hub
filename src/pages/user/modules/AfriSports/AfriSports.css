@@ -184,7 +184,7 @@
 }
 
 .afrisports-fullscreen-button:hover {
-  transform: translateY(-1px);
+  transform: translate(-50%, calc(-50% - 1px));
   background: rgba(24, 119, 242, .28);
   border-color: var(--afri-primary, #1877f2);
 }
@@ -222,8 +222,9 @@
 
 .afrisports-watch-live-button {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 6;
   padding: 10px 15px;
   border: 1px solid var(--afri-primary-border, var(--afri-border));
@@ -245,8 +246,9 @@
 
 @media (max-width: 520px) {
   .afrisports-watch-live-button {
-    right: 6px;
-    bottom: 6px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     padding: 9px 12px;
     font-size: .82rem;
   }
@@ -385,7 +387,21 @@
     min-height: 360px;
   }
 
-  .afrisports-teams {
+  .afrisports-team {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.afrisports-team-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: 0 0 34px;
+}
+
+.afrisports-teams {
     gap: 8px;
   }
 }
