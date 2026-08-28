@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+import AfriSportsEventTimeline from "./AfriSportsEventTimeline";
 
-export default function AfriSportsMatchCenter({ match }) {
+export default function AfriSportsMatchCenter({ match, activeFeature, loading, error }) {
   const safeMatch = match || {
-    status:"Loading",
+    status: loading ? "Loading" : "Unavailable",
     minute:"--",
     competition:"AfriSports Radar",
-    homeTeam:"Loading",
-    awayTeam:"Loading",
+    homeTeam: loading ? "Loading" : "Feed unavailable",
+    awayTeam: loading ? "Loading" : (error ? "Provider unavailable" : "No match selected"),
     homeScore:0,
     awayScore:0
   };
@@ -98,25 +99,29 @@ export default function AfriSportsMatchCenter({ match }) {
         />
       </div>
 
-      <div className="afrisports-match-card">
-        <span>{safeMatch.competition}</span>
+      {activeFeature?.id === "event-timeline" ? (
+        <AfriSportsEventTimeline match={safeMatch} />
+      ) : (
+        <div className="afrisports-match-card">
+          <span>{safeMatch.competition}</span>
 
-        <div className="afrisports-teams">
-          <strong>{safeMatch.homeTeam}</strong>
+          <div className="afrisports-teams">
+            <strong>{safeMatch.homeTeam}</strong>
 
-          <div className="afrisports-score">
-            <b>{safeMatch.homeScore}</b>
-            <small>:</small>
-            <b>{safeMatch.awayScore}</b>
+            <div className="afrisports-score">
+              <b>{safeMatch.homeScore}</b>
+              <small>:</small>
+              <b>{safeMatch.awayScore}</b>
+            </div>
+
+            <strong>{safeMatch.awayTeam}</strong>
           </div>
 
-          <strong>{safeMatch.awayTeam}</strong>
+          <span className="afrisports-match-status">
+            {safeMatch.minute} • {safeMatch.status}
+          </span>
         </div>
-
-        <span className="afrisports-match-status">
-          {safeMatch.minute} • {safeMatch.status}
-        </span>
-      </div>
+      )}
     </section>
   );
 }

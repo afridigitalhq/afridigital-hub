@@ -681,3 +681,105 @@
 }
 
 
+.afrisports-event-timeline {
+  position: relative;
+  z-index: 6;
+  width: min(94%, 680px);
+  max-height: min(390px, 62vh);
+  margin: 12px auto;
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 18px;
+  background: rgba(6,20,47,.78);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+}
+.afrisports-event-timeline-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+.afrisports-event-timeline-heading h3 {
+  margin: 2px 0 0;
+  font-size: 1rem;
+}
+.afrisports-event-live-badge {
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  font-size: .65rem;
+  white-space: nowrap;
+}
+.afrisports-event-timeline-list {
+  display: grid;
+  gap: 7px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 3px;
+}
+.afrisports-event-row {
+  display: grid;
+  grid-template-columns: 42px 32px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.055);
+}
+.afrisports-event-minute {
+  font-size: .7rem;
+  opacity: .6;
+  text-align: right;
+}
+.afrisports-event-icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: rgba(255,255,255,.07);
+}
+.afrisports-event-content {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.afrisports-event-content strong {
+  font-size: .78rem;
+}
+.afrisports-event-content small,
+.afrisports-event-team {
+  font-size: .66rem;
+  opacity: .58;
+}
+.afrisports-event-empty {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  padding: 34px 16px;
+  text-align: center;
+}
+.afrisports-event-empty span {
+  font-size: 1.5rem;
+}
+.afrisports-event-empty strong {
+  font-size: .82rem;
+}
+.afrisports-event-empty small {
+  max-width: 300px;
+  font-size: .68rem;
+  line-height: 1.5;
+  opacity: .58;
+}
+@media (max-width: 720px) {
+  .afrisports-event-timeline {
+    width: 94%;
+    max-height: 330px;
+  }
+  .afrisports-event-timeline-list {
+    max-height: 245px;
+  }
+}
