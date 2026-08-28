@@ -67,7 +67,7 @@ export default function AfriSportsEventTimeline({ match }) {
           <span className="afrisports-kicker">LIVE MATCH EVENTS</span>
           <h3>⚡ Event Timeline</h3>
         </div>
-        <span className="afrisports-event-live-badge">🔴 LIVE</span>
+        <span className="afrisports-event-live-badge">🟢 LIVE</span>
       </div>
 
       <div className="afrisports-event-timeline-list">

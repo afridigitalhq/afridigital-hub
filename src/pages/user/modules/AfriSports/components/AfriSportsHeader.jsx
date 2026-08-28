@@ -6,7 +6,7 @@ export default function AfriSportsHeader() {
         <h1>AfriSports</h1>
         <p>Live football, match intelligence & analysis</p>
       </div>
-      <span className="afrisports-live-pill">🔴 LIVE</span>
+      <span className="afrisports-live-pill">🟢 LIVE</span>
     </header>
   );
 }
