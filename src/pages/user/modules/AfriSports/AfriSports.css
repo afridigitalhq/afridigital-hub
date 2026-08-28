@@ -220,6 +220,38 @@
   box-shadow: none;
 }
 
+.afrisports-watch-live-button {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 6;
+  padding: 10px 15px;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 12px;
+  background: rgba(6, 20, 47, .82);
+  color: inherit;
+  font-size: .9rem;
+  font-weight: 800;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.afrisports-watch-live-button:hover {
+  transform: translateY(-1px);
+  background: rgba(24, 119, 242, .28);
+  border-color: var(--afri-primary, #1877f2);
+}
+
+@media (max-width: 520px) {
+  .afrisports-watch-live-button {
+    right: 10px;
+    bottom: 10px;
+    padding: 9px 12px;
+    font-size: .82rem;
+  }
+}
+
 .afrisports-match-center.is-fullscreen .afrisports-match-card {
   margin: 24px;
   max-width: 720px;

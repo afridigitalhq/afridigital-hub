@@ -120,6 +120,21 @@ export default function AfriSportsMatchCenter({ match, activeFeature, loading, e
           <span className="afrisports-match-status">
             {safeMatch.minute} • {safeMatch.status}
           </span>
+
+          <button
+            type="button"
+            className="afrisports-watch-live-button"
+            onClick={() => {
+              if (safeMatch.raw?.liveStreamUrl) {
+                window.open(safeMatch.raw.liveStreamUrl, "_blank", "noopener,noreferrer");
+                return;
+              }
+              window.alert("Live match streaming will be available when the live streaming API is connected.");
+            }}
+            aria-label={`Watch ${safeMatch.homeTeam} vs ${safeMatch.awayTeam} live`}
+          >
+            📺 Watch Live
+          </button>
         </div>
       )}
     </section>
