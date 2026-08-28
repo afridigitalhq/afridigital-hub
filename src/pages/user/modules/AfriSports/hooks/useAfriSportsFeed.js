@@ -104,6 +104,7 @@ export default function useAfriSportsFeed(){
   const [loading,setLoading] = useState(true);
   const [error,setError] = useState(null);
   const [selectedMatch,setSelectedMatch] = useState(null);
+  const [predictions,setPredictions] = useState({});
 
   useEffect(()=>{
     async function load(){
@@ -131,6 +132,14 @@ export default function useAfriSportsFeed(){
         setMatches(items);
         console.log("AFRISPORTS ITEMS:", items.length, items[0]);
         setSelectedMatch(items[0] || null);
+        const predictionEntries = await Promise.all(items.map(async (item) => {
+          try {
+            const predictionResponse = await fetch(`${API}/prediction/${item.raw?.id ?? item.id}?date=${encodeURIComponent((item.kickoff || "").slice(0,10))}`);
+            if (!predictionResponse.ok) return [item.raw?.id ?? item.id, null];
+            return [item.raw?.id ?? item.id, await predictionResponse.json()];
+          } catch { return [item.raw?.id ?? item.id, null]; }
+        }));
+        setPredictions(Object.fromEntries(predictionEntries));
         setLoading(false);
 
       }catch(error){
@@ -148,6 +157,7 @@ export default function useAfriSportsFeed(){
   return {
     fixtures: matches,
     selectedMatch,
+    predictions,
     loading,
     error,
     analysis:{

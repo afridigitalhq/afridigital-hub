@@ -11,7 +11,7 @@ import AfriSportsFeatureSurface from "./components/AfriSportsFeatureSurface";
 
 export default function AfriSports() {
   console.log("AFRISPORTS COMPONENT MOUNTED");
-  const { selectedMatch, fixtures, analysis, loading, error } = useAfriSportsFeed();
+  const { selectedMatch, fixtures, predictions, analysis, loading, error } = useAfriSportsFeed();
   const [activeFeature, setActiveFeature] = useState(null);
   const [selectedFeature, setSelectedFeature] = useState(null);
 
@@ -30,7 +30,7 @@ export default function AfriSports() {
         <AfriSportsRightPanel match={selectedMatch} loading={loading} error={error} />
       </section>
 
-      <AfriSportsAIZone analysis={analysis} />
+      <AfriSportsAIZone analysis={analysis} prediction={selectedMatch ? predictions[selectedMatch.raw?.id ?? selectedMatch.id] : null} />
 
       <AfriSportsFeatureSurface
         feature={selectedFeature}
