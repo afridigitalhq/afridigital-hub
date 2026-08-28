@@ -222,8 +222,8 @@
 
 .afrisports-watch-live-button {
   position: absolute;
-  right: 14px;
-  bottom: 14px;
+  right: 8px;
+  bottom: 8px;
   z-index: 6;
   padding: 10px 15px;
   border: 1px solid var(--afri-primary-border, var(--afri-border));
@@ -245,8 +245,8 @@
 
 @media (max-width: 520px) {
   .afrisports-watch-live-button {
-    right: 10px;
-    bottom: 10px;
+    right: 6px;
+    bottom: 6px;
     padding: 9px 12px;
     font-size: .82rem;
   }
