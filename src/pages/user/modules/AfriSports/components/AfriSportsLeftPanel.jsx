@@ -1,4 +1,5 @@
 import AfriSportsFeatureLauncher from "./AfriSportsFeatureLauncher";
+import AfriSportsIdentity from "./AfriSportsIdentity";
 
 export default function AfriSportsLeftPanel({ fixtures = [], onFeatureSelect }) {
   return (
@@ -12,11 +13,28 @@ export default function AfriSportsLeftPanel({ fixtures = [], onFeatureSelect }) 
         {fixtures.map((fixture) => (
           <div
             className="afrisports-fixture-item"
-            key={fixture.home + "-" + fixture.away}
+            key={fixture.raw?.id ?? `${fixture.homeTeam}-${fixture.awayTeam}`}
           >
-            <strong>{fixture.home}</strong>
-            <span>{fixture.time}</span>
-            <strong>{fixture.away}</strong>
+            <AfriSportsIdentity
+              identity={fixture.homeIdentity}
+              size="sm"
+            />
+
+            <span className="afrisports-fixture-meta">
+              {fixture.kickoff || fixture.minute || fixture.status}
+              {fixture.competitionIdentity && (
+                <AfriSportsIdentity
+                  identity={fixture.competitionIdentity}
+                  size="xs"
+                  showName
+                />
+              )}
+            </span>
+
+            <AfriSportsIdentity
+              identity={fixture.awayIdentity}
+              size="sm"
+            />
           </div>
         ))}
       </div>

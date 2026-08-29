@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import AfriSportsIdentity from "./AfriSportsIdentity";
 
 function matchId(match) {
   return match?.raw?.id ?? match?.id ?? `${match?.homeTeam}-${match?.awayTeam}`;
@@ -80,30 +81,24 @@ export default function AfriSportsMatchPredictor({
         {selectedMatch ? (
           <>
             <div className="afrisports-selected-team">
-              {selectedMatch.homeLogo ? (
-                <img
-                  src={selectedMatch.homeLogo}
-                  alt={`${teamName(selectedMatch, "homeTeam")} logo`}
-                  className="afrisports-selected-team-logo"
-                />
-              ) : (
-                <span className="afrisports-selected-team-logo-fallback">⚽</span>
-              )}
+              <AfriSportsIdentity
+                identity={selectedMatch.homeIdentity}
+                size="sm"
+                showName={false}
+                showCountry={false}
+              />
               <strong>{teamName(selectedMatch, "homeTeam")}</strong>
             </div>
 
             <div className="afrisports-selected-vs">VS</div>
 
             <div className="afrisports-selected-team">
-              {selectedMatch.awayLogo ? (
-                <img
-                  src={selectedMatch.awayLogo}
-                  alt={`${teamName(selectedMatch, "awayTeam")} logo`}
-                  className="afrisports-selected-team-logo"
-                />
-              ) : (
-                <span className="afrisports-selected-team-logo-fallback">⚽</span>
-              )}
+              <AfriSportsIdentity
+                identity={selectedMatch.awayIdentity}
+                size="sm"
+                showName={false}
+                showCountry={false}
+              />
               <strong>{teamName(selectedMatch, "awayTeam")}</strong>
             </div>
 

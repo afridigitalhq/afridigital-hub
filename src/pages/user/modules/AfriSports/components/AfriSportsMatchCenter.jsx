@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import AfriSportsEventTimeline from "./AfriSportsEventTimeline";
+import AfriSportsIdentity from "./AfriSportsIdentity";
 
 export default function AfriSportsMatchCenter({ match, activeFeature, loading, error }) {
   const safeMatch = match || {
@@ -103,18 +104,22 @@ export default function AfriSportsMatchCenter({ match, activeFeature, loading, e
         <AfriSportsEventTimeline match={safeMatch} />
       ) : (
         <div className="afrisports-match-card">
-          <span>{safeMatch.competition}</span>
+          <AfriSportsIdentity
+            identity={safeMatch.competitionIdentity}
+            size="sm"
+            showName
+            showCountry
+          />
 
           <div className="afrisports-teams">
             <div className="afrisports-team">
-              {safeMatch.homeLogo && (
-                <img
-                  className="afrisports-team-logo"
-                  src={safeMatch.homeLogo}
-                  alt={`${safeMatch.homeTeam} logo`}
-                />
-              )}
-              <strong>{safeMatch.homeTeam}</strong>
+              <AfriSportsIdentity
+                identity={safeMatch.homeIdentity}
+                size="lg"
+                showName
+                showCountry
+                showType
+              />
             </div>
 
             <div className="afrisports-score">
@@ -124,14 +129,13 @@ export default function AfriSportsMatchCenter({ match, activeFeature, loading, e
             </div>
 
             <div className="afrisports-team">
-              {safeMatch.awayLogo && (
-                <img
-                  className="afrisports-team-logo"
-                  src={safeMatch.awayLogo}
-                  alt={`${safeMatch.awayTeam} logo`}
-                />
-              )}
-              <strong>{safeMatch.awayTeam}</strong>
+              <AfriSportsIdentity
+                identity={safeMatch.awayIdentity}
+                size="lg"
+                showName
+                showCountry
+                showType
+              />
             </div>
           </div>
 

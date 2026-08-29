@@ -184,7 +184,7 @@
 }
 
 .afrisports-fullscreen-button:hover {
-  transform: translate(-50%, calc(-50% - 1px));
+  transform: translateY(-1px);
   background: rgba(24, 119, 242, .28);
   border-color: var(--afri-primary, #1877f2);
 }
@@ -239,7 +239,7 @@
 }
 
 .afrisports-watch-live-button:hover {
-  transform: translateY(-1px);
+  transform: translate(-50%, calc(-50% - 1px));
   background: rgba(24, 119, 242, .28);
   border-color: var(--afri-primary, #1877f2);
 }
@@ -912,6 +912,164 @@
   line-height: 1.5;
 }
 
+
+
+
+/* =========================================================
+   AFRISPORTS UNIVERSAL IDENTITY SYSTEM
+   One renderer for clubs, national teams, countries and leagues.
+   ========================================================= */
+
+.afrisports-identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+  vertical-align: middle;
+}
+
+.afrisports-identity-visual {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.afrisports-identity-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.afrisports-identity-flag {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.afrisports-identity-name {
+  min-width: 0;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.afrisports-identity-country,
+.afrisports-identity-type {
+  opacity: 0.65;
+  font-size: 0.72rem;
+}
+
+.afrisports-identity-xs .afrisports-identity-visual {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-basis: 1.25rem;
+}
+
+.afrisports-identity-xs .afrisports-identity-flag {
+  font-size: 0.95rem;
+}
+
+.afrisports-identity-xs .afrisports-identity-name {
+  font-size: 0.72rem;
+}
+
+.afrisports-identity-sm .afrisports-identity-visual {
+  width: 1.7rem;
+  height: 1.7rem;
+  flex-basis: 1.7rem;
+}
+
+.afrisports-identity-sm .afrisports-identity-flag {
+  font-size: 1.15rem;
+}
+
+.afrisports-identity-lg {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 0.55rem;
+}
+
+.afrisports-identity-lg .afrisports-identity-visual {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex-basis: 4.5rem;
+}
+
+.afrisports-identity-lg .afrisports-identity-flag {
+  font-size: 3rem;
+}
+
+.afrisports-identity-lg .afrisports-identity-name {
+  font-size: 1rem;
+}
+
+.afrisports-identity-lg .afrisports-identity-country,
+.afrisports-identity-lg .afrisports-identity-type {
+  font-size: 0.7rem;
+}
+
+.afrisports-fixture-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.afrisports-fixture-item > .afrisports-identity:last-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.afrisports-fixture-meta {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.afrisports-teams .afrisports-team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.afrisports-ai-identities {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.afrisports-event-team .afrisports-identity-name {
+  font-size: 0.78rem;
+}
+
+
+.afrisports-right-match-identities {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.afrisports-right-vs {
+  opacity: 0.55;
+  font-weight: 700;
+}
+
+.afrisports-right-match > strong {
+  display: block;
+  text-align: center;
+}
 
 /* AfriSports Match Predictor — unified glass card */
 .afrisports-predictor {

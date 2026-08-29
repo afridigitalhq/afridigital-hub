@@ -1,3 +1,5 @@
+import AfriSportsIdentity from "./AfriSportsIdentity";
+
 export default function AfriSportsAIZone({ analysis, prediction }) {
   const probabilities = prediction?.probabilities || {};
   const homeProbability = probabilities.home ?? analysis?.homeProbability ?? 0;
@@ -10,6 +12,13 @@ export default function AfriSportsAIZone({ analysis, prediction }) {
         <div>
           <span className="afrisports-kicker">AFRIAI SPORTS INTELLIGENCE</span>
           <h2>🧠 {prediction?.model || analysis?.title || "AfriAI Match Analysis"}</h2>
+          {analysis?.match?.homeIdentity && (
+            <div className="afrisports-ai-identities">
+              <AfriSportsIdentity identity={analysis.match.homeIdentity} size="sm" />
+              <span>vs</span>
+              <AfriSportsIdentity identity={analysis.match.awayIdentity} size="sm" />
+            </div>
+          )}
         </div>
         <span className="afrisports-ai-badge">AI INSIGHT</span>
       </div>

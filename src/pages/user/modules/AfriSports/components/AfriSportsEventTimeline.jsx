@@ -1,3 +1,5 @@
+import AfriSportsIdentity from "./AfriSportsIdentity";
+
 export default function AfriSportsEventTimeline({ match }) {
   const rawEvents = match?.events || match?.timeline || [];
   const events = Array.isArray(rawEvents) ? rawEvents : [];
@@ -47,6 +49,29 @@ export default function AfriSportsEventTimeline({ match }) {
       event.team ||
       "";
 
+    const teamIdentity = event.team?.id || event.team?.name
+      ? {
+          type: event.team?.national ? "national_team" : "team",
+          name: String(event.team?.name || team),
+          shortName: String(event.team?.short_code || event.team?.name || team),
+          logo: event.team?.image_path || event.team?.logo || event.team?.logo_url || null,
+          flag:
+            event.team?.country?.flag ||
+            event.team?.country?.emoji ||
+            null,
+          country:
+            event.team?.country?.name ||
+            event.team?.country_name ||
+            null,
+          countryCode:
+            event.team?.country?.code ||
+            event.team?.country_code ||
+            null,
+          id: event.team?.id || null,
+          raw: event.team
+        }
+      : null;
+
     return {
       category,
       icon,
@@ -54,6 +79,7 @@ export default function AfriSportsEventTimeline({ match }) {
       player: String(player),
       assist: String(assist),
       team: String(team),
+      teamIdentity,
       detail: String(event.detail || event.description || "")
     };
   };
@@ -90,7 +116,12 @@ export default function AfriSportsEventTimeline({ match }) {
                 <strong>{event.player || event.detail || "Match event"}</strong>
 
                 {event.team && (
-                  <span className="afrisports-event-team">{event.team}</span>
+                  <span className="afrisports-event-team">
+                    <AfriSportsIdentity
+                      identity={event.teamIdentity}
+                      size="xs"
+                    />
+                  </span>
                 )}
 
                 {event.assist && (
