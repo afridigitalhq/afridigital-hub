@@ -26,19 +26,13 @@ export default function AfriSportsMatchPredictor({
   const [selectedId, setSelectedId] = useState("");
 
   const competitions = useMemo(() => {
-    const values = fixtures
-      .map(competitionName)
-      .filter(Boolean);
-
+    const values = fixtures.map(competitionName).filter(Boolean);
     return ["ALL", ...Array.from(new Set(values))];
   }, [fixtures]);
 
   const matches = useMemo(() => {
     if (competition === "ALL") return fixtures;
-
-    return fixtures.filter(
-      match => competitionName(match) === competition
-    );
+    return fixtures.filter(match => competitionName(match) === competition);
   }, [fixtures, competition]);
 
   const selectedMatch = useMemo(
@@ -51,8 +45,7 @@ export default function AfriSportsMatchPredictor({
   );
 
   const predictMatch = () => {
-    if (!selectedMatch) return;
-    onSelectMatch?.(selectedMatch);
+    if (selectedMatch) onSelectMatch?.(selectedMatch);
   };
 
   return (
@@ -61,14 +54,8 @@ export default function AfriSportsMatchPredictor({
         <div>
           <span className="afrisports-kicker">AFRIAI MATCH PREDICTOR</span>
           <h2>🧠 Select a match for AfriAI</h2>
-          <p>
-            Choose a competition, select one match, then run AfriAI prediction.
-          </p>
+          <p>Choose a competition, then prepare a match for AfriAI prediction.</p>
         </div>
-
-        <span className="afrisports-ai-badge">
-          {selectedMatch ? "MATCH SELECTED" : "NO MATCH SELECTED"}
-        </span>
       </div>
 
       <div className="afrisports-league-tabs">
@@ -89,29 +76,9 @@ export default function AfriSportsMatchPredictor({
         </select>
       </div>
 
-      <div className="afrisports-match-selector">
-        <select
-          value={selectedId}
-          onChange={event => setSelectedId(event.target.value)}
-          aria-label="Select match from football feed"
-          disabled={!matches.length}
-        >
-          {!matches.length ? (
-            <option value="">No matches available</option>
-          ) : (
-            matches.map(match => {
-              const id = matchId(match);
-              return (
-                <option key={id} value={id}>
-                  {teamName(match, "homeTeam")} vs {teamName(match, "awayTeam")}
-                </option>
-              );
-            })
-          )}
-        </select>
-
-        {selectedMatch && (
-          <div className="afrisports-selected-match">
+      <div className="afrisports-selected-match">
+        {selectedMatch ? (
+          <>
             <div className="afrisports-selected-team">
               {selectedMatch.homeLogo ? (
                 <img
@@ -142,7 +109,7 @@ export default function AfriSportsMatchPredictor({
 
             <div className="afrisports-selected-match-meta">
               <span>{competitionName(selectedMatch)}</span>
-              {selectedMatch?.kickoff && <span>• {selectedMatch.kickoff}</span>}
+              {selectedMatch.kickoff && <span>• {selectedMatch.kickoff}</span>}
             </div>
 
             <button
@@ -152,10 +119,13 @@ export default function AfriSportsMatchPredictor({
             >
               🧠 Predict
             </button>
+          </>
+        ) : (
+          <div className="afrisports-selected-match-meta">
+            Select a match to prepare an AfriAI prediction.
           </div>
         )}
       </div>
-
     </section>
   );
 }

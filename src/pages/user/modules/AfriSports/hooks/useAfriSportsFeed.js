@@ -67,8 +67,9 @@ function normalize(match){
   } else if (isScheduled && kickoffDate && !Number.isNaN(kickoffDate.getTime())) {
     minute = `Starts ${kickoffDate.toLocaleTimeString([], {
       hour: "numeric",
-      minute: "2-digit"
-    })}`;
+      minute: "2-digit",
+      hour12: true
+    }).replace(/\s/g, "")}`;
   } else if (statusValue) {
     displayStatus =
       match?.status?.name ||
