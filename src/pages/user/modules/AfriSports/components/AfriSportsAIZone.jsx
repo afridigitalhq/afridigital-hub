@@ -49,14 +49,16 @@ export default function AfriSportsAIZone({ analysis, prediction }) {
         <div className="afrisports-ai-card">
           <span>Goals Prediction</span>
           <strong>
-            {prediction?.totalGoals != null
-              ? `${prediction.totalGoals >= 2.5 ? "Over" : "Under"} 2.5 Goals`
+            {prediction?.markets?.over_under?.["2.5"]
+              ? `${prediction.markets.over_under["2.5"].over >= prediction.markets.over_under["2.5"].under ? "Over" : "Under"} 2.5 Goals`
               : "Over/Under 2.5"}
           </strong>
           <small>
-            {prediction?.totalGoals != null
-              ? `Projected total: ${prediction.totalGoals} goals`
-              : "Total-goals prediction unavailable"}
+            {prediction?.markets?.over_under?.["2.5"]
+              ? `Over ${prediction.markets.over_under["2.5"].over}% • Under ${prediction.markets.over_under["2.5"].under}%${prediction.expectedGoals != null ? ` • xG ${prediction.expectedGoals}` : ""}`
+              : prediction?.expectedGoals != null
+                ? `Projected total: ${prediction.expectedGoals} goals`
+                : "Total-goals prediction unavailable"}
           </small>
         </div>
 
