@@ -1,5 +1,5 @@
 export const AFRISPORTS_PRIMARY_NAVIGATION = Object.freeze([
-  { id: "live", label: "Live", icon: "🔴", type: "feed" },
+  { id: "live", label: "Live", icon: "🟢", type: "feed" },
   { id: "today", label: "Today", icon: "📅", type: "feed" },
   { id: "tomorrow", label: "Tomorrow", icon: "⏭️", type: "feed" },
   { id: "all-competitions", label: "All Competitions", icon: "🏆", type: "directory" }
