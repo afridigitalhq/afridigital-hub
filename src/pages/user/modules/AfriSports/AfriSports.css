@@ -1290,3 +1290,142 @@
     padding: 20px 14px;
   }
 }
+
+
+/* =========================================================
+   COMPETITION NAVIGATION
+   ========================================================= */
+
+.afrisports-competition-navigation {
+  width: 100%;
+  margin: 0 0 16px;
+}
+
+.afrisports-primary-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.afrisports-primary-tab {
+  min-height: 52px;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .045);
+  color: var(--afri-text, #fff);
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.afrisports-primary-tab:hover {
+  transform: translateY(-1px);
+  border-color: var(--afri-primary, #1877f2);
+}
+
+.afrisports-primary-tab.is-active {
+  background: rgba(24, 119, 242, .16);
+  border-color: var(--afri-primary, #1877f2);
+}
+
+.afrisports-primary-tab strong {
+  font-size: .88rem;
+}
+
+.afrisports-primary-tab small {
+  min-width: 20px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  font-size: .72rem;
+}
+
+.afrisports-all-competitions {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 18px;
+  background: rgba(255,255,255,.025);
+}
+
+.afrisports-navigation-heading {
+  margin-bottom: 14px;
+}
+
+.afrisports-navigation-heading h2 {
+  margin: 3px 0 5px;
+}
+
+.afrisports-navigation-heading p {
+  margin: 0;
+  color: var(--afri-muted, rgba(255,255,255,.72));
+  font-size: .86rem;
+}
+
+.afrisports-competition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.afrisports-competition-card {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 14px;
+  background: rgba(255,255,255,.035);
+  color: var(--afri-text, #fff);
+  padding: 10px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.afrisports-competition-card:hover,
+.afrisports-competition-card.has-matches {
+  border-color: var(--afri-primary, #1877f2);
+}
+
+.afrisports-competition-icon {
+  font-size: 1.25rem;
+}
+
+.afrisports-competition-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.afrisports-competition-copy strong {
+  font-size: .88rem;
+}
+
+.afrisports-competition-copy small,
+.afrisports-competition-status {
+  color: var(--afri-muted, rgba(255,255,255,.65));
+  font-size: .72rem;
+}
+
+.afrisports-competition-status {
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .afrisports-primary-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .afrisports-competition-grid {
+    grid-template-columns: 1fr;
+  }
+}
