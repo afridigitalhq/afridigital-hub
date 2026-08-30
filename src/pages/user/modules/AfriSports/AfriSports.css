@@ -101,19 +101,28 @@
   min-height: 66px;
   box-sizing: border-box;
   padding: 10px;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
   border-radius: 14px;
-  background: rgba(255, 255, 255, .05);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 212, 255, .08), transparent 55%),
+    var(--afri-card-bg, var(--afri-surface));
+  color: var(--afri-text, #fff);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
 
 .afrisports-fixture-item span,
 .afrisports-fixture-item strong {
-  font-size: .82rem;
+  font-size: .9rem;
+  line-height: 1.3;
 }
 
 .afrisports-fixture-item span {
-  opacity: .62;
+  opacity: .82;
+}
+
+.afrisports-fixture-item strong {
+  font-weight: 800;
 }
 
 .afrisports-match-center {
@@ -417,6 +426,15 @@
   }
 }
 
+
+.afrisports-left-panel {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 212, 255, .08), transparent 55%),
+    var(--afri-card-bg, var(--afri-surface));
+  color: var(--afri-text, #fff);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
 
 /* AfriSports Feature Launcher */
 .afrisports-left-panel {
