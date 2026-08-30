@@ -1,1 +1,0 @@
-export default function SportsScoreboard(){return(<div className="sports-scoreboard"><div className="score-card"><strong>Lions FC</strong><span>2</span></div><div className="score-card"><strong>Eagles FC</strong><span>1</span></div><small>76' • Second Half</small></div>);}

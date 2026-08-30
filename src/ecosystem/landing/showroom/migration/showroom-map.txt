@@ -8,7 +8,6 @@ Tier2
 - AfriBoostPreview
 - AfriLogistics
 - AfriTicking
-- AfriSportsPreview
 - AfriMetaWorldPreview
 - AfriEducation
 - AfriLove
