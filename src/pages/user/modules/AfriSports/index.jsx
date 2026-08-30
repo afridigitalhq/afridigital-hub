@@ -9,12 +9,10 @@ import AfriSportsAIZone from "./components/AfriSportsAIZone";
 import AfriSportsMatchPredictor from "./components/AfriSportsMatchPredictor";
 
 import AfriSportsFeatureSurface from "./components/AfriSportsFeatureSurface";
-import AfriSportsCompetitionNavigation from "./components/AfriSportsCompetitionNavigation";
 
 export default function AfriSports() {
   console.log("AFRISPORTS COMPONENT MOUNTED");
   const { selectedMatch, fixtures, predictions, analysis, loading, error } = useAfriSportsFeed();
-  const [activeFeature, setActiveFeature] = useState(null);
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [predictionMatch, setPredictionMatch] = useState(null);
   const [activeView, setActiveView] = useState("live");
@@ -25,16 +23,6 @@ export default function AfriSports() {
     <main className="afrisports-shell">
       <AfriSportsHeader />
 
-      <AfriSportsCompetitionNavigation
-        activeView={activeView}
-        onSelect={setActiveView}
-        matchCounts={{
-          live: 0,
-          today: fixtures.length,
-          tomorrow: 0
-        }}
-      />
-
       <section className="afrisports-dashboard">
         <AfriSportsLeftPanel
           fixtures={fixtures}
@@ -42,7 +30,7 @@ export default function AfriSports() {
         />
         <AfriSportsMatchCenter
           match={predictionMatch || selectedMatch}
-          activeFeature={activeFeature}
+          activeFeature={selectedFeature}
           loading={loading}
           error={error}
         />
@@ -53,6 +41,13 @@ export default function AfriSports() {
         fixtures={fixtures}
         predictions={predictions}
         currentMatch={selectedMatch}
+        activeView={activeView}
+        onSelectView={setActiveView}
+        matchCounts={{
+          live: 0,
+          today: fixtures.length,
+          tomorrow: 0
+        }}
         onSelectMatch={setPredictionMatch}
       />
 

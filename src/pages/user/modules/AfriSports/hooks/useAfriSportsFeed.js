@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createMatchIdentities } from "../identity/afriSportsIdentity.js";
 
 const API = "https://afridigital-api.onrender.com/api/afrisports";
 
@@ -82,6 +83,8 @@ function normalize(match){
         : "NS");
   }
 
+  const identities = createMatchIdentities(match);
+
   return {
     homeTeam: homeName,
     awayTeam: awayName,
@@ -90,6 +93,9 @@ function normalize(match){
     homeScore,
     awayScore,
     competition: match?.league?.name || "Football",
+    homeIdentity: identities.home,
+    awayIdentity: identities.away,
+    competitionIdentity: identities.competition,
     status: displayStatus,
     minute,
     kickoff,

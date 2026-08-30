@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import AfriSportsIdentity from "./AfriSportsIdentity";
+import { AFRISPORTS_PRIMARY_NAVIGATION } from "../data/afriSportsCompetitionNavigation";
 
 function matchId(match) {
   return match?.raw?.id ?? match?.id ?? `${match?.homeTeam}-${match?.awayTeam}`;
@@ -21,6 +22,9 @@ function competitionName(match) {
 export default function AfriSportsMatchPredictor({
   fixtures = [],
   currentMatch = null,
+  activeView = "live",
+  onSelectView,
+  matchCounts = {},
   onSelectMatch
 }) {
   const [competition, setCompetition] = useState("ALL");
@@ -32,9 +36,33 @@ export default function AfriSportsMatchPredictor({
   }, [fixtures]);
 
   const matches = useMemo(() => {
-    if (competition === "ALL") return fixtures;
-    return fixtures.filter(match => competitionName(match) === competition);
-  }, [fixtures, competition]);
+    let filtered = fixtures;
+
+    if (activeView === "live") {
+      filtered = filtered.filter(match => String(match?.status || "").toLowerCase().includes("live"));
+    } else if (activeView === "today") {
+      filtered = filtered.filter(match => {
+        const value = match?.kickoff ? new Date(match.kickoff) : null;
+        if (!value || Number.isNaN(value.getTime())) return false;
+        const now = new Date();
+        return value.toDateString() === now.toDateString();
+      });
+    } else if (activeView === "tomorrow") {
+      filtered = filtered.filter(match => {
+        const value = match?.kickoff ? new Date(match.kickoff) : null;
+        if (!value || Number.isNaN(value.getTime())) return false;
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        return value.toDateString() === tomorrow.toDateString();
+      });
+    }
+
+    if (competition !== "ALL") {
+      filtered = filtered.filter(match => competitionName(match) === competition);
+    }
+
+    return filtered;
+  }, [fixtures, activeView, competition]);
 
   const selectedMatch = useMemo(
     () =>
@@ -59,22 +87,23 @@ export default function AfriSportsMatchPredictor({
         </div>
       </div>
 
-      <div className="afrisports-league-tabs">
-        <select
-          value={competition}
-          onChange={event => {
-            setCompetition(event.target.value);
-            setSelectedId("");
-            onSelectMatch?.(null);
-          }}
-          aria-label="Select competition"
-        >
-          {competitions.map(item => (
-            <option key={item} value={item}>
-              {item === "ALL" ? "All Competitions" : item}
-            </option>
-          ))}
-        </select>
+      <div className="afrisports-primary-tabs" aria-label="AfriSports match filters">
+        {AFRISPORTS_PRIMARY_NAVIGATION.map(item => {
+          const count = matchCounts[item.id] ?? 0;
+
+          return (
+            <button
+              key={item.id}
+              type="button"
+              className={`afrisports-primary-tab ${activeView === item.id ? "is-active" : ""}`}
+              onClick={() => onSelectView?.(item.id)}
+            >
+              <span>{item.icon}</span>
+              <strong>{item.label}</strong>
+              {count > 0 && <small>{count}</small>}
+            </button>
+          );
+        })}
       </div>
 
       <div className="afrisports-selected-match">
