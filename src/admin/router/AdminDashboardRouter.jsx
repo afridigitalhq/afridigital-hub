@@ -3,6 +3,7 @@ import React from "react";
 import AdminDashboardPlaceholder from "../dashboards/AdminDashboardPlaceholder";
 import AfriAIDashboard from "../../control-room/afrai/dashboard/AfriAIDashboard";
 import AfriCCTV from "../../pages/admin/modules/AfriCCTV";
+import AfriSportsAdmin from "../../pages/admin/modules/AfriSports";
 
 const dashboards = {
   "command-center": <AdminCommandCenter />,
@@ -29,9 +30,7 @@ const dashboards = {
     <AdminDashboardPlaceholder title="🎓 AfriEducation Admin" />
   ),
 
-  afrisports: (
-    <AdminDashboardPlaceholder title="🏆 AfriSports Admin" />
-  ),
+  afrisports: <AfriSportsAdmin />,
 
   afriboost: (
     <AdminDashboardPlaceholder title="🚀 AfriBoost Admin" />

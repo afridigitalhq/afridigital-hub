@@ -1,0 +1,22 @@
+.afrisports-admin-shell {
+  width: 100%;
+}
+
+.afrisports-admin-header {
+  padding: 24px;
+}
+
+.afrisports-admin-header span {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+
+.afrisports-admin-header h1 {
+  margin: 6px 0;
+}
+
+.afrisports-admin-header p {
+  margin: 0;
+  opacity: 0.75;
+}
