@@ -2342,3 +2342,181 @@
     font-size: 1.15rem !important;
   }
 }
+
+/* =========================================================
+   AFRISPORTS FOOTBALL NEWS — LARGE EMBEDDED VIDEO
+   Mock provider media only — backend/API unchanged
+   ========================================================= */
+
+.afrisports-football-news {
+  padding: clamp(20px, 4vw, 32px) !important;
+}
+
+.afrisports-football-news-heading {
+  justify-content: center !important;
+  text-align: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.afrisports-football-news-heading > div {
+  width: 100%;
+}
+
+.afrisports-football-news-heading .afrisports-kicker {
+  font-size: clamp(1.45rem, 5vw, 2.35rem) !important;
+  color: #fff !important;
+  text-align: center;
+}
+
+.afrisports-football-news-heading h2 {
+  color: #fff !important;
+  font-size: clamp(1rem, 2.8vw, 1.3rem) !important;
+  text-align: center;
+}
+
+.afrisports-football-news-badge {
+  align-self: center;
+}
+
+.afrisports-news-list {
+  display: grid;
+  gap: 18px;
+}
+
+.afrisports-news-article {
+  display: block !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.afrisports-news-article.is-video .afrisports-news-video {
+  width: 100%;
+  height: clamp(220px, 52vw, 460px);
+  border-radius: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.afrisports-news-article.is-video .afrisports-news-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.afrisports-news-article-content {
+  padding: 18px 20px 20px;
+}
+
+.afrisports-news-article h3 {
+  color: #fff !important;
+  font-size: clamp(1.05rem, 2.8vw, 1.45rem) !important;
+  line-height: 1.25;
+}
+
+.afrisports-news-article p {
+  color: rgba(255,255,255,.9) !important;
+  font-size: .92rem !important;
+  line-height: 1.5;
+}
+
+.afrisports-news-source {
+  color: #fff !important;
+}
+
+.afrisports-news-meta {
+  color: rgba(255,255,255,.82) !important;
+}
+
+@media (max-width: 520px) {
+  .afrisports-news-article.is-video .afrisports-news-video {
+    height: 220px;
+  }
+
+  .afrisports-news-article-content {
+    padding: 16px;
+  }
+}
+
+/* AFRISPORTS FOOTBALL NEWS — LARGE EMBEDDED VIDEO MOCK */
+.afrisports-football-news {
+  padding: clamp(20px, 4vw, 32px) !important;
+}
+.afrisports-football-news-heading {
+  justify-content: center !important;
+  text-align: center;
+  flex-direction: column;
+  gap: 8px;
+}
+.afrisports-football-news-heading > div {
+  width: 100%;
+}
+.afrisports-football-news-heading .afrisports-kicker {
+  font-size: clamp(1.45rem, 5vw, 2.35rem) !important;
+  color: #fff !important;
+  text-align: center;
+}
+.afrisports-football-news-heading h2 {
+  color: #fff !important;
+  font-size: clamp(1rem, 2.8vw, 1.3rem) !important;
+  text-align: center;
+}
+.afrisports-football-news-badge {
+  align-self: center;
+}
+.afrisports-news-list {
+  display: grid;
+  gap: 18px;
+}
+.afrisports-news-article {
+  display: block !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.14);
+}
+.afrisports-news-article.is-video .afrisports-news-video {
+  width: 100%;
+  height: clamp(220px, 52vw, 460px);
+  border-radius: 0;
+  overflow: hidden;
+  background: #000;
+}
+.afrisports-news-article.is-video .afrisports-news-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.afrisports-news-article-content {
+  padding: 18px 20px 20px;
+}
+.afrisports-news-article h3 {
+  color: #fff !important;
+  font-size: clamp(1.05rem, 2.8vw, 1.45rem) !important;
+  line-height: 1.25;
+}
+.afrisports-news-article p {
+  color: rgba(255,255,255,.9) !important;
+  font-size: .92rem !important;
+  line-height: 1.5;
+}
+.afrisports-news-source {
+  color: #fff !important;
+}
+.afrisports-news-meta {
+  color: rgba(255,255,255,.82) !important;
+}
+@media (max-width: 520px) {
+  .afrisports-news-article.is-video .afrisports-news-video {
+    height: 220px;
+  }
+  .afrisports-news-article-content {
+    padding: 16px;
+  }
+}

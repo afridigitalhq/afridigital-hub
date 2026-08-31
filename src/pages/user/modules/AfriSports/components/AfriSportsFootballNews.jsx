@@ -10,7 +10,7 @@ const DEMO_NEWS = [
     url: "#",
     videoUrl: "",
     videoProvider: "",
-    videoEmbedUrl: "",
+    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/VzPAbcX_lAc",
     branding: "AfriSports",
   },
   {
@@ -24,7 +24,7 @@ const DEMO_NEWS = [
     url: "#",
     videoUrl: "",
     videoProvider: "",
-    videoEmbedUrl: "",
+    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/VzPAbcX_lAc",
     branding: "AfriSports",
   },
 ];
