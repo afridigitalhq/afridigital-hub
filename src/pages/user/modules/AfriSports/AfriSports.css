@@ -1829,3 +1829,516 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* AfriSports Football News — API + video-provider ready */
+.afrisports-football-news {
+  width: 100%;
+  margin: 24px 0;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: var(--afriglass-radius, var(--afri-radius));
+  background: var(--afri-card-bg, var(--afri-surface));
+  color: var(--afri-text, #fff);
+  overflow: hidden;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.afrisports-football-news-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.afrisports-football-news-heading .afrisports-kicker {
+  display: block;
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  line-height: 1.1;
+  font-weight: 950;
+  letter-spacing: .04em;
+}
+
+.afrisports-football-news-heading h2 {
+  margin: 7px 0 0;
+  color: var(--afri-muted, rgba(255,255,255,.7));
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.afrisports-football-news-badge {
+  flex: 0 0 auto;
+  padding: 7px 11px;
+  border: 1px solid var(--afri-primary-border, var(--afri-border));
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+}
+
+.afrisports-news-list {
+  display: grid;
+  gap: 12px;
+}
+
+.afrisports-news-article {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  background: rgba(255,255,255,.025);
+}
+
+.afrisports-news-article-image,
+.afrisports-news-article-placeholder {
+  width: 86px;
+  height: 74px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.afrisports-news-article-placeholder {
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.06);
+  font-size: 1.7rem;
+}
+
+.afrisports-news-video,
+.afrisports-news-video-player {
+  width: 86px;
+  height: 74px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.afrisports-news-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.afrisports-news-video-player {
+  display: block;
+  object-fit: cover;
+}
+
+.afrisports-news-article-content {
+  min-width: 0;
+}
+
+.afrisports-news-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  margin-bottom: 4px;
+}
+
+.afrisports-news-source {
+  display: block;
+  color: var(--afri-muted, rgba(255,255,255,.58));
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.afrisports-news-video-label {
+  padding: 3px 6px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 5px;
+  font-size: .58rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+
+.afrisports-news-article h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 850;
+}
+
+.afrisports-news-article p {
+  margin: 6px 0 0;
+  color: var(--afri-muted, rgba(255,255,255,.68));
+  font-size: .82rem;
+  line-height: 1.4;
+}
+
+.afrisports-news-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+  color: var(--afri-muted, rgba(255,255,255,.5));
+  font-size: .7rem;
+}
+
+.afrisports-news-meta a {
+  color: inherit;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.afrisports-news-state {
+  padding: 28px 16px;
+  border: 1px dashed rgba(255,255,255,.12);
+  border-radius: 12px;
+  color: var(--afri-muted, rgba(255,255,255,.65));
+  text-align: center;
+}
+
+.afrisports-news-state.is-error {
+  border-color: rgba(255,90,90,.3);
+}
+
+@media (max-width: 520px) {
+  .afrisports-football-news {
+    padding: 18px;
+  }
+
+  .afrisports-football-news-heading {
+    align-items: flex-start;
+  }
+
+  .afrisports-football-news-heading .afrisports-kicker {
+    font-size: 1.15rem;
+  }
+
+  .afrisports-news-article {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .afrisports-news-article-image,
+  .afrisports-news-article-placeholder,
+  .afrisports-news-video,
+  .afrisports-news-video-player {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+
+/* =========================================================
+   AFRISPORTS — AI + FOOTBALL NEWS VISUAL CLARITY PATCH
+   Visual only: no logic, API, or backend changes
+   ========================================================= */
+
+.afrisports-ai-heading .afrisports-kicker {
+  color: #ffffff !important;
+  font-size: clamp(2rem, 6vw, 3.4rem) !important;
+  line-height: 1.02 !important;
+  font-weight: 950 !important;
+  letter-spacing: .055em !important;
+  text-shadow: 0 2px 14px rgba(0,0,0,.35);
+}
+
+.afrisports-ai-heading .afrisports-kicker::before {
+  content: "⚽ ";
+}
+
+.afrisports-ai-heading h2 {
+  color: #ffffff !important;
+  font-size: clamp(1.35rem, 3.5vw, 1.9rem) !important;
+  font-weight: 950 !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,.3);
+}
+
+.afrisports-ai-identities {
+  color: #ffffff !important;
+}
+
+.afrisports-ai-identities .afrisports-identity-name {
+  color: #ffffff !important;
+  font-size: clamp(1.45rem, 3.5vw, 2rem) !important;
+  font-weight: 950 !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,.35);
+}
+
+.afrisports-ai-identities > span {
+  color: #ffffff !important;
+  opacity: .9 !important;
+  font-size: 1rem !important;
+  font-weight: 950 !important;
+}
+
+.afrisports-ai-identities .afrisports-identity-country,
+.afrisports-ai-identities .afrisports-identity-type {
+  color: #ffffff !important;
+  opacity: .85 !important;
+}
+
+.afrisports-football-news-heading .afrisports-kicker {
+  color: #ffffff !important;
+  font-size: clamp(1.65rem, 4.5vw, 2.5rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 950 !important;
+  letter-spacing: .035em !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.afrisports-football-news-heading h2 {
+  color: #ffffff !important;
+  font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+  font-weight: 850 !important;
+  opacity: 1 !important;
+}
+
+.afrisports-news-source,
+.afrisports-news-article h3,
+.afrisports-news-article p,
+.afrisports-news-meta,
+.afrisports-news-state {
+  color: #ffffff !important;
+}
+
+.afrisports-news-article h3 {
+  font-weight: 900 !important;
+}
+
+.afrisports-news-article p {
+  opacity: .88 !important;
+}
+
+.afrisports-news-meta {
+  opacity: .82 !important;
+}
+
+/* =========================================================
+   AFRISPORTS — FINAL AI + NEWS HEADER ALIGNMENT
+   VISUAL ONLY — NO LOGIC / API / BACKEND CHANGES
+   ========================================================= */
+
+.afrisports-ai-heading {
+  position: relative;
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding-right: 0 !important;
+}
+
+.afrisports-ai-heading > div {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.afrisports-ai-heading .afrisports-kicker {
+  display: block !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+  font-size: clamp(1.55rem, 5vw, 3rem) !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: .025em !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.afrisports-ai-heading .afrisports-kicker::before {
+  content: "⚽ ";
+}
+
+.afrisports-ai-heading h2 {
+  display: block !important;
+  width: 100%;
+  margin: 10px 0 0 !important;
+  color: #ffffff !important;
+  font-size: clamp(1.15rem, 3.5vw, 1.8rem) !important;
+  line-height: 1.1 !important;
+  font-weight: 950 !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,.35);
+}
+
+.afrisports-ai-identities {
+  color: #ffffff !important;
+}
+
+.afrisports-ai-identities .afrisports-identity-name {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 950 !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,.35);
+}
+
+/* Keep AI INSIGHT badge inside the card/header bounds */
+.afrisports-ai-heading > .afrisports-ai-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  white-space: nowrap;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 900 !important;
+}
+
+/* Football News — same bright visual hierarchy */
+.afrisports-football-news-heading {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.afrisports-football-news-heading .afrisports-kicker {
+  display: block !important;
+  color: #ffffff !important;
+  font-size: clamp(1.7rem, 5vw, 2.7rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 950 !important;
+  letter-spacing: .025em !important;
+  white-space: nowrap !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.afrisports-football-news-heading h2 {
+  color: #ffffff !important;
+  font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+}
+
+/* Brighten supporting Football News text */
+.afrisports-football-news .afrisports-news-source,
+.afrisports-football-news .afrisports-news-article h3,
+.afrisports-football-news .afrisports-news-article p,
+.afrisports-football-news .afrisports-news-meta,
+.afrisports-football-news .afrisports-news-state {
+  color: #ffffff !important;
+}
+
+.afrisports-football-news .afrisports-news-article p {
+  opacity: .9 !important;
+}
+
+.afrisports-football-news .afrisports-news-meta {
+  opacity: .88 !important;
+}
+
+@media (max-width: 520px) {
+  .afrisports-ai-heading .afrisports-kicker {
+    font-size: clamp(1.25rem, 6vw, 1.8rem) !important;
+    letter-spacing: .015em !important;
+  }
+
+  .afrisports-ai-heading h2 {
+    font-size: 1.15rem !important;
+  }
+
+  .afrisports-ai-heading > .afrisports-ai-badge {
+    position: static;
+    display: table;
+    margin: 10px auto 0;
+  }
+
+  .afrisports-football-news-heading .afrisports-kicker {
+    font-size: clamp(1.2rem, 5.8vw, 1.8rem) !important;
+  }
+}
+
+/* =========================================================
+   AFRISPORTS — FINAL COMPACT CENTERED TYPOGRAPHY
+   VISUAL ONLY
+   ========================================================= */
+
+.afrisports-ai-heading .afrisports-kicker {
+  font-size: clamp(1.15rem, 4vw, 2.35rem) !important;
+  letter-spacing: .015em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  text-align: center !important;
+}
+
+.afrisports-ai-heading h2 {
+  text-align: center !important;
+}
+
+.afrisports-football-news-heading {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.afrisports-football-news-heading > div {
+  width: 100%;
+  text-align: center;
+}
+
+.afrisports-football-news-heading .afrisports-kicker {
+  font-size: clamp(1.15rem, 4vw, 2.1rem) !important;
+  letter-spacing: .015em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  text-align: center !important;
+}
+
+.afrisports-football-news-heading h2 {
+  text-align: center !important;
+}
+
+/* Center AI prediction cards */
+.afrisports-ai-card {
+  text-align: center !important;
+  justify-items: center;
+  align-items: center;
+}
+
+.afrisports-ai-card > span,
+.afrisports-ai-card > strong,
+.afrisports-ai-card > small,
+.afrisports-ai-card p {
+  text-align: center !important;
+}
+
+.afrisports-ai-probabilities {
+  text-align: center !important;
+}
+
+.afrisports-probability-columns {
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+}
+
+.afrisports-probability-columns > div {
+  text-align: center !important;
+}
+
+.afrisports-ai-insight {
+  text-align: center !important;
+}
+
+.afrisports-ai-insight p {
+  text-align: center !important;
+}
+
+@media (max-width: 520px) {
+  .afrisports-ai-heading .afrisports-kicker {
+    font-size: 1.15rem !important;
+  }
+
+  .afrisports-football-news-heading .afrisports-kicker {
+    font-size: 1.15rem !important;
+  }
+}
