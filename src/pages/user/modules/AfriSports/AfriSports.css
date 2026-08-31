@@ -74,6 +74,62 @@
 }
 
 .afrisports-panel-heading,
+.afrisports-ai-heading .afrisports-kicker {
+  display: block;
+  width: 100%;
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  line-height: 1;
+  letter-spacing: .08em;
+  font-weight: 950;
+  opacity: 1;
+  filter: none;
+}
+
+.afrisports-ai-heading h2 {
+  text-align: center;
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+  font-weight: 900;
+  filter: none;
+}
+
+.afrisports-ai-identities {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 5vw, 42px);
+  margin-top: 18px;
+  filter: none;
+}
+
+.afrisports-ai-identities > span {
+  flex: 0 0 auto;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.afrisports-ai-identities .afrisports-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.afrisports-ai-identities .afrisports-identity-visual {
+  width: 64px;
+  height: 64px;
+}
+
+.afrisports-ai-identities .afrisports-identity-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+}
+
 .afrisports-ai-heading {
   display: flex;
   justify-content: space-between;
@@ -303,8 +359,7 @@
 }
 
 .afrisports-stat-card span,
-.afrisports-stat-grid span,
-.afrisports-ai-card span {
+.afrisports-stat-grid span {
   font-size: .75rem;
   opacity: .62;
 }
@@ -355,18 +410,8 @@
   gap: 7px;
 }
 
-.afrisports-ai-card strong {
-  font-size: 1.25rem;
-}
-
-.afrisports-ai-card small {
-  opacity: .5;
-}
-
 .afrisports-ai-insight p {
   margin: 0;
-  line-height: 1.6;
-  opacity: .8;
 }
 
 @media (max-width: 1050px) {
@@ -809,39 +854,89 @@
   .afrisports-probability-columns > div {
     padding: 10px 4px;
   }
+      }
+
+
+/* =========================================================
+   AFRIAI CARD — SINGLE TYPOGRAPHY SOURCE OF TRUTH
+   ========================================================= */
+
+.afrisports-ai-heading h2 {
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -.015em;
+}
+
+.afrisports-ai-card > span {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.afrisports-ai-card > strong {
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -.02em;
+}
+
+.afrisports-ai-card small {
+  font-size: .84rem;
+  line-height: 1.45;
+  font-weight: 500;
+  opacity: .62;
+}
+
+.afrisports-probability-columns small {
+  font-size: .72rem;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: .14em;
+  opacity: .58;
+}
+
+.afrisports-probability-columns strong {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  line-height: 1;
+  font-weight: 900;
+}
+
+.afrisports-probability-columns em {
+  font-size: .82rem;
+  line-height: 1.2;
+  font-weight: 600;
+  opacity: .62;
+}
+
+.afrisports-ai-score > strong {
+  font-size: clamp(2.1rem, 4vw, 2.5rem);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: .025em;
+}
+
+.afrisports-ai-insight p {
+  font-size: .94rem;
+  line-height: 1.55;
+  font-weight: 500;
+  opacity: .8;
+}
+
+@media (max-width: 520px) {
   .afrisports-probability-columns strong {
-    font-size: 1.45rem;
+    font-size: 1.55rem;
   }
+
   .afrisports-probability-columns small {
-    font-size: .7rem;
+    font-size: .68rem;
   }
+
   .afrisports-probability-columns em {
     font-size: .74rem;
   }
 }
-
-
-/* AfriAI scorecard readability */
-.afrisports-ai-card > span {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: .02em;
-}
-.afrisports-ai-card > strong {
-  font-size: 1.55rem;
-  line-height: 1.2;
-  font-weight: 800;
-}
-.afrisports-ai-card small {
-  font-size: .9rem;
-  line-height: 1.4;
-}
-.afrisports-ai-insight p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-
 
 
 /* =========================================================
@@ -934,7 +1029,10 @@
 }
 
 .afrisports-identity-lg .afrisports-identity-name {
-  font-size: 1rem;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -.015em;
 }
 
 .afrisports-identity-lg .afrisports-identity-country,
@@ -990,12 +1088,36 @@
   justify-content: center;
 }
 
+/* AfriAI match identity — canonical visual hierarchy */
 .afrisports-ai-identities {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-top: 0.5rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.afrisports-ai-identities .afrisports-identity {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+}
+
+.afrisports-ai-identities .afrisports-identity-name {
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -.015em;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.afrisports-ai-identities > span {
+  flex: 0 0 auto;
+  font-size: .9rem;
+  font-weight: 700;
+  opacity: .55;
 }
 
 .afrisports-event-team .afrisports-identity-name {
@@ -1035,7 +1157,8 @@
   background:
     radial-gradient(circle at 50% 0%, rgba(0, 212, 255, .08), transparent 42%),
     var(--afri-card-bg, var(--afri-surface));
-  backdrop-filter: blur(var(--afriglass-blur, 18px));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   color: var(--afri-text, #fff);
   overflow: hidden;
 }
@@ -1158,27 +1281,29 @@
   cursor: not-allowed;
 }
 
-.afrisports-selected-match {
+ .afrisports-selected-match {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   width: 100%;
   margin-top: 14px;
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid var(--afri-primary-border, var(--afri-border));
   border-radius: 16px;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(0, 212, 255, .10), transparent 55%),
-    rgba(255, 255, 255, .045);
+  background: rgba(255, 255, 255, .035);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  filter: none;
 }
 
-.afrisports-selected-team {
+ .afrisports-selected-team {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   min-width: 0;
 }
 
@@ -1205,11 +1330,28 @@
   font-size: 1.35rem;
 }
 
-.afrisports-selected-vs {
-  color: var(--afri-muted, rgba(255, 255, 255, .65));
-  font-size: .78rem;
+ .afrisports-selected-vs {
+  color: var(--afri-text, #fff);
+  font-size: .95rem;
   font-weight: 900;
   letter-spacing: .12em;
+}
+
+.afrisports-selected-team .afrisports-identity {
+  display: flex;
+  justify-content: center;
+}
+
+.afrisports-selected-team .afrisports-identity-visual {
+  width: 58px;
+  height: 58px;
+}
+
+.afrisports-selected-team .afrisports-identity-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
 }
 
 .afrisports-selected-match-meta {
@@ -1626,5 +1768,64 @@
     width: min(300px, calc(100vw - 28px));
     height: 292px;
     max-height: 292px;
+  }
+}
+
+
+/* AfriAI prediction calculation state */
+.afrisports-ai-busy {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.afrisports-ai-busy strong {
+  font-size: 1.05rem;
+}
+
+.afrisports-ai-busy span {
+  opacity: .72;
+  font-size: .9rem;
+}
+
+
+/* Compact four-filter dropdown layout */
+.afrisports-filter-dropdowns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.afrisports-filter-dropdown {
+  min-width: 0;
+}
+
+.afrisports-filter-dropdown label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.afrisports-filter-dropdown select {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .afrisports-filter-dropdowns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .afrisports-filter-dropdowns {
+    grid-template-columns: 1fr;
   }
 }
