@@ -110,6 +110,8 @@ function normalize(match){
 
 export default function useAfriSportsFeed(){
   const [matches,setMatches] = useState([]);
+  const [liveMatches,setLiveMatches] = useState([]);
+  const [tomorrowMatches,setTomorrowMatches] = useState([]);
   const [loading,setLoading] = useState(true);
   const [error,setError] = useState(null);
   const [selectedMatch,setSelectedMatch] = useState(null);
@@ -118,29 +120,57 @@ export default function useAfriSportsFeed(){
   useEffect(()=>{
     async function load(){
       try{
-        console.log("AFRISPORTS FETCH:", `${API}/today`);
+        console.log("AFRISPORTS FETCH:", `${API}/live`, `${API}/today`);
 
-        const response = await fetch(`${API}/today`);
+        const [liveResponse, todayResponse, tomorrowResponse] = await Promise.all([
+          fetch(`${API}/live`),
+          fetch(`${API}/today`),
+          fetch(`${API}/tomorrow`)
+        ]);
 
-        console.log("AFRISPORTS STATUS:", response.status);
+        console.log(
+          "AFRISPORTS STATUS:",
+          {
+            live: liveResponse.status,
+            today: todayResponse.status,
+            tomorrow: tomorrowResponse.status
+          }
+        );
 
-        const data = await response.json();
+        const liveData = liveResponse.ok ? await liveResponse.json() : { matches: [] };
+        const data = todayResponse.ok ? await todayResponse.json() : { matches: [] };
+        const tomorrowData = tomorrowResponse.ok ? await tomorrowResponse.json() : { matches: [] };
 
-        console.log("AFRISPORTS DATA:", data);
+        console.log("AFRISPORTS LIVE DATA:", liveData);
+        console.log("AFRISPORTS TODAY DATA:", data);
+        console.log("AFRISPORTS TOMORROW DATA:", tomorrowData);
 
-        if (!response.ok) {
+        if (!todayResponse.ok) {
           throw new Error(
             data?.message ||
             data?.error ||
-            `AfriSports request failed (${response.status})`
+            `AfriSports today request failed (${todayResponse.status})`
           );
         }
 
-        const items = (data.matches || []).map(normalize);
+        const items = Array.from(new Map((data.matches || []).map((match) => [String(match?.id ?? match?.metadata?.providerMatchId ?? ""), match])).values()).map(normalize);
+        const liveItems = (liveData?.matches || []).map(normalize);
+        const tomorrowItems = (tomorrowData?.matches || []).map(normalize);
 
         setMatches(items);
-        console.log("AFRISPORTS ITEMS:", items.length, items[0]);
-        setSelectedMatch(items[0] || null);
+        setLiveMatches(liveItems);
+        setTomorrowMatches(tomorrowItems);
+
+        console.log("AFRISPORTS ITEMS:", {
+          today: items.length,
+          live: liveItems.length,
+          tomorrow: tomorrowItems.length,
+          firstToday: items[0],
+          firstLive: liveItems[0],
+          firstTomorrow: tomorrowItems[0]
+        });
+
+        setSelectedMatch(liveItems[0] || items[0] || tomorrowItems[0] || null);
         setLoading(false);
 
         const predictionEntries = await Promise.all(items.map(async (item) => {
@@ -166,6 +196,9 @@ export default function useAfriSportsFeed(){
 
   return {
     fixtures: matches,
+    liveFixtures: liveMatches,
+    todayFixtures: matches,
+    tomorrowFixtures: tomorrowMatches,
     selectedMatch,
     predictions,
     loading,
