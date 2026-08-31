@@ -157,7 +157,7 @@ export default function AfriSportsMatchCenter({ match, activeFeature, loading, e
         }}
         aria-label={`Watch ${safeMatch.homeTeam} vs ${safeMatch.awayTeam} live`}
       >
-        📺 Watch Live
+        Watch Live
       </button>
     </section>
   );
