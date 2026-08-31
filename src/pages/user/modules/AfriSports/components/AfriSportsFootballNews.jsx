@@ -10,7 +10,7 @@ const DEMO_NEWS = [
     url: "#",
     videoUrl: "",
     videoProvider: "",
-    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/VzPAbcX_lAc",
+    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/VzPAbcX_lAc?autoplay=1&mute=1&playsinline=1&enablejsapi=1",
     branding: "AfriSports",
   },
   {
@@ -24,7 +24,21 @@ const DEMO_NEWS = [
     url: "#",
     videoUrl: "",
     videoProvider: "",
-    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/VzPAbcX_lAc",
+    videoEmbedUrl: "https://www.youtube-nocookie.com/embed/SxiMucn6hTc?autoplay=1&mute=1&playsinline=1&enablejsapi=1",
+    branding: "AfriSports",
+  },
+  {
+    id: "demo-3",
+    type: "article",
+    title: "Premier League Matchday Stories",
+    summary: "Latest football stories, match reactions and competition updates will appear here when the news provider is connected.",
+    source: "AfriSports News",
+    publishedAt: "LATEST",
+    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80",
+    url: "#",
+    videoUrl: "",
+    videoProvider: "",
+    videoEmbedUrl: "",
     branding: "AfriSports",
   },
 ];
@@ -33,6 +47,7 @@ function NewsMedia({ article }) {
   if (article.videoEmbedUrl) {
     return (
       <div className="afrisports-news-video">
+        <span className="afrisports-news-watermark" aria-hidden="true">AFRISPORTS</span>
         <iframe
           src={article.videoEmbedUrl}
           title={article.title}
@@ -46,14 +61,17 @@ function NewsMedia({ article }) {
 
   if (article.videoUrl) {
     return (
-      <video
+      <div className="afrisports-news-video-player-wrap">
+        <span className="afrisports-news-watermark" aria-hidden="true">AFRISPORTS</span>
+        <video
         className="afrisports-news-video-player"
         controls
         preload="metadata"
         poster={article.image || undefined}
       >
         <source src={article.videoUrl} type="video/mp4" />
-      </video>
+        </video>
+      </div>
     );
   }
 
