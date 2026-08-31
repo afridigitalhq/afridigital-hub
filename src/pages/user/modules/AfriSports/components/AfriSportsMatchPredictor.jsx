@@ -120,6 +120,17 @@ export default function AfriSportsMatchPredictor({
     onSelectView?.(view);
   };
 
+  const selectFromDropdown = (event, view, matches) => {
+    const id = String(event.target.value || "");
+    onSelectView?.(view);
+    if (!id) {
+      setSelectedId("");
+      return;
+    }
+    const match = matches.find((item) => String(matchId(item)) === id);
+    if (match) selectMatch(match);
+  };
+
   const selectMatch = (match) => {
     const id = String(matchId(match));
     setSelectedId(id);
@@ -211,7 +222,7 @@ export default function AfriSportsMatchPredictor({
           <select
             id="afrisports-live-filter"
             value={activeView === "live" ? "live" : ""}
-            onChange={() => openView("live")}
+            onChange={(event) => selectFromDropdown(event, "live", liveMatches)}
           >
             <option value="">🟢 Live matches</option>
             {liveMatches.map((match) => (
@@ -234,7 +245,7 @@ export default function AfriSportsMatchPredictor({
           <select
             id="afrisports-today-filter"
             value={activeView === "today" ? "today" : ""}
-            onChange={() => openView("today")}
+            onChange={(event) => selectFromDropdown(event, "today", todayMatches)}
           >
             <option value="">📅 Today's matches</option>
             {todayMatches.map((match) => (
@@ -257,7 +268,7 @@ export default function AfriSportsMatchPredictor({
           <select
             id="afrisports-tomorrow-filter"
             value={activeView === "tomorrow" ? "tomorrow" : ""}
-            onChange={() => openView("tomorrow")}
+            onChange={(event) => selectFromDropdown(event, "tomorrow", tomorrowMatches)}
           >
             <option value="">⏭️ Tomorrow's matches</option>
             {tomorrowMatches.map((match) => (
