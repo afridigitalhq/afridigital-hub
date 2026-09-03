@@ -46,6 +46,8 @@ export default function AfriSportsMatchPredictor({
   liveFixtures = [],
   todayFixtures = [],
   tomorrowFixtures = [],
+  allFixtures = [],
+  matchCounts = {},
   currentMatch = null,
   activeView = "live",
   onSelectView,
@@ -55,6 +57,8 @@ export default function AfriSportsMatchPredictor({
 }) {
   const [competition, setCompetition] = useState("ALL");
   const [selectedId, setSelectedId] = useState("");
+  const [selectedMatchState, setSelectedMatchState] = useState(null);
+  const [showMatchResults, setShowMatchResults] = useState(false);
 
   const competitionName = (match) =>
     match?.competition ??
@@ -80,51 +84,64 @@ export default function AfriSportsMatchPredictor({
           (match) => competitionName(match) === competition
         );
 
-  const liveMatches = useMemo(() => filterCompetition(liveFixtures.length ? liveFixtures : fixtures.filter((match) => match?.status === "LIVE" || match?.live === true)), [liveFixtures, fixtures, competition]);
+  const liveMatches = useMemo(
+    () =>
+      filterCompetition(
+        liveFixtures.filter((match) => match?.status === "LIVE")
+      ),
+    [liveFixtures, competition]
+  );
   const todayMatches = useMemo(() => filterCompetition(todayFixtures.length ? todayFixtures : fixtures), [todayFixtures, fixtures, competition]);
   const tomorrowMatches = useMemo(
     () => filterCompetition(tomorrowFixtures),
     [tomorrowFixtures, competition]
   );
 
-  const competitions = useMemo(() => {
-    const values = [
-      ...fixtures,
-      ...liveFixtures,
-      ...todayFixtures,
-      ...tomorrowFixtures,
-    ]
-      .map(competitionName)
-      .filter(Boolean);
+  const allMatches = useMemo(
+    () => filterCompetition(allFixtures),
+    [allFixtures, competition]
+  );
 
-    return Array.from(new Set(values));
-  }, [fixtures, liveFixtures, todayFixtures, tomorrowFixtures]);
+  const competitionCounts = useMemo(() => {
+    const counts = new Map();
 
-  const selectedMatch = useMemo(() => {
-    const allMatches = [
-      ...liveMatches,
-      ...todayMatches,
-      ...tomorrowMatches,
-    ];
+    for (const match of allFixtures) {
+      const name = competitionName(match);
+      if (!name) continue;
+      counts.set(name, (counts.get(name) || 0) + 1);
+    }
 
-    return (
-      allMatches.find(
-        (match) =>
-          String(matchId(match)) === String(selectedId)
-      ) ?? null
-    );
-  }, [liveMatches, todayMatches, tomorrowMatches, selectedId]);
+    return counts;
+  }, [allFixtures]);
+
+  const competitions = useMemo(
+    () => Array.from(competitionCounts.keys()),
+    [competitionCounts]
+  );
+
+  const counts = {
+    live: matchCounts.live ?? liveFixtures.length,
+    today: matchCounts.today ?? todayFixtures.length,
+    tomorrow: matchCounts.tomorrow ?? tomorrowFixtures.length,
+    all: matchCounts.all ?? allFixtures.length
+  };
+
+
+  const selectedMatch = selectedMatchState;
 
   const openView = (view) => {
     setSelectedId("");
+    setSelectedMatchState(null);
     onSelectView?.(view);
   };
 
   const selectFromDropdown = (event, view, matches) => {
     const id = String(event.target.value || "");
+    setShowMatchResults(false);
     onSelectView?.(view);
     if (!id) {
       setSelectedId("");
+      setSelectedMatchState(null);
       return;
     }
     const match = matches.find((item) => String(matchId(item)) === id);
@@ -132,8 +149,10 @@ export default function AfriSportsMatchPredictor({
   };
 
   const selectMatch = (match) => {
+    if (!match) return;
     const id = String(matchId(match));
     setSelectedId(id);
+    setSelectedMatchState(match);
     onSelectMatch?.(match);
   };
 
@@ -158,32 +177,40 @@ export default function AfriSportsMatchPredictor({
               }`}
               onClick={() => selectMatch(match)}
             >
-              <AfriSportsIdentity
-                identity={match.homeIdentity}
-                size="sm"
-                showName={false}
-                showCountry={false}
-              />
+              <div className="afrisports-predictor-match-main">
+                <AfriSportsIdentity
+                  identity={match.homeIdentity}
+                  size="sm"
+                  showName={false}
+                  showCountry={false}
+                />
 
-              <span>
                 <strong>{teamName(match, "homeTeam")}</strong>
-                <small>VS</small>
+                <span className="afrisports-predictor-match-vs">VS</span>
                 <strong>{teamName(match, "awayTeam")}</strong>
-              </span>
 
-              <AfriSportsIdentity
-                identity={match.awayIdentity}
-                size="sm"
-                showName={false}
-                showCountry={false}
-              />
+                <AfriSportsIdentity
+                  identity={match.awayIdentity}
+                  size="sm"
+                  showName={false}
+                  showCountry={false}
+                />
+              </div>
 
-              <em>
-                {match.minute ||
-                  match.kickoff ||
-                  match.status ||
-                  ""}
-              </em>
+              <small className="afrisports-predictor-match-meta">
+                {match.status === "LIVE" && match.minute
+                  ? `LIVE • ${match.minute}`
+                  : match.status && /finished|ft/i.test(String(match.status))
+                    ? `FT${match.homeScore != null && match.awayScore != null ? ` • ${match.homeScore}–${match.awayScore}` : ""}`
+                    : match.kickoff
+                      ? new Date(match.kickoff).toLocaleString([], {
+                          month: "short",
+                          day: "numeric",
+                          hour: "numeric",
+                          minute: "2-digit"
+                        })
+                      : match.status || ""}
+              </small>
             </button>
           );
         })
@@ -211,123 +238,90 @@ export default function AfriSportsMatchPredictor({
       </div>
 
       <div
-        className="afrisports-filter-dropdowns"
-        aria-label="AfriSports match filters"
+        className="afrisports-filter-dropdowns afrisports-unified-fixture-filters"
+        aria-label="AfriSports fixture filters"
       >
-        <div className="afrisports-filter-dropdown">
-          <label htmlFor="afrisports-live-filter">
-            🟢 Live
-          </label>
-
-          <select
-            id="afrisports-live-filter"
-            value={activeView === "live" ? "live" : ""}
-            onChange={(event) => selectFromDropdown(event, "live", liveMatches)}
-          >
-            <option value="">🟢 Live matches</option>
-            {liveMatches.map((match) => (
-              <option
-                key={String(matchId(match))}
-                value={String(matchId(match))}
-              >
-                {teamName(match, "homeTeam")} vs{" "}
-                {teamName(match, "awayTeam")}
-              </option>
-            ))}
-          </select>
+        <div className="afrisports-fixture-view-tabs">
+          {[
+            ["live", `🟢 Live (${counts.live})`],
+            ["today", `📅 Today (${counts.today})`],
+            ["tomorrow", `⏭️ Tomorrow (${counts.tomorrow})`],
+            ["all", `🏆 All Competitions (${counts.all})`]
+          ].map(([view, label]) => (
+            <button
+              key={view}
+              type="button"
+              className={`afrisports-fixture-view-tab ${
+                activeView === view ? "is-active" : ""
+              }`}
+              onClick={() => {
+                setCompetition("ALL");
+                setSelectedId("");
+                setSelectedMatchState(null);
+                setShowMatchResults(true);
+                onSelectView?.(view);
+              }}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
-        <div className="afrisports-filter-dropdown">
-          <label htmlFor="afrisports-today-filter">
-            📅 Today
-          </label>
+        <div className="afrisports-competition-tabs">
+          {competitions.map((name) => {
+            const count = competitionCounts.get(name) || 0;
 
-          <select
-            id="afrisports-today-filter"
-            value={activeView === "today" ? "today" : ""}
-            onChange={(event) => selectFromDropdown(event, "today", todayMatches)}
-          >
-            <option value="">📅 Today's matches</option>
-            {todayMatches.map((match) => (
-              <option
-                key={String(matchId(match))}
-                value={String(matchId(match))}
+            return (
+              <button
+                key={name}
+                type="button"
+                className={`afrisports-competition-tab ${
+                  activeView === "all" && competition === name
+                    ? "is-active"
+                    : ""
+                }`}
+                onClick={() => {
+                  setCompetition(name);
+                  setSelectedId("");
+                  setSelectedMatchState(null);
+                  setShowMatchResults(true);
+                  onSelectView?.("all");
+                }}
               >
-                {teamName(match, "homeTeam")} vs{" "}
-                {teamName(match, "awayTeam")}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="afrisports-filter-dropdown">
-          <label htmlFor="afrisports-tomorrow-filter">
-            ⏭️ Tomorrow
-          </label>
-
-          <select
-            id="afrisports-tomorrow-filter"
-            value={activeView === "tomorrow" ? "tomorrow" : ""}
-            onChange={(event) => selectFromDropdown(event, "tomorrow", tomorrowMatches)}
-          >
-            <option value="">⏭️ Tomorrow's matches</option>
-            {tomorrowMatches.map((match) => (
-              <option
-                key={String(matchId(match))}
-                value={String(matchId(match))}
-              >
-                {teamName(match, "homeTeam")} vs{" "}
-                {teamName(match, "awayTeam")}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="afrisports-filter-dropdown">
-          <label htmlFor="afrisports-competition-select">
-            🏆 Competition
-          </label>
-
-          <select
-            id="afrisports-competition-select"
-            value={competition}
-            onChange={(event) => {
-              setCompetition(event.target.value);
-              setSelectedId("");
-            }}
-          >
-            <option value="ALL">
-              🏆 All Competitions
-            </option>
-
-            {Object.entries(
-              AFRISPORTS_COMPETITIONS
-                .filter((item) => item.active !== false)
-                .reduce((groups, item) => {
-                  (groups[item.country] ||= []).push(item);
-                  return groups;
-                }, {})
-            ).map(([country, items]) => (
-              <optgroup key={country} label={country}>
-                {items.map((item) => (
-                  <option
-                    key={item.key}
-                    value={item.name}
-                  >
-                    {item.shortName} — {item.name}
-                  </option>
-                ))}
-              </optgroup>
-            ))}
-          </select>
+                {name} ({count})
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      <div className="afrisports-predictor-results">
-        {activeView === "live" && liveMatches.length > 0 && renderMatches(liveMatches, "")}
-        {activeView === "today" && todayMatches.length > 0 && renderMatches(todayMatches, "")}
-        {activeView === "tomorrow" && tomorrowMatches.length > 0 && renderMatches(tomorrowMatches, "")}
-      </div>
+      {showMatchResults && (
+        <div className="afrisports-predictor-results">
+          {activeView === "live" &&
+            renderMatches(
+              liveMatches,
+              "No live matches available."
+            )}
+
+          {activeView === "today" &&
+            renderMatches(
+              todayMatches,
+              "No matches available today."
+            )}
+
+          {activeView === "tomorrow" &&
+            renderMatches(
+              tomorrowMatches,
+              "No matches available tomorrow."
+            )}
+
+          {activeView === "all" &&
+            renderMatches(
+              allMatches,
+              "No fixtures available for this selection."
+            )}
+        </div>
+      )}
 
       <div className="afrisports-selected-match">
         {selectedMatch ? (
@@ -361,7 +355,11 @@ export default function AfriSportsMatchPredictor({
           onClick={predictMatch}
           disabled={!selectedMatch || isPredicting}
         >
-          {isPredicting ? "⏳ Predicting..." : "🧠 Predict"}
+          {isPredicting
+            ? "⏳ Predicting..."
+            : selectedMatch
+              ? `🧠 Predict ${teamName(selectedMatch, "homeTeam")} vs ${teamName(selectedMatch, "awayTeam")}`
+              : "🧠 Predict — Select a Match"}
         </button>
       </div>
       </section>

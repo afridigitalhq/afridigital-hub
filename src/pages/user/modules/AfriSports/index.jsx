@@ -10,6 +10,7 @@ import AfriSportsMatchPredictor from "./components/AfriSportsMatchPredictor";
 import AfriSportsFootballNews from "./components/AfriSportsFootballNews";
 
 import AfriSportsFeatureSurface from "./components/AfriSportsFeatureSurface";
+import { AFRISPORTS_API } from "./config.js";
 
 export default function AfriSports() {
   console.log("AFRISPORTS COMPONENT MOUNTED");
@@ -19,7 +20,8 @@ export default function AfriSports() {
     liveFixtures,
     todayFixtures,
     tomorrowFixtures,
-    predictions,
+    allFixtures,
+    matchCounts,
     analysis,
     loading,
     error
@@ -31,27 +33,16 @@ export default function AfriSports() {
   const [isPredicting, setIsPredicting] = useState(false);
 
   const activeFixtures =
-    activeView === "live"
-      ? liveFixtures
-      : activeView === "tomorrow"
-        ? tomorrowFixtures
-        : todayFixtures;
+    activeView === "all"
+      ? allFixtures
+      : activeView === "live"
+        ? liveFixtures
+        : activeView === "tomorrow"
+          ? tomorrowFixtures
+          : todayFixtures;
 
-  const activeMatch = predictionMatch || selectedMatch;
-  const activePrediction = predictionVisibleMatch
-      ? predictions[predictionVisibleMatch.raw?.id ?? predictionVisibleMatch.id] ??
-        predictions[String(predictionVisibleMatch.raw?.id ?? predictionVisibleMatch.id)] ??
-        null
-      : null;
-
-  useEffect(() => {
-    if (!isPredicting || !predictionMatch) return undefined;
-    const timer = setTimeout(() => {
-      setPredictionVisibleMatch(predictionMatch);
-      setIsPredicting(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [isPredicting, predictionMatch]);
+  const activeMatch = selectedMatch;
+  const activePrediction = predictionVisibleMatch?.__afriAiPrediction ?? null;
 
   const handleSelectMatch = (match) => {
     setIsPredicting(false);
@@ -59,11 +50,49 @@ export default function AfriSports() {
     setPredictionVisibleMatch(null);
   };
 
-  const handlePredict = (match) => {
+  const handlePredict = async (match) => {
     if (!match || isPredicting) return;
+
+    const fixtureId = match.raw?.id ?? match.id;
+    if (!fixtureId) return;
+
     setPredictionMatch(match);
     setPredictionVisibleMatch(null);
     setIsPredicting(true);
+
+    try {
+      const date = (match.kickoff || "").slice(0, 10);
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+      let response;
+      try {
+        response = await fetch(
+          `${AFRISPORTS_API}/prediction/${encodeURIComponent(fixtureId)}?date=${encodeURIComponent(date)}`,
+          { signal: controller.signal }
+        );
+      } finally {
+        clearTimeout(timeoutId);
+      }
+
+      if (!response.ok) {
+        throw new Error(`Prediction request failed (${response.status})`);
+      }
+
+      const prediction = await response.json();
+
+      setTimeout(() => {
+        setPredictionVisibleMatch({
+          ...match,
+          __afriAiPrediction: prediction
+        });
+        setIsPredicting(false);
+      }, 3000);
+    } catch (error) {
+      console.error("AFRIAI PREDICTION ERROR:", error);
+      setIsPredicting(false);
+    }
   };
 
   const activeAnalysis = {
@@ -109,14 +138,11 @@ export default function AfriSports() {
         liveFixtures={liveFixtures}
         todayFixtures={todayFixtures}
         tomorrowFixtures={tomorrowFixtures}
+        allFixtures={allFixtures}
         currentMatch={selectedMatch}
         activeView={activeView}
         onSelectView={setActiveView}
-        matchCounts={{
-          live: liveFixtures.length,
-          today: todayFixtures.length,
-          tomorrow: tomorrowFixtures.length
-        }}
+        matchCounts={matchCounts}
         onSelectMatch={handleSelectMatch}
         onPredict={handlePredict}
         isPredicting={isPredicting}
@@ -124,7 +150,7 @@ export default function AfriSports() {
 
 
       <AfriSportsAIZone
-        analysis={activeAnalysis}
+        analysis={activePrediction ? activeAnalysis : null}
         prediction={activePrediction}
       />
 

@@ -1,6 +1,8 @@
+import { useState } from "react";
 import AfriSportsIdentity from "./AfriSportsIdentity";
 
 export default function AfriSportsRightPanel({ match, standings = [] }) {
+  const [showDetails, setShowDetails] = useState(false);
   const safeMatch = match || {
     status: "Loading",
     minute: "--",
@@ -47,9 +49,73 @@ export default function AfriSportsRightPanel({ match, standings = [] }) {
         </div>
       </div>
 
-      <button type="button" className="afrisports-secondary-action">
-        View Match Details
-      </button>
+      <button
+            type="button"
+            className="afrisports-secondary-action"
+            onClick={() => setShowDetails(value => !value)}
+          >
+            {showDetails ? "Hide Match Details" : "View Match Details"}
+          </button>
+
+          {showDetails && (
+            <div className="afrisports-match-details">
+              <div className="afrisports-match-details-grid">
+                <div>
+                  <span>Competition</span>
+                  <strong>{safeMatch.competition || "Football"}</strong>
+                </div>
+
+                <div>
+                  <span>Status</span>
+                  <strong>{safeMatch.status || "Scheduled"}</strong>
+                </div>
+
+                <div>
+                  <span>Kickoff</span>
+                  <strong>{safeMatch.kickoff || "--"}</strong>
+                </div>
+
+                <div>
+                  <span>Score</span>
+                  <strong>{safeMatch.homeScore} - {safeMatch.awayScore}</strong>
+                </div>
+              </div>
+
+              {safeMatch.events?.length > 0 && (
+                <div className="afrisports-match-details-events">
+                  <span>Match Events</span>
+                  {safeMatch.events.map((event, index) => (
+                    <div
+                      className="afrisports-match-details-event"
+                      key={event.id ?? event.event_id ?? index}
+                    >
+                      <strong>
+                        {event.minute ?? event.time ?? event.elapsed ?? "--"}
+                      </strong>
+                      <span>
+                        {event.type ||
+                          event.event_type ||
+                          event.detail ||
+                          event.description ||
+                          "Match event"}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {safeMatch.raw?.venue && (
+                <div className="afrisports-match-details-venue">
+                  <span>Venue</span>
+                  <strong>
+                    {typeof safeMatch.raw.venue === "string"
+                      ? safeMatch.raw.venue
+                      : safeMatch.raw.venue?.name || "--"}
+                  </strong>
+                </div>
+              )}
+            </div>
+          )}
 
       {standings.length > 0 && (
         <div className="afrisports-standings">

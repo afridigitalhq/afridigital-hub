@@ -4,11 +4,17 @@ import AfriSportsIdentity from "./AfriSportsIdentity";
 
 export default function AfriSportsMatchCenter({ match, activeFeature, loading, error }) {
   const safeMatch = match || {
-    status: loading ? "Loading" : "Unavailable",
+    status: loading
+      ? "Loading"
+      : (error ? `FEED ERROR: ${String(error)}` : "NO MATCH SELECTED"),
     minute:"--",
     competition:"AfriSports Radar",
-    homeTeam: loading ? "Loading" : "Feed unavailable",
-    awayTeam: loading ? "Loading" : (error ? "Provider unavailable" : "No match selected"),
+    homeTeam: loading
+      ? "Loading"
+      : (error ? "Feed error" : "No match selected"),
+    awayTeam: loading
+      ? "Loading"
+      : (error ? String(error) : "Arena selection returned no match"),
     homeScore:0,
     awayScore:0
   };

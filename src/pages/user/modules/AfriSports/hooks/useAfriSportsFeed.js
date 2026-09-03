@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { createMatchIdentities } from "../identity/afriSportsIdentity.js";
+import { AFRISPORTS_API } from "../config.js";
 
-const API = "https://afridigital-api.onrender.com/api/afrisports";
+const API = AFRISPORTS_API;
 
-function normalize(match){
+function normalize(match, source = "standard"){
   const homeName =
     match?.home?.name ||
     match?.home?.short_code ||
@@ -16,17 +17,28 @@ function normalize(match){
     match?.teams?.away?.name ||
     "Away";
 
-  const homeScore =
-    match?.score?.home?.goals ??
-    match?.score?.home ??
-    match?.goals?.home ??
-    0;
+  const scoreValue = (value) => {
+    if (value && typeof value === "object") {
+      return value.goals ?? value.score ?? value.value ?? null;
+    }
 
-  const awayScore =
+    const numericValue = Number(value);
+    return Number.isFinite(numericValue) ? numericValue : null;
+  };
+
+  const homeScore = scoreValue(
+    match?.score?.home?.goals ??
+      match?.score?.home ??
+      match?.goals?.home ??
+      null
+  );
+
+  const awayScore = scoreValue(
     match?.score?.away?.goals ??
-    match?.score?.away ??
-    match?.goals?.away ??
-    0;
+      match?.score?.away ??
+      match?.goals?.away ??
+      null
+  );
 
   const kickoff = match?.kickoff || match?.starting_at || null;
 
@@ -39,18 +51,31 @@ function normalize(match){
     ""
   ).toLowerCase();
 
-  const isScheduled =
-    !statusValue ||
-    statusValue.includes("scheduled") ||
-    statusValue === "ns" ||
-    statusValue.includes("not started");
+  const scheduledStatuses = new Set([
+    "",
+    "scheduled",
+    "not started",
+    "not_started",
+    "ns",
+    "fixture"
+  ]);
+
+  const liveStatuses = new Set([
+    "live",
+    "inplay",
+    "in_play",
+    "1h",
+    "2h",
+    "ht",
+    "et",
+    "extra_time"
+  ]);
+
+  const isScheduled = scheduledStatuses.has(statusValue);
 
   const isLive =
-    statusValue.includes("live") ||
-    statusValue.includes("inplay") ||
-    statusValue.includes("1h") ||
-    statusValue.includes("2h") ||
-    statusValue.includes("half");
+    source === "live" &&
+    liveStatuses.has(statusValue);
 
   let minute = "NS";
   let displayStatus = "Scheduled";
@@ -85,18 +110,30 @@ function normalize(match){
 
   const identities = createMatchIdentities(match);
 
+  const normalizedHomeScore = isScheduled ? null : homeScore;
+  const normalizedAwayScore = isScheduled ? null : awayScore;
+
+  const normalizedStatus =
+    source === "live" && isLive
+      ? "LIVE"
+      : isScheduled
+        ? "Scheduled"
+        : displayStatus === "LIVE"
+          ? "Scheduled"
+          : displayStatus;
+
   return {
     homeTeam: homeName,
     awayTeam: awayName,
     homeLogo: match?.home?.image_path || match?.teams?.home?.image_path || null,
     awayLogo: match?.away?.image_path || match?.teams?.away?.image_path || null,
-    homeScore,
-    awayScore,
+    homeScore: normalizedHomeScore,
+    awayScore: normalizedAwayScore,
     competition: match?.league?.name || "Football",
     homeIdentity: identities.home,
     awayIdentity: identities.away,
     competitionIdentity: identities.competition,
-    status: displayStatus,
+    status: normalizedStatus,
     minute,
     kickoff,
     events: Array.isArray(match?.events)
@@ -108,14 +145,121 @@ function normalize(match){
   };
 }
 
+function selectArenaFeaturedMatch(
+  liveItems = [],
+  todayItems = [],
+  tomorrowItems = []
+) {
+  const genuineLiveItems = liveItems.filter(
+    (match) => String(match?.status || "").toUpperCase() === "LIVE"
+  );
+
+  if (genuineLiveItems.length) {
+    return genuineLiveItems[0];
+  }
+
+  const isUnavailableStatus = (match) => {
+    const status = String(match?.status || "").toLowerCase();
+
+    return (
+      status.includes("finished") ||
+      status.includes("cancelled") ||
+      status.includes("postponed") ||
+      status.includes("suspended")
+    );
+  };
+
+  const kickoffTime = (match) => {
+    const value = Date.parse(match?.kickoff || "");
+    return Number.isNaN(value) ? null : value;
+  };
+
+  const isUpcoming = (match) => {
+    if (isUnavailableStatus(match)) {
+      return false;
+    }
+
+    const kickoff = kickoffTime(match);
+    return kickoff !== null && kickoff >= Date.now();
+  };
+
+  const leagueId = (match) =>
+    String(
+      match?.raw?.league?.id ??
+      match?.raw?.league_id ??
+      match?.raw?.leagueId ??
+      match?.competitionIdentity?.id ??
+      ""
+    );
+
+  const elite = todayItems.filter(
+    (match) =>
+      (leagueId(match) === "152" || leagueId(match) === "3") &&
+      isUpcoming(match)
+  );
+
+  if (elite.length) {
+    return [...elite].sort((a, b) => {
+      const rankA = leagueId(a) === "152" ? 0 : 1;
+      const rankB = leagueId(b) === "152" ? 0 : 1;
+
+      if (rankA !== rankB) {
+        return rankA - rankB;
+      }
+
+      return (kickoffTime(a) ?? Number.MAX_SAFE_INTEGER) -
+        (kickoffTime(b) ?? Number.MAX_SAFE_INTEGER);
+    })[0];
+  }
+
+  const upcomingToday = todayItems
+    .filter(isUpcoming)
+    .sort(
+      (a, b) =>
+        (kickoffTime(a) ?? Number.MAX_SAFE_INTEGER) -
+        (kickoffTime(b) ?? Number.MAX_SAFE_INTEGER)
+    );
+
+  if (upcomingToday.length) {
+    return upcomingToday[0];
+  }
+
+  const upcomingTomorrow = tomorrowItems
+    .filter(isUpcoming)
+    .sort(
+      (a, b) =>
+        (kickoffTime(a) ?? Number.MAX_SAFE_INTEGER) -
+        (kickoffTime(b) ?? Number.MAX_SAFE_INTEGER)
+    );
+
+  if (upcomingTomorrow.length) {
+    return upcomingTomorrow[0];
+  }
+
+  // Final non-empty fallback: never leave Arena empty when usable feed data exists.
+  const availableToday = todayItems.find(
+    (match) => !isUnavailableStatus(match)
+  );
+
+  if (availableToday) {
+    return availableToday;
+  }
+
+  const availableTomorrow = tomorrowItems.find(
+    (match) => !isUnavailableStatus(match)
+  );
+
+  return availableTomorrow || null;
+}
+
 export default function useAfriSportsFeed(){
   const [matches,setMatches] = useState([]);
   const [liveMatches,setLiveMatches] = useState([]);
   const [tomorrowMatches,setTomorrowMatches] = useState([]);
+  const [allMatches,setAllMatches] = useState([]);
   const [loading,setLoading] = useState(true);
   const [error,setError] = useState(null);
   const [selectedMatch,setSelectedMatch] = useState(null);
-  const [predictions,setPredictions] = useState({});
 
   useEffect(()=>{
     async function load(){
@@ -137,13 +281,16 @@ export default function useAfriSportsFeed(){
           }
         );
 
+        console.log("AFRISPORTS LOAD STEP 1: FEED_RESPONSES_RECEIVED");
         const liveData = liveResponse.ok ? await liveResponse.json() : { matches: [] };
         const data = todayResponse.ok ? await todayResponse.json() : { matches: [] };
         const tomorrowData = tomorrowResponse.ok ? await tomorrowResponse.json() : { matches: [] };
 
-        console.log("AFRISPORTS LIVE DATA:", liveData);
-        console.log("AFRISPORTS TODAY DATA:", data);
-        console.log("AFRISPORTS TOMORROW DATA:", tomorrowData);
+        console.log("AFRISPORTS LOAD STEP 2: FEED_JSON_PARSED", {
+          live: liveData?.matches?.length,
+          today: data?.matches?.length,
+          tomorrow: tomorrowData?.matches?.length
+        });
 
         if (!todayResponse.ok) {
           throw new Error(
@@ -153,34 +300,55 @@ export default function useAfriSportsFeed(){
           );
         }
 
-        const items = Array.from(new Map((data.matches || []).map((match) => [String(match?.id ?? match?.metadata?.providerMatchId ?? ""), match])).values()).map(normalize);
-        const liveItems = (liveData?.matches || []).map(normalize);
-        const tomorrowItems = (tomorrowData?.matches || []).map(normalize);
+        const items = Array.from(new Map((data.matches || []).map((match) => [String(match?.id ?? match?.metadata?.providerMatchId ?? ""), match])).values()).map((match) => normalize(match, "today"));
+        console.log("AFRISPORTS LOAD STEP 3: TODAY_NORMALIZED", items.length);
+        const liveItems = (liveData?.matches || []).map((match) => normalize(match, "live"));
+        const tomorrowItems = (tomorrowData?.matches || []).map((match) => normalize(match, "tomorrow"));
+        console.log("AFRISPORTS LOAD STEP 4: ALL_NORMALIZED", {
+          live: liveItems.length,
+          today: items.length,
+          tomorrow: tomorrowItems.length
+        });
 
         setMatches(items);
         setLiveMatches(liveItems);
         setTomorrowMatches(tomorrowItems);
 
-        console.log("AFRISPORTS ITEMS:", {
-          today: items.length,
-          live: liveItems.length,
-          tomorrow: tomorrowItems.length,
-          firstToday: items[0],
-          firstLive: liveItems[0],
-          firstTomorrow: tomorrowItems[0]
+        const arenaMatch = selectArenaFeaturedMatch(liveItems, items, tomorrowItems);
+        console.log("AFRISPORTS ARENA DEBUG:", {
+          id: arenaMatch?.raw?.id ?? arenaMatch?.id,
+          home: arenaMatch?.homeTeam,
+          away: arenaMatch?.awayTeam,
+          status: arenaMatch?.status,
+          kickoff: arenaMatch?.kickoff,
+          normalizedScore: [arenaMatch?.homeScore, arenaMatch?.awayScore],
+          rawScore: arenaMatch?.raw?.score
         });
-
-        setSelectedMatch(liveItems[0] || items[0] || tomorrowItems[0] || null);
+        console.log("AFRISPORTS LOAD STEP 5: ARENA_SELECTED");
+        setSelectedMatch(arenaMatch);
+        console.log("AFRISPORTS LOAD STEP 6: LOADING_FALSE");
         setLoading(false);
 
-        const predictionEntries = await Promise.all(items.map(async (item) => {
-          try {
-            const predictionResponse = await fetch(`${API}/prediction/${item.raw?.id ?? item.id}?date=${encodeURIComponent((item.kickoff || "").slice(0,10))}`);
-            if (!predictionResponse.ok) return [item.raw?.id ?? item.id, null];
-            return [item.raw?.id ?? item.id, await predictionResponse.json()];
-          } catch { return [item.raw?.id ?? item.id, null]; }
-        }));
-        setPredictions(Object.fromEntries(predictionEntries));
+        fetch(`${API}/fixture-universe`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Fixture universe request failed (${response.status})`);
+            }
+            return response.json();
+          })
+          .then((allData) => {
+            const allItems = (Array.isArray(allData) ? allData : [])
+              .map((match) => normalize(match, "all"));
+
+            console.log("AFRISPORTS LOAD STEP 7: UNIVERSE_LOADED", allItems.length);
+            setAllMatches(allItems);
+          })
+          .catch((universeError) => {
+            console.warn(
+              "AFRISPORTS FIXTURE UNIVERSE NON_FATAL:",
+              universeError?.message || universeError
+            );
+          });
 
       }catch(error){
         console.error("AFRISPORTS FEED ERROR:", error);
@@ -199,8 +367,14 @@ export default function useAfriSportsFeed(){
     liveFixtures: liveMatches,
     todayFixtures: matches,
     tomorrowFixtures: tomorrowMatches,
+    allFixtures: allMatches,
+    matchCounts: {
+      live: liveMatches.length,
+      today: matches.length,
+      tomorrow: tomorrowMatches.length,
+      all: allMatches.length
+    },
     selectedMatch,
-    predictions,
     loading,
     error,
     analysis:{
