@@ -66,7 +66,7 @@ export default function AfriSports() {
       const date = (match.kickoff || "").slice(0, 10);
 
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 15000);
+      const timeoutId = setTimeout(() => controller.abort(), 45000);
 
       let response;
       try {
