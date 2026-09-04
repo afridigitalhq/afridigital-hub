@@ -162,6 +162,49 @@ export default function AfriSportsMatchPredictor({
     }
   };
 
+  const renderAllCompetitions = (matches, emptyText) => {
+    const groups = new Map();
+
+    for (const match of matches) {
+      const name = competitionName(match) || "Other Competitions";
+
+      if (!groups.has(name)) {
+        groups.set(name, []);
+      }
+
+      groups.get(name).push(match);
+    }
+
+    if (!groups.size) {
+      return (
+        <div className="afrisports-predictor-empty">
+          {emptyText}
+        </div>
+      );
+    }
+
+    return (
+      <div className="afrisports-predictor-all-competitions">
+        {Array.from(groups.entries()).map(([name, competitionMatches]) => (
+          <section
+            key={name}
+            className="afrisports-predictor-competition-group"
+          >
+            <div className="afrisports-predictor-competition-heading">
+              <strong>{name}</strong>
+              <span>{competitionMatches.length}</span>
+            </div>
+
+            {renderMatches(
+              competitionMatches,
+              `No ${name} fixtures available.`
+            )}
+          </section>
+        ))}
+      </div>
+    );
+  };
+
   const renderMatches = (matches, emptyText) => (
     <div className="afrisports-predictor-match-list">
       {matches.length ? (
@@ -267,32 +310,6 @@ export default function AfriSportsMatchPredictor({
           ))}
         </div>
 
-        <div className="afrisports-competition-tabs">
-          {competitions.map((name) => {
-            const count = competitionCounts.get(name) || 0;
-
-            return (
-              <button
-                key={name}
-                type="button"
-                className={`afrisports-competition-tab ${
-                  activeView === "all" && competition === name
-                    ? "is-active"
-                    : ""
-                }`}
-                onClick={() => {
-                  setCompetition(name);
-                  setSelectedId("");
-                  setSelectedMatchState(null);
-                  setShowMatchResults(true);
-                  onSelectView?.("all");
-                }}
-              >
-                {name} ({count})
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       {showMatchResults && (
@@ -316,7 +333,7 @@ export default function AfriSportsMatchPredictor({
             )}
 
           {activeView === "all" &&
-            renderMatches(
+            renderAllCompetitions(
               allMatches,
               "No fixtures available for this selection."
             )}
