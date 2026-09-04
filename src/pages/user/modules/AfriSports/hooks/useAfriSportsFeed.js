@@ -266,30 +266,28 @@ export default function useAfriSportsFeed(){
       try{
         console.log("AFRISPORTS FETCH:", `${API}/live`, `${API}/today`);
 
-        const [liveResponse, todayResponse, tomorrowResponse] = await Promise.all([
-          fetch(`${API}/live`),
-          fetch(`${API}/today`),
-          fetch(`${API}/tomorrow`)
+        const [liveResponse, todayResponse] = await Promise.all([
+          fetch(`${API}/live`).catch(() => null),
+          fetch(`${API}/today`)
         ]);
 
         console.log(
           "AFRISPORTS STATUS:",
           {
-            live: liveResponse.status,
-            today: todayResponse.status,
-            tomorrow: tomorrowResponse.status
+            live: liveResponse?.status ?? "unavailable",
+            today: todayResponse?.status ?? "unavailable"
           }
         );
 
         console.log("AFRISPORTS LOAD STEP 1: FEED_RESPONSES_RECEIVED");
-        const liveData = liveResponse.ok ? await liveResponse.json() : { matches: [] };
+        const liveData = liveResponse?.ok ? await liveResponse.json() : { matches: [] };
         const data = todayResponse.ok ? await todayResponse.json() : { matches: [] };
-        const tomorrowData = tomorrowResponse.ok ? await tomorrowResponse.json() : { matches: [] };
+        const tomorrowData = { matches: [] };
 
         console.log("AFRISPORTS LOAD STEP 2: FEED_JSON_PARSED", {
           live: liveData?.matches?.length,
           today: data?.matches?.length,
-          tomorrow: tomorrowData?.matches?.length
+          tomorrow: 0
         });
 
         if (!todayResponse.ok) {
@@ -328,6 +326,22 @@ export default function useAfriSportsFeed(){
         setSelectedMatch(arenaMatch);
         console.log("AFRISPORTS LOAD STEP 6: LOADING_FALSE");
         setLoading(false);
+
+        fetch(`${API}/tomorrow`)
+          .then((response) => response.ok ? response.json() : { matches: [] })
+          .then((tomorrowData) => {
+            const tomorrowItems = (tomorrowData?.matches || [])
+              .map((match) => normalize(match, "tomorrow"));
+
+            console.log("AFRISPORTS LOAD STEP 6B: TOMORROW_LOADED", tomorrowItems.length);
+            setTomorrowMatches(tomorrowItems);
+          })
+          .catch((tomorrowError) => {
+            console.warn(
+              "AFRISPORTS TOMORROW NON_FATAL:",
+              tomorrowError?.message || tomorrowError
+            );
+          });
 
         fetch(`${API}/fixture-universe`)
           .then((response) => {

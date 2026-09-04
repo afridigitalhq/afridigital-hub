@@ -2802,7 +2802,14 @@
   width: 100%;
 }
 
-.afrisports-fixture-view-tabs,
+.afrisports-fixture-view-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  padding: 3px 2px 8px;
+}
+
 .afrisports-competition-tabs {
   display: flex;
   align-items: center;
@@ -2813,6 +2820,13 @@
   padding: 3px 2px 8px;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
+}
+
+.afrisports-fixture-view-tab {
+  width: 100%;
+  min-height: 54px;
+  flex: 0 0 auto;
+  text-align: left;
 }
 
 .afrisports-fixture-view-tab,
