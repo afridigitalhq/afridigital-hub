@@ -271,24 +271,13 @@ export default function useAfriSportsFeed(){
           fetch(`${API}/today`)
         ]);
 
-        console.log(
-          "AFRISPORTS STATUS:",
-          {
-            live: liveResponse?.status ?? "unavailable",
-            today: todayResponse?.status ?? "unavailable"
-          }
-        );
+        console.log("AFRISPORTS STATUS:", {
+          live: liveResponse?.status ?? "unavailable",
+          today: todayResponse?.status ?? "unavailable"
+        });
 
-        console.log("AFRISPORTS LOAD STEP 1: FEED_RESPONSES_RECEIVED");
         const liveData = liveResponse?.ok ? await liveResponse.json() : { matches: [] };
         const data = todayResponse.ok ? await todayResponse.json() : { matches: [] };
-        const tomorrowData = { matches: [] };
-
-        console.log("AFRISPORTS LOAD STEP 2: FEED_JSON_PARSED", {
-          live: liveData?.matches?.length,
-          today: data?.matches?.length,
-          tomorrow: 0
-        });
 
         if (!todayResponse.ok) {
           throw new Error(
@@ -299,32 +288,18 @@ export default function useAfriSportsFeed(){
         }
 
         const items = Array.from(new Map((data.matches || []).map((match) => [String(match?.id ?? match?.metadata?.providerMatchId ?? ""), match])).values()).map((match) => normalize(match, "today"));
-        console.log("AFRISPORTS LOAD STEP 3: TODAY_NORMALIZED", items.length);
         const liveItems = (liveData?.matches || []).map((match) => normalize(match, "live"));
-        const tomorrowItems = (tomorrowData?.matches || []).map((match) => normalize(match, "tomorrow"));
-        console.log("AFRISPORTS LOAD STEP 4: ALL_NORMALIZED", {
+
+        console.log("AFRISPORTS MAIN FEED LOADED:", {
           live: liveItems.length,
-          today: items.length,
-          tomorrow: tomorrowItems.length
+          today: items.length
         });
 
         setMatches(items);
         setLiveMatches(liveItems);
-        setTomorrowMatches(tomorrowItems);
 
-        const arenaMatch = selectArenaFeaturedMatch(liveItems, items, tomorrowItems);
-        console.log("AFRISPORTS ARENA DEBUG:", {
-          id: arenaMatch?.raw?.id ?? arenaMatch?.id,
-          home: arenaMatch?.homeTeam,
-          away: arenaMatch?.awayTeam,
-          status: arenaMatch?.status,
-          kickoff: arenaMatch?.kickoff,
-          normalizedScore: [arenaMatch?.homeScore, arenaMatch?.awayScore],
-          rawScore: arenaMatch?.raw?.score
-        });
-        console.log("AFRISPORTS LOAD STEP 5: ARENA_SELECTED");
+        const arenaMatch = selectArenaFeaturedMatch(liveItems, items, []);
         setSelectedMatch(arenaMatch);
-        console.log("AFRISPORTS LOAD STEP 6: LOADING_FALSE");
         setLoading(false);
 
         fetch(`${API}/tomorrow`)
@@ -333,7 +308,7 @@ export default function useAfriSportsFeed(){
             const tomorrowItems = (tomorrowData?.matches || [])
               .map((match) => normalize(match, "tomorrow"));
 
-            console.log("AFRISPORTS LOAD STEP 6B: TOMORROW_LOADED", tomorrowItems.length);
+            console.log("AFRISPORTS TOMORROW LOADED:", tomorrowItems.length);
             setTomorrowMatches(tomorrowItems);
           })
           .catch((tomorrowError) => {
@@ -354,7 +329,7 @@ export default function useAfriSportsFeed(){
             const allItems = (Array.isArray(allData) ? allData : [])
               .map((match) => normalize(match, "all"));
 
-            console.log("AFRISPORTS LOAD STEP 7: UNIVERSE_LOADED", allItems.length);
+            console.log("AFRISPORTS FIXTURE UNIVERSE LOADED:", allItems.length);
             setAllMatches(allItems);
           })
           .catch((universeError) => {
@@ -363,10 +338,10 @@ export default function useAfriSportsFeed(){
               universeError?.message || universeError
             );
           });
-
       }catch(error){
         console.error("AFRISPORTS FEED ERROR:", error);
         setMatches([]);
+        setLiveMatches([]);
         setSelectedMatch(null);
         setError(error?.message || "AfriSports feed unavailable");
         setLoading(false);

@@ -1577,6 +1577,82 @@
 
 
 /* =========================================================
+   AFRIAI PREDICTOR — COMPETITION ACCORDION
+   ========================================================= */
+
+.afrisports-predictor-all-competitions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.afrisports-predictor-competition-group {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.afrisports-predictor-competition-heading {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 0;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.045);
+  cursor: pointer;
+  text-align: left;
+}
+
+.afrisports-predictor-competition-heading strong {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.afrisports-predictor-competition-heading span {
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  opacity: 0.72;
+}
+
+.afrisports-predictor-competition-heading span:last-child {
+  min-width: 18px;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.afrisports-predictor-competition-heading:hover {
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.afrisports-predictor-competition-group.is-expanded
+  .afrisports-predictor-competition-heading {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.afrisports-predictor-competition-matches {
+  max-height: 330px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.afrisports-predictor-competition-matches
+  .afrisports-predictor-match-list {
+  gap: 6px;
+}
+
+/* =========================================================
    AFRIAI PREDICTOR — COMPACT FIXTURE CARDS
    ========================================================= */
 
@@ -1587,6 +1663,10 @@
   overflow-x: hidden;
   padding: 4px 2px;
   scrollbar-width: thin;
+}
+
+.afrisports-predictor-results-all {
+  overflow-y: hidden;
 }
 
 .afrisports-predictor-match-list {

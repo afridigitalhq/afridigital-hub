@@ -56,6 +56,7 @@ export default function AfriSportsMatchPredictor({
   isPredicting = false,
 }) {
   const [competition, setCompetition] = useState("ALL");
+  const [expandedCompetition, setExpandedCompetition] = useState(null);
   const [selectedId, setSelectedId] = useState("");
   const [selectedMatchState, setSelectedMatchState] = useState(null);
   const [showMatchResults, setShowMatchResults] = useState(false);
@@ -131,6 +132,7 @@ export default function AfriSportsMatchPredictor({
 
   const openView = (view) => {
     setSelectedId("");
+    setExpandedCompetition(null);
     setSelectedMatchState(null);
     onSelectView?.(view);
   };
@@ -153,6 +155,8 @@ export default function AfriSportsMatchPredictor({
     const id = String(matchId(match));
     setSelectedId(id);
     setSelectedMatchState(match);
+    setShowMatchResults(false);
+    setExpandedCompetition(null);
     onSelectMatch?.(match);
   };
 
@@ -183,24 +187,65 @@ export default function AfriSportsMatchPredictor({
       );
     }
 
+    const orderedGroups = Array.from(groups.entries()).sort(([a], [b]) => {
+      const rank = (name) => {
+        const value = String(name).toLowerCase();
+
+        if (value.includes("champions league")) return 0;
+        if (value === "ucl") return 0;
+        if (value.includes("premier league")) return 1;
+        if (value.includes("la liga")) return 2;
+        if (value.includes("serie a")) return 3;
+        if (value.includes("bundesliga")) return 4;
+        if (value.includes("ligue 1")) return 5;
+
+        return 10;
+      };
+
+      return rank(a) - rank(b) || a.localeCompare(b);
+    });
+
     return (
       <div className="afrisports-predictor-all-competitions">
-        {Array.from(groups.entries()).map(([name, competitionMatches]) => (
-          <section
-            key={name}
-            className="afrisports-predictor-competition-group"
-          >
-            <div className="afrisports-predictor-competition-heading">
-              <strong>{name}</strong>
-              <span>{competitionMatches.length}</span>
-            </div>
+        {orderedGroups.map(([name, competitionMatches]) => {
+          const isExpanded = expandedCompetition === name;
 
-            {renderMatches(
-              competitionMatches,
-              `No ${name} fixtures available.`
-            )}
-          </section>
-        ))}
+          return (
+            <section
+              key={name}
+              className={`afrisports-predictor-competition-group ${
+                isExpanded ? "is-expanded" : ""
+              }`}
+            >
+              <button
+                type="button"
+                className="afrisports-predictor-competition-heading"
+                onClick={() =>
+                  setExpandedCompetition(isExpanded ? null : name)
+                }
+              >
+                <strong>
+                  {String(name).toLowerCase().includes("champions league")
+                    ? "⭐ UCL"
+                    : name}
+                </strong>
+                <span>({competitionMatches.length})</span>
+                <span aria-hidden="true">
+                  {isExpanded ? "⌃" : "›"}
+                </span>
+              </button>
+
+              {isExpanded && (
+                <div className="afrisports-predictor-competition-matches">
+                  {renderMatches(
+                    competitionMatches,
+                    `No ${name} fixtures available.`
+                  )}
+                </div>
+              )}
+            </section>
+          );
+        })}
       </div>
     );
   };
@@ -298,11 +343,18 @@ export default function AfriSportsMatchPredictor({
                 activeView === view ? "is-active" : ""
               }`}
               onClick={() => {
+                const shouldCollapse =
+                  showMatchResults && activeView === view;
+
                 setCompetition("ALL");
                 setSelectedId("");
                 setSelectedMatchState(null);
-                setShowMatchResults(true);
-                onSelectView?.(view);
+                setExpandedCompetition(null);
+                setShowMatchResults(!shouldCollapse);
+
+                if (!shouldCollapse) {
+                  onSelectView?.(view);
+                }
               }}
             >
               {label}
@@ -313,7 +365,13 @@ export default function AfriSportsMatchPredictor({
       </div>
 
       {showMatchResults && (
-        <div className="afrisports-predictor-results">
+        <div
+          className={`afrisports-predictor-results ${
+            activeView === "all"
+              ? "afrisports-predictor-results-all"
+              : ""
+          }`}
+        >
           {activeView === "live" &&
             renderMatches(
               liveMatches,

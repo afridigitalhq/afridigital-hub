@@ -31,6 +31,7 @@ export default function AfriSports() {
   const [predictionVisibleMatch, setPredictionVisibleMatch] = useState(null);
   const [activeView, setActiveView] = useState("live");
   const [isPredicting, setIsPredicting] = useState(false);
+  const [predictionDiagnostic, setPredictionDiagnostic] = useState("IDLE");
 
   const activeFixtures =
     activeView === "all"
@@ -58,6 +59,7 @@ export default function AfriSports() {
 
     setPredictionMatch(match);
     setPredictionVisibleMatch(null);
+    setPredictionDiagnostic(`REQUESTING • ${fixtureId}`);
     setIsPredicting(true);
 
     try {
@@ -81,8 +83,10 @@ export default function AfriSports() {
       }
 
       const prediction = await response.json();
+      setPredictionDiagnostic(`RECEIVED • ${prediction?.fixtureId ?? fixtureId}`);
 
       setTimeout(() => {
+        setPredictionDiagnostic(`DISPLAYING • ${prediction?.fixtureId ?? fixtureId}`);
         setPredictionVisibleMatch({
           ...match,
           __afriAiPrediction: prediction
@@ -91,6 +95,7 @@ export default function AfriSports() {
       }, 3000);
     } catch (error) {
       console.error("AFRIAI PREDICTION ERROR:", error);
+      setPredictionDiagnostic(`ERROR • ${error?.message || error}`);
       setIsPredicting(false);
     }
   };
@@ -148,6 +153,10 @@ export default function AfriSports() {
         isPredicting={isPredicting}
       />
 
+
+      <div style={{padding:"8px 12px",margin:"8px 0",fontSize:"12px",fontFamily:"monospace",opacity:0.85}}>
+        PREDICTION DIAGNOSTIC: {predictionDiagnostic}
+      </div>
 
       <AfriSportsAIZone
         analysis={activePrediction ? activeAnalysis : null}
