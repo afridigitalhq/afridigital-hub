@@ -47,6 +47,8 @@ export default function AfriSportsMatchPredictor({
   todayFixtures = [],
   tomorrowFixtures = [],
   allFixtures = [],
+  tomorrowLoading = false,
+  allLoading = false,
   matchCounts = {},
   currentMatch = null,
   activeView = "live",
@@ -260,45 +262,64 @@ export default function AfriSportsMatchPredictor({
             <button
               key={id}
               type="button"
-              className={`afrisports-predictor-match ${
+              className={`afrisports-match-card afrisports-predictor-match ${
                 String(selectedId) === id ? "is-selected" : ""
               }`}
               onClick={() => selectMatch(match)}
             >
-              <div className="afrisports-predictor-match-main">
-                <AfriSportsIdentity
-                  identity={match.homeIdentity}
-                  size="sm"
-                  showName={false}
-                  showCountry={false}
-                />
+              <AfriSportsIdentity
+                identity={match.competitionIdentity}
+                size="sm"
+                showName
+                showCountry
+              />
 
-                <strong>{teamName(match, "homeTeam")}</strong>
-                <span className="afrisports-predictor-match-vs">VS</span>
-                <strong>{teamName(match, "awayTeam")}</strong>
+              <div className="afrisports-teams">
+                <div className="afrisports-team">
+                  <AfriSportsIdentity
+                    identity={match.homeIdentity}
+                    size="lg"
+                    showName
+                    showCountry
+                    showType
+                  />
+                </div>
 
-                <AfriSportsIdentity
-                  identity={match.awayIdentity}
-                  size="sm"
-                  showName={false}
-                  showCountry={false}
-                />
+                <div className="afrisports-score">
+                  <b>{match.homeScore ?? "–"}</b>
+                  <small>:</small>
+                  <b>{match.awayScore ?? "–"}</b>
+                </div>
+
+                <div className="afrisports-team">
+                  <AfriSportsIdentity
+                    identity={match.awayIdentity}
+                    size="lg"
+                    showName
+                    showCountry
+                    showType
+                  />
+                </div>
               </div>
 
-              <small className="afrisports-predictor-match-meta">
+              <span className="afrisports-match-status">
                 {match.status === "LIVE" && match.minute
                   ? `LIVE • ${match.minute}`
                   : match.status && /finished|ft/i.test(String(match.status))
                     ? `FT${match.homeScore != null && match.awayScore != null ? ` • ${match.homeScore}–${match.awayScore}` : ""}`
                     : match.kickoff
-                      ? new Date(match.kickoff).toLocaleString([], {
-                          month: "short",
-                          day: "numeric",
-                          hour: "numeric",
-                          minute: "2-digit"
+                      ? new Date(
+                          `${String(match.kickoff).replace(" ", "T")}+01:00`
+                        ).toLocaleString(undefined, {
+                          year: "numeric",
+                          month: "2-digit",
+                          day: "2-digit",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                          hour12: false
                         })
                       : match.status || ""}
-              </small>
+              </span>
             </button>
           );
         })
@@ -333,8 +354,8 @@ export default function AfriSportsMatchPredictor({
           {[
             ["live", `🟢 Live (${counts.live})`],
             ["today", `📅 Today (${counts.today})`],
-            ["tomorrow", `⏭️ Tomorrow (${counts.tomorrow})`],
-            ["all", `🏆 All Competitions (${counts.all})`]
+            ["tomorrow", `⏭️ Tomorrow (${tomorrowLoading ? "Loading…" : counts.tomorrow})`],
+            ["all", `🏆 All Competitions (${allLoading ? "Loading…" : counts.all})`]
           ].map(([view, label]) => (
             <button
               key={view}
@@ -385,16 +406,20 @@ export default function AfriSportsMatchPredictor({
             )}
 
           {activeView === "tomorrow" &&
-            renderMatches(
-              tomorrowMatches,
-              "No matches available tomorrow."
-            )}
+            (tomorrowLoading
+              ? <div className="afrisports-predictor-loading">⏳ Loading tomorrow's fixtures…</div>
+              : renderMatches(
+                  tomorrowMatches,
+                  "No matches available tomorrow."
+                ))}
 
           {activeView === "all" &&
-            renderAllCompetitions(
-              allMatches,
-              "No fixtures available for this selection."
-            )}
+            (allLoading
+              ? <div className="afrisports-predictor-loading">⏳ Loading competitions…</div>
+              : renderAllCompetitions(
+                  allMatches,
+                  "No fixtures available for this selection."
+                ))}
         </div>
       )}
 
