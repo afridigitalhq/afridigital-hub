@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createMatchIdentities } from "../identity/afriSportsIdentity.js";
 import { AFRISPORTS_API } from "../config.js";
 
 const API = AFRISPORTS_API;
 
-function normalize(match, source = "standard"){
+function normalize(match, source = "standard", options = {}){
   const homeName =
     match?.home?.name ||
     match?.home?.short_code ||
@@ -75,7 +75,7 @@ function normalize(match, source = "standard"){
 
   const isLive =
     source === "live" &&
-    liveStatuses.has(statusValue);
+    (match?.metadata?.live === true || liveStatuses.has(statusValue));
 
   let minute = "NS";
   let displayStatus = "Scheduled";
@@ -108,7 +108,9 @@ function normalize(match, source = "standard"){
         : "NS");
   }
 
-  const identities = createMatchIdentities(match);
+  const identities = options.skipIdentities
+    ? { home: null, away: null, competition: null }
+    : createMatchIdentities(match);
 
   const normalizedHomeScore = isScheduled ? null : homeScore;
   const normalizedAwayScore = isScheduled ? null : awayScore;
@@ -252,12 +254,22 @@ function selectArenaFeaturedMatch(
   return availableTomorrow || null;
 }
 
-export default function useAfriSportsFeed(){
+export default function useAfriSportsFeed(activeView = "live"){
   const [matches,setMatches] = useState([]);
   const [liveMatches,setLiveMatches] = useState([]);
   const [tomorrowMatches,setTomorrowMatches] = useState([]);
   const [allMatches,setAllMatches] = useState([]);
+  const tomorrowRequested = useRef(false);
+  const allRequested = useRef(false);
+  const [tomorrowLoading,setTomorrowLoading] = useState(false);
+  const [allLoading,setAllLoading] = useState(false);
   const [loading,setLoading] = useState(true);
+  const [fixtureTiming,setFixtureTiming] = useState({
+    tomorrowJson: null,
+    tomorrowNormalize: null,
+    universeJson: null,
+    universeNormalize: null
+  });
   const [error,setError] = useState(null);
   const [selectedMatch,setSelectedMatch] = useState(null);
 
@@ -302,42 +314,6 @@ export default function useAfriSportsFeed(){
         setSelectedMatch(arenaMatch);
         setLoading(false);
 
-        fetch(`${API}/tomorrow`)
-          .then((response) => response.ok ? response.json() : { matches: [] })
-          .then((tomorrowData) => {
-            const tomorrowItems = (tomorrowData?.matches || [])
-              .map((match) => normalize(match, "tomorrow"));
-
-            console.log("AFRISPORTS TOMORROW LOADED:", tomorrowItems.length);
-            setTomorrowMatches(tomorrowItems);
-          })
-          .catch((tomorrowError) => {
-            console.warn(
-              "AFRISPORTS TOMORROW NON_FATAL:",
-              tomorrowError?.message || tomorrowError
-            );
-          });
-
-        fetch(`${API}/fixture-universe`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Fixture universe request failed (${response.status})`);
-            }
-            return response.json();
-          })
-          .then((allData) => {
-            const allItems = (Array.isArray(allData) ? allData : [])
-              .map((match) => normalize(match, "all"));
-
-            console.log("AFRISPORTS FIXTURE UNIVERSE LOADED:", allItems.length);
-            setAllMatches(allItems);
-          })
-          .catch((universeError) => {
-            console.warn(
-              "AFRISPORTS FIXTURE UNIVERSE NON_FATAL:",
-              universeError?.message || universeError
-            );
-          });
       }catch(error){
         console.error("AFRISPORTS FEED ERROR:", error);
         setMatches([]);
@@ -351,12 +327,96 @@ export default function useAfriSportsFeed(){
     load();
   },[]);
 
+  useEffect(() => {
+    if (activeView !== "tomorrow" || tomorrowRequested.current) {
+      return;
+    }
+
+    let cancelled = false;
+    tomorrowRequested.current = true;
+    setTomorrowLoading(true);
+
+    fetch(`${API}/tomorrow`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Tomorrow fixtures request failed (${response.status})`);
+        }
+        return response.json();
+      })
+      .then((tomorrowData) => {
+        if (cancelled) return;
+
+        const tomorrowItems = (tomorrowData?.matches || [])
+          .map((match) => normalize(match, "tomorrow", { skipIdentities: true }));
+
+        console.log("AFRISPORTS TOMORROW LOADED:", tomorrowItems.length);
+        setTomorrowMatches(tomorrowItems);
+        setTomorrowLoading(false);
+      })
+      .catch((tomorrowError) => {
+        if (cancelled) return;
+
+        console.warn(
+          "AFRISPORTS TOMORROW NON_FATAL:",
+          tomorrowError?.message || tomorrowError
+        );
+        setTomorrowLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [activeView]);
+
+  useEffect(() => {
+    if (activeView !== "all" || allRequested.current) {
+      return;
+    }
+
+    let cancelled = false;
+    allRequested.current = true;
+    setAllLoading(true);
+
+    fetch(`${API}/fixture-universe`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Fixture universe request failed (${response.status})`);
+        }
+        return response.json();
+      })
+      .then((allData) => {
+        if (cancelled) return;
+
+        const allItems = (Array.isArray(allData) ? allData : [])
+          .map((match) => normalize(match, "all", { skipIdentities: true }));
+
+        console.log("AFRISPORTS FIXTURE UNIVERSE LOADED:", allItems.length);
+        setAllMatches(allItems);
+        setAllLoading(false);
+      })
+      .catch((universeError) => {
+        if (cancelled) return;
+
+        console.warn(
+          "AFRISPORTS FIXTURE UNIVERSE NON_FATAL:",
+          universeError?.message || universeError
+        );
+        setAllLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [activeView]);
+
   return {
     fixtures: matches,
     liveFixtures: liveMatches,
     todayFixtures: matches,
     tomorrowFixtures: tomorrowMatches,
     allFixtures: allMatches,
+    tomorrowLoading,
+    allLoading,
     matchCounts: {
       live: liveMatches.length,
       today: matches.length,

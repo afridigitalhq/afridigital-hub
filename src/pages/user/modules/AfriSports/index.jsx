@@ -14,6 +14,7 @@ import { AFRISPORTS_API } from "./config.js";
 
 export default function AfriSports() {
   console.log("AFRISPORTS COMPONENT MOUNTED");
+  const [activeView, setActiveView] = useState("live");
   const {
     selectedMatch,
     fixtures,
@@ -21,15 +22,16 @@ export default function AfriSports() {
     todayFixtures,
     tomorrowFixtures,
     allFixtures,
+    tomorrowLoading,
+    allLoading,
     matchCounts,
     analysis,
     loading,
     error
-  } = useAfriSportsFeed();
+  } = useAfriSportsFeed(activeView);
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [predictionMatch, setPredictionMatch] = useState(null);
   const [predictionVisibleMatch, setPredictionVisibleMatch] = useState(null);
-  const [activeView, setActiveView] = useState("live");
   const [isPredicting, setIsPredicting] = useState(false);
   const [predictionDiagnostic, setPredictionDiagnostic] = useState("IDLE");
 
@@ -100,9 +102,14 @@ export default function AfriSports() {
     }
   };
 
+  const radarMatch =
+    predictionVisibleMatch ||
+    predictionMatch ||
+    activeMatch;
+
   const activeAnalysis = {
     ...analysis,
-    match: activeMatch
+    match: radarMatch
   };
 
   console.log("AFRISPORTS STATE", {
@@ -144,6 +151,8 @@ export default function AfriSports() {
         todayFixtures={todayFixtures}
         tomorrowFixtures={tomorrowFixtures}
         allFixtures={allFixtures}
+        tomorrowLoading={tomorrowLoading}
+        allLoading={allLoading}
         currentMatch={selectedMatch}
         activeView={activeView}
         onSelectView={setActiveView}

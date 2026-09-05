@@ -1,4 +1,4 @@
-const LOCAL_API_ORIGIN = "http://localhost:10000";
+const LOCAL_API_ORIGIN = "https://afridigital-api.onrender.com";
 const PRODUCTION_API_ORIGIN = "https://afridigital-api.onrender.com";
 
 const API_ORIGIN =

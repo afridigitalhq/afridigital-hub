@@ -1,4 +1,5 @@
 import AfriSportsIdentity from "./AfriSportsIdentity";
+import { createAfriSportsIdentity } from "../identity/afriSportsIdentity";
 
 function normalizeOutcome(value) {
   const text = String(value ?? "").trim();
@@ -47,17 +48,17 @@ function groupPredictions(predictions) {
     let key = market || type || "Prediction";
 
     if (type === "match_prediction") {
-      key = "Match Prediction";
+      continue;
+    } else if (type === "btts") {
+      key = "BTTS (GG)";
     } else if (type === "double_chance") {
       key = "Double Chance";
     } else if (type === "over_under") {
       key = market ? `Goals — ${market}` : "Goals";
-    } else if (type === "btts") {
-      key = "Both Teams To Score";
-    } else if (type === "handicap") {
-      key = market || "Handicap";
     } else if (type === "correct_score") {
       key = "Correct Score";
+    } else if (type === "handicap") {
+      key = market || "Handicap";
     }
 
     if (!groups.has(key)) {
@@ -67,7 +68,21 @@ function groupPredictions(predictions) {
     groups.get(key).push(item);
   }
 
-  return Array.from(groups.entries());
+  const priority = [
+    "BTTS (GG)",
+    "Double Chance",
+    "Correct Score"
+  ];
+
+  return Array.from(groups.entries()).sort(([a], [b]) => {
+    const indexA = priority.indexOf(a);
+    const indexB = priority.indexOf(b);
+
+    const rankA = indexA === -1 ? 100 : indexA;
+    const rankB = indexB === -1 ? 100 : indexB;
+
+    return rankA - rankB;
+  });
 }
 
 export default function AfriSportsAIZone({
@@ -78,16 +93,44 @@ export default function AfriSportsAIZone({
   const predictions = selectedPredictions(prediction);
   const groupedPredictions = groupPredictions(predictions);
 
-  const probabilities = prediction?.probabilities || {};
-  const homeName =
-    prediction?.match?.split?.(" vs ")?.[0] ||
-    analysis?.match?.homeTeam ||
-    "Home";
+    const probabilities = prediction?.probabilities || {};
 
-  const awayName =
-    prediction?.match?.split?.(" vs ")?.[1] ||
-    analysis?.match?.awayTeam ||
-    "Away";
+    const predictionHomeName = prediction?.homeTeam || null;
+    const predictionAwayName = prediction?.awayTeam || null;
+
+    const homeName =
+      predictionHomeName ||
+      analysis?.match?.homeTeam ||
+      "Home";
+
+    const awayName =
+      predictionAwayName ||
+      analysis?.match?.awayTeam ||
+      "Away";
+
+    const predictionHomeIdentity = predictionHomeName
+      ? createAfriSportsIdentity({
+          name: predictionHomeName,
+          id: prediction?.homeTeamId
+        })
+      : null;
+
+    const predictionAwayIdentity = predictionAwayName
+      ? createAfriSportsIdentity({
+          name: predictionAwayName,
+          id: prediction?.awayTeamId
+        })
+      : null;
+
+    const homeIdentity =
+      predictionHomeIdentity ||
+      analysis?.match?.homeIdentity ||
+      null;
+
+    const awayIdentity =
+      predictionAwayIdentity ||
+      analysis?.match?.awayIdentity ||
+      null;
 
   const outcome = predictionLabel(prediction);
 
@@ -108,15 +151,15 @@ export default function AfriSportsAIZone({
               .trim()}
           </h2>
 
-          {analysis?.match?.homeIdentity && (
+          {homeIdentity && awayIdentity && (
             <div className="afrisports-ai-identities">
               <AfriSportsIdentity
-                identity={analysis.match.homeIdentity}
+                identity={homeIdentity}
                 size="lg"
               />
               <span>vs</span>
               <AfriSportsIdentity
-                identity={analysis.match.awayIdentity}
+                identity={awayIdentity}
                 size="lg"
               />
             </div>
@@ -151,8 +194,9 @@ export default function AfriSportsAIZone({
 
                   return (
                     <div className="afrisports-ai-selection">
-                      <strong>{selected.selection}</strong>
-                      <em>{probability(selected.probability)}</em>
+                      <strong>
+                        {selected.selection} : - {probability(selected.probability)}
+                      </strong>
                     </div>
                   );
                 })()}
@@ -172,8 +216,9 @@ export default function AfriSportsAIZone({
                       className="afrisports-ai-selection"
                       key={`${market}-${item.selection}-${index}`}
                     >
-                      <strong>{item.selection}</strong>
-                      <em>{probability(item.probability)}</em>
+                      <strong>
+                        {item.selection} : - {probability(item.probability)}
+                      </strong>
                     </div>
                   ))}
                 </div>
@@ -208,7 +253,7 @@ export default function AfriSportsAIZone({
 
               <p>
                 {outcome
-                  ? `AfriAI selects ${outcome} for ${prediction?.match || `${homeName} vs ${awayName}`}, using its normalized prediction evidence and decision layer.`
+                  ? `AfriAI selects ${outcome} for ${`${homeName} vs ${awayName}`}, using its normalized prediction evidence and decision layer.`
                   : "AfriAI analysis will appear when the prediction is available."}
               </p>
 
