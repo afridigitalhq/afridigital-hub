@@ -18,6 +18,7 @@ export default function AfriForex() {
 
       <section className="afriforex-dashboard-grid">
         <div className="afriforex-main-column">
+          <AfriForexDemoBalance />
           <AfriForexChart />
           <AfriForexTradeAlert />
           <AfriForexActiveTrade />
@@ -25,7 +26,6 @@ export default function AfriForex() {
         </div>
 
         <aside className="afriforex-side-column">
-          <AfriForexDemoBalance />
           <AfriForexPerformance />
           <AfriForexAIChat />
         </aside>
