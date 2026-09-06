@@ -23,7 +23,9 @@ export default function AfriForexChart() {
     script.async = true;
 
     script.innerHTML = JSON.stringify({
-      autosize: true,
+      autosize: false,
+      width: "100%",
+      height: 700,
       symbol: TRADINGVIEW_SYMBOL,
       interval: "60",
       timezone: "Etc/UTC",
@@ -57,7 +59,7 @@ export default function AfriForexChart() {
 
       <div
         ref={chartRef}
-        className="afriforex-tradingview-chart"
+        className="afriforex-tradingview-chart tradingview-widget-container"
       />
     </section>
   );
