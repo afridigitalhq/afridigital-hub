@@ -9,6 +9,7 @@ const PRODUCT_ICONS = Object.freeze({
   africctv: "📹",
   afrieducation: "🎓",
   afrisports: "⚽",
+  afriforex: "📈",
   afriboost: "🚀",
   afriwork: "💼",
   afritracker: "📍",
@@ -22,9 +23,25 @@ function UserHomeProductCard({ product, primary = false }) {
 
   return (
     <article
-      onClick={() => { if (product.id === "africctv") navigate("/user/africctv"); if (product.id === "afrisports") navigate("/user/sports"); }}
-      role={product.id === "africctv" || product.id === "afrisports" ? "button" : undefined}
-      tabIndex={product.id === "africctv" || product.id === "afrisports" ? 0 : undefined}
+      onClick={() => {
+        if (product.id === "africctv") navigate("/user/africctv");
+        if (product.id === "afrisports") navigate("/user/sports");
+        if (product.id === "afriforex") navigate("/user/forex");
+      }}
+      role={
+        product.id === "africctv" ||
+        product.id === "afrisports" ||
+        product.id === "afriforex"
+          ? "button"
+          : undefined
+      }
+      tabIndex={
+        product.id === "africctv" ||
+        product.id === "afrisports" ||
+        product.id === "afriforex"
+          ? 0
+          : undefined
+      }
       className={
         primary
           ? "user-home-product-card user-home-product-card-primary"

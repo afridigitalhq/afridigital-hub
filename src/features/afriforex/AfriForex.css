@@ -1,0 +1,264 @@
+.afriforex-shell {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 8px 0 28px;
+  color: var(--afri-text, #fff);
+}
+
+.afriforex-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.afriforex-header h1,
+.afriforex-panel h2 {
+  margin: 4px 0;
+  color: var(--afri-text, #fff);
+}
+
+.afriforex-header p,
+.afriforex-panel p {
+  margin: 6px 0 0;
+  color: var(--afri-muted, rgba(255,255,255,.72));
+}
+
+.afriforex-eyebrow,
+.afriforex-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--afri-accent, #00d4ff);
+  opacity: .82;
+}
+
+.afriforex-mode-badge,
+.afriforex-status,
+.afriforex-ai-status,
+.afriforex-neutral-badge {
+  border: 1px solid var(--afri-primary-border, var(--afri-border, rgba(24,119,242,.35)));
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: .78rem;
+  background: rgba(255,255,255,.04);
+  color: var(--afri-text, #fff);
+}
+
+.afriforex-mode-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.afriforex-mode-badge span {
+  font-size: .68rem;
+  color: var(--afri-muted, rgba(255,255,255,.72));
+}
+
+.afriforex-dashboard-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 2.05fr) minmax(300px, .75fr);
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.afriforex-main-column,
+.afriforex-side-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.afriforex-panel {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--afri-primary-border, var(--afri-border, rgba(24,119,242,.35)));
+  border-radius: var(--afriglass-radius, var(--afri-radius, 20px));
+  padding: 20px;
+  background: var(
+    --afri-card-bg,
+    linear-gradient(145deg, var(--afri-primary-soft, rgba(24,119,242,.14)), rgba(18,55,115,.42))
+  );
+  backdrop-filter: var(--afri-glass, blur(18px));
+  -webkit-backdrop-filter: var(--afri-glass, blur(18px));
+  box-shadow: var(--afriglass-shadow, 0 20px 60px rgba(0,0,0,.25));
+}
+
+.afriforex-market-selector {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.afriforex-market-selector > div {
+  min-width: 0;
+  padding: 10px;
+}
+
+.afriforex-panel-heading,
+.afriforex-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.afriforex-chart-placeholder {
+  min-height: 360px;
+  margin-top: 18px;
+  border: 1px dashed var(--afri-primary-border, var(--afri-border, rgba(24,119,242,.35)));
+  border-radius: calc(var(--afri-radius, 20px) - 4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255,255,255,.025);
+  color: var(--afri-muted, rgba(255,255,255,.72));
+}
+
+.afriforex-chart-placeholder span {
+  font-size: 2rem;
+}
+
+.afriforex-alert-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.afriforex-empty-state {
+  padding: 18px 0;
+  color: var(--afri-muted, rgba(255,255,255,.72));
+}
+
+.afriforex-balance-card h2 {
+  font-size: 2rem;
+  margin: 8px 0 18px;
+}
+
+.afriforex-balance-row,
+.afriforex-metrics > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.afriforex-topup-button,
+.afriforex-chat-input button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: var(--afri-primary, #1877f2);
+  color: #fff;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.afriforex-topup-button:hover,
+.afriforex-chat-input button:hover {
+  transform: translateY(-2px);
+  background: var(--afri-accent, #00d4ff);
+  color: #001018;
+}
+
+.afriforex-topup-button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.afriforex-ai-chat {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.afriforex-chat-messages {
+  flex: 1;
+  padding: 18px 0;
+}
+
+.afriforex-chat-message {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(5,15,35,.32);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.afriforex-chat-message p {
+  margin-bottom: 0;
+}
+
+.afriforex-chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+.afriforex-chat-input input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--afri-border, rgba(24,119,242,.35));
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,.04);
+  color: var(--afri-text, #fff);
+  outline: none;
+}
+
+.afriforex-chat-input input:focus {
+  border-color: var(--afri-accent, #00d4ff);
+}
+
+.afriforex-chat-input input::placeholder {
+  color: var(--afri-muted, rgba(255,255,255,.72));
+}
+
+@media (max-width: 900px) {
+  .afriforex-shell {
+    padding: 8px 0 24px;
+  }
+
+  .afriforex-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-market-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .afriforex-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .afriforex-panel {
+    padding: 16px;
+  }
+
+  .afriforex-market-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-alert-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .afriforex-chat-input {
+    flex-direction: column;
+  }
+}

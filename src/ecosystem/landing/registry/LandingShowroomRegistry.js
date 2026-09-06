@@ -44,6 +44,13 @@ const LandingShowroomRegistry = Object.freeze({
       tagline: "Live sports, expert analysis, and AI-powered predictions.",
       tier: "FLAGSHIP",
       status: "SCAFFOLD"
+    },
+    {
+      id: "afriforex",
+      name: "AfriForex",
+      tagline: "Real-time Forex and Crypto markets with AfriAI-powered market intelligence.",
+      tier: "FLAGSHIP",
+      status: "SCAFFOLD"
     }
   ]),
 

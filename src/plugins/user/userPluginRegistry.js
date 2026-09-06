@@ -11,6 +11,7 @@ const AfriCommerce = lazy(() => import("../../features/africommerce"));
 const AfriMetaWorld = lazy(() => import("../../features/afrimetaworld"));
 const AfriComm = lazy(() => import("../../features/africomm"));
 const AfriBoost = lazy(() => import("../../features/afriboost"));
+const AfriForex = lazy(() => import("../../features/afriforex"));
 const AfriCCTV = lazy(() => import("../../pages/user/modules/AfriCCTV"));
 
 /**
@@ -60,6 +61,15 @@ export const USER_PLUGINS = {
     route: "/user/africctv",
     enabled: true,
     type: "module",
+    version: "1.0"
+  },
+
+  afriForex: {
+    name: "AfriForex",
+    component: AfriForex,
+    route: "/user/forex",
+    enabled: true,
+    type: "feature",
     version: "1.0"
   },
 
