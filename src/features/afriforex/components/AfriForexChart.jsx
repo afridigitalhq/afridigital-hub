@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import AfriForexMarketSelector from "./AfriForexMarketSelector";
 
 const TRADINGVIEW_SYMBOL = "FX:EURUSD";
 
@@ -51,6 +52,8 @@ export default function AfriForexChart() {
         </div>
 
       </div>
+
+      <AfriForexMarketSelector />
 
       <div
         ref={chartRef}

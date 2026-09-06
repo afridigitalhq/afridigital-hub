@@ -1,7 +1,6 @@
 import React from "react";
 import "./AfriForex.css";
 import AfriForexHeader from "./components/AfriForexHeader";
-import AfriForexMarketSelector from "./components/AfriForexMarketSelector";
 import AfriForexChart from "./components/AfriForexChart";
 import AfriForexTradeAlert from "./components/AfriForexTradeAlert";
 import AfriForexActiveTrade from "./components/AfriForexActiveTrade";
@@ -14,7 +13,6 @@ export default function AfriForex() {
   return (
     <main className="afriforex-shell">
       <AfriForexHeader />
-      <AfriForexMarketSelector />
 
       <section className="afriforex-dashboard-grid">
         <div className="afriforex-main-column">

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AfriForexMarketSelector() {
   return (
-    <section className="afriforex-panel afriforex-market-selector">
+    <section className="afriforex-market-selector">
       <div>
         <span className="afriforex-label">MARKET</span>
         <strong>Waiting for live market data</strong>
