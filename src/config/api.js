@@ -8,7 +8,8 @@ export const API = {
   ui: `${API_BASE}/api/ui`,
   whatsapp: `${API_BASE}/api/whatsapp`,
   auth: `${API_BASE}/api/auth`,
-  afriai: `${API_BASE}/api/afriai`
+  afriai: `${API_BASE}/api/afriai`,
+  afriforex: `${API_BASE}/api/afriforex`
 };
 
 export default API;

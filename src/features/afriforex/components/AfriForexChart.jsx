@@ -46,7 +46,7 @@ export default function AfriForexChart() {
   }, []);
 
   return (
-    <section className="afriforex-panel afriforex-chart-panel">
+    <section className="afriforex-chart-card"><div className="afriforex-chart-container">
       <div className="afriforex-panel-heading">
         <div>
           <span className="afriforex-label">LIVE MARKET CHART</span>
@@ -61,6 +61,6 @@ export default function AfriForexChart() {
         ref={chartRef}
         className="afriforex-tradingview-chart tradingview-widget-container"
       />
-    </section>
+    </div></section>
   );
 }
