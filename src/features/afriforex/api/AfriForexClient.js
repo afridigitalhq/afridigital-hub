@@ -27,3 +27,24 @@ export function getAfriForexPositions(customerId = "guest") {
 export function getAfriForexTradeHistory(customerId = "guest") {
   return request(`/history?customerId=${encodeURIComponent(customerId)}`);
 }
+
+
+export async function postAfriForexScan(customerId = "guest", markets = []) {
+  const response = await fetch(`${API.afriforex}/scan`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ customerId, markets })
+  });
+
+  if (!response.ok) {
+    throw new Error(`AfriForex API HTTP ${response.status}`);
+  }
+
+  const json = await response.json();
+
+  if (!json?.ok) {
+    throw new Error(json?.error || "AfriForex scan failed");
+  }
+
+  return json.data;
+}

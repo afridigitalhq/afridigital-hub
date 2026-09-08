@@ -1,57 +1,25 @@
 import React from "react";
-import useAfriForexMarket from "../hooks/useAfriForexMarket";
+import AfriForexActiveTrade from "./AfriForexActiveTrade";
 
 function money(value) {
-  const number = Number(value);
-  if (!Number.isFinite(number)) return "—";
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return "—";
 
-  return `${number < 0 ? "-" : ""}$${Math.abs(number).toLocaleString("en-US", {
+  return `${numeric < 0 ? "-" : ""}$${Math.abs(numeric).toLocaleString("en-US", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   })}`;
 }
 
-function number(value, decimals = 2) {
-  const numeric = Number(value);
-  if (!Number.isFinite(numeric)) return "—";
-
-  return numeric.toLocaleString("en-US", {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals
-  });
-}
-
-export default function AfriForexDemoBalance() {
-  const { account, loading } = useAfriForexMarket();
-
+export default function AfriForexDemoBalance({ account, loading }) {
   const positions = Array.isArray(account?.positions)
     ? account.positions
     : [];
-
-  const openLotSize = positions.reduce(
-    (total, position) => total + (Number(position.lotSize) || 0),
-    0
-  );
-
-  const openQuantity = positions.reduce(
-    (total, position) => total + (Number(position.quantity) || 0),
-    0
-  );
 
   const unrealizedPnl = positions.reduce(
     (total, position) => total + (Number(position.unrealizedPnl) || 0),
     0
   );
-
-  const leverage =
-    positions.length > 0
-      ? Number(positions[0]?.leverage)
-      : null;
-
-  const quantityUnit =
-    positions.length === 1
-      ? positions[0]?.quantityUnit || "units"
-      : "units";
 
   return (
     <section className="afriforex-panel afriforex-balance-card">
@@ -85,34 +53,17 @@ export default function AfriForexDemoBalance() {
           </strong>
         </div>
 
-        <div className="afriforex-balance-row">
-          <span>Leverage</span>
-          <strong>
-            {loading || !Number.isFinite(leverage)
-              ? "—"
-              : `${number(leverage, 0)}×`}
-          </strong>
-        </div>
-
-        <div className="afriforex-balance-row">
-          <span>Open Lot Size</span>
-          <strong>
-            {loading ? "—" : number(openLotSize, 2)}
-          </strong>
-        </div>
-
-        <div className="afriforex-balance-row">
-          <span>Open Quantity</span>
-          <strong>
-            {loading
-              ? "—"
-              : `${number(openQuantity, 2)} ${quantityUnit}`}
-          </strong>
-        </div>
-
         <div className="afriforex-balance-row afriforex-live-row">
           <span>Unrealized P/L</span>
-          <strong className={unrealizedPnl < 0 ? "is-negative" : unrealizedPnl > 0 ? "is-positive" : ""}>
+          <strong
+            className={
+              unrealizedPnl < 0
+                ? "is-negative"
+                : unrealizedPnl > 0
+                  ? "is-positive"
+                  : ""
+            }
+          >
             {loading ? "—" : money(unrealizedPnl)}
             {!loading && <small> · LIVE</small>}
           </strong>
@@ -124,9 +75,17 @@ export default function AfriForexDemoBalance() {
         </div>
       </div>
 
-      <button type="button" className="afriforex-topup-button">
-        Top Up Demo
-      </button>
+      <div className="afriforex-demo-account-actions">
+        <button type="button" className="afriforex-topup-button">
+          Top Up Demo
+        </button>
+      </div>
+
+      <div className="afriforex-account-layer-divider" />
+
+      <div className="afriforex-open-positions-layer">
+        <AfriForexActiveTrade account={account} loading={loading} />
+      </div>
     </section>
   );
 }

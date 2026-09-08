@@ -1,9 +1,38 @@
 import React, { useEffect, useRef } from "react";
 import AfriForexMarketSelector from "./AfriForexMarketSelector";
 
-const TRADINGVIEW_SYMBOL = "FX:EURUSD";
+function getTradingViewSymbol(market) {
+  const normalized = String(market || "EUR/USD").toUpperCase();
 
-export default function AfriForexChart() {
+  const forex = {
+    "EUR/USD": "FX:EURUSD",
+    "GBP/USD": "FX:GBPUSD",
+    "USD/JPY": "FX:USDJPY",
+    "AUD/USD": "FX:AUDUSD",
+    "XAU/USD": "OANDA:XAUUSD"
+  };
+
+  const crypto = {
+    "BTC/USDT": "BINANCE:BTCUSDT",
+    "ETH/USDT": "BINANCE:ETHUSDT",
+    "SOL/USDT": "BINANCE:SOLUSDT",
+    "XRP/USDT": "BINANCE:XRPUSDT"
+  };
+
+  if (forex[normalized]) return forex[normalized];
+  if (crypto[normalized]) return crypto[normalized];
+
+  if (/^[A-Z]{1,5}$/.test(normalized)) {
+    return `NASDAQ:${normalized}`;
+  }
+
+  return "FX:EURUSD";
+}
+
+export default function AfriForexChart({
+  selectedMarket,
+  onMarketChange
+}) {
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +54,7 @@ export default function AfriForexChart() {
       autosize: false,
       width: "100%",
       height: 700,
-      symbol: TRADINGVIEW_SYMBOL,
+      symbol: getTradingViewSymbol(selectedMarket),
       interval: "60",
       timezone: "Etc/UTC",
       theme: "dark",
@@ -42,7 +71,7 @@ export default function AfriForexChart() {
     return () => {
       container.innerHTML = "";
     };
-  }, []);
+  }, [selectedMarket]);
 
   return (
     <section className="afriforex-chart-card">
@@ -50,11 +79,14 @@ export default function AfriForexChart() {
         <div className="afriforex-panel-heading">
           <div>
             <span className="afriforex-label">LIVE MARKET CHART</span>
-            <h2>EUR/USD Market Chart</h2>
+            <h2>{selectedMarket || "Select a market"} Market Chart</h2>
           </div>
         </div>
 
-        <AfriForexMarketSelector />
+        <AfriForexMarketSelector
+          selectedMarket={selectedMarket}
+          onMarketChange={onMarketChange}
+        />
 
         <div
           ref={chartRef}

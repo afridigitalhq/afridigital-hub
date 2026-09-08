@@ -3,7 +3,7 @@ import "./AfriForex.css";
 import AfriForexHeader from "./components/AfriForexHeader";
 import AfriForexChart from "./components/AfriForexChart";
 import AfriForexTradeAlert from "./components/AfriForexTradeAlert";
-import AfriForexActiveTrade from "./components/AfriForexActiveTrade";
+import AfriForexAssetScanner from "./components/AfriForexAssetScanner";
 import AfriForexDemoBalance from "./components/AfriForexDemoBalance";
 import AfriForexPerformance from "./components/AfriForexPerformance";
 import AfriForexAIChat from "./components/AfriForexAIChat";
@@ -45,8 +45,9 @@ export default function AfriForex() {
 
       <section className="afriforex-dashboard-grid">
         <div className="afriforex-main-column">
-          <AfriForexDemoBalance account={account} loading={loading} error={error} connected={connected} onRefresh={refresh} />
-          <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} />
+          <AfriForexDemoBalance account={account} loading={loading} />
+          <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
+          <AfriForexAssetScanner selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
           <AfriForexTradeAlert
             tradeAlert={tradeAlert}
             selectedMarket={selectedMarket}
@@ -54,7 +55,6 @@ export default function AfriForex() {
             connected={realtimeConnected}
             lastEventAt={lastEventAt}
           />
-          <AfriForexActiveTrade account={account} loading={loading} />
           <AfriForexTradeHistory />
         </div>
 
