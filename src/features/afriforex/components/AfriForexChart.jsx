@@ -8,7 +8,6 @@ export default function AfriForexChart() {
 
   useEffect(() => {
     const container = chartRef.current;
-
     if (!container) return;
 
     container.innerHTML = "";
@@ -46,21 +45,22 @@ export default function AfriForexChart() {
   }, []);
 
   return (
-    <section className="afriforex-chart-card"><div className="afriforex-chart-container">
-      <div className="afriforex-panel-heading">
-        <div>
-          <span className="afriforex-label">LIVE MARKET CHART</span>
-          <h2>EUR/USD Market Chart</h2>
+    <section className="afriforex-chart-card">
+      <div className="afriforex-chart-container">
+        <div className="afriforex-panel-heading">
+          <div>
+            <span className="afriforex-label">LIVE MARKET CHART</span>
+            <h2>EUR/USD Market Chart</h2>
+          </div>
         </div>
 
+        <AfriForexMarketSelector />
+
+        <div
+          ref={chartRef}
+          className="afriforex-tradingview-chart tradingview-widget-container"
+        />
       </div>
-
-      <AfriForexMarketSelector />
-
-      <div
-        ref={chartRef}
-        className="afriforex-tradingview-chart tradingview-widget-container"
-      />
-    </div></section>
+    </section>
   );
 }

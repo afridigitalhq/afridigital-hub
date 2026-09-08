@@ -59,8 +59,6 @@ export default function AfriSportsMatchPredictor({
 }) {
   const [competition, setCompetition] = useState("ALL");
   const [expandedCompetition, setExpandedCompetition] = useState(null);
-  const [selectedId, setSelectedId] = useState("");
-  const [selectedMatchState, setSelectedMatchState] = useState(null);
   const [showMatchResults, setShowMatchResults] = useState(false);
 
   const competitionName = (match) =>
@@ -130,12 +128,12 @@ export default function AfriSportsMatchPredictor({
   };
 
 
-  const selectedMatch = selectedMatchState;
+  const selectedMatch = currentMatch;
+  const selectedId = selectedMatch ? String(matchId(selectedMatch)) : "";
 
   const openView = (view) => {
-    setSelectedId("");
     setExpandedCompetition(null);
-    setSelectedMatchState(null);
+    onSelectMatch?.(null);
     onSelectView?.(view);
   };
 
@@ -144,8 +142,7 @@ export default function AfriSportsMatchPredictor({
     setShowMatchResults(false);
     onSelectView?.(view);
     if (!id) {
-      setSelectedId("");
-      setSelectedMatchState(null);
+      onSelectMatch?.(null);
       return;
     }
     const match = matches.find((item) => String(matchId(item)) === id);
@@ -155,8 +152,6 @@ export default function AfriSportsMatchPredictor({
   const selectMatch = (match) => {
     if (!match) return;
     const id = String(matchId(match));
-    setSelectedId(id);
-    setSelectedMatchState(match);
     setShowMatchResults(false);
     setExpandedCompetition(null);
     onSelectMatch?.(match);
@@ -368,8 +363,6 @@ export default function AfriSportsMatchPredictor({
                   showMatchResults && activeView === view;
 
                 setCompetition("ALL");
-                setSelectedId("");
-                setSelectedMatchState(null);
                 setExpandedCompetition(null);
                 setShowMatchResults(!shouldCollapse);
 

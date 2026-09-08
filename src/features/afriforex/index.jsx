@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AfriForex.css";
 import AfriForexHeader from "./components/AfriForexHeader";
 import AfriForexChart from "./components/AfriForexChart";
@@ -9,9 +9,35 @@ import AfriForexPerformance from "./components/AfriForexPerformance";
 import AfriForexAIChat from "./components/AfriForexAIChat";
 import AfriForexTradeHistory from "./components/AfriForexTradeHistory";
 import useAfriForexMarket from "./hooks/useAfriForexMarket";
+import useAfriForexRealtime from "./hooks/useAfriForexRealtime";
 
 export default function AfriForex() {
+  const [selectedMarket, setSelectedMarket] = useState(
+    () => localStorage.getItem("afriforex:lastViewedMarket") || null
+  );
+
   const { account, loading, error, connected, refresh } = useAfriForexMarket();
+  const {
+    tradeAlert,
+    marketUpdate,
+    tradeSignal,
+    connected: realtimeConnected,
+    lastEventAt
+  } = useAfriForexRealtime(selectedMarket);
+
+  useEffect(() => {
+    const symbol = marketUpdate?.symbol || tradeSignal?.symbol || tradeAlert?.symbol;
+
+    if (!selectedMarket && symbol) {
+      setSelectedMarket(symbol);
+    }
+  }, [marketUpdate, tradeSignal, tradeAlert, selectedMarket]);
+
+  useEffect(() => {
+    if (selectedMarket) {
+      localStorage.setItem("afriforex:lastViewedMarket", selectedMarket);
+    }
+  }, [selectedMarket]);
 
   return (
     <main className="afriforex-shell">
@@ -20,8 +46,14 @@ export default function AfriForex() {
       <section className="afriforex-dashboard-grid">
         <div className="afriforex-main-column">
           <AfriForexDemoBalance account={account} loading={loading} error={error} connected={connected} onRefresh={refresh} />
-          <AfriForexChart />
-          <AfriForexTradeAlert />
+          <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} />
+          <AfriForexTradeAlert
+            tradeAlert={tradeAlert}
+            selectedMarket={selectedMarket}
+            tradeSignal={tradeSignal}
+            connected={realtimeConnected}
+            lastEventAt={lastEventAt}
+          />
           <AfriForexActiveTrade account={account} loading={loading} />
           <AfriForexTradeHistory />
         </div>

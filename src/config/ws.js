@@ -1,4 +1,8 @@
-const WS_BASE = "wss://afridigital-api.onrender.com";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://afridigital-api.onrender.com";
+
+const WS_BASE = API_BASE
+  .replace(/^https:/, "wss:")
+  .replace(/^http:/, "ws:");
 
 export const WS = {
   base: WS_BASE,

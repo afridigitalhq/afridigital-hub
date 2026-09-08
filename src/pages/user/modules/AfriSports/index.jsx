@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./AfriSports.css";
 import useAfriSportsFeed from "./hooks/useAfriSportsFeed";
 import AfriSportsHeader from "./components/AfriSportsHeader";
@@ -31,9 +31,10 @@ export default function AfriSports() {
   } = useAfriSportsFeed(activeView);
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [predictionMatch, setPredictionMatch] = useState(null);
-  const [predictionVisibleMatch, setPredictionVisibleMatch] = useState(null);
+  const [prediction, setPrediction] = useState(null);
   const [isPredicting, setIsPredicting] = useState(false);
   const [predictionDiagnostic, setPredictionDiagnostic] = useState("IDLE");
+  const predictionRequestRef = useRef(0);
 
   const activeFixtures =
     activeView === "all"
@@ -45,12 +46,14 @@ export default function AfriSports() {
           : todayFixtures;
 
   const activeMatch = selectedMatch;
-  const activePrediction = predictionVisibleMatch?.__afriAiPrediction ?? null;
+  const activePrediction = prediction;
 
   const handleSelectMatch = (match) => {
+    predictionRequestRef.current += 1;
     setIsPredicting(false);
-    setPredictionMatch(match);
-    setPredictionVisibleMatch(null);
+    setPredictionMatch(match || null);
+    setPrediction(null);
+    setPredictionDiagnostic(match ? `SELECTED • ${match.raw?.id ?? match.id}` : "IDLE");
   };
 
   const handlePredict = async (match) => {
@@ -59,8 +62,10 @@ export default function AfriSports() {
     const fixtureId = match.raw?.id ?? match.id;
     if (!fixtureId) return;
 
+    const requestId = ++predictionRequestRef.current;
+
     setPredictionMatch(match);
-    setPredictionVisibleMatch(null);
+    setPrediction(null);
     setPredictionDiagnostic(`REQUESTING • ${fixtureId}`);
     setIsPredicting(true);
 
@@ -85,16 +90,37 @@ export default function AfriSports() {
       }
 
       const prediction = await response.json();
-      setPredictionDiagnostic(`RECEIVED • ${prediction?.fixtureId ?? fixtureId}`);
+      const returnedFixtureId = String(prediction?.fixtureId ?? "");
+
+      if (returnedFixtureId !== String(fixtureId)) {
+        throw new Error(
+          `Prediction fixture mismatch: requested ${fixtureId}, received ${returnedFixtureId || "unknown"}`
+        );
+      }
+
+      const returnedHome = String(prediction?.homeTeam ?? "").trim().toLowerCase();
+      const returnedAway = String(prediction?.awayTeam ?? "").trim().toLowerCase();
+      const requestedHome = String(match?.homeTeam ?? "").trim().toLowerCase();
+      const requestedAway = String(match?.awayTeam ?? "").trim().toLowerCase();
+
+      if (
+        (requestedHome && returnedHome && requestedHome !== returnedHome) ||
+        (requestedAway && returnedAway && requestedAway !== returnedAway)
+      ) {
+        throw new Error(
+          `Prediction team mismatch for fixture ${fixtureId}`
+        );
+      }
+
+      setPredictionDiagnostic(`RECEIVED • ${returnedFixtureId}`);
 
       setTimeout(() => {
-        setPredictionDiagnostic(`DISPLAYING • ${prediction?.fixtureId ?? fixtureId}`);
-        setPredictionVisibleMatch({
-          ...match,
-          __afriAiPrediction: prediction
-        });
+        if (predictionRequestRef.current !== requestId) return;
+
+        setPredictionDiagnostic(`DISPLAYING • ${returnedFixtureId}`);
+        setPrediction(prediction);
         setIsPredicting(false);
-      }, 3000);
+      }, 2000);
     } catch (error) {
       console.error("AFRIAI PREDICTION ERROR:", error);
       setPredictionDiagnostic(`ERROR • ${error?.message || error}`);
@@ -102,10 +128,7 @@ export default function AfriSports() {
     }
   };
 
-  const radarMatch =
-    predictionVisibleMatch ||
-    predictionMatch ||
-    activeMatch;
+  const radarMatch = predictionMatch || activeMatch;
 
   const activeAnalysis = {
     ...analysis,

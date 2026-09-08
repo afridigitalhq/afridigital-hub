@@ -530,6 +530,34 @@
   text-align: center;
 }
 
+.afriforex-alert-signal .afriforex-buy-badge,
+.afriforex-alert-signal .afriforex-sell-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 58px;
+  padding: 10px 24px;
+  border: 2px solid rgba(255,255,255,.85);
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-align: center;
+}
+
+.afriforex-alert-signal .afriforex-buy-badge {
+  background: rgba(22,163,74,.28);
+  border-color: rgba(74,222,128,.9);
+}
+
+.afriforex-alert-signal .afriforex-sell-badge {
+  background: rgba(220,38,38,.28);
+  border-color: rgba(248,113,113,.9);
+}
+
 .afriforex-alert-content h2 {
   margin: 8px 0 4px;
   color: var(--afri-text, #fff);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { getActiveUserPlugins } from "../../../../plugins/user/userPluginRegistry";
 import { useUserNavigation } from "../../context/UserNavigationContext";
 
@@ -25,19 +25,17 @@ export default function PluginWorkspace() {
     );
   }
 
+  const PluginComponent = plugin.component;
+
   return (
-    <section style={{ padding: 16 }}>
-      <article
-        style={{
-          border: "1px solid #2a2f45",
-          borderRadius: 12,
-          padding: 16,
-          background: "#131826"
-        }}
-      >
-        <h2>{plugin.name}</h2>
-        <p>{plugin.description || "Plugin workspace ready."}</p>
-      </article>
-    </section>
+    <Suspense
+      fallback={
+        <section style={{ padding: 16 }}>
+          <p>Loading {plugin.name}...</p>
+        </section>
+      }
+    >
+      <PluginComponent />
+    </Suspense>
   );
 }
