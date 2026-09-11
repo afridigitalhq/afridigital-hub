@@ -23,6 +23,7 @@ export default function AfriForex() {
     tradeAlert,
     marketUpdate,
     tradeSignal,
+    afriaiInsight,
     connected: realtimeConnected,
     lastEventAt,
     lastWsMessage,
@@ -30,7 +31,9 @@ export default function AfriForex() {
     wsRawMessage,
     notificationsEnabled,
     notificationPermission,
-    toggleNotifications
+    toggleNotifications,
+    tradeAlertMarket,
+    onTradeAlertMarketChange
   } = useAfriForexRealtime(selectedMarket);
 
 
@@ -84,7 +87,7 @@ export default function AfriForex() {
             onToggleNotifications={toggleNotifications}
           />
           <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
-          <AfriForexTradeAlert tradeAlert={tradeAlert} tradeSignal={tradeSignal} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} />
+          <AfriForexTradeAlert selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={onTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} />
           <AfriForexAssetScanner
             selectedMarket={selectedMarket}
             onMarketChange={setSelectedMarket}

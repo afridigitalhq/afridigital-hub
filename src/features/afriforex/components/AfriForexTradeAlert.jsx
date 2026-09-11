@@ -29,22 +29,32 @@ function getSignalPresentation(tradeSignal, tradeAlert) {
 }
 
 export default function AfriForexTradeAlert({
+  selectedMarket = null,
   tradeAlert,
   tradeSignal,
+  afriaiInsight = null,
   connected = false,
   lastEventAt = null,
   notificationsEnabled = false,
   notificationPermission = "default",
-  onToggleNotifications
+  onToggleNotifications,
+  monitoredMarkets = [],
+  isMarketMonitored,
+  onToggleMarketMonitoring,
+  tradeAlertMarket = null,
+  onTradeAlertMarketChange
 }) {
   const presentation = getSignalPresentation(tradeSignal, tradeAlert);
   const activeSignal = tradeAlert?.signal || tradeSignal?.signal || {};
   const confidence = Number(activeSignal.confidence || 0);
   const score = Number(activeSignal.score || 0);
   const symbol =
+    selectedMarket ||
     tradeAlert?.symbol ||
     tradeSignal?.symbol ||
     "EUR/USD";
+
+  const monitoringEnabled = typeof isMarketMonitored === "function" ? isMarketMonitored(symbol) : monitoredMarkets.includes(symbol);
 
   const markerPosition =
     presentation.state === "BUY"
@@ -57,6 +67,50 @@ export default function AfriForexTradeAlert({
     <section id="afriai-trade-alert" className="afriforex-panel afriforex-alert-panel">
       <div className="afriforex-alert-content">
         <span className="afriforex-label">AFRIAI TRADE ALERT</span>
+
+      <div className="afriforex-alert-notification-card">
+          <div className="afriforex-alert-notification-copy">
+            <span className="afriforex-label">AFRIAI MONITORING ASSETS</span>
+            <strong>
+              <span className="afriforex-trade-alert-bell">🔔</span>
+              Monitored assets
+            </strong>
+            <span>
+              {monitoredMarkets.length
+                ? `${monitoredMarkets.length} asset${monitoredMarkets.length === 1 ? "" : "s"} currently monitored for AfriAI Trade Alerts.`
+                : "No assets are currently monitored."}
+            </span>
+          </div>
+
+          <div className="afriforex-alert-monitoring-controls">
+            <select
+              value={monitoredMarkets.includes(tradeAlertMarket) ? tradeAlertMarket : ""}
+              onChange={(event) => onTradeAlertMarketChange?.(event.target.value || null)}
+              aria-label="Select AfriAI monitoring asset"
+              disabled={!monitoredMarkets.length}
+            >
+              <option value="">Select monitored asset</option>
+              {monitoredMarkets.map((market) => (
+                <option key={market} value={market}>
+                  {market}
+                </option>
+              ))}
+            </select>
+
+            <button
+              type="button"
+              className={`afriforex-alert-notification-button ${monitoringEnabled ? "is-on" : "is-off"}`}
+              aria-label={`${monitoringEnabled ? "Disable" : "Enable"} AfriAI monitoring for ${symbol}`}
+              onClick={() => onToggleMarketMonitoring?.(symbol)}
+              disabled={!onToggleMarketMonitoring || notificationPermission === "denied"}
+            >
+              <span className="afriforex-trade-alert-bell">
+                {monitoringEnabled ? "🔔" : "🔕"}
+              </span>
+              {monitoringEnabled ? "ON" : "OFF"}
+            </button>
+          </div>
+        </div>
 
         <div className="afriforex-alert-signal">
           <span className={`afriforex-${presentation.state.toLowerCase()}-badge`}>
@@ -79,6 +133,20 @@ export default function AfriForexTradeAlert({
             Confidence: <strong>{confidence}%</strong>
           </p>
         )}
+
+        <div className="afriforex-alert-insight">
+          <span className="afriforex-label">AFRIAI INSIGHT</span>
+          <strong>
+            {afriaiInsight?.text ||
+              "AfriAI is monitoring live market evidence and will update this insight when a meaningful state change occurs."}
+          </strong>
+          {afriaiInsight?.detail && <span>{afriaiInsight.detail}</span>}
+          {afriaiInsight?.updatedAt && (
+            <small>
+              Updated {new Date(afriaiInsight.updatedAt).toLocaleTimeString()}
+            </small>
+          )}
+        </div>
 
         <div
           className="afriforex-signal-scale"
@@ -150,14 +218,6 @@ export default function AfriForexTradeAlert({
         </div>
       </div>
 
-      <div className="afriforex-alert-notification-card">
-          <div className="afriforex-alert-notification-copy">
-            <span className="afriforex-label">BROWSER ALERTS</span>
-            <strong>AfriAI Trade Alert notifications</strong>
-            <span>{notificationsEnabled ? "Browser alerts are enabled for live AfriForex events." : "Enable browser alerts to receive live AfriForex events."}</span>
-          </div>
-          <button type="button" className="afriforex-alert-notification-button" onClick={onToggleNotifications} disabled={!onToggleNotifications || notificationPermission === "denied"}>{notificationsEnabled ? "🔔 ON" : "🔕 ENABLE"}</button>
-        </div>
       </div>
     </section>
   );
