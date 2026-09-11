@@ -1,7 +1,7 @@
 import React from "react";
 
 function getSignalPresentation(tradeSignal, tradeAlert) {
-  const signal = tradeSignal?.signal || tradeAlert?.signal || {};
+  const signal = tradeAlert?.signal || tradeSignal?.signal || {};
   const state = String(signal.state || "NEUTRAL").toUpperCase();
   const confidence = Number(signal.confidence || 0);
 
@@ -32,15 +32,18 @@ export default function AfriForexTradeAlert({
   tradeAlert,
   tradeSignal,
   connected = false,
-  lastEventAt = null
+  lastEventAt = null,
+  notificationsEnabled = false,
+  notificationPermission = "default",
+  onToggleNotifications
 }) {
   const presentation = getSignalPresentation(tradeSignal, tradeAlert);
-  const activeSignal = tradeSignal?.signal || tradeAlert?.signal || {};
+  const activeSignal = tradeAlert?.signal || tradeSignal?.signal || {};
   const confidence = Number(activeSignal.confidence || 0);
   const score = Number(activeSignal.score || 0);
   const symbol =
-    tradeSignal?.symbol ||
     tradeAlert?.symbol ||
+    tradeSignal?.symbol ||
     "EUR/USD";
 
   const markerPosition =
@@ -51,7 +54,7 @@ export default function AfriForexTradeAlert({
         : 50;
 
   return (
-    <section className="afriforex-panel afriforex-alert-panel">
+    <section id="afriai-trade-alert" className="afriforex-panel afriforex-alert-panel">
       <div className="afriforex-alert-content">
         <span className="afriforex-label">AFRIAI TRADE ALERT</span>
 
@@ -104,6 +107,15 @@ export default function AfriForexTradeAlert({
             Updated {new Date(lastEventAt).toLocaleTimeString()}
           </small>
         )}
+
+        <div className="afriforex-alert-notification-card">
+          <div className="afriforex-alert-notification-copy">
+            <span className="afriforex-label">BROWSER ALERTS</span>
+            <strong>AfriAI Trade Alert notifications</strong>
+            <span>{notificationsEnabled ? "Browser alerts are enabled for live AfriForex events." : "Enable browser alerts to receive live AfriForex events."}</span>
+          </div>
+          <button type="button" className="afriforex-alert-notification-button" onClick={onToggleNotifications} disabled={!onToggleNotifications || notificationPermission === "denied"}>{notificationsEnabled ? "🔔 ON" : "🔕 ENABLE"}</button>
+        </div>
       </div>
     </section>
   );

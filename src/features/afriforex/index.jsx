@@ -9,6 +9,7 @@ import AfriForexPerformance from "./components/AfriForexPerformance";
 import AfriForexAIChat from "./components/AfriForexAIChat";
 import AfriForexTradeHistory from "./components/AfriForexTradeHistory";
 import useAfriForexMarket from "./hooks/useAfriForexMarket";
+import { closeAfriForexPosition } from "./api/AfriForexClient";
 import useAfriForexRealtime from "./hooks/useAfriForexRealtime";
 
 export default function AfriForex() {
@@ -17,13 +18,34 @@ export default function AfriForex() {
   );
 
   const { account, loading, error, connected, refresh } = useAfriForexMarket();
+  const [closingPositionId, setClosingPositionId] = useState(null);
   const {
     tradeAlert,
     marketUpdate,
     tradeSignal,
     connected: realtimeConnected,
-    lastEventAt
+    lastEventAt,
+    lastWsMessage,
+    notificationStatus,
+    wsRawMessage,
+    notificationsEnabled,
+    notificationPermission,
+    toggleNotifications
   } = useAfriForexRealtime(selectedMarket);
+
+
+  const handleClosePosition = async (positionId) => {
+    setClosingPositionId(positionId);
+
+    try {
+      await closeAfriForexPosition(positionId, "demo-test");
+      await refresh();
+    } catch (closeError) {
+      console.error("AfriForex close error:", closeError);
+    } finally {
+      setClosingPositionId(null);
+    }
+  };
 
   useEffect(() => {
     const symbol = marketUpdate?.symbol || tradeSignal?.symbol || tradeAlert?.symbol;
@@ -44,13 +66,29 @@ export default function AfriForex() {
       <AfriForexHeader />
 
       <section className="afriforex-dashboard-grid">
+        {error && (
+          <div style={{ padding: "12px", marginBottom: "12px", color: "#ff6b6b", background: "rgba(255,0,0,0.08)", border: "1px solid rgba(255,0,0,0.25)", borderRadius: "8px" }}>
+            AfriForex API ERROR: {error.message || String(error)}
+          </div>
+        )}
+        <div style={{ padding: "8px 12px", marginBottom: "10px", border: "1px solid currentColor", borderRadius: "8px", fontSize: "13px" }}>
+          Notification diagnostic: App={notificationsEnabled ? "ON" : "OFF"} | Permission={notificationPermission} | WebSocket={realtimeConnected ? "CONNECTED" : "DISCONNECTED"} | LastEvent={lastEventAt || "NONE"} | LastWS={lastWsMessage} | RawWS={wsRawMessage} | Notify={notificationStatus}
+        </div>
         <div className="afriforex-main-column">
-          <AfriForexDemoBalance account={account} loading={loading} />
+          <AfriForexDemoBalance
+            account={account}
+            loading={loading}
+            onClosePosition={handleClosePosition}
+            closingPositionId={closingPositionId}
+            notificationsEnabled={notificationsEnabled}
+            onToggleNotifications={toggleNotifications}
+          />
           <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
-          <AfriForexAssetScanner selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
-          <AfriForexTradeAlert
-            tradeAlert={tradeAlert}
+          <AfriForexTradeAlert tradeAlert={tradeAlert} tradeSignal={tradeSignal} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} />
+          <AfriForexAssetScanner
             selectedMarket={selectedMarket}
+            onMarketChange={setSelectedMarket}
+            tradeAlert={tradeAlert}
             tradeSignal={tradeSignal}
             connected={realtimeConnected}
             lastEventAt={lastEventAt}
