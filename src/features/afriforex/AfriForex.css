@@ -1312,3 +1312,49 @@
 .afriforex-alert-notification-copy > span:last-child { color:var(--afri-muted,rgba(255,255,255,.72)); font-size:.72rem; line-height:1.4; }
 .afriforex-alert-notification-button { flex:0 0 auto; min-height:38px; padding:8px 14px; border:1px solid rgba(255,255,255,.24); border-radius:10px; background:rgba(255,255,255,.08); color:#fff; font-size:.72rem; font-weight:800; cursor:pointer; }
 .afriforex-alert-notification-button:disabled { opacity:.5; cursor:not-allowed; }
+
+
+/* AfriAI Trade Alert — expanded but bounded intelligence viewport */
+.afriforex-alert-analysis {
+  width: min(100%, 760px);
+  max-height: 560px;
+  margin: 18px auto 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 6px 6px 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+.afriforex-alert-analysis-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.afriforex-alert-analysis-section {
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,.035);
+  color: var(--afri-muted, rgba(255,255,255,.72));
+  font-size: .74rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.afriforex-alert-analysis-section .afriforex-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.afriforex-alert-analysis-section strong {
+  color: var(--afri-text, #fff);
+}
+
+@media (max-width: 640px) {
+  .afriforex-alert-analysis {
+    max-height: 500px;
+    padding-right: 3px;
+  }
+}

@@ -108,7 +108,49 @@ export default function AfriForexTradeAlert({
           </small>
         )}
 
-        <div className="afriforex-alert-notification-card">
+        <div className="afriforex-alert-analysis">
+        <div className="afriforex-alert-analysis-inner">
+          <div className="afriforex-alert-analysis-section">
+            <span className="afriforex-label">LIVE DATA</span>
+            <div>Provider: <strong>{tradeAlert?.provider || "UNAVAILABLE"}</strong></div>
+            <div>Mode: <strong>{tradeAlert?.dataMode || "LIVE"}</strong></div>
+            <div>Price: <strong>{tradeAlert?.price ?? tradeSignal?.price ?? "UNAVAILABLE"}</strong></div>
+            <div>Updated: <strong>{lastEventAt || "UNAVAILABLE"}</strong></div>
+          </div>
+
+          <div className="afriforex-alert-analysis-section">
+            <span className="afriforex-label">SCALP · 1m / 5m / 15m / 1H</span>
+            <div>Timeframe Evidence: <strong>LIVE EVIDENCE PENDING</strong></div>
+            <div>Market Structure: <strong>UNAVAILABLE</strong></div>
+            <div>Momentum: <strong>UNAVAILABLE</strong></div>
+            <div>Indicators: <strong>UNAVAILABLE</strong></div>
+            <div>EC — Evidence &amp; Confirmation: <strong>UNAVAILABLE</strong></div>
+            <div>Decision: <strong>NEUTRAL · Tradeable NO</strong></div>
+          </div>
+
+          <div className="afriforex-alert-analysis-section">
+            <span className="afriforex-label">INTRADAY · 5m / 15m / 1H / 4H</span>
+            <div>Analysis: <strong>LIVE EVIDENCE PENDING</strong></div>
+          </div>
+
+          <div className="afriforex-alert-analysis-section">
+            <span className="afriforex-label">SWING · 1H / 4H / 1D / 1W</span>
+            <div>Analysis: <strong>LIVE EVIDENCE PENDING</strong></div>
+          </div>
+
+          <div className="afriforex-alert-analysis-section">
+            <span className="afriforex-label">POSITION · 4H / 1D / 1W / 1M</span>
+            <div>Analysis: <strong>LIVE EVIDENCE PENDING</strong></div>
+          </div>
+
+          <div className="afriforex-alert-analysis-section">
+            <span className="afriforex-label">CORRELATION / CROSS-ASSET CONTEXT</span>
+            <div>Correlation Evidence: <strong>UNAVAILABLE</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="afriforex-alert-notification-card">
           <div className="afriforex-alert-notification-copy">
             <span className="afriforex-label">BROWSER ALERTS</span>
             <strong>AfriAI Trade Alert notifications</strong>
