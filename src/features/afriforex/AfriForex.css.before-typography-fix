@@ -1,0 +1,263 @@
+.afriforex-shell {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 8px 0 28px;
+  color: var(--afri-text, #fff);
+}
+
+.afriforex-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.afriforex-header h1,
+.afriforex-panel h2 {
+  margin: 4px 0;
+  color: var(--afri-text, #fff);
+  text-align: center;
+}
+
+.afriforex-market-selector {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.afriforex-market-selector > div {
+  min-width: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.afriforex-market-selector strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.afriforex-panel-heading,
+.afriforex-chat-header {
+  text-align: center;
+}
+
+.afriforex-panel-heading > div,
+.afriforex-chat-header > div {
+  flex: 1;
+}
+
+.afriforex-panel-heading .afriforex-status:empty {
+  display: none;
+}
+
+.afriforex-panel-heading,
+.afriforex-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.afriforex-tradingview-chart {
+  width: 100%;
+  height: 520px;
+  min-height: 360px;
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: calc(var(--afri-radius, 20px) - 4px);
+  background: rgba(255,255,255,.025);
+}
+
+.afriforex-tradingview-chart .tradingview-widget-container__widget {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  .afriforex-tradingview-chart {
+    height: 420px;
+    min-height: 320px;
+  }
+}
+
+.afriforex-alert-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.afriforex-empty-state {
+  padding: 18px 0;
+  color: var(--afri-muted, rgba(255,255,255,.72));
+}
+
+.afriforex-balance-card h2 {
+  font-size: 2rem;
+  margin: 8px 0 18px;
+}
+
+.afriforex-balance-row,
+.afriforex-metrics > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.afriforex-topup-button,
+.afriforex-chat-input button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: var(--afri-primary, #1877f2);
+  color: #fff;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.afriforex-topup-button:hover,
+.afriforex-chat-input button:hover {
+  transform: translateY(-2px);
+  background: var(--afri-accent, #00d4ff);
+  color: #001018;
+}
+
+.afriforex-topup-button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.afriforex-ai-chat {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.afriforex-chat-messages {
+  flex: 1;
+  padding: 18px 0;
+}
+
+.afriforex-chat-message {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(5,15,35,.32);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.afriforex-chat-message p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.afriforex-chat-user {
+  margin-top: 10px;
+  background: rgba(24,119,242,.14);
+}
+
+.afriforex-chat-loading {
+  opacity: .78;
+}
+
+.afriforex-chat-input {
+  text-align: left;
+}
+
+.afriforex-chat-input input {
+  text-align: left;
+}
+
+.afriforex-chat-input button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.afriforex-chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+.afriforex-chat-input input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--afri-border, rgba(24,119,242,.35));
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,.04);
+  color: var(--afri-text, #fff);
+  outline: none;
+}
+
+.afriforex-chat-input input:focus {
+  border-color: var(--afri-accent, #00d4ff);
+}
+
+.afriforex-chat-input input::placeholder {
+  color: var(--afri-muted, rgba(255,255,255,.72));
+}
+
+@media (max-width: 900px) {
+  .afriforex-shell {
+    padding: 8px 0 24px;
+  }
+
+  .afriforex-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-market-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .afriforex-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .afriforex-panel {
+    padding: 16px;
+  }
+
+  .afriforex-market-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-alert-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .afriforex-chat-input {
+    flex-direction: column;
+  }
+}
+
+/* AfriForex section labels */
+.afriforex-eyebrow,
+.afriforex-label {
+  color: var(--afri-accent, #00d4ff);
+  font-size: .76rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(0,212,255,.28);
+}
+
+.afriforex-header h1,
+.afriforex-panel h2 {
+  color: #ffffff;
+}
+
+.afriforex-market-selector strong {
+  color: #ffffff;
+}

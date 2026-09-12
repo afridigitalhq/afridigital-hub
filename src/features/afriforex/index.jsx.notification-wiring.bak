@@ -11,7 +11,6 @@ import AfriForexTradeHistory from "./components/AfriForexTradeHistory";
 import useAfriForexMarket from "./hooks/useAfriForexMarket";
 import { closeAfriForexPosition } from "./api/AfriForexClient";
 import useAfriForexRealtime from "./hooks/useAfriForexRealtime";
-import AfriForexEconomicCalendar from "./components/AfriForexEconomicCalendar";
 
 export default function AfriForex() {
   const [selectedMarket, setSelectedMarket] = useState(
@@ -20,48 +19,15 @@ export default function AfriForex() {
 
   const { account, loading, error, connected, refresh } = useAfriForexMarket();
   const [closingPositionId, setClosingPositionId] = useState(null);
-  const [monitoredMarkets, setMonitoredMarkets] = useState(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem("afriforex:monitoredMarkets") || "[]");
-      const current = Array.isArray(saved) ? saved : [];
-      const required = ["XRP/USDT", "EUR/USD", "XAU/USD", "AAPL"];
-      return [...new Set([...current, ...required])];
-    } catch {
-      return ["XRP/USDT", "EUR/USD", "XAU/USD", "AAPL"];
-    }
-  });
-
-  const isMarketMonitored = (market) => monitoredMarkets.includes(market);
-
-  const toggleMarketMonitoring = (market) => {
-    setMonitoredMarkets((current) => {
-      const next = current.includes(market)
-        ? current.filter((item) => item !== market)
-        : [...current, market];
-      localStorage.setItem("afriforex:monitoredMarkets", JSON.stringify(next));
-      return next;
-    });
-  };
-  const [latestActivity, setLatestActivity] = useState(null);
-
   const {
     tradeAlert,
     marketUpdate,
     tradeSignal,
-    afriaiInsight,
     connected: realtimeConnected,
     lastEventAt,
-    lastWsMessage,
-    notificationStatus,
-    wsRawMessage,
     notificationsEnabled,
-    notificationPermission,
-    toggleNotifications,
-    primeNotificationSound,
-    playNotificationSound,
-    tradeAlertMarket,
-    onTradeAlertMarketChange
-  } = useAfriForexRealtime(selectedMarket, monitoredMarkets);
+    toggleNotifications
+  } = useAfriForexRealtime(selectedMarket);
 
 
   const handleClosePosition = async (positionId) => {
@@ -107,24 +73,16 @@ export default function AfriForex() {
             loading={loading}
             onClosePosition={handleClosePosition}
             closingPositionId={closingPositionId}
-            notificationsEnabled={notificationsEnabled}
-            onToggleNotifications={toggleNotifications}
           />
           <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
-          <AfriForexTradeAlert latestActivity={latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={onTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} />
-          <AfriForexAssetScanner
-            selectedMarket={selectedMarket}
-            onScanResult={(market) => setLatestActivity({ source: "scan", data: market, symbol: market?.symbol || selectedMarket, updatedAt: new Date().toISOString() })}
-            onMarketChange={setSelectedMarket}
+          <AfriForexAssetScanner selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
+          <AfriForexTradeAlert
             tradeAlert={tradeAlert}
+            selectedMarket={selectedMarket}
             tradeSignal={tradeSignal}
             connected={realtimeConnected}
             lastEventAt={lastEventAt}
-            notificationPermission={notificationPermission}
-            playNotificationSound={playNotificationSound}
           />
-
-        <AfriForexEconomicCalendar />
           <AfriForexTradeHistory />
         </div>
 

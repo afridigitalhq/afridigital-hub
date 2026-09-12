@@ -1,0 +1,167 @@
+import { useEffect, useRef, useState } from "react";
+import { AfriTransport } from "../../../core/transport/AfriTransport";
+
+export default function useAfriForexRealtime(selectedMarket = null) {
+  const activeMarketRef = useRef(
+    selectedMarket ||
+      localStorage.getItem("afriforex:lastViewedMarket") ||
+      null
+  );
+  const [tradeAlert, setTradeAlert] = useState(null);
+  const [marketUpdate, setMarketUpdate] = useState(null);
+  const [tradeSignal, setTradeSignal] = useState(null);
+  const [connected, setConnected] = useState(false);
+  const [lastEventAt, setLastEventAt] = useState(null); const [lastWsMessage, setLastWsMessage] = useState("NONE"); const [notificationStatus, setNotificationStatus] = useState("IDLE");
+  const [notificationsEnabled, setNotificationsEnabled] = useState(() => localStorage.getItem("afriforex:notifications") === "ON");
+
+  const toggleNotifications = async () => {
+    if (notificationsEnabled) {
+      localStorage.setItem("afriforex:notifications", "OFF");
+      setNotificationsEnabled(false);
+      return;
+    }
+    if (!("Notification" in window)) return;
+    const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
+    if (permission === "granted") {
+      localStorage.setItem("afriforex:notifications", "ON");
+      setNotificationsEnabled(true);
+    }
+  };
+
+  useEffect(() => {
+    if (selectedMarket) {
+      activeMarketRef.current = selectedMarket;
+      localStorage.setItem("afriforex:lastViewedMarket", selectedMarket);
+      setMarketUpdate(null);
+      setTradeSignal(null);
+      setTradeAlert(null);
+      setLastEventAt(null);
+    }
+  }, [selectedMarket]);
+
+  useEffect(() => {
+    const ws = AfriTransport.stream("/ws/afriforex", async (message) => {
+      setLastWsMessage(message?.type === "event" ? `EVENT:${message?.event || "UNKNOWN"}` : message?.type || "UNKNOWN");
+      if (message?.type === "init") {
+        setConnected(true);
+        return;
+      }
+
+      if (message?.type === "event") {
+        const event = message?.event;
+        const data = message?.data || {};
+        const symbol = data?.symbol || null;
+
+        if (
+          ["TRADE_ALERT", "MARKET_UPDATE", "TRADE_SIGNAL"].includes(event)
+        ) {
+          if (!activeMarketRef.current && symbol) {
+            activeMarketRef.current = symbol;
+            localStorage.setItem(
+              "afriforex:lastViewedMarket",
+              symbol
+            );
+          }
+
+          if (
+            activeMarketRef.current &&
+            symbol &&
+            symbol !== activeMarketRef.current &&
+            data?.source !== "AfriAI_NOTIFICATION_TEST"
+          ) {
+            return;
+          }
+        }
+
+        if (event === "TRADE_ALERT") {
+          setTradeAlert(data);
+          if (notificationsEnabled && "Notification" in window && Notification.permission === "granted") {
+            const horizons = data?.horizons || {};
+            const active = Object.entries(horizons).find(([, value]) => value?.tradeable) || null;
+            const horizon = active?.[0] || "TRADE";
+            const signal = active?.[1]?.signal || data?.signal?.state || "ALERT";
+            const signalResult = data?.signal || {};
+            const risk = data?.risk || {};
+            const body = [
+              `${data?.symbol || "Market"} — ${signal}`,
+              `Confidence: ${signalResult?.confidence ?? "N/A"}%`,
+              `Price: ${signalResult?.price ?? data?.price ?? "N/A"}`,
+              `Tradeable: ${signalResult?.tradeable ? "YES" : "NO"}`,
+              `Risk: ${risk?.status || "N/A"}`,
+              `Data: ${data?.dataMode || "UNKNOWN"}`,
+              `Horizon: ${horizon}`
+            ].join(" • ");
+            const title = `AfriAI Trade Alert — ${data?.symbol || "Market"}`;
+            const options = {
+              body,
+              tag: `afriai-trade-alert-${data?.symbol || "market"}`,
+              renotify: true,
+              data: {
+                type: "AFRIAI_TRADE_ALERT",
+                event: "TRADE_ALERT",
+                horizon,
+                alert: data
+              }
+            };
+            try {
+              if ("serviceWorker" in navigator) {
+                const registration = await navigator.serviceWorker.ready;
+                await registration.showNotification(title, options);
+                setNotificationStatus("SENT:SW");
+              } else {
+                new Notification(title, options);
+                setNotificationStatus("SENT");
+              }
+            } catch (error) {
+              try {
+                new Notification(title, options);
+                setNotificationStatus("SENT:FALLBACK");
+              } catch (fallbackError) {
+                setNotificationStatus(`ERROR:${fallbackError?.message || error?.message || "Notification failed"}`);
+              }
+            }
+          } else {
+            setNotificationStatus(`BLOCKED:App=${notificationsEnabled ? "ON" : "OFF"} Permission=${"Notification" in window ? Notification.permission : "unsupported"}`);
+          }
+        }
+
+        if (event === "MARKET_UPDATE") {
+          setMarketUpdate(data);
+        }
+
+        if (event === "TRADE_SIGNAL") {
+          setTradeSignal(data);
+        }
+
+        if (
+          ["TRADE_ALERT", "MARKET_UPDATE", "TRADE_SIGNAL"].includes(event)
+        ) {
+          setLastEventAt(
+            message.emittedAt || new Date().toISOString()
+          );
+        }
+      }
+    });
+
+    ws.onopen = () => { console.log("🔎 AFRIFOREX_BROWSER_WS_OPEN"); setConnected(true); };
+    ws.onclose = (event) => { console.log("🔎 AFRIFOREX_BROWSER_WS_CLOSE", event.code, event.reason || "NO_REASON"); setConnected(false); };
+    ws.onerror = (event) => { console.log("🔴 AFRIFOREX_BROWSER_WS_ERROR", event); setConnected(false); };
+
+    return () => {
+      ws.close();
+    };
+  }, [notificationsEnabled]);
+
+  return {
+    tradeAlert,
+    marketUpdate,
+    tradeSignal,
+    connected,
+    lastEventAt,
+    lastWsMessage,
+    notificationStatus,
+    notificationsEnabled,
+    notificationPermission: "Notification" in window ? Notification.permission : "unsupported",
+    toggleNotifications
+  };
+}

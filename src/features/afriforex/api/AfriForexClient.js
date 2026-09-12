@@ -48,3 +48,24 @@ export async function postAfriForexScan(customerId = "guest", markets = []) {
 
   return json.data;
 }
+
+export async function closeAfriForexPosition(
+  positionId,
+  customerId = "demo-test"
+) {
+  const response = await fetch(`${API.afriforex}/close`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ customerId, positionId })
+  });
+
+  const json = await response.json();
+
+  if (!response.ok || !json?.ok) {
+    throw new Error(
+      json?.error || `AfriForex API HTTP ${response.status}`
+    );
+  }
+
+  return json.data;
+}

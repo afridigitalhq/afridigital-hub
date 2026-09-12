@@ -12,6 +12,7 @@ export default function useAfriForexMarket() {
   const refresh = useCallback(async () => {
     try {
       const data = await getAfriForexAccount(DEMO_CUSTOMER_ID);
+      console.log("AFRIFOREX ACCOUNT RESPONSE:", data);
       setAccount(data);
       setError(null);
     } catch (requestError) {

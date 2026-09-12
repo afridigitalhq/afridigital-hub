@@ -168,12 +168,9 @@ export default function AfriForexActiveTrade({
 
         <div className="afriforex-position-scaffold">
           <button type="button" className={`afriforex-scaffold-notification ${notificationsEnabled ? "is-on" : "is-off"}`} onClick={onToggleNotifications} aria-pressed={notificationsEnabled}>
-            <span className="afriforex-position-notification-bell">🔔</span>
+            <span className="afriforex-position-notification-bell">{notificationsEnabled ? "🟢 🔔" : "🔴 🔔"}</span>
             <strong>Trade notifications</strong>
-            <span className="afriforex-position-notification-state">
-              <span className="afriforex-position-notification-status">{notificationsEnabled ? "🟢" : "🔴"}</span>
-              <span>{notificationsEnabled ? "ON" : "OFF"}</span>
-            </span>
+            <span>{notificationsEnabled ? "ON" : "OFF"}</span>
             <span>⚙</span>
           </button>
 

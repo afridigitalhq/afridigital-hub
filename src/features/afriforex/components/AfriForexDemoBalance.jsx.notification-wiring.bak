@@ -96,8 +96,6 @@ export default function AfriForexDemoBalance({
         loading={loading}
         onClosePosition={onClosePosition}
         closingPositionId={closingPositionId}
-        notificationsEnabled={notificationsEnabled}
-        onToggleNotifications={onToggleNotifications}
       />
       </div>
     </section>
