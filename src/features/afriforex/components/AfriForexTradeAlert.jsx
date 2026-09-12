@@ -68,12 +68,19 @@ export default function AfriForexTradeAlert({
       <div className="afriforex-alert-content">
         <span className="afriforex-label">AFRIAI TRADE ALERT</span>
 
-      <div className="afriforex-alert-notification-card">
+      <div className={`afriforex-alert-notification-card ${monitoringEnabled ? "is-monitoring-active" : ""}`}>
+          {monitoringEnabled && (
+            <span
+              className="afriforex-monitoring-live-dot"
+              aria-label="AfriAI monitoring active"
+              title="AfriAI monitoring active"
+            />
+          )}
           <div className="afriforex-alert-notification-copy">
             <span className="afriforex-label">AFRIAI MONITORING ASSETS</span>
-            <strong>
-              <span className="afriforex-trade-alert-bell">🔔</span>
-              Monitored assets
+            <strong className="afriforex-monitoring-title">
+              <span className="afriforex-monitoring-safeguard" aria-hidden="true">🛡️</span>
+              <span>Monitored assets</span>
             </strong>
             <span>
               {monitoredMarkets.length
