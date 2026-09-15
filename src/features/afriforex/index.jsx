@@ -9,7 +9,7 @@ import AfriForexPerformance from "./components/AfriForexPerformance";
 import AfriForexAIChat from "./components/AfriForexAIChat";
 import AfriForexTradeHistory from "./components/AfriForexTradeHistory";
 import useAfriForexMarket from "./hooks/useAfriForexMarket";
-import { closeAfriForexPosition } from "./api/AfriForexClient";
+import { closeAfriForexPosition, AFRIFOREX_DEMO_CUSTOMER_ID } from "./api/AfriForexClient";
 import useAfriForexRealtime from "./hooks/useAfriForexRealtime";
 import AfriForexEconomicCalendar from "./components/AfriForexEconomicCalendar";
 
@@ -17,6 +17,7 @@ export default function AfriForex() {
   const [selectedMarket, setSelectedMarket] = useState(
     () => localStorage.getItem("afriforex:lastViewedMarket") || null
   );
+  const [crossAssetEnabled, setCrossAssetEnabled] = useState(false);
 
   const { account, loading, error, connected, refresh } = useAfriForexMarket();
   const [closingPositionId, setClosingPositionId] = useState(null);
@@ -63,12 +64,17 @@ export default function AfriForex() {
     onTradeAlertMarketChange
   } = useAfriForexRealtime(selectedMarket, monitoredMarkets);
 
+  const handleTradeAlertMarketChange = (market) => {
+    const nextMarket = market || null;
+    setSelectedMarket(nextMarket);
+    onTradeAlertMarketChange(nextMarket);
+  };
 
   const handleClosePosition = async (positionId) => {
     setClosingPositionId(positionId);
 
     try {
-      await closeAfriForexPosition(positionId, "demo-test");
+      await closeAfriForexPosition(positionId, AFRIFOREX_DEMO_CUSTOMER_ID);
       await refresh();
     } catch (closeError) {
       console.error("AfriForex close error:", closeError);
@@ -110,9 +116,10 @@ export default function AfriForex() {
             notificationsEnabled={notificationsEnabled}
             onToggleNotifications={toggleNotifications}
           />
-          <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} />
-          <AfriForexTradeAlert latestActivity={latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={onTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} />
+          <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} connected={realtimeConnected} />
+          <AfriForexTradeAlert latestActivity={latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={handleTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} crossAssetEnabled={crossAssetEnabled} onToggleCrossAsset={setCrossAssetEnabled} />
           <AfriForexAssetScanner
+            crossAssetEnabled={crossAssetEnabled}
             selectedMarket={selectedMarket}
             onScanResult={(market) => setLatestActivity({ source: "scan", data: market, symbol: market?.symbol || selectedMarket, updatedAt: new Date().toISOString() })}
             onMarketChange={setSelectedMarket}
