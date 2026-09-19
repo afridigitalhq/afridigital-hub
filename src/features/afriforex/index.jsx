@@ -61,7 +61,8 @@ export default function AfriForex() {
     primeNotificationSound,
     playNotificationSound,
     tradeAlertMarket,
-    onTradeAlertMarketChange
+    onTradeAlertMarketChange,
+    economicCalendar
   } = useAfriForexRealtime(selectedMarket, monitoredMarkets);
 
   const handleTradeAlertMarketChange = (market) => {
@@ -131,7 +132,10 @@ export default function AfriForex() {
             playNotificationSound={playNotificationSound}
           />
 
-        <AfriForexEconomicCalendar />
+        <AfriForexEconomicCalendar
+          economicCalendar={economicCalendar}
+          selectedMarket={selectedMarket}
+        />
           <AfriForexTradeHistory />
         </div>
 

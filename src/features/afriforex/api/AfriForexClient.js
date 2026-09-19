@@ -1,5 +1,7 @@
 import API from "../../../config/api";
 
+export const AFRIFOREX_DEMO_CUSTOMER_ID = "guest";
+
 async function request(path) {
   const response = await fetch(`${API.afriforex}${path}`);
 
@@ -29,11 +31,11 @@ export function getAfriForexTradeHistory(customerId = "guest") {
 }
 
 
-export async function postAfriForexScan(customerId = "guest", markets = []) {
+export async function postAfriForexScan(customerId = "guest", markets = [], crossAssetEnabled = false) {
   const response = await fetch(`${API.afriforex}/scan`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ customerId, markets })
+    body: JSON.stringify({ customerId, markets, crossAssetEnabled: crossAssetEnabled === true })
   });
 
   if (!response.ok) {
@@ -51,7 +53,7 @@ export async function postAfriForexScan(customerId = "guest", markets = []) {
 
 export async function closeAfriForexPosition(
   positionId,
-  customerId = "demo-test"
+  customerId = AFRIFOREX_DEMO_CUSTOMER_ID
 ) {
   const response = await fetch(`${API.afriforex}/close`, {
     method: "POST",
