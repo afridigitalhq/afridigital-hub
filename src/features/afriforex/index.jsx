@@ -45,6 +45,7 @@ export default function AfriForex() {
     });
   };
   const [latestActivity, setLatestActivity] = useState(null);
+  const [scanEconomicCalendar, setScanEconomicCalendar] = useState(null);
 
   const {
     tradeAlert,
@@ -132,7 +133,12 @@ export default function AfriForex() {
           <AfriForexAssetScanner
             crossAssetEnabled={crossAssetEnabled}
             selectedMarket={selectedMarket}
-            onScanResult={(market) => setLatestActivity({ source: "scan", data: market, symbol: market?.symbol || selectedMarket, updatedAt: new Date().toISOString() })}
+            onScanResult={(market) => {
+              const scannedSymbol = market?.displaySymbol || market?.symbol || selectedMarket || null;
+              if (scannedSymbol) setSelectedMarket(scannedSymbol);
+              setLatestActivity({ source: "scan", data: market, symbol: scannedSymbol, updatedAt: new Date().toISOString() });
+              setScanEconomicCalendar(market?.economicCalendar || null);
+            }}
             onMarketChange={setSelectedMarket}
             tradeAlert={tradeAlert}
             tradeSignal={tradeSignal}
@@ -143,7 +149,7 @@ export default function AfriForex() {
           />
 
         <AfriForexEconomicCalendar
-          economicCalendar={economicCalendar}
+          economicCalendar={scanEconomicCalendar || economicCalendar}
           selectedMarket={selectedMarket}
         />
           <AfriForexTradeHistory />
