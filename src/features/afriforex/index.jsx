@@ -3,6 +3,7 @@ import "./AfriForex.css";
 import AfriForexHeader from "./components/AfriForexHeader";
 import AfriForexChart from "./components/AfriForexChart";
 import AfriForexTradeAlert from "./components/AfriForexTradeAlert";
+import AfriForexPriceTargetAlerts from "./components/AfriForexPriceTargetAlerts";
 import AfriForexAssetScanner from "./components/AfriForexAssetScanner";
 import AfriForexDemoBalance from "./components/AfriForexDemoBalance";
 import AfriForexPerformance from "./components/AfriForexPerformance";
@@ -118,7 +119,16 @@ export default function AfriForex() {
             onToggleNotifications={toggleNotifications}
           />
           <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} connected={realtimeConnected} />
-          <AfriForexTradeAlert latestActivity={latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={handleTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} crossAssetEnabled={crossAssetEnabled} onToggleCrossAsset={setCrossAssetEnabled} />
+          <AfriForexTradeAlert latestActivity={latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={handleTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} crossAssetEnabled={crossAssetEnabled} onToggleCrossAsset={setCrossAssetEnabled} economicCalendar={scanEconomicCalendar || economicCalendar} />
+          <AfriForexPriceTargetAlerts
+            selectedMarket={selectedMarket}
+            marketUpdate={marketUpdate}
+            latestActivity={latestActivity}
+            tradeAlert={tradeAlert}
+            notificationsEnabled={notificationsEnabled}
+            notificationPermission={notificationPermission}
+            playNotificationSound={playNotificationSound}
+          />
           <AfriForexAssetScanner
             crossAssetEnabled={crossAssetEnabled}
             selectedMarket={selectedMarket}

@@ -360,8 +360,8 @@
   padding: 20px;
 }
 
-.afriforex-shell .afriforex-tradingview-chart {
-  margin-top: 16px;
+.afriforex-shell .afriforex-native-chart {
+  margin-top: 12px;
 }
 
 /* Dashboard breathing space */
@@ -370,6 +370,15 @@
   grid-template-columns: minmax(0, 2fr) minmax(300px, .9fr);
   column-gap: 24px;
   align-items: start;
+  min-width: 0;
+}
+
+.afriforex-shell .afriforex-dashboard-grid > *,
+.afriforex-shell .afriforex-main-column > *,
+.afriforex-shell .afriforex-side-column > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .afriforex-shell .afriforex-main-column,
@@ -503,6 +512,17 @@
   display: block;
   margin-bottom: 14px;
   text-align: center;
+}
+
+.afriforex-alert-asset-name {
+  margin: 14px 0 10px;
+  color: var(--afri-text, #fff);
+  font-size: 1.45rem;
+  font-weight: 950;
+  letter-spacing: .04em;
+  line-height: 1.15;
+  text-align: center;
+  text-shadow: 0 0 14px rgba(255,255,255,.12);
 }
 
 .afriforex-alert-signal {
@@ -1767,4 +1787,743 @@
   margin-right: auto;
   align-self: center;
   box-sizing: border-box;
+}
+
+/* ============================================================
+   AfriForex Trade Alert — unified label/value hierarchy
+   Section heading > green field label > white result
+   ============================================================ */
+
+.afriforex-alert-analysis-section {
+  color: #fff;
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.afriforex-alert-analysis-section > .afriforex-label,
+.afriforex-horizon-title,
+.afriforex-analysis-subtitle,
+.afriforex-horizon-subsection > span,
+.afriforex-horizon-decision > span,
+.afriforex-horizon-reason > span {
+  color: #22c55e;
+  font-size: 1.02rem;
+  font-weight: 950;
+  letter-spacing: .055em;
+  line-height: 1.35;
+}
+
+.afriforex-alert-analysis-section .afriforex-field-label {
+  display: inline-block;
+  margin-right: .45rem;
+  color: #22c55e;
+  font-size: 1rem;
+  font-weight: 950;
+  letter-spacing: .025em;
+  line-height: 1.45;
+  vertical-align: baseline;
+}
+
+.afriforex-alert-analysis-section .afriforex-field-label + strong {
+  color: #fff;
+  font-size: .86rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.45;
+  vertical-align: baseline;
+}
+
+.afriforex-alert-analysis-section > div {
+  color: #fff;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.afriforex-alert-analysis-section > div strong {
+  color: #fff;
+}
+
+.afriforex-horizon-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .45rem .7rem;
+}
+
+.afriforex-horizon-timeframes {
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 650;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+.afriforex-horizon-metrics {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.afriforex-horizon-metrics > div > span {
+  color: #22c55e;
+  font-size: 1rem;
+  font-weight: 950;
+  letter-spacing: .025em;
+  line-height: 1.35;
+}
+
+.afriforex-horizon-metrics > div > strong {
+  color: #fff;
+  font-size: .86rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.afriforex-timeframe-evidence {
+  margin: 12px 0 14px;
+  padding: 11px 14px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 10px;
+  background: rgba(255,255,255,.045);
+}
+
+.afriforex-timeframe-evidence > div {
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.75;
+  letter-spacing: .015em;
+  white-space: pre-wrap;
+}
+
+.afriforex-horizon-subsection > div,
+.afriforex-horizon-decision > div {
+  color: #fff;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.afriforex-horizon-subsection > div strong,
+.afriforex-horizon-decision > div strong,
+.afriforex-horizon-decision > strong,
+.afriforex-horizon-reason > strong {
+  color: #fff;
+  font-size: .86rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+.afriforex-horizon-decision > strong {
+  display: block;
+  margin-top: 5px;
+}
+
+.afriforex-alert-insight {
+  color: #fff;
+}
+
+.afriforex-alert-insight .afriforex-label {
+  color: #22c55e;
+  font-size: 1.02rem;
+  font-weight: 950;
+  letter-spacing: .055em;
+}
+
+.afriforex-alert-insight strong {
+  color: #fff;
+  font-size: .86rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .afriforex-alert-analysis-section {
+    font-size: .9rem;
+  }
+
+  .afriforex-alert-analysis-section .afriforex-field-label {
+    font-size: .96rem;
+  }
+
+  .afriforex-alert-analysis-section .afriforex-field-label + strong {
+    font-size: .84rem;
+  }
+
+  .afriforex-horizon-metrics > div > span {
+    font-size: .96rem;
+  }
+
+  .afriforex-horizon-metrics > div > strong {
+    font-size: .84rem;
+  }
+
+  .afriforex-timeframe-evidence > div {
+    font-size: .88rem;
+  }
+}
+
+/* ===== AFriFOREX PRICE TARGET ALERTS ===== */
+
+.afriforex-shell .afriforex-price-target-card {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  background: var(--afriglass-bg);
+  border: 1px solid var(--afriglass-border);
+  border-radius: var(--afriglass-radius);
+  color: var(--afri-text, #fff);
+}
+
+.afriforex-price-target-card .afriforex-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.afriforex-price-target-card .afriforex-card-header > div {
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.afriforex-price-target-card h2 {
+  margin: 0;
+  color: var(--afri-text, #fff);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.afriforex-price-target-card .afriforex-card-header p {
+  margin: 6px 0 0;
+  color: var(--afri-muted, rgba(255,255,255,.68));
+  font-size: .78rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.afriforex-price-target-card .afriforex-status-pill {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  color: var(--afri-text, #fff);
+  background: rgba(255,255,255,.045);
+  font-size: .68rem;
+  font-weight: 750;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.afriforex-price-target-form {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(125px, .8fr) minmax(180px, 1.25fr) auto;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.afriforex-price-target-form strong {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  background: rgba(255,255,255,.035);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.afriforex-price-target-form select,
+.afriforex-price-target-form input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(0,0,0,.18);
+  color: #fff;
+  font: inherit;
+  font-size: .85rem;
+  text-align: left;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.afriforex-price-target-form input {
+  min-height: 52px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.afriforex-price-target-form input::placeholder {
+  color: rgba(255,255,255,.42);
+  font-weight: 500;
+}
+
+.afriforex-price-target-form select:focus,
+.afriforex-price-target-form input:focus {
+  border-color: var(--afri-primary, #1877f2);
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 0 0 2px rgba(24,119,242,.12);
+}
+
+.afriforex-price-target-form select option {
+  background: #111;
+  color: #fff;
+}
+
+.afriforex-price-target-form button {
+  min-width: 76px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--afri-primary, #1877f2);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 800;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.afriforex-price-target-form button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.afriforex-price-target-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.afriforex-price-target-list .afriforex-empty-state {
+  min-height: 44px;
+  margin: 0;
+  padding: 14px;
+  border: 1px dashed rgba(255,255,255,.12);
+  border-radius: 10px;
+  color: var(--afri-muted, rgba(255,255,255,.62));
+  text-align: left;
+}
+
+.afriforex-price-target-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 10px;
+  background: rgba(255,255,255,.025);
+}
+
+.afriforex-price-target-row > div {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+  text-align: left;
+}
+
+.afriforex-price-target-row strong {
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.afriforex-price-target-row span:not(.afriforex-status-pill) {
+  color: rgba(255,255,255,.78);
+  font-size: .82rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.afriforex-price-target-row .afriforex-status-pill {
+  text-transform: uppercase;
+}
+
+.afriforex-price-target-row .afriforex-status-pill.armed {
+  color: #fff;
+}
+
+.afriforex-price-target-row .afriforex-status-pill.triggered {
+  color: #fff;
+  border-color: rgba(255,255,255,.18);
+}
+
+.afriforex-price-target-row button {
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+  color: #fff;
+  cursor: pointer;
+  font-size: .7rem;
+  font-weight: 750;
+}
+
+.afriforex-price-target-row button:hover {
+  background: rgba(255,255,255,.09);
+}
+
+@media (max-width: 760px) {
+  .afriforex-price-target-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .afriforex-price-target-form strong {
+    grid-column: 1 / -1;
+  }
+
+  .afriforex-price-target-form input {
+    grid-column: 1 / -1;
+  }
+
+  .afriforex-price-target-form button {
+    width: 100%;
+  }
+
+  .afriforex-price-target-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .afriforex-price-target-row > div {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .afriforex-price-target-card .afriforex-card-header {
+    flex-direction: column;
+  }
+
+  .afriforex-price-target-card .afriforex-status-pill {
+    align-self: flex-start;
+  }
+
+  .afriforex-price-target-form {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-price-target-form strong,
+  .afriforex-price-target-form input {
+    grid-column: auto;
+  }
+
+  .afriforex-price-target-form select,
+  .afriforex-price-target-form input,
+  .afriforex-price-target-form button {
+    min-height: 50px;
+  }
+
+  .afriforex-price-target-row {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-price-target-row > div {
+    grid-column: auto;
+  }
+
+  .afriforex-price-target-row button {
+    width: 100%;
+  }
+}
+
+/* ===== AFriFOREX PRICE TARGET ALERTS ===== */
+
+.afriforex-shell .afriforex-price-target-card {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  background: var(--afriglass-bg);
+  border: 1px solid var(--afriglass-border);
+  border-radius: var(--afriglass-radius);
+  color: var(--afri-text, #fff);
+}
+
+.afriforex-price-target-card .afriforex-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.afriforex-price-target-card .afriforex-card-header > div {
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.afriforex-price-target-card h2 {
+  margin: 0;
+  color: var(--afri-text, #fff);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.afriforex-price-target-card .afriforex-card-header p {
+  margin: 6px 0 0;
+  color: var(--afri-muted, rgba(255,255,255,.68));
+  font-size: .78rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.afriforex-price-target-card .afriforex-status-pill {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  color: var(--afri-text, #fff);
+  background: rgba(255,255,255,.045);
+  font-size: .68rem;
+  font-weight: 750;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.afriforex-price-target-form {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(125px, .8fr) minmax(180px, 1.25fr) auto;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.afriforex-price-target-form strong {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  background: rgba(255,255,255,.035);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.afriforex-price-target-form select,
+.afriforex-price-target-form input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(0,0,0,.18);
+  color: #fff;
+  font: inherit;
+  font-size: .85rem;
+  text-align: left;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.afriforex-price-target-form input {
+  min-height: 52px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.afriforex-price-target-form input::placeholder {
+  color: rgba(255,255,255,.42);
+  font-weight: 500;
+}
+
+.afriforex-price-target-form select:focus,
+.afriforex-price-target-form input:focus {
+  border-color: var(--afri-primary, #1877f2);
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 0 0 2px rgba(24,119,242,.12);
+}
+
+.afriforex-price-target-form select option {
+  background: #111;
+  color: #fff;
+}
+
+.afriforex-price-target-form button {
+  min-width: 76px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--afri-primary, #1877f2);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 800;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.afriforex-price-target-form button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.afriforex-price-target-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.afriforex-price-target-list .afriforex-empty-state {
+  min-height: 44px;
+  margin: 0;
+  padding: 14px;
+  border: 1px dashed rgba(255,255,255,.12);
+  border-radius: 10px;
+  color: var(--afri-muted, rgba(255,255,255,.62));
+  text-align: left;
+}
+
+.afriforex-price-target-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 10px;
+  background: rgba(255,255,255,.025);
+}
+
+.afriforex-price-target-row > div {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+  text-align: left;
+}
+
+.afriforex-price-target-row strong {
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.afriforex-price-target-row span:not(.afriforex-status-pill) {
+  color: rgba(255,255,255,.78);
+  font-size: .82rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.afriforex-price-target-row .afriforex-status-pill {
+  text-transform: uppercase;
+}
+
+.afriforex-price-target-row .afriforex-status-pill.armed {
+  color: #fff;
+}
+
+.afriforex-price-target-row .afriforex-status-pill.triggered {
+  color: #fff;
+  border-color: rgba(255,255,255,.18);
+}
+
+.afriforex-price-target-row button {
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+  color: #fff;
+  cursor: pointer;
+  font-size: .7rem;
+  font-weight: 750;
+}
+
+.afriforex-price-target-row button:hover {
+  background: rgba(255,255,255,.09);
+}
+
+@media (max-width: 760px) {
+  .afriforex-price-target-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .afriforex-price-target-form strong {
+    grid-column: 1 / -1;
+  }
+
+  .afriforex-price-target-form input {
+    grid-column: 1 / -1;
+  }
+
+  .afriforex-price-target-form button {
+    width: 100%;
+  }
+
+  .afriforex-price-target-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .afriforex-price-target-row > div {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .afriforex-price-target-card .afriforex-card-header {
+    flex-direction: column;
+  }
+
+  .afriforex-price-target-card .afriforex-status-pill {
+    align-self: flex-start;
+  }
+
+  .afriforex-price-target-form {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-price-target-form strong,
+  .afriforex-price-target-form input {
+    grid-column: auto;
+  }
+
+  .afriforex-price-target-form select,
+  .afriforex-price-target-form input,
+  .afriforex-price-target-form button {
+    min-height: 50px;
+  }
+
+  .afriforex-price-target-row {
+    grid-template-columns: 1fr;
+  }
+
+  .afriforex-price-target-row > div {
+    grid-column: auto;
+  }
+
+  .afriforex-price-target-row button {
+    width: 100%;
+  }
 }
