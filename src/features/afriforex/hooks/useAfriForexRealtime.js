@@ -91,10 +91,29 @@ export default function useAfriForexRealtime(selectedMarket = null, monitoredMar
     }
     if (!("Notification" in window)) return;
     const permission = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
-    if (permission === "granted") {
+    if (permission !== "granted") {
+      setNotificationStatus(`BLOCKED:App=OFF Permission=${permission}`);
+      return;
+    }
+
+    if (!("serviceWorker" in navigator)) {
+      setNotificationStatus("ERROR:ServiceWorker=unsupported");
+      return;
+    }
+
+    try {
+      const registration = await navigator.serviceWorker.ready;
+      if (!registration) {
+        setNotificationStatus("ERROR:ServiceWorker=not-ready");
+        return;
+      }
+
       localStorage.setItem("afriforex:notifications", "ON");
       primeNotificationSound();
       setNotificationsEnabled(true);
+      setNotificationStatus("READY:App=ON Permission=granted ServiceWorker=READY");
+    } catch (error) {
+      setNotificationStatus(`ERROR:ServiceWorker=${error?.message || "not-ready"}`);
     }
   };
 
@@ -239,6 +258,7 @@ export default function useAfriForexRealtime(selectedMarket = null, monitoredMar
           "HORIZON_ALERT",
           "MARKET_UPDATE",
           "TRADE_SIGNAL",
+          "AFRIFOREX_INTELLIGENCE_UPDATE",
           "TRADE_OPENED",
           "TRADE_CLOSED"
         ].includes(event);
@@ -345,6 +365,80 @@ export default function useAfriForexRealtime(selectedMarket = null, monitoredMar
             };
           }
 
+          if (event === "AFRIFOREX_INTELLIGENCE_UPDATE") {
+            const previous = data?.previousState || {};
+            const current = data?.currentState || {};
+            const changes = data?.changes || {};
+            const timeframeChanges = Object.entries(
+              changes?.timeframes || {}
+            )
+              .filter(([, changed]) => changed)
+              .map(([timeframe]) => {
+                const before =
+                  previous?.timeframes?.[timeframe] || "NEUTRAL";
+                const after =
+                  current?.timeframes?.[timeframe] || "NEUTRAL";
+                return `${timeframe} ${before} → ${after}`;
+              });
+
+            const details = [];
+
+            if (timeframeChanges.length) {
+              details.push(...timeframeChanges);
+            }
+
+            if (changes?.scalpDirection) {
+              details.push(
+                `SCALP ${previous?.scalpDirection || "NEUTRAL"} → ${current?.scalpDirection || "NEUTRAL"}`
+              );
+            }
+
+            if (changes?.tradeDecision) {
+              details.push(
+                `Trade ${previous?.tradeDecision || "WAIT"} → ${current?.tradeDecision || "WAIT"}`
+              );
+            }
+
+            if (changes?.setupState) {
+              details.push(
+                `Setup ${previous?.setupState || "DEVELOPING"} → ${current?.setupState || "DEVELOPING"}`
+              );
+            }
+
+            if (changes?.reversal) {
+              const reversal = current?.reversal || {};
+              details.push(
+                reversal?.status === "INCOMING_REVERSAL"
+                  ? `Reversal ${reversal.direction || "UNKNOWN"} ${reversal.strengthPercent ?? 0}%`
+                  : "Reversal cleared"
+              );
+            }
+
+            if (changes?.economicCalendar) {
+              const calendar = current?.economicCalendar || {};
+              details.push(
+                calendar?.imminent
+                  ? "Economic event imminent"
+                  : "Economic-calendar state changed"
+              );
+            }
+
+            if (changes?.scalpMomentumStrengthPercent) {
+              details.push(
+                `SCALP strength ${current?.scalpMomentumStrengthPercent ?? 0}%`
+              );
+            }
+
+            return {
+              event,
+              symbol: insightSymbol,
+              text: `AfriAI detected a meaningful market-intelligence change on ${insightSymbol}.`,
+              detail: details.length
+                ? details.join(" · ")
+                : "Market intelligence state changed."
+            };
+          }
+
           if (event === "TRADE_SIGNAL") {
             const signal = data?.signal || {};
             const state = String(signal?.state || "NEUTRAL").toUpperCase();
@@ -375,6 +469,13 @@ export default function useAfriForexRealtime(selectedMarket = null, monitoredMar
               updatedAt: message.emittedAt || new Date().toISOString()
             };
             setAfriaiInsight(insight);
+            setLatestActivity({
+              source: "realtime",
+              event,
+              symbol: insightSymbol,
+              data,
+              updatedAt: insight.updatedAt
+            });
 
             if (
               notificationsEnabledRef.current &&
