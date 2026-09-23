@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import {
+  getAfriForexMonitoring,
+  saveAfriForexMonitoring
+} from "./api/AfriForexClient";
 import "./AfriForex.css";
 import AfriForexHeader from "./components/AfriForexHeader";
 import AfriForexChart from "./components/AfriForexChart";
@@ -24,31 +28,102 @@ export default function AfriForex() {
   const [closingPositionId, setClosingPositionId] = useState(null);
   const [monitoredMarkets, setMonitoredMarkets] = useState(() => {
     try {
-      const saved = JSON.parse(localStorage.getItem("afriforex:monitoredMarkets") || "[]");
-      const current = Array.isArray(saved) ? saved : [];
-      const required = ["XRP/USDT", "EUR/USD", "XAU/USD", "AAPL"];
-      return [...new Set([...current, ...required])];
+      const saved = JSON.parse(
+        localStorage.getItem("afriforex:monitoredMarkets") || "[]"
+      );
+      return Array.isArray(saved) ? saved : [];
     } catch {
-      return ["XRP/USDT", "EUR/USD", "XAU/USD", "AAPL"];
+      return [];
     }
   });
 
   const isMarketMonitored = (market) => monitoredMarkets.includes(market);
 
+  useEffect(() => {
+    let active = true;
+
+    getAfriForexMonitoring(AFRIFOREX_DEMO_CUSTOMER_ID)
+      .then((data) => {
+        if (!active) return;
+
+        const backendMarkets = Array.isArray(data?.monitoredMarkets)
+          ? data.monitoredMarkets
+          : [];
+
+        setMonitoredMarkets((current) => {
+          const mergedMarkets = [
+            ...new Set([
+              ...(Array.isArray(current) ? current : []),
+              ...backendMarkets
+            ])
+          ];
+
+          localStorage.setItem(
+            "afriforex:monitoredMarkets",
+            JSON.stringify(mergedMarkets)
+          );
+
+          void saveAfriForexMonitoring(
+            AFRIFOREX_DEMO_CUSTOMER_ID,
+            mergedMarkets
+          ).catch((error) => {
+            console.error("AfriForex monitoring reconciliation error:", error);
+          });
+
+          return mergedMarkets;
+        });
+      })
+      .catch((error) => {
+        console.error("AfriForex monitoring load error:", error);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   const toggleMarketMonitoring = (market) => {
+    const normalizedMarket = String(market || "").trim().toUpperCase();
+    if (!normalizedMarket) return;
+
     setMonitoredMarkets((current) => {
-      const next = current.includes(market)
-        ? current.filter((item) => item !== market)
-        : [...current, market];
-      localStorage.setItem("afriforex:monitoredMarkets", JSON.stringify(next));
+      const next = current.includes(normalizedMarket)
+        ? current.filter((item) => item !== normalizedMarket)
+        : [...current, normalizedMarket];
+
+      localStorage.setItem(
+        "afriforex:monitoredMarkets",
+        JSON.stringify(next)
+      );
+
+      void saveAfriForexMonitoring(
+        AFRIFOREX_DEMO_CUSTOMER_ID,
+        next
+      ).catch((error) => {
+        console.error("AfriForex monitoring save error:", error);
+      });
+
       return next;
     });
+  };
+
+  const addAndMonitorScannedAsset = (market) => {
+    const normalizedMarket = String(
+      market?.displaySymbol || market?.symbol || ""
+    ).trim().toUpperCase();
+
+    if (!normalizedMarket || monitoredMarkets.includes(normalizedMarket)) {
+      return;
+    }
+
+    toggleMarketMonitoring(normalizedMarket);
   };
   const [latestActivity, setLatestActivity] = useState(null);
   const [scanEconomicCalendar, setScanEconomicCalendar] = useState(null);
 
   const {
     tradeAlert,
+    monitoredTradeAlertsBySymbol,
     marketUpdate,
     tradeSignal,
     afriaiInsight,
@@ -64,7 +139,8 @@ export default function AfriForex() {
     playNotificationSound,
     tradeAlertMarket,
     onTradeAlertMarketChange,
-    economicCalendar
+    economicCalendar,
+    latestActivity: realtimeLatestActivity
   } = useAfriForexRealtime(selectedMarket, monitoredMarkets);
 
   const handleTradeAlertMarketChange = (market) => {
@@ -120,11 +196,11 @@ export default function AfriForex() {
             onToggleNotifications={toggleNotifications}
           />
           <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} connected={realtimeConnected} />
-          <AfriForexTradeAlert latestActivity={latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={handleTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} crossAssetEnabled={crossAssetEnabled} onToggleCrossAsset={setCrossAssetEnabled} economicCalendar={scanEconomicCalendar || economicCalendar} />
+          <AfriForexTradeAlert latestActivity={realtimeLatestActivity || latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} monitoredTradeAlertsBySymbol={monitoredTradeAlertsBySymbol} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} onAddAndMonitorScannedAsset={addAndMonitorScannedAsset} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={handleTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} crossAssetEnabled={crossAssetEnabled} onToggleCrossAsset={setCrossAssetEnabled} economicCalendar={scanEconomicCalendar || economicCalendar} />
           <AfriForexPriceTargetAlerts
             selectedMarket={selectedMarket}
             marketUpdate={marketUpdate}
-            latestActivity={latestActivity}
+            latestActivity={realtimeLatestActivity || latestActivity}
             tradeAlert={tradeAlert}
             notificationsEnabled={notificationsEnabled}
             notificationPermission={notificationPermission}

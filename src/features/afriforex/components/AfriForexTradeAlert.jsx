@@ -1,5 +1,19 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
+
+function formatEconomicCountdown(time, now) {
+  const target = new Date(time).getTime();
+  if (!Number.isFinite(target)) return "TIME UNKNOWN";
+  const diff = target - now;
+  if (diff <= 0) return "RELEASED";
+  const totalMinutes = Math.ceil(diff / 60000);
+  const days = Math.floor(totalMinutes / 1440);
+  const hours = Math.floor((totalMinutes % 1440) / 60);
+  const minutes = totalMinutes % 60;
+  if (days > 0) return `${days}d ${hours}h ${minutes}m`;
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}
 
 function getTimeframeEvidence(horizonSignal, timeframes = []) {
   const evidence =
@@ -108,118 +122,6 @@ function getSignalPresentation(tradeSignal, tradeAlert) {
 }
 
 
-function HorizonPresentation({
-  title,
-  timeframes,
-  horizonSignal,
-  primary = false
-}) {
-  const signal = horizonSignal || {};
-  const direction = String(signal.direction || "NEUTRAL").toUpperCase();
-  const confidence = Number(signal.confidence ?? 0);
-  const setup = signal.setupState || "INSUFFICIENT_DATA";
-  const tradeable = Boolean(signal.tradeable);
-  const decision = tradeable
-    ? `${direction} NOW · Tradeable YES`
-    : direction !== "NEUTRAL"
-      ? `${direction} WAIT · Tradeable NO`
-      : `${signal.tradeDecision || "WAIT"} · Tradeable NO`;
-
-  const evidence = getTimeframeEvidence(signal, timeframes);
-
-  return (
-    <div className={`afriforex-alert-analysis-section afriforex-horizon-section ${primary ? "is-primary-horizon" : ""}`}>
-      <div className="afriforex-horizon-heading">
-        <span className="afriforex-horizon-title">{title}</span>
-        <span className="afriforex-horizon-timeframes">{timeframes.join(" / ")}</span>
-      </div>
-
-      <div className="afriforex-horizon-primary">
-        <span className={`afriforex-horizon-direction afriforex-${direction.toLowerCase()}-text`}>
-          {direction.includes("BUY") ? "🟢" : direction.includes("SELL") ? "🔴" : "⚪"} {direction}
-        </span>
-
-        <div className="afriforex-horizon-metrics">
-          <div>
-            <span>CONFIDENCE</span>
-            <strong>{confidence}%</strong>
-          </div>
-          <div>
-            <span>SETUP</span>
-            <strong>{setup}</strong>
-          </div>
-        </div>
-      </div>
-
-      <div className="afriforex-timeframe-evidence">
-        <span className="afriforex-analysis-subtitle">TIMEFRAME EVIDENCE</span>
-        {evidence.map((item) => (
-          <div key={item}>{item}</div>
-        ))}
-      </div>
-
-      <div className="afriforex-horizon-subsection">
-        <span>MARKET STRUCTURE</span>
-        <div><span className="afriforex-field-label">Trend:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Support:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Resistance:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Liquidity:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Volatility:</span> <strong>UNAVAILABLE</strong></div>
-      </div>
-
-      <div className="afriforex-horizon-subsection">
-        <span>MOMENTUM</span>
-        <div><span className="afriforex-field-label">RSI:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">MACD:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Stochastic:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Momentum:</span> <strong>UNAVAILABLE</strong></div>
-      </div>
-
-      <div className="afriforex-horizon-subsection">
-        <span>INDICATORS</span>
-        <div><span className="afriforex-field-label">EMA:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">VWAP:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Bollinger:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">ATR:</span> <strong>UNAVAILABLE</strong></div>
-      </div>
-
-      <div className="afriforex-horizon-subsection">
-        <span>EC — EVIDENCE &amp; CONFIRMATION</span>
-        <div><span className="afriforex-field-label">Structure:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Momentum:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Volume:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Liquidity:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">MTF agreement:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Conflicts:</span> <strong>{signal.setupState === "CONFLICT" ? "YES" : "UNAVAILABLE"}</strong></div>
-      </div>
-
-      <div className="afriforex-horizon-decision">
-        <span>AFRIAI DECISION</span>
-        <strong>{decision}</strong>
-        <div><span className="afriforex-field-label">Evidence strength:</span> <strong>{signal.weightedScore ?? "UNAVAILABLE"}</strong></div>
-        <div><span className="afriforex-field-label">Setup quality:</span> <strong>{setup}</strong></div>
-      </div>
-
-      <div className="afriforex-horizon-subsection">
-        <span>RISK</span>
-        <div><span className="afriforex-field-label">Entry:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Stop:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">TP1:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">TP2:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Risk:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Position size:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Slippage estimate:</span> <strong>UNAVAILABLE</strong></div>
-        <div><span className="afriforex-field-label">Max leverage:</span> <strong>UNAVAILABLE</strong></div>
-      </div>
-
-      <div className="afriforex-horizon-reason">
-        <span>REASON</span>
-        <strong>{signal.reason || "HORIZON_INSUFFICIENT_DATA"}</strong>
-      </div>
-    </div>
-  );
-}
-
 export default function AfriForexTradeAlert({
   selectedMarket = null,
   tradeAlert,
@@ -230,18 +132,47 @@ export default function AfriForexTradeAlert({
   notificationsEnabled = false,
   notificationPermission = "default",
   onToggleNotifications,
-  monitoredMarkets = [],
+  monitoredMarkets,
+  monitoredTradeAlertsBySymbol = [],
   isMarketMonitored,
   onToggleMarketMonitoring,
+  onAddAndMonitorScannedAsset,
   latestActivity = null,
   tradeAlertMarket = null,
+  economicCalendar = null,
   onTradeAlertMarketChange,
   crossAssetEnabled = false,
   onToggleCrossAsset
 }) {
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const nextHighImpactEvent = useMemo(() => {
+    const events = Array.isArray(economicCalendar?.events) ? economicCalendar.events : [];
+    return events
+      .filter((event) => String(event?.importance || "").toUpperCase() === "HIGH")
+      .filter((event) => {
+        const target = new Date(event?.time).getTime();
+        return Number.isFinite(target) && target > now;
+      })
+      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime())[0] || null;
+  }, [economicCalendar, now]);
+
   const activityData = latestActivity?.data || {};
   const selectedSymbol = String(selectedMarket || '').trim().toUpperCase();
-  const dataCandidates = [activityData, tradeAlert, tradeSignal].filter((item) => item && Object.keys(item).length);
+  const monitoredTradeAlert =
+    selectedSymbol && monitoredMarkets.includes(selectedSymbol)
+      ? monitoredTradeAlertsBySymbol?.[selectedSymbol] || null
+      : null;
+  const dataCandidates = [
+    monitoredTradeAlert,
+    activityData,
+    tradeAlert,
+    tradeSignal
+  ].filter((item) => item && Object.keys(item).length);
   const matchingData = dataCandidates.find((item) => {
     const itemSymbol = String(item?.displaySymbol || item?.symbol || '').trim().toUpperCase();
     return selectedSymbol && itemSymbol === selectedSymbol;
@@ -315,7 +246,7 @@ const crossAssetContext = activeData?.crossAssetContext || null;
       <div className="afriforex-alert-content">
         <span className="afriforex-label">AFRIAI TRADE ALERT</span>
 
-      <div className={`afriforex-alert-notification-card ${monitoringEnabled ? "is-monitoring-active" : ""}`}>
+      <div id="afriforex-monitoring-assets" className={`afriforex-alert-notification-card ${monitoringEnabled ? "is-monitoring-active" : ""}`}>
           {monitoringEnabled && (
             <span
               className="afriforex-monitoring-live-dot"
@@ -356,7 +287,7 @@ const crossAssetContext = activeData?.crossAssetContext || null;
               className={`afriforex-alert-notification-button ${monitoringEnabled ? "is-on" : "is-off"}`}
               aria-label={`${monitoringEnabled ? "Disable" : "Enable"} AfriAI monitoring for ${symbol}`}
               onClick={() => onToggleMarketMonitoring?.(symbol)}
-              disabled={!onToggleMarketMonitoring || notificationPermission === "denied"}
+              disabled={!onToggleMarketMonitoring}
             >
               <span className="afriforex-trade-alert-bell">
                 {monitoringEnabled ? "🔔" : "🔕"}
@@ -370,160 +301,168 @@ const crossAssetContext = activeData?.crossAssetContext || null;
           {symbol}
         </div>
 
-        <div className="afriforex-alert-signal">
-          <span className={`afriforex-${presentation.state.toLowerCase()}-badge`}>
-            {presentation.state}
-          </span>
-        </div>
+        <div className="afriforex-intelligence-update">
+          <div className="afriforex-label">🔔 AfriAI INTELLIGENCE UPDATE</div>
 
-        <h2>{presentation.title}</h2>
-
-        <p>
-          {presentation.description}
-          {" "}
-          {symbol}
-          {" · "}
-          {connected ? "LIVE" : "OFFLINE"}
-        </p>
-
-        {scalpMomentumStrengthPercent > 0 && (
-          <p>
-            <span className="afriforex-field-label">SCALP STRENGTH:</span> <strong>{scalpMomentumStrengthPercent}%</strong>
-          </p>
-        )}
-        {confidence > 0 && (
-          <p>
-            <span className="afriforex-field-label">Confidence:</span> <strong>{confidence}%</strong>
-          </p>
-        )}
-
-        <div className="afriforex-alert-insight">
-          <span className="afriforex-label">AFRIAI INSIGHT</span>
-          <strong>
-            {afriaiInsight?.text ||
-              "AfriAI is monitoring live market evidence and will update this insight when a meaningful state change occurs."}
-          </strong>
-          {afriaiInsight?.detail && <span>{afriaiInsight.detail}</span>}
-          {afriaiInsight?.updatedAt && (
-            <small>
-              Updated {new Date(afriaiInsight.updatedAt).toLocaleTimeString()}
-            </small>
-          )}
-        </div>
-
-        <div
-          className="afriforex-signal-scale"
-          aria-label="AfriAI trading signal scale"
-        >
-          <div className="afriforex-signal-track">
-            <span
-              className="afriforex-signal-marker"
-              style={{
-                left: `${markerPosition}%`
-              }}
-            />
+          <div className="afriforex-intelligence-symbol">
+            {symbol}
           </div>
 
-          <div className="afriforex-signal-labels">
-            <span>STRONG BUY</span>
-            <span>BUY</span>
-            <span>NEUTRAL</span>
-            <span>SELL</span>
-            <span>STRONG SELL</span>
-          </div>
-        </div>
+          {["SCALP", "INTRADAY", "SWING"].map((horizon) => {
+            const horizonSignal = horizonSignals?.[horizon];
+            const timeframes =
+              horizon === "SCALP"
+                ? ["1min", "5min", "15M", "1H"]
+                : horizon === "INTRADAY"
+                  ? ["5min", "15M", "1H", "4H"]
+                  : ["1H", "4H", "1D", "1W"];
 
-        {lastEventAt && (
-          <small>
-            Updated {new Date(lastEventAt).toLocaleTimeString()}
-          </small>
-        )}
+            const evidence =
+              horizonSignal?.horizonSignal?.evidence ||
+              horizonSignal?.evidence ||
+              {};
 
-        <div className="afriforex-alert-analysis">
-        <div className="afriforex-alert-analysis-inner">
-          <div className="afriforex-alert-analysis-section">
-            <span className="afriforex-label">LIVE DATA</span>
-            <div><span className="afriforex-field-label">Provider:</span> <strong>{liveProvider}</strong></div>
-            <div><span className="afriforex-field-label">Mode:</span> <strong>{liveMode}</strong></div>
-            <div><span className="afriforex-field-label">Price:</span> <strong>{livePrice}</strong></div>
-            <div><span className="afriforex-field-label">Updated:</span> <strong>{latestActivity?.updatedAt || lastEventAt || "UNAVAILABLE"}</strong></div>
-          </div>
+            return (
+              <div
+                key={horizon}
+                className="afriforex-intelligence-section"
+              >
+                <strong>{horizon}</strong>
 
-          <HorizonPresentation
-            title="SCALP"
-            timeframes={["1min", "5min", "15M", "1H"]}
-            horizonSignal={horizonSignals?.SCALP}
-            primary
-          />
+                {timeframes.map((timeframe) => {
+                  const item = evidence?.[timeframe] || {};
+                  const direction = String(
+                    item?.direction ||
+                    item?.signal ||
+                    item?.state ||
+                    item?.status ||
+                    "NEUTRAL"
+                  ).toUpperCase();
 
-          <HorizonPresentation
-            title="INTRADAY"
-            timeframes={["5min", "15M", "1H", "4H"]}
-            horizonSignal={horizonSignals?.INTRADAY}
-          />
+                  const icon =
+                    direction.includes("BUY") ? "🟢" :
+                    direction.includes("SELL") ? "🔴" :
+                    "⚪";
 
-          <HorizonPresentation
-            title="SWING"
-            timeframes={["1H", "4H", "1D", "1W"]}
-            horizonSignal={horizonSignals?.SWING}
-          />
+                  const strength =
+                    horizon === "SCALP"
+                      ? Number(
+                          item?.strengthPercent ??
+                          item?.momentumStrengthPercent ??
+                          item?.scalpMomentumStrengthPercent ??
+                          item?.confidence ??
+                          0
+                        )
+                      : 0;
 
-          <HorizonPresentation
-            title="POSITION"
-            timeframes={["4H", "1D", "1W", "1MO"]}
-            horizonSignal={horizonSignals?.POSITION}
-          />
+                  return (
+                    <div
+                      key={`${horizon}-${timeframe}`}
+                      className="afriforex-intelligence-row"
+                    >
+                      <span>{timeframe}</span>
+                      <span>
+                        {icon} {direction}
+                        {strength > 0 ? ` ${strength}%` : ""}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
 
-          <div className="afriforex-alert-analysis-section">
-            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px",flexWrap:"wrap"}}>
-              <span className="afriforex-label">CORRELATION / CROSS-ASSET CONTEXT</span>
-              <button type="button" className="afriforex-scan-button" onClick={() => onToggleCrossAsset?.(!crossAssetEnabled)}>
-                CROSS-ASSET: {crossAssetEnabled ? "ON" : "OFF"}
-              </button>
-            </div>
-            <div>Correlation Evidence: <strong>{crossAssetEnabled ? (crossAssetContext?.evidence || "AWAITING SCAN") : "OFF"}</strong></div>
-            {crossAssetEnabled && crossAssetContext ? (
+          <div className="afriforex-intelligence-section">
+            <strong>EC</strong>
+
+            {nextHighImpactEvent ? (
               <>
-                <div className="afriforex-horizon-subsection">
-                  <span>SCALP BASIS</span>
-                  <div>Direction: <strong>{crossAssetContext.scalpDirection || "NEUTRAL"}</strong></div>
-                  <div>Confidence: <strong>{crossAssetContext.scalpConfidence ?? 0}%</strong></div>
+                <div className="afriforex-intelligence-row">
+                  <span>Event</span>
+                  <span>
+                    🟡 {nextHighImpactEvent.currency || "USD"} high-impact event → imminent
+                  </span>
                 </div>
-                <div className="afriforex-horizon-subsection">
-                  <span>SUPPORTING — {crossAssetContext.counts?.supporting ?? 0}</span>
-                  {(crossAssetContext.assets || []).filter(item => item.classification === "SUPPORTING").map(item => (
-                    <div key={`supporting-${item.symbol}`}>🟢 {item.displaySymbol || item.symbol} <strong>{Number.isFinite(Number(item.correlation)) ? Number(item.correlation).toFixed(2) : "UNAVAILABLE"}</strong></div>
-                  ))}
-                </div>
-                <div className="afriforex-horizon-subsection">
-                  <span>AGAINST — {crossAssetContext.counts?.against ?? 0}</span>
-                  {(crossAssetContext.assets || []).filter(item => item.classification === "AGAINST").map(item => (
-                    <div key={`against-${item.symbol}`}>🔴 {item.displaySymbol || item.symbol} <strong>{Number.isFinite(Number(item.correlation)) ? Number(item.correlation).toFixed(2) : "UNAVAILABLE"}</strong></div>
-                  ))}
-                </div>
-                <div className="afriforex-horizon-subsection">
-                  <span>NEUTRAL — {crossAssetContext.counts?.neutral ?? 0}</span>
-                  {(crossAssetContext.assets || []).filter(item => item.classification === "NEUTRAL").map(item => (
-                    <div key={`neutral-${item.symbol}`}>⚪ {item.displaySymbol || item.symbol} <strong>{Number.isFinite(Number(item.correlation)) ? Number(item.correlation).toFixed(2) : "UNAVAILABLE"}</strong></div>
-                  ))}
-                </div>
-                <div className="afriforex-horizon-subsection">
-                  <span>UNAVAILABLE — {crossAssetContext.counts?.unavailable ?? 0}</span>
-                </div>
-                <div className="afriforex-horizon-decision">
-                  <span>CROSS-ASSET BIAS</span>
-                  <strong>{crossAssetContext.bias || "UNAVAILABLE"}</strong>
-                  <div>SUPPORT: <strong>{crossAssetContext.counts?.supporting ?? 0}</strong></div>
-                  <div>AGAINST: <strong>{crossAssetContext.counts?.against ?? 0}</strong></div>
-                  <div>NEUTRAL: <strong>{crossAssetContext.counts?.neutral ?? 0}</strong></div>
-                  <div>CONFIDENCE: <strong>{crossAssetContext.confidence ?? 0}%</strong></div>
+
+                <div className="afriforex-intelligence-row">
+                  <span>Countdown</span>
+                  <span>
+                    {formatEconomicCountdown(nextHighImpactEvent.time, now)}
+                  </span>
                 </div>
               </>
-            ) : null}
+            ) : (
+              <div className="afriforex-intelligence-row">
+                <span>Event</span>
+                <span>⚪ No imminent high-impact event</span>
+              </div>
+            )}
+          </div>
+
+          <div className="afriforex-intelligence-section afriforex-intelligence-afriai">
+            <strong>AFRIAI</strong>
+
+            <div className="afriforex-intelligence-row">
+              <span>Trade decision</span>
+              <span>
+                {String(
+                  activeSignal?.tradeDecision ||
+                  activeData?.tradeDecision ||
+                  "WAIT"
+                ).toUpperCase() === "ENTER"
+                  ? "🟢 ENTER"
+                  : "⚪ WAIT"}
+              </span>
+            </div>
+
+            <div className="afriforex-intelligence-row">
+              <span>Reason</span>
+              <span>
+                {activeSignal?.reason ||
+                  activeSignal?.tradeReason ||
+                  activeData?.reason ||
+                  activeData?.tradeReason ||
+                  (activeSignal?.timingConflict
+                    ? "1min timing conflict"
+                    : "Awaiting confirmation")}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
+        {!monitoringEnabled && (
+          <div className="afriforex-monitoring-cta">
+            <div className="afriforex-monitoring-cta-text">
+              🔔 Want AfriAI to keep monitoring {symbol}?
+            </div>
+
+            <button
+              type="button"
+              className="afriforex-monitoring-cta-button"
+              onClick={() => {
+                onAddAndMonitorScannedAsset?.({
+                  symbol,
+                  displaySymbol: symbol
+                });
+
+                if (!notificationsEnabled) {
+                  void onToggleNotifications?.();
+                }
+
+                window.setTimeout(() => {
+                  document
+                    .getElementById("afriforex-monitoring-assets")
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center"
+                    });
+                }, 0);
+              }}
+            >
+              + Add & Turn On Notifications
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

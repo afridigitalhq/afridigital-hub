@@ -8,6 +8,7 @@ export default function useAfriForexRealtime(selectedMarket = null, monitoredMar
       null
   );
   const [tradeAlert, setTradeAlert] = useState(null);
+  const [monitoredTradeAlertsBySymbol, setMonitoredTradeAlertsBySymbol] = useState({});
   const [tradeAlertMarket, setTradeAlertMarket] = useState(() => {
     try {
       return localStorage.getItem("afriforex:tradeAlertMarket") || null;
@@ -519,6 +520,80 @@ export default function useAfriForexRealtime(selectedMarket = null, monitoredMar
           }
         }
 
+        if (event === "AFRIFOREX_INTELLIGENCE_UPDATE") {
+          const monitoringSymbol =
+            normalizedEventSymbol ||
+            String(data?.symbol || insightSymbol || "").trim().toUpperCase();
+
+          if (
+            monitoringSymbol &&
+            monitoredList.includes(monitoringSymbol)
+          ) {
+            const currentState = data?.currentState || {};
+            const currentSignal = {
+              direction: String(
+                currentState?.scalpDirection || "NEUTRAL"
+              ).toUpperCase(),
+              alertState: String(
+                currentState?.scalpDirection || "NEUTRAL"
+              ).toUpperCase(),
+              setupState: String(
+                currentState?.setupState || "DEVELOPING"
+              ).toUpperCase(),
+              tradeDecision: String(
+                currentState?.tradeDecision || "WAIT"
+              ).toUpperCase(),
+              confidence: Number(currentState?.confidence ?? 0),
+              scalpMomentumStrengthPercent: Number(
+                currentState?.scalpMomentumStrengthPercent ?? 0
+              ),
+              reversal: currentState?.reversal || null,
+              tradeable: Boolean(
+                currentState?.tradeDecision === "ENTER" &&
+                String(currentState?.scalpDirection || "NEUTRAL").toUpperCase() !== "NEUTRAL"
+              )
+            };
+
+            const monitoredTradeAlert = {
+              ...data,
+              symbol: data?.symbol || monitoringSymbol,
+              displaySymbol: data?.displaySymbol || data?.symbol || monitoringSymbol,
+              source: "MONITORED",
+              signal: {
+                ...(data?.signal || {}),
+                ...currentSignal
+              },
+              horizonSignals: {
+                ...(data?.horizonSignals || {}),
+                SCALP: {
+                  ...(data?.horizonSignals?.SCALP || {}),
+                  ...currentSignal
+                }
+              },
+              economicCalendar:
+                data?.currentState?.economicCalendar ||
+                data?.economicCalendar ||
+                null,
+              observedAt:
+                data?.observedAt ||
+                message.emittedAt ||
+                new Date().toISOString()
+            };
+
+            setMonitoredTradeAlertsBySymbol((current) => ({
+              ...current,
+              [monitoringSymbol]: monitoredTradeAlert
+            }));
+
+            if (
+              String(activeMarketRef.current || "").trim().toUpperCase() ===
+              monitoringSymbol
+            ) {
+              setTradeAlert(monitoredTradeAlert);
+            }
+          }
+        }
+
         if (event === "TRADE_ALERT") {
           setTradeAlert(data);
 
@@ -668,6 +743,7 @@ export default function useAfriForexRealtime(selectedMarket = null, monitoredMar
 
   return {
     tradeAlert,
+    monitoredTradeAlertsBySymbol,
     economicCalendar,
     economicCalendarBySymbol,
     marketUpdate: selectedMarketUpdate || marketUpdate,
