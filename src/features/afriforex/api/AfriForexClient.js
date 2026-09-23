@@ -18,6 +18,38 @@ async function request(path) {
   return json.data;
 }
 
+export function getAfriForexMonitoring(customerId = "guest") {
+  return request(`/monitoring?customerId=${encodeURIComponent(customerId)}`);
+}
+
+export async function saveAfriForexMonitoring(
+  customerId = "guest",
+  monitoredMarkets = []
+) {
+  const response = await fetch(`${API.afriforex}/monitoring`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      customerId,
+      monitoredMarkets
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`AfriForex API HTTP ${response.status}`);
+  }
+
+  const json = await response.json();
+
+  if (!json?.ok) {
+    throw new Error(
+      json?.error || "AfriForex monitoring save failed"
+    );
+  }
+
+  return json.data;
+}
+
 export function getAfriForexAccount(customerId = "guest") {
   return request(`/account?customerId=${encodeURIComponent(customerId)}`);
 }
