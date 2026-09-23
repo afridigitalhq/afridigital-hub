@@ -187,14 +187,6 @@ export default function AfriForex() {
           </div>
         )}
         <div className="afriforex-main-column">
-          <AfriForexDemoBalance
-            account={account}
-            loading={loading}
-            onClosePosition={handleClosePosition}
-            closingPositionId={closingPositionId}
-            notificationsEnabled={notificationsEnabled}
-            onToggleNotifications={toggleNotifications}
-          />
           <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} connected={realtimeConnected} />
           <AfriForexAssetScanner
             crossAssetEnabled={crossAssetEnabled}
