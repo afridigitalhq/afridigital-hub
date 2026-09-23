@@ -196,16 +196,6 @@ export default function AfriForex() {
             onToggleNotifications={toggleNotifications}
           />
           <AfriForexChart marketUpdate={marketUpdate} selectedMarket={selectedMarket} onMarketChange={setSelectedMarket} connected={realtimeConnected} />
-          <AfriForexTradeAlert latestActivity={realtimeLatestActivity || latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} monitoredTradeAlertsBySymbol={monitoredTradeAlertsBySymbol} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} onAddAndMonitorScannedAsset={addAndMonitorScannedAsset} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={handleTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} crossAssetEnabled={crossAssetEnabled} onToggleCrossAsset={setCrossAssetEnabled} economicCalendar={scanEconomicCalendar || economicCalendar} />
-          <AfriForexPriceTargetAlerts
-            selectedMarket={selectedMarket}
-            marketUpdate={marketUpdate}
-            latestActivity={realtimeLatestActivity || latestActivity}
-            tradeAlert={tradeAlert}
-            notificationsEnabled={notificationsEnabled}
-            notificationPermission={notificationPermission}
-            playNotificationSound={playNotificationSound}
-          />
           <AfriForexAssetScanner
             crossAssetEnabled={crossAssetEnabled}
             selectedMarket={selectedMarket}
@@ -223,6 +213,17 @@ export default function AfriForex() {
             notificationPermission={notificationPermission}
             playNotificationSound={playNotificationSound}
           />
+          <AfriForexTradeAlert latestActivity={realtimeLatestActivity || latestActivity} selectedMarket={selectedMarket} monitoredMarkets={monitoredMarkets} monitoredTradeAlertsBySymbol={monitoredTradeAlertsBySymbol} isMarketMonitored={isMarketMonitored} onToggleMarketMonitoring={toggleMarketMonitoring} onAddAndMonitorScannedAsset={addAndMonitorScannedAsset} tradeAlertMarket={tradeAlertMarket} onTradeAlertMarketChange={handleTradeAlertMarketChange} tradeAlert={tradeAlert} tradeSignal={tradeSignal} afriaiInsight={afriaiInsight} connected={realtimeConnected} lastEventAt={lastEventAt} notificationsEnabled={notificationsEnabled} notificationPermission={notificationPermission} onToggleNotifications={toggleNotifications} crossAssetEnabled={crossAssetEnabled} onToggleCrossAsset={setCrossAssetEnabled} economicCalendar={scanEconomicCalendar || economicCalendar} />
+          <AfriForexPriceTargetAlerts
+            selectedMarket={selectedMarket}
+            marketUpdate={marketUpdate}
+            latestActivity={realtimeLatestActivity || latestActivity}
+            tradeAlert={tradeAlert}
+            notificationsEnabled={notificationsEnabled}
+            notificationPermission={notificationPermission}
+            playNotificationSound={playNotificationSound}
+          />
+
 
         <AfriForexEconomicCalendar
           economicCalendar={scanEconomicCalendar || economicCalendar}
