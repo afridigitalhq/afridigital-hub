@@ -2687,3 +2687,63 @@
   white-space: normal;
   text-align: left;
 }
+
+
+/* AfriAI intelligence UI refinement — 2026-09-23 */
+.afriforex-intelligence-section-title {
+  color: #7dd3fc;
+  font-size: 1.25rem;
+  font-weight: 950;
+  letter-spacing: .055em;
+  line-height: 1.2;
+}
+
+.afriforex-intelligence-row {
+  grid-template-columns: minmax(5.2rem, 6.2rem) minmax(0, 1fr);
+  column-gap: .65rem;
+  align-items: baseline;
+}
+
+.afriforex-intelligence-answer {
+  min-width: 0;
+  text-align: left !important;
+}
+
+.afriforex-horizon-relationship-row .afriforex-intelligence-answer {
+  white-space: nowrap;
+  justify-self: start;
+}
+
+.afriforex-intelligence-reason-row {
+  grid-template-columns: 1fr;
+  row-gap: .3rem;
+  margin-top: .65rem;
+}
+
+.afriforex-intelligence-reason-label {
+  color: #7dd3fc;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.afriforex-intelligence-reason-answer {
+  min-width: 0;
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  text-align: left;
+}
+
+@media (max-width: 420px) {
+  .afriforex-intelligence-row:not(.afriforex-intelligence-reason-row) {
+    grid-template-columns: minmax(4.6rem, 5.2rem) minmax(0, 1fr);
+    column-gap: .45rem;
+  }
+
+  .afriforex-intelligence-row:not(.afriforex-intelligence-reason-row) .afriforex-intelligence-answer {
+    font-size: .76rem;
+  }
+}

@@ -429,7 +429,7 @@ const crossAssetContext = activeData?.crossAssetContext || null;
                 "🟡";
 
               return (
-                <div key={`relationship-${horizon}`} className="afriforex-intelligence-row">
+                <div key={`relationship-${horizon}`} className="afriforex-intelligence-row afriforex-horizon-relationship-row">
                   <span className="afriforex-intelligence-field">{horizon}</span>
                   <span className="afriforex-intelligence-answer">
                     {icon} {state} · {direction}
