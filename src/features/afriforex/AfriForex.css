@@ -2675,3 +2675,11 @@
 .afriforex-intelligence-row {
   text-align: left;
 }
+
+/* AfriAI reason: preserve card width and allow multiline explanations */
+.afriforex-intelligence-reason-answer {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  text-align: left;
+}
