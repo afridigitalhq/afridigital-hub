@@ -34,10 +34,26 @@ function getTimeframeEvidence(
       )
     : {};
 
-  const evidence = {
-    ...fallbackEvidence,
-    ...horizonEvidence
-  };
+  const evidence = { ...fallbackEvidence };
+
+  Object.entries(horizonEvidence).forEach(([timeframe, item]) => {
+    const direction = String(
+      item?.direction ||
+      item?.signal ||
+      item?.state ||
+      ""
+    ).toUpperCase();
+
+    if (
+      direction === "BUY" ||
+      direction === "STRONG_BUY" ||
+      direction === "SELL" ||
+      direction === "STRONG_SELL" ||
+      direction === "NEUTRAL"
+    ) {
+      evidence[timeframe] = item;
+    }
+  });
 
   return timeframes.map((timeframe) => {
     const item = evidence?.[timeframe] || {};
