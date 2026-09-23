@@ -15,11 +15,29 @@ function formatEconomicCountdown(time, now) {
   return `${minutes}m`;
 }
 
-function getTimeframeEvidence(horizonSignal, timeframes = []) {
-  const evidence =
+function getTimeframeEvidence(
+  horizonSignal,
+  timeframes = [],
+  fallbackTimeframeEvidence = []
+) {
+  const horizonEvidence =
     horizonSignal?.horizonSignal?.evidence ||
     horizonSignal?.evidence ||
     {};
+
+  const fallbackEvidence = Array.isArray(fallbackTimeframeEvidence)
+    ? Object.fromEntries(
+        fallbackTimeframeEvidence.map((item) => [
+          item?.timeframe,
+          item
+        ])
+      )
+    : {};
+
+  const evidence = {
+    ...fallbackEvidence,
+    ...horizonEvidence
+  };
 
   return timeframes.map((timeframe) => {
     const item = evidence?.[timeframe] || {};
@@ -348,7 +366,13 @@ const crossAssetContext = activeData?.crossAssetContext || null;
               >
                 <strong className="afriforex-intelligence-section-title">{horizon}</strong>
 
-                {getTimeframeEvidence(horizonSignal, timeframes).map((item) => {
+                {getTimeframeEvidence(
+        horizonSignal,
+        timeframes,
+        horizon === "SCALP"
+          ? activeData?.intelligenceAnalysis?.timeframeEvidence
+          : []
+      ).map((item) => {
                   const direction = item.direction;
                   const icon =
                     direction.includes("BUY") ? "🟢" :
