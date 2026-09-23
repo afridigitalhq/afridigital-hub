@@ -243,6 +243,7 @@ export default function AfriForexTradeAlert({
     "EUR/USD";
 
   const horizonSignals = activeData?.horizonSignals || {};
+  const horizonRelationship = activeData?.horizonRelationship || {};
 const crossAssetContext = activeData?.crossAssetContext || null;
   const candleEvidence = activeData?.candleEvidence || {};
   const liveProvider = activeData?.provider || tradeAlert?.provider || "UNAVAILABLE";
@@ -415,7 +416,31 @@ const crossAssetContext = activeData?.crossAssetContext || null;
           })}
 
           <div className="afriforex-intelligence-section">
-            <strong className="afriforex-intelligence-section-title">EC</strong>
+            <strong className="afriforex-intelligence-section-title">Horizon Relationship</strong>
+            {["SCALP", "INTRADAY", "SWING", "POSITION"].map((horizon) => {
+              const relationship = horizonRelationship?.[horizon];
+              const state = String(relationship?.relationship || "UNAVAILABLE").toUpperCase();
+              const direction = String(relationship?.direction || horizonSignals?.[horizon]?.direction || "NEUTRAL").toUpperCase();
+              const icon =
+                state === "ALIGNED" ? "🟢" :
+                state === "CONFLICT" ? "🔴" :
+                state === "PRIMARY" ? "🔵" :
+                state === "NEUTRAL" ? "⚪" :
+                "🟡";
+
+              return (
+                <div key={`relationship-${horizon}`} className="afriforex-intelligence-row">
+                  <span className="afriforex-intelligence-field">{horizon}</span>
+                  <span className="afriforex-intelligence-answer">
+                    {icon} {state} · {direction}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="afriforex-intelligence-section">
+            <strong className="afriforex-intelligence-section-title">Economic Calendar</strong>
 
             {nextHighImpactEvent ? (
               <>
