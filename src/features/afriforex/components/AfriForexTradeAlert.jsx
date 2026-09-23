@@ -482,7 +482,7 @@ const crossAssetContext = activeData?.crossAssetContext || null;
               </span>
             </div>
 
-            <div className="afriforex-intelligence-row">
+            <div className="afriforex-intelligence-row afriforex-intelligence-reason-row">
               <span className="afriforex-intelligence-field afriforex-intelligence-reason-label">Reason</span>
               <span className="afriforex-intelligence-answer afriforex-intelligence-reason-answer">
                 {activeSignal?.reason ||

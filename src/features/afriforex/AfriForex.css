@@ -2677,6 +2677,10 @@
 }
 
 /* AfriAI reason: preserve card width and allow multiline explanations */
+.afriforex-intelligence-reason-row {
+  grid-template-columns: 1fr;
+}
+
 .afriforex-intelligence-reason-answer {
   min-width: 0;
   overflow-wrap: anywhere;
