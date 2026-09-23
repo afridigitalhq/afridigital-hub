@@ -2670,3 +2670,8 @@
 .afriforex-intelligence-reason-label {
   font-size: 1.08rem;
 }
+
+.afriforex-intelligence-section-title,
+.afriforex-intelligence-row {
+  text-align: left;
+}

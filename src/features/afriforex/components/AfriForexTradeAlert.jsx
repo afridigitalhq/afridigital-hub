@@ -22,40 +22,34 @@ function getTimeframeEvidence(horizonSignal, timeframes = []) {
     {};
 
   return timeframes.map((timeframe) => {
-    const item = evidence?.[timeframe];
+    const item = evidence?.[timeframe] || {};
     const raw =
-      item?.status ||
       item?.direction ||
       item?.signal ||
       item?.state ||
       null;
 
-    const value = String(raw || "").toUpperCase();
+    const direction = String(raw || "").toUpperCase();
 
-    if (
-      value === "BUY" ||
-      value === "STRONG_BUY" ||
-      value === "SELL" ||
-      value === "STRONG_SELL" ||
-      value === "NEUTRAL"
-    ) {
-      const icon =
-        value.includes("BUY") ? "🟢" :
-        value.includes("SELL") ? "🔴" :
-        "⚪";
-
-      return `${timeframe}       ${icon} ${value}`;
-    }
-
-    if (
-      value === "AVAILABLE" ||
-      value === "OK" ||
-      value === "CONFIRMED"
-    ) {
-      return `${timeframe}       ⚪ NEUTRAL`;
-    }
-
-    return `${timeframe}       ⚪ UNAVAILABLE`;
+    return {
+      timeframe,
+      direction:
+        direction === "BUY" ||
+        direction === "STRONG_BUY" ||
+        direction === "SELL" ||
+        direction === "STRONG_SELL" ||
+        direction === "NEUTRAL"
+          ? direction
+          : "NEUTRAL",
+      status: String(item?.status || "").toUpperCase(),
+      strengthPercent: Number(
+        item?.strengthPercent ??
+        item?.momentumStrengthPercent ??
+        item?.scalpMomentumStrengthPercent ??
+        item?.confidence ??
+        0
+      )
+    };
   });
 }
 
@@ -347,11 +341,6 @@ const crossAssetContext = activeData?.crossAssetContext || null;
                   ? ["5min", "15M", "1H", "4H"]
                   : ["1H", "4H", "1D", "1W"];
 
-            const evidence =
-              horizonSignal?.horizonSignal?.evidence ||
-              horizonSignal?.evidence ||
-              {};
-
             return (
               <div
                 key={horizon}
@@ -359,38 +348,21 @@ const crossAssetContext = activeData?.crossAssetContext || null;
               >
                 <strong className="afriforex-intelligence-section-title">{horizon}</strong>
 
-                {timeframes.map((timeframe) => {
-                  const item = evidence?.[timeframe] || {};
-                  const direction = String(
-                    item?.direction ||
-                    item?.signal ||
-                    item?.state ||
-                    item?.status ||
-                    "NEUTRAL"
-                  ).toUpperCase();
-
+                {getTimeframeEvidence(horizonSignal, timeframes).map((item) => {
+                  const direction = item.direction;
                   const icon =
                     direction.includes("BUY") ? "🟢" :
                     direction.includes("SELL") ? "🔴" :
                     "⚪";
-
                   const strength =
-                    horizon === "SCALP"
-                      ? Number(
-                          item?.strengthPercent ??
-                          item?.momentumStrengthPercent ??
-                          item?.scalpMomentumStrengthPercent ??
-                          item?.confidence ??
-                          0
-                        )
-                      : 0;
+                    horizon === "SCALP" ? item.strengthPercent : 0;
 
                   return (
                     <div
-                      key={`${horizon}-${timeframe}`}
+                      key={`${horizon}-${item.timeframe}`}
                       className="afriforex-intelligence-row"
                     >
-                      <span className="afriforex-intelligence-field">{timeframe}</span>
+                      <span className="afriforex-intelligence-field">{item.timeframe}</span>
                       <span className="afriforex-intelligence-answer">
                         {icon} {direction}
                         {strength > 0 ? ` ${strength}%` : ""}
