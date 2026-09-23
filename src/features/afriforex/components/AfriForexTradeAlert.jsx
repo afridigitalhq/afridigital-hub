@@ -301,6 +301,36 @@ const crossAssetContext = activeData?.crossAssetContext || null;
           {symbol}
         </div>
 
+        <div className="afriforex-alert-signal">
+          <span
+            className={
+              scalpDirection === "BUY" || scalpDirection === "STRONG_BUY"
+                ? "afriforex-buy-badge"
+                : scalpDirection === "SELL" || scalpDirection === "STRONG_SELL"
+                  ? "afriforex-sell-badge"
+                  : "afriforex-neutral-badge"
+            }
+          >
+            {scalpDirection}
+          </span>
+        </div>
+
+        <div className="afriforex-signal-scale" aria-label="AfriAI Trade Alert strength">
+          <div className="afriforex-signal-track">
+            <span
+              className="afriforex-signal-marker"
+              style={{ left: `${markerPosition}%` }}
+            />
+          </div>
+          <div className="afriforex-signal-labels">
+            <span>STRONG BUY</span>
+            <span>BUY</span>
+            <span>NEUTRAL</span>
+            <span>SELL</span>
+            <span>STRONG SELL</span>
+          </div>
+        </div>
+
         <div className="afriforex-intelligence-update">
           <div className="afriforex-label">🔔 AfriAI INTELLIGENCE UPDATE</div>
 
@@ -327,7 +357,7 @@ const crossAssetContext = activeData?.crossAssetContext || null;
                 key={horizon}
                 className="afriforex-intelligence-section"
               >
-                <strong>{horizon}</strong>
+                <strong className="afriforex-intelligence-section-title">{horizon}</strong>
 
                 {timeframes.map((timeframe) => {
                   const item = evidence?.[timeframe] || {};
@@ -360,8 +390,8 @@ const crossAssetContext = activeData?.crossAssetContext || null;
                       key={`${horizon}-${timeframe}`}
                       className="afriforex-intelligence-row"
                     >
-                      <span>{timeframe}</span>
-                      <span>
+                      <span className="afriforex-intelligence-field">{timeframe}</span>
+                      <span className="afriforex-intelligence-answer">
                         {icon} {direction}
                         {strength > 0 ? ` ${strength}%` : ""}
                       </span>
@@ -373,38 +403,38 @@ const crossAssetContext = activeData?.crossAssetContext || null;
           })}
 
           <div className="afriforex-intelligence-section">
-            <strong>EC</strong>
+            <strong className="afriforex-intelligence-section-title">EC</strong>
 
             {nextHighImpactEvent ? (
               <>
                 <div className="afriforex-intelligence-row">
-                  <span>Event</span>
-                  <span>
+                  <span className="afriforex-intelligence-field">Event</span>
+                  <span className="afriforex-intelligence-answer">
                     🟡 {nextHighImpactEvent.currency || "USD"} high-impact event → imminent
                   </span>
                 </div>
 
                 <div className="afriforex-intelligence-row">
-                  <span>Countdown</span>
-                  <span>
+                  <span className="afriforex-intelligence-field">Countdown</span>
+                  <span className="afriforex-intelligence-answer">
                     {formatEconomicCountdown(nextHighImpactEvent.time, now)}
                   </span>
                 </div>
               </>
             ) : (
               <div className="afriforex-intelligence-row">
-                <span>Event</span>
-                <span>⚪ No imminent high-impact event</span>
+                <span className="afriforex-intelligence-field">Event</span>
+                <span className="afriforex-intelligence-answer">⚪ No imminent high-impact event</span>
               </div>
             )}
           </div>
 
           <div className="afriforex-intelligence-section afriforex-intelligence-afriai">
-            <strong>AFRIAI</strong>
+            <strong className="afriforex-intelligence-section-title">AFRIAI</strong>
 
             <div className="afriforex-intelligence-row">
-              <span>Trade decision</span>
-              <span>
+              <span className="afriforex-intelligence-field">Trade decision</span>
+              <span className="afriforex-intelligence-answer">
                 {String(
                   activeSignal?.tradeDecision ||
                   activeData?.tradeDecision ||
@@ -416,8 +446,8 @@ const crossAssetContext = activeData?.crossAssetContext || null;
             </div>
 
             <div className="afriforex-intelligence-row">
-              <span>Reason</span>
-              <span>
+              <span className="afriforex-intelligence-field afriforex-intelligence-reason-label">Reason</span>
+              <span className="afriforex-intelligence-answer">
                 {activeSignal?.reason ||
                   activeSignal?.tradeReason ||
                   activeData?.reason ||
