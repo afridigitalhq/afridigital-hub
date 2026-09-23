@@ -15,9 +15,14 @@ export const AfriTransport = {
     const ws = new WebSocket(`${WS.base}${path}`);
 
     ws.onmessage = (e) => {
+      console.log("🔎 AFRITRANSPORT WS RAW MESSAGE →", e.data);
       try {
-        onMessage(JSON.parse(e.data));
-      } catch {}
+        const parsed = JSON.parse(e.data);
+        console.log("🔎 AFRITRANSPORT WS PARSED →", parsed);
+        onMessage(parsed);
+      } catch (error) {
+        console.error("🔴 AFRITRANSPORT WS PARSE ERROR", error);
+      }
     };
 
     return ws;

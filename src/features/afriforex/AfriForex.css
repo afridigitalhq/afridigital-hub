@@ -2773,3 +2773,15 @@
   font-weight: 850;
   line-height: 1.45;
 }
+
+/* AfriAI reversal display — dedicated intelligence row */
+.afriforex-reversal-value {
+  margin-top: .45rem;
+  color: var(--afri-primary, #1877f2);
+  font-size: 1.25rem;
+  font-weight: 950;
+  letter-spacing: .055em;
+  line-height: 1.2;
+  text-align: left;
+  overflow-wrap: anywhere;
+}

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { postAfriForexScan } from "../api/AfriForexClient";
+import { postAfriForexScan, AFRIFOREX_DEMO_CUSTOMER_ID } from "../api/AfriForexClient";
 import AfriForexMarketSelector from "./AfriForexMarketSelector";
 
-const DEMO_CUSTOMER_ID = "demo-test";
 
 export default function AfriForexAssetScanner({
   selectedMarket,
   onMarketChange,
   onScanResult,
+  crossAssetEnabled = false,
 }) {
   const [scanning, setScanning] = useState(false);
   const [error, setError] = useState("");
@@ -20,8 +20,9 @@ export default function AfriForexAssetScanner({
 
     try {
       const data = await postAfriForexScan(
-        DEMO_CUSTOMER_ID,
-        [selectedMarket]
+        AFRIFOREX_DEMO_CUSTOMER_ID,
+        [selectedMarket],
+        crossAssetEnabled
       );
 
       const market =
@@ -34,6 +35,29 @@ export default function AfriForexAssetScanner({
       }
 
       onScanResult?.(market);
+
+      window.dispatchEvent(
+        new CustomEvent("AFRIFOREX_SCAN_NOTIFICATION", {
+          detail: {
+            symbol: market?.displaySymbol || market?.symbol || selectedMarket,
+            signal:
+              market?.horizonSignals?.SCALP?.direction ||
+              market?.signal?.state ||
+              market?.signal?.direction ||
+              "NEUTRAL",
+            confidence:
+              market?.horizonSignals?.SCALP?.confidence ??
+              market?.signal?.confidence ??
+              "N/A",
+            price:
+              market?.price ??
+              market?.horizonSignals?.SCALP?.price ??
+              "N/A",
+            dataMode: market?.dataMode || "UNKNOWN",
+            scannedAt: new Date().toISOString()
+          }
+        })
+      );
     } catch (scanError) {
       console.error("AfriForex asset scan error:", scanError);
       setError(

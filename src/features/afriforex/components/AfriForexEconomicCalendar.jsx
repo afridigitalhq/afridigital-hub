@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 function formatMinutes(minutes) {
   if (!Number.isFinite(Number(minutes))) return "TIME UNKNOWN";
@@ -17,6 +17,21 @@ function formatMinutes(minutes) {
   const mins = value % 60;
 
   return mins ? `in ${hours}h ${mins}m` : `in ${hours}h`;
+}
+
+function formatCountdown(time, now) {
+  if (!time) return "TIME UNKNOWN";
+  const target = new Date(time).getTime();
+  if (!Number.isFinite(target)) return "TIME UNKNOWN";
+  const diff = target - now;
+  if (diff <= 0) return "RELEASED";
+  const totalMinutes = Math.ceil(diff / 60000);
+  const days = Math.floor(totalMinutes / 1440);
+  const hours = Math.floor((totalMinutes % 1440) / 60);
+  const minutes = totalMinutes % 60;
+  if (days > 0) return `${days}d ${hours}h ${minutes}m`;
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
 }
 
 function formatEventTime(time) {
@@ -39,6 +54,12 @@ export default function AfriForexEconomicCalendar({
   selectedMarket = null
 }) {
   const [activeMarket, setActiveMarket] = useState("FOREX");
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 10000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   const events = Array.isArray(economicCalendar?.events)
     ? economicCalendar.events
@@ -66,6 +87,16 @@ export default function AfriForexEconomicCalendar({
   )
     ? economicCalendar.imminentEvents
     : [];
+
+  const nextHighImpactEvent = useMemo(() => {
+    return visibleEvents
+      .filter((event) => {
+        const importance = String(event?.importance || "").trim().toUpperCase();
+        const target = new Date(event?.time).getTime();
+        return importance === "HIGH" && Number.isFinite(target) && target > now;
+      })
+      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime())[0] || null;
+  }, [visibleEvents, now]);
 
   return (
     <section className="afriforex-panel afriforex-economic-calendar">
@@ -131,6 +162,19 @@ export default function AfriForexEconomicCalendar({
                 {economicCalendar.eventCount ?? visibleEvents.length} relevant
                 events · {economicCalendar.highImpactEventCount ?? 0} high impact
               </span>
+
+              {nextHighImpactEvent ? (
+                <div className="afriforex-economic-calendar-next-event">
+                  <span className="afriforex-label">NEXT HIGH-IMPACT EVENT</span>
+                  <strong>{nextHighImpactEvent.name || "Economic event"}</strong>
+                  <span>
+                    {nextHighImpactEvent.currency || nextHighImpactEvent.countryCode || "GLOBAL"}
+                    {" · "}
+                    {formatEventTime(nextHighImpactEvent.time)}
+                  </span>
+                  <strong>COUNTDOWN · {formatCountdown(nextHighImpactEvent.time, now)}</strong>
+                </div>
+              ) : null}
 
               {economicCalendar.imminent ? (
                 <span>

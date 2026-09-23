@@ -44,6 +44,14 @@ import App from "./App";
 import "../styles.css";
 import "./core/theme/afridigital.tokens.css";
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/afriforex-notifications-sw.js")
+      .then(() => console.log("🟢 AfriForex notification service worker registered"))
+      .catch((error) => console.error("🔴 AfriForex notification service worker failed", error));
+  });
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>

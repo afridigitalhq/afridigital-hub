@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { getAfriForexAccount } from "../api/AfriForexClient";
+import { getAfriForexAccount, AFRIFOREX_DEMO_CUSTOMER_ID } from "../api/AfriForexClient";
 
-const DEMO_CUSTOMER_ID = "demo-test";
 const POLL_INTERVAL_MS = 5000;
 
 export default function useAfriForexMarket() {
@@ -11,7 +10,7 @@ export default function useAfriForexMarket() {
 
   const refresh = useCallback(async () => {
     try {
-      const data = await getAfriForexAccount(DEMO_CUSTOMER_ID);
+      const data = await getAfriForexAccount(AFRIFOREX_DEMO_CUSTOMER_ID);
       console.log("AFRIFOREX ACCOUNT RESPONSE:", data);
       setAccount(data);
       setError(null);

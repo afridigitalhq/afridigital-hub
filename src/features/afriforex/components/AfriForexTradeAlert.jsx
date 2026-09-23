@@ -210,17 +210,6 @@ export default function AfriForexTradeAlert({
   const scalpDirectionState = String(scalpSignal?.direction || "NEUTRAL").toUpperCase();
   const scalpIsReversal = scalpDirectionState === "INCOMING_REVERSAL";
 
-  const primarySignal = scalpSignal && scalpDirectionState !== "NEUTRAL"
-    ? {
-        ...scalpSignal,
-        state: scalpIsReversal
-          ? "INCOMING_REVERSAL"
-          : (scalpSignal.tradeable ? scalpSignal.direction : "WAIT"),
-        signal: scalpIsReversal
-          ? "INCOMING_REVERSAL"
-          : (scalpSignal.tradeable ? scalpSignal.direction : "WAIT")
-      }
-    : (activeData?.signal || tradeAlert?.signal || tradeSignal?.signal || {});
   // The headline signal and signal bar are Scalp-only.
   // Intraday, Swing and Position remain available to AfriAI Insight and
   // the detailed analysis below, but never override the primary Scalp signal.
@@ -440,6 +429,15 @@ const crossAssetContext = activeData?.crossAssetContext || null;
           </div>
 
           <div className="afriforex-intelligence-section">
+            <strong className="afriforex-intelligence-section-title">Reversal</strong>
+            <div className="afriforex-reversal-value">
+              {String(activeSignal?.reversal?.status || "").toUpperCase() === "INCOMING_REVERSAL"
+                ? `Incoming ${String(activeSignal?.reversal?.direction || "UNKNOWN").toLowerCase()} reversal`
+                : "Neutral"}
+            </div>
+          </div>
+
+          <div className="afriforex-intelligence-section">
             <strong className="afriforex-intelligence-section-title">Economic Calendar</strong>
 
             {nextHighImpactEvent ? (
@@ -472,13 +470,18 @@ const crossAssetContext = activeData?.crossAssetContext || null;
             <div className="afriforex-intelligence-row">
               <span className="afriforex-intelligence-field">Trade decision</span>
               <span className="afriforex-intelligence-answer">
-                {String(
-                  activeSignal?.tradeDecision ||
-                  activeData?.tradeDecision ||
-                  "WAIT"
-                ).toUpperCase() === "ENTER"
-                  ? "🟢 ENTER"
-                  : "⚪ WAIT"}
+                {activeSignal?.tradeDecision ||
+                activeData?.tradeDecision
+                  ? String(
+                      activeSignal?.tradeDecision ||
+                      activeData?.tradeDecision
+                    ).toUpperCase() === "ENTER"
+                    ? "🟢 ENTER"
+                    : `⚪ ${String(
+                        activeSignal?.tradeDecision ||
+                        activeData?.tradeDecision
+                      ).toUpperCase()}`
+                  : "— NO DATA"}
               </span>
             </div>
 
@@ -491,7 +494,7 @@ const crossAssetContext = activeData?.crossAssetContext || null;
                   activeData?.tradeReason ||
                   (activeSignal?.timingConflict
                     ? "1min timing conflict"
-                    : "Awaiting confirmation")}
+                    : "— NO DATA")}
               </span>
             </div>
           </div>
