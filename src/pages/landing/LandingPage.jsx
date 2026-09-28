@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import LandingEcosystemBridge from "./composition/LandingEcosystemBridge";
-import LandingAfriAINext from "./intelligence/canonical-v2/LandingAfriAINext";
 import LandingAuthCTA from "./auth/LandingAuthCTA";
 import LandingFooter from "./footer/LandingFooter";
 import GlobalExperienceShell from "../../core/layout/global-shell/GlobalExperienceShell"
@@ -13,7 +12,7 @@ export default function LandingPage() {
 
       <LandingAuthCTA navigate={navigate} />
 
-      <LandingAfriAINext />
+      {/* AfriAI card temporarily disabled — implementation preserved for later remount. */}
 
       <div className="landing-container">
 
