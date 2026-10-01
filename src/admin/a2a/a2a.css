@@ -1,0 +1,25 @@
+/* A2A AGENT CARD TYPOGRAPHY */
+.a2a-agent-card{font-size:1rem}
+.a2a-agent-card .a2a-agent-name-line h3{font-size:1.2rem;line-height:1.25}
+.a2a-agent-card .a2a-agent-identity>span{font-size:.9rem}
+.a2a-agent-card .a2a-agent-status{font-size:.72rem;font-weight:800}
+.a2a-agent-card .a2a-claim-badge{font-size:.72rem;font-weight:800}
+.a2a-agent-card .a2a-agent-primary span{font-size:.72rem;letter-spacing:.08em;font-weight:800}
+.a2a-agent-card .a2a-agent-primary strong{font-size:1rem}
+.a2a-agent-card .a2a-agent-metrics span{font-size:.85rem}
+.a2a-agent-card .a2a-agent-metrics b{font-size:1rem;font-weight:800}
+.a2a-agent-card .a2a-agent-view{font-size:.82rem;font-weight:800}
+/* A2A AGENT CARDS - LARGE READABLE MODE */
+.a2a-agent-card{padding:24px!important;font-size:1.05rem!important;min-height:320px!important}
+.a2a-agent-card .a2a-agent-icon{font-size:2.6rem!important;width:64px!important;height:64px!important}
+.a2a-agent-card .a2a-agent-name-line h3{font-size:1.45rem!important;line-height:1.25!important;margin:0!important}
+.a2a-agent-card .a2a-agent-identity>span{font-size:1rem!important;margin-top:5px!important}
+.a2a-agent-card .a2a-agent-status{font-size:.82rem!important;padding:5px 9px!important}
+.a2a-agent-card .a2a-claim-badge{font-size:.82rem!important;padding:6px 10px!important}
+.a2a-agent-card .a2a-agent-primary{gap:24px!important;margin-top:22px!important}
+.a2a-agent-card .a2a-agent-primary span{font-size:.78rem!important;letter-spacing:.1em!important}
+.a2a-agent-card .a2a-agent-primary strong{font-size:1.12rem!important;margin-top:5px!important}
+.a2a-agent-card .a2a-agent-metrics{gap:14px!important;margin-top:22px!important}
+.a2a-agent-card .a2a-agent-metrics span{font-size:.95rem!important}
+.a2a-agent-card .a2a-agent-metrics b{font-size:1.12rem!important;margin-left:4px!important}
+.a2a-agent-card .a2a-agent-view{font-size:.95rem!important;padding:11px 16px!important;margin-top:20px!important}
